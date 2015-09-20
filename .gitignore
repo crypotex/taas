@@ -1,0 +1,13 @@
+/venv
+*.pyc
+db.sqlite3
+
+/.idea
+/.project
+/.pydevproject
+/.settings
+/.sublime
+
+# Editor artifacts
+# vim
+*.sw*
