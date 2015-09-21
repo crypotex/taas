@@ -11,3 +11,6 @@ db.sqlite3
 # Editor artifacts
 # vim
 *.sw*
+
+# documentation
+docs/_build/
