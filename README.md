@@ -10,4 +10,4 @@ Reservation system for dog agility training ground.
 
 ## Developer guidelines
 
-Instruction can be found here: http://taas.readthedocs.org/en/latest/
+Instruction can be found here: http://taas.readthedocs.org/en/latest/developer/guide.html
