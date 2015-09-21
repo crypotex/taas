@@ -1,5 +1,5 @@
-# taas
 ![alt tag](docs/images/taaslogohor.jpg)
+
 Reservation system for dog agility training ground.
 
 ## Authors
