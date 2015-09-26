@@ -1,0 +1,18 @@
+/taas.egg-info
+/venv
+/taas/server/settings.py
+*.pyc
+db.sqlite3
+
+/.idea
+/.project
+/.pydevproject
+/.settings
+/.sublime
+
+# Editor artifacts
+# vim
+*.sw*
+
+# documentation
+docs/_build/
