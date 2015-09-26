@@ -1,0 +1,19 @@
+"""
+Add user specific settings here
+Copy it to the settings.py
+"""
+
+from .base_settings import *
+
+DEBUG = True
+TEMPLATE_DEBUG = True
+
+SECRET_KEY = '...'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_HOST_USER = 'example@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'blablabla'
+
+ADMIN_EMAILS = ['example@gmail.com']
