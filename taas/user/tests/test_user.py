@@ -38,12 +38,12 @@ class UserPermissionTest(TransactionTestCase):
         self.form_data['email'] = ''
         form = UserForm(self.form_data)
 
-        self.assertFalse(form.is_valid(), 'User can register without username.')
+        self.assertFalse(form.is_valid(), 'User can register without email.')
         self.assertEqual(form.errors['email'][0], _('This field is required.'))
 
     def test_user_cannot_register_without_password(self):
         self.form_data['password'] = ''
         form = UserForm(self.form_data)
 
-        self.assertFalse(form.is_valid(), 'User can register without username.')
+        self.assertFalse(form.is_valid(), 'User can register without password.')
         self.assertEqual(form.errors['password'][0], _('This field is required.'))
