@@ -14,7 +14,7 @@ def register_user(request):
         if user_form.is_valid():
             user_form.save()
             logger.info('Unverified user with username %s has been successfully registered.'
-                        % request.POST.get('user_form-username'))
+                        % user_form.cleaned_data.get('username'))
 
             return HttpResponseRedirect('success')
     else:
