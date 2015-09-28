@@ -27,4 +27,4 @@ class UserForm(forms.ModelForm):
         if password != password_confirm:
             raise forms.ValidationError(_('Passwords are not equal.'))
 
-        return self.cleaned_data
+        return super(UserForm, self).clean()

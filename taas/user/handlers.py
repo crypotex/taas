@@ -5,6 +5,7 @@ def send_emails_to_users(sender, instance=None, created=False, **kwargs):
     if created:
         instance.email_user_on_registration()
         instance.email_admin_on_registration()
+        return
 
     old_active = instance._old_values['is_active']
     new_active = instance.is_active
