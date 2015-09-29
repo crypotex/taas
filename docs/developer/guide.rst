@@ -33,13 +33,13 @@ Setup work environment
 
 .. code-block:: bash
 
-    pip install -r requirements.txt
+    pip setup.py develop
 
 - Migrate database:
 
 .. code-block:: bash
 
-    python setup.py migrate
+    python manage.py migrate
 
 - Run server:
 
@@ -77,12 +77,12 @@ Commit rules
 ------------
 - Commit message should be 50 characters or less.
 - Do not make large commits.
-- At the end of the commit specify task number using `#Num #task-id`
+- At the end of the commit specify task number using `Issue #task-id`
 - Example of proper commit message:
 
 .. code-block:: bash
 
     Create initial project structure
     
-    #Num #7
+    Issue #7
 

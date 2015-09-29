@@ -4,6 +4,7 @@ Copy it to the settings.py
 """
 
 from .base_settings import *
+from .email_settings import *
 
 DEBUG = True
 TEMPLATE_DEBUG = True
