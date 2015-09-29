@@ -1,4 +1,6 @@
+/taas.egg-info
 /venv
+/taas/server/settings.py
 *.pyc
 db.sqlite3
 

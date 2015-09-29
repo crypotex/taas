@@ -1,0 +1,14 @@
+{% load i18n %}
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+    {% block content %}{% endblock content %}
+    </body>
+</html>

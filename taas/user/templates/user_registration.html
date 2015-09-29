@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Registration' %}
+{% endblock title %}
+
+{% block content %}
+    <form method="POST" action="{% url 'user_registration_form' %}">
+        {% csrf_token %}
+        {{ user_form.as_p}}
+    <input type="submit" value={% trans 'Enter' %}>
+    </form>
+{% endblock content %}
