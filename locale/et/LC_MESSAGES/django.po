@@ -189,11 +189,12 @@ msgstr ""
 msgid "You have successfully registered."
 msgstr ""
 
-#: taas/user/templates/user_registration.html:5
+#: taas/user/templates/user_registration.html:6
+#: taas/user/templates/user_registration.html:14
 msgid "Registration"
 msgstr ""
 
-#: taas/user/templates/user_registration.html:12
+#: taas/user/templates/user_registration.html:18
 msgid "Enter"
 msgstr ""
 

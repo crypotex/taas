@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    <h1>{% trans 'Registration' %}</h1>
     <form method="POST" action="{% url 'user_registration_form' %}" class="register-form">
         {% csrf_token %}
         {{ user_form.as_p }}

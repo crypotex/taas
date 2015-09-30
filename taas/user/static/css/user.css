@@ -1,7 +1,7 @@
 .register-form {
-    margin: 30px auto auto 300px;
+    margin: 10px auto auto 300px;
     max-width: 500px;
-    padding: 25px 15px 25px 10px;
+    padding: 0 15px 25px 10px;
     font-family: Verdana, Arial, sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
@@ -40,4 +40,12 @@
     box-shadow: 1px 1px 5px #B6B6B6;
     border-radius: 3px;
     cursor: pointer;
+}
+
+h1 {
+    font-family: Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-left: 30px;
 }
