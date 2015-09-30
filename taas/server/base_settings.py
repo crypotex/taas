@@ -4,17 +4,10 @@ Base settings for TAAS project
 
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.dirname(BASE_DIR)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 DEBUG = False
 TEMPLATE_DEBUG = False
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 ALLOWED_HOSTS = []
 
@@ -42,13 +35,9 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-    os.path.join(BASE_DIR, 'user', 'templates'),
+    os.path.join(PROJECT_ROOT, 'taas', 'templates'),
+    os.path.join(PROJECT_ROOT, 'taas', 'user', 'templates'),
 )
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
 
 LOCALE_PATHS = (
     os.path.join(PROJECT_ROOT, 'locale'),
@@ -76,3 +65,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'taas', 'static'),
+)
