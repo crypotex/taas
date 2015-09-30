@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block title %}
     {% trans 'Registration' %}
 {% endblock title %}
 
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
+{% endblock %}
+
 {% block content %}
-    <form method="POST" action="{% url 'user_registration_form' %}">
+    <form method="POST" action="{% url 'user_registration_form' %}" class="register-form">
         {% csrf_token %}
-        {{ user_form.as_p}}
-    <input type="submit" value={% trans 'Enter' %}>
+        {{ user_form.as_p }}
+        <input id="submit-button" type="submit" value={% trans 'Enter' %}>
     </form>
 {% endblock content %}
