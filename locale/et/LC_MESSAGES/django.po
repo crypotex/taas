@@ -79,8 +79,28 @@ msgid ""
 "Tartu Agility Arenguselts"
 msgstr ""
 
-#: taas/templates/base.html:7
+#: taas/templates/base.html:8
 msgid "Tartu Agility Playground"
+msgstr ""
+
+#: taas/templates/base.html:28
+msgid "events"
+msgstr ""
+
+#: taas/templates/base.html:31
+msgid "booking"
+msgstr ""
+
+#: taas/templates/base.html:34
+msgid "blog"
+msgstr ""
+
+#: taas/templates/base.html:37
+msgid "faq"
+msgstr ""
+
+#: taas/templates/base.html:40
+msgid "about us"
 msgstr ""
 
 #: taas/urls.py:6
