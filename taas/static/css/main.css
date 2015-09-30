@@ -1,3 +1,103 @@
+html {
+	background-image: url("../img/murutaust.jpg");
+	width: auto;
+}
+
 body {
-    background-image: url("../img/murutaust.jpg");
+	min-height: 100%;
+    position: relative;
+    width: 72%;
+    background: #ffffff;
+    margin: 15px auto -80px auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 1px 30px black;
+}
+
+#innerwrap{
+    position: relative;
+    width: 97%;
+    margin: 0 auto;
+}
+
+#header{
+    z-index: 10000;
+    background: #ffffff;
+    width: 97%;
+    min-width: 300px;
+    height: 105px;
+    border-bottom: 1px dotted #dddddd;
+}
+
+.nav{
+    float: right;
+    font-family: Impact;
+    text-transform: uppercase;
+    font-weight: normal;
+    position: absolute;
+    right: 30px;
+    top: 54px;
+}
+
+
+.logo img {
+    float: left;
+    padding-top: 11px;
+    height: 82px;
+    #margin-bottom: 11px;
+ }
+
+.navsmall img {
+    float: right;
+    display: block;
+    height: 30px;
+    top: 0;
+}
+
+.navsmall:hover {
+    opacity: 0.6;
+}
+
+.nav ul {
+    list-style: none; position: relative;
+}
+
+.nav ul li {
+    float: left;
+    margin-left: 12px;
+    position: relative;
+    display: block;
+    font-size: 22px;
+}
+
+.nav ul li > a {
+    color: #666666;
+    padding: 0 8px;
+    line-height: 28px;
+    text-decoration: none;
+    display:block;
+}
+
+.nav ul li:hover > a {
+    color: #ffcc66;
+}
+
+.nav ul li.current > a {
+    color: #ffffff;
+}
+
+.nav ul li.current > a:hover {
+    color: #ffcc66;
+}
+
+.nav ul li.selected a {
+    color: #ff9900;
+}
+
+.nav ul li.selected  > a:hover {
+    color: #ffcc66;
+}
+
+p {
+    margin: 10px;
 }

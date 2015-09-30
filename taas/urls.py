@@ -7,7 +7,8 @@ admin.site.site_header = _('TAAS administration')
 
 urlpatterns = patterns(
     '',
-    url(r'^', TemplateView.as_view(template_name='base.html')),
+    # Kui järgmine rida pole välja kommenteeritud, siis ta näitab iga aadressiga ainult base.htmli
+    #url(r'^', TemplateView.as_view(template_name='base.html')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^user/', include('taas.user.urls')),
 )
