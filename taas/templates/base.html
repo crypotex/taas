@@ -1,14 +1,26 @@
 {% load i18n %}
 {% csrf_token %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
     </head>
 
     <body>
-    {% block content %}{% endblock content %}
+    {% block content %}Hello!!! <br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in laoreet risus, sit amet varius erat. Vestibulum vitae finibus orci. Ut porttitor quam ligula, vehicula tempor purus luctus sit amet. Sed diam purus, sodales gravida iaculis ut, laoreet at ex. Phasellus dignissim ac leo non rhoncus. Sed ex dui, vehicula non molestie id, iaculis nec lacus. Integer fermentum orci id laoreet posuere. Proin condimentum rhoncus arcu eget rutrum. Suspendisse in nulla vestibulum, tincidunt tortor quis, congue libero. Sed posuere varius fermentum. Aenean sed tincidunt nisl. In tristique felis eget magna iaculis, a faucibus mi pretium. Proin mollis pulvinar neque, ac mattis purus commodo et. Vestibulum consectetur placerat massa, eu tincidunt elit auctor non.
+
+<br> Nulla finibus nisi in tellus consequat posuere. Praesent vel leo ligula. Donec velit mi, interdum quis massa vitae, lacinia iaculis ex. Nam vitae facilisis nunc, at imperdiet metus. Morbi vitae scelerisque nulla. Ut auctor, leo et lobortis fringilla, mi nulla blandit augue, nec lobortis metus augue sed est. Praesent et nisi nec mi elementum tincidunt vitae quis velit. Donec imperdiet mi in pharetra dapibus. <br> Aenean nec turpis ipsum. Vivamus ligula nisl, molestie at dui id, ullamcorper posuere turpis. Nullam ut pretium lorem, non gravida libero. Phasellus rutrum est in massa tristique molestie. Morbi ut sapien magna. Vestibulum a placerat nibh.
+
+Aenean ultrices est nec diam volutpat, blandit porttitor dolor venenatis. Aliquam a pretium lectus. Suspendisse ex odio, vulputate a nisl vitae, dignissim lacinia arcu. Duis sollicitudin purus sem, et mollis metus rutrum sed. Curabitur placerat nibh nec sem ultricies, at efficitur massa condimentum. Suspendisse et pharetra lacus. In eleifend mauris a leo vehicula, at gravida diam ultrices. Fusce sagittis purus eu sagittis elementum. Nunc pharetra eros nec orci volutpat pretium. Vestibulum sit amet erat eget dui viverra laoreet eget quis ante. In auctor consequat libero ac placerat. In hac habitasse platea dictumst.
+
+<br> Suspendisse vehicula sit amet purus ac mattis. Vivamus aliquam elit orci, at consequat ex suscipit a. Nulla facilisi. Maecenas et elementum diam, id fermentum sapien. Vivamus id nisi at urna bibendum tempus posuere vitae felis. Etiam dolor nisi, ultrices eget est vel, accumsan viverra urna. Morbi placerat cursus mauris, eu dictum metus ullamcorper vulputate. Mauris accumsan ex in blandit feugiat. Integer aliquet semper justo id ullamcorper. Fusce a placerat odio, nec consequat justo. Aliquam non efficitur magna, sed scelerisque ligula. Nulla non commodo lacus, ut consectetur leo. Aenean commodo, quam quis facilisis posuere, diam eros suscipit massa, quis tempor ex metus sed lectus.
+
+<br>Donec et sagittis urna. Suspendisse ut lacinia est. Etiam molestie porttitor rutrum. Nulla libero quam, pellentesque eu mauris a, iaculis consectetur ipsum. Nunc pulvinar eros dui, eu mattis dolor euismod et. Vestibulum laoreet orci at est ultrices ullamcorper. Phasellus id nulla ex. Morbi finibus vehicula orci, vel ultricies urna suscipit vitae.
+    {% endblock content %}
     </body>
 </html>
