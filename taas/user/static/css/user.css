@@ -49,3 +49,15 @@ h1 {
     padding: 10px;
     margin-left: 30px;
 }
+
+.errorlist {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    max-width: 70%;
+    margin: 10px 0;
+    padding: 8px;
+    color: #D8000C;
+    background-color: #FFBABA;
+    list-style-type: none;
+}
