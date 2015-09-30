@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block js %}
+    <link rel="stylesheet" type="text/css" href="{% static 'js/fullcalendar/fullcalendar.css' %}">
+    <script src="{% static 'js/fullcalendar/lib/jquery.min.js' %}"></script>
+    <script src='{% static 'js/fullcalendar/lib/moment.min.js' %}'></script>
+    <script src='{% static 'js/fullcalendar/fullcalendar.js' %}'></script>
+    <script src="{% static 'js/calendar.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
+{% endblock js %}
+
+{% block content %}
+    <div id='calendar'></div>
+{% endblock content %}
