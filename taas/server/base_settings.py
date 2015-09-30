@@ -46,6 +46,10 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'user', 'templates'),
 )
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 LOCALE_PATHS = (
     os.path.join(PROJECT_ROOT, 'locale'),
 )
