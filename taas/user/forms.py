@@ -5,12 +5,11 @@ class UserCreationForm(auth_forms.UserCreationForm):
     class Meta(object):
         model = get_user_model()
         fields = (
-            'username',
-            'password1',
-            'password2',
-            'email',
             'first_name',
             'last_name',
+            'email',
+            'password1',
+            'password2',
             'phone_number'
         )
 
