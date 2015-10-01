@@ -14,7 +14,7 @@
     <h1>{% trans 'Registration' %}</h1>
     <form method="POST" action="{% url 'user_registration_form' %}" class="register-form">
         {% csrf_token %}
-        {{ user_form.as_p }}
-        <input id="submit-button" type="submit" value={% trans 'Enter' %}>
+        {{ user_creation_form.as_p}}
+    <input id="submit-button" type="submit" value={% trans 'Enter' %}>
     </form>
 {% endblock content %}
