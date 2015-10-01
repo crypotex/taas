@@ -13,8 +13,8 @@ def register_user(request):
         user_form = forms.UserCreationForm(request.POST, prefix='user_creation_form')
         if user_form.is_valid():
             user_form.save()
-            logger.info('Unverified user with username %s has been successfully registered.'
-                        % user_form.cleaned_data.get('username'))
+            logger.info('Unverified user with email %s has been successfully registered.'
+                        % user_form.cleaned_data.get('email'))
 
             return HttpResponseRedirect('success')
     else:
