@@ -10,10 +10,9 @@ class UserFactory(factory.DjangoModelFactory):
     class Meta(object):
         model = get_user_model()
 
-    username = factory.Sequence(lambda n: 'taavi%s' % n)
-    email = factory.LazyAttribute(lambda o: '%s@example.org' % o.username)
     first_name = factory.Sequence(lambda n: 'Taavi%s' % n)
     last_name = factory.Sequence(lambda n: 'Tonu%s' % n)
+    email = factory.LazyAttribute(lambda o: '%s@example.org' % o.first_name.lower())
     phone_number = factory.Sequence(lambda n: '555831%s' % n)
     password = factory.PostGenerationMethodCall('set_password', 'isherenow')
     is_staff = False
@@ -27,7 +26,6 @@ class UserFactory(factory.DjangoModelFactory):
     @classmethod
     def get_form_data(cls):
         return {
-            'username': 'taavi',
             'email': 'taavi@example.com',
             'first_name': 'Taavi',
             'last_name': 'Tonu',
