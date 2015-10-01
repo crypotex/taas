@@ -5,6 +5,8 @@ from taas.user.models import User
 
 
 class UserForm(forms.ModelForm):
+    error_css_class = "error"
+
     password = forms.CharField(max_length=128, label=_('Password'), widget=forms.PasswordInput())
     password_confirm = forms.CharField(max_length=128, label=_('Confirm password'), widget=forms.PasswordInput())
 

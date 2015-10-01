@@ -72,4 +72,5 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'static'),
+    os.path.join(PROJECT_ROOT, 'taas', 'user', 'static'),
 )

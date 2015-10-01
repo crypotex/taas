@@ -1,5 +1,5 @@
 .register-form {
-    margin: 10px auto auto 300px;
+    margin: 10px auto 20px auto;
     max-width: 500px;
     padding: 0 15px 25px 10px;
     font-family: Verdana, Arial, sans-serif;
@@ -55,9 +55,23 @@ h1 {
     letter-spacing: 1px;
     font-size: 12px;
     max-width: 70%;
-    margin: 10px 0;
     padding: 8px;
     color: #D8000C;
     background-color: #FFBABA;
+    border-radius: 8px;
+}
+
+ul.errorlist {
     list-style-type: none;
+}
+
+ul.errorlist li {
+    background: url('../img/errorround.png') no-repeat 0 -1px;
+    background-size: 19px 19px;
+    padding: 2px 0 3px 30px;
+}
+
+form p, form ul {
+    width: 70%;
+    margin: 10px auto;
 }
