@@ -27,19 +27,26 @@ class UserPermissionTest(TransactionTestCase):
         self.assertFalse(form.is_valid(), 'User can register with invalid confirm password.')
         self.assertEqual(form.errors['password2'][0], _("The two password fields didn't match."))
 
-    def test_user_cannot_register_without_username(self):
-        self.form_data['username'] = ''
-        form = UserCreationForm(self.form_data)
-
-        self.assertFalse(form.is_valid(), 'User can register without username.')
-        self.assertEqual(form.errors['username'][0], _('This field is required.'))
-
     def test_user_cannot_register_without_email(self):
         self.form_data['email'] = ''
         form = UserCreationForm(self.form_data)
 
         self.assertFalse(form.is_valid(), 'User can register without email.')
         self.assertEqual(form.errors['email'][0], _('This field is required.'))
+
+    def test_user_cannot_register_without_first_name(self):
+        self.form_data['first_name'] = ''
+        form = UserCreationForm(self.form_data)
+
+        self.assertFalse(form.is_valid(), 'User can register without first name.')
+        self.assertEqual(form.errors['first_name'][0], _('This field is required.'))
+
+    def test_user_cannot_register_without_last_name(self):
+        self.form_data['last_name'] = ''
+        form = UserCreationForm(self.form_data)
+
+        self.assertFalse(form.is_valid(), 'User can register without last name.')
+        self.assertEqual(form.errors['last_name'][0], _('This field is required.'))
 
     def test_user_cannot_register_without_password(self):
         self.form_data['password1'] = ''

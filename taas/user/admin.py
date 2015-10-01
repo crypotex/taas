@@ -10,7 +10,7 @@ from .forms import UserCreationForm, UserChangeForm
 class UserAdmin(auth_admin.UserAdmin):
     add_form_template = 'admin/add_form.html'
     fieldsets = (
-        (None, {'fields': ('username', 'password')}),
+        (None, {'fields': ('password',)}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
@@ -18,13 +18,13 @@ class UserAdmin(auth_admin.UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'password1', 'password2', 'email'),
+            'fields': ('first_name', 'last_name', 'email', 'password1', 'password2'),
         }),
     )
-    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active')
+    list_display = ('email', 'first_name', 'last_name', 'is_active')
     list_filter = ('is_staff', 'is_active')
-    search_fields = ('username', 'first_name', 'last_name')
-    ordering = ('username', 'email', 'first_name', 'last_name')
+    search_fields = ('first_name', 'last_name')
+    ordering = ('email', 'first_name', 'last_name')
 
     form = UserChangeForm
     add_form = UserCreationForm
