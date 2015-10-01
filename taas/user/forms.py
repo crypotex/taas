@@ -1,30 +1,20 @@
-from django import forms
-from django.utils.translation import ugettext_lazy as _
-
-from taas.user.models import User
+from django.contrib.auth import forms as auth_forms, get_user_model
 
 
-class UserForm(forms.ModelForm):
-    password = forms.CharField(max_length=128, label=_('Password'), widget=forms.PasswordInput())
-    password_confirm = forms.CharField(max_length=128, label=_('Confirm password'), widget=forms.PasswordInput())
-
-    class Meta:
-        model = User
+class UserCreationForm(auth_forms.UserCreationForm):
+    class Meta(object):
+        model = get_user_model()
         fields = (
-            'username',
-            'password',
-            'password_confirm',
-            'email',
             'first_name',
             'last_name',
-            'phone_number',
+            'email',
+            'password1',
+            'password2',
+            'phone_number'
         )
 
-    def clean(self):
-        password = self.cleaned_data.get('password')
-        password_confirm = self.cleaned_data.get('password_confirm')
 
-        if password != password_confirm:
-            raise forms.ValidationError(_('Passwords are not equal.'))
-
-        return super(UserForm, self).clean()
+class UserChangeForm(auth_forms.UserChangeForm):
+    class Meta(object):
+        model = get_user_model()
+        fields = '__all__'
