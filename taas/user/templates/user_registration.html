@@ -11,10 +11,52 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{% trans 'Registration' %}</h1>
     <form method="POST" action="{% url 'user_registration_form' %}" class="register-form">
         {% csrf_token %}
-        {{ user_creation_form.as_p}}
-    <input id="submit-button" type="submit" value={% trans 'Enter' %}>
+
+        <h1>{% trans 'Registration' %}</h1>
+
+        {{ form.non_field_errors }}
+        <div class="section"><span>1</span>First Name &amp; Last Name</div>
+        <div class="fieldWrapper">
+            {{ user_creation_form.first_name.label_tag }}
+            {{ user_creation_form.first_name }}
+            {% if user_creation_form.first_name.errors %}
+                <p class="error-message">{{ user_creation_form.first_name.errors.as_text|cut:"* " }}</p>{% endif %}
+
+            {{ user_creation_form.last_name.label_tag }}
+            {{ user_creation_form.last_name }}
+            {% if user_creation_form.last_name.errors %}
+                <p class="error-message">{{ user_creation_form.last_name.errors.as_text|cut:"* " }}</p>{% endif %}
+        </div>
+
+        <div class="section"><span>2</span>E-mail &amp; Phone Number</div>
+        <div class="fieldWrapper">
+            {{ user_creation_form.email.label_tag }}
+            {{ user_creation_form.email }}
+            {% if user_creation_form.email.errors %}
+                <p class="error-message">{{ user_creation_form.email.errors.as_text|cut:"* " }}</p>{% endif %}
+
+            {{ user_creation_form.phone_number.label_tag }}
+            {{ user_creation_form.phone_number }}
+            {% if user_creation_form.phone_number.errors %}
+                <p class="error-message">{{ user_creation_form.phone_number.errors.as_text|cut:"* " }}</p>{% endif %}
+        </div>
+
+        <div class="section"><span>3</span>Passwords</div>
+        <div class="fieldWrapper">
+            {{ user_creation_form.password1.label_tag }}
+            {{ user_creation_form.password1 }}
+            {% if user_creation_form.password1.errors %}
+                <p class="error-message">{{ user_creation_form.password1.errors.as_text|cut:"* " }}</p>{% endif %}
+
+            {{ user_creation_form.password2.label_tag }}
+            {{ user_creation_form.password2 }}
+            <p class="help-text">{{ user_creation_form.password2.help_text|cut:"* " }}</p>
+
+            {% if user_creation_form.password2.errors %}
+                <p class="error-message">{{ user_creation_form.password2.errors.as_text|cut:"* " }}</p>{% endif %}
+        </div>
+        <input id="submit-button" type="submit" value={% trans 'Enter' %}>
     </form>
 {% endblock content %}
