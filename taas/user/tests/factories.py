@@ -15,7 +15,7 @@ class UserFactory(factory.DjangoModelFactory):
     first_name = factory.Sequence(lambda n: 'Taavi%s' % n)
     last_name = factory.Sequence(lambda n: 'Tonu%s' % n)
     phone_number = factory.Sequence(lambda n: '555831%s' % n)
-    password = 'test'
+    password = factory.PostGenerationMethodCall('set_password', 'isherenow')
     is_staff = False
     is_active = False
     is_superuser = False
@@ -32,6 +32,6 @@ class UserFactory(factory.DjangoModelFactory):
             'first_name': 'Taavi',
             'last_name': 'Tonu',
             'phone_number': '555123456',
-            'password': 'test',
-            'password_confirm': 'test'
+            'password1': 'test',
+            'password2': 'test'
         }
