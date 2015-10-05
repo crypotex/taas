@@ -7,7 +7,7 @@ from .factories import UserFactory
 from taas.user.forms import UserCreationForm
 
 
-class UserPermissionTest(TransactionTestCase):
+class UserRegistrationTest(TransactionTestCase):
     def setUp(self):
         self.registration_url = UserFactory.get_registration_url()
         self.form_data = UserFactory.get_form_data()
