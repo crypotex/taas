@@ -1,10 +1,11 @@
 from django.conf.urls import url
-from django.views.generic import TemplateView
+
+from .views import UserRegisterView
 
 urlpatterns = [
-    url(r'^register/$', 'taas.user.views.register_user', name='user_registration_form'),
-    url(r'^register/success/$', TemplateView.as_view(template_name='registration_success.html')),
-    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}, name='user_login_form'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
-    url(r'^login/success/$', TemplateView.as_view(template_name='login_success.html'))
+    url(r'^register/$', UserRegisterView.as_view(), name='user_registration_form'),
+    url(r'^login/$', 'django.contrib.auth.views.login',
+        {'template_name': 'login.html'}, name='user_login_form'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout',
+        {'template_name': 'logout.html', 'next_page': '/'}, name='user_logout'),
 ]
