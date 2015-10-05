@@ -10,6 +10,7 @@
     {% block styles %}
     {% endblock %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 </head>
 
@@ -51,6 +52,25 @@
             {% endfor %}
         </ul>
     {% endif %}
+
+    {% block nav %}
+        {% if not user.is_authenticated %}
+            <div class="user-nav">
+                <ul>
+                    <li><a href="/user/login">{% trans 'Login' %}</a></li>
+                    <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                </ul>
+            </div>
+        {% else %}
+            <div class="user-nav">
+                <ul>
+                    <li>{% trans 'Hello, ' %}{{ user.first_name }}</li>
+                    <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
+                </ul>
+            </div>
+        {% endif %}
+    {% endblock nav %}
+
     {% block content %}{% endblock content %}
     </body>
 </html>

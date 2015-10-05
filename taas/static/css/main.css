@@ -1,10 +1,10 @@
 html {
-	background-image: url("../img/murutaust.jpg");
-	width: auto;
+    background-image: url("../img/murutaust.jpg");
+    width: auto;
 }
 
 body {
-	min-height: 100%;
+    min-height: 100%;
     position: relative;
     width: 72%;
     background: #ffffff;
@@ -14,13 +14,13 @@ body {
     box-shadow: 0 1px 30px black;
 }
 
-#innerwrap{
+#innerwrap {
     position: relative;
     width: 97%;
     margin: 0 auto;
 }
 
-#header{
+#header {
     z-index: 10000;
     background: #ffffff;
     width: 97%;
@@ -29,7 +29,7 @@ body {
     border-bottom: 1px dotted #dddddd;
 }
 
-.nav{
+.nav {
     float: right;
     font-family: Impact;
     text-transform: uppercase;
@@ -39,12 +39,11 @@ body {
     top: 54px;
 }
 
-
 .logo img {
     float: left;
     padding-top: 11px;
     height: 82px;
- }
+}
 
 .navsmall img {
     float: right;
@@ -58,7 +57,8 @@ body {
 }
 
 .nav ul {
-    list-style: none; position: relative;
+    list-style: none;
+    position: relative;
 }
 
 .nav ul li {
@@ -74,7 +74,7 @@ body {
     padding: 0 8px;
     line-height: 28px;
     text-decoration: none;
-    display:block;
+    display: block;
 }
 
 .nav ul li:hover > a {
@@ -93,10 +93,33 @@ body {
     color: #ff9900;
 }
 
-.nav ul li.selected  > a:hover {
+.nav ul li.selected > a:hover {
     color: #ffcc66;
 }
 
 p {
     margin: 10px;
+}
+
+.user-nav li {
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 5px;
+    color: rgba(255, 153, 0, 0.9);
+}
+
+.user-nav ul {
+    float: right;
+    padding: 0;
+    margin: 15px 45px 0 auto;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #666666;
 }

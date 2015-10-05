@@ -8,7 +8,6 @@
 
 {% block styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block content %}
@@ -26,8 +25,7 @@
         {% endif %}
     {% endif %}
 
-    <form method="POST" action="" class="login-form">
-        {% csrf_token %}
+    <form method="POST" action="" class="login-form">{% csrf_token %}
 
         <h1>{% trans 'Login' %}</h1>
 
