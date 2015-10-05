@@ -8,6 +8,7 @@
 
 {% block styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block content %}
@@ -19,43 +20,55 @@
         {{ form.non_field_errors }}
         <div class="section"><span>1</span>First Name &amp; Last Name</div>
         <div class="fieldWrapper">
-            {{ user_creation_form.first_name.label_tag }}
-            {{ user_creation_form.first_name }}
-            {% if user_creation_form.first_name.errors %}
-                <p class="error-message">{{ user_creation_form.first_name.errors.as_text|cut:"* " }}</p>{% endif %}
+            <div {% if user_creation_form.first_name.errors %}class="field-error"{% endif %}>
+                {{ user_creation_form.first_name.label_tag }}
+                {{ user_creation_form.first_name }}
+                {% for err in user_creation_form.first_name.errors %}
+                    <p class="error-message">{{ user_creation_form.first_name.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
 
-            {{ user_creation_form.last_name.label_tag }}
-            {{ user_creation_form.last_name }}
-            {% if user_creation_form.last_name.errors %}
-                <p class="error-message">{{ user_creation_form.last_name.errors.as_text|cut:"* " }}</p>{% endif %}
+            <div {% if user_creation_form.last_name.errors %}class="field-error"{% endif %}>
+                {{ user_creation_form.last_name.label_tag }}
+                {{ user_creation_form.last_name }}
+                {% for err in user_creation_form.last_name.errors %}
+                    <p class="error-message">{{ user_creation_form.last_name.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
         </div>
 
         <div class="section"><span>2</span>E-mail &amp; Phone Number</div>
         <div class="fieldWrapper">
-            {{ user_creation_form.email.label_tag }}
-            {{ user_creation_form.email }}
-            {% if user_creation_form.email.errors %}
-                <p class="error-message">{{ user_creation_form.email.errors.as_text|cut:"* " }}</p>{% endif %}
+            <div {% if user_creation_form.email.errors %}class="field-error"{% endif %}>
+                {{ user_creation_form.email.label_tag }}
+                {{ user_creation_form.email }}
+                {% for err in user_creation_form.email.errors %}
+                    <p class="error-message">{{ user_creation_form.email.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
 
-            {{ user_creation_form.phone_number.label_tag }}
-            {{ user_creation_form.phone_number }}
-            {% if user_creation_form.phone_number.errors %}
-                <p class="error-message">{{ user_creation_form.phone_number.errors.as_text|cut:"* " }}</p>{% endif %}
+            <div {% if user_creation_form.phone_number.errors %}class="field-error"{% endif %}>
+                {{ user_creation_form.phone_number.label_tag }}
+                {{ user_creation_form.phone_number }}
+                {% for err in user_creation_form.phone_number.errors %}
+                    <p class="error-message">{{ user_creation_form.phone_number.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
         </div>
 
         <div class="section"><span>3</span>Passwords</div>
         <div class="fieldWrapper">
-            {{ user_creation_form.password1.label_tag }}
-            {{ user_creation_form.password1 }}
-            {% if user_creation_form.password1.errors %}
-                <p class="error-message">{{ user_creation_form.password1.errors.as_text|cut:"* " }}</p>{% endif %}
+            <div {% if user_creation_form.password1.errors %}class="field-error"{% endif %}>
+                {{ user_creation_form.password1.label_tag }}
+                {{ user_creation_form.password1 }}
+                {% for err in user_creation_form.password1.errors %}
+                    <p class="error-message">{{ user_creation_form.password1.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
 
-            {{ user_creation_form.password2.label_tag }}
-            {{ user_creation_form.password2 }}
-            <p class="help-text">{{ user_creation_form.password2.help_text|cut:"* " }}</p>
+            <div {% if user_creation_form.password2.errors %}class="field-error"{% endif %}>
+                {{ user_creation_form.password2.label_tag }}
+                {{ user_creation_form.password2 }}
+                <p class="help-text">{{ user_creation_form.password2.help_text|cut:"* " }}</p>
 
-            {% if user_creation_form.password2.errors %}
-                <p class="error-message">{{ user_creation_form.password2.errors.as_text|cut:"* " }}</p>{% endif %}
+                {% for err in user_creation_form.password2.errors %}
+                    <p class="error-message">{{ user_creation_form.password2.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
         </div>
         <input id="submit-button" type="submit" value={% trans 'Enter' %}>
     </form>

@@ -39,7 +39,7 @@
     box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     border: 1px solid #ff9900;
     cursor: pointer;
-    font-family: "Georgia", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .register-form input[type="submit"]:hover {
@@ -51,8 +51,8 @@
 
 .register-form label, .register-form p {
     display: block;
-    font-family: "Georgia", sans-serif;
-    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
     letter-spacing: 1px;
     color: #888;
     margin-bottom: 5px;
@@ -60,16 +60,16 @@
 }
 
 .register-form .section {
-    font-family: Impact, sans-serif;
-    font-size: 21px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #ff9900;
+    color: rgba(255, 153, 0, 0.9);
     margin-bottom: 5px;
 }
 
 .register-form .section span {
-    background: #ff9900;
+    background: rgba(255, 153, 0, 0.9);
     padding: 5px 10px 5px 10px;
     position: absolute;
     border-radius: 50%;
@@ -89,8 +89,9 @@
     margin-bottom: 15px;
 }
 
+/* Heading */
 .register-form h1 {
-    background: #ffa31a;
+    background: rgba(255, 163, 26, 0.8);
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
     border-radius: 10px 10px 0 0;
@@ -99,21 +100,35 @@
     -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
-    border: 1px solid #ff9900;
-    font-family: Impact, sans-serif;
+    border: 1px solid rgba(255, 153, 0, 0.8);
+    font-family: 'Montserrat', sans-serif;
     color: #fff;
     text-transform: uppercase;
-    text-shadow: 2px 2px darkorange;
+    text-shadow: 2px 2px rgba(255, 140, 0, 0.7);
     letter-spacing: 2px;
 }
 
 p.error-message {
-    font-family: Georgia, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
-    color: #D8000C;
+    color: rgba(216, 0, 12, 0.6);
     background: url('../img/errorround.png') no-repeat 0 -1px;
     background-size: 20px 20px;
     padding: 2px 0 3px 30px;
+}
+
+/* Asterisk for required fields */
+label.required:after {
+    content: '*';
+    font-size: 18px;
+}
+
+.field-error label.required:after {
+    color: rgba(216, 0, 12, 0.6);
+}
+
+.field-error input[type="text"], .field-error input[type="password"], .field-error input[type="email"] {
+    border-color: rgba(216, 0, 12, 0.6);
 }
