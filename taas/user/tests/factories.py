@@ -24,6 +24,15 @@ class UserFactory(factory.DjangoModelFactory):
         return 'http://testserver' + reverse('user_registration_form')
 
     @classmethod
+    def get_login_url(cls):
+        return 'http://testserver' + reverse('user_login_form')
+
+    @classmethod
+    def get_logout_url(cls):
+        return 'http://testserver' + reverse('user_logout')
+
+
+    @classmethod
     def get_form_data(cls):
         return {
             'email': 'taavi@example.com',
