@@ -39,6 +39,18 @@ class UserLoginTest(TestCase):
         self.assertEqual(response.status_code, http_client.OK,
                          'User can login with invalid password.')
 
+    def test_user_cannot_login_without_username(self):
+        self.login_data['username'] = ''
+        response = self.client.post(self.login_url, self.login_data)
+        self.assertEqual(response.status_code, http_client.OK,
+                         'User can login without email.')
+
+    def test_user_cannot_login_without_password(self):
+        self.login_data['password'] = ''
+        response = self.client.post(self.login_url, self.login_data)
+        self.assertEqual(response.status_code, http_client.OK,
+                         'User can login without password.')
+
     def test_user_can_login_and_logout(self):
         response = self.client.post(self.login_url, self.login_data)
         self.assertRedirects(response,
