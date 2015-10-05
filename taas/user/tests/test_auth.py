@@ -54,3 +54,10 @@ class UserLoginTest(TestCase):
                              target_status_code=http_client.OK)
 
         self.assertNotIn('_auth_user_id', self.client.session, "User cannot logout with valid data.")
+
+    def test_anon_user_redirect_on_logout(self):
+        reponse = self.client.post(self.logout_url)
+        self.assertRedirects(reponse,
+                             expected_url=reverse('homepage'),
+                             status_code=http_client.FOUND,
+                             target_status_code=http_client.OK)
