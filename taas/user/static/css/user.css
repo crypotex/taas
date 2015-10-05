@@ -1,4 +1,4 @@
-.register-form {
+.register-form, .login-form {
     width: 500px;
     padding: 30px;
     margin: 40px auto 0 auto;
@@ -10,7 +10,7 @@
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
 }
 
-.register-form input[type="text"], .register-form input[type="password"], .register-form input[type="email"] {
+.register-form input[type="text"], .login-form input[type="text"], .register-form input[type="password"], .login-form input[type="password"], .register-form input[type="email"] {
     display: block;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -25,8 +25,10 @@
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.33);
 }
 
-/* "Enter" button */
-.register-form input[type="submit"] {
+/* "Enter" & "Submit" button */
+.register-form input[type="submit"], .login-form input[type="submit"] {
+    display: block;
+    margin: 0 auto;
     background: #ffa31a;
     padding: 8px 20px 8px 20px;
     border-radius: 5px;
@@ -42,14 +44,14 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.register-form input[type="submit"]:hover {
+.register-form input[type="submit"]:hover, .login-form input[type="submit"]:hover {
     background: #ff9900;
     -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
 }
 
-.register-form label, .register-form p {
+.register-form label, .register-form p, .login-form label, .login-form p {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -82,7 +84,7 @@
 }
 
 /* Containers with input fields */
-.register-form .fieldWrapper {
+.register-form .fieldWrapper, .login-form .fieldWrapper {
     padding: 10px 30px 30px 30px;
     background: #f8f8f8;
     border-radius: 6px;
@@ -90,7 +92,7 @@
 }
 
 /* Heading */
-.register-form h1 {
+.register-form h1, .login-form h1 {
     background: rgba(255, 163, 26, 0.8);
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
