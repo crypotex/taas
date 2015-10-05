@@ -3,6 +3,7 @@ Base settings for TAAS project
 """
 
 import os
+from django.core.urlresolvers import reverse_lazy
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -73,3 +74,5 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'static'),
 )
+
+LOGIN_REDIRECT_URL = reverse_lazy('homepage')
