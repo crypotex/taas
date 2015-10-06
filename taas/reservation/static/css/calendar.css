@@ -4,19 +4,3 @@
     font-family: 'Arial', sans-serif;
     font-size: 12px;
 }
-
-#success:before {
-    background: url('../img/check.png') no-repeat 0 -5px;
-    padding: 0 14px;
-    content: "";
-}
-
-#success {
-    background-color: #DFF2BF;
-    color: #3c8a1e;
-    border-radius: 8px;
-    width: 40%;
-    padding: 10px;
-    margin: 25px auto 0 auto;
-    text-align: center;
-}
