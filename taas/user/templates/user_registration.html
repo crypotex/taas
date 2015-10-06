@@ -6,9 +6,9 @@
 {% endblock title %}
 
 {% block content %}
-    <form method="POST" action="{% url 'user_registration_form' %}">
+    <form method="POST" action="">
         {% csrf_token %}
-        {{ user_form.as_p}}
+        {{ form.as_p}}
     <input type="submit" value={% trans 'Enter' %}>
     </form>
 {% endblock content %}

@@ -2,7 +2,6 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
-from django.core import validators
 from django.core.mail import send_mail
 from django.core.validators import RegexValidator
 from django.db import models
@@ -15,14 +14,31 @@ logger = logging.getLogger(__name__)
 phone_regex = RegexValidator(regex=r'^\+?\d{5,15}$', message=_('Phone number is invalid.'))
 
 
+class CustomUserManager(UserManager):
+    def _create_user(self,  email, password, is_staff, is_superuser, **extra_fields):
+        now = timezone.now()
+        email = self.normalize_email(email)
+        user = self.model(email=email,
+                          is_staff=is_staff,
+                          is_active=True,
+                          is_superuser=is_superuser,
+                          date_joined=now, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_user(self, email=None, password=None, **extra_fields):
+        return self._create_user(email, password, False, False,
+                                 **extra_fields)
+
+    def create_superuser(self, email, password, **extra_fields):
+        return self._create_user(email, password, True, True, **extra_fields)
+
+
 class User(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(_('username'), max_length=30, unique=True,
-                                validators=[
-                                    validators.RegexValidator(r'^[\w.@+-]+$', _('Enter a valid username.'), 'invalid')],
-                                error_messages={'unique': _("A user with that username already exists.")})
-    first_name = models.CharField(_('first name'), max_length=30, blank=True)
-    last_name = models.CharField(_('last name'), max_length=30, blank=True)
-    email = models.EmailField(_('email address'))
+    first_name = models.CharField(_('first name'), max_length=30)
+    last_name = models.CharField(_('last name'), max_length=30)
+    email = models.EmailField(_('email address'), unique=True,)
     phone_number = models.CharField(_('phone number'), max_length=15, validators=[phone_regex], blank=True)
     is_staff = models.BooleanField(_('staff status'), default=False,
                                    help_text=_('Designates whether the user can log into this admin site.'))
@@ -31,10 +47,10 @@ class User(AbstractBaseUser, PermissionsMixin):
                                     'active. Unselect this instead of deleting accounts.'))
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
-    objects = UserManager()
+    objects = CustomUserManager()
 
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['first_name', 'last_name']
 
     class Meta:
         verbose_name = _('user')
@@ -58,47 +74,47 @@ class User(AbstractBaseUser, PermissionsMixin):
         Sends an email to this user, when he is created.
         """
         message = settings.USER_REGISTRATION_MESSAGE
-        message = message % {'username': self.username}
+        message = message % {'first_name': self.first_name}
         subject = settings.REGISTRATION_SUBJECT
         from_email = settings.EMAIL_HOST_USER
 
         send_mail(subject, message, from_email, [self.email])
-        logger.info('Registration message for user with username %s has been sent.' % self.username)
+        logger.info('Registration message for user with email %s has been sent.' % self.email)
 
     def email_user_on_activation(self):
         """
         Sends an email to this user, when he is verified.
         """
         message = settings.USER_VERIFICATION_MESSAGE
-        message = message % {'username': self.username}
+        message = message % {'first_name': self.first_name}
         subject = settings.USER_STATUS_SUBJECT
         from_email = settings.EMAIL_HOST_USER
 
         send_mail(subject, message, from_email, [self.email])
-        logger.info('Registration message for user with username %s has been sent.' % self.username)
+        logger.info('Registration message for user with email %s has been sent.' % self.email)
 
     def email_user_on_deactivation(self):
         """
         Sends an email to this user, when he is disabled.
         """
         message = settings.USER_DISABLED_MESSAGE
-        message = message % {'username': self.username}
+        message = message % {'first_name': self.first_name}
         subject = settings.USER_STATUS_SUBJECT
         from_email = settings.EMAIL_HOST_USER
 
         send_mail(subject, message, from_email, [self.email])
-        logger.info('Registration message for user with username %s has been sent.' % self.username)
+        logger.info('Registration message for user with email %s has been sent.' % self.email)
 
     def email_admin_on_registration(self):
         """
         Sends an email to the admin users, when new user was created.
         """
         message = settings.ADMIN_REGISTRATION_MESSAGE
-        message = message % {'username': self.username}
+        message = message % {'first_name': self.first_name}
         subject = settings.REGISTRATION_SUBJECT
         from_email = settings.EMAIL_HOST_USER
         to_emails = settings.ADMIN_EMAILS
 
         send_mail(subject, message, from_email, to_emails)
-        logger.info('User with username %s registration message has been sent to admin emails: %s.'
-                    % (self.username, ', '.join(to_emails)))
+        logger.info('User with email %s registration message has been sent to admin emails: %s.'
+                    % (self.email, ', '.join(to_emails)))

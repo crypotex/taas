@@ -25,25 +25,31 @@
             <div class="nav">
                 <ul>
                     <li>
-                        <a href="?uudised.html">{% trans 'events' %}</a>
+                        <a href="http://taas.ee/?uudised.html">{% trans 'events' %}</a>
                     </li>
                     <li>
-                        <a href="?registreerimine.html">{% trans 'booking' %}</a>
+                        <a href="http://taas.ee/?registreerimine.html">{% trans 'booking' %}</a>
                     </li>
                     <li>
-                        <a href="?blogi.html">{% trans 'blog' %}</a>
+                        <a href="http://taas.ee/?blogi.html">{% trans 'blog' %}</a>
                     </li>
                     <li>
-                        <a href="?kkk.html">{% trans 'faq' %}</a>
+                        <a href="http://taas.ee/?kkk.html">{% trans 'faq' %}</a>
                     </li>
                     <li>
-                        <a href="?meist.html">{% trans 'about us' %}</a>
+                        <a href="http://taas.ee/?meist.html">{% trans 'about us' %}</a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     {% block content %}{% endblock content %}
     </body>
 </html>
