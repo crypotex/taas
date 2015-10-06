@@ -35,29 +35,5 @@ $(document).ready(function() {
             end: $.fullCalendar.moment('2015-10-05T14:00:00'),
             column: 1
         }]
-        /*eventRender: function(event, element) {
-            element.find(".fc-event-title").remove();
-            element.find(".fc-event-time").remove();
-            var new_description =
-                moment(event.start).format("HH:mm") + '-'
-                + moment(event.end).format("HH:mm") + '<br/>'
-                + event.customer + '<br/>'
-                + '<strong>Address: </strong><br/>' + event.address + '<br/>'
-                + '<strong>Task: </strong><br/>' + event.task + '<br/>'
-                + '<strong>Place: </strong>' + event.place + '<br/>'
-            ;
-            element.append(new_description);
-            element.qtip({
-                content: event.title
-            });
-        },*/
-        /*dayClick: function(date, jsEvent, view) {
-            alert('Clicked on: ' + date.format() + " " + view.column);
-            alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-
-            getCellFromDate(date, $('#calendar'));
-            // change the day's background color just for fun
-            $(this).css('background-color', 'red');
-       }*/
     });
 });
