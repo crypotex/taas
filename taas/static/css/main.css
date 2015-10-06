@@ -101,6 +101,12 @@ p {
     margin: 10px;
 }
 
+.user-nav {
+    float: right;
+    width: 97%;
+    margin: auto 30px;
+    border-bottom: 1px dotted #dddddd;
+}
 .user-nav li {
     display: inline;
     font-family: 'Montserrat', sans-serif;
@@ -112,7 +118,7 @@ p {
 .user-nav ul {
     float: right;
     padding: 0;
-    margin: 15px 45px 0 auto;
+    margin: 15px auto;
     list-style-type: none;
 }
 

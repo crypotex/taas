@@ -21,7 +21,7 @@
                 <a href="http://taas.ee"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
             </div>
             <div class="navsmall">
-                <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&bookmark_t=page">
+                <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
                     <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
             </div>
             <div class="nav">
@@ -44,16 +44,7 @@
                 </ul>
             </div>
         </div>
-    </div>
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
-    {% block nav %}
+            {% block nav %}
         {% if not user.is_authenticated %}
             <div class="user-nav">
                 <ul>
@@ -70,6 +61,14 @@
             </div>
         {% endif %}
     {% endblock nav %}
+    </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
     {% block content %}{% endblock content %}
     </body>
