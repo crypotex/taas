@@ -8,7 +8,7 @@
 
 {% block styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
-{% endblock %}
+{% endblock styles %}
 
 {% block content %}
     <form method="POST" class="register-form">{% csrf_token %}

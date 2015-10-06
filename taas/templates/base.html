@@ -8,7 +8,7 @@
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
     {% block styles %}
-    {% endblock %}
+    {% endblock styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -61,15 +61,16 @@
             </div>
         {% endif %}
     {% endblock nav %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </div>
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
 
-    {% block content %}{% endblock content %}
+    {% block content %}
+    {% endblock content %}
     </body>
 </html>

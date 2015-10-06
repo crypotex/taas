@@ -27,8 +27,6 @@
 
 /* "Enter" & "Submit" button */
 .register-form input[type="submit"], .login-form input[type="submit"] {
-    display: block;
-    margin: 0 auto;
     background: #ffa31a;
     padding: 8px 20px 8px 20px;
     border-radius: 5px;
@@ -42,6 +40,11 @@
     border: 1px solid #ff9900;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
+}
+
+.login-form input[type="submit"] {
+    display: block;
+    margin: 0 auto;
 }
 
 .register-form input[type="submit"]:hover, .login-form input[type="submit"]:hover {

@@ -107,6 +107,7 @@ p {
     margin: auto 30px;
     border-bottom: 1px dotted #dddddd;
 }
+
 .user-nav li {
     display: inline;
     font-family: 'Montserrat', sans-serif;
@@ -129,3 +130,26 @@ a {
 a:visited {
     color: #666666;
 }
+
+.success:before {
+    background: url('../img/check.png') no-repeat 0 -5px;
+    padding: 0 14px;
+    content: "";
+}
+
+.success {
+    background-color: #DFF2BF;
+    color: #3c8a1e;
+    border-radius: 8px;
+    width: 40%;
+    padding: 10px;
+    margin: 25px auto 0 auto;
+    text-align: center;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.messages {
+    margin: 65px;
+}
+
