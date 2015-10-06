@@ -6,10 +6,10 @@ Reservation system for dog agility training ground.
 [![Documentation Status](https://readthedocs.org/projects/taas/badge/?version=latest)](http://taas.readthedocs.org/en/latest/?badge=latest)
 
 ## Authors
-- Andre Tättar
+- Andre Tattar
 - Annika Laumets
 - Viktoria Plemakova
-- Dmitri Tšumak
+- Dmitri Tsumak
 
 ## Developer guidelines
 
