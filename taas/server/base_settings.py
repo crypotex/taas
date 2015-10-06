@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'taas.user',
+    'taas.reservation',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -38,6 +39,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'templates'),
     os.path.join(PROJECT_ROOT, 'taas', 'user', 'templates'),
+    os.path.join(PROJECT_ROOT, 'taas', 'reservation', 'templates'),
 )
 
 LOCALE_PATHS = (
