@@ -1,40 +1,52 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans 'Login' %}
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
+{% endblock styles %}
 
 {% block content %}
 
-{% if form.errors %}
-<p>{% trans "Your username and password didn't match. Please try again." %}</p>
-{% endif %}
-
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>
-        {% blocktrans %}
-        Your account doesn't have access to this page.
-        To proceed, please login with an account that has access.
-        {% endblocktrans %}
-    </p>
-    {% else %}
-    <p>{% trans "Please login to see this page." %}</p>
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>
+                {% blocktrans %}
+                    Your account doesn't have access to this page.
+                    To proceed, please login with an account that has access.
+                {% endblocktrans %}
+            </p>
+        {% else %}
+            <p>{% trans "Please login to see this page." %}</p>
+        {% endif %}
     {% endif %}
-{% endif %}
 
-<form method="post" action="">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
+    <form method="POST" class="login-form">{% csrf_token %}
 
-<input type="submit" value= {% trans "login" %} />
-<input type="hidden" name={% trans "next" %} value="{{ next }}" />
-</form>
+        <h1>{% trans 'Login' %}</h1>
+
+        {% if form.errors %}
+            <p class="error-message">{% trans "Your username and password didn't match. Please try again." %}</p>
+        {% endif %}
+
+        <div class="fieldWrapper">
+            <div {% if form.username.errors %}class="field-error"{% endif %}>
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+
+            <div {% if form.password.errors %}class="field-error"{% endif %}>
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+        </div>
+
+        <input type="submit" value={% trans "Login" %} />
+        <input type="hidden" name={% trans "next" %} value="{{ next }}" />
+    </form>
 
 {% endblock %}

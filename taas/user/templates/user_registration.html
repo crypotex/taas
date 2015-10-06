@@ -1,14 +1,73 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block title %}
     {% trans 'Registration' %}
 {% endblock title %}
 
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
+{% endblock styles %}
+
 {% block content %}
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{ form.as_p}}
-    <input type="submit" value={% trans 'Enter' %}>
+    <form method="POST" class="register-form">{% csrf_token %}
+
+        <h1>{% trans 'Registration' %}</h1>
+
+        {{ form.non_field_errors }}
+        <div class="section"><span>1</span>{% trans 'First Name' %} &amp; {% trans 'Last Name' %}</div>
+        <div class="fieldWrapper">
+            <div {% if form.first_name.errors %}class="field-error"{% endif %}>
+                {{ form.first_name.label_tag }}
+                {{ form.first_name }}
+                {% for err in form.first_name.errors %}
+                    <p class="error-message">{{ form.first_name.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
+
+            <div {% if form.last_name.errors %}class="field-error"{% endif %}>
+                {{ form.last_name.label_tag }}
+                {{ form.last_name }}
+                {% for err in form.last_name.errors %}
+                    <p class="error-message">{{ form.last_name.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
+        </div>
+
+        <div class="section"><span>2</span>{% trans 'E-mail' %} &amp; {% trans 'Phone Number' %}</div>
+        <div class="fieldWrapper">
+            <div {% if form.email.errors %}class="field-error"{% endif %}>
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% for err in form.email.errors %}
+                    <p class="error-message">{{ form.email.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
+
+            <div {% if form.phone_number.errors %}class="field-error"{% endif %}>
+                {{ form.phone_number.label_tag }}
+                {{ form.phone_number }}
+                {% for err in form.phone_number.errors %}
+                    <p class="error-message">{{ form.phone_number.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
+        </div>
+
+        <div class="section"><span>3</span>{% trans 'Passwords' %}</div>
+        <div class="fieldWrapper">
+            <div {% if form.password1.errors %}class="field-error"{% endif %}>
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                {% for err in form.password1.errors %}
+                    <p class="error-message">{{ form.password1.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
+
+            <div {% if form.password2.errors %}class="field-error"{% endif %}>
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+                <p class="help-text">{{ form.password2.help_text|cut:"* " }}</p>
+
+                {% for err in form.password2.errors %}
+                    <p class="error-message">{{ form.password2.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
+        </div>
+        <input id="submit-button" type="submit" value={% trans 'Enter' %}>
     </form>
 {% endblock content %}
