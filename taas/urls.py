@@ -10,4 +10,5 @@ urlpatterns = patterns(
     url(r'^$', TemplateView.as_view(template_name='base.html'), name='homepage'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^user/', include('taas.user.urls')),
+    url(r'^reservation/', include('taas.reservation.urls'))
 )

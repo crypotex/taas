@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'taas.user',
+    'taas.reservation'
 )
 
 MIDDLEWARE_CLASSES = (
