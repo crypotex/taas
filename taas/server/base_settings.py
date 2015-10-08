@@ -77,3 +77,4 @@ STATICFILES_DIRS = (
 )
 
 LOGIN_REDIRECT_URL = reverse_lazy('homepage')
+LOGIN_URL = reverse_lazy('user_login_form')
