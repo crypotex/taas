@@ -148,7 +148,3 @@ label.required:after {
 .reset-form .help-text {
     margin: auto auto 15px;
 }
-
-p.help-text{
-    text-align: justify;
-}
