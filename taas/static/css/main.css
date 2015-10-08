@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    src: url(Montserrat-Regular.woff2) format("woff2");
+}
+
 html {
     background-image: url("../img/murutaust.jpg");
     width: auto;
@@ -98,6 +104,7 @@ body {
 }
 
 p {
+    text-align: justify;
     margin: 10px;
 }
 
