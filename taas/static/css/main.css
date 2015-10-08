@@ -156,6 +156,18 @@ a:visited {
     font-family: 'Montserrat', sans-serif;
 }
 
+.error {
+    background-color: #FFD4CB;
+    color: rgba(216, 0, 12, 0.6);
+    border-radius: 8px;
+    width: 40%;
+    padding: 10px;
+    margin: 65px auto 0 auto;
+    text-align: center;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .messages {
     margin: 65px;
 }
