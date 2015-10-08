@@ -30,7 +30,9 @@
         <h1>{% trans 'Login' %}</h1>
 
         {% if form.errors %}
-            <p class="error-message">{% trans "Your username and password didn't match. Please try again." %}</p>
+            {% for error in form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+            {% endfor %}
         {% endif %}
 
         <div class="fieldWrapper">
@@ -48,5 +50,7 @@
         <input type="submit" value={% trans "Login" %} />
         <input type="hidden" name={% trans "next" %} value="{{ next }}" />
     </form>
+
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 
 {% endblock %}
