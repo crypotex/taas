@@ -47,13 +47,18 @@ class Field(models.Model):
     cost = models.FloatField(_('cost'), validators=[MinValueValidator(0.0)])
     description = models.TextField(_('description'))
 
+PAYMENT_METHOD_CHOICES = (
+    (1,_('Payment made with bank link.')),
+    (2, _('Payment made with existing budget'))
+)
+
 class Reservation(models.Model):
     date = models.DateField(_('date'))
-    timeslot = models.CharField(_('timeslot'), max_length=2)
+    timeslot = models.TimeField(_('timeslot'))
     user = models.ForeignKey(User, limit_choices_to={'is_active': True}, related_name="reservations")
     fields = models.ManyToManyField(Field)
     payment_sum = models.FloatField(_('payment sum'), validators=[MinValueValidator(0.0)])
-    method = models.CharField(_('method'), max_length=30)
+    method = models.IntegerField(choices = PAYMENT_METHOD_CHOICES)
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
 
     REQUIRED_FIELDS = ['date' , 'timeslot', 'user', 'fields', 'payment_sum', 'method', 'date_created']
