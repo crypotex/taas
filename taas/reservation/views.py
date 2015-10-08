@@ -17,6 +17,7 @@ class ReservationView(SuccessMessageMixin, CreateView):
     model = models.Reservation
     form_class = forms.ReservationForm
 
+    ### Peaks üle vaatama
     def form_valid(self, form):
         logger.info('Reservation made by %s for %s has been successfully registered.'
                     % form.cleaned_data.get('user'), form.cleaned_data.get('start_date'))
