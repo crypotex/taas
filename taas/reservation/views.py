@@ -4,22 +4,47 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.decorators import login_required
+
+from django.http import HttpResponseRedirect
 from . import models
 from . import forms
 
 logger = logging.getLogger(__name__)
 
 
-class ReservationView(SuccessMessageMixin, CreateView):
+class LoginRequiredMixin(object):
+    @classmethod
+    def as_view(cls, **initkwargs):
+        view = super(LoginRequiredMixin, cls).as_view(**initkwargs)
+        return login_required(view)
+
+class ReservationView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     success_message = _('Reservation has been successfully made.')
     success_url = reverse_lazy('homepage')
     template_name = 'reservation.html'
     model = models.Reservation
     form_class = forms.ReservationForm
 
+    #Authentication
+    login_url = "user/login"
+    redirect_authenticated_users = True
+'''
     ### Peaks üle vaatama
     def form_valid(self, form):
         logger.info('Reservation made by %s for %s has been successfully registered.'
                     % form.cleaned_data.get('user'), form.cleaned_data.get('start_date'))
-        ##return super(UserRegisterView, self).form_valid(form)
-        return True
+        return super(ReservationView, self).form_valid(form)
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if not request.user.is_authenticated():
+            return HttpResponseRedirect
+        user = request.user
+
+        if form.is_valid():
+            # <process form cleaned data>
+            return HttpResponseRedirect('/success/')
+
+        return render(request, self.template_name, {'form': form})
+    '''
