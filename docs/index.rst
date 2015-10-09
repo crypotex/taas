@@ -16,6 +16,14 @@ Developing TAAS
    developer/guide
 
 
+Information for customer
+------------------------
+.. toctree::
+   :maxdepth: 1
+
+   customer/mock
+
+
 Indices and tables
 ==================
 

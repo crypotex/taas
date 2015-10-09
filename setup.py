@@ -26,6 +26,7 @@ setup(
     packages=find_packages(),
     install_requires=install_requires,
     tests_require=tests_requires,
+    test_suite='taas.server.test_runner.run_tests',
     extras_require={
         'dev': dev_requires,
         'tests': tests_requires

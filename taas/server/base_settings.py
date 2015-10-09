@@ -74,6 +74,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'static'),
+    os.path.join(PROJECT_ROOT, 'taas', 'user', 'static'),
 )
 
 LOGIN_REDIRECT_URL = reverse_lazy('homepage')
+LOGIN_URL = reverse_lazy('user_login_form')
