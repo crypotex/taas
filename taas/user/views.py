@@ -6,7 +6,7 @@ from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.urlresolvers import reverse_lazy, reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.template.response import TemplateResponse
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
@@ -40,10 +40,12 @@ def password_reset(request):
         'post_reset_redirect': reverse_lazy('homepage')
     }
 
+    if request.user.is_authenticated():
+        return HttpResponseNotFound()
+
     if request.method == 'POST' and request.POST.get('email'):
         messages.add_message(request, messages.SUCCESS, _('Email instructions has been sent.'),
                              fail_silently=True)
-
     response = auth_views.password_reset(request, **kwargs)
 
     return response
@@ -52,8 +54,8 @@ def password_reset(request):
 def password_reset_confirm(request, uidb64=None, token=None):
     template_name = 'password_reset/confirm.html'
     post_reset_redirect = reverse('homepage')
-    token_generator=default_token_generator
-    set_password_form=SetPasswordForm
+    token_generator = default_token_generator
+    set_password_form = SetPasswordForm
 
     UserModel = get_user_model()
     try:

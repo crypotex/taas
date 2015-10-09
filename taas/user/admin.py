@@ -11,14 +11,14 @@ class UserAdmin(auth_admin.UserAdmin):
     add_form_template = 'admin/add_form.html'
     fieldsets = (
         (None, {'fields': ('password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'budget')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('first_name', 'last_name', 'email', 'password1', 'password2'),
+            'fields': ('first_name', 'last_name', 'email', 'phone_number', 'password1', 'password2'),
         }),
     )
     list_display = ('email', 'first_name', 'last_name', 'is_active')
