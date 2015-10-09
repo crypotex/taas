@@ -10,10 +10,12 @@
 {% csrf_token %}
 <table>
 <tr>
+    {% if form.date.errors %} boooo {% endif %}
     <td>{{ form.date.label_tag }}</td>
     <td>{{ form.date }}</td>
 </tr>
 <tr>
+    {% if form.timeslot.errors %} lalala {% endif %}
     <td>{{ form.timeslot.label_tag }}</td>
     <td>{{ form.timeslot }}</td>
 </tr>
@@ -21,10 +23,6 @@
     <td>{{ form.fields.label_tag }}</td>
     <td>{{ form.fields }}</td>
     </tr>
-    <tr>
-    <td>{{ form.payment_sum.label_tag }}</td>
-    <td>{{ form.payment_sum }}</td>
-</tr>
     <tr>
     <td>{{ form.method.label_tag }}</td>
     <td>{{ form.method }}</td>

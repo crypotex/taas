@@ -51,9 +51,6 @@ class Reservation(models.Model):
     def clean(self):
         super(Reservation, self).clean()
         if self.date < datetime.now().date():
-            print(self.date)
-            print(datetime.now().date())
-        if self.date < datetime.now().date():
             raise ValidationError(_("Date should start from now."))
         if self.date == datetime.now().date():
             temp_timeslot = datetime.strptime(str(self.timeslot) + ":00", "%H:%M").time()

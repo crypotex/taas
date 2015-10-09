@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.decorators import login_required
 from django.http.request import QueryDict
-from django.http import Http404
+from django.shortcuts import render
 
 from django.http import HttpResponseRedirect
 from . import models
@@ -38,7 +38,7 @@ class ReservationView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
         ## For post method security
         if not p_user.is_authenticated:
-            raise Http404
+            return HttpResponseRedirect(self.login_url)
 
         post_data = QueryDict('', mutable=True)
         post_data.update(request.POST)
@@ -49,4 +49,4 @@ class ReservationView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
             reservation = form.save()
             return HttpResponseRedirect(self.success_url)
         else:
-            raise Http404
+            return render(request, 'reservation.html', {'form':form,})
