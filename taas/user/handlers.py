@@ -1,4 +1,6 @@
-from django.forms import model_to_dict
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def send_emails_to_users(sender, instance=None, created=False, **kwargs):
@@ -7,7 +9,7 @@ def send_emails_to_users(sender, instance=None, created=False, **kwargs):
         instance.email_admin_on_registration()
         return
 
-    old_active = instance._old_values['is_active']
+    old_active = instance.tracker.previous('is_active')
     new_active = instance.is_active
 
     if (old_active, new_active) == (False, True):
@@ -16,15 +18,13 @@ def send_emails_to_users(sender, instance=None, created=False, **kwargs):
         instance.email_user_on_deactivation()
 
 
-def preserve_fields_before_update(sender, instance, **kwargs):
-    if instance.pk is None:
-        return
+def log_user_login(sender, user=None, **kwargs):
+    logger.info('User with email %s has been logged in.' % user.email)
 
-    meta = instance._meta
-    old_instance = meta.model._default_manager.get(pk=instance.pk)
 
-    excluded_fields = [field.name for field in meta.many_to_many]
-    excluded_fields.append(meta.pk.name)
-    old_values = model_to_dict(old_instance, exclude=excluded_fields)
+def log_user_logout(sender, user=None, **kwargs):
+    logger.info('User with email %s has been logged out.' % user.email)
 
-    setattr(instance, '_old_values', old_values)
+
+def log_user_login_failed(sender, credentials=None, **kwargs):
+    logger.info('User with email %s has failed to log in.' % credentials.get('username'))
