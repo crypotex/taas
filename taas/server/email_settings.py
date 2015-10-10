@@ -28,7 +28,7 @@ Tartu Agility Arenguselts""")
 
 ADMIN_REGISTRATION_MESSAGE = _("""Dear Admin,
 
-We received registration request for user with email %(first_name)s.
+We received registration request for user with email %(email)s.
 Please verify him.
 
 Best regards,

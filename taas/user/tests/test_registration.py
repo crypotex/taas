@@ -62,6 +62,9 @@ class UserRegistrationTest(TransactionTestCase):
     def test_user_cannot_register_without_first_password(self):
         self._ensure_user_cannot_register_with_invalid_field_value('password1', '')
 
+    def test_user_cannot_register_without_mobile_number(self):
+        self._ensure_user_cannot_register_with_invalid_field_value('phone_number', '')
+
     # Helper methods
     def _ensure_user_cannot_register_with_invalid_field_value(self, field_name, field_value):
         self.form_data[field_name] = field_value
