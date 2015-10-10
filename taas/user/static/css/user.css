@@ -1,4 +1,4 @@
-.form, .reset-form, .login-form {
+.form, .reset-form, .login-form, .deactivate-form {
     width: 500px;
     padding: 30px;
     margin: 70px auto 0 auto;
@@ -42,7 +42,7 @@ input[type="submit"] {
     font-family: 'Montserrat', sans-serif;
 }
 
-.login-form input[type="submit"], .reset-form input[type="submit"] {
+.login-form input[type="submit"], .reset-form input[type="submit"], .deactivate-form input[type="submit"] {
     display: block;
     margin: 0 auto;
 }
@@ -59,7 +59,8 @@ input[type="submit"]:hover {
 }
 
 .form label, .form p, .login-form label, .login-form p,
-.reset-form label, .reset-form p {
+.reset-form label, .reset-form p, .deactivate-form label,
+.deactivate-form p {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -100,7 +101,7 @@ input[type="submit"]:hover {
 }
 
 /* Heading */
-.form h1, .login-form h1, .reset-form h1 {
+.form h1, .login-form h1, .reset-form h1, .deactivate-form h1 {
     background: rgba(255, 163, 26, 0.8);
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
@@ -147,7 +148,8 @@ input.field-error {
     text-align: center;
 }
 
-.form .help-text {
+.form .help-text, .deactivate-form .help-text,
+.reset-form .help-text {
     margin: auto auto 15px;
 }
 

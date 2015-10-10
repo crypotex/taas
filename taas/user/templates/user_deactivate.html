@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 
 {% block styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
 {% endblock styles %}
 
 {% block content %}
-    <p>
-        {% blocktrans %}
-            In order to deactivate your account please enter your password.
-            Note that you will not be able to login anymore.
-        {% endblocktrans %}
-    </p>
-    <form method="POST">{% csrf_token %}
-        {{ form.as_p }}
+
+    <form method="POST" class="deactivate-form">{% csrf_token %}
+        <h1>{% trans 'Deactivate account' %}</h1>
+
+        <p class="help-text">
+            {% blocktrans %}
+                In order to deactivate your account please enter your password.
+                Note that you will not be able to login anymore.
+            {% endblocktrans %}
+        </p>
+
+        <div class="fieldWrapper">
+            {{ form.password.label_tag }}
+            {% render_field form.password|add_error_class:"field-error" %}
+        </div>
         <input id="submit-button" type="submit" value={% trans 'Deactivate' %}>
     </form>
 {% endblock %}
