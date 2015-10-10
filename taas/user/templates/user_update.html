@@ -70,7 +70,7 @@
         </div>
         <input id="submit-button" type="submit" value={% trans 'Update' %}>
     </form>
-    <form action={% url 'user_deactivate_form' %}>
+    <form action={% url 'user_deactivate_form' %}>{% csrf_token %}
         <input type="submit" value={% trans 'Deactivate' %}>
     </form>
 {% endblock content %}
