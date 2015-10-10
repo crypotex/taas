@@ -5,7 +5,6 @@ from django.core import mail
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 
-from taas.user.models import User
 from taas.user.tests.factories import UserFactory
 
 
