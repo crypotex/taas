@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block content %}
+    <p>
+        {% blocktrans %}
+            In order to deactivate your account please enter your password.
+            Note that you will not be able to login anymore.
+        {% endblocktrans %}
+    </p>
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input id="submit-button" type="submit" value={% trans 'Deactivate' %}>
+    </form>
+{% endblock %}

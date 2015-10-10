@@ -106,7 +106,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         Sends an email to this user, when he is disabled.
         """
-        message = settings.USER_DISABLED_MESSAGE
+        message = settings.USER_DISABLE_MESSAGE
         message = message % {'first_name': self.first_name}
         subject = settings.USER_STATUS_SUBJECT
         from_email = settings.EMAIL_HOST_USER
@@ -114,7 +114,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         send_mail(subject, message, from_email, [self.email])
         logger.info('Deactivation message for user with email %s has been sent.' % self.email)
 
-    def email_admin_on_registration(self):
+    def email_admin_on_user_registration(self):
         """
         Sends an email to the admin users, when new user was created.
         """
@@ -126,4 +126,18 @@ class User(AbstractBaseUser, PermissionsMixin):
 
         send_mail(subject, message, from_email, to_emails)
         logger.info('User with email %s registration message has been sent to admin emails: %s.'
+                    % (self.email, ', '.join(to_emails)))
+
+    def email_admin_on_user_deactivation(self):
+        """
+        Sends an email to the admin users, when new user was deactivated.
+        """
+        message = settings.ADMIN_USER_DISABLE_MESSAGE
+        message = message % {'email': self.email}
+        subject = settings.USER_STATUS_SUBJECT
+        from_email = settings.EMAIL_HOST_USER
+        to_emails = settings.ADMIN_EMAILS
+
+        send_mail(subject, message, from_email, to_emails)
+        logger.info('User with email %s deactivation message has been sent to admin emails: %s.'
                     % (self.email, ', '.join(to_emails)))

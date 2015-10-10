@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.utils.translation import ugettext_lazy as _
 
 from . import models as user_models
-from .forms import UserCreationForm, UserChangeForm
+from .forms import UserCreationForm, UserChangeFormAdmin
 
 
 class UserAdmin(auth_admin.UserAdmin):
@@ -26,7 +26,7 @@ class UserAdmin(auth_admin.UserAdmin):
     search_fields = ('first_name', 'last_name')
     ordering = ('email', 'first_name', 'last_name')
 
-    form = UserChangeForm
+    form = UserChangeFormAdmin
     add_form = UserCreationForm
 
 # Unregister default models
