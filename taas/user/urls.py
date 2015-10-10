@@ -4,7 +4,9 @@ import django.contrib.auth.views as auth_views
 from taas.user import views
 
 urlpatterns = [
-    url(r'^register/$', views.UserRegisterView.as_view(), name='user_registration_form'),
+    url(r'^register/$', views.UserCreateView.as_view(), name='user_registration_form'),
+    url(r'^update/$', views.UserUpdateView.as_view(), name='user_update_form'),
+    url(r'^deactivate/$', views.UserDeactivateView.as_view(), name='user_deactivate_form'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='user_login_form'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='user_logout'),
 

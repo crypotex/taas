@@ -6,7 +6,10 @@ logger = logging.getLogger(__name__)
 def send_emails_to_users(sender, instance=None, created=False, **kwargs):
     if created:
         instance.email_user_on_registration()
-        instance.email_admin_on_registration()
+
+        if instance.is_active:
+            instance.email_user_on_activation()
+
         return
 
     old_active = instance.tracker.previous('is_active')
