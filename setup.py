@@ -13,6 +13,7 @@ tests_requires = [
 
 install_requires = [
     'Django==1.8.4',
+    'freezegun==0.3.5',
 ]
 
 setup(
