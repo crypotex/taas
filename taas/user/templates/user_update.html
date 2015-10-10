@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
 {% endblock %}
 
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'js/user.js' %}"></script>
+{% endblock scripts %}
+
 {% block tab-menu %}
     <ul class="tab-menu">
         <li class="selected"><a href="/user/update">{% trans 'Account' %}</a></li>
@@ -20,7 +24,7 @@
 
 {% block content %}
 
-    <form method="POST" class="update-form">{% csrf_token %}
+    <form method="POST" class="form">{% csrf_token %}
 
         <h1>{% trans 'Update account' %}</h1>
 
@@ -63,7 +67,6 @@
                 {% for err in form.new_password2.errors %}
                     <p class="error-message">{{ form.new_password2.errors.as_text|cut:"* " }}</p>{% endfor %}
             </div>
-        </div>
         </div>
         <input id="submit-button" type="submit" value={% trans 'Update' %}>
     </form>
