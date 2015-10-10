@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load staticfiles %}
 
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
+{% endblock styles %}
+
 {% block content %}
     <p>
         {% blocktrans %}

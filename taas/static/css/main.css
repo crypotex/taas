@@ -111,7 +111,7 @@ p {
 .user-nav {
     float: right;
     width: 97%;
-    margin: auto 30px;
+    margin: auto 30px 35px;
     border-bottom: 1px dotted #dddddd;
 }
 
@@ -169,6 +169,6 @@ a:visited {
 }
 
 .messages {
-    margin: 65px;
+    margin: 65px auto 30px auto;
 }
 

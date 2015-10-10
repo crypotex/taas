@@ -14,7 +14,9 @@
 
     {% if next %}
         {% if not user.is_authenticated %}
-            <p>{% trans "Please login to see this page." %}</p>
+            <div class="error">
+                <p class="error-message">{% trans "Please login to see this page." %}</p>
+            </div>
         {% endif %}
     {% endif %}
 
@@ -24,7 +26,7 @@
 
         {% if form.errors %}
             {% for error in form.non_field_errors %}
-            <p class="error-message">{{ error }}</p>
+                <p class="error-message">{{ error }}</p>
             {% endfor %}
         {% endif %}
 

@@ -7,44 +7,43 @@
 <head>
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
-    {% block styles %}
-    {% endblock styles %}
+    {% block styles %}{% endblock styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    {% block scripts %}{% endblock scripts %}
 </head>
 
-    <body>
-    <div id="innerwrap">
-        <div id="header">
-            <div class="logo">
-                <a href="http://taas.ee"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
-            </div>
-            <div class="navsmall">
-                <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
-                    <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
-            </div>
-            <div class="nav">
-                <ul>
-                    <li>
-                        <a href="http://taas.ee/?uudised.html">{% trans 'events' %}</a>
-                    </li>
-                    <li>
-                        <a href="http://taas.ee/?registreerimine.html">{% trans 'booking' %}</a>
-                    </li>
-                    <li>
-                        <a href="http://taas.ee/?blogi.html">{% trans 'blog' %}</a>
-                    </li>
-                    <li>
-                        <a href="http://taas.ee/?kkk.html">{% trans 'faq' %}</a>
-                    </li>
-                    <li>
-                        <a href="http://taas.ee/?meist.html">{% trans 'about us' %}</a>
-                    </li>
-                </ul>
-            </div>
+<body>
+<div id="innerwrap">
+    <div id="header">
+        <div class="logo">
+            <a href="http://taas.ee"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
         </div>
-            {% block nav %}
+        <div class="navsmall">
+            <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
+                <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="http://taas.ee/?uudised.html">{% trans 'events' %}</a>
+                </li>
+                <li>
+                    <a href="http://taas.ee/?registreerimine.html">{% trans 'booking' %}</a>
+                </li>
+                <li>
+                    <a href="http://taas.ee/?blogi.html">{% trans 'blog' %}</a>
+                </li>
+                <li>
+                    <a href="http://taas.ee/?kkk.html">{% trans 'faq' %}</a>
+                </li>
+                <li>
+                    <a href="http://taas.ee/?meist.html">{% trans 'about us' %}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% block nav %}
         {% if not user.is_authenticated %}
             <div class="user-nav">
                 <ul>
@@ -70,8 +69,10 @@
             {% endfor %}
         </ul>
     {% endif %}
-    </div>
 
-    {% block content %}{% endblock content %}
-    </body>
+    {% block tab-menu %}{% endblock tab-menu %}
+</div>
+
+{% block content %}{% endblock content %}
+</body>
 </html>

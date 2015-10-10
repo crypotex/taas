@@ -1,4 +1,4 @@
-.register-form, .login-form, .reset-form {
+.register-form, .login-form, .reset-form, .update-form {
     width: 500px;
     padding: 30px;
     margin: 70px auto 0 auto;
@@ -25,7 +25,7 @@ input[type="text"], input[type="password"], input[type="email"] {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.33);
 }
 
-/* "Enter" & "Submit" button */
+/* Submit type buttons */
 input[type="submit"] {
     background: #ffa31a;
     padding: 8px 20px 8px 20px;
@@ -54,7 +54,13 @@ input[type="submit"]:hover {
     box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
 }
 
-.register-form label, .register-form p, .login-form label, .login-form p, .reset-form label, .reset-form p {
+#deactivate-button {
+    margin: auto auto 45px 45px;
+}
+
+.register-form label, .register-form p, .login-form label,
+.login-form p, .reset-form label, .reset-form p,
+.update-form p, .update-form label {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -95,7 +101,7 @@ input[type="submit"]:hover {
 }
 
 /* Heading */
-.register-form h1, .login-form h1, .reset-form h1 {
+.register-form h1, .login-form h1, .reset-form h1, .update-form h1 {
     background: rgba(255, 163, 26, 0.8);
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
@@ -134,7 +140,7 @@ label.required:after {
     color: rgba(216, 0, 12, 0.6);
 }
 
-.field-error input[type="text"], .field-error input[type="password"], .field-error input[type="email"] {
+input.field-error {
     border-color: rgba(216, 0, 12, 0.6);
 }
 
@@ -144,4 +150,89 @@ label.required:after {
 
 .reset-form .help-text {
     margin: auto auto 15px;
+}
+
+.tab-menu {
+    list-style: none;
+    margin: auto;
+    line-height: 35px;
+    height: 37px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.tab-menu li {
+    border: 1px solid #AAA;
+    background: #D1D1D1;
+    background: -o-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: -ms-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: -moz-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: -webkit-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+    text-shadow: 0 1px #FFF;
+    margin: 0 -5px;
+    padding: 0 30px;
+}
+
+.tab-menu a {
+    color: #555;
+    text-decoration: none;
+}
+
+.tab-menu li.selected {
+    background: #FFF;
+    color: #333;
+    z-index: 2;
+    border-bottom-color: #FFF;
+}
+
+.tab-menu:before {
+    position: absolute;
+    content: " ";
+    width: 97%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #AAA;
+    z-index: 1;
+}
+
+.tab-menu li:before,
+.tab-menu li:after {
+    border: 1px solid #AAA;
+    position: absolute;
+    bottom: -1px;
+    width: 5px;
+    height: 5px;
+    content: " ";
+}
+
+.tab-menu li:before {
+    left: -6px;
+    border-bottom-right-radius: 6px;
+    border-width: 0 1px 1px 0;
+    box-shadow: 2px 2px 0 #D1D1D1;
+}
+
+.tab-menu li:after {
+    right: -6px;
+    border-bottom-left-radius: 6px;
+    border-width: 0 0 1px 1px;
+    box-shadow: -2px 2px 0 #D1D1D1;
+}
+
+.tab-menu li.selected:before {
+    box-shadow: 2px 2px 0 #FFF;
+}
+
+.tab-menu li.selected:after {
+    box-shadow: -2px 2px 0 #FFF;
 }
