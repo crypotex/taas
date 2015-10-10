@@ -5,10 +5,6 @@ from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from taas.user.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
-from datetime import datetime
-from django.core.exceptions import ValidationError
-
-# Create your models here.
 
 logger = logging.getLogger(__name__)
 
@@ -48,16 +44,3 @@ class Reservation(models.Model):
 
     payment_sum = property(_calc_payment_sum)
 
-    def clean(self):
-        super(Reservation, self).clean()
-        if self.date < datetime.now().date():
-            raise ValidationError(_("Date should start from now."))
-        if self.date == datetime.now().date():
-            temp_timeslot = datetime.strptime(str(self.timeslot) + ":00", "%H:%M").time()
-            cur_time = datetime.now().time()
-            hourdiff = temp_timeslot.hour - cur_time.hour
-            mindiff = temp_timeslot.minute - cur_time.minute
-            if hourdiff < 0:
-                raise ValidationError(_("You cannot do reservation into the past"))
-            if hourdiff == 0 and mindiff < 30:
-                raise ValidationError(_("Your reservation is supposed to start atleast 30 minutes from now"))
