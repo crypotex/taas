@@ -44,10 +44,18 @@ Best regards,
 
 Tartu Agility Arenguselts""")
 
-USER_DISABLED_MESSAGE = _("""Dear %(first_name)s,
+USER_DISABLE_MESSAGE = _("""Dear %(first_name)s,
 
 Your Tartu Agility Arenguselts user was disabled.
 Please contact administrator for further information.
+
+Best regards,
+
+Tartu Agility Arenguselts""")
+
+ADMIN_USER_DISABLE_MESSAGE = _("""Dear Admin,
+
+User with email %(email)s was disabled.
 
 Best regards,
 
