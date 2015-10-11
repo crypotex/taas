@@ -47,15 +47,17 @@ input[type="submit"] {
     margin: 0 auto;
 }
 
+#deactivate-button {
+    position: relative;
+    margin-left: 64%;
+    top: -65px;
+}
+
 input[type="submit"]:hover {
     background: #ff9900;
     -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
-}
-
-#deactivate-button {
-    margin: auto auto 45px 45px;
 }
 
 .form label, .form p, .login-form label, .login-form p,
