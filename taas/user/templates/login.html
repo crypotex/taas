@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 
 {% block title %}
     {% trans 'Login' %}
@@ -14,7 +15,9 @@
 
     {% if next %}
         {% if not user.is_authenticated %}
-            <p>{% trans "Please login to see this page." %}</p>
+            <div class="error">
+                <p class="error-message">{% trans "Please login to see this page." %}</p>
+            </div>
         {% endif %}
     {% endif %}
 
@@ -24,24 +27,21 @@
 
         {% if form.errors %}
             {% for error in form.non_field_errors %}
-            <p class="error-message">{{ error }}</p>
+                <p class="error-message">{{ error }}</p>
             {% endfor %}
         {% endif %}
 
         <div class="fieldWrapper">
-            <div {% if form.username.errors %}class="field-error"{% endif %}>
-                {{ form.username.label_tag }}
-                {{ form.username }}
-            </div>
+            {{ form.username.label_tag }}
+            {% render_field form.username|add_error_class:"field-error" %}
 
-            <div {% if form.password.errors %}class="field-error"{% endif %}>
-                {{ form.password.label_tag }}
-                {{ form.password }}
-            </div>
+            {{ form.password.label_tag }}
+            {% render_field form.password|add_error_class:"field-error" %}
         </div>
 
         <input type="submit" value={% trans "Login" %} />
-        <input type="hidden" name={% trans "next" %} value="{{ next }}" />
+        <input type="hidden" name={% trans "next" %} value="{{ next }}"/>
+
         <p id="reset-password"><a href="{% url 'password_reset' %}">Lost password?</a></p>
     </form>
 
