@@ -1,0 +1,29 @@
+#calendar {
+    width: 350px;
+    float: right;
+}
+
+#datepicker {
+    float: left;
+}
+
+.wrap {
+    width: 700px;
+    margin: 20px auto;
+}
+
+.wrap::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fc-today{
+    background-color: #f0efec;
+    border: 1px solid #888;
+}
