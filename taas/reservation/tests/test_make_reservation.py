@@ -30,12 +30,11 @@ class ReservationTest(TestCase):
         self.assertEqual(datetime.now(), datetime.strptime("2015-11-11 17:00:00", '%Y-%m-%d %H:%M:%S'),
                          'freeze_time package might be not installed. datetime.now() should return 2015-11-11 17:00:00')
 
-    def log_in_goto_reservation(self):
-        self.client.login(username=self.user.email, password='isherenow', follow=True)
-        return self.client.get(self.reservation_url)
+    def log_in(self):
+        return self.client.login(username=self.user.email, password='isherenow', follow=True)
 
     def test_logged_in_user_can_access_reservation_page(self):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         self.assertEqual(response.status_code, http_client.OK)
 
     def test_anon_user_cannot_access_reservation_page(self):
@@ -43,17 +42,17 @@ class ReservationTest(TestCase):
         self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/make/'))
 
     def test_auth_user_cannot_create_reservation_without_date(self):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         self.reservation['date'] = ''
         self.assertRaises(KeyError, lambda: self.client.post(self.reservation_url, self.reservation))
 
     def test_auth_user_cannot_create_reservation_without_timeslot(self):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         self.reservation['timeslot'] = ''
         self.assertRaises(KeyError, lambda: self.client.post(self.reservation_url, self.reservation))
 
     def test_auth_user_cannot_create_reservation_with_past_date(self):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         self.reservation['date'] = '2015-10-10'
         response = self.client.post(self.reservation_url, self.reservation)
         done_reservations = Reservation.objects.all().filter(date='2015-10-10')
@@ -61,7 +60,7 @@ class ReservationTest(TestCase):
         self.assertEqual(http_client.OK, response.status_code, _('Reservation was made with invalid date'))
 
     def test_auth_user_cannot_create_reservation_with_past_timeslot(self):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         self.reservation['timeslot'] = '11'
         response = self.client.post(self.reservation_url, self.reservation)
         done_reservations = Reservation.objects.all().filter(date='2015-11-11', timeslot='11')
@@ -70,15 +69,34 @@ class ReservationTest(TestCase):
 
     @freeze_time("2015-11-11 17:31:00")
     def test_user_cannot_create_reservation_29_minutes_before(self):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         response = self.client.post(self.reservation_url, self.reservation)
         self.assertEqual(http_client.OK, response.status_code, _('Reservation was made 29 minutes before'))
         done_reservations = Reservation.objects.all().filter(date=self.reservation['date'], timeslot=self.reservation['timeslot'])
         self.assertEqual(done_reservations.count(), 0, msg=_('Reservation was made 29 minutes before'))
 
     def test_reservation_cannot_be_made_to_right_now(self):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         self.reservation['timeslot'] = '17'
+        response = self.client.post(self.reservation_url, self.reservation)
+        self.assertEqual(http_client.OK, response.status_code, _('Reservation was made for right now'))
+        done_reservations = Reservation.objects.all().filter(date=self.reservation['date'], timeslot='17')
+        self.assertEqual(done_reservations.count(), 0, msg=_('Reservation was made for right now'))
+
+    @freeze_time("2015-11-11 17:25:00")
+    def test_user_cannot_make_reservation_25_min_later(self):
+        response = self.log_in()
+        self.reservation['timeslot'] = '17'
+        response = self.client.post(self.reservation_url, self.reservation)
+        self.assertEqual(http_client.OK, response.status_code, _('Reservation was made for right now'))
+        done_reservations = Reservation.objects.all().filter(date=self.reservation['date'], timeslot='17')
+        self.assertEqual(done_reservations.count(), 0, msg=_('Reservation was made for right now'))
+
+    @freeze_time("2015-11-11 17:35:00")
+    def test_user_cannot_make_reservation_35_min_later(self):
+        response = self.log_in()
+        self.reservation['timeslot'] = '17'
+        response = self.client.post(self.reservation_url, self.reservation)
         self.assertEqual(http_client.OK, response.status_code, _('Reservation was made for right now'))
         done_reservations = Reservation.objects.all().filter(date=self.reservation['date'], timeslot='17')
         self.assertEqual(done_reservations.count(), 0, msg=_('Reservation was made for right now'))
@@ -112,7 +130,7 @@ class ReservationTest(TestCase):
         response = self.post_valid_reservation(self.reservation, '2015-11-11', '18', '1', 1)
 
     def post_valid_reservation(self, reservation_data, date_string, timeslot, fields, how_many_fields):
-        response = self.log_in_goto_reservation()
+        response = self.log_in()
         reservation_data['fields'] = fields
         reservation_data['date'] = date_string
         reservation_data['timeslot'] = timeslot

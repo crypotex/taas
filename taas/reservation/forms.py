@@ -19,10 +19,10 @@ class ReservationForm(ModelForm):
             temp_timeslot = datetime.strptime(str(cleaned_data['timeslot']) + ":00", "%H:%M").time()
             cur_time = datetime.now().time()
             hourdiff = temp_timeslot.hour - cur_time.hour
-            mindiff = temp_timeslot.minute - cur_time.minute
-            if hourdiff < 0:
+            mindiff = cur_time.minute - temp_timeslot.minute
+            if hourdiff <= 0:
                 raise ValidationError(_("You cannot do reservation into the past"))
-            if hourdiff == 1 and mindiff < (-30):
+            if hourdiff == 1 and mindiff <30:
                 raise ValidationError(_("Your reservation is supposed to start atleast 30 minutes from now"))
 
         temp_reservations = Reservation.objects.filter(date = cleaned_data['date'],
