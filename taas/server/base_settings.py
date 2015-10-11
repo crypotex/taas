@@ -41,6 +41,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'templates'),
     os.path.join(PROJECT_ROOT, 'taas', 'user', 'templates'),
+    os.path.join(PROJECT_ROOT, 'taas', 'reservation', 'templates'),
 )
 
 LOCALE_PATHS = (
@@ -77,6 +78,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'static'),
     os.path.join(PROJECT_ROOT, 'taas', 'user', 'static'),
+    os.path.join(PROJECT_ROOT, 'taas', 'reservation', 'static'),
 )
 
 LOGIN_REDIRECT_URL = reverse_lazy('homepage')

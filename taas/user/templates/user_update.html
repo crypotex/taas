@@ -8,69 +8,69 @@
 {% endblock title %}
 
 {% block styles %}
-    <script>
-        function checkPasswords() {
-            checkbox = document.getElementById('id_change_password');
-            if (checkbox.checked) {
-                document.getElementById('passwordChange').style.display = "block";
-            } else {
-                document.getElementById('passwordChange').style.display = "none";
-            }
-        }
-        window.onload = checkPasswords;
-    </script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
 {% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'js/user.js' %}"></script>
+{% endblock scripts %}
+
+{% block tab-menu %}
+    <ul class="tab-menu">
+        <li class="selected"><a href="/user/update">{% trans 'Account' %}</a></li>
+        <li><a href="#">{% trans 'History' %}</a></li>
+    </ul>
+{% endblock tab-menu %}
 
 {% block content %}
 
-    <form method="POST">{% csrf_token %}
-        {{ form.non_field_errors }}
-        <p>
-            {{ form.first_name.errors }}
+    <form method="POST" class="form">{% csrf_token %}
+
+        <h1>{% trans 'Update account' %}</h1>
+
+        {% for error in form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
+        <div class="fieldWrapper">
             {{ form.first_name.label_tag }}
-            {{ form.first_name }}
-        </p>
+            {% render_field form.first_name|add_error_class:"field-error" %}
+            {% for err in form.first_name.errors %}
+                <p class="error-message">{{ form.first_name.errors.as_text|cut:"* " }}</p>{% endfor %}
 
-        <p>
-            {{ form.last_name.errors }}
             {{ form.last_name.label_tag }}
-            {{ form.last_name }}
-        </p>
+            {% render_field form.last_name|add_error_class:"field-error" %}
+            {% for err in form.last_name.errors %}
+                <p class="error-message">{{ form.last_name.errors.as_text|cut:"* " }}</p>{% endfor %}
 
-        <p>
-            {{ form.phone_number.errors }}
             {{ form.phone_number.label_tag }}
-            {{ form.phone_number }}
-        </p>
+            {% render_field form.phone_number|add_error_class:"field-error" %}
+            {% for err in form.phone_number.errors %}
+                <p class="error-message">{{ form.phone_number.errors.as_text|cut:"* " }}</p>{% endfor %}
 
-        <p>
-            {{ form.change_password.errors }}
             {{ form.change_password.label_tag }}
             {% render_field form.change_password onclick="javascript:checkPasswords(this);" %}
-        </p>
 
-        <div id="passwordChange">
-            <p>
-                {{ form.old_password.errors }}
+            <div id="passwordChange">
                 {{ form.old_password.label_tag }}
-                {{ form.old_password }}
-            </p>
+                {% render_field form.old_password|add_error_class:"field-error" %}
+                {% for err in form.old_password.errors %}
+                    <p class="error-message">{{ form.old_password.errors.as_text|cut:"* " }}</p>{% endfor %}
 
-            <p>
-                {{ form.new_password1.errors }}
                 {{ form.new_password1.label_tag }}
-                {{ form.new_password1 }}
-            </p>
+                {% render_field form.new_password1|add_error_class:"field-error" %}
+                {% for err in form.new_password1.errors %}
+                    <p class="error-message">{{ form.password1.errors.as_text|cut:"* " }}</p>{% endfor %}
 
-            <p>
-                {{ form.new_password2.errors }}
                 {{ form.new_password2.label_tag }}
-                {{ form.new_password2 }}
-            </p>
+                {% render_field form.new_password2|add_error_class:"field-error" %}
+                {% for err in form.new_password2.errors %}
+                    <p class="error-message">{{ form.new_password2.errors.as_text|cut:"* " }}</p>{% endfor %}
+            </div>
         </div>
         <input id="submit-button" type="submit" value={% trans 'Update' %}>
     </form>
     <form action={% url 'user_deactivate_form' %}>{% csrf_token %}
-        <input type="submit" value={% trans 'Deactivate' %}>
+        <input id="deactivate-button" type="submit" value={% trans 'Deactivate' %}>
     </form>
 {% endblock content %}
