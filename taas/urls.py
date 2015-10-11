@@ -7,7 +7,7 @@ admin.site.site_header = _('TAAS administration')
 
 urlpatterns = patterns(
     '',
-    url(r'^$', include('taas.reservation.urls'), name='homepage'),
+    url(r'^$', TemplateView.as_view(template_name="index.html"), name='homepage'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^user/', include('taas.user.urls')),
 )
