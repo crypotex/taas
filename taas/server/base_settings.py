@@ -21,6 +21,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'widget_tweaks',
+    'django_ajax',
 
     'taas.user',
     'taas.reservation',

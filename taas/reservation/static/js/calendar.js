@@ -1,24 +1,15 @@
+var canSelect;
+
 $(document).ready(function() {
-    //pole vaja, aga et näha mingeid evente, siis jätan siia
+    //pole vaja, aga et nï¿½ha mingeid evente, siis jï¿½tan siia
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
 
     $("#calendar").fullCalendar({
-        header: false, //võib välja kommenteerida, et näha, kas datepicker'ist saadakse õige päev
-        resources: [
-            {
-                'id': 'A',
-                'name': 'A'
-            }, {
-                'id': 'B',
-                'name': 'B'
-            }, {
-                'id': 'C',
-                'name': 'C'
-            }
-        ],
+        header: false,
+        resources: getFields(),
         defaultView: 'resourceDay',
         allDaySlot: false,
         minTime: '08:00:00',
@@ -30,7 +21,7 @@ $(document).ready(function() {
         timeFormat: '',
         slotEventOverlap: false,
         slotDuration: '01:00:00',
-        selectable: true,
+        selectable: canSelect,
         selectHelper: true,
         select: function(start, end, ev) {
             var title = prompt('Event Title:');
