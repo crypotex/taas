@@ -16,6 +16,7 @@ install_requires = [
     'django-model-utils==2.3.1',
     'django-widget-tweaks==1.4.1',
     'freezegun==0.3.5',
+    'djangoajax==2.2.15'
 ]
 
 setup(
