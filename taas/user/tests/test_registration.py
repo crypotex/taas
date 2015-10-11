@@ -24,6 +24,8 @@ class UserRegistrationTest(TransactionTestCase):
                              target_status_code=http_client.OK)
         self.assertIn('User has been successfully registered.',
                       [m.message for m in response.context['messages']])
+        user = User.objects.filter(email=self.form_data['email'])
+        self.assertTrue(user.exists())
 
     def test_user_recieves_email_after_successful_registration(self):
         response = self.client.post(self.registration_url, self.form_data, follow=True)
@@ -61,6 +63,9 @@ class UserRegistrationTest(TransactionTestCase):
 
     def test_user_cannot_register_without_first_password(self):
         self._ensure_user_cannot_register_with_invalid_field_value('password1', '')
+
+    def test_user_cannot_register_without_mobile_number(self):
+        self._ensure_user_cannot_register_with_invalid_field_value('phone_number', '')
 
     # Helper methods
     def _ensure_user_cannot_register_with_invalid_field_value(self, field_name, field_value):

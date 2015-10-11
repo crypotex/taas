@@ -55,7 +55,7 @@
         {% else %}
             <div class="user-nav">
                 <ul>
-                    <li>{% trans 'Hello, ' %}{{ user.first_name }}</li>
+                    <li>{% trans 'Hello, ' %}{{ user.get_short_name }}</li>
                     <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
                 </ul>
             </div>

@@ -24,6 +24,14 @@ class UserFactory(factory.DjangoModelFactory):
         return 'http://testserver' + reverse('user_registration_form')
 
     @classmethod
+    def get_update_url(cls):
+        return 'http://testserver' + reverse('user_update_form')
+
+    @classmethod
+    def get_deactivate_url(cls):
+        return 'http://testserver' + reverse('user_deactivate_form')
+
+    @classmethod
     def get_login_url(cls, next=''):
         return 'http://testserver' + reverse('user_login_form') + '?next=%s' % next
 

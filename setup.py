@@ -13,6 +13,8 @@ tests_requires = [
 
 install_requires = [
     'Django==1.8.4',
+    'django-model-utils==2.3.1',
+    'django-widget-tweaks==1.4.1',
     'freezegun==0.3.5',
 ]
 

@@ -1,25 +1,26 @@
 import logging
 
 from django.contrib import messages
-from django.contrib.auth import views as auth_views, get_user_model
+from django.contrib.auth import views as auth_views, get_user_model, update_session_auth_hash, logout
 from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.urlresolvers import reverse_lazy, reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.template.response import TemplateResponse
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, FormView
 
 from taas.user import forms
+from taas.user import mixins
 from taas.user import models
 
 logger = logging.getLogger(__name__)
 
 
-class UserRegisterView(SuccessMessageMixin, CreateView):
+class UserCreateView(CreateView):
     success_message = _('User has been successfully registered.')
     success_url = reverse_lazy('homepage')
     template_name = 'user_registration.html'
@@ -27,9 +28,54 @@ class UserRegisterView(SuccessMessageMixin, CreateView):
     form_class = forms.UserCreationForm
 
     def form_valid(self, form):
+        self.object = form.save()
+        self.object.email_admin_on_user_registration()
+
+        messages.success(self.request, self.success_message)
         logger.info('Unverified user with email %s has been successfully registered.'
                     % form.cleaned_data.get('email'))
-        return super(UserRegisterView, self).form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
+
+
+class UserUpdateView(mixins.LoggedInMixin, UpdateView):
+    success_message = _('Information has been updated.')
+    success_url = reverse_lazy('user_update_form')
+    template_name = 'user_update.html'
+    model = models.User
+    form_class = forms.UserUpdateForm
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def form_valid(self, form):
+        self.object = form.save()
+        update_session_auth_hash(self.request, self.object)
+
+        messages.success(self.request, self.success_message)
+        logger.info('User with email %s has been been updated.' % form.cleaned_data.get('email'))
+        return HttpResponseRedirect(self.get_success_url())
+
+
+class UserDeactivateView(mixins.LoggedInMixin, SuccessMessageMixin, FormView):
+    success_message = _('User has been deactivated.')
+    form_class = forms.UserDeactivateForm
+    template_name = 'user_deactivate.html'
+    success_url = reverse_lazy('homepage')
+
+    def get_form_kwargs(self):
+        kwargs = super(UserDeactivateView, self).get_form_kwargs()
+        kwargs['user'] = self.request.user
+
+        return kwargs
+
+    def form_valid(self, form):
+        self.request.user.is_active = False
+        self.request.user.save()
+        self.request.user.email_admin_on_user_deactivation()
+        logger.info('User with email %s has been been deactivated.' % form.cleaned_data.get('email'))
+
+        logout(self.request)
+        return super(UserDeactivateView, self).form_valid(form)
 
 
 def password_reset(request):
@@ -40,10 +86,12 @@ def password_reset(request):
         'post_reset_redirect': reverse_lazy('homepage')
     }
 
+    if request.user.is_authenticated():
+        return HttpResponseNotFound()
+
     if request.method == 'POST' and request.POST.get('email'):
         messages.add_message(request, messages.SUCCESS, _('Email instructions has been sent.'),
                              fail_silently=True)
-
     response = auth_views.password_reset(request, **kwargs)
 
     return response
@@ -52,8 +100,8 @@ def password_reset(request):
 def password_reset_confirm(request, uidb64=None, token=None):
     template_name = 'password_reset/confirm.html'
     post_reset_redirect = reverse('homepage')
-    token_generator=default_token_generator
-    set_password_form=SetPasswordForm
+    token_generator = default_token_generator
+    set_password_form = SetPasswordForm
 
     UserModel = get_user_model()
     try:

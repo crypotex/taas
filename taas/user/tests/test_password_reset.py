@@ -5,7 +5,6 @@ from django.core import mail
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 
-from taas.user.models import User
 from taas.user.tests.factories import UserFactory
 
 
@@ -16,13 +15,22 @@ class UserPasswordResetTest(TestCase):
         self.reset_url = UserFactory.get_password_reset_url()
         mail.outbox = []
 
+    def test_logged_in_user_cannot_reset_his_password(self):
+        self.client.login(username=self.active_user.email, password='isherenow')
+        response = self.client.get(self.reset_url)
+        self.assertEqual(response.status_code, http_client.NOT_FOUND)
+
+    def test_logged_out_user_can_reset_his_password(self):
+        response = self.client.get(self.reset_url)
+        self.assertEqual(response.status_code, http_client.OK)
+
     def test_active_user_can_reset_his_password(self):
         self.client.post(self.reset_url, data={'email': self.active_user.email}, follow=True)
 
         self.assertIn(self.active_user.email, [email.to[0] for email in mail.outbox])
         self.assertIn('Password reset', [email.subject for email in mail.outbox])
 
-    def test_disabled_user_can_reset_his_password(self):
+    def test_disabled_user_cannot_reset_his_password(self):
         self.client.post(self.reset_url, data={'email': self.disabled_user.email}, follow=True)
 
         self.assertNotIn(self.disabled_user.email, [email.to[0] for email in mail.outbox])

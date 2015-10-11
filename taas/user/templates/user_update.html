@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block title %}
+    {% trans 'User modification' %}
+{% endblock title %}
+
+{% block styles %}
+    <script>
+        function checkPasswords() {
+            checkbox = document.getElementById('id_change_password');
+            if (checkbox.checked) {
+                document.getElementById('passwordChange').style.display = "block";
+            } else {
+                document.getElementById('passwordChange').style.display = "none";
+            }
+        }
+        window.onload = checkPasswords;
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    <form method="POST">{% csrf_token %}
+        {{ form.non_field_errors }}
+        <p>
+            {{ form.first_name.errors }}
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+        </p>
+
+        <p>
+            {{ form.last_name.errors }}
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+        </p>
+
+        <p>
+            {{ form.phone_number.errors }}
+            {{ form.phone_number.label_tag }}
+            {{ form.phone_number }}
+        </p>
+
+        <p>
+            {{ form.change_password.errors }}
+            {{ form.change_password.label_tag }}
+            {% render_field form.change_password onclick="javascript:checkPasswords(this);" %}
+        </p>
+
+        <div id="passwordChange">
+            <p>
+                {{ form.old_password.errors }}
+                {{ form.old_password.label_tag }}
+                {{ form.old_password }}
+            </p>
+
+            <p>
+                {{ form.new_password1.errors }}
+                {{ form.new_password1.label_tag }}
+                {{ form.new_password1 }}
+            </p>
+
+            <p>
+                {{ form.new_password2.errors }}
+                {{ form.new_password2.label_tag }}
+                {{ form.new_password2 }}
+            </p>
+        </div>
+        <input id="submit-button" type="submit" value={% trans 'Update' %}>
+    </form>
+    <form action={% url 'user_deactivate_form' %}>{% csrf_token %}
+        <input type="submit" value={% trans 'Deactivate' %}>
+    </form>
+{% endblock content %}

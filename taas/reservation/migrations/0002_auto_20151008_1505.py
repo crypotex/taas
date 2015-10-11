@@ -8,7 +8,7 @@ import django.core.validators
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservation', '0001_initial'),
+        ('reservation', '0001_create_reservation_and_field_model'),
     ]
 
     operations = [
