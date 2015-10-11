@@ -9,7 +9,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 logger = logging.getLogger(__name__)
 
 class Field(models.Model):
-    name = models.CharField(_('field'), max_length=1, unique=True)
+    name = models.CharField(_('field'), max_length=30, unique=True)
     cost = models.FloatField(_('cost'), validators=[MinValueValidator(0.0)])
     description = models.TextField(_('description'))
 
