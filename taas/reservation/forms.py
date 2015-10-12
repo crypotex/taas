@@ -1,38 +1,34 @@
-from django.forms import ModelForm
-from datetime import datetime
-from django.core.exceptions import ValidationError
+import datetime
+
+from django import forms
 from django.utils.translation import ugettext_lazy as _
-from taas.reservation.models import Reservation, Field
+
+from taas.reservation.models import Field
 
 
-class ReservationForm(ModelForm):
-    class Meta:
-        model = Reservation
-        exclude = ['date_created']
+class ReservationForm(forms.Form):
+    field = forms.CharField(max_length=1)
+    start = forms.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
+    end = forms.DateTimeField(input_formats=['%Y-%m-%dT%H:%M:%S'])
 
     def clean(self):
-        cleaned_data = super(ReservationForm, self).clean()
+        super(ReservationForm, self).clean()
+        if self.errors:
+            return
 
-        if cleaned_data['date'] < datetime.now().date():
-            raise ValidationError(_("Date should start from now."))
-        if cleaned_data['date'] == datetime.now().date():
-            temp_timeslot = datetime.strptime(str(cleaned_data['timeslot']) + ":00", "%H:%M").time()
-            cur_time = datetime.now().time()
-            hourdiff = temp_timeslot.hour - cur_time.hour
-            mindiff = cur_time.minute - temp_timeslot.minute
-            if hourdiff <= 0:
-                raise ValidationError(_("You cannot do reservation into the past"))
-            if hourdiff == 1 and mindiff <30:
-                raise ValidationError(_("Your reservation is supposed to start atleast 30 minutes from now"))
+        start = self.cleaned_data.get('start').replace(tzinfo=None)
+        current = datetime.datetime.now()
+        if start <= current:
+            raise forms.ValidationError(_("Date should should not be in the past."))
+        else:
+            end = self.cleaned_data.get('end').replace(tzinfo=None)
+            if (end - start).seconds != 3600:
+                raise forms.ValidationError(_("Difference between start and end dates should be 1 hour."))
 
-        temp_reservations = Reservation.objects.filter(date = cleaned_data['date'],
-                                                      timeslot = cleaned_data['timeslot'])
-        taken_fields = []
-        if temp_reservations.count()>0:
-            for reservation in temp_reservations:
-                for field in reservation.fields.all():
-                    taken_fields.append(field)
-        for field in taken_fields:
-            for c_field in cleaned_data['fields']:
-                if field == c_field:
-                    raise ValidationError(_("That field on that timeslot is already taken"))
+        field = Field.objects.filter(name=self.cleaned_data['field'])
+        if not field.exists():
+            forms.ValidationError(_("Field does not exist."))
+
+
+class PaymentForm(forms.Form):
+    pass

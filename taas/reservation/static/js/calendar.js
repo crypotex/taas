@@ -1,15 +1,35 @@
 var canSelect;
 
-$(document).ready(function() {
-    //pole vaja, aga et n�ha mingeid evente, siis j�tan siia
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
+function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function (xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+$(document).ready(function () {
     $("#calendar").fullCalendar({
         header: false,
-        resources: getFields(),
+        resources: 'reservation/get_fields/',
         defaultView: 'resourceDay',
         allDaySlot: false,
         minTime: '08:00:00',
@@ -23,59 +43,24 @@ $(document).ready(function() {
         slotDuration: '01:00:00',
         selectable: canSelect,
         selectHelper: true,
-        select: function(start, end, ev) {
-            var title = prompt('Event Title:');
-            if (title) {
-                $('#calendar').fullCalendar('renderEvent',
-                    {
-                        title: title,
-                        start: start,
-                        end: end,
-                        resources: ev.data
-                    },
-                    true // make the event "stick"
-                );
-                /*/!**
-                 * ajax call to store event in DB
-                 *!/
-                jQuery.post(
-                    "event/new" // your url
-                    , { // re-use event's data
-                        title: title,
-                        start: start,
-                        end: end,
-                        allDay: allDay
-                    }
-                );*/
-            }
-            //$('#calendar').fullCalendar('unselect');
+        select: function (start, end, ev) {
+            jQuery.post('reservation/initialize/',
+                {
+                    start: start.format(),
+                    end: end.format(),
+                    field: ev.data.name
+                },
+                $("#calendar").fullCalendar('refetchEvents')
+            );
         },
-        events: [{
-         title: 'R1: Lunch 12.00-14.00',
-         start: new Date(y, m, d, 12, 0),
-         end: new Date(y, m, d, 14, 0),
-         resources: 'A',
-         editable: false
-         }, {
-         title: 'Lunch',
-         start: new Date(y, m, d, 10, 0),
-         end: new Date(y, m, d, 11, 0),
-         resources: 'B',
-         editable: false
-         }, {
-         title: 'Repeating Event',
-         start: new Date(y, m, d + 3, 16, 0),
-         end: new Date(y, m, d+3, 17, 0),
-         resources: 'C',
-         editable: false
-         }]
+        events: '/reservation/get_events/'
     });
 
     $('#datepicker').datepicker({
         inline: true,
         minDate: 0,
         firstDay: 1,
-        onSelect: function() {
+        onSelect: function () {
             $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
         }
     });

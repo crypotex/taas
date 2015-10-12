@@ -21,11 +21,10 @@ PAYMENT_METHOD_CHOICES = (
 
 
 class Reservation(models.Model):
-    date = models.DateField(_('date'))
-    timeslot = models.SmallIntegerField(_('timeslot'), validators=[MinValueValidator(8), MaxValueValidator(21)])
+    start = models.DateTimeField(_('start'))
     user = models.ForeignKey(User, limit_choices_to={'is_active': True}, related_name="reservations")
-    fields = models.ManyToManyField(Field)
-    method = models.IntegerField(choices=PAYMENT_METHOD_CHOICES, default=1)
+    field = models.ForeignKey(Field, related_name="reservations")
+    payed = models.BooleanField(_('Payed'), default=False)
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
 
     class Meta:
@@ -35,7 +34,3 @@ class Reservation(models.Model):
     def __str__(self):
         return str(self.pk)
 
-    def _calc_payment_sum(self):
-        return self.fields.aggregate(models.Sum('cost'))
-
-    payment_sum = property(_calc_payment_sum)

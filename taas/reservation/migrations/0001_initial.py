@@ -2,8 +2,8 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import django.core.validators
 import django.utils.timezone
+import django.core.validators
 from django.conf import settings
 
 
@@ -17,21 +17,20 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Field',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
-                ('name', models.CharField(max_length=30, unique=True, verbose_name='field')),
-                ('cost', models.DecimalField(decimal_places=2, max_digits=5, validators=[django.core.validators.MinValueValidator(0.0)], verbose_name='cost')),
-                ('description', models.TextField(verbose_name='description', blank=True)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('name', models.CharField(unique=True, verbose_name='field', max_length=30)),
+                ('cost', models.DecimalField(max_digits=5, decimal_places=2, verbose_name='cost', validators=[django.core.validators.MinValueValidator(0.0)])),
+                ('description', models.TextField(blank=True, verbose_name='description')),
             ],
         ),
         migrations.CreateModel(
             name='Reservation',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
-                ('date', models.DateField(verbose_name='date')),
-                ('timeslot', models.SmallIntegerField(validators=[django.core.validators.MinValueValidator(8), django.core.validators.MaxValueValidator(21)], verbose_name='timeslot')),
-                ('method', models.IntegerField(choices=[(1, 'Payment made with bank link.'), (2, 'Payment made with existing budget')], default=1)),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('start', models.DateTimeField(verbose_name='start')),
+                ('payed', models.BooleanField(verbose_name='Payed', default=False)),
                 ('date_created', models.DateTimeField(verbose_name='date created', default=django.utils.timezone.now)),
-                ('fields', models.ManyToManyField(to='reservation.Field')),
+                ('field', models.ForeignKey(to='reservation.Field', related_name='reservations')),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='reservations')),
             ],
             options={

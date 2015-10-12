@@ -21,12 +21,7 @@
         {% else %}
             canSelect = false;
         {% endif %}
-        function getFields() {
-            ajaxGet("{% url 'get_ajax_fields' %}", function (content) {
-                alert(content);
-                return content;
-            })
-        }
+
     </script>
 {% endblock scripts %}
 
@@ -35,4 +30,7 @@
         <div id="calendar"></div>
         <div id="datepicker"></div>
     </div>
+    {% if user.is_authenticated %}
+        <a href="{% url 'reservation_list' %}">{% trans 'Next' %}</a>
+    {% endif %}
 {% endblock content %}

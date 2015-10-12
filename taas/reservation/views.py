@@ -1,59 +1,99 @@
 import logging
 
+from django import http
+from datetime import timedelta, timezone
+from django.contrib.auth.decorators import login_required
 from django.contrib.messages.views import SuccessMessageMixin
-from django.core import serializers
-from django.views.generic import CreateView
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.decorators import login_required
-from django.http.request import QueryDict
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from django_ajax.decorators import ajax
-from django.http import HttpResponseRedirect, JsonResponse
-from . import models
-from . import forms
-import json
+from django.views.generic import FormView
+
+from taas.reservation.models import Field, Reservation
+from taas.reservation.forms import ReservationForm, PaymentForm
+from taas.user.mixins import LoggedInMixin
 
 logger = logging.getLogger(__name__)
 
 
-@ajax
 def get_fields(request):
-    fields = models.Field.objects.all().values('name')
-    for i in range(len(fields)):
-        field = fields[i]
-        field['id'] = field['name']
+    if request.is_ajax():
+        fields = Field.objects.all().values('pk', 'name')
+        for field in fields:
+            field['id'] = field.pop('pk')
 
-    return JsonResponse(list(fields), safe=False)
+        return http.JsonResponse(list(fields), safe=False)
+
+    return http.HttpResponseForbidden()
 
 
-# class ReservationView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-#     success_message = _('Reservation has been successfully made.')
-#     success_url = reverse_lazy('homepage')
-#     template_name = 'reservation.html'
-#     model = models.Reservation
-#     form_class = forms.ReservationForm
-#
-#     #Authentication
-#     login_url = reverse_lazy("user_login_form")
-#     redirect_authenticated_users = True
-#
-#
-#     def post(self, request, *args, **kwargs):
-#         p_user = request.user
-#
-#         ## For post method security
-#         if not p_user.is_authenticated:
-#             return HttpResponseRedirect(self.login_url)
-#
-#         post_data = QueryDict('', mutable=True)
-#         post_data.update(request.POST)
-#         post_data.update({'user':str(p_user.id)})
-#
-#         form = self.form_class(post_data)
-#         if form.is_valid():
-#             reservation = form.save()
-#             return HttpResponseRedirect(self.success_url)
-#         else:
-#             return render(request, 'reservation.html', {'form':form,})
+def get_events(request):
+    if request.is_ajax():
+        start = request.GET.get('start', '')
+        end = request.GET.get('end', '')
+
+        if start and end:
+            reservations = Reservation.objects.filter(
+                start__gte=start,
+                start__lte=end,
+            )
+            entries = []
+            for reservation in reservations:
+                color = ''
+                if not reservation.payed:
+                    if not request.user.is_authenticated():
+                        continue
+                    elif reservation.user != request.user:
+                        color = '#FFFF00'
+                    else:
+                        color = '#008000'
+                date_time = reservation.start.replace(tzinfo=timezone.utc).astimezone(tz=None)
+                entry = {
+                    'title': reservation.pk,
+                    'start': date_time.strftime("%Y-%m-%dT%H:%M:%S"),
+                    'end': (date_time + timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%S"),
+                    'resources': reservation.field.pk,
+                    'editable': False
+                }
+                if color:
+                    entry['color'] = color
+                entries.append(entry)
+
+            return http.JsonResponse(entries, safe=False)
+
+    return http.HttpResponseForbidden()
+
+
+@login_required()
+def initialize_events(request):
+    if request.is_ajax() and request.method == 'POST':
+        form = ReservationForm(data=request.POST)
+        if form.is_valid():
+            data = {
+                'field': Field.objects.get(name=form.cleaned_data['field']),
+                'user': request.user,
+                'start': form.cleaned_data['start']
+            }
+            Reservation.objects.create(**data)
+            return http.HttpResponse("Success")
+
+    return http.HttpResponseBadRequest("Error")
+
+
+class ReservationList(SuccessMessageMixin, LoggedInMixin, FormView):
+    template_name = 'payment.html'
+    success_message = _('You have successfully payed for your reservations.')
+    success_url = reverse_lazy('homepage')
+    form_class = PaymentForm
+    def get_context_data(self, **kwargs):
+        kwargs = super(ReservationList, self).get_context_data(**kwargs)
+        kwargs['reservation_list'] = Reservation.objects.filter(user=self.request.user, payed=False)
+
+        return kwargs
+
+    def form_valid(self, form):
+        queryset = Reservation.objects.filter(user=self.request.user, payed=False)
+        for reservation in queryset:
+            reservation.payed = True
+            reservation.save()
+
+        return super(ReservationList, self).form_valid(form)
