@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block title %}
+    {% trans 'Login' %}
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
+{% endblock styles %}
+
+{% block content %}
+
+    {% if next %}
+        {% if not user.is_authenticated %}
+            <div class="error">
+                <p class="error-message">{% trans "Please login to see this page." %}</p>
+            </div>
+        {% endif %}
+    {% endif %}
+
+    <form method="POST" class="login-form">{% csrf_token %}
+
+        <h1>{% trans 'Login' %}</h1>
+
+        {% if form.errors %}
+            {% for error in form.non_field_errors %}
+                <p class="error-message">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <div class="fieldWrapper">
+            {{ form.username.label_tag }}
+            {% render_field form.username|add_error_class:"field-error" %}
+
+            {{ form.password.label_tag }}
+            {% render_field form.password|add_error_class:"field-error" %}
+        </div>
+
+        <input type="submit" value={% trans "Login" %} />
+        <input type="hidden" name={% trans "next" %} value="{{ next }}"/>
+
+        <p id="reset-password"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    </form>
+
+{% endblock %}

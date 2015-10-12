@@ -1,0 +1,241 @@
+.form, .reset-form, .login-form, .deactivate-form {
+    width: 500px;
+    padding: 30px;
+    margin: 70px auto 0 auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+/* Submit type buttons */
+input[type="submit"] {
+    background: #ffa31a;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    border: 1px solid #ff9900;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-form input[type="submit"], .reset-form input[type="submit"], .deactivate-form input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
+
+#deactivate-button {
+    position: relative;
+    margin-left: 64%;
+    top: -65px;
+}
+
+input[type="submit"]:hover {
+    background: #ff9900;
+    -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+}
+
+.form label, .form p, .login-form label, .login-form p,
+.reset-form label, .reset-form p, .deactivate-form label,
+.deactivate-form p {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.form .section {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 153, 0, 0.9);
+    margin-bottom: 5px;
+}
+
+.form .section span {
+    background: rgba(255, 153, 0, 0.9);
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 4px solid #fff;
+    font-size: 14px;
+    margin: -3px auto auto -45px;
+    color: #fff;
+}
+
+/* Containers with input fields */
+.fieldWrapper {
+    padding: 10px 30px 30px 30px;
+    background: #f8f8f8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Heading */
+.form h1, .login-form h1, .reset-form h1, .deactivate-form h1 {
+    background: rgba(255, 163, 26, 0.8);
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    border: 1px solid rgba(255, 153, 0, 0.8);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px rgba(255, 140, 0, 0.7);
+    letter-spacing: 2px;
+}
+
+p.error-message {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(216, 0, 12, 0.6);
+    background: url('../img/errorround.png') no-repeat 0 -1px;
+    background-size: 20px 20px;
+    padding: 2px 0 3px 30px;
+}
+
+/* Asterisk for required fields */
+label.required:after {
+    content: '*';
+    font-size: 18px;
+}
+
+label.required:after {
+    color: rgba(216, 0, 12, 0.6);
+}
+
+input.field-error {
+    border-color: rgba(216, 0, 12, 0.6);
+}
+
+#reset-password {
+    text-align: center;
+}
+
+.form .help-text, .deactivate-form .help-text,
+.reset-form .help-text {
+    margin: auto auto 15px;
+}
+
+.tab-menu {
+    list-style: none;
+    margin: auto;
+    line-height: 35px;
+    height: 37px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.tab-menu li {
+    border: 1px solid #AAA;
+    background: #D1D1D1;
+    background: -o-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: -ms-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: -moz-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: -webkit-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    background: linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+    text-shadow: 0 1px #FFF;
+    margin: 0 -5px;
+    padding: 0 30px;
+}
+
+.tab-menu a {
+    color: #555;
+    text-decoration: none;
+}
+
+.tab-menu li.selected {
+    background: #FFF;
+    color: #333;
+    z-index: 2;
+    border-bottom-color: #FFF;
+}
+
+.tab-menu:before {
+    position: absolute;
+    content: " ";
+    width: 97%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #AAA;
+    z-index: 1;
+}
+
+.tab-menu li:before,
+.tab-menu li:after {
+    border: 1px solid #AAA;
+    position: absolute;
+    bottom: -1px;
+    width: 5px;
+    height: 5px;
+    content: " ";
+}
+
+.tab-menu li:before {
+    left: -6px;
+    border-bottom-right-radius: 6px;
+    border-width: 0 1px 1px 0;
+    box-shadow: 2px 2px 0 #D1D1D1;
+}
+
+.tab-menu li:after {
+    right: -6px;
+    border-bottom-left-radius: 6px;
+    border-width: 0 0 1px 1px;
+    box-shadow: -2px 2px 0 #D1D1D1;
+}
+
+.tab-menu li.selected:before {
+    box-shadow: 2px 2px 0 #FFF;
+}
+
+.tab-menu li.selected:after {
+    box-shadow: -2px 2px 0 #FFF;
+}

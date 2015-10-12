@@ -1,0 +1,174 @@
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    src: url(Montserrat-Regular.woff2) format("woff2");
+}
+
+html {
+    background-image: url("../img/murutaust.jpg");
+    width: auto;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    width: 72%;
+    background: #ffffff;
+    margin: 15px auto -80px auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 1px 30px black;
+}
+
+#innerwrap {
+    position: relative;
+    width: 97%;
+    margin: 0 auto;
+}
+
+#header {
+    z-index: 10000;
+    background: #ffffff;
+    width: 97%;
+    min-width: 300px;
+    height: 105px;
+    border-bottom: 1px dotted #dddddd;
+}
+
+.nav {
+    float: right;
+    font-family: Impact;
+    text-transform: uppercase;
+    font-weight: normal;
+    position: absolute;
+    right: 30px;
+    top: 54px;
+}
+
+.logo img {
+    float: left;
+    padding-top: 11px;
+    height: 82px;
+}
+
+.navsmall img {
+    float: right;
+    display: block;
+    height: 30px;
+    top: 0;
+}
+
+.navsmall:hover {
+    opacity: 0.6;
+}
+
+.nav ul {
+    list-style: none;
+    position: relative;
+}
+
+.nav ul li {
+    float: left;
+    margin-left: 12px;
+    position: relative;
+    display: block;
+    font-size: 22px;
+}
+
+.nav ul li > a {
+    color: #666666;
+    padding: 0 8px;
+    line-height: 28px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav ul li:hover > a {
+    color: #ffcc66;
+}
+
+.nav ul li.current > a {
+    color: #ffffff;
+}
+
+.nav ul li.current > a:hover {
+    color: #ffcc66;
+}
+
+.nav ul li.selected a {
+    color: #ff9900;
+}
+
+.nav ul li.selected > a:hover {
+    color: #ffcc66;
+}
+
+p {
+    text-align: justify;
+    margin: 10px;
+}
+
+.user-nav {
+    float: right;
+    width: 97%;
+    margin: auto 30px 35px;
+    border-bottom: 1px dotted #dddddd;
+}
+
+.user-nav li {
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 5px;
+    color: rgba(255, 153, 0, 0.9);
+}
+
+.user-nav ul {
+    float: right;
+    padding: 0;
+    margin: 15px auto;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #666666;
+}
+
+.success:before {
+    background: url('../img/check.png') no-repeat 0 -5px;
+    padding: 0 14px;
+    content: "";
+}
+
+.success {
+    background-color: #DFF2BF;
+    color: #3c8a1e;
+    border-radius: 8px;
+    width: 40%;
+    padding: 10px;
+    margin: 25px auto 0 auto;
+    text-align: center;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error {
+    background-color: #FFD4CB;
+    color: rgba(216, 0, 12, 0.6);
+    border-radius: 8px;
+    width: 40%;
+    padding: 10px;
+    margin: 65px auto 0 auto;
+    text-align: center;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.messages {
+    margin: 65px auto 30px auto;
+}
+
