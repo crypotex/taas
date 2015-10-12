@@ -13,6 +13,8 @@ tests_requires = [
 
 install_requires = [
     'Django==1.8.4',
+    'django-model-utils==2.3.1',
+    'django-widget-tweaks==1.4.1',
 ]
 
 setup(
@@ -26,6 +28,7 @@ setup(
     packages=find_packages(),
     install_requires=install_requires,
     tests_require=tests_requires,
+    test_suite='taas.server.test_runner.run_tests',
     extras_require={
         'dev': dev_requires,
         'tests': tests_requires

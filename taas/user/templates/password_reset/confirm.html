@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
+{% endblock styles %}
+
+{% block content %}
+
+    {% if validlink %}
+
+        <form method="post" class="reset-form">{% csrf_token %}
+            <h1>{% trans 'Reset your password' %}</h1>
+
+            <p class="help-text">{% trans "Please enter your new password twice so we can verify you typed it in correctly." %}</p>
+
+            <div class="fieldWrapper">
+                <div {% if form.new_password1.errors %}class="field-error"{% endif %}>
+                    <label for="id_new_password1">{% trans 'New password:' %}</label>
+                    {{ form.new_password1 }}
+                </div>
+
+                <div {% if form.new_password2.errors %}class="field-error"{% endif %}>
+                    <label for="id_new_password2">{% trans 'Confirm password:' %}</label>
+                    {{ form.new_password2 }}
+                </div>
+            </div>
+            <input type="submit" value="{% trans 'Change my password' %}" />
+        </form>
+
+    {% else %}
+        <div class="error">
+            <p class="error-message">{% trans "The password reset link was invalid, possibly because it has already been used. Please request a new password reset." %}</p>
+        </div>
+    {% endif %}
+
+{% endblock %}

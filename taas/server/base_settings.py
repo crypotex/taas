@@ -3,6 +3,7 @@ Base settings for TAAS project
 """
 
 import os
+from django.core.urlresolvers import reverse_lazy
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -19,7 +20,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'widget_tweaks',
+
     'taas.user',
+    'taas.reservation',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -37,6 +41,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'templates'),
     os.path.join(PROJECT_ROOT, 'taas', 'user', 'templates'),
+    os.path.join(PROJECT_ROOT, 'taas', 'reservation', 'templates'),
 )
 
 LOCALE_PATHS = (
@@ -72,4 +77,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'taas', 'static'),
+    os.path.join(PROJECT_ROOT, 'taas', 'user', 'static'),
+    os.path.join(PROJECT_ROOT, 'taas', 'reservation', 'static'),
 )
+
+LOGIN_REDIRECT_URL = reverse_lazy('homepage')
+LOGIN_URL = reverse_lazy('user_login_form')

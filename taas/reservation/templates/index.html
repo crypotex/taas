@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+{% endblock styles %}
+
+{% block scripts %}
+    <script src="{% static 'js/fullcalendar/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/fullcalendar/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+    <script type="text/javascript">
+        {% if user.is_authenticated %}
+            canSelect = true;
+        {% else %}
+            canSelect = false;
+        {% endif %}
+
+    </script>
+{% endblock scripts %}
+
+{% block content %}
+    <div class="wrap">
+        <div id="calendar"></div>
+        <div id="datepicker"></div>
+    </div>
+    {% if user.is_authenticated %}
+        <a href="{% url 'reservation_list' %}">{% trans 'Next' %}</a>
+    {% endif %}
+{% endblock content %}

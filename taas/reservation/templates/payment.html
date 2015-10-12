@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans 'Payment' %}
+{% endblock title %}
+
+{% block content %}
+
+    <form method="POST" class="form">{% csrf_token %}
+
+        <h1>{% trans 'Pay for the reservations' %}</h1>
+
+        {% for error in form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
+        <div class="fieldWrapper">
+            <table>
+                <tr>
+                    <th>
+                        {% trans 'Field' %}
+                    </th>
+                    <th>
+                        {% trans 'Price' %}
+                    </th>
+                    <th>
+                        {% trans 'Time' %}
+                    </th>
+                </tr>
+                {% for reservation in reservation_list %}
+                    <tr>
+                        <td>
+                            {{ reservation.field.name }}
+                        </td>
+                        <td>
+                            {{ reservation.field.price }}
+                        </td>
+                        <td>
+                            {{ reservation.start }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <input id="submit-button" type="submit" value={% trans 'Budget' %}>
+        <input id="submit-button" type="submit" value={% trans 'Transcation' %}>
+    </form>
+{% endblock content %}
