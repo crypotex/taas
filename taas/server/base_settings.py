@@ -23,6 +23,7 @@ INSTALLED_APPS = (
     'widget_tweaks',
 
     'taas.user',
+    'taas.reservation',
 )
 
 MIDDLEWARE_CLASSES = (
