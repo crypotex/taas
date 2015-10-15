@@ -1,10 +1,3 @@
-$(function () {
-    $(".tab-menu li").click(function () {
-        $(".tab-menu li").removeClass('selected');
-        $(this).addClass('selected');
-    });
-});
-
 function checkPasswords() {
     checkbox = document.getElementById('id_change_password');
     if (checkbox.checked) {

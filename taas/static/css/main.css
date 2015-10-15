@@ -131,11 +131,16 @@ p {
 }
 
 a {
+    color:#666666;
     text-decoration: none;
 }
 
 a:visited {
     color: #666666;
+}
+
+a:hover {
+    color: #999999;
 }
 
 .success:before {

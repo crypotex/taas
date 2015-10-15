@@ -4,8 +4,8 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}" >
 {% endblock styles %}
 
 {% block scripts %}
@@ -14,7 +14,6 @@
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
-    <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
     <script type="text/javascript">
         {% if user.is_authenticated %}
             canSelect = true;
