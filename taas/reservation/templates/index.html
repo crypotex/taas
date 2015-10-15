@@ -5,7 +5,7 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
-    <link rel="stylesheet" href="{% static 'css/calendar.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
 {% endblock styles %}
 
 {% block scripts %}
@@ -30,6 +30,6 @@
         <div id="datepicker"></div>
     </div>
     {% if user.is_authenticated %}
-        <a href="{% url 'reservation_list' %}">{% trans 'Next' %}</a>
+        <a class="button" href="{% url 'reservation_list' %}">{% trans 'Next' %}</a>
     {% endif %}
 {% endblock content %}

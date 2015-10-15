@@ -23,3 +23,33 @@ body {
     margin: 0 auto;
 }
 
+.button {
+    background: #ffa31a;
+    padding: 8px 20px 8px 20px;
+    margin-left: 754px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    border: 1px solid #ff9900;
+    cursor: pointer;
+}
+
+.button:visited {
+    color: #fff;
+}
+
+.button:hover {
+    background: #ff9900;
+    -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+}
+
+
+
+
