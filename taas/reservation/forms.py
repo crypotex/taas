@@ -19,16 +19,12 @@ class ReservationForm(forms.Form):
         start = self.cleaned_data.get('start').replace(tzinfo=None)
         current = datetime.datetime.now()
         if start <= current:
-            raise forms.ValidationError(_("Date should should not be in the past."))
+            raise forms.ValidationError(_("Date should not be in the past."))
         else:
             end = self.cleaned_data.get('end').replace(tzinfo=None)
-            if (end - start).seconds != 3600:
-                raise forms.ValidationError(_("Difference between start and end dates should be 1 hour."))
+            if end < start:
+                raise forms.ValidationError(_("Start date should be earlier than end date."))
 
         field = Field.objects.filter(name=self.cleaned_data['field'])
         if not field.exists():
             forms.ValidationError(_("Field does not exist."))
-
-
-class PaymentForm(forms.Form):
-    pass
