@@ -18,7 +18,7 @@ class UserPasswordResetTest(TestCase):
     def test_logged_in_user_cannot_reset_his_password(self):
         self.client.login(username=self.active_user.email, password='isherenow')
         response = self.client.get(self.reset_url)
-        self.assertEqual(response.status_code, http_client.NOT_FOUND)
+        self.assertRedirects(response, expected_url=reverse('homepage'))
 
     def test_logged_out_user_can_reset_his_password(self):
         response = self.client.get(self.reset_url)
