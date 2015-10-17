@@ -11,10 +11,10 @@
 {% block scripts %}
     <script src="{% static 'js/fullcalendar/jquery-2.1.4.min.js' %}"></script>
     <script src="{% static 'js/fullcalendar/jquery-ui.min.js' %}"></script>
-    <script  src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
-    <script  src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
-    <script  src="{% static 'js/calendar.js' %}"></script>
-    <script  src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
+    <script src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
+    <script src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
+    <script src="{% static 'js/calendar.js' %}"></script>
+    <script src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
     <script>
         {% if user.is_authenticated %}
             canSelect = true;
@@ -22,15 +22,15 @@
             expireMessage = "{% trans 'Your reservation time has been expired.' %}";
 
 
-            $(document).ready(function() {
-            {% if is_unpaid %}
-                expire_date = "{{ expire_date }}";
-                checkDate();
-                enableSubmition();
-            {% else %}
-                disableSubmition();
-            {% endif %}
-        });
+            $(document).ready(function () {
+                {% if is_unpaid %}
+                    expire_date = "{{ expire_date }}";
+                    checkDate();
+                    enableSubmition();
+                {% else %}
+                    disableSubmition();
+                {% endif %}
+            });
         {% else %}
             canSelect = false;
         {% endif %}
@@ -38,10 +38,12 @@
 {% endblock scripts %}
 
 {% block content %}
-    <div id="timerMessage">{% trans 'To make all your reservations you have' %}
-    <span id="timer"></span>
-    {% trans 'minutes' %}
-    </div>
+    {% if user.is_authenticated %}
+        <div id="timerMessage">{% trans 'To make all your reservations you have' %}
+            <span id="timer"></span>
+            {% trans 'minutes' %}
+        </div>
+    {% endif %}
     <div class="wrap">
         <div id="calendar"></div>
         <div id="datepicker"></div>
