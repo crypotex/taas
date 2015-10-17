@@ -26,7 +26,10 @@
                         {% trans 'Price' %}
                     </th>
                     <th>
-                        {% trans 'Time' %}
+                        {% trans 'Start' %}
+                    </th>
+                    <th>
+                        {% trans 'End' %}
                     </th>
                 </tr>
                 {% for reservation in reservation_list %}
@@ -35,16 +38,41 @@
                             {{ reservation.field.name }}
                         </td>
                         <td>
-                            {{ reservation.field.price }}
+                            {{ reservation.price }}
                         </td>
                         <td>
                             {{ reservation.start }}
                         </td>
+                        <td>
+                            {{ reservation.end }}
+                        </td>
                     </tr>
                 {% endfor %}
             </table>
+            {% if is_paginated %}
+                <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'reservation_list' %}?page={{ page_obj.previous_page_number }}">
+                        {% trans 'previous' %}
+                    </a>
+                {% endif %}
+                <span class="page-current">
+                    {% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{% url 'reservation_list' %}?page={{ page_obj.next_page_number }}">
+                        {% trans 'next' %}
+                    </a>
+                {% endif %}
+            </span>
+                </div>
+            {% endif %}
         </div>
-        <input id="submit-button" type="submit" value={% trans 'Budget' %}>
-        <input id="submit-button" type="submit" value={% trans 'Transcation' %}>
+    </form>
+
+    <form action="{% url 'reservation_payment' %}">
+        <input id="submit-button" type="submit" value="{% trans 'Budget' %}">
+        <input id="submit-button" type="submit" value="{% trans 'Transcation' %}">
     </form>
 {% endblock content %}
