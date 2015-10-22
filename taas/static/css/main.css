@@ -27,13 +27,24 @@ body {
     margin: 0 auto;
 }
 
-#header {
+header {
     z-index: 10000;
     background: #ffffff;
-    width: 97%;
+    width: 95%;
     min-width: 300px;
-    height: 105px;
+    /*border-bottom: 1px dotted #dddddd;*/
+    margin: 0 auto;
+}
+
+#headernav {
     border-bottom: 1px dotted #dddddd;
+    padding-bottom: 10px;
+}
+
+#headernav:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .nav {
@@ -56,6 +67,7 @@ body {
     display: block;
     height: 30px;
     top: 0;
+    padding-right: 9px;
 }
 
 .navsmall:hover {
@@ -109,10 +121,15 @@ p {
 }
 
 .user-nav {
-    float: right;
-    width: 97%;
-    margin: auto 30px 35px;
+    /*float: right;*/
+    margin: auto;
     border-bottom: 1px dotted #dddddd;
+}
+
+.user-nav:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .user-nav li {
@@ -155,7 +172,7 @@ a:hover {
     border-radius: 8px;
     width: 40%;
     padding: 10px;
-    margin: 25px auto 0 auto;
+    margin: 0 auto;
     text-align: center;
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
@@ -167,13 +184,12 @@ a:hover {
     border-radius: 8px;
     width: 40%;
     padding: 10px;
-    margin: 65px auto 0 auto;
+    margin: 0 auto;
     text-align: center;
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
 }
 
 .messages {
-    margin: 65px auto 30px auto;
+    margin: 25px auto;
 }
-

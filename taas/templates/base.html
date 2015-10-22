@@ -13,8 +13,8 @@
 </head>
 
 <body>
-<div id="innerwrap">
-    <div id="header">
+<header>
+    <div id="headernav">
         <div class="logo">
             <a href="/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
         </div>
@@ -48,17 +48,17 @@
             </div>
         {% endif %}
     {% endblock nav %}
+</header>
 
-    {% if messages %}
+{% if messages %}
         <ul class="messages">
             {% for message in messages %}
                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}
+{% endif %}
 
-    {% block tab-menu %}{% endblock tab-menu %}
-</div>
+{% block tab-menu %}{% endblock tab-menu %}
 
 {% block content %}{% endblock content %}
 </body>
