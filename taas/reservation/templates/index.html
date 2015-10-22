@@ -30,6 +30,8 @@
         <div id="datepicker"></div>
     </div>
     {% if user.is_authenticated %}
-        <a class="button" href="{% url 'reservation_list' %}">{% trans 'Next' %}</a>
+        <div class="buttonwrap">
+            <a class="button" href="{% url 'reservation_list' %}">{% trans 'Next' %}</a>
+        </div>
     {% endif %}
 {% endblock content %}

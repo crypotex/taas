@@ -9,7 +9,7 @@
 
 .calendarwrap {
     width: 700px;
-    margin: auto;
+    margin: 0 auto 20px auto;
 }
 
 .calendarwrap::after {
@@ -21,7 +21,7 @@
 .button {
     background: #ffa31a;
     padding: 8px 20px 8px 20px;
-    margin: 0 auto 20px 754px;
+    float: right;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -33,6 +33,17 @@
     border: 1px solid #ff9900;
     cursor: pointer;
     display: inline-block;
+}
+
+.buttonwrap {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.buttonwrap:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
 .button:visited {
