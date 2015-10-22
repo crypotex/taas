@@ -7,20 +7,15 @@
     float: left;
 }
 
-.wrap {
+.calendarwrap {
     width: 700px;
-    margin: 20px auto;
+    margin: auto;
 }
 
-.wrap::after {
+.calendarwrap::after {
     content: "";
     display: table;
     clear: both;
-}
-
-body {
-    width: 80%;
-    margin: 0 auto;
 }
 
 .button {

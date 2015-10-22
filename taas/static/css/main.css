@@ -10,21 +10,10 @@ html {
     font-family: Montserrat, sans-serif;
 }
 
-/*body {
-    min-height: 100%;
-    position: relative;
-    width: 72%;
-    background: #ffffff;
-    margin: 15px auto -80px auto;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    box-shadow: 0 1px 30px black;
-}*/
-
 body {
     width: 100%;
-    height: auto;
     margin: auto;
+    height: 100%;
 }
 
 #innerwrap {
@@ -32,6 +21,8 @@ body {
     width: 72%;
     margin: 15px auto 0 auto;
     height: auto;
+    min-height: 100% !important;
+    padding-bottom: 10px;
     background: #ffffff;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -207,4 +198,9 @@ a:hover {
 
 .messages {
     margin: 25px auto;
+}
+
+.wrap {
+    margin: 20px auto;
+    width: 95%;
 }

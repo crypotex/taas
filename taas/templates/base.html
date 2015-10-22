@@ -59,9 +59,11 @@
         </ul>
     {% endif %}
 
-    {% block tab-menu %}{% endblock tab-menu %}
+    <div class="wrap">
+        {% block tab-menu %}{% endblock tab-menu %}
 
-    {% block content %}{% endblock content %}
+        {% block content %}{% endblock content %}
+    </div>
 </div>
 </body>
 </html>
