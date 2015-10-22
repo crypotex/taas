@@ -13,53 +13,55 @@
 </head>
 
 <body>
-<header>
-    <div id="headernav">
-        <div class="logo">
-            <a href="/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
-        </div>
-        <div class="navsmall">
-            <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
-                <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
-        </div>
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="http://taas.ee/">{% trans 'back to homepage' %}</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    {% block nav %}
-        {% if not user.is_authenticated %}
-            <div class="user-nav">
+<div id="innerwrap">
+    <header>
+        <div id="headernav">
+            <div class="logo">
+                <a href="/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
+            </div>
+            <div class="navsmall">
+                <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
+                    <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
+            </div>
+            <div class="nav">
                 <ul>
-                    <li><a href="/user/login">{% trans 'Login' %}</a></li>
-                    <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                    <li>
+                        <a href="http://taas.ee/">{% trans 'back to homepage' %}</a>
+                    </li>
                 </ul>
             </div>
-        {% else %}
-            <div class="user-nav">
-                <ul>
-                    <li>{% trans 'Hello, ' %}<a href="/user/update">{{ user.get_short_name }}</a></li>
-                    <li>{{ user.display_budget_money }}</li>
-                    <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
-                </ul>
-            </div>
-        {% endif %}
-    {% endblock nav %}
-</header>
+        </div>
+        {% block nav %}
+            {% if not user.is_authenticated %}
+                <div class="user-nav">
+                    <ul>
+                        <li><a href="/user/login">{% trans 'Login' %}</a></li>
+                        <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                    </ul>
+                </div>
+            {% else %}
+                <div class="user-nav">
+                    <ul>
+                        <li>{% trans 'Hello, ' %}<a href="/user/update">{{ user.get_short_name }}</a></li>
+                        <li>{{ user.display_budget_money }}</li>
+                        <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
+                    </ul>
+                </div>
+            {% endif %}
+        {% endblock nav %}
+    </header>
 
-{% if messages %}
+    {% if messages %}
         <ul class="messages">
             {% for message in messages %}
                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>
-{% endif %}
+    {% endif %}
 
-{% block tab-menu %}{% endblock tab-menu %}
+    {% block tab-menu %}{% endblock tab-menu %}
 
-{% block content %}{% endblock content %}
+    {% block content %}{% endblock content %}
+</div>
 </body>
 </html>

@@ -10,7 +10,7 @@ html {
     font-family: Montserrat, sans-serif;
 }
 
-body {
+/*body {
     min-height: 100%;
     position: relative;
     width: 72%;
@@ -19,12 +19,29 @@ body {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     box-shadow: 0 1px 30px black;
+}*/
+
+body {
+    width: 100%;
+    height: auto;
+    margin: auto;
 }
 
 #innerwrap {
     position: relative;
-    width: 97%;
-    margin: 0 auto;
+    width: 72%;
+    margin: 15px auto 0 auto;
+    height: auto;
+    background: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 1px 30px black;
+}
+
+#innerwrap:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 header {
@@ -121,7 +138,6 @@ p {
 }
 
 .user-nav {
-    /*float: right;*/
     margin: auto;
     border-bottom: 1px dotted #dddddd;
 }
@@ -142,9 +158,8 @@ p {
 
 .user-nav ul {
     float: right;
-    padding: 0;
+    padding-right: 9px;
     margin: 15px auto;
-    list-style-type: none;
 }
 
 a {
