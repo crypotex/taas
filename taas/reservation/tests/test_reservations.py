@@ -3,28 +3,27 @@ from django.test import TestCase
 
 from taas.reservation.tests.factories import ReservationFactory, FieldFactory
 from taas.user.tests.factories import UserFactory
-from taas.reservation.models import Reservation
+from taas.reservation.models import Reservation, Field
+import random as rd
 from freezegun import freeze_time
 from http import client as http_client
 from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
 
-@freeze_time("2015-11-11 17:00:00")
 class ReservationTest(TestCase):
     def setUp(self):
         self.user = UserFactory(is_active=True)
         self.fields = FieldFactory.create_batch(3)
-        self.reservation = self.get_reservation_data()
         self.login_data = {'username': self.user.email, 'password': 'isherenow'}
         self.login_url = UserFactory.get_login_url()
         self.reservation_url = ReservationFactory.get_reservation_url()
+        self.remove_url = ReservationFactory.get_remove_url()
+        self.remove_all_url = ReservationFactory.get_remove_all_url()
+        self.payment_url = ReservationFactory.get_payment_url()
+        self.all_reservations_url = ReservationFactory.get_all_reservations_url()
+        self.reservation_list_url = ReservationFactory.get_reservation_list_url()
 
-    def get_reservation_data(self):
-        data = {'start' : '2015-11-11',
-                'end' : '18',
-                'fields' : 'A',}
-        return data
-
+    @freeze_time("2015-11-11 17:00:00")
     def test_freezegun_datetime_now(self):
         self.assertEqual(datetime.now(), datetime.strptime("2015-11-11 17:00:00", '%Y-%m-%d %H:%M:%S'),
                          'freeze_time package might be not installed. datetime.now() should return 2015-11-11 17:00:00')
@@ -44,17 +43,98 @@ class ReservationTest(TestCase):
 
     def test_user_can_make_valid_reservation(self):
         response = self.log_in()
-        response = self.post_valid_reservation('2015-10-23 20:00:00+03:00', '2015-10-23 21:00:00+03:00', 'A', 1)
+        start, end = self.get_valid_start_end_datetime_5_days_from_now(10)
+        response = self.post_valid_reservation(start, end, 'A')
 
-    def post_valid_reservation(self, start, end, field, how_many_fields):
+    def test_user_can_make_multiple_reservations(self):
+        response = self.log_in()
+        start, end = self.get_valid_start_end_datetime_5_days_from_now(10)
+        t_start, t_end = self.reformat_startend_timestring(start, end)
+        response = self.post_valid_reservation(start, end, 'A')
+        response = self.post_valid_reservation(start, end, 'B')
+        done_reservations = Reservation.objects.all().filter(start = t_start, end = t_end)
+        self.assertTrue(done_reservations.count() == 2,
+                        _('User should be able to make 2 reservations on same datetime on different fields'))
+        response = self.post_valid_reservation(start, end, 'C')
+        done_reservations = Reservation.objects.all().filter(start = t_start, end = t_end)
+        self.assertTrue(done_reservations.count() == 3,
+                        _('User should be able to make 2 reservations on same datetime on different fields'))
+##############
+# Viganetest #
+##############
+    def test_user_can_see_multiple_unpaid_reservations(self):
+        self.test_user_can_make_multiple_reservations()
+        response = self.client.get(self.all_reservations_url, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+
+    def test_all_users_unpaid_reservations_are_deleted(self):
+        self.test_user_can_make_multiple_reservations()
+        self.client.post(self.removeall_url, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertTrue(Reservation.objects.all().count() == 0,
+                        _("Not all unpaid reservations are deleted"))
+
+    def test_1_unpaid_reservation_can_be_deleted(self):
+        response = self.log_in()
+        start, end = self.get_valid_start_end_datetime_5_days_from_now(10)
+        response = self.post_valid_reservation(start, end, 'A')
+        response = self.post_valid_reservation(start, end, 'B')
+        t_start, t_end = self.reformat_startend_timestring(start, end)
+        field_id = Field.objects.all().filter(name = 'B')
+        res_to_del = Reservation.objects.filter(start = t_start, end = t_end, field = field_id)[0].id
+        self.client.post(self.remove_url, {'id':str(res_to_del)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertTrue(Reservation.objects.all().count()==1, _("Unpaid Resevation is not deleted."))
+
+    def test_reservation_is_not_paid_after_it_is_made(self):
+        response = self.log_in()
+        start, end = self.get_valid_start_end_datetime_5_days_from_now(12)
+        response = self.post_valid_reservation(start, end, 'A')
+        t_start, t_end = self.reformat_startend_timestring(start, end)
+        done_reservations = Reservation.objects.all().filter(start = t_start, end = t_end)
+        self.assertTrue(done_reservations[0].paid == False, _("Reservation is automatically paid. It should be unpaid."))
+
+    def test_anon_user_cannot_post_reservation(self):
+        start, end = self.get_valid_start_end_datetime_5_days_from_now(12)
+        res_d = {'start': start, 'end': end, 'field':'A'}
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertTrue(len(Reservation.objects.all()) == 0, _("Anonymous user can make a valid reservation"))
+        self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/add/'))
+
+    def post_valid_reservation(self, start, end, field):
         reservation_data = {}
-        reservation_data['field'] = field
         reservation_data['start'] = start
         reservation_data['end'] = end
-        response = self.client.post(self.reservation_url, reservation_data)
-        print(response.status_code)
-        #self.assertRedirects(response, reverse('homepage'))
-        done_reservations = Reservation.objects.all()
-        print(done_reservations)
-        #self.assertTrue(done_reservations.count() == how_many_fields, _('No reservation made with valid data'))
+        reservation_data['field'] = field
+        response = self.client.post(self.reservation_url, reservation_data, HTTP_X_REQUESTED_WITH='XMLHttpRequest')
+        t_start, t_end = self.reformat_startend_timestring(start, end)
+        field_id = Field.objects.all().filter(name = field)
+        done_reservations = Reservation.objects.all().filter(start = t_start, field = field_id, end = t_end)
+
+        self.assertTrue(done_reservations.count() == 1, _('No reservation made with valid data'))
         return response
+
+    def reformat_startend_timestring(self, start, end):
+        def reformat_timestring(s):
+            s = s.split("T")
+            t = s[1].split(":")
+            t[0] = str(int(t[0])-2)
+            s[1] = ":".join(t)
+            return " ".join(s) + "+00:00"
+        return reformat_timestring(start), reformat_timestring(end)
+
+    def get_valid_start_end_datetime_5_days_from_now(self, hour):
+        d = datetime.now()
+        start = datetime(year=d.year, month=d.month, day=d.day+5, hour=hour, minute=0, second=0)
+        end = datetime(year=d.year, month=d.month, day=d.day+5, hour=hour+1, minute=0, second=0)
+        return start.strftime("%Y-%m-%dT%H:%M:%S"), end.strftime("%Y-%m-%dT%H:%M:%S")
+
+    def test_anon_user_cannot_removeall_reservations(self):
+        response = self.client.post(self.remove_all_url, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/remove/all/'))
+
+    def test_anon_user_cannot_remove_specific_reservation(self):
+        response = self.client.post(self.remove_url,  {'id':str(1)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/remove/'))
+
+    def test_anon_user_cannot_make_payment_for_reservation(self):
+        response = self.client.post(self.payment_url, {'id':str(1)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/payment/'))
+
