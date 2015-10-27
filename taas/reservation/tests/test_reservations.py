@@ -96,6 +96,108 @@ class ReservationTest(TestCase):
         self.assertTrue(len(Reservation.objects.all()) == 0, _("Anonymous user can make a valid reservation"))
         self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/add/'))
 
+    def test_user_cannot_post_reservation_with_missing_field_end(self):
+        self.log_in()
+        res_d = {}
+        start, end = self.get_valid_datetime(10, 10)
+        res_d['start'] = start
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted with missing data"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted with missing data"))
+
+    def test_user_cannot_post_reservation_with_missing_end(self):
+        self.log_in()
+        res_d = {}
+        start, end = self.get_valid_datetime(10, 10)
+        res_d['start'] = start
+        res_d['field'] = 'A'
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted with missing data"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted with missing data"))
+
+    def test_user_cannot_post_reservation_with_missing_field(self):
+        self.log_in()
+        res_d = {}
+        start, end = self.get_valid_datetime(10, 10)
+        res_d['start'] = start
+        res_d['end'] = end
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted with missing data"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted with missing data"))
+
+    def test_user_cannot_post_reservation_with_missing_data(self):
+        self.log_in()
+        res_d = {}
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted with missing data"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted with missing data"))
+
+    def test_user_cannot_post_reservation_with_past_date(self):
+        self.log_in()
+        res_d = {}
+        start, end = self.get_valid_datetime(12, -10)
+        res_d['start'] = start
+        res_d['end'] = end
+        res_d['field'] = 'A'
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH = "XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted with missing data"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted with missing data"))
+
+    @freeze_time("2015-11-11 16:55:01")
+    def test_user_cannot_post_reservation_15_min_before(self):
+        self.log_in()
+        res_d = {}
+        d = datetime.now()
+        start = datetime(year=d.year, month=d.month, day=d.day, hour=17, minute=0, second=0)
+        end = datetime(year=d.year, month=d.month, day=d.day, hour=18, minute=0, second=0)
+        start, end = start.strftime("%Y-%m-%dT%H:%M:%S"), end.strftime("%Y-%m-%dT%H:%M:%S")
+        res_d['start'] = start
+        res_d['end'] = end
+        res_d['field'] = 'A'
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH = "XMLHttpRequest")
+        #self.assertEqual(response.status_code, 400, _("Reservation posted 15 minutes before"))
+        #self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted 15 minutes before"))
+        print(datetime.now(), start)
+
+
+    @freeze_time("2015-11-11 16:30:01")
+    def test_user_cannot_post_reservation_29_min_59_sec_before(self):
+        self.log_in()
+        res_d = {}
+        start, end = self.get_valid_datetime(0, 17)
+        res_d['start'] = start
+        res_d['end'] = end
+        res_d['field'] = 'A'
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH = "XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted 29 minutes, 59 seconds before"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted 29 minutes, 59 seconds before"))
+
+    @freeze_time("2015-11-11 17:00:00")
+    def test_user_cannot_post_reservation_29_min_before(self):
+        self.log_in()
+        res_d = {}
+        start = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+        end = (datetime.now() + timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%S")
+        res_d['start'] = start
+        res_d['end'] = end
+        res_d['field'] = 'A'
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH = "XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted at the same time of now()"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted at the same time of now()"))
+
+    @freeze_time("2015-11-11 17:01:00")
+    def test_user_cannot_post_reservation_kala_min_before(self):
+        self.log_in()
+        res_d = {}
+        start = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+        end = (datetime.now() + timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%S")
+        res_d['start'] = start
+        res_d['end'] = end
+        res_d['field'] = 'A'
+        response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH = "XMLHttpRequest")
+        self.assertEqual(response.status_code, 400, _("Reservation posted 1 minute after "))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted at the same time of now()"))
+
     def post_valid_reservation(self, start, end, field):
         reservation_data = {}
         reservation_data['start'] = start
