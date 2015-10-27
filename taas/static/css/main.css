@@ -203,4 +203,5 @@ a:hover {
 .wrap {
     margin: 20px auto;
     width: 95%;
+    min-width: 300px;
 }

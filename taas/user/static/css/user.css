@@ -1,13 +1,19 @@
 .form, .reset-form, .login-form, .deactivate-form {
-    width: 500px;
+    width: 50%;
+    min-width: 200px;
+    word-break: break-word;
     padding: 30px;
-    margin: 20px auto;
+    margin: auto;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+}
+
+#updateForm {
+    margin-top: 20px;
 }
 
 input[type="text"], input[type="password"], input[type="email"] {

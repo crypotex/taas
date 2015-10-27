@@ -1,15 +1,18 @@
 #calendar {
-    width: 350px;
+    width: 45%;
+    min-width: 239px;
     float: right;
 }
 
 #datepicker {
     float: left;
+    padding-bottom: 15px;
 }
 
 .calendarwrap {
-    width: 700px;
+    width: 75%;
     margin: 0 auto 20px auto;
+    overflow: hidden;
 }
 
 .calendarwrap::after {
