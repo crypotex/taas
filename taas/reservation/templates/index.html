@@ -9,27 +9,47 @@
 {% endblock styles %}
 
 {% block scripts %}
-    <script src="{% static 'js/fullcalendar/jquery-2.1.4.min.js' %}"></script>
-    <script src="{% static 'js/fullcalendar/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullcalendar/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullcalendar/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
     <script type="text/javascript">
         {% if user.is_authenticated %}
             canSelect = true;
+            timeError = "{% trans 'Please select slots, which are 30 minutes later from now.' %}";
+            expireMessage = "{% trans 'Your reservation time has been expired.' %}";
+
+            $(document).ready(function () {
+                {% if is_unpaid %}
+                    expire_date = "{{ expire_date }}";
+                    checkDate();
+                    enableSubmition();
+                {% else %}
+                    disableSubmition();
+                {% endif %}
+            });
         {% else %}
             canSelect = false;
         {% endif %}
-
     </script>
 {% endblock scripts %}
 
 {% block content %}
+    {% if user.is_authenticated %}
+        <div id="timerMessage">{% trans 'To make all your reservations you have' %}
+            <span id="timer"></span>
+            {% trans 'minutes' %}
+        </div>
+    {% endif %}
     <div class="wrap">
         <div id="calendar"></div>
         <div id="datepicker"></div>
     </div>
     {% if user.is_authenticated %}
-        <a class="button" href="{% url 'reservation_list' %}">{% trans 'Next' %}</a>
+        <form action="{% url 'reservation_list' %}">
+            <input type="submit" class='button' id='submit' value="{% trans 'Submit' %}">
+        </form>
     {% endif %}
 {% endblock content %}

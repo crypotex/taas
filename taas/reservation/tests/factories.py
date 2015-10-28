@@ -38,4 +38,24 @@ class ReservationFactory(factory.DjangoModelFactory):
 
     @classmethod
     def get_reservation_url(cls):
-        return 'http://testserver' + reverse('reservation_form')
+        return 'http://testserver' + reverse('add_reservation')
+
+    @classmethod
+    def get_remove_url(cls):
+        return 'http://testserver' + reverse('remove_reservation')
+
+    @classmethod
+    def get_remove_all_url(cls):
+        return 'http://testserver' + reverse('remove_all_reservations')
+
+    @classmethod
+    def get_payment_url(cls):
+        return 'http://testserver' + reverse('reservation_payment')
+
+    @classmethod
+    def get_all_reservations_url(cls):
+        return 'http://testserver' + reverse('all_reservations')
+
+    @classmethod
+    def get_reservation_list_url(cls):
+        return 'http://testserver' + reverse('reservation_list')

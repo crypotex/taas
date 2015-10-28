@@ -1,4 +1,7 @@
 var canSelect;
+var timeError;
+var expireMessage;
+var expire_date = null;
 
 function csrfSafeMethod(method) {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -26,10 +29,96 @@ function getCookie(name) {
     return cookieValue;
 }
 
+function startTimer() {
+    if (expire_date == null) {
+        expire_date = new Date();
+        expire_date.setMinutes(expire_date.getMinutes() + 10);
+    }
+    $('#timer').countdown(expire_date, function (event) {
+        $(this).html(event.strftime('%M:%S'));
+    }).on('finish.countdown', function (event) {
+        removeReservationsOnExpire()
+    });
+}
+
+function disableSubmition() {
+    document.getElementById('submit').style.visibility = 'hidden';
+    document.getElementById('timerMessage').style.visibility = 'hidden';
+    expire_date = null;
+}
+
+function enableSubmition() {
+    document.getElementById('submit').style.visibility = 'visible';
+    document.getElementById('timerMessage').style.visibility = 'visible';
+    startTimer()
+}
+
+function removeReservationsOnExpire() {
+    jQuery.post('reservation/remove/all/').done(
+        function () {
+            $("#calendar").fullCalendar('refetchEvents');
+            disableSubmition();
+            alert(expireMessage)
+        }
+    )
+}
+
+function addReservation(start, end, ev) {
+    $(".fc-cell-overlay").removeClass("fc-cell-overlay");
+    $(this).addClass('fc-cell-overlay');
+    var check = new Date(start.toISOString());
+    var now = new Date();
+    var diff = Math.floor((Math.abs(now - check) / 1000) / 60);
+    if (check < now || diff < 30) {
+        alert(timeError);
+    }
+    else {
+        jQuery.post('reservation/add/',
+            {
+                start: start.format(),
+                end: end.format(),
+                field: ev.data.name
+            }
+        ).done(function () {
+                $("#calendar").fullCalendar('refetchEvents');
+                enableSubmition()
+            }
+        )
+    }
+}
+
+function deleteReservation(calEvent, jsEvent, view) {
+    if (calEvent.color != "#008000") return;
+
+    jQuery.post('/reservation/remove/',
+        {
+            id: calEvent.id
+        },
+        function (data) {
+            if (!data.response) {
+                disableSubmition()
+            }
+        },
+        "json"
+    ).done(
+        function () {
+            $("#calendar").fullCalendar('refetchEvents');
+        }
+    )
+}
+
+function checkDate() {
+    var now = new Date();
+    var check_date = new Date(expire_date);
+    if (check_date <= now) {
+        removeReservationsOnExpire()
+    }
+}
+
 $(document).ready(function () {
     $("#calendar").fullCalendar({
         header: false,
-        resources: 'reservation/get_fields/',
+        resources: 'reservation/fields/',
         defaultView: 'resourceDay',
         allDaySlot: false,
         minTime: '08:00:00',
@@ -43,19 +132,10 @@ $(document).ready(function () {
         slotDuration: '01:00:00',
         selectable: canSelect,
         selectHelper: true,
-        select: function (start, end, ev) {
-            jQuery.post('reservation/initialize/',
-                {
-                    start: start.format(),
-                    end: end.format(),
-                    field: ev.data.name
-                },
-                $("#calendar").fullCalendar('refetchEvents')
-            );
-        },
-        events: '/reservation/get_events/'
+        select: addReservation,
+        events: '/reservation/all/',
+        eventClick: deleteReservation
     });
-
     $('#datepicker').datepicker({
         inline: true,
         minDate: 0,

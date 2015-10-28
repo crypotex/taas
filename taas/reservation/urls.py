@@ -1,11 +1,14 @@
 from django.conf.urls import url
 
-from taas.reservation.views import get_events, get_fields, initialize_events, ReservationList
+from taas.reservation import views
 
 
 urlpatterns = [
-    url(r'^get_fields/$', get_fields, name='get_ajax_fields'),
-    url(r'^get_events/$', get_events, name='get_ajax_events'),
-    url(r'^initialize/$', initialize_events, name='init_ajax_events'),
-    url(r'^payment/$', ReservationList.as_view(), name='reservation_list'),
+    url(r'^fields/$', views.get_fields, name='fields'),
+    url(r'^all/$', views.get_reservations, name='all_reservations'),
+    url(r'^add/$', views.add_reservation, name='add_reservation'),
+    url(r'^remove/$', views.remove_reservation, name='remove_reservation'),
+    url(r'^remove/all/$', views.remove_unpaid_reservations, name='remove_all_reservations'),
+    url(r'^list/$', views.ReservationList.as_view(), name='reservation_list'),
+    url(r'^payment/$', views.reservation_payment, name='reservation_payment'),
 ]
