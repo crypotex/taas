@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
 {% endblock styles %}
 
 {% block scripts %}
@@ -13,8 +14,10 @@
     <script type="text/javascript" src="{% static 'js/fullcalendar/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
+
     <script type="text/javascript">
         {% if user.is_authenticated %}
             canSelect = true;

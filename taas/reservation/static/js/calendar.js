@@ -3,6 +3,8 @@ var timeError;
 var expireMessage;
 var expire_date = null;
 
+swal.setDefaults({ confirmButtonColor: '#ffa31a' });
+
 function csrfSafeMethod(method) {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
@@ -58,7 +60,7 @@ function removeReservationsOnExpire() {
         function () {
             $("#calendar").fullCalendar('refetchEvents');
             disableSubmition();
-            alert(expireMessage)
+            swal({title: "Warning", text: expireMessage, type: "warning", confirmButtonText: "OK"});
         }
     )
 }
@@ -70,7 +72,7 @@ function addReservation(start, end, ev) {
     var now = new Date();
     var diff = Math.floor((Math.abs(now - check) / 1000) / 60);
     if (check < now || diff < 30) {
-        alert(timeError);
+        swal({title: "Warning", text: timeError, type: "warning", customClass: "alert-button"});
     }
     else {
         jQuery.post('reservation/add/',
