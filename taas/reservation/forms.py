@@ -20,6 +20,8 @@ class ReservationForm(forms.Form):
         current = datetime.datetime.now()
         if start <= current:
             raise forms.ValidationError(_("Date should not be in the past."))
+        elif (start-current) < datetime.timedelta(minutes=15):
+            raise forms.ValidationError(_("There should be atleast 15 minutes before reservation"))
         else:
             end = self.cleaned_data.get('end').replace(tzinfo=None)
             if end < start:

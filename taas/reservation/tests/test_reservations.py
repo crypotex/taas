@@ -143,8 +143,8 @@ class ReservationTest(TestCase):
         self.assertEqual(response.status_code, 400, _("Reservation posted with missing data"))
         self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted with missing data"))
 
-    @freeze_time("2015-11-11 16:55:01")
-    def test_user_cannot_post_reservation_15_min_before(self):
+    @freeze_time("2015-11-11 16:45:01")
+    def test_user_cannot_post_reservation_14_min_59_sec_before(self):
         self.log_in()
         res_d = {}
         d = datetime.now()
@@ -155,25 +155,38 @@ class ReservationTest(TestCase):
         res_d['end'] = end
         res_d['field'] = 'A'
         response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH = "XMLHttpRequest")
-        #self.assertEqual(response.status_code, 400, _("Reservation posted 15 minutes before"))
-        #self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted 15 minutes before"))
-        print(datetime.now(), start)
+        self.assertEqual(response.status_code, 400, _("Reservation posted 15 minutes before"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted 15 minutes before"))
 
-
-    @freeze_time("2015-11-11 16:30:01")
-    def test_user_cannot_post_reservation_29_min_59_sec_before(self):
+    @freeze_time("2015-11-11 17:5:00")
+    def test_user_cannot_post_reservation_5_min_later(self):
         self.log_in()
         res_d = {}
-        start, end = self.get_valid_datetime(0, 17)
+        d = datetime.now()
+        start = datetime(year=d.year, month=d.month, day=d.day, hour=17, minute=0, second=0)
+        end = datetime(year=d.year, month=d.month, day=d.day, hour=18, minute=0, second=0)
+        start, end = start.strftime("%Y-%m-%dT%H:%M:%S"), end.strftime("%Y-%m-%dT%H:%M:%S")
         res_d['start'] = start
         res_d['end'] = end
         res_d['field'] = 'A'
         response = self.client.post(self.reservation_url, res_d, HTTP_X_REQUESTED_WITH = "XMLHttpRequest")
-        self.assertEqual(response.status_code, 400, _("Reservation posted 29 minutes, 59 seconds before"))
-        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted 29 minutes, 59 seconds before"))
+        self.assertEqual(response.status_code, 400, _("Reservation posted 5 minutes after"))
+        self.assertTrue(len(Reservation.objects.all())==0, _("Reservation posted 5 minutes after"))
+
+    @freeze_time("2015-11-11 16:45:00")
+    def test_user_can_make_reservation_15_minutes_before(self):
+        self.log_in()
+        start, end = self.get_valid_datetime(17)
+        self.post_valid_reservation(start, end, 'A')
+
+    @freeze_time("2015-11-11 16:44:55")
+    def test_user_can_make_reservation_15_minutes_5_seconds_before(self):
+        self.log_in()
+        start, end = self.get_valid_datetime(17)
+        self.post_valid_reservation(start, end, 'A')
 
     @freeze_time("2015-11-11 17:00:00")
-    def test_user_cannot_post_reservation_29_min_before(self):
+    def test_user_cannot_post_reservation_0_min_0_sec_before(self):
         self.log_in()
         res_d = {}
         start = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
