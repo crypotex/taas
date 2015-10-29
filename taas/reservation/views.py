@@ -1,6 +1,6 @@
 import logging
 
-from datetime import timedelta
+from datetime import timedelta, datetime
 
 from django import http
 from django.contrib import messages
@@ -183,3 +183,15 @@ def reservation_payment(request):
     messages.add_message(request, messages.SUCCESS, _('Successfully paid for the reservations.'))
 
     return http.HttpResponseRedirect(reverse('homepage'))
+
+@login_required()
+def get_expire_date(request):
+    if request.is_ajax():
+        reservation_list = Reservation.objects.filter(user=request.user, paid=False).order_by("time_created")
+        if reservation_list.exists():
+            expire_datetime = reservation_list.first() + timedelta(minutes=10)
+            expire_datetime = expire_datetime.strftime("%d-%m-%Y %H:%M:%S")
+            return http.JsonResponse({'response':expire_datetime})
+        else:
+            return http.JsonResponse({'response':"null"})
+    return http.HttpResponseForbidden("Error")
