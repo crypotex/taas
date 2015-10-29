@@ -187,11 +187,11 @@ def reservation_payment(request):
 @login_required()
 def get_expire_date(request):
     if request.is_ajax():
-        reservation_list = Reservation.objects.filter(user=request.user, paid=False).order_by("time_created")
+        reservation_list = Reservation.objects.filter(user=request.user, paid=False).order_by("date_created")
         if reservation_list.exists():
-            expire_datetime = reservation_list.first() + timedelta(minutes=10)
+            expire_datetime = reservation_list.first().date_created + timedelta(minutes=10)
             expire_datetime = expire_datetime.strftime("%d-%m-%Y %H:%M:%S")
-            return http.JsonResponse({'response':expire_datetime})
+            return http.JsonResponse({'response':expire_datetime}, safe=False)
         else:
-            return http.JsonResponse({'response':"null"})
+            return http.JsonResponse({'response':"null"}, safe=False)
     return http.HttpResponseForbidden("Error")

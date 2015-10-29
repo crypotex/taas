@@ -1,6 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 from freezegun import freeze_time
+import json
 
 from taas.reservation.tests.factories import ReservationFactory, FieldFactory
 from taas.user.tests.factories import UserFactory
@@ -253,3 +254,10 @@ class ReservationTest(TestCase):
     def test_anon_user_cannot_make_payment_for_reservation(self):
         response = self.client.post(self.payment_url, {'id': str(1)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
         self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/payment/'))
+
+    # Should change this a bit
+    def test_expire_date_returns_null(self):
+        self.log_in()
+        self.test_user_can_make_multiple_reservations()
+        response = self.client.get('http://testserver/reservation/expire/', HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        print(response.content)
