@@ -42,7 +42,7 @@
             <div class="user-nav">
                 <ul>
                     <li>{% trans 'Hello, ' %}<a href="/user/update">{{ user.get_short_name }}</a></li>
-                    <li>{{ user.display_budget_money }}</li>
+                    <li><a id="budget" href="/user/balance">{{ user.display_budget_money }}</a></li>
                     <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
                 </ul>
             </div>

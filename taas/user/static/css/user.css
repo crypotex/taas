@@ -239,3 +239,13 @@ input.field-error {
 .tab-menu li.selected:after {
     box-shadow: -2px 2px 0 #FFF;
 }
+
+.banks, .form .label_banks {
+    display: inline-block;
+    padding: 5px;
+}
+
+.form .label_banks img {
+    vertical-align: middle;
+    border: 0;
+}

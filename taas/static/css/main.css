@@ -177,3 +177,10 @@ a:hover {
     margin: 65px auto 30px auto;
 }
 
+#budget {
+    color: rgba(255, 153, 0, 0.9);
+}
+
+#budget:hover {
+    color: rgba(255, 111, 0, 0.9);
+}

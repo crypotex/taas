@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans 'Account balance' %}
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock styles %}
+
+{% block scripts %}
+    <script src="{% static 'js/fullcalendar/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/fullcalendar/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#budget_accordion").accordion({
+                collapsible: true,
+                active: false,
+                heightStyle: "content"
+            });
+        });
+    </script>
+{% endblock scripts %}
+
+{% block content %}
+    <form class="form">
+        <h1>{% trans 'Account balance' %}</h1>
+
+        <div class="fieldWrapper">
+            <h3>{% trans 'Your current account balance:' %} {{ user.display_budget_money }} </h3>
+
+            <div id="budget_accordion">
+                <h3>{% trans 'Select an amount to add' %}</h3>
+                <div>
+                    <input type="number" min="1" value="1" name="amount">
+                </div>
+
+                <h3>{% trans 'Select bank' %}</h3>
+
+                <dl>
+                    <dt>
+                        <input class="banks" name="bank" type="radio" id="SEB" value="SEB" checked>
+                        <label class="label_banks" for="SEB"><img src="{% static 'img/seb.gif' %}"
+                                                                  alt="{% trans 'SEB' %}"></label> <br>
+                    </dt>
+                    <dt>
+                        <input class="banks" name="bank" type="radio" id="Swedbank" value="Swedbank">
+                        <label class="label_banks" for="Swedbank"><img src="{% static 'img/swedbank.gif' %}"
+                                                                       alt="{% trans 'Swedbank' %}"></label>
+                    </dt>
+                    <dt>
+                        <input class="banks" name="bank" type="radio" id="LHV" value="LHV">
+                        <label class="label_banks" for="LHV"><img src="{% static 'img/lhv.png' %}"
+                                                                       alt="{% trans 'LHV' %}"></label>
+                    </dt>
+                    <dt>
+                        <input class="banks" name="bank" type="radio" id="Danske" value="Danske">
+                        <label class="label_banks" for="Danske"><img src="{% static 'img/bank_danske_bank.png' %}"
+                                                                       alt="{% trans 'Danske Bank' %}"></label>
+                    </dt>
+                    <dt>
+                        <input class="banks" name="bank" type="radio" id="Nordea" value="Nordea">
+                        <label class="label_banks" for="Nordea"><img src="{% static 'img/nordea.gif' %}"
+                                                                       alt="{% trans 'Nordea' %}"></label>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </form>
+{% endblock content %}
