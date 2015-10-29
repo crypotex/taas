@@ -3,7 +3,7 @@ var timeError;
 var expireMessage;
 var expire_date = null;
 
-swal.setDefaults({ confirmButtonColor: '#ffa31a' });
+swal.setDefaults({confirmButtonColor: '#ffa31a'});
 
 function csrfSafeMethod(method) {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));

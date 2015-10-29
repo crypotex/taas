@@ -9,7 +9,9 @@
     <meta charset="UTF-8">
     {% block styles %}{% endblock styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
     {% block scripts %}{% endblock scripts %}
+    <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
 </head>
 
 <body>
@@ -58,8 +60,16 @@
     {% endif %}
 
     {% block tab-menu %}{% endblock tab-menu %}
+
+    {% if user.is_authenticated %}
+        <div id="timerMessage">{% trans 'To make all your reservations you have' %}
+            <span id="timer"></span>
+            {% trans 'minutes' %}
+        </div>
+    {% endif %}
 </div>
 
-{% block content %}{% endblock content %}
+{% block content %}
+{% endblock content %}
 </body>
 </html>
