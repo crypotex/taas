@@ -1,6 +1,6 @@
 import logging
 
-from datetime import timedelta, datetime
+from datetime import timedelta, datetime, timezone, time
 
 from django import http
 from django.contrib import messages
@@ -190,8 +190,15 @@ def get_expire_date(request):
         reservation_list = Reservation.objects.filter(user=request.user, paid=False).order_by("date_created")
         if reservation_list.exists():
             expire_datetime = reservation_list.first().date_created + timedelta(minutes=10)
-            expire_datetime = expire_datetime.strftime("%d-%m-%Y %H:%M:%S")
-            return http.JsonResponse({'response':expire_datetime}, safe=False)
+            deltat = expire_datetime - datetime.now(timezone.utc)
+            expire_time_str = strftimedelta(deltat)
+            return http.JsonResponse({'response':expire_time_str}, safe=False)
         else:
             return http.JsonResponse({'response':"null"}, safe=False)
     return http.HttpResponseForbidden("Error")
+
+def strftimedelta(deltat):
+    timedeltastring = str(deltat)
+    l = timedeltastring.split(":")
+    minutes, seconds =  l[1], l[2].split(".")[0]
+    return minutes + ":" + seconds
