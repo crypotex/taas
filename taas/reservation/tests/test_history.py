@@ -23,14 +23,6 @@ class HistoryListTest(TestCase):
         response = self.client.get(self.history_url)
         self.assertEqual(response.status_code, http_client.OK)
 
-    def test_user_gets_reservations(self):
-        ReservationFactory.create_batch(3, paid=True, user=self.user)
-        data = {
-            'month': datetime.today().month,
-            'year': datetime.today().year
-        }
-        self._ensure_table_has_been_created(data)
-
     def test_user_does_not_get_unpaid_reservations(self):
         ReservationFactory.create_batch(3, user=self.user)
         data = {
@@ -68,14 +60,6 @@ class HistoryListTest(TestCase):
         self.assertEqual(response.content.decode('utf-8'), "Cannot delete paid reservation.")
         self.assertTrue(Reservation.objects.filter(id=reservation.id).exists())
         self.assertNotEqual(User.objects.get(id=self.user.id).budget, reservation.price)
-
-    def _ensure_table_has_been_created(self, data):
-        self.client.login(username=self.user.email, password='isherenow')
-        response = self.client.post(self.history_url, data)
-
-        self.assertEqual(response.status_code, http_client.OK)
-        self.assertIn('<thead>', response.content.decode("utf-8"))
-        self.assertIn('<tbody>', response.content.decode("utf-8"))
 
     def _ensure_table_has_not_been_created(self, data):
         self.client.login(username=self.user.email, password='isherenow')
