@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^remove/all/$', views.remove_unpaid_reservations, name='remove_all_reservations'),
     url(r'^list/$', views.ReservationList.as_view(), name='reservation_list'),
     url(r'^payment/$', views.reservation_payment, name='reservation_payment'),
+    url(r'^history/$', views.history, name='reservation_history'),
 ]

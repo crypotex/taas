@@ -1,16 +1,20 @@
 import logging
 
-from datetime import timedelta
+from decimal import Decimal
+from datetime import timedelta, date, datetime
 
 from django import http
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
+from django.shortcuts import render_to_response, render
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView, FormView
+from django_tables2 import RequestConfig
 
+from taas.reservation.forms import ReservationForm, HistoryForm
 from taas.reservation.models import Field, Reservation
-from taas.reservation.forms import ReservationForm
+from taas.reservation.tables import HistoryTable
 from taas.user.mixins import LoggedInMixin
 
 logger = logging.getLogger(__name__)
@@ -118,6 +122,12 @@ def check_unpaid_reservations(user):
     return reservations.exists()
 
 
+def can_delete_paid_reservation(reservation_start):
+    diff = (reservation_start.replace(tzinfo=None) - datetime.now())
+
+    return divmod(diff.days * 86400 + diff.seconds, 60)[0] >= 15
+
+
 @login_required()
 def remove_reservation(request):
     if request.is_ajax() and request.method == 'POST':
@@ -131,6 +141,10 @@ def remove_reservation(request):
             reservation = reservations.first()
 
             if not reservation.paid:
+                reservation.delete()
+            elif can_delete_paid_reservation(reservation.start.astimezone(tz=None)):
+                request.user.budget += reservation.price
+                request.user.save()
                 reservation.delete()
             else:
                 return http.HttpResponseBadRequest("Cannot delete paid reservation.")
@@ -183,3 +197,34 @@ def reservation_payment(request):
     messages.add_message(request, messages.SUCCESS, _('Successfully paid for the reservations.'))
 
     return http.HttpResponseRedirect(reverse('homepage'))
+
+
+@login_required()
+def history(request):
+    template = 'history.html'
+    if request.method == 'POST':
+        form = HistoryForm(data=request.POST)
+        if form.is_valid():
+            current_month = int(form.cleaned_data['month'])
+            year = int(form.cleaned_data['year'])
+        else:
+            return http.HttpResponseBadRequest()
+    else:
+        form = HistoryForm()
+        current_month = date.today().month
+        year = date.today().year
+
+    data = {'form': form}
+    next_month = 1 if current_month == 12 else current_month + 1
+    reservations = Reservation.objects.filter(
+        user=request.user,
+        paid=True,
+        start__gt=date(year, current_month, 1),
+        end__lt=date(year, next_month, 1)
+    ).order_by('start')
+    if reservations.exists():
+        table = HistoryTable(reservations)
+        RequestConfig(request, paginate={"per_page": 20}).configure(table)
+        data['table'] = table
+
+    return render(request, template, data)
