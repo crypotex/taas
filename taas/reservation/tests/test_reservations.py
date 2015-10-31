@@ -13,7 +13,9 @@ from datetime import datetime, timedelta
 class ReservationTest(TestCase):
     def setUp(self):
         self.user = UserFactory(is_active=True)
-        self.fields = FieldFactory.create_batch(3)
+        FieldFactory(name='A')
+        FieldFactory(name='B')
+        FieldFactory(name='C')
         self.login_data = {'username': self.user.email, 'password': 'isherenow'}
         self.login_url = UserFactory.get_login_url()
         self.reservation_url = ReservationFactory.get_reservation_url()
