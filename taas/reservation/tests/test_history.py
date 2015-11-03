@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from http import client as http_client
 
-from django.test import TestCase
+from django.test import TransactionTestCase
 
 from taas.reservation.models import Reservation
 from taas.reservation.tests.factories import ReservationFactory
@@ -9,7 +9,7 @@ from taas.user.models import User
 from taas.user.tests.factories import UserFactory
 
 
-class HistoryListTest(TestCase):
+class HistoryListTest(TransactionTestCase):
     def setUp(self):
         self.user = UserFactory(is_active=True)
         self.history_url = ReservationFactory.get_reservation_history_url()
