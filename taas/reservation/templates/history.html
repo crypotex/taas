@@ -21,7 +21,7 @@
 {% endblock %}
 
 {% block content %}
-    <form action="" method="post">{% csrf_token %}
+    <form action="" method="get">
         {{ form }}
         <input type="submit" value={% trans 'Sumbit' %}/>
     </form>

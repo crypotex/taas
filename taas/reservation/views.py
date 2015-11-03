@@ -202,8 +202,11 @@ def reservation_payment(request):
 @login_required()
 def history(request):
     template = 'history.html'
-    if request.method == 'POST':
-        form = HistoryForm(data=request.POST)
+    if request.method != 'GET':
+        return http.HttpResponseBadRequest()
+
+    if 'month' in request.GET and 'year' in request.GET:
+        form = HistoryForm(data=request.GET)
         if form.is_valid():
             current_month = int(form.cleaned_data['month'])
             year = int(form.cleaned_data['year'])

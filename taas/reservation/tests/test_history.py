@@ -63,7 +63,7 @@ class HistoryListTest(TransactionTestCase):
 
     def _ensure_table_has_not_been_created(self, data):
         self.client.login(username=self.user.email, password='isherenow')
-        response = self.client.post(self.history_url, data)
+        response = self.client.get(self.history_url, data)
         self.assertEqual(response.status_code, http_client.OK)
 
         self.assertNotIn('<thead>', response.content.decode("utf-8"))
