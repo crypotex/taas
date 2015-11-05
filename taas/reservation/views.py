@@ -189,7 +189,7 @@ def get_expire_date(request):
     if request.is_ajax():
         reservation_list = Reservation.objects.filter(user=request.user, paid=False).order_by("date_created")
         if reservation_list.exists():
-            expire_datetime = reservation_list.first().date_created + timedelta(minutes=10)
+            expire_datetime = reservation_list.first().date_created + timedelta(minutes=3)
             deltat = expire_datetime - datetime.now(timezone.utc)
             expire_time_str = strftimedelta(deltat)
             return http.JsonResponse({'response':expire_time_str}, safe=False)

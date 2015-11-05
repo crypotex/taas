@@ -3,10 +3,6 @@ var timeError;
 var expireMessage;
 var expire_date = null;
 
-$(document).ready(function () {
-    getExpireDate();
-});
-
 swal.setDefaults({confirmButtonColor: '#ffa31a'});
 
 function csrfSafeMethod(method) {
@@ -47,31 +43,37 @@ function startTimer() {
 
 function getExpireDate() {
     jQuery.get('/reservation/expire/', function (date) {
-        console.log("Date Loaded: " + date['response']);
         expire_date = new Date();
         expire_date.setMinutes(expire_date.getMinutes() + parseInt(date['response'].split(":")[0]));
         expire_date.setSeconds(expire_date.getSeconds() + parseInt(date['response'].split(":")[1]));
     }).done(function () {
+        console.log("Date: " + expire_date);
         startTimer();
     });
 }
 
 function disableSubmition() {
-    document.getElementById('submit').style.visibility = 'hidden';
+    if (document.getElementById('submit')) {
+        document.getElementById('submit').style.visibility = 'hidden';
+    }
     document.getElementById('timerMessage').style.visibility = 'hidden';
     expire_date = null;
 }
 
 function enableSubmition() {
-    document.getElementById('submit').style.visibility = 'visible';
+    if (document.getElementById('submit')) {
+        document.getElementById('submit').style.visibility = 'visible';
+    }
     document.getElementById('timerMessage').style.visibility = 'visible';
     startTimer();
 }
 
 function removeReservationsOnExpire() {
-    jQuery.post('reservation/remove/all/').done(
+    jQuery.post('/reservation/remove/all/').done(
         function () {
-            $("#calendar").fullCalendar('refetchEvents');
+            if ($('#calendar').length > 0) {
+                $("#calendar").fullCalendar('refetchEvents');
+            }
             disableSubmition();
             swal({title: "Warning", text: expireMessage, type: "warning", confirmButtonText: "OK"});
         }
@@ -96,9 +98,11 @@ function addReservation(start, end, ev) {
             }
         ).done(function () {
                 $("#calendar").fullCalendar('refetchEvents');
-                enableSubmition()
+                getExpireDate();
+                enableSubmition();
             }
-        )
+        );
+
     }
 }
 
@@ -131,32 +135,48 @@ function checkDate() {
 }
 
 $(document).ready(function () {
-    $("#calendar").fullCalendar({
-        header: false,
-        resources: 'reservation/fields/',
-        defaultView: 'resourceDay',
-        allDaySlot: false,
-        minTime: '08:00:00',
-        maxTime: '22:00:00',
-        aspectRatio: 0.0,
-        theme: true,
-        editable: true,
-        axisFormat: 'HH:mm',
-        timeFormat: '',
-        slotEventOverlap: false,
-        slotDuration: '01:00:00',
-        selectable: canSelect,
-        selectHelper: true,
-        select: addReservation,
-        events: '/reservation/all/',
-        eventClick: deleteReservation
-    });
-    $('#datepicker').datepicker({
-        inline: true,
-        minDate: 0,
-        firstDay: 1,
-        onSelect: function () {
-            $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
+    if ($('#calendar').length > 0) {
+        $("#calendar").fullCalendar({
+            header: false,
+            resources: 'reservation/fields/',
+            defaultView: 'resourceDay',
+            allDaySlot: false,
+            minTime: '08:00:00',
+            maxTime: '22:00:00',
+            aspectRatio: 0.0,
+            theme: true,
+            editable: true,
+            axisFormat: 'HH:mm',
+            timeFormat: '',
+            slotEventOverlap: false,
+            slotDuration: '01:00:00',
+            selectable: canSelect,
+            selectHelper: true,
+            select: addReservation,
+            events: '/reservation/all/',
+            eventClick: deleteReservation
+        });
+    }
+    if ($('#datepicker').length > 0) {
+        $('#datepicker').datepicker({
+            inline: true,
+            minDate: 0,
+            firstDay: 1,
+            onSelect: function () {
+                $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
+            }
+        });
+    }
+
+    getExpireDate();
+    setTimeout(function(){
+        console.log("Date reloaded: " + expire_date);
+        if (expire_date == "Invalid Date") {
+            console.log("Ei ole date");
+            document.getElementById('timerMessage').style.visibility = "hidden";
         }
-    });
+        else {
+            document.getElementById('timerMessage').style.visibility = "visible";
+        }
+    }, 1);
 });
