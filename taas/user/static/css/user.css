@@ -10,7 +10,7 @@
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+form input[type="text"], input[type="password"], input[type="email"] {
     display: block;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
