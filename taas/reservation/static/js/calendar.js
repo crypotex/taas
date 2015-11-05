@@ -3,7 +3,11 @@ var timeError;
 var expireMessage;
 var expire_date = null;
 
-swal.setDefaults({ confirmButtonColor: '#ffa31a' });
+$(document).ready(function () {
+    getExpireDate();
+});
+
+swal.setDefaults({confirmButtonColor: '#ffa31a'});
 
 function csrfSafeMethod(method) {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -32,14 +36,23 @@ function getCookie(name) {
 }
 
 function startTimer() {
-    if (expire_date == null) {
-        expire_date = new Date();
-        expire_date.setMinutes(expire_date.getMinutes() + 10);
+    if (expire_date != null) {
+        $('#timer').countdown(expire_date, function (event) {
+            $(this).html(event.strftime('%M:%S'));
+        }).on('finish.countdown', function (event) {
+            removeReservationsOnExpire();
+        });
     }
-    $('#timer').countdown(expire_date, function (event) {
-        $(this).html(event.strftime('%M:%S'));
-    }).on('finish.countdown', function (event) {
-        removeReservationsOnExpire()
+}
+
+function getExpireDate() {
+    jQuery.get('/reservation/expire/', function (date) {
+        console.log("Date Loaded: " + date['response']);
+        expire_date = new Date();
+        expire_date.setMinutes(expire_date.getMinutes() + parseInt(date['response'].split(":")[0]));
+        expire_date.setSeconds(expire_date.getSeconds() + parseInt(date['response'].split(":")[1]));
+    }).done(function () {
+        startTimer();
     });
 }
 
@@ -52,7 +65,7 @@ function disableSubmition() {
 function enableSubmition() {
     document.getElementById('submit').style.visibility = 'visible';
     document.getElementById('timerMessage').style.visibility = 'visible';
-    startTimer()
+    startTimer();
 }
 
 function removeReservationsOnExpire() {
