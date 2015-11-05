@@ -40,12 +40,6 @@
 {% endblock scripts %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <div id="timerMessage">{% trans 'To make all your reservations you have' %}
-            <span id="timer"></span>
-            {% trans 'minutes' %}
-        </div>
-    {% endif %}
     <div class="wrap">
         <div id="calendar"></div>
         <div id="datepicker"></div>
