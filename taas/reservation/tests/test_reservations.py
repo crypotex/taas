@@ -255,9 +255,16 @@ class ReservationTest(TestCase):
         response = self.client.post(self.payment_url, {'id': str(1)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
         self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/payment/'))
 
-    # Should change this a bit
-    def test_expire_date_returns_null(self):
+    def test_expire_date_returns_null_if_no_reservations(self):
+        self.log_in()
+        response = self.client.get('http://testserver/reservation/expire/', HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        content = json.loads(response.content.decode())
+        self.assertEqual(content['response'], "null", _("Expire date should be null without any unpaid reservations."))
+
+    def test_expire_date_returns_minutes_seconds_with_valid_unpaid_reservations(self):
         self.log_in()
         self.test_user_can_make_multiple_reservations()
         response = self.client.get('http://testserver/reservation/expire/', HTTP_X_REQUESTED_WITH="XMLHttpRequest")
-        print(response.content)
+        content = json.loads(response.content.decode())
+        content_minutes = int(content['response'].split(":")[0])
+        self.assertEqual(content_minutes, 9, _("Expire date should return atleast 9 minute interval with fresh new reservations"))
