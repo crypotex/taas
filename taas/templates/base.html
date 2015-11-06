@@ -7,9 +7,22 @@
 <head>
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
-    {% block styles %}{% endblock styles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
+
+    {% block styles %}{% endblock styles %}
+
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+
     {% block scripts %}{% endblock scripts %}
+
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script type="text/javascript">
+        expireMessage = "{% trans 'Your reservation time has been expired.' %}";
+    </script>
+    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
+
 </head>
 
 <body>
@@ -58,8 +71,16 @@
     {% endif %}
 
     {% block tab-menu %}{% endblock tab-menu %}
+
+    {% if user.is_authenticated %}
+        <div id="timerMessage">{% trans 'To make all your reservations you have' %}
+            <span id="timer"></span>
+            {% trans 'minutes' %}
+        </div>
+    {% endif %}
 </div>
 
-{% block content %}{% endblock content %}
+{% block content %}
+{% endblock content %}
 </body>
 </html>

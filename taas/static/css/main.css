@@ -177,3 +177,7 @@ a:hover {
     margin: 65px auto 30px auto;
 }
 
+#timerMessage {
+    visibility: hidden;
+}
+
