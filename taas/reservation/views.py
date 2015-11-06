@@ -185,7 +185,7 @@ def reservation_payment(request):
     return http.HttpResponseRedirect(reverse('homepage'))
 
 @login_required()
-def get_expire_date(request):
+def get_expire_time(request):
     if request.is_ajax():
         reservation_list = Reservation.objects.filter(user=request.user, paid=False).order_by("date_created")
         if reservation_list.exists():

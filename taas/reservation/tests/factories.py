@@ -62,4 +62,4 @@ class ReservationFactory(factory.DjangoModelFactory):
 
     @classmethod
     def get_expire_url(cls):
-        return 'http://testserver' + reverse('get_expire_date')
+        return 'http://testserver' + reverse('get_expire_time')
