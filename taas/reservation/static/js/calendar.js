@@ -66,19 +66,14 @@ function removeReservationsOnExpire() {
 }
 
 function addReservation(start, end, ev) {
-    $(".fc-cell-overlay").removeClass("fc-cell-overlay");
-    $(this).addClass('fc-cell-overlay');
-    var check = new Date(start.toISOString());
-    var now = new Date();
-    var diff = Math.floor((Math.abs(now - check) / 1000) / 60);
-    if (check < now || diff < 30) {
+    var minutes = start.diff(moment(), 'minutes');
+    if (minutes < 15) {
         swal({title: "Warning", text: timeError, type: "warning", customClass: "alert-button"});
-    }
-    else {
+    } else {
         jQuery.post('reservation/add/',
             {
-                start: start.format(),
-                end: end.format(),
+                start: start.zone('+0200').format('YYYY-MM-DD HH:mm'),
+                end: end.zone('+0200').format('YYYY-MM-DD HH:mm'),
                 field: ev.data.name
             }
         ).done(function () {
@@ -89,7 +84,7 @@ function addReservation(start, end, ev) {
     }
 }
 
-function deleteReservation(calEvent, jsEvent, view) {
+function deleteReservation(calEvent) {
     if (calEvent.color != "#008000") return;
 
     jQuery.post('/reservation/remove/',
@@ -130,6 +125,7 @@ $(document).ready(function () {
         editable: true,
         axisFormat: 'HH:mm',
         timeFormat: '',
+        timezone: 'local',
         slotEventOverlap: false,
         slotDuration: '01:00:00',
         selectable: canSelect,

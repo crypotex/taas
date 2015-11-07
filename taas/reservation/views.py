@@ -1,15 +1,14 @@
 import logging
-
-from decimal import Decimal
-from datetime import timedelta, date, datetime
+from datetime import timedelta, date
 
 from django import http
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse, reverse_lazy
-from django.shortcuts import render_to_response, render
+from django.core.urlresolvers import reverse
+from django.shortcuts import render
+from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import ListView, TemplateView, FormView
+from django.views.generic import ListView, TemplateView
 from django_tables2 import RequestConfig
 
 from taas.reservation.forms import ReservationForm, HistoryForm
@@ -29,13 +28,13 @@ class HomePageView(TemplateView):
         if self.request.user.is_authenticated():
             reservations = Reservation.objects.filter(
                 user=self.request.user,
-                paid=False).order_by('date_created')
+                paid=False
+            ).order_by('date_created')
 
             if reservations.exists():
                 kwargs['is_unpaid'] = True
-                first_unpaid = reservations.first().date_created.astimezone(tz=None)
-                kwargs['expire_date'] = (first_unpaid + timedelta(minutes=10)). \
-                    strftime("%Y/%m/%d %H:%M:%S")
+                first_unpaid = reservations.first().get_date_created()
+                kwargs['expire_date'] = (first_unpaid + timedelta(minutes=10)).strftime("%Y/%m/%d %H:%M:%S")
 
         return kwargs
 
@@ -55,6 +54,7 @@ def get_reservations(request):
         end = request.GET.get('end', '')
 
         if start and end:
+            # FixMe: SQL injection can be applied here.
             reservations = Reservation.objects.filter(
                 start__gte=start,
                 end__lte=end,
@@ -73,8 +73,8 @@ def get_reservations(request):
                 else:
                     color = '#7B68EE'
 
-                start_time = reservation.start.astimezone(tz=None)
-                end_time = reservation.end.astimezone(tz=None)
+                start_time = reservation.get_start()
+                end_time = reservation.get_end()
                 entry = {
                     'id': reservation.id,
                     'start': start_time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -112,20 +112,14 @@ def add_reservation(request):
             if not reservation.exists():
                 Reservation.objects.create(**data)
 
-            return http.HttpResponse("Success")
+            return http.HttpResponse(_("Success"))
 
-    return http.HttpResponseBadRequest("Error")
+    return http.HttpResponseBadRequest(_("Error"))
 
 
 def check_unpaid_reservations(user):
     reservations = Reservation.objects.filter(user=user, paid=False)
     return reservations.exists()
-
-
-def can_delete_paid_reservation(reservation_start):
-    diff = (reservation_start.replace(tzinfo=None) - datetime.now())
-
-    return divmod(diff.days * 86400 + diff.seconds, 60)[0] >= 15
 
 
 @login_required()
@@ -134,25 +128,24 @@ def remove_reservation(request):
         try:
             reservation_id = int(request.POST.get('id'))
         except ValueError:
-            return http.HttpResponseBadRequest("Invalid key.")
+            return http.HttpResponseBadRequest(_("Invalid key."))
 
-        reservations = Reservation.objects.filter(id=reservation_id)
+        reservations = Reservation.objects.filter(id=reservation_id, user=request.user)
         if reservations.exists():
             reservation = reservations.first()
 
-            if not reservation.paid:
-                reservation.delete()
-            elif can_delete_paid_reservation(reservation.start.astimezone(tz=None)):
-                request.user.budget += reservation.price
-                request.user.save()
+            if reservation.can_delete():
+                if reservation.paid:
+                    request.user.budget += reservation.price
+                    request.user.save()
                 reservation.delete()
             else:
-                return http.HttpResponseBadRequest("Cannot delete paid reservation.")
+                return http.HttpResponseBadRequest(_("Cannot delete the reservation."))
 
         response = check_unpaid_reservations(request.user)
         return http.JsonResponse({'response': response}, safe=False)
 
-    return http.HttpResponseBadRequest("Not allowed.")
+    return http.HttpResponseBadRequest(_("Not allowed."))
 
 
 class ReservationList(LoggedInMixin, ListView):
@@ -186,7 +179,7 @@ def remove_unpaid_reservations(request):
         Reservation.objects.filter(user=request.user, paid=False).delete()
         return http.HttpResponse("Success")
 
-    return http.HttpResponseForbidden("Error")
+    return http.HttpResponseForbidden(_("Error"))
 
 
 @login_required()
@@ -214,8 +207,8 @@ def history(request):
             return http.HttpResponseBadRequest()
     else:
         form = HistoryForm()
-        current_month = date.today().month
-        year = date.today().year
+        current_month = timezone.now().month
+        year = timezone.now().year
 
     data = {'form': form}
     next_month = 1 if current_month == 12 else current_month + 1
@@ -231,3 +224,7 @@ def history(request):
         data['table'] = table
 
     return render(request, template, data)
+
+
+def update_reservation(request):
+    pass

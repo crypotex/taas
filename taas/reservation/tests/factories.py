@@ -1,6 +1,7 @@
 import datetime
 
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 
 import factory
 import factory.fuzzy
@@ -22,8 +23,8 @@ class ReservationFactory(factory.DjangoModelFactory):
     class Meta:
         model = Reservation
 
-    start = factory.fuzzy.BaseFuzzyDateTime(start_dt=datetime.datetime.now(),
-                                            end_dt=datetime.datetime.now() + datetime.timedelta(days=1), force_hour=12)
+    start = factory.fuzzy.BaseFuzzyDateTime(start_dt=timezone.now() + datetime.timedelta(days=1),
+                                            end_dt=timezone.now() + datetime.timedelta(days=2), force_hour=12)
     end = factory.LazyAttribute(lambda o: o.start + datetime.timedelta(hours=1))
     user = factory.SubFactory(UserFactory, is_active=True)
     field = factory.SubFactory(FieldFactory)

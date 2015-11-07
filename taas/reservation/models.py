@@ -9,7 +9,7 @@ from taas.user.models import User
 
 
 class Field(models.Model):
-    name = models.CharField(_('name'), max_length=30, unique=True)
+    name = models.CharField(_('name'), max_length=10, unique=True)
     cost = models.DecimalField(_('cost'), max_digits=5, decimal_places=2, validators=[MinValueValidator(0.0)])
     description = models.TextField(_('description'), blank=True)
 
@@ -44,3 +44,26 @@ class Reservation(models.Model):
 
     price = property(_get_price)
 
+    def get_start(self):
+        return timezone.localtime(self.start)
+
+    def get_end(self):
+        return timezone.localtime(self.end)
+
+    def get_date_created(self):
+        return timezone.localtime(self.date_created)
+
+    def can_delete(self):
+        if not self.paid:
+            return True
+
+        # It should be possible to remove reservation before start day.
+        return timezone.datetime.today().day < self.get_start().day
+
+    def can_update(self):
+        if not self.paid:
+            return False
+
+        # It should be possible to update reservation 15 minutes before start.
+        diff = self.get_start() - timezone.now()
+        return divmod(diff.days * 86400 + diff.seconds, 60)[0] > 15
