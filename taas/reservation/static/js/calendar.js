@@ -171,7 +171,7 @@ $(document).ready(function () {
     getExpireDate();
     setTimeout(function(){
         console.log("Date reloaded: " + expire_date);
-        if (expire_date == "Invalid Date") {
+        if (expire_date == "Invalid Date" || expire_date == null) {
             console.log("Ei ole date");
             document.getElementById('timerMessage').style.visibility = "hidden";
         }
