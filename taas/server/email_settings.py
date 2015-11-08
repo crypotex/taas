@@ -1,16 +1,16 @@
 from django.utils.translation import ugettext_lazy as _
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = ''
 
-EMAIL_HOST_USER = 'taasauhauh@gmail.com'
+EMAIL_HOST_USER = ''
 
-EMAIL_HOST_PASSWORD = 'auhauhtaas'
+EMAIL_HOST_PASSWORD = ''
 
 EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
 
-ADMIN_EMAILS = ['taasauhauh@gmail.com']
+ADMIN_EMAILS = []
 
 USER_STATUS_SUBJECT = _('User status')
 
