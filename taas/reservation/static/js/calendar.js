@@ -5,37 +5,11 @@ var expire_date = null;
 
 swal.setDefaults({confirmButtonColor: '#ffa31a'});
 
-function csrfSafeMethod(method) {
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-$.ajaxSetup({
-    beforeSend: function (xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-        }
-    }
-});
-
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-
 function startTimer() {
     if (expire_date != null) {
         $('#timer').countdown(expire_date, function (event) {
             $(this).html(event.strftime('%M:%S'));
-        }).on('finish.countdown', function (event) {
+        }).on('finish.countdown', function () {
             removeReservationsOnExpire();
         });
     }
@@ -71,7 +45,7 @@ function enableSubmition() {
 function removeReservationsOnExpire() {
     jQuery.post('/reservation/remove/all/').done(
         function () {
-            if ($('#calendar').length > 0) {
+            if ($('#calendar').length) {
                 $("#calendar").fullCalendar('refetchEvents');
             }
             disableSubmition();
@@ -130,7 +104,7 @@ function checkDate() {
 }
 
 $(document).ready(function () {
-    if ($('#calendar').length > 0) {
+    if ($('#calendar').length) {
         $("#calendar").fullCalendar({
             header: false,
             resources: 'reservation/fields/',
@@ -140,10 +114,9 @@ $(document).ready(function () {
             maxTime: '22:00:00',
             aspectRatio: 0.0,
             theme: true,
-            editable: true,
             axisFormat: 'HH:mm',
             timeFormat: '',
-            slotEventOverlap: false,
+            timezone: 'local',
             slotDuration: '01:00:00',
             selectable: canSelect,
             selectHelper: true,
@@ -152,7 +125,7 @@ $(document).ready(function () {
             eventClick: deleteReservation
         });
     }
-    if ($('#datepicker').length > 0) {
+    if ($('#datepicker').length) {
         $('#datepicker').datepicker({
             inline: true,
             minDate: 0,
@@ -173,5 +146,5 @@ $(document).ready(function () {
         else {
             document.getElementById('timerMessage').style.visibility = "visible";
         }
-    }, 1);
+    }, 100);
 });
