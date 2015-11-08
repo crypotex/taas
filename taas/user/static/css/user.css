@@ -258,3 +258,14 @@ input.field-error {
     color: #666666;
     margin-bottom: 20px;
 }
+
+#terms, #label_terms {
+    display: inline-block;
+    padding: 5px;
+}
+
+#submit-button:disabled {
+    background-color: rgba(255, 163, 26, 0.75);
+    pointer: initial;
+}
+
