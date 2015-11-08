@@ -3,6 +3,8 @@ Base settings for TAAS project
 """
 
 import os
+
+from django.conf import global_settings
 from django.core.urlresolvers import reverse_lazy
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -20,10 +22,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_tables2',
     'widget_tweaks',
 
     'taas.user',
     'taas.reservation',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,6 +54,19 @@ TEMPLATE_DIRS = (
 LOCALE_PATHS = (
     os.path.join(PROJECT_ROOT, 'locale'),
 )
+
+COLORS = {
+    'paid': {
+        'anonymous': '#4682B4',
+        'others': '#7B68EE',
+        'owner': '#483D8B'
+    },
+    'unpaid': {
+        'owner': '#008000',
+        'others': '#FF8C00',
+    },
+    'update': '#A52A2A'
+}
 
 ROOT_URLCONF = 'taas.urls'
 

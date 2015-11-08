@@ -7,8 +7,8 @@ from taas.reservation.models import Field
 
 class ReservationForm(forms.Form):
     field = forms.CharField(max_length=10)
-    start = forms.DateTimeField()
-    end = forms.DateTimeField()
+    start = forms.DateTimeField(input_formats=['%Y-%m-%d %H', '%Y-%m-%d %H:00'])
+    end = forms.DateTimeField(input_formats=['%Y-%m-%d %H', '%Y-%m-%d %H:00'])
 
     def clean(self):
         super(ReservationForm, self).clean()
@@ -30,7 +30,10 @@ class ReservationForm(forms.Form):
 
         field = Field.objects.filter(name=self.cleaned_data['field'])
         if not field.exists():
-            forms.ValidationError(_("Field does not exist."))
+            try:
+                Field.objects.get(id=int(self.cleaned_data['field']))
+            except (ValueError, Field.DoesNotExist):
+                raise forms.ValidationError(_("Field does not exist."))
 
 
 MONTHS = [
