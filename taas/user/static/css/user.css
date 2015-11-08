@@ -249,3 +249,12 @@ input.field-error {
     vertical-align: middle;
     border: 0;
 }
+
+#show_budget {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666666;
+    margin-bottom: 20px;
+}
