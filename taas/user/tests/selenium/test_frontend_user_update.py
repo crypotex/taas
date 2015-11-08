@@ -134,3 +134,48 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.login_user()
         self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[1]/a').click()
         self.assertIn('User modification', self.selenium.title)
+
+
+class UserDeactivationTest(StaticLiveServerTestCase):
+    @classmethod
+    def setUpClass(cls):
+        super(UserDeactivationTest, cls).setUpClass()
+        cls.selenium = webdriver.Firefox()
+        cls.selenium.maximize_window()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super(UserDeactivationTest, cls).tearDownClass()
+
+    def test_logged_in_user_can_access_deactivation_page(self):
+        self.go_to_update_page()
+        self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
+        self.assertTrue(self.selenium.find_element_by_xpath('//h1[text() = "Deactivate account"]'))
+
+    def test_logged_in_user_can_deactivate_his_account(self):
+        self.go_to_update_page()
+        self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
+
+        self.assertTrue(self.selenium.find_element_by_xpath('//h1[text() = "Deactivate account"]'))
+        self.selenium.find_element_by_id("id_password").send_keys('isherenow')
+        self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
+
+        self.assertIn('Tartu Agility Playground', self.selenium.title)
+        self.selenium.find_element_by_xpath(
+            '//ul/li[text() = "User has been deactivated."]')
+
+    def login_user(self):
+        self.user = UserFactory(is_active=True)
+        self.selenium.get('%s%s' % (self.live_server_url, "/"))
+        self.assertIn("Tartu Agility Playground", self.selenium.title)
+        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[1]/a').click()
+        self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
+        self.selenium.find_element_by_id('id_password').send_keys('isherenow')
+        self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
+        self.assertIn('Tartu Agility Playground', self.selenium.title)
+
+    def go_to_update_page(self):
+        self.login_user()
+        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[1]/a').click()
+        self.assertIn('User modification', self.selenium.title)
