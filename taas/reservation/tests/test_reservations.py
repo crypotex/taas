@@ -1,10 +1,10 @@
-from django.core.urlresolvers import reverse
 from django.test import TestCase
 from freezegun import freeze_time
+import json
+
 from taas.reservation.tests.factories import ReservationFactory, FieldFactory
 from taas.user.tests.factories import UserFactory
 from taas.reservation.models import Reservation, Field
-from http import client as http_client
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from datetime import datetime, timedelta
@@ -20,6 +20,8 @@ class ReservationTest(TestCase):
         self.remove_all_url = ReservationFactory.get_remove_all_url()
         self.payment_url = ReservationFactory.get_payment_url()
         self.all_reservations_url = ReservationFactory.get_all_reservations_url()
+        self.reservation_list_url = ReservationFactory.get_reservation_list_url()
+        self.expire_url = ReservationFactory.get_expire_url()
 
     @freeze_time("2015-11-11 17:00:00")
     def test_freezegun_datetime_now(self):
@@ -203,6 +205,26 @@ class ReservationTest(TestCase):
         response = self.client.post(self.remove_url, {'id': str(1)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
         self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/remove/'))
 
-    def test_anon_user_cannot_make_payment_for_reservation(self):
-        response = self.client.post(self.payment_url, {'id': str(1)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
-        self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/payment/'))
+    def test_expire_date_returns_null_if_no_reservations(self):
+        self.client.login(**self.login_data)
+        response = self.client.get(self.expire_url, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        content = json.loads(response.content.decode())
+        self.assertEqual(content['response'], "null", _("Expire date should be null without any unpaid reservations."))
+
+    def test_expire_date_returns_minutes_seconds_with_valid_unpaid_reservations(self):
+        self.client.login(**self.login_data)
+        start, end = self.get_valid_datetime(10, 1)
+        self._ensure_user_can_create_reservation(start, end, self.field)
+        response = self.client.get(self.expire_url, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        content = json.loads(response.content.decode())
+        content_time = datetime.strptime(content['response'], "%M:%S")
+        expire_time = timedelta(minutes=content_time.minute, seconds = content_time.second)
+        self.assertTrue(expire_time <= timedelta(minutes = 10),
+                        _("Expire date should return time interval that is between 0 and 10 minutes (both included)"))
+        self.assertTrue(expire_time >= timedelta(minutes=0, seconds = 0),
+                        _("Expire date should return time interval that is between 0 and 10 minutes (both included)"))
+
+    def test_anon_user_cannot_access_expire_date(self):
+        response = self.client.post(self.expire_url, {'id': str(1)}, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertRedirects(response, expected_url=UserFactory.get_login_url(next='/reservation/expire/'))
+

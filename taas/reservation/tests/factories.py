@@ -63,5 +63,9 @@ class ReservationFactory(factory.DjangoModelFactory):
         return 'http://testserver' + reverse('reservation_list')
 
     @classmethod
+    def get_expire_url(cls):
+        return 'http://testserver' + reverse('get_expire_time')
+
+    @classmethod
     def get_reservation_history_url(cls):
         return 'http://testserver' + reverse('reservation_history')

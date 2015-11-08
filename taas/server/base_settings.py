@@ -3,10 +3,7 @@ Base settings for TAAS project
 """
 
 import os
-
 from django.core.urlresolvers import reverse_lazy
-from django.conf import global_settings
-
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -23,7 +20,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'django_tables2',
     'widget_tweaks',
 
     'taas.user',
@@ -40,10 +36,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request',
 )
 
 TEMPLATE_DIRS = (
