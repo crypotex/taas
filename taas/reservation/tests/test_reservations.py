@@ -43,11 +43,11 @@ class ReservationTest(TestCase):
         self._ensure_user_can_create_reservation(start, end, self.field)
         field2, field3 = FieldFactory.create_batch(2)
         self._ensure_user_can_create_reservation(start, end, field2)
-        done_reservations = Reservation.objects.all().filter(start=start, end=end)
+        done_reservations = Reservation.objects.all().filter(start=start)
         self.assertEqual(done_reservations.count(), 2,
                          _('User should be able to make 2 reservations on same datetime on different fields'))
         self._ensure_user_can_create_reservation(start, end, field3)
-        done_reservations = Reservation.objects.all().filter(start=start, end=end)
+        done_reservations = Reservation.objects.all().filter(start=start)
         self.assertEqual(done_reservations.count(), 3,
                          _('User should be able to make 2 reservations on same datetime on different fields'))
 
@@ -76,7 +76,7 @@ class ReservationTest(TestCase):
         self.client.login(**self.login_data)
         start, end = self.get_valid_datetime(12, 5)
         self._ensure_user_can_create_reservation(start, end, self.field)
-        done_reservations = Reservation.objects.all().filter(start=start, end=end)
+        done_reservations = Reservation.objects.all().filter(start=start)
         self.assertFalse(done_reservations[0].paid,
                          _("Reservation is automatically paid. It should be unpaid."))
 
@@ -187,7 +187,7 @@ class ReservationTest(TestCase):
     def _ensure_user_can_create_reservation(self, start, end, field):
         reservation_data = {'start': start, 'end': end, 'field': field.name}
         self.client.post(self.reservation_url, reservation_data, HTTP_X_REQUESTED_WITH='XMLHttpRequest')
-        done_reservations = Reservation.objects.filter(start=start, field=field, end=end)
+        done_reservations = Reservation.objects.filter(start=start, field=field)
         self.assertTrue(done_reservations.exists(), _('No reservation made with valid data'))
 
     def get_valid_datetime(self, hour, days=0, minute=0, second=0):

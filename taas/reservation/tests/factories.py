@@ -69,3 +69,7 @@ class ReservationFactory(factory.DjangoModelFactory):
     @classmethod
     def get_reservation_history_url(cls):
         return 'http://testserver' + reverse('reservation_history')
+
+    @classmethod
+    def get_reservation_detail_url(cls, pk):
+        return 'http://testserver' + reverse('detail_reservation', kwargs={'pk': pk})
