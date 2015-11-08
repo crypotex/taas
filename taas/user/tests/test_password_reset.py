@@ -51,6 +51,7 @@ class UserPasswordResetTest(TestCase):
         self.assertEqual(response.status_code, http_client.OK)
 
     def test_active_user_can_change_his_password_with_generated_link(self):
+        new_pw = "testtest"
         # Request password reset
         self.client.post(self.reset_url, data={'email': self.active_user.email}, follow=True)
 
@@ -58,7 +59,7 @@ class UserPasswordResetTest(TestCase):
         link = re.findall(r'(http://\S+)', mail.outbox[0].body)[0]
 
         # Access generated link and submit new password
-        data = {'new_password1': 'test', 'new_password2': 'test'}
+        data = {'new_password1': new_pw, 'new_password2': new_pw}
         response = self.client.post(link, data, follow=True)
         self.assertRedirects(response, expected_url=reverse('homepage'),
                              status_code=http_client.FOUND,
@@ -67,8 +68,34 @@ class UserPasswordResetTest(TestCase):
                          list(response.context['messages'])[0].message)
 
         # Check if user can login with the new password
-        login_data = {'username': self.active_user.email, 'password': 'test'}
+        login_data = {'username': self.active_user.email, 'password': new_pw}
         response = self.client.post(UserFactory.get_login_url(), login_data)
         self.assertRedirects(response, expected_url=reverse('homepage'),
                              status_code=http_client.FOUND,
                              target_status_code=http_client.OK)
+
+    def test_active_user_cannot_change_his_too_short_password_with_generated_link(self):
+        new_pw = "kala"
+        # Request password reset
+        self.client.post(self.reset_url, data={'email': self.active_user.email}, follow=True)
+
+        # Get generated link from the email
+        link = re.findall(r'(http://\S+)', mail.outbox[0].body)[0]
+
+        # Access generated link and submit new password
+        data = {'new_password1': new_pw, 'new_password2': new_pw}
+        response = self.client.post(link, data, follow=True)
+        self.assertEqual("Password reset unsuccessful", response.context_data['title'])
+
+    def test_active_user_cannot_change_password_to_empty_string(self):
+        new_pw = ""
+        # Request password reset
+        self.client.post(self.reset_url, data={'email': self.active_user.email}, follow=True)
+
+        # Get generated link from the email
+        link = re.findall(r'(http://\S+)', mail.outbox[0].body)[0]
+
+        # Access generated link and submit new password
+        data = {'new_password1': new_pw, 'new_password2': new_pw}
+        response = self.client.post(link, data, follow=True)
+        self.assertEqual("Password reset unsuccessful", response.context_data['title'])
