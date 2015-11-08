@@ -6,6 +6,11 @@ from django.utils.translation import ugettext_lazy as _
 class UserCreationForm(auth_forms.UserCreationForm):
     required_css_class = 'required'
 
+    password1 = forms.CharField(label=_("Password"), min_length=8, max_length=64,
+                                widget=forms.PasswordInput)
+    password2 = forms.CharField(label=_("Password confirmation"), min_length=8, max_length=64,
+                                widget=forms.PasswordInput)
+
     class Meta(object):
         model = get_user_model()
         fields = (
@@ -26,9 +31,9 @@ class UserChangeFormAdmin(auth_forms.UserChangeForm):
 
 class UserUpdateForm(forms.ModelForm):
     change_password = forms.BooleanField(label=_("Change password"), required=False)
-    new_password1 = forms.CharField(label=_("New password"), required=False,
+    new_password1 = forms.CharField(label=_("New password"), min_length=8, max_length=64, required=False,
                                     widget=forms.PasswordInput)
-    new_password2 = forms.CharField(label=_("New password confirmation"), required=False,
+    new_password2 = forms.CharField(label=_("New password confirmation"),min_length=8, max_length=64 ,required=False,
                                     widget=forms.PasswordInput)
     old_password = forms.CharField(label=_("Old password"), required=False,
                                    widget=forms.PasswordInput)
@@ -40,6 +45,9 @@ class UserUpdateForm(forms.ModelForm):
 
     def clean(self):
         super(UserUpdateForm, self).clean()
+
+        if self.errors:
+            return
 
         is_password_change = self.cleaned_data.get('change_password', False)
         if is_password_change:
