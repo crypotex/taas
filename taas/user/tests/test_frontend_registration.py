@@ -1,12 +1,9 @@
 import os
-from time import sleep
 
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
+
 from taas.user.tests.factories import UserFactory
-
-
-os.environ['DJANGO_LIVE_TEST_SERVER_ADDRESS'] = 'localhost:8000-8010,8080,9200-9300'
 
 
 class UserRegistrationTest(StaticLiveServerTestCase):
@@ -16,6 +13,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         cls.form_data = UserFactory.get_form_data()
         cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
+        cls.selenium.set_page_load_timeout(30)
 
     @classmethod
     def tearDownClass(cls):
@@ -35,7 +33,6 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.assertIn("Tartu Agility Playground", self.selenium.title)
         self.selenium.find_element_by_xpath(
             '//ul/li[text() = "User has been successfully registered."]')
-        sleep(10)
 
     def test_user_cannot_register(self):
         self.go_to_registration()
@@ -52,7 +49,6 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_xpath('//p[text() = "This field is required."]')
         # Find if passwords did not match
         self.selenium.find_element_by_xpath('//p[text() = "The two password fields didn\'t match."]')
-        sleep(10)
 
     def go_to_registration(self):
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
