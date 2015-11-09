@@ -217,6 +217,18 @@ def remove_unpaid_reservations(request):
 def reservation_payment(request):
     # Temporary view
     reservations = Reservation.objects.filter(user=request.user, paid=False)
+    if not reservations.exists():
+        raise http.Http404()
+
+    from django.db.models import Sum
+
+    total_price = reservations.aggregate(total_price=Sum('field__cost'))['total_price']
+    if total_price > request.user.budget:
+        messages.add_message(request, messages.INFO, _('You do not have enough money.'))
+        return http.HttpResponseRedirect(reverse('reservation_list'))
+
+    request.user.budget -= total_price
+    request.user.save()
     reservations.update(paid=True)
     messages.add_message(request, messages.SUCCESS, _('Successfully paid for the reservations.'))
 

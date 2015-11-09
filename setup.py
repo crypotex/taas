@@ -9,6 +9,7 @@ dev_requires = [
 
 tests_requires = [
     'factory-boy==2.5.2',
+    'selenium==2.48.0',
 ]
 
 install_requires = [
