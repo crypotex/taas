@@ -1,11 +1,6 @@
-import os
-
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from taas.user.tests.factories import UserFactory
-
-
-os.environ['DJANGO_LIVE_TEST_SERVER_ADDRESS'] = 'localhost:8000-8010,8080,9200-9300'
 
 
 class UserUpdateTest(StaticLiveServerTestCase):
@@ -14,7 +9,6 @@ class UserUpdateTest(StaticLiveServerTestCase):
         super(UserUpdateTest, cls).setUpClass()
         cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
-        cls.selenium.set_page_load_timeout(30)
 
     @classmethod
     def tearDownClass(cls):
