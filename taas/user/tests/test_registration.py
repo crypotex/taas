@@ -27,6 +27,14 @@ class UserRegistrationTest(TransactionTestCase):
         user = User.objects.filter(email=self.form_data['email'])
         self.assertTrue(user.exists())
 
+    def test_user_cannot_register_with_short_password(self):
+        fdata = self.form_data
+        fdata['password1'] = " "
+        fdata['password2'] = " "
+        response = self.client.post(self.registration_url, fdata)
+        self.assertTrue("Ensure this value has at least 8 characters (it has 1)." in
+                        response.context_data['form'].errors['password1'])
+
     def test_user_recieves_email_after_successful_registration(self):
         response = self.client.post(self.registration_url, self.form_data, follow=True)
         self.assertEqual(response.status_code, http_client.OK)

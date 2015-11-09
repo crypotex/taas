@@ -8,7 +8,7 @@ function checkPasswords() {
 }
 
 $(document).ready(function () {
-    checkPasswords;
+    checkPasswords();
 
     // Check if the user has confirmed the Terms and Conditions clause.
     $('#terms').change(function () {

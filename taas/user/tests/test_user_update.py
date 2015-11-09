@@ -71,21 +71,32 @@ class UserUpdateTest(TestCase):
         passwords = {
             'change_password': 'on',
             'old_password': 'isherenow',
-            'new_password1': 'test',
-            'new_password2': 'test',
+            'new_password1': 'adminadmin',
+            'new_password2': 'adminadmin',
         }
         data.update(passwords)
         response = self.client.post(self.update_url, data)
         self.assertRedirects(response, expected_url=self.update_url)
 
-        response = self.client.login(username=self.user.email, password='test', follow=True)
+        response = self.client.login(username=self.user.email, password='adminadmin', follow=True)
         self.assertTrue(response)
 
     def test_logged_in_user_cannot_update_his_password_with_invalid_old_password(self):
         data = self._get_post_data()
         passwords = {
             'change_password': 'on',
-            'old_password': 'blabla',
+            'old_password': 'arminvanbuuren',
+            'new_password1': 'adminadmin',
+            'new_password2': 'adminadmin',
+        }
+        data.update(passwords)
+        self._ensure_logged_in_user_cannot_update_his_password_with_invalid_parameters(data)
+
+    def test_logged_in_user_cannot_update_his_password_to_too_short_password(self):
+        data = self._get_post_data()
+        passwords = {
+            'change_password': 'on',
+            'old_password': 'arminvanbuuren',
             'new_password1': 'test',
             'new_password2': 'test',
         }
@@ -97,8 +108,8 @@ class UserUpdateTest(TestCase):
         passwords = {
             'change_password': 'on',
             'old_password': 'isherenow',
-            'new_password1': 'test',
-            'new_password2': 'test2',
+            'new_password1': 'adminadmin',
+            'new_password2': 'arminvanbuuren',
         }
         data.update(passwords)
         self._ensure_logged_in_user_cannot_update_his_password_with_invalid_parameters(data)
@@ -109,7 +120,7 @@ class UserUpdateTest(TestCase):
             'change_password': 'on',
             'old_password': 'isherenow',
             'new_password1': '',
-            'new_password2': 'test2',
+            'new_password2': 'adminadmin',
         }
         data.update(passwords)
         self._ensure_logged_in_user_cannot_update_his_password_with_invalid_parameters(data)
@@ -119,7 +130,7 @@ class UserUpdateTest(TestCase):
         passwords = {
             'change_password': 'on',
             'old_password': 'isherenow',
-            'new_password1': 'test',
+            'new_password1': 'adminadmin',
             'new_password2': '',
         }
         data.update(passwords)

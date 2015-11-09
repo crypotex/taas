@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
+{% endblock styles %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
+    <script>
+        var entities = {{ entities|safe }};
+        var tableDate = "{{ table_date }}"
+    </script>
+    <script type="text/javascript" src="{% static 'js/reservation_update.js' %}"></script>
+{% endblock scripts %}
+
+{% block content %}
+    <div class="table_wrap">
+        <h2 id="reservation_update_header">{% trans 'Choose a new time for the reservation:' %}</h2>
+
+        <div class="wrap">
+            <div id="updateReservation"></div>
+        </div>
+
+        <form method="post" action="{% url 'update_reservation' pk=object.id %}">{% csrf_token %}
+            <div class="fieldWrapper">
+                {% render_field form.start type="hidden" value=start %}
+                {% render_field form.end type="hidden" value=end %}
+                {% render_field form.field type="hidden" value=field %}
+            </div>
+            <input type="submit" id="update_submit" value={% trans 'Submit' %}>
+        </form>
+    </div>
+{% endblock %}
