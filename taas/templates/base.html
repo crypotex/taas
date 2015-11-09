@@ -14,10 +14,10 @@
 
     <script src="{% static 'js/jquery/jquery-2.1.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/ajax_setup.js' %}"></script>
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
 
     {% block scripts %}{% endblock scripts %}
 
-    <script src="{% static 'js/sweetalert.min.js' %}"></script>
     <script type="text/javascript">
         expireMessage = "{% trans 'Your reservation time has been expired.' %}";
     </script>
