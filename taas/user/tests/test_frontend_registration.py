@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
@@ -34,6 +35,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.assertIn("Tartu Agility Playground", self.selenium.title)
         self.selenium.find_element_by_xpath(
             '//ul/li[text() = "User has been successfully registered."]')
+        sleep(10)
 
     def test_user_cannot_register(self):
         self.go_to_registration()
@@ -50,6 +52,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_xpath('//p[text() = "This field is required."]')
         # Find if passwords did not match
         self.selenium.find_element_by_xpath('//p[text() = "The two password fields didn\'t match."]')
+        sleep(10)
 
     def go_to_registration(self):
         self.selenium.get('%s%s' % (self.live_server_url, "/"))

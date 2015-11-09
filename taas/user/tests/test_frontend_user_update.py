@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
@@ -22,6 +23,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
 
     def test_logged_in_user_can_access_update_page(self):
         self.go_to_update_page()
+        sleep(10)
 
     def test_logged_in_user_can_update_his_first_name(self):
         self.go_to_update_page()
@@ -35,6 +37,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//ul/li[text() = "Information has been updated."]'))
         self.assertTrue(self.selenium.find_element_by_xpath('//input[@value="Test"]'))
+        sleep(10)
 
     def test_logged_in_user_can_update_his_last_name(self):
         self.go_to_update_page()
@@ -48,6 +51,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//ul/li[text() = "Information has been updated."]'))
         self.assertTrue(self.selenium.find_element_by_xpath('//input[@value="Test"]'))
+        sleep(10)
 
     def test_logged_in_user_can_update_his_phone_number(self):
         self.go_to_update_page()
@@ -61,6 +65,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//ul/li[text() = "Information has been updated."]'))
         self.assertTrue(self.selenium.find_element_by_xpath('//input[@value="59284829"]'))
+        sleep(10)
 
     def test_logged_in_user_can_update_his_password_with_valid_parameters(self):
         self.go_to_update_page()
@@ -74,6 +79,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertIn("User modification", self.selenium.title)
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//ul/li[text() = "Information has been updated."]'))
+        sleep(10)
 
     def test_logged_in_user_cannot_update_his_password_with_invalid_old_password(self):
         self.go_to_update_page()
@@ -87,6 +93,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertIn("User modification", self.selenium.title)
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//p[text() = "Your old password was entered incorrectly. Please enter it again."]'))
+        sleep(10)
 
     def test_logged_in_user_cannot_update_his_password_with_not_matching_new_passwords(self):
         self.go_to_update_page()
@@ -100,6 +107,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertIn("User modification", self.selenium.title)
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//p[text() = "The two new password fields didn\'t match."]'))
+        sleep(10)
 
     def test_logged_in_user_cannot_update_his_password_without_first_new_password(self):
         self.go_to_update_page()
@@ -112,6 +120,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertIn("User modification", self.selenium.title)
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//p[text() = "New password is required."]'))
+        sleep(10)
 
     def test_logged_in_user_cannot_update_his_password_without_second_new_password(self):
         self.go_to_update_page()
@@ -124,6 +133,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertIn("User modification", self.selenium.title)
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//p[text() = "New password confirmation is required."]'))
+        sleep(10)
 
     def login_user(self):
         self.user = UserFactory(is_active=True)
@@ -157,6 +167,7 @@ class UserDeactivationTest(StaticLiveServerTestCase):
         self.go_to_update_page()
         self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
         self.assertTrue(self.selenium.find_element_by_xpath('//h1[text() = "Deactivate account"]'))
+        sleep(10)
 
     def test_logged_in_user_can_deactivate_his_account(self):
         self.go_to_update_page()
@@ -169,6 +180,7 @@ class UserDeactivationTest(StaticLiveServerTestCase):
         self.assertIn('Tartu Agility Playground', self.selenium.title)
         self.selenium.find_element_by_xpath(
             '//ul/li[text() = "User has been deactivated."]')
+        sleep(10)
 
     def login_user(self):
         self.user = UserFactory(is_active=True)
