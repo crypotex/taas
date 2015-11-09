@@ -6,7 +6,7 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
-    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
 {% endblock styles %}
 
 {% block scripts %}
@@ -21,17 +21,20 @@
 {% endblock scripts %}
 
 {% block content %}
-    <h1>{% trans 'Choose a new time for the reservation:' %}</h1>
-    <div class="wrap">
-        <div id="updateReservation"></div>
-    </div>
+    <div class="table_wrap">
+        <h2 id="reservation_update_header">{% trans 'Choose a new time for the reservation:' %}</h2>
 
-    <form method="post" action="{% url 'update_reservation' pk=object.id %}">{% csrf_token %}
-        <div class="fieldWrapper">
-            {% render_field form.start type="hidden" value=start %}
-            {% render_field form.end type="hidden" value=end %}
-            {% render_field form.field type="hidden" value=field %}
+        <div class="wrap">
+            <div id="updateReservation"></div>
         </div>
-        <input type="submit" value={% trans 'Submit' %}>
-    </form>
+
+        <form method="post" action="{% url 'update_reservation' pk=object.id %}">{% csrf_token %}
+            <div class="fieldWrapper">
+                {% render_field form.start type="hidden" value=start %}
+                {% render_field form.end type="hidden" value=end %}
+                {% render_field form.field type="hidden" value=field %}
+            </div>
+            <input type="submit" id="update_submit" value={% trans 'Submit' %}>
+        </form>
+    </div>
 {% endblock %}

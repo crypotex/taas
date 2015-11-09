@@ -9,6 +9,7 @@ class HistoryTable(tables.Table):
     class Meta:
         model = Reservation
         fields = ('start', 'end', 'field')
+        attrs = {"id": "bookings"}
 
     update = tables.Column(attrs={"th": {"hidden": "True"}}, orderable=False, empty_values=())
     delete = tables.Column(attrs={"th": {"hidden": "True"}}, orderable=False, empty_values=())
@@ -22,9 +23,8 @@ class HistoryTable(tables.Table):
 
     def render_update(self, record):
         if record.can_update():
-            return mark_safe("""
-            <a href="%s">
-                <img id="%s" alt="update" src="/static/img/change.png" />
-            </a>
-            """ % (reverse('detail_reservation', kwargs={'pk': record.id}), record.id))
+            reverse('detail_reservation', kwargs={'pk': record.id})
+            return mark_safe(
+                '<img id="%s" alt="update" src="/static/img/change.png" onClick="update_reservation(this.id)" />'
+                % record.id)
         return ''
