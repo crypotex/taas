@@ -15,11 +15,14 @@ install_requires = [
     'Django==1.8.4',
     'django-model-utils==2.3.1',
     'django-widget-tweaks==1.4.1',
+    'pytz==2015.6',
+    'freezegun==0.3.5',
+    'django-tables2==1.0.4'
 ]
 
 setup(
     name='taas',
-    version='0.1.0',
+    version='0.2.0',
     author='TAAS Team',
     author_email='taas@gmail.com',
     url='https://github.com/crypotex/taas',

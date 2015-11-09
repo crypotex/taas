@@ -1,10 +1,3 @@
-$(function () {
-    $(".tab-menu li").click(function () {
-        $(".tab-menu li").removeClass('selected');
-        $(this).addClass('selected');
-    });
-});
-
 function checkPasswords() {
     checkbox = document.getElementById('id_change_password');
     if (checkbox.checked) {
@@ -13,4 +6,17 @@ function checkPasswords() {
         document.getElementById('passwordChange').style.display = "none";
     }
 }
-window.onload = checkPasswords;
+
+$(document).ready(function () {
+    checkPasswords();
+
+    // Check if the user has confirmed the Terms and Conditions clause.
+    $('#terms').change(function () {
+        if (this.checked) {
+            $('#submit-button').prop('disabled', false);
+        }
+        else {
+            $('#submit-button').prop('disabled', true);
+        }
+    })
+});

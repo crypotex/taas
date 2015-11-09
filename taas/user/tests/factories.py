@@ -50,6 +50,6 @@ class UserFactory(factory.DjangoModelFactory):
             'first_name': 'Taavi',
             'last_name': 'Tonu',
             'phone_number': '555123456',
-            'password1': 'test',
-            'password2': 'test'
+            'password1': 'isherenow',
+            'password2': 'isherenow'
         }

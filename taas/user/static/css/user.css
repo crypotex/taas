@@ -10,7 +10,7 @@
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+form input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
     display: block;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -142,7 +142,7 @@ label.required:after {
     color: rgba(216, 0, 12, 0.6);
 }
 
-input.field-error {
+input.field-error, div.field-error {
     border-color: rgba(216, 0, 12, 0.6);
 }
 
@@ -239,3 +239,34 @@ input.field-error {
 .tab-menu li.selected:after {
     box-shadow: -2px 2px 0 #FFF;
 }
+
+.banks, .form .label_banks {
+    display: inline-block;
+    padding: 5px;
+}
+
+.form .label_banks img {
+    vertical-align: middle;
+    border: 0;
+}
+
+#show_budget {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+#terms, #label_terms {
+    display: inline-block;
+    padding: 5px;
+}
+
+#submit-button:disabled {
+    border: 1px solid #bcbcbc;
+    background-color: rgba(217, 217, 217, 0.75);
+    cursor: initial;
+}
+

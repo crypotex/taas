@@ -1,11 +1,20 @@
 from django.conf.urls import url
+from django.views.decorators.http import require_POST
 
-from taas.reservation.views import get_events, get_fields, initialize_events, ReservationList
+from taas.reservation import views
 
 
 urlpatterns = [
-    url(r'^get_fields/$', get_fields, name='get_ajax_fields'),
-    url(r'^get_events/$', get_events, name='get_ajax_events'),
-    url(r'^initialize/$', initialize_events, name='init_ajax_events'),
-    url(r'^payment/$', ReservationList.as_view(), name='reservation_list'),
+    url(r'^fields/$', views.get_fields, name='fields'),
+    url(r'^all/$', views.get_reservations, name='all_reservations'),
+    url(r'^add/$', views.add_reservation, name='add_reservation'),
+    url(r'^update/(?P<pk>\d+)/$', views.ReservationDetailView.as_view(), name='detail_reservation'),
+    url(r'^update/(?P<pk>\d+)/confirm/$', require_POST(views.UpdateReservationView.as_view()),
+        name='update_reservation'),
+    url(r'^remove/$', views.remove_reservation, name='remove_reservation'),
+    url(r'^remove/all/$', views.remove_unpaid_reservations, name='remove_all_reservations'),
+    url(r'^list/$', views.ReservationList.as_view(), name='reservation_list'),
+    url(r'^payment/$', views.reservation_payment, name='reservation_payment'),
+    url(r'^expire/$', views.get_expire_time, name='get_expire_time'),
+    url(r'^history/$', views.history, name='reservation_history'),
 ]
