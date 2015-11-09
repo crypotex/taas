@@ -1,5 +1,6 @@
 from django.conf.urls import url
 import django.contrib.auth.views as auth_views
+from django.views.generic import TemplateView
 
 from taas.user import views, mixins
 
@@ -9,6 +10,7 @@ urlpatterns = [
     url(r'^deactivate/$', views.UserDeactivateView.as_view(), name='user_deactivate_form'),
     url(r'^login/$', mixins.logout_required(auth_views.login), {'template_name': 'login.html'}, name='user_login_form'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='user_logout'),
+    url(r'^balance/$', TemplateView.as_view(template_name='update_budget.html'), name="user_balance"),
 
     # password reset related urls
     url(r'^password/reset/$', mixins.logout_required(views.password_reset), name='password_reset'),
