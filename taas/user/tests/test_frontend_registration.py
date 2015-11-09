@@ -11,6 +11,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         cls.form_data = UserFactory.get_form_data()
         cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
+        cls.selenium.set_page_load_timeout(30)
 
     @classmethod
     def tearDownClass(cls):

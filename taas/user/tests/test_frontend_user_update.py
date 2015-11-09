@@ -9,6 +9,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
         super(UserUpdateTest, cls).setUpClass()
         cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
+        cls.selenium.set_page_load_timeout(30)
 
     @classmethod
     def tearDownClass(cls):
