@@ -3,7 +3,7 @@ import logging
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
 from django.core.mail import send_mail
-from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator, MinValueValidator
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
@@ -46,7 +46,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(_('active'), default=False,
                                     help_text=_('Designates whether this user should be treated as '
                                     'active. Unselect this instead of deleting accounts.'))
-    budget = models.PositiveIntegerField(_('budget (€)'), default=0)
+    budget = models.DecimalField(_('budget (€)'), decimal_places=2, max_digits=10,
+                                 validators=[MinValueValidator(0.0)], default=0.0)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
     objects = CustomUserManager()

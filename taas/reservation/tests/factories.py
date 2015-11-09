@@ -1,6 +1,7 @@
 import datetime
 
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 
 import factory
 import factory.fuzzy
@@ -13,8 +14,8 @@ class FieldFactory(factory.DjangoModelFactory):
     class Meta:
         model = Field
 
-    name = factory.Iterator(['A', 'B', 'C'])
-    cost = factory.fuzzy.FuzzyFloat(5, 30)
+    name = factory.Sequence(lambda n: 'Field {0}'.format(n))
+    cost = factory.fuzzy.FuzzyDecimal(5, 30)
     description = factory.Sequence(lambda n: 'Description %s' % n)
 
 
@@ -22,10 +23,11 @@ class ReservationFactory(factory.DjangoModelFactory):
     class Meta:
         model = Reservation
 
-    date = datetime.datetime.strptime('2015-11-11', '%Y-%m-%d').date()
-    timeslot = "19"
+    start = factory.fuzzy.BaseFuzzyDateTime(start_dt=timezone.now() + datetime.timedelta(days=1),
+                                            end_dt=timezone.now() + datetime.timedelta(days=2), force_hour=12)
+    end = factory.LazyAttribute(lambda o: o.start + datetime.timedelta(hours=1))
     user = factory.SubFactory(UserFactory, is_active=True)
-    method = factory.fuzzy.FuzzyChoice([1, 2])
+    field = factory.SubFactory(FieldFactory)
 
     @factory.post_generation
     def fields(self, create, extracted, **kwargs):
@@ -63,3 +65,11 @@ class ReservationFactory(factory.DjangoModelFactory):
     @classmethod
     def get_expire_url(cls):
         return 'http://testserver' + reverse('get_expire_time')
+
+    @classmethod
+    def get_reservation_history_url(cls):
+        return 'http://testserver' + reverse('reservation_history')
+
+    @classmethod
+    def get_reservation_detail_url(cls, pk):
+        return 'http://testserver' + reverse('detail_reservation', kwargs={'pk': pk})

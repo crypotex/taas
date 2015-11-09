@@ -1,0 +1,78 @@
+#bookings {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#bookings th {
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+#bookings td, #bookings td:last-child {
+    border-top: 1px solid #c8c8c8;
+    padding: 10px;
+}
+
+#bookings tr:last-child {
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.table_wrap {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#bookings td.update, #bookings td.delete {
+    cursor: pointer;
+}
+
+#bookings td.update img:hover, #bookings td.delete img:hover {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.sort_form {
+    width: 55%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.sort_form select{
+    padding: 2px;
+    margin: 10px;
+}
+
+#reservation_update_header {
+    text-align: center;
+    color: #666666;
+}
+
+#update_submit {
+    background: #ffa31a;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    border: 1px solid #ff9900;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    display: block;
+}
+
+#update_submit:hover {
+    background: #ff9900;
+    -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
+}
+
+.wrap {
+    margin-bottom: 15px;
+}
