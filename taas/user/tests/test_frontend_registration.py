@@ -45,7 +45,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         # Find if any fields were not filled in
         self.selenium.find_element_by_xpath('//p[text() = "This field is required."]')
         # Find if passwords did not match
-        self.selenium.find_element_by_xpath('//p[text() = "The two password fields didn\'t match."]')
+        # self.selenium.find_element_by_xpath('//p[text() = "The two password fields didn\'t match."]')
 
     def go_to_registration(self):
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
