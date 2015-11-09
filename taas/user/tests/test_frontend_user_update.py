@@ -1,7 +1,5 @@
-import time
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 from taas.user.tests.factories import UserFactory
 
 
@@ -11,7 +9,6 @@ class UserUpdateTest(StaticLiveServerTestCase):
         super(UserUpdateTest, cls).setUpClass()
         cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
-        cls.selenium.set_page_load_timeout(30)
 
     @classmethod
     def tearDownClass(cls):
@@ -70,7 +67,6 @@ class UserUpdateTest(StaticLiveServerTestCase):
 
         self.selenium.find_element_by_id('submit-button').click()
         self.assertIn("User modification", self.selenium.title)
-        time.sleep(30)
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//ul/li[text() = "Information has been updated."]'))
 

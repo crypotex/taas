@@ -1,6 +1,5 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
-import time
 
 from taas.user.tests.factories import UserFactory
 
@@ -12,7 +11,6 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         cls.form_data = UserFactory.get_form_data()
         cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
-        cls.selenium.set_page_load_timeout(30)
 
     @classmethod
     def tearDownClass(cls):
@@ -47,7 +45,6 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         # Find if any fields were not filled in
         self.selenium.find_element_by_xpath('//p[text() = "This field is required."]')
         # Find if passwords did not match
-        time.sleep(30)
         self.selenium.find_element_by_xpath('//p[text() = "The two password fields didn\'t match."]')
 
     def go_to_registration(self):
