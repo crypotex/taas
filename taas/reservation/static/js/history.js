@@ -19,7 +19,7 @@ function remove_reservation(reservation_id) {
 
 function update_reservation(reservation_id) {
     swal({
-        title: "Are you sure you want to modify this reservation?",
+        title: "Are you sure?",
         text: updateMessage,
         type: "warning",
         showCancelButton: true,
