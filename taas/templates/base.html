@@ -18,10 +18,23 @@
 
     {% block scripts %}{% endblock scripts %}
 
+    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
     <script type="text/javascript">
         expireMessage = "{% trans 'Your reservation time has been expired.' %}";
+        {% if user.is_authenticated %}
+            getExpireDate();
+            setTimeout(function () {
+                console.log("Date reloaded: " + expire_date);
+                if (expire_date == "Invalid Date" || expire_date == null) {
+                    console.log("Ei ole date");
+                    document.getElementById('timerMessage').style.visibility = "hidden";
+                }
+                else {
+                    document.getElementById('timerMessage').style.visibility = "visible";
+                }
+            }, 100);
+        {% endif %}
     </script>
-    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
 
 </head>
