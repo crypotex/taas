@@ -26,12 +26,12 @@
                 {{ form.new_password1.label_tag }}
                 {% render_field form.new_password1|add_error_class:"field-error" %}
                 {% for err in form.new_password1.errors %}
-                    <p class="error-message">{{ form.new_password1.errors.as_text|cut:"* " }}</p>{% endfor %}
+                    <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
                 {{ form.new_password2.label_tag }}
                 {% render_field form.new_password2|add_error_class:"field-error" %}
                 {% for err in form.new_password2.errors %}
-                    <p class="error-message">{{ form.new_password2.errors.as_text|cut:"* " }}</p>{% endfor %}
+                    <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
             </div>
             <input type="submit" value="{% trans 'Change my password' %}"/>
         </form>
