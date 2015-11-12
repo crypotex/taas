@@ -83,6 +83,19 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.assertTrue(self.selenium.find_element_by_xpath(
             '//p[text() = "Your old password was entered incorrectly. Please enter it again."]'))
 
+    def test_logged_in_user_cannot_update_his_password_to_too_short_password(self):
+        self.go_to_update_page()
+        self.selenium.find_element_by_id('id_change_password').click()
+
+        self.selenium.find_element_by_id('id_old_password').send_keys('isnothere')
+        self.selenium.find_element_by_id('id_new_password1').send_keys('test')
+        self.selenium.find_element_by_id('id_new_password2').send_keys('test')
+
+        self.selenium.find_element_by_id('submit-button').click()
+        self.assertIn("User modification", self.selenium.title)
+        self.assertTrue(self.selenium.find_element_by_xpath(
+            '//p[contains(text(), "Ensure this value has at least 8 characters")]'))
+
     def test_logged_in_user_cannot_update_his_password_with_not_matching_new_passwords(self):
         self.go_to_update_page()
         self.selenium.find_element_by_id('id_change_password').click()

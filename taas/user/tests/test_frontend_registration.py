@@ -30,6 +30,17 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_xpath(
             '//ul/li[text() = "User has been successfully registered."]')
 
+    def test_user_cannot_register_with_short_password(self):
+        self.go_to_registration()
+
+        self.form_data['password1'] = " "
+        self.form_data['password2'] = " "
+        self.fill_the_registration_fields()
+
+        self.selenium.find_element_by_id("terms").click()
+        self.selenium.find_element_by_class_name("form").submit()
+        self.selenium.find_element_by_xpath('//p[contains(text(), "Ensure this value has at least 8 characters")]')
+
     def test_user_cannot_register(self):
         self.go_to_registration()
 
