@@ -80,3 +80,25 @@ Generating SSH keys
 .. code-block:: bash
 
     cat /home/pi/.ssh/id_rsa.pub >> /home/pi/.ssh/authorized_keys
+
+* Add the generated SSH key to the main server
+
+.. code-block:: bash
+
+    ssh-copy-id deployer@46.101.229.73
+
+* To ensure that when you are connecting to the main server, it won't ask for the public key passphrase, run the following command and enter your public key's passphrase.
+
+.. code-block:: bash
+
+    ssh-add
+
+
+Installing SQLite database
+--------------------------
+
+* Run the command to download SQLite to the Raspberry Pi.
+
+.. code-block:: bash
+
+    sudo apt-get install sqlite3
