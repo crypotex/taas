@@ -14,7 +14,7 @@ Developing TAAS
    :maxdepth: 1
 
    developer/guide
-
+   developer/raspi
 
 Information for customer
 ------------------------
