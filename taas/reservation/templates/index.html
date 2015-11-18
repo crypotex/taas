@@ -12,7 +12,6 @@
     <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
-
     <script type="text/javascript">
         {% if user.is_authenticated %}
             canSelect = true;
@@ -33,9 +32,9 @@
 {% endblock scripts %}
 
 {% block content %}
-    <div class="wrap">
-        <div id="calendar"></div>
+    <div class="calendarwrap">
         <div id="datepicker"></div>
+        <div id="calendar"></div>
     </div>
     {% if user.is_authenticated %}
         <form action="{% url 'reservation_list' %}">
