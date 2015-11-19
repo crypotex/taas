@@ -16,6 +16,7 @@ class Field(models.Model):
     def __str__(self):
         return self.name
 
+
 PAYMENT_METHOD_CHOICES = (
     (1, _('Payment made with bank link.')),
     (2, _('Payment made with existing budget'))
@@ -58,7 +59,9 @@ class Reservation(models.Model):
             return True
 
         # It should be possible to remove reservation before start day.
-        return timezone.datetime.today().day < self.get_start().day
+        tzdt = timezone.datetime.today()
+        startdt = self.get_start()
+        return tzdt.year <= startdt.year and tzdt.month <= startdt.month and tzdt.day < self.get_start().day
 
     def can_update(self):
         if not self.paid:
@@ -66,4 +69,7 @@ class Reservation(models.Model):
 
         # It should be possible to update reservation 15 minutes before start.
         diff = self.get_start() - timezone.now()
-        return divmod(diff.days * 86400 + diff.seconds, 60)[0] > 15
+        tzdt = timezone.datetime.today()
+        startdt = self.get_start()
+        return tzdt.year <= startdt.year and tzdt.month <= startdt.month and tzdt.day <= startdt.day and \
+               divmod(diff.days * 86400 + diff.seconds, 60)[0] > 15
