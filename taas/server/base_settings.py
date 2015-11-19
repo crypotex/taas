@@ -6,6 +6,7 @@ import os
 
 from django.conf import global_settings
 from django.core.urlresolvers import reverse_lazy
+from django.utils.translation import ugettext_lazy as _
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -86,6 +87,12 @@ DATABASES = {
 }
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+  ('et', _('Estonian')),
+  ('en', _('English')),
+  ('ru', _('Russian')),
+)
 
 TIME_ZONE = 'Europe/Tallinn'
 

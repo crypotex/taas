@@ -1,0 +1,2555 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-19 13:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: .\build\lib\taas\reservation\forms.py:22 .\taas\reservation\forms.py:21
+msgid "Date should not be in the past."
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:24
+msgid "There should be atleast 15 minutes before reservation"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:28 .\taas\reservation\forms.py:29
+msgid "Start date should be earlier than end date."
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:32 .\taas\reservation\forms.py:36
+msgid "Field does not exist."
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:36 .\taas\reservation\forms.py:40
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "January"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:37 .\taas\reservation\forms.py:41
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "February"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:38 .\taas\reservation\forms.py:42
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "March"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:39 .\taas\reservation\forms.py:43
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "April"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:40 .\taas\reservation\forms.py:44
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "May"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:41 .\taas\reservation\forms.py:45
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "June"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:42 .\taas\reservation\forms.py:46
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "July"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:43 .\taas\reservation\forms.py:47
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "August"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:44 .\taas\reservation\forms.py:48
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "September"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:45 .\taas\reservation\forms.py:49
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "October"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:46 .\taas\reservation\forms.py:50
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "November"
+msgstr ""
+
+#: .\build\lib\taas\reservation\forms.py:47 .\taas\reservation\forms.py:51
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "December"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:12 .\taas\reservation\models.py:12
+msgid "name"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:13 .\taas\reservation\models.py:13
+msgid "cost"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:14 .\taas\reservation\models.py:14
+msgid "description"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:20 .\taas\reservation\models.py:20
+msgid "Payment made with bank link."
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:21 .\taas\reservation\models.py:21
+msgid "Payment made with existing budget"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:26 .\taas\reservation\models.py:26
+msgid "start"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:27 .\taas\reservation\models.py:27
+msgid "end"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:30 .\taas\reservation\models.py:30
+msgid "Paid"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:31 .\taas\reservation\models.py:31
+msgid "date created"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:34 .\taas\reservation\models.py:34
+msgid "reservation"
+msgstr ""
+
+#: .\build\lib\taas\reservation\models.py:35 .\taas\reservation\models.py:35
+msgid "reservations"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:59
+#: .\build\lib\taas\reservation\tests\test_reservations.py:63
+#: .\taas\reservation\tests\test_reservations.py:48
+#: .\taas\reservation\tests\test_reservations.py:52
+msgid ""
+"User should be able to make 2 reservations on same datetime on different "
+"fields"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:69
+#: .\taas\reservation\tests\test_reservations.py:59
+msgid "All three reservations are shown"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:75
+#: .\taas\reservation\tests\test_reservations.py:66
+msgid "Not all unpaid reservations are deleted"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:86
+#: .\taas\reservation\tests\test_reservations.py:73
+msgid "Unpaid Resevation is not deleted."
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:95
+#: .\taas\reservation\tests\test_reservations.py:81
+msgid "Reservation is automatically paid. It should be unpaid."
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:101
+#: .\taas\reservation\tests\test_reservations.py:87
+msgid "Anonymous user can make a valid reservation"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:110
+#: .\build\lib\taas\reservation\tests\test_reservations.py:111
+#: .\build\lib\taas\reservation\tests\test_reservations.py:120
+#: .\build\lib\taas\reservation\tests\test_reservations.py:121
+#: .\build\lib\taas\reservation\tests\test_reservations.py:130
+#: .\build\lib\taas\reservation\tests\test_reservations.py:131
+#: .\build\lib\taas\reservation\tests\test_reservations.py:137
+#: .\build\lib\taas\reservation\tests\test_reservations.py:138
+#: .\build\lib\taas\reservation\tests\test_reservations.py:148
+#: .\build\lib\taas\reservation\tests\test_reservations.py:149
+#: .\taas\reservation\tests\test_reservations.py:96
+#: .\taas\reservation\tests\test_reservations.py:97
+#: .\taas\reservation\tests\test_reservations.py:106
+#: .\taas\reservation\tests\test_reservations.py:107
+#: .\taas\reservation\tests\test_reservations.py:114
+#: .\taas\reservation\tests\test_reservations.py:115
+#: .\taas\reservation\tests\test_reservations.py:121
+#: .\taas\reservation\tests\test_reservations.py:122
+#: .\taas\reservation\tests\test_reservations.py:129
+#: .\taas\reservation\tests\test_reservations.py:130
+msgid "Reservation posted with missing data"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:163
+#: .\build\lib\taas\reservation\tests\test_reservations.py:164
+#: .\taas\reservation\tests\test_reservations.py:143
+#: .\taas\reservation\tests\test_reservations.py:144
+msgid "Reservation posted 15 minutes before"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:178
+#: .\build\lib\taas\reservation\tests\test_reservations.py:179
+#: .\taas\reservation\tests\test_reservations.py:158
+#: .\taas\reservation\tests\test_reservations.py:159
+msgid "Reservation posted 5 minutes after"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:203
+#: .\build\lib\taas\reservation\tests\test_reservations.py:204
+#: .\build\lib\taas\reservation\tests\test_reservations.py:217
+#: .\taas\reservation\tests\test_reservations.py:171
+#: .\taas\reservation\tests\test_reservations.py:172
+#: .\taas\reservation\tests\test_reservations.py:185
+msgid "Reservation posted at the same time of now()"
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:216
+#: .\taas\reservation\tests\test_reservations.py:184
+msgid "Reservation posted 1 minute after "
+msgstr ""
+
+#: .\build\lib\taas\reservation\tests\test_reservations.py:229
+#: .\taas\reservation\tests\test_reservations.py:191
+msgid "No reservation made with valid data"
+msgstr ""
+
+#: .\build\lib\taas\reservation\views.py:197 .\taas\reservation\views.py:233
+msgid "Successfully paid for the reservations."
+msgstr ""
+
+#: .\build\lib\taas\server\email_settings.py:15
+#: .\taas\server\email_settings.py:15
+msgid "User status"
+msgstr ""
+
+#: .\build\lib\taas\server\email_settings.py:17
+#: .\taas\server\email_settings.py:17
+msgid "User registration"
+msgstr ""
+
+#: .\build\lib\taas\server\email_settings.py:19
+#: .\taas\server\email_settings.py:19
+#, python-format
+msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"You have successfully registered to the Tartu Agility Arenguselts.\n"
+"Please wait till admin user verifies your account.\n"
+"You will get notification about that.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+
+#: .\build\lib\taas\server\email_settings.py:29
+#: .\taas\server\email_settings.py:29
+#, python-format
+msgid ""
+"Dear Admin,\n"
+"\n"
+"We received registration request for user with email %(email)s.\n"
+"Please verify him.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+
+#: .\build\lib\taas\server\email_settings.py:38
+#: .\taas\server\email_settings.py:38
+#, python-format
+msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"Your account was successfully verified by the Tartu Agility Arenguselts.\n"
+"You can login now.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+
+#: .\build\lib\taas\server\email_settings.py:47
+#: .\taas\server\email_settings.py:47
+#, python-format
+msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"Your Tartu Agility Arenguselts user was disabled.\n"
+"Please contact administrator for further information.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+
+#: .\build\lib\taas\server\email_settings.py:56
+#: .\taas\server\email_settings.py:56
+#, python-format
+msgid ""
+"Dear Admin,\n"
+"\n"
+"User with email %(email)s was disabled.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+
+#: .\build\lib\taas\urls.py:8 .\taas\urls.py:9
+msgid "TAAS administration"
+msgstr ""
+
+#: .\build\lib\taas\user\admin.py:14 .\taas\user\admin.py:14
+msgid "Personal info"
+msgstr ""
+
+#: .\build\lib\taas\user\admin.py:15 .\taas\user\admin.py:15
+msgid "Permissions"
+msgstr ""
+
+#: .\build\lib\taas\user\admin.py:16 .\taas\user\admin.py:16
+msgid "Important dates"
+msgstr ""
+
+#: .\build\lib\taas\user\apps.py:11 .\taas\user\apps.py:11
+msgid "User"
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:28 .\taas\user\forms.py:33
+msgid "Change password"
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:29 .\taas\user\forms.py:34
+#: .\taas\user\forms.py:94
+msgid "New password"
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:31 .\taas\user\forms.py:36
+#: .\taas\user\forms.py:96
+msgid "New password confirmation"
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:33 .\taas\user\forms.py:38
+msgid "Old password"
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:51 .\taas\user\forms.py:59
+msgid "Old password is required."
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:53 .\taas\user\forms.py:61
+msgid "New password is required."
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:55 .\taas\user\forms.py:63
+msgid "New password confirmation is required."
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:59 .\taas\user\forms.py:67
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:61 .\taas\user\forms.py:69
+msgid "The two new password fields didn't match."
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:77 .\taas\user\forms.py:9
+#: .\taas\user\forms.py:85
+msgid "Password"
+msgstr ""
+
+#: .\build\lib\taas\user\forms.py:83 .\taas\user\forms.py:91
+msgid "Your password was entered incorrectly. Please enter it again."
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:15 .\taas\user\models.py:15
+msgid "Phone number is invalid."
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:40 .\taas\user\models.py:40
+msgid "first name"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:41 .\taas\user\models.py:41
+msgid "last name"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:42 .\taas\user\models.py:42
+msgid "email address"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:43 .\taas\user\models.py:43
+msgid "phone number"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:44 .\taas\user\models.py:44
+msgid "staff status"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:45 .\taas\user\models.py:45
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:46 .\taas\user\models.py:46
+msgid "active"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:47 .\taas\user\models.py:47
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:49 .\taas\user\models.py:49
+msgid "budget (€)"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:50 .\taas\user\models.py:51
+msgid "date joined"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:59 .\taas\user\models.py:60
+msgid "user"
+msgstr ""
+
+#: .\build\lib\taas\user\models.py:60 .\taas\user\models.py:61
+msgid "users"
+msgstr ""
+
+#: .\build\lib\taas\user\views.py:24 .\taas\user\views.py:23
+msgid "User has been successfully registered."
+msgstr ""
+
+#: .\build\lib\taas\user\views.py:41 .\taas\user\views.py:40
+msgid "Information has been updated."
+msgstr ""
+
+#: .\build\lib\taas\user\views.py:60 .\taas\user\views.py:59
+msgid "User has been deactivated."
+msgstr ""
+
+#: .\build\lib\taas\user\views.py:90 .\taas\user\views.py:89
+msgid "Email instructions has been sent."
+msgstr ""
+
+#: .\build\lib\taas\user\views.py:113 .\taas\user\views.py:112
+msgid "Enter new password"
+msgstr ""
+
+#: .\build\lib\taas\user\views.py:119 .\taas\user\views.py:118
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr ""
+
+#: .\build\lib\taas\user\views.py:129 .\taas\user\views.py:128
+#: .\taas\user\views.py:129
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: .\taas\reservation\forms.py:23
+msgid "There should be at least 15 minutes before reservation"
+msgstr ""
+
+#: .\taas\reservation\forms.py:25
+msgid "Invalid reservation time."
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:8
+#: .\taas\reservation\templates\history.html:28
+#: .\taas\user\templates\user_update.html:21
+msgid "History"
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:19
+msgid "Do you really want to remove this reservation?"
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:20
+msgid "Do you really want to modify this reservation?"
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:27
+#: .\taas\user\templates\user_update.html:20
+msgid "Account"
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:37
+#: .\taas\reservation\templates\index.html:42
+#: .\taas\reservation\templates\reservation_update.html:37
+#: .\taas\user\templates\update_budget.html:58
+msgid "Submit"
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:42
+msgid "There are no reservations in this month."
+msgstr ""
+
+#: .\taas\reservation\templates\index.html:19
+msgid "Please select slots, which are 30 minutes later from now."
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:6
+msgid "Payment"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:33
+msgid "Pay for the reservations"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:43
+msgid "Field"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:46
+msgid "Price"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:49
+msgid "Start"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:52
+msgid "End"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:81
+msgid "previous"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:85
+msgid "Page"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:85
+msgid "of"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:89
+#: .\taas\user\templates\login.html:43
+msgid "next"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:99
+#: .\taas\user\templates\update_budget.html:6
+#: .\taas\user\templates\update_budget.html:16
+msgid "Account balance"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:102
+msgid "Budget"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:104
+msgid "Transaction"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:108
+#: .\taas\user\templates\update_budget.html:33
+msgid "SEB"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:110
+#: .\taas\user\templates\update_budget.html:38
+msgid "Swedbank"
+msgstr ""
+
+#: .\taas\reservation\templates\payment.html:112
+msgid "Transcation"
+msgstr ""
+
+#: .\taas\reservation\templates\reservation_update.html:25
+msgid "Choose a new time for the reservation:"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:212
+msgid "Expire date should be null without any unpaid reservations."
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:223
+#: .\taas\reservation\tests\test_reservations.py:225
+msgid ""
+"Expire date should return time interval that is between 0 and 10 minutes "
+"(both included)"
+msgstr ""
+
+#: .\taas\reservation\views.py:146
+msgid "Success"
+msgstr ""
+
+#: .\taas\reservation\views.py:148 .\taas\reservation\views.py:213
+msgid "Error"
+msgstr ""
+
+#: .\taas\reservation\views.py:162
+msgid "Invalid key."
+msgstr ""
+
+#: .\taas\reservation\views.py:174
+msgid "Cannot delete the reservation."
+msgstr ""
+
+#: .\taas\reservation\views.py:179
+msgid "Not allowed."
+msgstr ""
+
+#: .\taas\reservation\views.py:227
+msgid "You do not have enough money."
+msgstr ""
+
+#: .\taas\server\base_settings.py:92
+msgid "Estonian"
+msgstr ""
+
+#: .\taas\server\base_settings.py:93
+msgid "English"
+msgstr ""
+
+#: .\taas\templates\base.html:8
+msgid "Tartu Agility Playground"
+msgstr ""
+
+#: .\taas\templates\base.html:24
+msgid "Your reservation time has been expired."
+msgstr ""
+
+#: .\taas\templates\base.html:57
+msgid "back to booking"
+msgstr ""
+
+#: .\taas\templates\base.html:66 .\taas\user\templates\login.html:7
+#: .\taas\user\templates\login.html:26 .\taas\user\templates\login.html:42
+msgid "Login"
+msgstr ""
+
+#: .\taas\templates\base.html:67
+msgid "Register"
+msgstr ""
+
+#: .\taas\templates\base.html:73
+msgid "Hello, "
+msgstr ""
+
+#: .\taas\templates\base.html:75
+msgid "Logout"
+msgstr ""
+
+#: .\taas\templates\base.html:99
+msgid "To make all your reservations you have"
+msgstr ""
+
+#: .\taas\templates\base.html:101
+msgid "minutes"
+msgstr ""
+
+#: .\taas\user\forms.py:11
+msgid "Password confirmation"
+msgstr ""
+
+#: .\taas\user\templates\admin\add_form.html:6
+msgid ""
+"First, first name, last name, email and password. Then, you'll be able to "
+"edit more user options."
+msgstr ""
+
+#: .\taas\user\templates\admin\add_form.html:8
+msgid "Enter first name, last name, email and password."
+msgstr ""
+
+#: .\taas\user\templates\login.html:19
+msgid "Please login to see this page."
+msgstr ""
+
+#: .\taas\user\templates\password_reset\confirm.html:17
+#: .\taas\user\templates\password_reset\form.html:15
+msgid "Reset your password"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\confirm.html:23
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: .\taas\user\templates\password_reset\confirm.html:36
+msgid "Change my password"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\confirm.html:41
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+
+#: .\taas\user\templates\password_reset\email.html:3
+msgid "Dear"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\email.html:4
+msgid ""
+"\n"
+"You're receiving this email because you requested a password reset for your "
+"user account\n"
+"at Tartu Agility Arenguselts website.\n"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\email.html:9
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\email.html:13
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\email.html:15
+msgid ""
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts\n"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\form.html:17
+msgid ""
+"Enter your email address below, and we'll email instructions for setting a "
+"new one."
+msgstr ""
+
+#: .\taas\user\templates\password_reset\form.html:25
+msgid "Reset my password"
+msgstr ""
+
+#: .\taas\user\templates\password_reset\subject.html:3
+msgid "Password reset"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:18
+msgid "Your current account balance:"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:21
+msgid "Select an amount to add"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:27
+msgid "Select the bank"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:43
+msgid "LHV"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:48
+msgid "Danske Bank"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:53
+msgid "Nordea"
+msgstr ""
+
+#: .\taas\user\templates\user_deactivate.html:13
+msgid "Deactivate account"
+msgstr ""
+
+#: .\taas\user\templates\user_deactivate.html:16
+msgid ""
+"\n"
+"                In order to deactivate your account please enter your "
+"password.\n"
+"                Note that you will not be able to login anymore.\n"
+"            "
+msgstr ""
+
+#: .\taas\user\templates\user_deactivate.html:26
+#: .\taas\user\templates\user_update.html:74
+msgid "Deactivate"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:7
+#: .\taas\user\templates\user_registration.html:21
+msgid "Registration"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:24
+msgid "First Name"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:24
+msgid "Last Name"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:37
+msgid "E-mail"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:37
+msgid "Phone Number"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:50
+msgid "Passwords"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:65
+msgid "I agree to the "
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:65
+msgid "Terms of service"
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:66
+msgid "Enter"
+msgstr ""
+
+#: .\taas\user\templates\user_update.html:7
+msgid "User modification"
+msgstr ""
+
+#: .\taas\user\templates\user_update.html:29
+msgid "Update account"
+msgstr ""
+
+#: .\taas\user\templates\user_update.html:71
+msgid "Update"
+msgstr ""
+
+#: .\venv\Lib\site-packages\alabaster\layout.html:26
+msgid "Page source"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:7
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:7
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\webdesign\apps.py:7
+msgid "Web Design"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:20
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:87
+#: .\venv\Lib\site-packages\django\forms\fields.py:712
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:130
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:141
+msgid "Enter a valid email address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:215
+msgid ""
+"Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:220
+#: .\venv\Lib\site-packages\django\core\validators.py:239
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:225
+#: .\venv\Lib\site-packages\django\core\validators.py:240
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:235
+#: .\venv\Lib\site-packages\django\core\validators.py:238
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:263
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1144
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:272
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:298
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:305
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:314
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has %"
+"(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has %"
+"(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:325
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has %(show_value)"
+"d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has %"
+"(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1130
+#: .\venv\Lib\site-packages\django\forms\models.py:722
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1132
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:107
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:108
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:109
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:110
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:114
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:132
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:922
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1832
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:926
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1830
+#, python-format
+msgid "'%(value)s' value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1001
+#, python-format
+msgid "'%(value)s' value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1003
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1078
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1139
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1188
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1190
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1340
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1193
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1338
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1342
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1346
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1498
+#, python-format
+msgid "'%(value)s' value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1500
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1651
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1654
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1705
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1729
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1796
+#, python-format
+msgid "'%(value)s' value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1798
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1899
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1914
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1950
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2029
+#, python-format
+msgid "'%(value)s' value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2031
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2091
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2103
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2116
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2145
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2152
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2175
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2177
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2308
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2331
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2375
+#, python-format
+msgid "'%(value)s' is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:239
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:389
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1802
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1804
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:2034
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:2124
+msgid "Many-to-many relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:64
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:237
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:280
+#: .\venv\Lib\site-packages\django\forms\fields.py:317
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:319
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:323
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:327
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:438
+#: .\venv\Lib\site-packages\django\forms\fields.py:1193
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:462
+#: .\venv\Lib\site-packages\django\forms\fields.py:1194
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:484
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:525
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:591
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:592
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:593
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:595
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:598
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:660
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:827
+#: .\venv\Lib\site-packages\django\forms\fields.py:921
+#: .\venv\Lib\site-packages\django\forms\models.py:1238
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:922
+#: .\venv\Lib\site-packages\django\forms\fields.py:1037
+#: .\venv\Lib\site-packages\django\forms\models.py:1237
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1038
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1264
+msgid "Enter a valid UUID."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:129
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:214
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\venv\Lib\site-packages\django\forms\forms.py:659
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:96
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:333
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:340
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:368
+#: .\venv\Lib\site-packages\django\forms\formsets.py:370
+msgid "Order"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:372
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:716
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:720
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:726
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:734
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1057
+msgid "The inline foreign key did not match the parent instance primary key."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1123
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1240
+#, python-format
+msgid "\"%(pk)s\" is not a valid value for a primary key."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:165
+#, python-format
+msgid ""
+"%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:345
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:346
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:347
+msgid "Clear"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:555
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:556
+msgid "Yes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:557
+msgid "No"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:865
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:894
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:906
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:908
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:910
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:912
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:914
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:916
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:61
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:62
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:67
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:68
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:151
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:37
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:38
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:51
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:52
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:10
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:79
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:248
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:267
+#: .\venv\Lib\site-packages\django\utils\timesince.py:58
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:14
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:15
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:47
+msgid "0 minutes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:107
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:108
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:112
+msgid ""
+"You are seeing this message because this HTTPS site requires a 'Referer "
+"header' to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:117
+msgid ""
+"If you have configured your browser to disable 'Referer' headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for 'same-"
+"origin' requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:122
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:127
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for 'same-origin' requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:132
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:583
+msgid "Welcome to Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:584
+msgid "It worked!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:585
+msgid "Congratulations on your first Django-powered page."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:586
+msgid ""
+"Of course, you haven't actually done any work yet. Next, start your first "
+"app by running <code>python manage.py startapp [app_label]</code>."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:588
+msgid ""
+"You're seeing this message because you have <code>DEBUG = True</code> in "
+"your Django settings file and you haven't configured any URLs. Get to work!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:48
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:104
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:163
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:219
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:378
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:406
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:660
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:694
+#, python-format
+msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:55
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:76
+msgid "Page is not 'last', nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:81
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:172
+#, python-format
+msgid "Empty list and '%(class_name)s.allow_empty' is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:58
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:60
+#, python-format
+msgid "\"%(path)s\" does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:100
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:11
+msgid "Null character in input stream, replaced with U+FFFD."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:13
+msgid "Invalid codepoint in stream."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:15
+msgid "Solidus (/) incorrectly placed in tag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:17
+msgid "Incorrect CR newline entity, replaced with LF."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:19
+msgid "Entity used with illegal number (windows-1252 reference)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:21
+#, python-format
+msgid ""
+"Numeric entity couldn't be converted to character (codepoint U+%(charAsInt)"
+"08x)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:24
+#, python-format
+msgid "Numeric entity represents an illegal codepoint: U+%(charAsInt)08x."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:27
+msgid "Numeric entity didn't end with ';'."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:29
+msgid "Numeric entity expected. Got end of file instead."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:31
+msgid "Numeric entity expected but none found."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:33
+msgid "Named entity didn't end with ';'."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:35
+msgid "Named entity expected. Got none."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:37
+msgid "End tag contains unexpected attributes."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:39
+msgid "End tag contains unexpected self-closing flag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:41
+msgid "Expected tag name. Got '>' instead."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:43
+msgid ""
+"Expected tag name. Got '?' instead. (HTML doesn't support processing "
+"instructions.)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:46
+msgid "Expected tag name. Got something else instead"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:48
+msgid "Expected closing tag. Got '>' instead. Ignoring '</>'."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:50
+msgid "Expected closing tag. Unexpected end of file."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:52
+#, python-format
+msgid "Expected closing tag. Unexpected character '%(data)s' found."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:54
+msgid "Unexpected end of file in the tag name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:56
+msgid "Unexpected end of file. Expected attribute name instead."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:58
+msgid "Unexpected end of file in attribute name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:60
+msgid "Invalid character in attribute name"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:62
+msgid "Dropped duplicate attribute on tag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:64
+msgid "Unexpected end of file. Expected = or end of tag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:66
+msgid "Unexpected end of file. Expected attribute value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:68
+msgid "Expected attribute value. Got '>' instead."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:70
+msgid "Unexpected = in unquoted attribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:72
+msgid "Unexpected character in unquoted attribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:74
+msgid "Unexpected character after attribute name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:76
+msgid "Unexpected character after attribute value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:78
+msgid "Unexpected end of file in attribute value (\")."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:80
+msgid "Unexpected end of file in attribute value (')."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:82
+msgid "Unexpected end of file in attribute value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:84
+msgid "Unexpected end of file in tag. Expected >"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:86
+msgid "Unexpected character after / in tag. Expected >"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:88
+msgid "Expected '--' or 'DOCTYPE'. Not found."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:90
+msgid "Unexpected ! after -- in comment"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:92
+msgid "Unexpected space after -- in comment"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:94
+msgid "Incorrect comment."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:96
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:104
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:106
+msgid "Unexpected end of file in comment."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:98
+msgid "Unexpected end of file in comment (-)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:100
+msgid "Unexpected '-' after '--' found in comment."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:102
+msgid "Unexpected end of file in comment (--)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:108
+msgid "Unexpected character in comment found."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:110
+msgid "No space after literal string 'DOCTYPE'."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:112
+msgid "Unexpected > character. Expected DOCTYPE name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:114
+msgid "Unexpected end of file. Expected DOCTYPE name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:116
+msgid "Unexpected end of file in DOCTYPE name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:118
+msgid "Unexpected end of file in DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:120
+#, python-format
+msgid "Expected space or '>'. Got '%(data)s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:122
+msgid "Unexpected end of DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:124
+msgid "Unexpected character in DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:126
+msgid "XXX innerHTML EOF"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:128
+msgid "Unexpected DOCTYPE. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:130
+msgid "html needs to be the first start tag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:132
+msgid "Unexpected End of file. Expected DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:134
+msgid "Erroneous DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:136
+msgid "Unexpected non-space characters. Expected DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:138
+#, python-format
+msgid "Unexpected start tag (%(name)s). Expected DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:140
+#, python-format
+msgid "Unexpected end tag (%(name)s). Expected DOCTYPE."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:142
+#, python-format
+msgid "Unexpected end tag (%(name)s) after the (implied) root element."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:144
+#, python-format
+msgid "Unexpected end of file. Expected end tag (%(name)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:146
+msgid "Unexpected start tag head in existing head. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:148
+#, python-format
+msgid "Unexpected end tag (%(name)s). Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:150
+#, python-format
+msgid "Unexpected start tag (%(name)s) that can be in head. Moved."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:152
+#, python-format
+msgid "Unexpected start tag (%(name)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:154
+#, python-format
+msgid "Missing end tag (%(name)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:156
+#, python-format
+msgid "Missing end tags (%(name)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:158
+#, python-format
+msgid "Unexpected start tag (%(startName)s) implies end tag (%(endName)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:161
+#, python-format
+msgid "Unexpected start tag (%(originalName)s). Treated as %(newName)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:163
+#, python-format
+msgid "Unexpected start tag %(name)s. Don't use it!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:165
+#, python-format
+msgid "Unexpected start tag %(name)s. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:167
+#, python-format
+msgid "Unexpected end tag (%(gotName)s). Missing end tag (%(expectedName)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:170
+#, python-format
+msgid "End tag (%(name)s) seen too early. Expected other end tag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:172
+#, python-format
+msgid "Unexpected end tag (%(gotName)s). Expected end tag (%(expectedName)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:174
+#, python-format
+msgid "End tag (%(name)s) seen too early. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:176
+#, python-format
+msgid ""
+"End tag (%(name)s) violates step 1, paragraph 1 of the adoption agency "
+"algorithm."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:179
+#, python-format
+msgid ""
+"End tag (%(name)s) violates step 1, paragraph 2 of the adoption agency "
+"algorithm."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:182
+#, python-format
+msgid ""
+"End tag (%(name)s) violates step 1, paragraph 3 of the adoption agency "
+"algorithm."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:185
+#, python-format
+msgid ""
+"End tag (%(name)s) violates step 4, paragraph 4 of the adoption agency "
+"algorithm."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:188
+#, python-format
+msgid "Unexpected end tag (%(originalName)s). Treated as %(newName)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:190
+#, python-format
+msgid "This element (%(name)s) has no end tag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:192
+#, python-format
+msgid "Unexpected implied end tag (%(name)s) in the table phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:194
+#, python-format
+msgid "Unexpected implied end tag (%(name)s) in the table body phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:196
+msgid "Unexpected non-space characters in table context caused voodoo mode."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:199
+msgid "Unexpected input with type hidden in table context."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:201
+msgid "Unexpected form in table context."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:203
+#, python-format
+msgid "Unexpected start tag (%(name)s) in table context caused voodoo mode."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:206
+#, python-format
+msgid "Unexpected end tag (%(name)s) in table context caused voodoo mode."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:209
+#, python-format
+msgid "Unexpected table cell start tag (%(name)s) in the table body phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:212
+#, python-format
+msgid "Got table cell end tag (%(name)s) while required end tags are missing."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:215
+#, python-format
+msgid "Unexpected end tag (%(name)s) in the table body phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:217
+#, python-format
+msgid "Unexpected implied end tag (%(name)s) in the table row phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:219
+#, python-format
+msgid "Unexpected end tag (%(name)s) in the table row phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:221
+msgid ""
+"Unexpected select start tag in the select phase treated as select end tag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:224
+msgid "Unexpected input start tag in the select phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:226
+#, python-format
+msgid "Unexpected start tag token (%(name)s in the select phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:229
+#, python-format
+msgid "Unexpected end tag (%(name)s) in the select phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:231
+#, python-format
+msgid ""
+"Unexpected table element start tag (%(name)s) in the select in table phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:233
+#, python-format
+msgid ""
+"Unexpected table element end tag (%(name)s) in the select in table phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:235
+msgid "Unexpected non-space characters in the after body phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:237
+#, python-format
+msgid "Unexpected start tag token (%(name)s) in the after body phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:240
+#, python-format
+msgid "Unexpected end tag token (%(name)s) in the after body phase."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:243
+msgid "Unexpected characters in the frameset phase. Characters ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:245
+#, python-format
+msgid "Unexpected start tag token (%(name)s) in the frameset phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:248
+msgid "Unexpected end tag token (frameset) in the frameset phase (innerHTML)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:251
+#, python-format
+msgid "Unexpected end tag token (%(name)s) in the frameset phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:254
+msgid "Unexpected non-space characters in the after frameset phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:257
+#, python-format
+msgid "Unexpected start tag (%(name)s) in the after frameset phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:260
+#, python-format
+msgid "Unexpected end tag (%(name)s) in the after frameset phase. Ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:263
+msgid "Unexpected end tag after body(innerHtml)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:265
+msgid "Unexpected non-space characters. Expected end of file."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:267
+#, python-format
+msgid "Unexpected start tag (%(name)s). Expected end of file."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:270
+#, python-format
+msgid "Unexpected end tag (%(name)s). Expected end of file."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:273
+msgid "Unexpected end of file. Expected table content."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:275
+msgid "Unexpected end of file. Expected select content."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:277
+msgid "Unexpected end of file. Expected frameset content."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:279
+msgid "Unexpected end of file. Expected script content."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:281
+msgid "Unexpected end of file. Expected foreign content"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:283
+#, python-format
+msgid "Trailing solidus not allowed on element %(name)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:285
+#, python-format
+msgid "Element %(name)s not allowed in a non-html context"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:287
+#, python-format
+msgid "Unexpected end tag (%(name)s) before html."
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:289
+msgid "Undefined error (this sucks and should be fixed)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:26
+#, python-format
+msgid "StartTag not in PCDATA content model flag: %(tag)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:28
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:54
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:84
+#, python-format
+msgid "Tag name is not a string: %(tag)r"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:30
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:56
+msgid "Empty tag name"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:32
+#, python-format
+msgid "Void element reported as StartTag token: %(tag)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:34
+#, python-format
+msgid "Non-void element reported as EmptyTag token: %(tag)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:39
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:71
+#, python-format
+msgid "Attribute name is not a string: %(name)r"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:41
+msgid "Empty attribute name"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:43
+#, python-format
+msgid "Attribute value is not a string: %(value)r"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:58
+#, python-format
+msgid "Void element reported as EndTag token: %(tag)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:61
+#, python-format
+msgid "EndTag (%(end)s) does not match StartTag (%(start)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:66
+msgid "Comment not in PCDATA content model flag"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:73
+#, python-format
+msgid "%(type)s token with empty data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:77
+#, python-format
+msgid "Non-space character(s) found in SpaceCharacters token: %(token)r"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:82
+#, python-format
+msgid "Doctype not in PCDATA content model flag: %(name)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\filters\lint.py:91
+#, python-format
+msgid "Unknown token type: %(type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\serializer\htmlserializer.py:211
+msgid "System identifer contains both single and double quote characters"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\serializer\htmlserializer.py:223
+msgid "Unexpected </ in CDATA"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\serializer\htmlserializer.py:234
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\serializer\htmlserializer.py:282
+msgid "Unexpected child element of a CDATA element"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\serializer\htmlserializer.py:288
+msgid "Comment contains --"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\serializer\htmlserializer.py:295
+#, python-format
+msgid "Entity %s not recognized"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\_base.py:61
+msgid "Void element has children"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\_base.py:125
+msgid "Unknown node type: "
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\lxmletree.py:137
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\lxmletree.py:187
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\lxmletree.py:203
+#, python-format
+msgid "Text nodes are text or tail, found %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\lxmletree.py:176
+msgid "Text nodes have no children"
+msgstr ""
