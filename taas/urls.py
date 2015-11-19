@@ -16,11 +16,3 @@ urlpatterns = patterns(
     url(r'^user/', include('taas.user.urls')),
     url(r'^reservation/', include('taas.reservation.urls'))
 )
-
-urlpatterns += i18n_patterns(
-    '',
-    url(r'^$', HomePageView.as_view(), name='home'),
-    url(r'^user/', include('taas.user.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^reservation/', include('taas.reservation.urls'))
-)
