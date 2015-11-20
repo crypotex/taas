@@ -1,21 +1,25 @@
 import json
 import logging
+
 from datetime import timedelta, date
+from hashlib import sha512
+
 from django import http
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.serializers.json import DjangoJSONEncoder
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.db.models import Q
+from django.db.models import Sum
 from django.shortcuts import render
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, TemplateView, DetailView, FormView
-from django.views.generic.detail import SingleObjectMixin
 from django_tables2 import RequestConfig
-from taas.reservation.forms import ReservationForm, HistoryForm
-from taas.reservation.models import Field, Reservation
+
+from taas.reservation.forms import ReservationForm, HistoryForm, PasswordForm
+from taas.reservation.models import Field, Reservation, Payment
 from taas.reservation.tables import HistoryTable
 from taas.user.mixins import LoggedInMixin
 
@@ -179,8 +183,33 @@ def remove_reservation(request):
     return http.HttpResponseBadRequest(_("Not allowed."))
 
 
+@login_required()
+def remove_unpaid_reservations(request):
+    if request.is_ajax():
+        Reservation.objects.filter(user=request.user, paid=False).delete()
+        return http.HttpResponse("Success")
+
+    return http.HttpResponseForbidden(_("Error"))
+
+
+def get_payment_order(amount, reference):
+    data = {
+        'shop': settings.MAKSEKESKUS['shop_id'],
+        'amount': amount,
+        'reference': reference
+    }
+
+    return json.dumps(data, cls=DjangoJSONEncoder)
+
+
+def get_payment_mac(order):
+    encoded_order = (order + settings.MAKSEKESKUS['secret_key']).encode('utf-8')
+    hashed_order = sha512(encoded_order).hexdigest()
+    return hashed_order.upper()
+
+
 class ReservationList(LoggedInMixin, ListView):
-    template_name = 'payment.html'
+    template_name = 'reservation_list.html'
     ordering = 'start'
     context_object_name = 'reservation_list'
     paginate_by = 10
@@ -193,9 +222,22 @@ class ReservationList(LoggedInMixin, ListView):
         return super(ReservationList, self).get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        total_price = sum(reservation.price for reservation in self.queryset)
-        kwargs['total_price'] = total_price
+        total_price = self.queryset.aggregate(total_price=Sum('field__cost'))['total_price']
 
+        old_staged = Payment.objects.filter(type=Payment.STAGED, user=self.request.user)
+        if old_staged.exists():
+            old_staged.delete()
+
+        payment = Payment.objects.create(type=Payment.STAGED, amount=total_price,
+                                         user=self.request.user)
+        for reservation in self.queryset:
+            payment.reservation_set.add(reservation)
+
+        order_json = get_payment_order(total_price, payment.id)
+
+        kwargs['total_price'] = total_price
+        kwargs['payment_json'] = order_json
+        kwargs['payment_mac'] = get_payment_mac(order_json)
         return super(ReservationList, self).get_context_data(**kwargs)
 
     def get_queryset(self):
@@ -204,35 +246,101 @@ class ReservationList(LoggedInMixin, ListView):
         return super(ReservationList, self).get_queryset()
 
 
-@login_required()
-def remove_unpaid_reservations(request):
-    if request.is_ajax():
-        Reservation.objects.filter(user=request.user, paid=False).delete()
-        return http.HttpResponse("Success")
+@csrf_exempt
+@login_required
+def payment_cancelled(request):
+    if request.method != 'POST':
+        return http.HttpResponseNotAllowed(permitted_methods=['POST'])
 
-    return http.HttpResponseForbidden(_("Error"))
+    confirm_json = request.POST.get('json')
+    confirm_mac1 = request.POST.get('mac')
+    if not confirm_json or not confirm_mac1:
+        return http.HttpResponseBadRequest()
+
+    confirm_mac2 = get_payment_mac(confirm_json)
+    if confirm_mac1 != confirm_mac2:
+        return http.HttpResponseBadRequest()
+
+    reference = json.loads(confirm_json)['reference']
+    staged_payments = Payment.objects.filter(id=reference)
+    if staged_payments.exists():
+        staged_payments.delete()
+
+    messages.add_message(request, messages.INFO, _('Payment was cancelled.'))
+    return http.HttpResponseRedirect(reverse_lazy('homepage'))
 
 
-@login_required()
-def reservation_payment(request):
-    # Temporary view
-    reservations = Reservation.objects.filter(user=request.user, paid=False)
-    if not reservations.exists():
-        raise http.Http404()
+@csrf_exempt
+@login_required
+def payment_success(request):
+    if request.method != 'POST':
+        return http.HttpResponseNotAllowed(permitted_methods=['POST'])
 
-    from django.db.models import Sum
+    confirm_json = request.POST.get('json')
+    confirm_mac1 = request.POST.get('mac')
+    if not confirm_json or not confirm_mac1:
+        return http.HttpResponseBadRequest()
 
-    total_price = reservations.aggregate(total_price=Sum('field__cost'))['total_price']
-    if total_price > request.user.budget:
-        messages.add_message(request, messages.INFO, _('You do not have enough money.'))
-        return http.HttpResponseRedirect(reverse('reservation_list'))
+    confirm_mac2 = get_payment_mac(confirm_json)
+    if confirm_mac1 != confirm_mac2:
+        return http.HttpResponseBadRequest()
 
-    request.user.budget -= total_price
-    request.user.save()
-    reservations.update(paid=True)
+    reference = json.loads(confirm_json)['reference']
+    try:
+        staged_payment = Payment.objects.get(id=reference)
+        staged_payment.type = Payment.TRANSACTION
+        staged_payment.reservation_set.update(paid=True)
+        staged_payment.save()
+    except (Payment.DoesNotExist, Payment.MultipleObjectsReturned):
+        return http.HttpResponseServerError(_('Error occurred. Please contact administrator.'))
+
     messages.add_message(request, messages.SUCCESS, _('Successfully paid for the reservations.'))
 
-    return http.HttpResponseRedirect(reverse('homepage'))
+    return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
+
+class BudgetPaymentView(LoggedInMixin, FormView):
+    form_class = PasswordForm
+    template_name = 'budget_payment.html'
+    http_method_names = ['post', 'get']
+
+    def get(self, request, *args, **kwargs):
+        staged_payments = Payment.objects.filter(type=Payment.STAGED, user=self.request.user)
+        if not staged_payments.exists() or staged_payments.count() > 1:
+            return http.HttpResponseForbidden()
+
+        self.payment = staged_payments.first()
+        return super(BudgetPaymentView, self).get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        staged_payments = Payment.objects.filter(type=Payment.STAGED, user=self.request.user)
+        if not staged_payments.exists() or staged_payments.count() > 1:
+            return http.HttpResponseForbidden()
+
+        self.payment = staged_payments.first()
+        return super(BudgetPaymentView, self).post(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super(BudgetPaymentView, self).get_form_kwargs()
+        kwargs['user'] = self.request.user
+
+        return kwargs
+
+    def form_valid(self, form):
+        total_price = self.payment.amount
+        if total_price > self.request.user.budget:
+            messages.add_message(self.request, messages.INFO, _('You do not have enough money.'))
+            return http.HttpResponseRedirect(reverse('reservation_list'))
+
+        self.request.user.budget -= total_price
+        self.request.user.save()
+
+        self.payment.reservation_set.update(paid=True)
+        self.payment.type = Payment.BUDGET
+        self.payment.save()
+
+        messages.add_message(self.request, messages.SUCCESS, _('Successfully paid for the reservations.'))
+        return http.HttpResponseRedirect(reverse('homepage'))
 
 
 @login_required()

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans 'Budget payment' %}
+{% endblock title %}
+
+{% block content %}
+    <form method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
+        {{ form }}
+        <input type="submit" value={% trans 'Pay' %}>
+    </form>
+{% endblock %}

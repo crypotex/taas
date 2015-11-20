@@ -6,7 +6,7 @@ from django.utils import timezone
 import factory
 import factory.fuzzy
 
-from taas.reservation.models import Field, Reservation
+from taas.reservation.models import Field, Reservation, Payment
 from taas.user.tests.factories import UserFactory
 
 
@@ -29,15 +29,6 @@ class ReservationFactory(factory.DjangoModelFactory):
     user = factory.SubFactory(UserFactory, is_active=True)
     field = factory.SubFactory(FieldFactory)
 
-    @factory.post_generation
-    def fields(self, create, extracted, **kwargs):
-        if not create:
-            return
-
-        if extracted:
-            for field in extracted:
-                self.fields.add(field)
-
     @classmethod
     def get_reservation_url(cls):
         return 'http://testserver' + reverse('add_reservation')
@@ -51,8 +42,8 @@ class ReservationFactory(factory.DjangoModelFactory):
         return 'http://testserver' + reverse('remove_all_reservations')
 
     @classmethod
-    def get_payment_url(cls):
-        return 'http://testserver' + reverse('reservation_payment')
+    def get_reservation_list_url(cls):
+        return 'http://testserver' + reverse('reservation_list')
 
     @classmethod
     def get_all_reservations_url(cls):
@@ -73,3 +64,24 @@ class ReservationFactory(factory.DjangoModelFactory):
     @classmethod
     def get_reservation_detail_url(cls, pk):
         return 'http://testserver' + reverse('detail_reservation', kwargs={'pk': pk})
+
+
+class PaymentFactory(factory.DjangoModelFactory):
+    class Meta(object):
+        model = Payment
+
+    amount = factory.fuzzy.FuzzyDecimal(0.0)
+    user = factory.SubFactory(UserFactory)
+    type = factory.fuzzy.FuzzyChoice([Payment.BUDGET, Payment.TRANSACTION])
+
+    @classmethod
+    def get_payment_success_url(cls):
+        return 'http://testserver' + reverse('payment_success')
+
+    @classmethod
+    def get_payment_cancel_url(cls):
+        return 'http://testserver' + reverse('payment_cancel')
+
+    @classmethod
+    def get_budget_payment_url(cls):
+        return 'http://testserver' + reverse('budget_payment')
