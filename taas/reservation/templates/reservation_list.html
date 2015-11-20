@@ -8,23 +8,9 @@
 
 {% block styles %}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
 {% endblock styles %}
-
-{% block scripts %}
-    <script src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
-    <script type="text/javascript">
-        $(function () {
-            $("#accordion").accordion({
-                collapsible: true,
-                active: false,
-                heightStyle: "content"
-            });
-        });
-    </script>
-{% endblock scripts %}
 
 {% block content %}
 
@@ -94,22 +80,13 @@
             {% endif %}
         </div>
     </form>
-
-    <form action="{% url 'reservation_payment' %}" id="accordion">
-        <h3>{% trans 'Account balance' %}</h3>
-
-        <div>
-            <input id="submit-button" type="submit" value={% trans 'Budget' %}>
-        </div>
-        <h3>{% trans 'Transaction' %}</h3>
-
-        <div>
-            <input class="banks" name="bank" type="radio" id="SEB" value="SEB" checked>
-            <label for="SEB">{% trans 'SEB' %}</label> <br>
-            <input class="banks" name="bank" type="radio" id="Swedbank" value="Swedbank">
-            <label for="Swedbank">{% trans 'Swedbank' %}</label> <br>
-
-            <input id="submit-button" type="submit" value={% trans 'Transcation' %}>
-        </div>
+    <p>{{ total_price }}</p>
+    <form method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
+        <input id="submit-button" type="submit" value={% trans 'Budget' %}>
+    </form>
+    <form action="https://payment-test.maksekeskus.ee/pay/1/signed.html" method="post">
+        <input name="json" type="hidden" value='{{ payment_json }}' />
+        <input name="mac" type="hidden" value="{{ payment_mac }}" />
+        <input id="submit-button" type="submit" value="{% trans 'Transaction' %}">
     </form>
 {% endblock content %}
