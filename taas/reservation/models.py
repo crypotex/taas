@@ -1,7 +1,7 @@
 from decimal import Decimal
 
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
@@ -10,17 +10,30 @@ from taas.user.models import User
 
 class Field(models.Model):
     name = models.CharField(_('name'), max_length=10, unique=True)
-    cost = models.DecimalField(_('cost'), max_digits=5, decimal_places=2, validators=[MinValueValidator(0.0)])
+    cost = models.DecimalField(_('cost'), max_digits=10, decimal_places=2, validators=[MinValueValidator(0.0)])
     description = models.TextField(_('description'), blank=True)
 
     def __str__(self):
         return self.name
 
 
-PAYMENT_METHOD_CHOICES = (
-    (1, _('Payment made with bank link.')),
-    (2, _('Payment made with existing budget'))
-)
+class Payment(models.Model):
+    TRANSACTION = 'TR'
+    BUDGET = 'BU'
+    STAGED = 'ST'
+    PAYMENT_CHOICES = (
+        (TRANSACTION, _('Transaction')),
+        (BUDGET, _('Budget')),
+        (STAGED, _('Staged')),
+    )
+
+    type = models.CharField(choices=PAYMENT_CHOICES, max_length=2)
+    amount = models.DecimalField(_('amount'), max_digits=10, decimal_places=2, validators=[MinValueValidator(0.0)])
+    date_created = models.DateTimeField(_('date created'), default=timezone.now)
+    user = models.ForeignKey(User)
+
+    def __str__(self):
+        return str(self.pk)
 
 
 class Reservation(models.Model):
@@ -30,6 +43,8 @@ class Reservation(models.Model):
     field = models.ForeignKey(Field, related_name="reservations")
     paid = models.BooleanField(_('Paid'), default=False)
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
+    payment = models.ForeignKey(Payment, verbose_name=_('Payment'), blank=True,
+                                null=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = _('reservation')
@@ -37,6 +52,16 @@ class Reservation(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+    def delete(self, using=None):
+        # Hack to remove empty staged payments
+        if self.payment is None:
+            return super(Reservation, self).delete(using)
+
+        if self.payment.reservation_set.count() == 1 and self.payment.type == Payment.STAGED:
+            self.payment.delete()
+
+        return super(Reservation, self).delete(using)
 
     def _get_price(self):
         diff = (self.end - self.start).seconds / (60 * 60)

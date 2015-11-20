@@ -18,7 +18,7 @@ class ReservationTest(TestCase):
         self.reservation_url = ReservationFactory.get_reservation_url()
         self.remove_url = ReservationFactory.get_remove_url()
         self.remove_all_url = ReservationFactory.get_remove_all_url()
-        self.payment_url = ReservationFactory.get_payment_url()
+        self.payment_url = ReservationFactory.get_reservation_list_url()
         self.all_reservations_url = ReservationFactory.get_all_reservations_url()
         self.reservation_list_url = ReservationFactory.get_reservation_list_url()
         self.expire_url = ReservationFactory.get_expire_url()
