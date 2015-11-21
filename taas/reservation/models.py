@@ -53,16 +53,6 @@ class Reservation(models.Model):
     def __str__(self):
         return str(self.pk)
 
-    def delete(self, using=None):
-        # Hack to remove empty staged payments
-        if self.payment is None:
-            return super(Reservation, self).delete(using)
-
-        if self.payment.reservation_set.count() == 1 and self.payment.type == Payment.STAGED:
-            self.payment.delete()
-
-        return super(Reservation, self).delete(using)
-
     def _get_price(self):
         diff = (self.end - self.start).seconds / (60 * 60)
 
