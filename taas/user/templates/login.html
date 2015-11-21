@@ -42,7 +42,7 @@
         <input type="submit" value={% trans "Login" %} />
         <input type="hidden" name={% trans "next" %} value="{{ next }}"/>
 
-        <p id="reset-password"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        <p id="reset-password"><a href="{% url 'password_reset' %}">{% trans 'Lost password?' %}</a></p>
     </form>
 
 {% endblock %}
