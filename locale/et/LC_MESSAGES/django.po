@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 13:24+0200\n"
+"POT-Creation-Date: 2015-11-24 15:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -580,40 +580,48 @@ msgstr "Makse saldoga"
 msgid "Pay"
 msgstr "Maksa"
 
-#: .\taas\reservation\templates\history.html:8
-#: .\taas\reservation\templates\history.html:28
+#: .\taas\reservation\templates\history.html:9
+#: .\taas\reservation\templates\history.html:31
 #: .\taas\user\templates\user_update.html:21
 msgid "History"
 msgstr "Ajalugu"
 
-#: .\taas\reservation\templates\history.html:19
-msgid "Do you really want to remove this reservation?"
-msgstr ""
-
 #: .\taas\reservation\templates\history.html:20
-msgid "Do you really want to modify this reservation?"
-msgstr ""
+msgid "Do you really want to remove this reservation?"
+msgstr "Kas sa soovid seda broneeringut kustutada?"
 
-#: .\taas\reservation\templates\history.html:27
+#: .\taas\reservation\templates\history.html:21
+msgid "Do you really want to modify this reservation?"
+msgstr "Kas sa soovid seda broneeringut muuta?"
+
+#: .\taas\reservation\templates\history.html:22
+msgid "Are you sure?"
+msgstr "Oled sa kindel?"
+
+#: .\taas\reservation\templates\history.html:23
+msgid "Cancel"
+msgstr "Tühista"
+
+#: .\taas\reservation\templates\history.html:30
 #: .\taas\user\templates\user_update.html:20
 msgid "Account"
 msgstr "Konto"
 
-#: .\taas\reservation\templates\history.html:37
+#: .\taas\reservation\templates\history.html:40
 #: .\taas\reservation\templates\reservation_update.html:37
 #: .\taas\user\templates\update_budget.html:58
 msgid "Submit"
 msgstr "Edasi"
 
-#: .\taas\reservation\templates\history.html:42
+#: .\taas\reservation\templates\history.html:46
 msgid "There are no reservations in this month."
 msgstr "Selles kuus pole ühtegi reserveeringut."
 
-#: .\taas\reservation\templates\index.html:19
+#: .\taas\reservation\templates\index.html:24
 msgid "Please select slots, which are 30 minutes later from now."
 msgstr "Palun valige ajad, mis on praegusest hetkest 30 minuti pärast."
 
-#: .\taas\reservation\templates\index.html:42
+#: .\taas\reservation\templates\index.html:56
 msgid "Next"
 msgstr "Edasi"
 
