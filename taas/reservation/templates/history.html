@@ -37,7 +37,7 @@
             <input type="submit" value={% trans 'Submit' %}>
         </form>
         {% if table %}
-            {% render_table table %}
+            {% render_table table "table.html" %}
         {% else %}
             <p>{% trans 'There are no reservations in this month.' %}</p>
         {% endif %}
