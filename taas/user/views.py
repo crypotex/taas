@@ -97,7 +97,7 @@ def password_reset_confirm(request, uidb64=None, token=None):
     template_name = 'password_reset/confirm.html'
     post_reset_redirect = reverse('homepage')
     token_generator = default_token_generator
-    set_password_form = forms.customPasswordSetForm
+    set_password_form = forms.CustomPasswordSetForm
 
     UserModel = get_user_model()
     try:

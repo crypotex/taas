@@ -116,7 +116,7 @@
                                 {% plural %}
                                 {{ count }} {{ vname }}
                             {% endblocktrans %}
-                        {% elif cl.opts.verbose_name == "" or cl.opts.verbose_name == "makse" %}
+                        {% elif cl.opts.verbose_name == "платёж" or cl.opts.verbose_name == "makse" %}
                             {% blocktrans trimmed with cl.opts.verbose_name as vname and cl.opts.verbose_name_plural as vname count cl.result_count as count context "payment" %}
                                 {{ count }} {{ vname }}
                                 {% plural %}
