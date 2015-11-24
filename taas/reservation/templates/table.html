@@ -76,7 +76,7 @@
                     {% if table.page.has_next %}
                         {% nospaceless %}{% block pagination.next %}
                             <li class="next"><a
-                                    href="{% querystring table.prefixed_page_field=table.page.next_page_number %}">{% trans "Next" %}</a>
+                                    href="{% querystring table.prefixed_page_field=table.page.next_page_number %}">{% trans "Next" context "järgmine" %}</a>
                             </li>{% endblock pagination.next %}{% endnospaceless %}
                     {% endif %}
 

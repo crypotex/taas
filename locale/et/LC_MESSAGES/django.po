@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 15:16+0200\n"
+"POT-Creation-Date: 2015-11-24 21:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,7 +136,7 @@ msgstr "broneering"
 
 #: .\build\lib\taas\reservation\models.py:35 .\taas\reservation\models.py:59
 msgid "reservations"
-msgstr "broneeringut"
+msgstr "broneeringud"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:59
 #: .\build\lib\taas\reservation\tests\test_reservations.py:63
@@ -281,14 +281,6 @@ msgid ""
 "\n"
 "Tartu Agility Arenguselts"
 msgstr ""
-"Lugupeetud Admin,\n"
-"\n"
-"Saime registreerumissoovi kasutajale e-posti aadressiga %(email)s.\n"
-"Palun verifitseerige see kasutaja.\n"
-"\n"
-"Parimate soovidega,\n"
-"\n"
-"Tartu Agility Arenguselts"
 
 #: .\build\lib\taas\server\email_settings.py:38
 #: .\taas\server\email_settings.py:38
@@ -346,13 +338,6 @@ msgid ""
 "\n"
 "Tartu Agility Arenguselts"
 msgstr ""
-"Lugupeetud Admin,\n"
-"\n"
-"Kasutajakonto e-posti aadressiga %(email)s on deaktiveeritud.\n"
-"\n"
-"Parimate soovidega,\n"
-"\n"
-"Tartu Agility Arenguselts"
 
 #: .\build\lib\taas\urls.py:8 .\taas\urls.py:9
 msgid "TAAS administration"
@@ -406,7 +391,7 @@ msgstr "Palun sisestage uus parool teist korda. "
 
 #: .\build\lib\taas\user\forms.py:59 .\taas\user\forms.py:67
 msgid "Your old password was entered incorrectly. Please enter it again."
-msgstr "Vana parool sisestati valesti. Palun proovige see uuesti."
+msgstr "Vana parool sisestati valesti. Palun sisestage parool uuesti."
 
 #: .\build\lib\taas\user\forms.py:61 .\taas\user\forms.py:69
 msgid "The two new password fields didn't match."
@@ -457,7 +442,7 @@ msgstr "aktiivne"
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
-msgstr "Määrab, kas kasutaja on aktiivne. "
+msgstr "Määrab, kas kasutaja on aktiivne."
 
 #: .\build\lib\taas\user\models.py:49 .\taas\user\models.py:49
 msgid "budget (€)"
@@ -538,12 +523,12 @@ msgid "fields"
 msgstr "väljakud"
 
 #: .\taas\reservation\models.py:27
-#: .\taas\reservation\templates\reservation_list.html:90
+#: .\taas\reservation\templates\reservation_list.html:92
 msgid "Transaction"
 msgstr "Ülekanne"
 
 #: .\taas\reservation\models.py:28
-#: .\taas\reservation\templates\reservation_list.html:85
+#: .\taas\reservation\templates\reservation_list.html:87
 msgid "Budget"
 msgstr "Saldo"
 
@@ -572,6 +557,59 @@ msgstr "maksed"
 msgid "Payment"
 msgstr "Makse"
 
+#: .\taas\reservation\templates\admin\change_list.html:42
+msgid "Home"
+msgstr ""
+
+#: .\taas\reservation\templates\admin\change_list.html:61
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: .\taas\reservation\templates\admin\change_list.html:70
+msgid "Please correct the error below."
+msgstr ""
+
+#: .\taas\reservation\templates\admin\change_list.html:71
+msgid "Please correct the errors below."
+msgstr ""
+
+#: .\taas\reservation\templates\admin\change_list.html:82
+msgid "Filter"
+msgstr "Filtreeri"
+
+#: .\taas\reservation\templates\admin\change_list.html:102
+#, python-format
+msgctxt "reservation"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s broneering"
+msgstr[1] "%(count)s broneeringut"
+
+#: .\taas\reservation\templates\admin\change_list.html:108
+#, python-format
+msgctxt "user"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s kasutaja"
+msgstr[1] "%(count)s kasutajat"
+
+#: .\taas\reservation\templates\admin\change_list.html:114
+#, python-format
+msgctxt "field"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s väljak"
+msgstr[1] "%(count)s väljakut"
+
+#: .\taas\reservation\templates\admin\change_list.html:120
+#, python-format
+msgctxt "payment"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s makse"
+msgstr[1] "%(count)s makset"
+
 #: .\taas\reservation\templates\budget_payment.html:6
 msgid "Budget payment"
 msgstr "Makse saldoga"
@@ -580,40 +618,38 @@ msgstr "Makse saldoga"
 msgid "Pay"
 msgstr "Maksa"
 
-#: .\taas\reservation\templates\history.html:9
-#: .\taas\reservation\templates\history.html:31
+#: .\taas\reservation\templates\history.html:8
+#: .\taas\reservation\templates\history.html:30
 #: .\taas\user\templates\user_update.html:21
 msgid "History"
 msgstr "Ajalugu"
 
-#: .\taas\reservation\templates\history.html:20
+#: .\taas\reservation\templates\history.html:19
 msgid "Do you really want to remove this reservation?"
 msgstr "Kas sa soovid seda broneeringut kustutada?"
 
-#: .\taas\reservation\templates\history.html:21
+#: .\taas\reservation\templates\history.html:20
 msgid "Do you really want to modify this reservation?"
 msgstr "Kas sa soovid seda broneeringut muuta?"
 
-#: .\taas\reservation\templates\history.html:22
+#: .\taas\reservation\templates\history.html:21
 msgid "Are you sure?"
 msgstr "Oled sa kindel?"
 
-#: .\taas\reservation\templates\history.html:23
+#: .\taas\reservation\templates\history.html:22
 msgid "Cancel"
 msgstr "Tühista"
 
-#: .\taas\reservation\templates\history.html:30
+#: .\taas\reservation\templates\history.html:29
 #: .\taas\user\templates\user_update.html:20
 msgid "Account"
 msgstr "Konto"
 
-#: .\taas\reservation\templates\history.html:40
-#: .\taas\reservation\templates\reservation_update.html:37
-#: .\taas\user\templates\update_budget.html:58
-msgid "Submit"
-msgstr "Edasi"
+#: .\taas\reservation\templates\history.html:39
+msgid "Sort"
+msgstr "Sorteeri"
 
-#: .\taas\reservation\templates\history.html:46
+#: .\taas\reservation\templates\history.html:44
 msgid "There are no reservations in this month."
 msgstr "Selles kuus pole ühtegi reserveeringut."
 
@@ -650,14 +686,17 @@ msgid "previous"
 msgstr "eelmine"
 
 #: .\taas\reservation\templates\reservation_list.html:71
-msgid "Page"
-msgstr "Leht"
-
-#: .\taas\reservation\templates\reservation_list.html:71
-msgid "of"
+#, python-format
+msgid ""
+"\n"
+"                        Page %(count)s of %(total)s\n"
+"                    "
 msgstr ""
+"\n"
+"                        %(count)s. leht %(total)s-st\n"
+"                    "
 
-#: .\taas\reservation\templates\reservation_list.html:75
+#: .\taas\reservation\templates\reservation_list.html:77
 #: .\taas\user\templates\login.html:43
 msgid "next"
 msgstr "järgmine"
@@ -665,6 +704,46 @@ msgstr "järgmine"
 #: .\taas\reservation\templates\reservation_update.html:25
 msgid "Choose a new time for the reservation:"
 msgstr "Valige reserveeringu jaoks uus aeg:"
+
+#: .\taas\reservation\templates\reservation_update.html:37
+#: .\taas\user\templates\update_budget.html:58
+msgid "Submit"
+msgstr "Edasi"
+
+#: .\taas\reservation\templates\table.html:64
+msgid "Previous"
+msgstr "Eelmine"
+
+#: .\taas\reservation\templates\table.html:71
+#, python-format
+msgid ""
+"\n"
+"                                    Page %(current)s of %(total)s"
+msgstr ""
+"\n"
+"                                    %(current)s. leht %(total)s-st"
+
+#: .\taas\reservation\templates\table.html:79
+msgctxt "järgmine"
+msgid "Next"
+msgstr "Järgmine"
+
+#: .\taas\reservation\templates\table.html:84
+#, python-format
+msgid ""
+"%(count)s of %(total)s\n"
+"                        "
+msgstr ""
+"%(count)s broneeringut %(total)s-st\n"
+"                        "
+
+#: .\taas\reservation\templates\table.html:87
+#, python-format
+msgctxt "reservation history"
+msgid "%(vname)s"
+msgid_plural "%(vname)s"
+msgstr[0] "broneering"
+msgstr[1] "broneeringut"
 
 #: .\taas\reservation\tests\test_reservations.py:212
 msgid "Expire date should be null without any unpaid reservations."
@@ -679,11 +758,11 @@ msgstr "Aegumiskuupäev peaks tagastama ajaintervalli 0 ja 10 minuti vahel"
 
 #: .\taas\reservation\views.py:150
 msgid "Success"
-msgstr ""
+msgstr "Õnnestus"
 
 #: .\taas\reservation\views.py:152 .\taas\reservation\views.py:192
 msgid "Error"
-msgstr ""
+msgstr "Viga"
 
 #: .\taas\reservation\views.py:166
 msgid "Invalid key."
@@ -695,23 +774,23 @@ msgstr "Broneeringut ei saa kustutada."
 
 #: .\taas\reservation\views.py:183
 msgid "Not allowed."
-msgstr ""
+msgstr "Pole lubatud."
 
 #: .\taas\reservation\views.py:269
 msgid "Payment was cancelled."
-msgstr ""
+msgstr "Makse tühistati."
 
 #: .\taas\reservation\views.py:295
 msgid "Error occurred. Please contact administrator."
-msgstr ""
+msgstr "Viga. Palun võtke ühendust adminstraatoriga."
 
 #: .\taas\reservation\views.py:332
 msgid "You do not have enough money."
-msgstr ""
+msgstr "Saldol on liiga vähe raha."
 
 #: .\taas\server\base_settings.py:102
 msgid "Estonian"
-msgstr ""
+msgstr "eesti"
 
 #: .\taas\server\base_settings.py:103
 msgid "English"
@@ -719,7 +798,7 @@ msgstr ""
 
 #: .\taas\server\base_settings.py:104
 msgid "Russian"
-msgstr ""
+msgstr "русский"
 
 #: .\taas\templates\base.html:8
 msgid "Tartu Agility Playground"
@@ -749,6 +828,10 @@ msgstr "Tere, "
 #: .\taas\templates\base.html:75
 msgid "Logout"
 msgstr "Logi välja"
+
+#: .\taas\templates\base.html:87
+msgid "Warning"
+msgstr "Hoiatus"
 
 #: .\taas\templates\base.html:99
 msgid "To make all your reservations you have"
@@ -860,7 +943,7 @@ msgstr "Parooli muutmine"
 #: .\taas\user\templates\update_budget.html:6
 #: .\taas\user\templates\update_budget.html:16
 msgid "Account balance"
-msgstr "Saldo"
+msgstr "Kontojääk"
 
 #: .\taas\user\templates\update_budget.html:18
 msgid "Your current account balance:"
@@ -868,7 +951,7 @@ msgstr "Teie hetkesaldo:"
 
 #: .\taas\user\templates\update_budget.html:21
 msgid "Select an amount to add"
-msgstr ""
+msgstr "Valige summa, mida soovite lisada"
 
 #: .\taas\user\templates\update_budget.html:23
 msgid "Amount:"
@@ -1320,7 +1403,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:64
 msgid "This field is required."
-msgstr ""
+msgstr "See lahter on nõutav."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:237
 msgid "Enter a whole number."
@@ -2698,17 +2781,20 @@ msgstr ""
 msgid "Text nodes have no children"
 msgstr ""
 
-#~ msgid "Email"
-#~ msgstr "E-posti aadress"
+msgid "Page"
+msgstr "Leht"
 
-#~ msgid "Transcation"
-#~ msgstr "Ülekanne"
+msgid "Email"
+msgstr "E-posti aadress"
 
-#~ msgid "New password:"
-#~ msgstr "Uus parool:"
+msgid "Transcation"
+msgstr "Ülekanne"
 
-#~ msgid "Confirm password:"
-#~ msgstr "Parooli kinnitus:"
+msgid "New password:"
+msgstr "Uus parool:"
 
-#~ msgid "Email address:"
-#~ msgstr "E-posti aadress:"
+msgid "Confirm password:"
+msgstr "Parooli kinnitus:"
+
+msgid "Email address:"
+msgstr "E-posti aadress:"

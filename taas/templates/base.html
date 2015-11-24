@@ -84,7 +84,7 @@
             {% for message in messages %}
                 {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
                     <script>
-                        swal({title: "Warning", text: "{{ message }}", type: "warning", customClass: "alert-button"});
+                        swal({title: '{% trans "Warning" %}', text: "{{ message }}", type: "warning", customClass: "alert-button"});
                     </script>
                 {% else %}
                     <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>

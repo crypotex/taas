@@ -29,7 +29,7 @@
                         {% trans 'Field' %}
                     </th>
                     <th>
-                        {% trans 'Price' %}
+                        {% trans 'Price' %} (€)
                     </th>
                     <th>
                         {% trans 'Start' %}
@@ -68,7 +68,9 @@
                     </a>
                 {% endif %}
                 <span class="page-current">
-                    {% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
+                    {% blocktrans with count=page_obj.number total=page_obj.paginator.num_pages %}
+                        Page {{ count }} of {{ total }}
+                    {% endblocktrans %}
                 </span>
                 {% if page_obj.has_next %}
                     <a href="{% url 'reservation_list' %}?page={{ page_obj.next_page_number }}">
