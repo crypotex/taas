@@ -56,8 +56,8 @@ YEARS = [(year, year)
 
 
 class HistoryForm(forms.Form):
-    month = forms.ChoiceField(choices=MONTHS, initial=timezone.datetime.today().month)
-    year = forms.ChoiceField(choices=YEARS, initial=timezone.datetime.today().year)
+    month = forms.ChoiceField(choices=MONTHS, initial=timezone.datetime.today().month, label=_('Month'))
+    year = forms.ChoiceField(choices=YEARS, initial=timezone.datetime.today().year, label=_('Year'))
 
 
 class PasswordForm(forms.Form):

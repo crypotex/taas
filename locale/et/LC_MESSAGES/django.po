@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-08 16:25+0200\n"
+"POT-Creation-Date: 2015-11-24 13:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,157 +17,159 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\build\lib\taas\reservation\forms.py:22 .\taas\reservation\forms.py:22
+#: .\build\lib\taas\reservation\forms.py:22 .\taas\reservation\forms.py:21
 msgid "Date should not be in the past."
 msgstr "Aeg ei tohi olla minevikus."
 
-#: .\build\lib\taas\reservation\forms.py:24 .\taas\reservation\forms.py:24
+#: .\build\lib\taas\reservation\forms.py:24
 msgid "There should be atleast 15 minutes before reservation"
 msgstr "Enne broneeringut peab olema vähemalt 15 minutit"
 
-#: .\build\lib\taas\reservation\forms.py:28 .\taas\reservation\forms.py:28
+#: .\build\lib\taas\reservation\forms.py:28 .\taas\reservation\forms.py:29
 msgid "Start date should be earlier than end date."
 msgstr "Algusaeg peab olema enne lõppaega."
 
-#: .\build\lib\taas\reservation\forms.py:32 .\taas\reservation\forms.py:32
+#: .\build\lib\taas\reservation\forms.py:32 .\taas\reservation\forms.py:36
 msgid "Field does not exist."
 msgstr "Väljakut ei eksisteeri."
 
-#: .\build\lib\taas\reservation\forms.py:36
+#: .\build\lib\taas\reservation\forms.py:36 .\taas\reservation\forms.py:40
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "January"
 msgstr "jaanuar"
 
-#: .\build\lib\taas\reservation\forms.py:37
+#: .\build\lib\taas\reservation\forms.py:37 .\taas\reservation\forms.py:41
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "February"
 msgstr "veebruar"
 
-#: .\build\lib\taas\reservation\forms.py:38
+#: .\build\lib\taas\reservation\forms.py:38 .\taas\reservation\forms.py:42
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "March"
 msgstr "märts"
 
-#: .\build\lib\taas\reservation\forms.py:39
+#: .\build\lib\taas\reservation\forms.py:39 .\taas\reservation\forms.py:43
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "April"
 msgstr "aprill"
 
-#: .\build\lib\taas\reservation\forms.py:40
+#: .\build\lib\taas\reservation\forms.py:40 .\taas\reservation\forms.py:44
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "May"
 msgstr "mai"
 
-#: .\build\lib\taas\reservation\forms.py:41
+#: .\build\lib\taas\reservation\forms.py:41 .\taas\reservation\forms.py:45
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "June"
 msgstr "juuni"
 
-#: .\build\lib\taas\reservation\forms.py:42
+#: .\build\lib\taas\reservation\forms.py:42 .\taas\reservation\forms.py:46
 #: .\venv\Lib\site-packages\django\utils\dates.py:19
 msgid "July"
 msgstr "juuli"
 
-#: .\build\lib\taas\reservation\forms.py:43
+#: .\build\lib\taas\reservation\forms.py:43 .\taas\reservation\forms.py:47
 #: .\venv\Lib\site-packages\django\utils\dates.py:19
 msgid "August"
 msgstr "august"
 
-#: .\build\lib\taas\reservation\forms.py:44
+#: .\build\lib\taas\reservation\forms.py:44 .\taas\reservation\forms.py:48
 #: .\venv\Lib\site-packages\django\utils\dates.py:19
 msgid "September"
 msgstr "september"
 
-#: .\build\lib\taas\reservation\forms.py:45
+#: .\build\lib\taas\reservation\forms.py:45 .\taas\reservation\forms.py:49
 #: .\venv\Lib\site-packages\django\utils\dates.py:19
 msgid "October"
 msgstr "oktoober"
 
-#: .\build\lib\taas\reservation\forms.py:46
+#: .\build\lib\taas\reservation\forms.py:46 .\taas\reservation\forms.py:50
 #: .\venv\Lib\site-packages\django\utils\dates.py:19
 msgid "November"
 msgstr "november"
 
-#: .\build\lib\taas\reservation\forms.py:47
+#: .\build\lib\taas\reservation\forms.py:47 .\taas\reservation\forms.py:51
 #: .\venv\Lib\site-packages\django\utils\dates.py:20
 msgid "December"
 msgstr "detsember"
 
-#: .\build\lib\taas\reservation\models.py:12 .\taas\reservation\models.py:12
+#: .\build\lib\taas\reservation\models.py:12 .\taas\reservation\models.py:10
 msgid "name"
 msgstr "nimi"
 
-#: .\build\lib\taas\reservation\models.py:13 .\taas\reservation\models.py:13
+#: .\build\lib\taas\reservation\models.py:13 .\taas\reservation\models.py:11
 msgid "cost"
 msgstr "hind"
 
-#: .\build\lib\taas\reservation\models.py:14 .\taas\reservation\models.py:14
+#: .\build\lib\taas\reservation\models.py:14 .\taas\reservation\models.py:12
 msgid "description"
 msgstr "kirjeldus"
 
-#: .\build\lib\taas\reservation\models.py:20 .\taas\reservation\models.py:20
+#: .\build\lib\taas\reservation\models.py:20
 msgid "Payment made with bank link."
 msgstr "Makse pangalingiga."
 
-#: .\build\lib\taas\reservation\models.py:21 .\taas\reservation\models.py:21
+#: .\build\lib\taas\reservation\models.py:21
 msgid "Payment made with existing budget"
 msgstr "Makse saldoga"
 
-#: .\build\lib\taas\reservation\models.py:26 .\taas\reservation\models.py:26
+#: .\build\lib\taas\reservation\models.py:26 .\taas\reservation\models.py:46
 msgid "start"
 msgstr "algus"
 
-#: .\build\lib\taas\reservation\models.py:27 .\taas\reservation\models.py:27
+#: .\build\lib\taas\reservation\models.py:27 .\taas\reservation\models.py:47
 msgid "end"
 msgstr "lõpp"
 
-#: .\build\lib\taas\reservation\models.py:30 .\taas\reservation\models.py:30
+#: .\build\lib\taas\reservation\models.py:30 .\taas\reservation\models.py:52
 msgid "Paid"
 msgstr "Makstud"
 
-#: .\build\lib\taas\reservation\models.py:31 .\taas\reservation\models.py:31
+#: .\build\lib\taas\reservation\models.py:31 .\taas\reservation\models.py:34
+#: .\taas\reservation\models.py:53
 msgid "date created"
 msgstr "loodud"
 
-#: .\build\lib\taas\reservation\models.py:34 .\taas\reservation\models.py:34
+#: .\build\lib\taas\reservation\models.py:34 .\taas\reservation\models.py:58
 msgid "reservation"
 msgstr "broneering"
 
-#: .\build\lib\taas\reservation\models.py:35 .\taas\reservation\models.py:35
+#: .\build\lib\taas\reservation\models.py:35 .\taas\reservation\models.py:59
 msgid "reservations"
-msgstr "broneeringud"
+msgstr "broneeringut"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:59
 #: .\build\lib\taas\reservation\tests\test_reservations.py:63
-#: .\taas\reservation\tests\test_reservations.py:59
-#: .\taas\reservation\tests\test_reservations.py:63
+#: .\taas\reservation\tests\test_reservations.py:48
+#: .\taas\reservation\tests\test_reservations.py:52
 msgid ""
 "User should be able to make 2 reservations on same datetime on different "
 "fields"
-msgstr "Kasutaja peab saama teha 2 broneeringut samale ajale erinevatele väljakutele"
+msgstr ""
+"Kasutaja peab saama teha 2 broneeringut samale ajale erinevatele väljakutele"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:69
-#: .\taas\reservation\tests\test_reservations.py:69
+#: .\taas\reservation\tests\test_reservations.py:59
 msgid "All three reservations are shown"
 msgstr "Näidatakse kõiki kolme broneeringut"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:75
-#: .\taas\reservation\tests\test_reservations.py:75
+#: .\taas\reservation\tests\test_reservations.py:66
 msgid "Not all unpaid reservations are deleted"
 msgstr "Kõiki maksmata broneeringuid ei kustutata"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:86
-#: .\taas\reservation\tests\test_reservations.py:86
+#: .\taas\reservation\tests\test_reservations.py:73
 msgid "Unpaid Resevation is not deleted."
 msgstr "Maksmata broneeringut ei kustutatud."
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:95
-#: .\taas\reservation\tests\test_reservations.py:95
+#: .\taas\reservation\tests\test_reservations.py:81
 msgid "Reservation is automatically paid. It should be unpaid."
 msgstr "Broneeringu eest on automaatselt makstud. See peaks olema maksmata. "
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:101
-#: .\taas\reservation\tests\test_reservations.py:101
+#: .\taas\reservation\tests\test_reservations.py:87
 msgid "Anonymous user can make a valid reservation"
 msgstr "Anonüümne kasutaja saab luua kehtiva broneeringu"
 
@@ -181,53 +183,54 @@ msgstr "Anonüümne kasutaja saab luua kehtiva broneeringu"
 #: .\build\lib\taas\reservation\tests\test_reservations.py:138
 #: .\build\lib\taas\reservation\tests\test_reservations.py:148
 #: .\build\lib\taas\reservation\tests\test_reservations.py:149
-#: .\taas\reservation\tests\test_reservations.py:110
-#: .\taas\reservation\tests\test_reservations.py:111
-#: .\taas\reservation\tests\test_reservations.py:120
+#: .\taas\reservation\tests\test_reservations.py:96
+#: .\taas\reservation\tests\test_reservations.py:97
+#: .\taas\reservation\tests\test_reservations.py:106
+#: .\taas\reservation\tests\test_reservations.py:107
+#: .\taas\reservation\tests\test_reservations.py:114
+#: .\taas\reservation\tests\test_reservations.py:115
 #: .\taas\reservation\tests\test_reservations.py:121
+#: .\taas\reservation\tests\test_reservations.py:122
+#: .\taas\reservation\tests\test_reservations.py:129
 #: .\taas\reservation\tests\test_reservations.py:130
-#: .\taas\reservation\tests\test_reservations.py:131
-#: .\taas\reservation\tests\test_reservations.py:137
-#: .\taas\reservation\tests\test_reservations.py:138
-#: .\taas\reservation\tests\test_reservations.py:148
-#: .\taas\reservation\tests\test_reservations.py:149
 msgid "Reservation posted with missing data"
 msgstr "Broneering saadeti puuduvate andmetega"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:163
 #: .\build\lib\taas\reservation\tests\test_reservations.py:164
-#: .\taas\reservation\tests\test_reservations.py:163
-#: .\taas\reservation\tests\test_reservations.py:164
+#: .\taas\reservation\tests\test_reservations.py:143
+#: .\taas\reservation\tests\test_reservations.py:144
 msgid "Reservation posted 15 minutes before"
 msgstr "Broneering tehti 15 minutit enne"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:178
 #: .\build\lib\taas\reservation\tests\test_reservations.py:179
-#: .\taas\reservation\tests\test_reservations.py:178
-#: .\taas\reservation\tests\test_reservations.py:179
+#: .\taas\reservation\tests\test_reservations.py:158
+#: .\taas\reservation\tests\test_reservations.py:159
 msgid "Reservation posted 5 minutes after"
 msgstr "Broneering tehti 5 minutit pärast"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:203
 #: .\build\lib\taas\reservation\tests\test_reservations.py:204
 #: .\build\lib\taas\reservation\tests\test_reservations.py:217
-#: .\taas\reservation\tests\test_reservations.py:203
-#: .\taas\reservation\tests\test_reservations.py:204
-#: .\taas\reservation\tests\test_reservations.py:217
+#: .\taas\reservation\tests\test_reservations.py:171
+#: .\taas\reservation\tests\test_reservations.py:172
+#: .\taas\reservation\tests\test_reservations.py:185
 msgid "Reservation posted at the same time of now()"
 msgstr "Broneering tehti samal ajal kui now()"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:216
-#: .\taas\reservation\tests\test_reservations.py:216
+#: .\taas\reservation\tests\test_reservations.py:184
 msgid "Reservation posted 1 minute after "
 msgstr "Broneering tehti 1 minut pärast "
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:229
-#: .\taas\reservation\tests\test_reservations.py:229
+#: .\taas\reservation\tests\test_reservations.py:191
 msgid "No reservation made with valid data"
 msgstr "Mitte ühtegi broneeringut ei tehtud õigete andmetega"
 
-#: .\build\lib\taas\reservation\views.py:197 .\taas\reservation\views.py:183
+#: .\build\lib\taas\reservation\views.py:197 .\taas\reservation\views.py:297
+#: .\taas\reservation\views.py:342
 msgid "Successfully paid for the reservations."
 msgstr "Edukalt makstud broneeringute eest."
 
@@ -254,11 +257,12 @@ msgid ""
 "Best regards,\n"
 "\n"
 "Tartu Agility Arenguselts"
-msgstr "Lugupeetud %(first_name)s,\n"
+msgstr ""
+"Lugupeetud %(first_name)s,\n"
 "\n"
 "Te olete edukalt registreerinud Tartu Agility Arenguseltsi kasutajaks.\n"
 "Palun oodake, kuni administraator Teie konto verifitseerib.\n"
-"Teie e-mailile saadetakse selle kohta teavitus.\n"
+"Teie e-posti aadressile saadetakse selle kohta teavitus.\n"
 "\n"
 "Parimate soovidega,\n"
 "\n"
@@ -279,7 +283,7 @@ msgid ""
 msgstr ""
 "Lugupeetud Admin,\n"
 "\n"
-"Saime registreerumissoovi kasutajale e-mail aadressiga %(email)s.\n"
+"Saime registreerumissoovi kasutajale e-posti aadressiga %(email)s.\n"
 "Palun verifitseerige see kasutaja.\n"
 "\n"
 "Parimate soovidega,\n"
@@ -344,13 +348,13 @@ msgid ""
 msgstr ""
 "Lugupeetud Admin,\n"
 "\n"
-"Kasutajakonto e-mailiga %(email)s on suletud.\n"
+"Kasutajakonto e-posti aadressiga %(email)s on deaktiveeritud.\n"
 "\n"
 "Parimate soovidega,\n"
 "\n"
 "Tartu Agility Arenguselts"
 
-#: .\build\lib\taas\urls.py:8 .\taas\urls.py:8
+#: .\build\lib\taas\urls.py:8 .\taas\urls.py:9
 msgid "TAAS administration"
 msgstr "TAAS'i administreerimine"
 
@@ -370,47 +374,50 @@ msgstr "Tähtsad kuupäevad"
 msgid "User"
 msgstr "Kasutaja"
 
-#: .\build\lib\taas\user\forms.py:28 .\taas\user\forms.py:28
+#: .\build\lib\taas\user\forms.py:28 .\taas\user\forms.py:33
 msgid "Change password"
 msgstr "Muuda parooli"
 
-#: .\build\lib\taas\user\forms.py:29 .\taas\user\forms.py:29
+#: .\build\lib\taas\user\forms.py:29 .\taas\user\forms.py:34
+#: .\taas\user\forms.py:95
 msgid "New password"
 msgstr "Uus parool"
 
-#: .\build\lib\taas\user\forms.py:31 .\taas\user\forms.py:31
+#: .\build\lib\taas\user\forms.py:31 .\taas\user\forms.py:36
+#: .\taas\user\forms.py:97
 msgid "New password confirmation"
 msgstr "Uue parooli kinnitus"
 
-#: .\build\lib\taas\user\forms.py:33 .\taas\user\forms.py:33
+#: .\build\lib\taas\user\forms.py:33 .\taas\user\forms.py:38
 msgid "Old password"
 msgstr "Vana parool"
 
-#: .\build\lib\taas\user\forms.py:51 .\taas\user\forms.py:51
+#: .\build\lib\taas\user\forms.py:51 .\taas\user\forms.py:59
 msgid "Old password is required."
 msgstr "Palun sisestage vana parool."
 
-#: .\build\lib\taas\user\forms.py:53 .\taas\user\forms.py:53
+#: .\build\lib\taas\user\forms.py:53 .\taas\user\forms.py:61
 msgid "New password is required."
 msgstr "Palun sisestage uus parool."
 
-#: .\build\lib\taas\user\forms.py:55 .\taas\user\forms.py:55
+#: .\build\lib\taas\user\forms.py:55 .\taas\user\forms.py:63
 msgid "New password confirmation is required."
 msgstr "Palun sisestage uus parool teist korda. "
 
-#: .\build\lib\taas\user\forms.py:59 .\taas\user\forms.py:59
+#: .\build\lib\taas\user\forms.py:59 .\taas\user\forms.py:67
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Vana parool sisestati valesti. Palun proovige see uuesti."
 
-#: .\build\lib\taas\user\forms.py:61 .\taas\user\forms.py:61
+#: .\build\lib\taas\user\forms.py:61 .\taas\user\forms.py:69
 msgid "The two new password fields didn't match."
 msgstr "Uus parool ei sobinud uue parooli kinnitusega. "
 
-#: .\build\lib\taas\user\forms.py:77 .\taas\user\forms.py:77
+#: .\build\lib\taas\user\forms.py:77 .\taas\user\forms.py:9
+#: .\taas\user\forms.py:85
 msgid "Password"
 msgstr "Parool"
 
-#: .\build\lib\taas\user\forms.py:83 .\taas\user\forms.py:83
+#: .\build\lib\taas\user\forms.py:83 .\taas\user\forms.py:91
 msgid "Your password was entered incorrectly. Please enter it again."
 msgstr "Parool sisestati valesti. Palun proovige uuesti."
 
@@ -428,7 +435,7 @@ msgstr "Perekonnanimi"
 
 #: .\build\lib\taas\user\models.py:42 .\taas\user\models.py:42
 msgid "email address"
-msgstr "E-maili aadress"
+msgstr "E-posti aadress"
 
 #: .\build\lib\taas\user\models.py:43 .\taas\user\models.py:43
 msgid "phone number"
@@ -456,207 +463,335 @@ msgstr "Määrab, kas kasutaja on aktiivne. "
 msgid "budget (€)"
 msgstr "saldo (€)"
 
-#: .\build\lib\taas\user\models.py:50 .\taas\user\models.py:50
+#: .\build\lib\taas\user\models.py:50 .\taas\user\models.py:51
 msgid "date joined"
 msgstr "liitumiskuupäev"
 
-#: .\build\lib\taas\user\models.py:59 .\taas\user\models.py:59
+#: .\build\lib\taas\user\models.py:59 .\taas\reservation\models.py:35
+#: .\taas\reservation\models.py:49 .\taas\user\models.py:60
 msgid "user"
 msgstr "kasutaja"
 
-#: .\build\lib\taas\user\models.py:60 .\taas\user\models.py:60
+#: .\build\lib\taas\user\models.py:60 .\taas\user\models.py:61
 msgid "users"
 msgstr "kasutajad"
 
-#: .\build\lib\taas\user\views.py:24 .\taas\user\views.py:24
+#: .\build\lib\taas\user\views.py:24 .\taas\user\views.py:23
 msgid "User has been successfully registered."
 msgstr "Kasutaja registreeriti edukalt."
 
-#: .\build\lib\taas\user\views.py:41 .\taas\user\views.py:41
+#: .\build\lib\taas\user\views.py:41 .\taas\user\views.py:40
 msgid "Information has been updated."
 msgstr "Informatsioon on uuendatud."
 
-#: .\build\lib\taas\user\views.py:60 .\taas\user\views.py:60
+#: .\build\lib\taas\user\views.py:60 .\taas\user\views.py:59
 msgid "User has been deactivated."
 msgstr "Kasutaja on deaktiveeritud."
 
-#: .\build\lib\taas\user\views.py:90 .\taas\user\views.py:90
+#: .\build\lib\taas\user\views.py:90 .\taas\user\views.py:89
 msgid "Email instructions has been sent."
-msgstr "Juhised saadeti Teie e-maili aadressile."
+msgstr "Juhised saadeti Teie e-posti aadressile."
 
-#: .\build\lib\taas\user\views.py:113 .\taas\user\views.py:113
+#: .\build\lib\taas\user\views.py:113 .\taas\user\views.py:112
 msgid "Enter new password"
 msgstr "Sisestage uus parool"
 
-#: .\build\lib\taas\user\views.py:119 .\taas\user\views.py:119
+#: .\build\lib\taas\user\views.py:119 .\taas\user\views.py:118
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr "Parool on muudetud. Te võite nüüd sisse logida."
 
-#: .\build\lib\taas\user\views.py:129 .\taas\user\views.py:129
+#: .\build\lib\taas\user\views.py:129 .\taas\user\views.py:128
+#: .\taas\user\views.py:129
 msgid "Password reset unsuccessful"
 msgstr "Parooli muutmine edukas"
 
-#: .\taas\reservation\templates\index.html:20
-msgid "Please select slots, which are 30 minutes later from now."
-msgstr "Palun valige ajad, mis on praegusest hetkest 30 minuti pärast."
+#: .\taas\reservation\apps.py:11
+msgid "Reservation"
+msgstr "Broneering"
 
-#: .\taas\reservation\templates\index.html:44
-msgid "Submit"
-msgstr "Esita"
+#: .\taas\reservation\forms.py:23
+msgid "There should be at least 15 minutes before reservation"
+msgstr "Enne broneeringut peab olema vähemalt 15 minutit"
 
-#: .\taas\reservation\templates\payment.html:6
-msgid "Payment"
-msgstr "Makse"
+#: .\taas\reservation\forms.py:25
+msgid "Invalid reservation time."
+msgstr "Maksmata broneeringut ei kustutatud."
 
-#: .\taas\reservation\templates\payment.html:34
-msgid "Pay for the reservations"
-msgstr "Maksa broneeringute eest"
+#: .\taas\reservation\forms.py:59
+msgid "Month"
+msgstr "Kuu"
 
-#: .\taas\reservation\templates\payment.html:44
-msgid "Field"
-msgstr "Väljak"
+#: .\taas\reservation\forms.py:60
+msgid "Year"
+msgstr "Aasta"
 
-#: .\taas\reservation\templates\payment.html:47
-msgid "Price"
-msgstr "Hind"
+#: .\taas\reservation\forms.py:75
+msgid "Incorrect password."
+msgstr "Vale parool."
 
-#: .\taas\reservation\templates\payment.html:50
-msgid "Start"
-msgstr "Algus"
+#: .\taas\reservation\models.py:18 .\taas\reservation\models.py:51
+msgid "field"
+msgstr "väljak"
 
-#: .\taas\reservation\templates\payment.html:53
-msgid "End"
-msgstr "Lõpp"
+#: .\taas\reservation\models.py:19
+msgid "fields"
+msgstr "väljakud"
 
-#: .\taas\reservation\templates\payment.html:82
-msgid "previous"
-msgstr "eelmine"
-
-#: .\taas\reservation\templates\payment.html:86
-msgid "Page"
-msgstr "Leht"
-
-#: .\taas\reservation\templates\payment.html:86
-msgid "of"
-msgstr ""
-
-#: .\taas\reservation\templates\payment.html:90
-#: .\taas\user\templates\login.html:43
-msgid "next"
-msgstr "edasi"
-
-#: .\taas\reservation\templates\payment.html:100
-msgid "Account balance"
-msgstr "Saldo"
-
-#: .\taas\reservation\templates\payment.html:103
-msgid "Budget"
-msgstr "Saldo"
-
-#: .\taas\reservation\templates\payment.html:105
+#: .\taas\reservation\models.py:27
+#: .\taas\reservation\templates\reservation_list.html:90
 msgid "Transaction"
 msgstr "Ülekanne"
 
-#: .\taas\reservation\templates\payment.html:109
-msgid "SEB"
-msgstr "SEB"
+#: .\taas\reservation\models.py:28
+#: .\taas\reservation\templates\reservation_list.html:85
+msgid "Budget"
+msgstr "Saldo"
 
-#: .\taas\reservation\templates\payment.html:111
-msgid "Swedbank"
-msgstr "Swedbank"
+#: .\taas\reservation\models.py:29
+msgid "Staged"
+msgstr "Lavastatud"
 
-#: .\taas\reservation\templates\payment.html:113
-msgid "Transcation"
-msgstr "Ülekanne"
+#: .\taas\reservation\models.py:32
+msgid "type"
+msgstr "tüüp"
 
-#: .\taas\reservation\tests\test_reservations.py:263
+#: .\taas\reservation\models.py:33
+msgid "amount"
+msgstr "summa"
+
+#: .\taas\reservation\models.py:38
+msgid "payment"
+msgstr "makse"
+
+#: .\taas\reservation\models.py:39
+msgid "payments"
+msgstr "maksed"
+
+#: .\taas\reservation\models.py:54
+#: .\taas\reservation\templates\reservation_list.html:6
+msgid "Payment"
+msgstr "Makse"
+
+#: .\taas\reservation\templates\budget_payment.html:6
+msgid "Budget payment"
+msgstr "Makse saldoga"
+
+#: .\taas\reservation\templates\budget_payment.html:12
+msgid "Pay"
+msgstr "Maksa"
+
+#: .\taas\reservation\templates\history.html:8
+#: .\taas\reservation\templates\history.html:28
+#: .\taas\user\templates\user_update.html:21
+msgid "History"
+msgstr "Ajalugu"
+
+#: .\taas\reservation\templates\history.html:19
+msgid "Do you really want to remove this reservation?"
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:20
+msgid "Do you really want to modify this reservation?"
+msgstr ""
+
+#: .\taas\reservation\templates\history.html:27
+#: .\taas\user\templates\user_update.html:20
+msgid "Account"
+msgstr "Konto"
+
+#: .\taas\reservation\templates\history.html:37
+#: .\taas\reservation\templates\reservation_update.html:37
+#: .\taas\user\templates\update_budget.html:58
+msgid "Submit"
+msgstr "Edasi"
+
+#: .\taas\reservation\templates\history.html:42
+msgid "There are no reservations in this month."
+msgstr "Selles kuus pole ühtegi reserveeringut."
+
+#: .\taas\reservation\templates\index.html:19
+msgid "Please select slots, which are 30 minutes later from now."
+msgstr "Palun valige ajad, mis on praegusest hetkest 30 minuti pärast."
+
+#: .\taas\reservation\templates\index.html:42
+msgid "Next"
+msgstr "Edasi"
+
+#: .\taas\reservation\templates\reservation_list.html:19
+msgid "Pay for the reservations"
+msgstr "Maksa broneeringute eest"
+
+#: .\taas\reservation\templates\reservation_list.html:29
+msgid "Field"
+msgstr "Väljak"
+
+#: .\taas\reservation\templates\reservation_list.html:32
+msgid "Price"
+msgstr "Hind"
+
+#: .\taas\reservation\templates\reservation_list.html:35
+msgid "Start"
+msgstr "Algus"
+
+#: .\taas\reservation\templates\reservation_list.html:38
+msgid "End"
+msgstr "Lõpp"
+
+#: .\taas\reservation\templates\reservation_list.html:67
+msgid "previous"
+msgstr "eelmine"
+
+#: .\taas\reservation\templates\reservation_list.html:71
+msgid "Page"
+msgstr "Leht"
+
+#: .\taas\reservation\templates\reservation_list.html:71
+msgid "of"
+msgstr ""
+
+#: .\taas\reservation\templates\reservation_list.html:75
+#: .\taas\user\templates\login.html:43
+msgid "next"
+msgstr "järgmine"
+
+#: .\taas\reservation\templates\reservation_update.html:25
+msgid "Choose a new time for the reservation:"
+msgstr "Valige reserveeringu jaoks uus aeg:"
+
+#: .\taas\reservation\tests\test_reservations.py:212
 msgid "Expire date should be null without any unpaid reservations."
 msgstr "Aegumiskuupäev peaks olema null ilma maksmata broneeringuteta."
 
-#: .\taas\reservation\tests\test_reservations.py:274
-#: .\taas\reservation\tests\test_reservations.py:276
+#: .\taas\reservation\tests\test_reservations.py:223
+#: .\taas\reservation\tests\test_reservations.py:225
 msgid ""
 "Expire date should return time interval that is between 0 and 10 minutes "
 "(both included)"
 msgstr "Aegumiskuupäev peaks tagastama ajaintervalli 0 ja 10 minuti vahel"
 
+#: .\taas\reservation\views.py:150
+msgid "Success"
+msgstr ""
+
+#: .\taas\reservation\views.py:152 .\taas\reservation\views.py:192
+msgid "Error"
+msgstr ""
+
+#: .\taas\reservation\views.py:166
+msgid "Invalid key."
+msgstr ""
+
+#: .\taas\reservation\views.py:178
+msgid "Cannot delete the reservation."
+msgstr "Broneeringut ei saa kustutada."
+
+#: .\taas\reservation\views.py:183
+msgid "Not allowed."
+msgstr ""
+
+#: .\taas\reservation\views.py:269
+msgid "Payment was cancelled."
+msgstr ""
+
+#: .\taas\reservation\views.py:295
+msgid "Error occurred. Please contact administrator."
+msgstr ""
+
+#: .\taas\reservation\views.py:332
+msgid "You do not have enough money."
+msgstr ""
+
+#: .\taas\server\base_settings.py:102
+msgid "Estonian"
+msgstr ""
+
+#: .\taas\server\base_settings.py:103
+msgid "English"
+msgstr ""
+
+#: .\taas\server\base_settings.py:104
+msgid "Russian"
+msgstr ""
+
 #: .\taas\templates\base.html:8
 msgid "Tartu Agility Playground"
 msgstr "Tartu Agility Arenguselts"
 
-#: .\taas\templates\base.html:21
-msgid "Your reservation time has been expired."
+#: .\taas\templates\base.html:24
+msgid "Your reservation time has expired."
 msgstr "Broneeringute aeg on möödas."
 
-#: .\taas\templates\base.html:41
-msgid "back to homepage"
-msgstr "tagasi esilehele"
+#: .\taas\templates\base.html:57
+msgid "back to booking"
+msgstr "tagasi broneerima"
 
-#: .\taas\templates\base.html:50 .\taas\user\templates\login.html:7
+#: .\taas\templates\base.html:66 .\taas\user\templates\login.html:7
 #: .\taas\user\templates\login.html:26 .\taas\user\templates\login.html:42
 msgid "Login"
 msgstr "Logi sisse"
 
-#: .\taas\templates\base.html:51
+#: .\taas\templates\base.html:67
 msgid "Register"
 msgstr "Registreeri"
 
-#: .\taas\templates\base.html:57
+#: .\taas\templates\base.html:73
 msgid "Hello, "
 msgstr "Tere, "
 
-#: .\taas\templates\base.html:59
+#: .\taas\templates\base.html:75
 msgid "Logout"
 msgstr "Logi välja"
 
-#: .\taas\templates\base.html:76
+#: .\taas\templates\base.html:99
 msgid "To make all your reservations you have"
-msgstr "Broneeringute tegemiseks Teil aega"
+msgstr "Broneeringute tegemiseks on Teil aega"
 
-#: .\taas\templates\base.html:78
+#: .\taas\templates\base.html:101
 msgid "minutes"
 msgstr "minutit"
+
+#: .\taas\user\forms.py:11
+msgid "Password confirmation"
+msgstr "Uue parooli kinnitus"
 
 #: .\taas\user\templates\admin\add_form.html:6
 msgid ""
 "First, first name, last name, email and password. Then, you'll be able to "
 "edit more user options."
-msgstr "Esimene, eesnimi, perekonnanimi, e-mail ja parool. Siis on Teil võimalus "
-"muuta rohkem kasutaja valikuid."
+msgstr ""
+"Esimene, eesnimi, perekonnanimi, e-posti aadress ja parool. Siis on Teil "
+"võimalus muuta rohkem kasutaja valikuid."
 
 #: .\taas\user\templates\admin\add_form.html:8
 msgid "Enter first name, last name, email and password."
-msgstr "Sisestage eesnimi, perekonnanimi, e-maili aadress ja parool."
+msgstr "Sisestage eesnimi, perekonnanimi, e-posti aadress ja parool."
 
 #: .\taas\user\templates\login.html:19
 msgid "Please login to see this page."
 msgstr "Selle lehe nägemiseks logige palun sisse."
 
-#: .\taas\user\templates\password_reset\confirm.html:16
-#: .\taas\user\templates\password_reset\form.html:14
+#: .\taas\user\templates\login.html:45
+msgid "Lost password?"
+msgstr "Unustasid parooli?"
+
+#: .\taas\user\templates\password_reset\confirm.html:17
+#: .\taas\user\templates\password_reset\form.html:15
 msgid "Reset your password"
 msgstr "Muudke oma parooli"
 
-#: .\taas\user\templates\password_reset\confirm.html:18
+#: .\taas\user\templates\password_reset\confirm.html:23
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
-msgstr "Palun sisestage uus parool kaks korda, et me saaksime kinnitada "
-"selle sobivust."
+msgstr ""
+"Palun sisestage uus parool kaks korda, et me saaksime kinnitada selle "
+"sobivust."
 
-#: .\taas\user\templates\password_reset\confirm.html:22
-msgid "New password:"
-msgstr "Uus parool:"
-
-#: .\taas\user\templates\password_reset\confirm.html:27
-msgid "Confirm password:"
-msgstr "Parooli kinnitus:"
-
-#: .\taas\user\templates\password_reset\confirm.html:31
+#: .\taas\user\templates\password_reset\confirm.html:36
 msgid "Change my password"
 msgstr "Muuda mu parool"
 
-#: .\taas\user\templates\password_reset\confirm.html:36
+#: .\taas\user\templates\password_reset\confirm.html:41
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
@@ -664,7 +799,7 @@ msgstr ""
 
 #: .\taas\user\templates\password_reset\email.html:3
 msgid "Dear"
-msgstr ""
+msgstr "Lugupeetud"
 
 #: .\taas\user\templates\password_reset\email.html:4
 msgid ""
@@ -673,14 +808,18 @@ msgid ""
 "user account\n"
 "at Tartu Agility Arenguselts website.\n"
 msgstr ""
+"\n"
+"Tundub, et olete unustanud oma parooli \n"
+"Tartu Agility Arenguseltsi kodulehel.\n"
 
 #: .\taas\user\templates\password_reset\email.html:9
 msgid "Please go to the following page and choose a new password:"
 msgstr ""
+"Parooli uuendamiseks vajutage palun allolevat linki ja sisestage uus parool:"
 
 #: .\taas\user\templates\password_reset\email.html:13
 msgid "Your username, in case you've forgotten:"
-msgstr ""
+msgstr "Teie e-posti aadress, juhul kui olete selle unustanud:"
 
 #: .\taas\user\templates\password_reset\email.html:15
 msgid ""
@@ -689,28 +828,71 @@ msgid ""
 "\n"
 "Tartu Agility Arenguselts\n"
 msgstr ""
+"\n"
+"Parimate soovidega,\n"
+"\n"
+"Tartu Agility Arenguselts\n"
 
-#: .\taas\user\templates\password_reset\form.html:16
+#: .\taas\user\templates\password_reset\form.html:17
 msgid ""
 "Enter your email address below, and we'll email instructions for setting a "
 "new one."
 msgstr ""
+"Sisestage oma e-posti aadress allpool olevasse lahtrisse ning me saadame "
+"Teie e-posti aadressile lingi, millele vajutades saate uue parooli valida."
 
-#: .\taas\user\templates\password_reset\form.html:19
-msgid "Email address:"
-msgstr ""
-
-#: .\taas\user\templates\password_reset\form.html:23
+#: .\taas\user\templates\password_reset\form.html:25
 msgid "Reset my password"
-msgstr ""
+msgstr "Saada e-kiri"
 
 #: .\taas\user\templates\password_reset\subject.html:3
 msgid "Password reset"
+msgstr "Parooli muutmine"
+
+#: .\taas\user\templates\update_budget.html:6
+#: .\taas\user\templates\update_budget.html:16
+msgid "Account balance"
+msgstr "Saldo"
+
+#: .\taas\user\templates\update_budget.html:18
+msgid "Your current account balance:"
+msgstr "Teie hetkesaldo:"
+
+#: .\taas\user\templates\update_budget.html:21
+msgid "Select an amount to add"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:23
+msgid "Amount:"
+msgstr "Summa:"
+
+#: .\taas\user\templates\update_budget.html:27
+msgid "Select the bank"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:33
+msgid "SEB"
+msgstr "SEB"
+
+#: .\taas\user\templates\update_budget.html:38
+msgid "Swedbank"
+msgstr "Swedbank"
+
+#: .\taas\user\templates\update_budget.html:43
+msgid "LHV"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:48
+msgid "Danske Bank"
+msgstr ""
+
+#: .\taas\user\templates\update_budget.html:53
+msgid "Nordea"
 msgstr ""
 
 #: .\taas\user\templates\user_deactivate.html:13
 msgid "Deactivate account"
-msgstr ""
+msgstr "Deaktiveeri konto"
 
 #: .\taas\user\templates\user_deactivate.html:16
 msgid ""
@@ -720,64 +902,72 @@ msgid ""
 "                Note that you will not be able to login anymore.\n"
 "            "
 msgstr ""
+"\n"
+"                Et deaktiveerida oma konto, palun sisestae oma parool.\n"
+"                Pange tähele, et edaspidi pole sisselogimine võimalik.\n"
+"            "
 
 #: .\taas\user\templates\user_deactivate.html:26
 #: .\taas\user\templates\user_update.html:74
 msgid "Deactivate"
-msgstr ""
+msgstr "Deaktiveeri"
 
 #: .\taas\user\templates\user_registration.html:7
-#: .\taas\user\templates\user_registration.html:17
+#: .\taas\user\templates\user_registration.html:21
 msgid "Registration"
-msgstr ""
+msgstr "Registreerimine"
 
-#: .\taas\user\templates\user_registration.html:20
+#: .\taas\user\templates\user_registration.html:24
 msgid "First Name"
-msgstr ""
+msgstr "Eesnimi"
 
-#: .\taas\user\templates\user_registration.html:20
+#: .\taas\user\templates\user_registration.html:24
 msgid "Last Name"
-msgstr ""
+msgstr "Perekonnanimi"
 
-#: .\taas\user\templates\user_registration.html:33
+#: .\taas\user\templates\user_registration.html:37
 msgid "E-mail"
-msgstr ""
+msgstr "E-posti aadress"
 
-#: .\taas\user\templates\user_registration.html:33
+#: .\taas\user\templates\user_registration.html:37
 msgid "Phone Number"
-msgstr ""
+msgstr "Telefoninumber"
 
-#: .\taas\user\templates\user_registration.html:46
+#: .\taas\user\templates\user_registration.html:50
 msgid "Passwords"
-msgstr ""
+msgstr "Paroolid"
 
-#: .\taas\user\templates\user_registration.html:60
+#: .\taas\user\templates\user_registration.html:65
+msgid "I agree to the "
+msgstr "Nõustun "
+
+#: .\taas\user\templates\user_registration.html:65
+msgid "Terms of service"
+msgstr "tingimustega"
+
+#: .\taas\user\templates\user_registration.html:66
 msgid "Enter"
-msgstr ""
+msgstr "Registreeri"
 
 #: .\taas\user\templates\user_update.html:7
 msgid "User modification"
-msgstr ""
-
-#: .\taas\user\templates\user_update.html:20
-msgid "Account"
-msgstr ""
-
-#: .\taas\user\templates\user_update.html:21
-msgid "History"
-msgstr ""
+msgstr "Kasutaja muutmine"
 
 #: .\taas\user\templates\user_update.html:29
 msgid "Update account"
-msgstr ""
+msgstr "Uuenda kontot"
 
 #: .\taas\user\templates\user_update.html:71
 msgid "Update"
+msgstr "Uuenda"
+
+#: .\venv\Lib\site-packages\alabaster\layout.html:26
+msgid "Page source"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
 msgid "Messages"
-msgstr ""
+msgstr "Sõnumid"
 
 #: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:7
 msgid "Site Maps"
@@ -785,7 +975,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:7
 msgid "Static Files"
-msgstr ""
+msgstr "Staatilised failid"
 
 #: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
 msgid "Syndication"
@@ -793,24 +983,24 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\webdesign\apps.py:7
 msgid "Web Design"
-msgstr ""
+msgstr "Veebikujundus"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:20
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Sisesta kehtiv väärtus."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:87
 #: .\venv\Lib\site-packages\django\forms\fields.py:712
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Sisesta kehtiv URL."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:130
 msgid "Enter a valid integer."
-msgstr ""
+msgstr "Sisesta kehtiv täisarv."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:141
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Sisesta kehtiv e-posti aadress."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:215
 msgid ""
@@ -820,22 +1010,22 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\core\validators.py:220
 #: .\venv\Lib\site-packages\django\core\validators.py:239
 msgid "Enter a valid IPv4 address."
-msgstr ""
+msgstr "Sisesta kehtiv IPv4 aadress."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:225
 #: .\venv\Lib\site-packages\django\core\validators.py:240
 msgid "Enter a valid IPv6 address."
-msgstr ""
+msgstr "Sisesta kehtiv IPv6 aadress."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:235
 #: .\venv\Lib\site-packages\django\core\validators.py:238
 msgid "Enter a valid IPv4 or IPv6 address."
-msgstr ""
+msgstr "Sisesta kehtiv IPv4 või IPv6 aadress."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:263
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1144
 msgid "Enter only digits separated by commas."
-msgstr ""
+msgstr "Sisesta ainult koma(de)ga eraldatud numbrid."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:272
 #, python-format
@@ -861,7 +1051,11 @@ msgid_plural ""
 "Ensure this value has at least %(limit_value)d characters (it has %"
 "(show_value)d)."
 msgstr[0] ""
+"Parool peab olema vähemalt %(limit_value)d sümbol pikk (hetkel on see %"
+"(show_value)d)."
 msgstr[1] ""
+"Parool peab olema vähemalt %(limit_value)d sümbolit pikk (hetkel on see %"
+"(show_value)d)."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:325
 #, python-format
@@ -1003,7 +1197,7 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1705
 msgid "Email address"
-msgstr ""
+msgstr "E-posti aadress"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1729
 msgid "File path"
@@ -1392,107 +1586,107 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:6
 msgid "Monday"
-msgstr ""
+msgstr "esmaspäev"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:6
 msgid "Tuesday"
-msgstr ""
+msgstr "teisipäev"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:6
 msgid "Wednesday"
-msgstr ""
+msgstr "kolmapäev"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:6
 msgid "Thursday"
-msgstr ""
+msgstr "neljapäev"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:6
 msgid "Friday"
-msgstr ""
+msgstr "reede"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:7
 msgid "Saturday"
-msgstr ""
+msgstr "laupäev"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:7
 msgid "Sunday"
-msgstr ""
+msgstr "pühapäev"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:10
 msgid "Mon"
-msgstr ""
+msgstr "E"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:10
 msgid "Tue"
-msgstr ""
+msgstr "T"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:10
 msgid "Wed"
-msgstr ""
+msgstr "K"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:10
 msgid "Thu"
-msgstr ""
+msgstr "N"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:10
 msgid "Fri"
-msgstr ""
+msgstr "R"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:11
 msgid "Sat"
-msgstr ""
+msgstr "L"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:11
 msgid "Sun"
-msgstr ""
+msgstr "P"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:23
 msgid "jan"
-msgstr ""
+msgstr "jaan"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:23
 msgid "feb"
-msgstr ""
+msgstr "veebr"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:23
 msgid "mar"
-msgstr ""
+msgstr "märts"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:23
 msgid "apr"
-msgstr ""
+msgstr "apr"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:23
 msgid "may"
-msgstr ""
+msgstr "mai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:23
 msgid "jun"
-msgstr ""
+msgstr "juuni"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:24
 msgid "jul"
-msgstr ""
+msgstr "juuli"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:24
 msgid "aug"
-msgstr ""
+msgstr "aug"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:24
 msgid "sep"
-msgstr ""
+msgstr "sept"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:24
 msgid "oct"
-msgstr ""
+msgstr "okt"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:24
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:24
 msgid "dec"
-msgstr ""
+msgstr "dets"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:31
 msgctxt "abbrev. month"
@@ -1557,62 +1751,62 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\utils\dates.py:45
 msgctxt "alt. month"
 msgid "January"
-msgstr ""
+msgstr "jaanuar"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:46
 msgctxt "alt. month"
 msgid "February"
-msgstr ""
+msgstr "veebruar"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:47
 msgctxt "alt. month"
 msgid "March"
-msgstr ""
+msgstr "märts"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:48
 msgctxt "alt. month"
 msgid "April"
-msgstr ""
+msgstr "aprill"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:49
 msgctxt "alt. month"
 msgid "May"
-msgstr ""
+msgstr "mai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:50
 msgctxt "alt. month"
 msgid "June"
-msgstr ""
+msgstr "juuni"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:51
 msgctxt "alt. month"
 msgid "July"
-msgstr ""
+msgstr "juuli"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:52
 msgctxt "alt. month"
 msgid "August"
-msgstr ""
+msgstr "august"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:53
 msgctxt "alt. month"
 msgid "September"
-msgstr ""
+msgstr "september"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:54
 msgctxt "alt. month"
 msgid "October"
-msgstr ""
+msgstr "oktoober"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:55
 msgctxt "alt. month"
 msgid "November"
-msgstr ""
+msgstr "november"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:56
 msgctxt "alt. month"
 msgid "December"
-msgstr ""
+msgstr "detsember"
 
 #: .\venv\Lib\site-packages\django\utils\ipv6.py:10
 msgid "This is not a valid IPv6 address."
@@ -1645,36 +1839,36 @@ msgstr[1] ""
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d kuu"
+msgstr[1] "%d kuud"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:12
 #, python-format
 msgid "%d week"
 msgid_plural "%d weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d nädal"
+msgstr[1] "%d nädalat"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:13
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d päev"
+msgstr[1] "%d päeva"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:14
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d tund"
+msgstr[1] "%d tundi"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:15
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minut"
+msgstr[1] "%d minutit"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:47
 msgid "0 minutes"
@@ -2495,3 +2689,18 @@ msgstr ""
 #: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\lxmletree.py:176
 msgid "Text nodes have no children"
 msgstr ""
+
+#~ msgid "Email"
+#~ msgstr "E-posti aadress"
+
+#~ msgid "Transcation"
+#~ msgstr "Ülekanne"
+
+#~ msgid "New password:"
+#~ msgstr "Uus parool:"
+
+#~ msgid "Confirm password:"
+#~ msgstr "Parooli kinnitus:"
+
+#~ msgid "Email address:"
+#~ msgstr "E-posti aadress:"

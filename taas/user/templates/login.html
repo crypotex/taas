@@ -39,7 +39,7 @@
             {% render_field form.password|add_error_class:"field-error" %}
         </div>
 
-        <input type="submit" value={% trans "Login" %} />
+        <input type="submit" value='{% trans "Login" %}'/>
         <input type="hidden" name={% trans "next" %} value="{{ next }}"/>
 
         <p id="reset-password"><a href="{% url 'password_reset' %}">{% trans 'Lost password?' %}</a></p>
