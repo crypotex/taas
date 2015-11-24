@@ -73,6 +73,16 @@ COLORS = {
     'update': '#A52A2A'
 }
 
+MAKSEKESKUS = {
+    'publishable_key': '',
+    'secret_key': '',
+    'shop_id': '',
+    'host': '',
+    'locale': 'ee',
+    'country': 'ee',
+    'currency': 'EUR'
+}
+
 ROOT_URLCONF = 'taas.urls'
 
 AUTH_USER_MODEL = 'user.User'
