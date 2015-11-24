@@ -2,11 +2,12 @@ swal.setDefaults({confirmButtonColor: '#ffa31a'});
 
 function remove_reservation(reservation_id) {
     swal({
-        title: "Are you sure?",
+        title: title,
         text: removeMessage,
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "OK",
+        cancelButtonText: cancelMessage,
         closeOnConfirm: true
     }, function () {
         swal("Deleted!", "Your reservation has been deleted.", "success");
@@ -19,11 +20,12 @@ function remove_reservation(reservation_id) {
 
 function update_reservation(reservation_id) {
     swal({
-        title: "Are you sure?",
+        title: title,
         text: updateMessage,
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "OK",
+        cancelButtonText: cancelMessage,
         closeOnConfirm: true
     }, function () {
         window.location.replace("/reservation/update/" + reservation_id);

@@ -13,6 +13,11 @@
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
 
+    {% if LANGUAGE_CODE == 'et' %}
+        <script type="text/javascript" src="{% static 'js/datepicker-et.js' %}"></script>
+    {% elif LANGUAGE_CODE == 'ru' %}
+        <script type="text/javascript" src="{% static 'js/datepicker-ru.js' %}"></script>
+    {% endif %}
     <script type="text/javascript">
         {% if user.is_authenticated %}
             canSelect = true;
@@ -28,6 +33,15 @@
             });
         {% else %}
             canSelect = false;
+        {% endif %}
+        {% if LANGUAGE_CODE == 'et' %}
+            $(document).ready(function () {
+                $.datepicker.setDefaults($.datepicker.regional['et']);
+            });
+        {% elif LANGUAGE_CODE == 'ru' %}
+            $(document).ready(function () {
+                $.datepicker.setDefaults($.datepicker.regional['ru']);
+            });
         {% endif %}
     </script>
 {% endblock scripts %}
