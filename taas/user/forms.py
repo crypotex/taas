@@ -33,7 +33,7 @@ class UserUpdateForm(forms.ModelForm):
     change_password = forms.BooleanField(label=_("Change password"), required=False)
     new_password1 = forms.CharField(label=_("New password"), min_length=8, max_length=64, required=False,
                                     widget=forms.PasswordInput)
-    new_password2 = forms.CharField(label=_("New password confirmation"),min_length=8, max_length=64 ,required=False,
+    new_password2 = forms.CharField(label=_("New password confirmation"), min_length=8, max_length=64, required=False,
                                     widget=forms.PasswordInput)
     old_password = forms.CharField(label=_("Old password"), required=False,
                                    widget=forms.PasswordInput)
@@ -88,10 +88,11 @@ class UserDeactivateForm(forms.Form):
         password = self.cleaned_data['password']
         if not self.user.check_password(password):
             raise forms.ValidationError(
-                    _('Your password was entered incorrectly. Please enter it again.'))
+                _('Your password was entered incorrectly. Please enter it again.'))
 
-class customPasswordSetForm(auth_forms.SetPasswordForm):
+
+class CustomPasswordSetForm(auth_forms.SetPasswordForm):
     new_password1 = forms.CharField(label=_("New password"), min_length=8, max_length=64,
                                     widget=forms.PasswordInput)
-    new_password2 = forms.CharField(label=_("New password confirmation"),min_length=8, max_length=64,
+    new_password2 = forms.CharField(label=_("New password confirmation"), min_length=8, max_length=64,
                                     widget=forms.PasswordInput)
