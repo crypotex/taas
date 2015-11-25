@@ -28,3 +28,18 @@ class HistoryTable(tables.Table):
                 '<img id="%s" alt="update" src="/static/img/change.png" onClick="update_reservation(this.id)" />'
                 % record.id)
         return ''
+
+class HistoryListTable(tables.Table):
+    class Meta:
+        model = Reservation
+        fields = ('start', 'end', 'field')
+        attrs = {"id": "bookings"}
+
+    delete = tables.Column(attrs={"th": {"hidden": "True"}}, orderable=False, empty_values=())
+
+    def render_delete(self, record):
+        if record.can_delete():
+            return mark_safe(
+                '<img id="%s" src="/static/img/clear.png" alt="delete" onClick="remove_reservation(this.id)" />'
+                % record.id)
+        return ''
