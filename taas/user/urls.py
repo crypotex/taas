@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^login/$', mixins.logout_required(auth_views.login), {'template_name': 'login.html'}, name='user_login_form'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='user_logout'),
     url(r'^balance/$', views.AddBalanceView.as_view(), name="user_balance"),
+    url(r'^terms/$', TemplateView.as_view(template_name='terms.html')),
 
     # password reset related urls
     url(r'^password/reset/$', mixins.logout_required(views.password_reset), name='password_reset'),
