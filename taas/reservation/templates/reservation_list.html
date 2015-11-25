@@ -84,9 +84,9 @@
     <form method="get" action="{% url 'budget_payment' %}">
         <input id="submit-button" type="submit" value={% trans 'Budget' %}>
     </form>
-    <form action="https://payment-test.maksekeskus.ee/pay/1/signed.html" method="post">
-        <input name="json" type="hidden" value='{{ payment_json }}'/>
-        <input name="mac" type="hidden" value="{{ payment_mac }}"/>
+    <form action="{{ host }}" method="post">
+        <input name="json" type="hidden" value='{{ json }}'/>
+        <input name="mac" type="hidden" value="{{ mac }}"/>
         <input id="submit-button" type="submit" value="{% trans 'Transaction' %}">
     </form>
 {% endblock content %}

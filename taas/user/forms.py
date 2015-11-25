@@ -90,8 +90,13 @@ class UserDeactivateForm(forms.Form):
             raise forms.ValidationError(
                     _('Your password was entered incorrectly. Please enter it again.'))
 
-class customPasswordSetForm(auth_forms.SetPasswordForm):
+
+class CustomPasswordSetForm(auth_forms.SetPasswordForm):
     new_password1 = forms.CharField(label=_("New password"), min_length=8, max_length=64,
                                     widget=forms.PasswordInput)
     new_password2 = forms.CharField(label=_("New password confirmation"),min_length=8, max_length=64,
                                     widget=forms.PasswordInput)
+
+
+class AddBalanceForm(forms.Form):
+    amount = forms.IntegerField(min_value=1)

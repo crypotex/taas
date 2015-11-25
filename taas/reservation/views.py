@@ -2,6 +2,7 @@ import json
 import logging
 
 from datetime import timedelta, date
+from decimal import Decimal
 from hashlib import sha512
 
 from django import http
@@ -22,6 +23,7 @@ from taas.reservation.forms import ReservationForm, HistoryForm, PasswordForm
 from taas.reservation.models import Field, Reservation, Payment
 from taas.reservation.tables import HistoryTable
 from taas.user.mixins import LoggedInMixin
+from taas.user.models import User
 
 logger = logging.getLogger(__name__)
 
@@ -236,8 +238,9 @@ class ReservationList(LoggedInMixin, ListView):
         order_json = get_payment_order(total_price, payment.id)
 
         kwargs['total_price'] = total_price
-        kwargs['payment_json'] = order_json
-        kwargs['payment_mac'] = get_payment_mac(order_json)
+        kwargs['json'] = order_json
+        kwargs['mac'] = get_payment_mac(order_json)
+        kwargs['host'] = settings.MAKSEKESKUS['host']
         return super(ReservationList, self).get_context_data(**kwargs)
 
     def get_queryset(self):
@@ -262,6 +265,10 @@ def payment_cancelled(request):
         return http.HttpResponseBadRequest()
 
     reference = json.loads(confirm_json)['reference']
+    if reference.startswith('B'):
+        messages.add_message(request, messages.INFO, _('Adding money to budget was cancelled.'))
+        return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
     staged_payments = Payment.objects.filter(id=reference)
     if staged_payments.exists():
         staged_payments.delete()
@@ -285,7 +292,19 @@ def payment_success(request):
     if confirm_mac1 != confirm_mac2:
         return http.HttpResponseBadRequest()
 
-    reference = json.loads(confirm_json)['reference']
+    payment = json.loads(confirm_json)
+    reference = payment['reference']
+    amount = payment['amount']
+    if reference.startswith('B'):
+        user_id = reference[1:]
+        user = User.objects.get(id=user_id)
+        user.budget += Decimal(amount)
+        user.save()
+        Payment.objects.create(type=Payment.TRANSACTION, user=user, amount=payment['amount'])
+
+        messages.add_message(request, messages.SUCCESS, _('Successfully added money to the budget.'))
+        return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
     try:
         staged_payment = Payment.objects.get(id=reference)
         staged_payment.type = Payment.TRANSACTION
