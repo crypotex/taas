@@ -1,5 +1,8 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from taas.user.tests.factories import UserFactory
 
 
@@ -136,8 +139,18 @@ class UserUpdateTest(StaticLiveServerTestCase):
     def login_user(self):
         self.user = UserFactory(is_active=True)
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
+
+        select = self.selenium.find_element_by_tag_name("select")
+        allOptions = select.find_elements_by_tag_name("option")
+        for option in allOptions:
+            if option.get_attribute('value') == 'en':
+                option.click()
+
+        self.selenium.find_element_by_id('select_language').click()
+
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//header/div[2]/ul/li[1]/a').click()
+        self.assertIn("Login", self.selenium.title)
         self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
         self.selenium.find_element_by_id('id_password').send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
@@ -145,7 +158,11 @@ class UserUpdateTest(StaticLiveServerTestCase):
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//header/div[2]/ul/li[1]/a').click()
+        #WebDriverWait(self.selenium, 10).until(EC.title_contains('User'))
+        self.selenium.implicitly_wait(10)
+
+        self.selenium.find_element_by_xpath('//header/div[2]/ul/li[1]/a').click()
         self.assertIn('User modification', self.selenium.title)
 
 
@@ -181,8 +198,17 @@ class UserDeactivationTest(StaticLiveServerTestCase):
     def login_user(self):
         self.user = UserFactory(is_active=True)
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
+
+        select = self.selenium.find_element_by_tag_name("select")
+        allOptions = select.find_elements_by_tag_name("option")
+        for option in allOptions:
+            if option.get_attribute('value') == 'en':
+                option.click()
+
+        self.selenium.find_element_by_id('select_language').click()
+
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//header/div[2]/ul/li[1]/a').click()
         self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
         self.selenium.find_element_by_id('id_password').send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
@@ -190,5 +216,5 @@ class UserDeactivationTest(StaticLiveServerTestCase):
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//header/div[2]/ul/li[1]/a').click()
         self.assertIn('User modification', self.selenium.title)
