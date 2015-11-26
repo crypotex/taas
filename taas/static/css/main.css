@@ -88,21 +88,21 @@ header:after {
 .navsmall a[id='et'] {
     background: url('../img/ee.svg') transparent;
     background-size: 100% 100%;
-    border: 1px solid #666666;
+    border: 1px solid #999999;
     padding: 0 13px;
 }
 
 .navsmall a[id='ru'] {
     background: url('../img/ru.svg') transparent;
     background-size: 100% 100%;
-    border: 1px solid #666666;
+    border: 1px solid #999999;
     padding: 0 13px;
 }
 
 .navsmall a[id='en'] {
     background: url('../img/gb.svg') transparent;
     background-size: 100% 100%;
-    border: 1px solid #666666;
+    border: 1px solid #999999;
     padding: 0 13px;
 }
 
