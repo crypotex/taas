@@ -59,13 +59,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
     def go_to_registration(self):
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
 
-        select = self.selenium.find_element_by_tag_name("select")
-        allOptions = select.find_elements_by_tag_name("option")
-        for option in allOptions:
-            if option.get_attribute('value') == 'en':
-                option.click()
-
-        self.selenium.find_element_by_id('select_language').click()
+        self.selenium.find_element_by_id("en").click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
         self.selenium.find_element_by_xpath('//header/div[2]/ul/li[2]/a').click()
