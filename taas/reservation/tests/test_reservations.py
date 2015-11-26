@@ -56,7 +56,8 @@ class ReservationTest(TestCase):
         self.client.login(**self.login_data)
         response = self.client.get(ReservationFactory.get_reservation_list_url(),
                                    {'start': timezone.now().date(), 'end': timezone.now().date()})
-        self.assertEqual(len(response.context['reservation_list']), 3, _("All three reservations are shown"))
+        reservations = [reserv for reserv in response.context_data['table'].data]
+        self.assertEqual(len(reservations), 3, _("All three reservations are shown"))
 
     def test_all_users_unpaid_reservations_are_deleted(self):
         self.client.login(**self.login_data)

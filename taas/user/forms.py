@@ -96,3 +96,7 @@ class CustomPasswordSetForm(auth_forms.SetPasswordForm):
                                     widget=forms.PasswordInput)
     new_password2 = forms.CharField(label=_("New password confirmation"), min_length=8, max_length=64,
                                     widget=forms.PasswordInput)
+
+
+class AddBalanceForm(forms.Form):
+    amount = forms.IntegerField(min_value=1)

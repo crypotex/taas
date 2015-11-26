@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load staticfiles %}
+{% load render_table from django_tables2 %}
 
 {% block title %}
     {% trans 'Payment' %}
@@ -11,6 +12,16 @@
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
 {% endblock styles %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript">
+        var removeMessage = "{% trans 'Do you really want to remove this reservation?' %}";
+        var title = "{% trans 'Are you sure?' %}";
+        var cancelMessage = "{% trans 'Cancel' %}";
+    </script>
+    <script type="text/javascript" src="{% static 'js/history.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 
@@ -23,72 +34,16 @@
         {% endfor %}
 
         <div class="fieldWrapper">
-            <table id="bookings">
-                <tr>
-                    <th>
-                        {% trans 'Field' %}
-                    </th>
-                    <th>
-                        {% trans 'Price' %} (€)
-                    </th>
-                    <th>
-                        {% trans 'Start' %}
-                    </th>
-                    <th>
-                        {% trans 'End' %}
-                    </th>
-                    <th>&#32;</th>
-                </tr>
-                {% for reservation in reservation_list %}
-                    <tr>
-                        <td>
-                            {{ reservation.field.name }}
-                        </td>
-                        <td>
-                            {{ reservation.price }}
-                        </td>
-                        <td>
-                            {{ reservation.start }}
-                        </td>
-                        <td>
-                            {{ reservation.end }}
-                        </td>
-                        <td>
-                            <img src="{% static 'img/clear.png' %}">
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
-            {% if is_paginated %}
-                <div class="pagination">
-            <span class="page-links">
-                {% if page_obj.has_previous %}
-                    <a href="{% url 'reservation_list' %}?page={{ page_obj.previous_page_number }}">
-                        {% trans 'previous' %}
-                    </a>
-                {% endif %}
-                <span class="page-current">
-                    {% blocktrans with count=page_obj.number total=page_obj.paginator.num_pages %}
-                        Page {{ count }} of {{ total }}
-                    {% endblocktrans %}
-                </span>
-                {% if page_obj.has_next %}
-                    <a href="{% url 'reservation_list' %}?page={{ page_obj.next_page_number }}">
-                        {% trans 'next' %}
-                    </a>
-                {% endif %}
-            </span>
-                </div>
-            {% endif %}
+            {% render_table table 'table.html' %}
         </div>
     </form>
     <p>{{ total_price }}</p>
     <form method="get" action="{% url 'budget_payment' %}">
         <input id="submit-button" type="submit" value={% trans 'Budget' %}>
     </form>
-    <form action="https://payment-test.maksekeskus.ee/pay/1/signed.html" method="post">
-        <input name="json" type="hidden" value='{{ payment_json }}'/>
-        <input name="mac" type="hidden" value="{{ payment_mac }}"/>
+    <form action="{{ host }}" method="post">
+        <input name="json" type="hidden" value='{{ json }}'/>
+        <input name="mac" type="hidden" value="{{ mac }}"/>
         <input id="submit-button" type="submit" value="{% trans 'Transaction' %}">
     </form>
 {% endblock content %}

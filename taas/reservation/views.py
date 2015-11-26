@@ -2,6 +2,7 @@ import json
 import logging
 
 from datetime import timedelta, date
+from decimal import Decimal
 from hashlib import sha512
 
 from django import http
@@ -15,13 +16,14 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import ListView, TemplateView, DetailView, FormView
+from django.views.generic import TemplateView, DetailView, FormView
 from django_tables2 import RequestConfig
 
 from taas.reservation.forms import ReservationForm, HistoryForm, PasswordForm
 from taas.reservation.models import Field, Reservation, Payment
-from taas.reservation.tables import HistoryTable
+from taas.reservation.tables import HistoryTable, ReservationListTable
 from taas.user.mixins import LoggedInMixin
+from taas.user.models import User
 
 logger = logging.getLogger(__name__)
 
@@ -208,21 +210,20 @@ def get_payment_mac(order):
     return hashed_order.upper()
 
 
-class ReservationList(LoggedInMixin, ListView):
+class ReservationList(LoggedInMixin, TemplateView):
     template_name = 'reservation_list.html'
-    ordering = 'start'
-    context_object_name = 'reservation_list'
     paginate_by = 10
 
     def get(self, request, *args, **kwargs):
-        reservations = self.get_queryset()
+        reservations = self.get_reservations()
         if not reservations.exists():
-            return http.HttpResponseForbidden()
+            return http.HttpResponseRedirect(reverse_lazy('homepage'))
 
         return super(ReservationList, self).get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        total_price = self.queryset.aggregate(total_price=Sum('field__cost'))['total_price']
+        reservations = self.get_reservations()
+        total_price = reservations.aggregate(total_price=Sum('field__cost'))['total_price']
 
         old_staged = Payment.objects.filter(type=Payment.STAGED, user=self.request.user)
         if old_staged.exists():
@@ -230,20 +231,23 @@ class ReservationList(LoggedInMixin, ListView):
 
         payment = Payment.objects.create(type=Payment.STAGED, amount=total_price,
                                          user=self.request.user)
-        for reservation in self.queryset:
+        for reservation in reservations:
             payment.reservation_set.add(reservation)
 
         order_json = get_payment_order(total_price, payment.id)
 
+        table = ReservationListTable(reservations)
+        RequestConfig(self.request, paginate={"per_page": self.paginate_by}).configure(table)
+        kwargs['table'] = table
+
         kwargs['total_price'] = total_price
-        kwargs['payment_json'] = order_json
-        kwargs['payment_mac'] = get_payment_mac(order_json)
+        kwargs['json'] = order_json
+        kwargs['mac'] = get_payment_mac(order_json)
+        kwargs['host'] = settings.MAKSEKESKUS['host']
         return super(ReservationList, self).get_context_data(**kwargs)
 
-    def get_queryset(self):
-        self.queryset = Reservation.objects.filter(user=self.request.user, paid=False)
-
-        return super(ReservationList, self).get_queryset()
+    def get_reservations(self):
+        return Reservation.objects.filter(user=self.request.user, paid=False)
 
 
 @csrf_exempt
@@ -262,6 +266,10 @@ def payment_cancelled(request):
         return http.HttpResponseBadRequest()
 
     reference = json.loads(confirm_json)['reference']
+    if reference.startswith('B'):
+        messages.add_message(request, messages.INFO, _('Adding money to budget was cancelled.'))
+        return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
     staged_payments = Payment.objects.filter(id=reference)
     if staged_payments.exists():
         staged_payments.delete()
@@ -285,7 +293,19 @@ def payment_success(request):
     if confirm_mac1 != confirm_mac2:
         return http.HttpResponseBadRequest()
 
-    reference = json.loads(confirm_json)['reference']
+    payment = json.loads(confirm_json)
+    reference = payment['reference']
+    amount = payment['amount']
+    if reference.startswith('B'):
+        user_id = reference[1:]
+        user = User.objects.get(id=user_id)
+        user.budget += Decimal(amount)
+        user.save()
+        Payment.objects.create(type=Payment.TRANSACTION, user=user, amount=payment['amount'])
+
+        messages.add_message(request, messages.SUCCESS, _('Successfully added money to the budget.'))
+        return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
     try:
         staged_payment = Payment.objects.get(id=reference)
         staged_payment.type = Payment.TRANSACTION
@@ -363,11 +383,12 @@ def history(request):
 
     data = {'form': form}
     next_month = 1 if current_month == 12 else current_month + 1
+    next_year = year + 1 if current_month == 12 else year
     reservations = Reservation.objects.filter(
         user=request.user,
         paid=True,
         start__gt=date(year, current_month, 1),
-        end__lt=date(year, next_month, 1)
+        end__lt=date(next_year, next_month, 1)
     ).order_by('start')
     if reservations.exists():
         table = HistoryTable(reservations)
