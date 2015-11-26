@@ -1,6 +1,8 @@
 import django_tables2 as tables
+
 from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext_lazy as _
 
 from taas.reservation.models import Reservation
 
@@ -29,12 +31,14 @@ class HistoryTable(tables.Table):
                 % record.id)
         return ''
 
-class HistoryListTable(tables.Table):
+
+class ReservationListTable(tables.Table):
     class Meta:
         model = Reservation
         fields = ('start', 'end', 'field')
         attrs = {"id": "bookings"}
 
+    price = tables.Column(verbose_name=_('price (€)'), accessor='field.cost')
     delete = tables.Column(attrs={"th": {"hidden": "True"}}, orderable=False, empty_values=())
 
     def render_delete(self, record):

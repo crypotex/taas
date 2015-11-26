@@ -21,7 +21,7 @@ from django_tables2 import RequestConfig
 
 from taas.reservation.forms import ReservationForm, HistoryForm, PasswordForm
 from taas.reservation.models import Field, Reservation, Payment
-from taas.reservation.tables import HistoryTable, HistoryListTable
+from taas.reservation.tables import HistoryTable, ReservationListTable
 from taas.user.mixins import LoggedInMixin
 from taas.user.models import User
 
@@ -212,8 +212,6 @@ def get_payment_mac(order):
 
 class ReservationList(LoggedInMixin, TemplateView):
     template_name = 'reservation_list.html'
-    ordering = 'start'
-    context_object_name = 'reservation_list'
     paginate_by = 10
 
     def get(self, request, *args, **kwargs):
@@ -238,7 +236,7 @@ class ReservationList(LoggedInMixin, TemplateView):
 
         order_json = get_payment_order(total_price, payment.id)
 
-        table = HistoryListTable(reservations)
+        table = ReservationListTable(reservations)
         RequestConfig(self.request, paginate={"per_page": self.paginate_by}).configure(table)
         kwargs['table'] = table
 
@@ -250,7 +248,6 @@ class ReservationList(LoggedInMixin, TemplateView):
 
     def get_reservations(self):
         return Reservation.objects.filter(user=self.request.user, paid=False)
-
 
 
 @csrf_exempt
@@ -386,11 +383,12 @@ def history(request):
 
     data = {'form': form}
     next_month = 1 if current_month == 12 else current_month + 1
+    next_year = year + 1 if current_month == 12 else year
     reservations = Reservation.objects.filter(
         user=request.user,
         paid=True,
         start__gt=date(year, current_month, 1),
-        end__lt=date(year, next_month, 1)
+        end__lt=date(next_year, next_month, 1)
     ).order_by('start')
     if reservations.exists():
         table = HistoryTable(reservations)
