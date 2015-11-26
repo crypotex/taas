@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-26 20:05+0200\n"
+"POT-Creation-Date: 2015-11-26 22:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -791,38 +791,42 @@ msgstr "Broneeringute aeg on möödas."
 msgid "Warning"
 msgstr "Hoiatus"
 
-#: .\taas\templates\base.html:58
+#: .\taas\templates\base.html:65
 msgid "back to booking"
 msgstr "tagasi broneerima"
 
-#: .\taas\templates\base.html:67 .\taas\user\templates\login.html:7
+#: .\taas\templates\base.html:74 .\taas\user\templates\login.html:7
 #: .\taas\user\templates\login.html:26 .\taas\user\templates\login.html:42
 msgid "Login"
 msgstr "Logi sisse"
 
-#: .\taas\templates\base.html:68
+#: .\taas\templates\base.html:75
 msgid "Register"
 msgstr "Registreeri"
 
-#: .\taas\templates\base.html:74
+#: .\taas\templates\base.html:81
 msgid "Hello, "
 msgstr "Tere, "
 
-#: .\taas\templates\base.html:76
+#: .\taas\templates\base.html:83
 msgid "Logout"
 msgstr "Logi välja"
 
-#: .\taas\templates\base.html:100
+#: .\taas\templates\base.html:107
 msgid "To make all your reservations you have"
 msgstr "Broneeringute tegemiseks on Teil aega"
 
-#: .\taas\templates\base.html:102
+#: .\taas\templates\base.html:109
 msgid "minutes"
 msgstr "minutit"
 
 #: .\taas\user\forms.py:11
 msgid "Password confirmation"
 msgstr "Uue parooli kinnitus"
+
+#: .\taas\user\forms.py:102
+msgid "Amount"
+msgstr "Summa"
 
 #: .\taas\user\templates\admin\add_form.html:6
 msgid ""
@@ -2763,15 +2767,6 @@ msgstr ""
 #~ "\n"
 #~ "                        %(count)s. leht %(total)s-st\n"
 #~ "                    "
-
-#~ msgid "Amount:"
-#~ msgstr "Summa:"
-
-#~ msgid "SEB"
-#~ msgstr "SEB"
-
-#~ msgid "Swedbank"
-#~ msgstr "Swedbank"
 
 #~ msgid "Page"
 #~ msgstr "Leht"

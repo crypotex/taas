@@ -99,4 +99,4 @@ class CustomPasswordSetForm(auth_forms.SetPasswordForm):
 
 
 class AddBalanceForm(forms.Form):
-    amount = forms.IntegerField(min_value=1)
+    amount = forms.IntegerField(min_value=1, label=_("Amount"))
