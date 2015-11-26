@@ -16,12 +16,12 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import ListView, TemplateView, DetailView, FormView
+from django.views.generic import TemplateView, DetailView, FormView
 from django_tables2 import RequestConfig
 
 from taas.reservation.forms import ReservationForm, HistoryForm, PasswordForm
 from taas.reservation.models import Field, Reservation, Payment
-from taas.reservation.tables import HistoryTable
+from taas.reservation.tables import HistoryTable, ReservationListTable
 from taas.user.mixins import LoggedInMixin
 from taas.user.models import User
 
@@ -210,21 +210,20 @@ def get_payment_mac(order):
     return hashed_order.upper()
 
 
-class ReservationList(LoggedInMixin, ListView):
+class ReservationList(LoggedInMixin, TemplateView):
     template_name = 'reservation_list.html'
-    ordering = 'start'
-    context_object_name = 'reservation_list'
     paginate_by = 10
 
     def get(self, request, *args, **kwargs):
-        reservations = self.get_queryset()
+        reservations = self.get_reservations()
         if not reservations.exists():
-            return http.HttpResponseForbidden()
+            return http.HttpResponseRedirect(reverse_lazy('homepage'))
 
         return super(ReservationList, self).get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        total_price = self.queryset.aggregate(total_price=Sum('field__cost'))['total_price']
+        reservations = self.get_reservations()
+        total_price = reservations.aggregate(total_price=Sum('field__cost'))['total_price']
 
         old_staged = Payment.objects.filter(type=Payment.STAGED, user=self.request.user)
         if old_staged.exists():
@@ -232,10 +231,14 @@ class ReservationList(LoggedInMixin, ListView):
 
         payment = Payment.objects.create(type=Payment.STAGED, amount=total_price,
                                          user=self.request.user)
-        for reservation in self.queryset:
+        for reservation in reservations:
             payment.reservation_set.add(reservation)
 
         order_json = get_payment_order(total_price, payment.id)
+
+        table = ReservationListTable(reservations)
+        RequestConfig(self.request, paginate={"per_page": self.paginate_by}).configure(table)
+        kwargs['table'] = table
 
         kwargs['total_price'] = total_price
         kwargs['json'] = order_json
@@ -243,10 +246,8 @@ class ReservationList(LoggedInMixin, ListView):
         kwargs['host'] = settings.MAKSEKESKUS['host']
         return super(ReservationList, self).get_context_data(**kwargs)
 
-    def get_queryset(self):
-        self.queryset = Reservation.objects.filter(user=self.request.user, paid=False)
-
-        return super(ReservationList, self).get_queryset()
+    def get_reservations(self):
+        return Reservation.objects.filter(user=self.request.user, paid=False)
 
 
 @csrf_exempt
@@ -382,11 +383,12 @@ def history(request):
 
     data = {'form': form}
     next_month = 1 if current_month == 12 else current_month + 1
+    next_year = year + 1 if current_month == 12 else year
     reservations = Reservation.objects.filter(
         user=request.user,
         paid=True,
         start__gt=date(year, current_month, 1),
-        end__lt=date(year, next_month, 1)
+        end__lt=date(next_year, next_month, 1)
     ).order_by('start')
     if reservations.exists():
         table = HistoryTable(reservations)

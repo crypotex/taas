@@ -5,6 +5,7 @@ from taas.reservation import models
 from taas.reservation import models as user_models
 from taas.reservation.tests import factories
 from taas.user.tests.factories import UserFactory
+from django.core.urlresolvers import reverse
 
 
 class ReservationListTest(TransactionTestCase):
@@ -19,7 +20,10 @@ class ReservationListTest(TransactionTestCase):
     def test_user_cannot_access_reservation_list_page_without_staged_reservations(self):
         self.client.login(username=self.user.email, password='isherenow')
         response = self.client.get(self.list_url)
-        self.assertEqual(response.status_code, client.FORBIDDEN)
+        self.assertRedirects(response,
+                             expected_url=reverse('homepage'),
+                             status_code=client.FOUND,
+                             target_status_code=client.OK)
 
     def test_user_can_access_reservation_list_page_with_staged_reservations(self):
         self.client.login(username=self.user.email, password='isherenow')

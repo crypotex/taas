@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load staticfiles %}
+{% load render_table from django_tables2 %}
 
 {% block title %}
     {% trans 'Payment' %}
@@ -11,6 +12,14 @@
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
 {% endblock styles %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript">
+        var removeMessage = "{% trans 'Do you really want to remove this reservation?' %}";
+    </script>
+    <script type="text/javascript" src="{% static 'js/history.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 
@@ -23,42 +32,7 @@
         {% endfor %}
 
         <div class="fieldWrapper">
-            <table id="bookings">
-                <tr>
-                    <th>
-                        {% trans 'Field' %}
-                    </th>
-                    <th>
-                        {% trans 'Price' %}
-                    </th>
-                    <th>
-                        {% trans 'Start' %}
-                    </th>
-                    <th>
-                        {% trans 'End' %}
-                    </th>
-                    <th>&#32;</th>
-                </tr>
-                {% for reservation in reservation_list %}
-                    <tr>
-                        <td>
-                            {{ reservation.field.name }}
-                        </td>
-                        <td>
-                            {{ reservation.price }}
-                        </td>
-                        <td>
-                            {{ reservation.start }}
-                        </td>
-                        <td>
-                            {{ reservation.end }}
-                        </td>
-                        <td>
-                            <img src="{% static 'img/clear.png' %}">
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
+            {% render_table table %}
             {% if is_paginated %}
                 <div class="pagination">
             <span class="page-links">
