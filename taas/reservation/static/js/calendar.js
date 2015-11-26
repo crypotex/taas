@@ -1,6 +1,7 @@
 var canSelect;
 var timeError;
 var expireMessage;
+var warningMessage;
 var expire_date = null;
 
 swal.setDefaults({confirmButtonColor: '#ffa31a'});
@@ -135,4 +136,12 @@ $(document).ready(function () {
             }
         });
     }
+
+    $('.change_language').click(function (e) {
+        e.preventDefault();
+        $('#language').val($(this).attr('id'));
+        $('#change_language_form').submit();
+    });
 });
+
+

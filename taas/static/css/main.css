@@ -77,15 +77,42 @@ header:after {
     height: 82px;
 }
 
-.navsmall img {
+.navsmall a {
     float: right;
     display: block;
-    height: 30px;
+    height: 20px;
+    width: auto;
     top: 0;
 }
 
-.navsmall:hover {
+.navsmall a[id='et'] {
+    background: url('../img/ee.svg') transparent;
+    background-size: 100% 100%;
+    border: 1px solid #666666;
+    padding: 0 13px;
+}
+
+.navsmall a[id='ru'] {
+    background: url('../img/ru.svg') transparent;
+    background-size: 100% 100%;
+    border: 1px solid #666666;
+    padding: 0 13px;
+}
+
+.navsmall a[id='en'] {
+    background: url('../img/gb.svg') transparent;
+    background-size: 100% 100%;
+    border: 1px solid #666666;
+    padding: 0 13px;
+}
+
+.navsmall a {
+    margin: 3px;
+}
+
+.navsmall a:hover {
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .nav ul {
