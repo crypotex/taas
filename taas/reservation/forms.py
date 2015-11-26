@@ -61,7 +61,7 @@ class HistoryForm(forms.Form):
 
 
 class PasswordForm(forms.Form):
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput, label=_('Password'))
 
     def __init__(self, user, *args, **kwargs):
         super(PasswordForm, self).__init__(*args, **kwargs)
