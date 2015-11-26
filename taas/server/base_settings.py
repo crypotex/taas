@@ -61,15 +61,25 @@ LOCALE_PATHS = (
 
 COLORS = {
     'paid': {
-        'anonymous': '#4682B4',
-        'others': '#7B68EE',
-        'owner': '#483D8B'
+        'anonymous': '#FE9900',
+        'others': '#FE9900',
+        'owner': '#009800'
     },
     'unpaid': {
-        'owner': '#008000',
-        'others': '#FF8C00',
+        'owner': '#b285e0',
+        'others': '#a9a9a9',
     },
     'update': '#A52A2A'
+}
+
+MAKSEKESKUS = {
+    'publishable_key': '',
+    'secret_key': '',
+    'shop_id': '',
+    'host': '',
+    'locale': 'ee',
+    'country': 'ee',
+    'currency': 'EUR'
 }
 
 ROOT_URLCONF = 'taas.urls'

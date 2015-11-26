@@ -11,49 +11,13 @@
 {% endblock styles %}
 
 {% block content %}
-    <form class="form">
+    <form method="post" class="form">{% csrf_token %}
 
         <h1>{% trans 'Account balance' %}</h1>
 
         <h3 id="show_budget">{% trans 'Your current account balance:' %} {{ user.display_budget_money }} </h3>
-
-        <!--{{ form.non_field_errors }}-->
         <div class="section"><span>1</span>{% trans 'Select an amount to add' %}</div>
-        <div class="fieldWrapper">
-            <label for="id_amount">Amount:</label>
-            <input id="id_amount" name="amount" type="number" min="1" value="1">
-        </div>
-
-        <div class="section"><span>2</span>{% trans 'Select the bank' %}</div>
-        <div class="fieldWrapper">
-            <dl>
-                <dt>
-                    <input class="banks" name="bank" type="radio" id="SEB" value="SEB" checked>
-                    <label class="label_banks" for="SEB"><img src="{% static 'img/seb.gif' %}"
-                                                              alt="{% trans 'SEB' %}"></label> <br>
-                </dt>
-                <dt>
-                    <input class="banks" name="bank" type="radio" id="Swedbank" value="Swedbank">
-                    <label class="label_banks" for="Swedbank"><img src="{% static 'img/swedbank.gif' %}"
-                                                                   alt="{% trans 'Swedbank' %}"></label>
-                </dt>
-                <dt>
-                    <input class="banks" name="bank" type="radio" id="LHV" value="LHV">
-                    <label class="label_banks" for="LHV"><img src="{% static 'img/lhv.png' %}"
-                                                              alt="{% trans 'LHV' %}"></label>
-                </dt>
-                <dt>
-                    <input class="banks" name="bank" type="radio" id="Danske" value="Danske">
-                    <label class="label_banks" for="Danske"><img src="{% static 'img/bank_danske_bank.png' %}"
-                                                                 alt="{% trans 'Danske Bank' %}"></label>
-                </dt>
-                <dt>
-                    <input class="banks" name="bank" type="radio" id="Nordea" value="Nordea">
-                    <label class="label_banks" for="Nordea"><img src="{% static 'img/nordea.gif' %}"
-                                                                 alt="{% trans 'Nordea' %}"></label>
-                </dt>
-            </dl>
-        </div>
+        {{ form }}
 
         <input id="submit-button" type="submit" value={% trans 'Submit' %}>
     </form>

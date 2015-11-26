@@ -44,6 +44,11 @@ class UserFactory(factory.DjangoModelFactory):
         return 'http://testserver' + reverse('password_reset')
 
     @classmethod
+    def get_update_balance_url(cls):
+        return 'http://testserver' + reverse('user_balance')
+
+
+    @classmethod
     def get_form_data(cls):
         return {
             'email': 'taavi@example.com',
