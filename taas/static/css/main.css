@@ -47,13 +47,19 @@ body {
     margin: 0 auto;
 }
 
-#header {
+header {
     z-index: 10000;
     background: #ffffff;
     width: 97%;
     min-width: 300px;
     height: 105px;
     border-bottom: 1px dotted #dddddd;
+}
+
+header:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .nav {

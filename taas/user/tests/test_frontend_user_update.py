@@ -1,8 +1,5 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 from taas.user.tests.factories import UserFactory
 
 
@@ -158,10 +155,6 @@ class UserUpdateTest(StaticLiveServerTestCase):
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//header/div[2]/ul/li[1]/a').click()
-        #WebDriverWait(self.selenium, 10).until(EC.title_contains('User'))
-        self.selenium.implicitly_wait(10)
-
         self.selenium.find_element_by_xpath('//header/div[2]/ul/li[1]/a').click()
         self.assertIn('User modification', self.selenium.title)
 
