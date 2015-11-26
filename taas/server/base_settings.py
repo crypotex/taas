@@ -124,3 +124,9 @@ STATICFILES_DIRS = (
 
 LOGIN_REDIRECT_URL = reverse_lazy('homepage')
 LOGIN_URL = reverse_lazy('user_login_form')
+
+FORMAT_MODULE_PATH = 'taas.formats'
+
+TIME_FORMAT = 'H:i'
+SHORT_DATETIME_FORMAT = 'd.m.Y H:i'
+DATETIME_FORMAT = 'd.m.Y H:i'

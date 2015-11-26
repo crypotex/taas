@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-26 18:09+0200\n"
+"POT-Creation-Date: 2015-11-26 20:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -523,12 +523,12 @@ msgid "fields"
 msgstr "väljakud"
 
 #: .\taas\reservation\models.py:27
-#: .\taas\reservation\templates\reservation_list.html:66
+#: .\taas\reservation\templates\reservation_list.html:47
 msgid "Transaction"
 msgstr "Ülekanne"
 
 #: .\taas\reservation\models.py:28
-#: .\taas\reservation\templates\reservation_list.html:61
+#: .\taas\reservation\templates\reservation_list.html:42
 msgid "Budget"
 msgstr "Saldo"
 
@@ -638,10 +638,12 @@ msgid "Do you really want to modify this reservation?"
 msgstr "Kas sa soovid seda broneeringut muuta?"
 
 #: .\taas\reservation\templates\history.html:21
+#: .\taas\reservation\templates\reservation_list.html:20
 msgid "Are you sure?"
 msgstr "Oled sa kindel?"
 
 #: .\taas\reservation\templates\history.html:22
+#: .\taas\reservation\templates\reservation_list.html:21
 msgid "Cancel"
 msgstr "Tühista"
 
@@ -666,28 +668,13 @@ msgstr "Palun valige ajad, mis on praegusest hetkest 30 minuti pärast."
 msgid "Next"
 msgstr "Edasi"
 
-#: .\taas\reservation\templates\reservation_list.html:28
+#: .\taas\reservation\templates\reservation_list.html:30
 msgid "Pay for the reservations"
 msgstr "Maksa broneeringute eest"
 
-#: .\taas\reservation\templates\reservation_list.html:41
-msgid "previous"
-msgstr "eelmine"
-
-#: .\taas\reservation\templates\reservation_list.html:45
-#, python-format
-msgid ""
-"\n"
-"                        Page %(count)s of %(total)s\n"
-"                    "
-msgstr ""
-"\n"
-"                        %(count)s. leht %(total)s-st\n"
-"                    "
-
 #: .\taas\reservation\templates\reservation_update.html:25
 msgid "Choose a new time for the reservation:"
-msgstr "Valige reserveeringu jaoks uus aeg:"
+msgstr "Valige broneeringu jaoks uus aeg:"
 
 #: .\taas\reservation\templates\reservation_update.html:37
 #: .\taas\user\templates\update_budget.html:22
@@ -966,7 +953,7 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"                Et deaktiveerida oma konto, palun sisestae oma parool.\n"
+"                Et deaktiveerida oma konto, palun sisestage oma parool.\n"
 "                Pange tähele, et edaspidi pole sisselogimine võimalik.\n"
 "            "
 
@@ -2765,8 +2752,26 @@ msgstr ""
 #~ msgid "End"
 #~ msgstr "Lõpp"
 
+#~ msgid "previous"
+#~ msgstr "eelmine"
+
+#~ msgid ""
+#~ "\n"
+#~ "                        Page %(count)s of %(total)s\n"
+#~ "                    "
+#~ msgstr ""
+#~ "\n"
+#~ "                        %(count)s. leht %(total)s-st\n"
+#~ "                    "
+
 #~ msgid "Amount:"
 #~ msgstr "Summa:"
+
+#~ msgid "SEB"
+#~ msgstr "SEB"
+
+#~ msgid "Swedbank"
+#~ msgstr "Swedbank"
 
 #~ msgid "Page"
 #~ msgstr "Leht"
@@ -2785,3 +2790,6 @@ msgstr ""
 
 #~ msgid "Email address:"
 #~ msgstr "E-posti aadress:"
+
+#~ msgid "View site"
+#~ msgstr "Tagasi esilehele"
