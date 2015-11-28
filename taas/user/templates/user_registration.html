@@ -18,7 +18,7 @@
 {% block content %}
     <form method="POST" class="form">{% csrf_token %}
 
-        <h1>{% trans 'Registration' %}</h1>
+        <h2>{% trans 'Registration' %}</h2>
 
         {{ form.non_field_errors }}
         <div class="section"><span>1</span>{% trans 'First Name' %} &amp; {% trans 'Last Name' %}</div>
@@ -49,6 +49,7 @@
 
         <div class="section"><span>3</span>{% trans 'Passwords' %}</div>
         <div class="fieldWrapper">
+        <h5>{% trans 'The length of the password has to be bigger than 8.' %}</h5>
             {{ form.password1.label_tag }}
             {% render_field form.password1|add_error_class:"field-error" %}
             {% for err in form.password1.errors %}
