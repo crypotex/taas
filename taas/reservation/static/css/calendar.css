@@ -15,6 +15,7 @@
 #calendarwrap {
     text-align: center;
     margin-bottom: 15px;
+    overflow: hidden;
 }
 
 #calendarwrap:after {
@@ -51,7 +52,6 @@
     cursor: pointer;
     display: none;
 }
-
 
 .button:visited {
     color: #fff;
@@ -93,4 +93,18 @@ input.banks {
 .fc-header-title h2 {
     font-size: 16px;
     color: #666666;
+}
+
+#bookings th {
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+#bookings td, #bookings td:last-child {
+    border-top: 1px solid #c8c8c8;
+    padding: 10px;
+}
+
+#bookings tr:last-child {
+    border-bottom: 1px solid #c8c8c8;
 }

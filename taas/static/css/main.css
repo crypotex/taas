@@ -22,7 +22,6 @@ body {
     margin: 15px auto 0 auto;
     height: auto;
     min-height: 100% !important;
-    padding-bottom: 10px;
     background: #ffffff;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -233,9 +232,8 @@ a:hover {
 
 #timerMessage {
     display: none;
-    margin: 0 auto;
-    padding-bottom: 20px;
-    width: 30%;
+    margin: 0 auto 20px auto;
+    width: 50%;
 }
 
 #timerMessage p {
