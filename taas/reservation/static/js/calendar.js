@@ -28,17 +28,17 @@ function getExpireDate() {
 
 function disableSubmition() {
     if (document.getElementById('submit')) {
-        document.getElementById('submit').style.visibility = 'hidden';
+        document.getElementById('submit').style.display = 'none';
     }
-    document.getElementById('timerMessage').style.visibility = 'hidden';
+    document.getElementById('timerMessage').style.display = 'none';
     expire_date = null;
 }
 
 function enableSubmition() {
     if (document.getElementById('submit')) {
-        document.getElementById('submit').style.visibility = 'visible';
+        document.getElementById('submit').style.display = 'block';
     }
-    document.getElementById('timerMessage').style.visibility = 'visible';
+    document.getElementById('timerMessage').style.display = 'block';
     startTimer();
 }
 
@@ -106,7 +106,11 @@ function checkDate() {
 $(document).ready(function () {
     if ($('#calendar').length) {
         $("#calendar").fullCalendar({
-            header: false,
+            header: {
+                left: '',
+                center: 'title',
+                right: ''
+            },
             resources: 'reservation/fields/',
             defaultView: 'resourceDay',
             allDaySlot: false,

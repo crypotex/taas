@@ -1,21 +1,35 @@
 #calendar {
     width: 45%;
-    min-width: 239px;
-    float: right;
+    min-width: 240px;
+    display: inline-block;
 }
 
 #datepicker {
-    float: left;
+    display: inline-block;
     padding-bottom: 15px;
+    vertical-align: top;
+    padding-right: 20px;
+    padding-top: 32px;
 }
 
-.calendarwrap {
+#calendarwrap {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#calendarwrap:after {
+    clear: both;
+    display: table;
+    content: '';
+}
+
+.indexwrap {
     width: 75%;
     margin: 0 auto 20px auto;
     overflow: hidden;
 }
 
-.calendarwrap::after {
+.indexwrap::after {
     content: "";
     display: table;
     clear: both;
@@ -35,19 +49,9 @@
     box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     border: 1px solid #ff9900;
     cursor: pointer;
-    display: inline-block;
+    display: none;
 }
 
-.buttonwrap {
-    width: 700px;
-    margin: 0 auto;
-}
-
-.buttonwrap:after {
-    content: '';
-    display: table;
-    clear: both;
-}
 
 .button:visited {
     color: #fff;
@@ -84,4 +88,9 @@ input.banks {
 
 .form label {
     display: inline;
+}
+
+.fc-header-title h2 {
+    font-size: 16px;
+    color: #666666;
 }

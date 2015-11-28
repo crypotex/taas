@@ -7,6 +7,7 @@
 <head>
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
 
@@ -24,13 +25,11 @@
         {% if user.is_authenticated %}
             getExpireDate();
             setTimeout(function () {
-                console.log("Date reloaded: " + expire_date);
                 if (expire_date == "Invalid Date" || expire_date == null) {
-                    console.log("Ei ole date");
-                    document.getElementById('timerMessage').style.visibility = "hidden";
+                    document.getElementById('timerMessage').style.display = "none";
                 }
                 else {
-                    document.getElementById('timerMessage').style.visibility = "visible";
+                    document.getElementById('timerMessage').style.display = "block";
                 }
             }, 100);
         {% endif %}
@@ -40,66 +39,78 @@
 </head>
 
 <body>
-<div id="innerwrap">
-    <div id="header">
-        <div class="logo">
-            <a href="http://taas.ee/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
-        </div>
-        <div class="navsmall">
-            <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
-                <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
-        </div>
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="/">{% trans 'back to booking' %}</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    {% block nav %}
-        {% if not user.is_authenticated %}
-            <div class="user-nav">
-                <ul>
-                    <li><a href="/user/login">{% trans 'Login' %}</a></li>
-                    <li><a href="/user/register">{% trans 'Register' %}</a></li>
-                </ul>
+<div id="wrap">
+    <header>
+        <div id="header-nav">
+            <div class="logo">
+                <a href="http://taas.ee/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
             </div>
-        {% else %}
-            <div class="user-nav">
-                <ul>
-                    <li>{% trans 'Hello, ' %}<a href="/user/update">{{ user.get_short_name }}</a></li>
-                    <li><a id="budget" href="/user/balance">{{ user.display_budget_money }}</a></li>
-                    <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
-                </ul>
+            <div id="navwrap">
+                <div class="navsmall">
+                    <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
+                        <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li>
+                            <a href="/">{% trans 'back to booking' %}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block nav %}
+            {% if not user.is_authenticated %}
+                <div id="user-nav">
+                    <ul>
+                        <li><a href="/user/login">{% trans 'Login' %}</a></li>
+                        <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                    </ul>
+                </div>
+            {% else %}
+                <div id="user-nav">
+                    <ul>
+                        <li>{% trans 'Hello, ' %}<a href="/user/update">{{ user.get_short_name }}</a></li>
+                        <li><a id="budget" href="/user/balance">{{ user.display_budget_money }}</a></li>
+                        <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
+                    </ul>
+                </div>
+            {% endif %}
+        {% endblock nav %}
+    </header>
+
+    <div id="innerwrap">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                        <script>
+                            swal({
+                                title: "Warning",
+                                text: "{{ message }}",
+                                type: "warning",
+                                customClass: "alert-button"
+                            });
+                        </script>
+                    {% else %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% block tab-menu %}{% endblock tab-menu %}
+
+        {% if user.is_authenticated %}
+            <div id="timerMessage">
+                <p>{% trans 'To make all your reservations you have' %}
+                    <span id="timer"></span>
+                    {% trans 'minutes' %}
+                </p>
             </div>
         {% endif %}
-    {% endblock nav %}
-
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-                    <script>
-                        swal({title: "Warning", text: "{{ message }}", type: "warning", customClass: "alert-button"});
-                    </script>
-                {% else %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
-
-    {% block tab-menu %}{% endblock tab-menu %}
-
-    {% if user.is_authenticated %}
-        <div id="timerMessage">{% trans 'To make all your reservations you have' %}
-            <span id="timer"></span>
-            {% trans 'minutes' %}
-        </div>
-    {% endif %}
+        {% block content %}{% endblock content %}
+    </div>
 </div>
-
-{% block content %}{% endblock content %}
 </body>
 </html>

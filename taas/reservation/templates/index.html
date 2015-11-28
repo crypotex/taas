@@ -32,13 +32,15 @@
 {% endblock scripts %}
 
 {% block content %}
-    <div class="calendarwrap">
-        <div id="datepicker"></div>
-        <div id="calendar"></div>
+    <div class="indexwrap">
+        <div id="calendarwrap">
+            <div id="datepicker"></div>
+            <div id="calendar"></div>
+        </div>
+        {% if user.is_authenticated %}
+            <form action="{% url 'reservation_list' %}">
+                <input type="submit" class='button' id='submit' value="{% trans 'Submit' %}">
+            </form>
+        {% endif %}
     </div>
-    {% if user.is_authenticated %}
-        <form action="{% url 'reservation_list' %}">
-            <input type="submit" class='button' id='submit' value="{% trans 'Submit' %}">
-        </form>
-    {% endif %}
 {% endblock content %}
