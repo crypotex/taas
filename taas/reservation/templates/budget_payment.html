@@ -6,9 +6,16 @@
     {% trans 'Budget payment' %}
 {% endblock title %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock styles %}
+
 {% block content %}
-    <form method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
-        {{ form }}
-        <input type="submit" value={% trans 'Pay' %}>
+    <form class="form" method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
+        <h4>{% trans 'Please enter your password to complete the booking(s).' %}</h4>
+        <div class="fieldWrapper">
+            {{ form }}
+        </div>
+        <input id="payButton" type="submit" value={% trans 'Pay' %}>
     </form>
-{% endblock %}
+{% endblock content %}
