@@ -26,7 +26,7 @@
 
     <form method="POST" class="form" id="updateForm">{% csrf_token %}
 
-        <h1>{% trans 'Update account' %}</h1>
+        <h2>{% trans 'Update account' %}</h2>
 
         {% for error in form.non_field_errors %}
             <p class="error-message">{{ error }}</p>
@@ -69,8 +69,9 @@
             </div>
         </div>
         <input id="submit-button" type="submit" value={% trans 'Update' %}>
+        <button id="deactivate-button" formaction="{% url 'user_deactivate_form' %}" type="submit">{% trans 'Deactivate' %}</button>
     </form>
-    <form action={% url 'user_deactivate_form' %}>{% csrf_token %}
+    <!--<form action={% url 'user_deactivate_form' %}>{% csrf_token %}
         <input id="deactivate-button" type="submit" value={% trans 'Deactivate' %}>
-    </form>
+    </form>-->
 {% endblock content %}

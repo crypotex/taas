@@ -32,9 +32,9 @@ form input[type="text"], input[type="password"], input[type="email"] {
 }
 
 /* Submit type buttons */
-input[type="submit"] {
+input[type="submit"], button[type="submit"] {
     background: #ffa31a;
-    padding: 8px 20px 8px 20px;
+    padding: 8px 20px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -54,12 +54,11 @@ input[type="submit"] {
 }
 
 #deactivate-button {
-    position: relative;
-    margin-left: 64%;
-    top: -65px;
+    float: right;
+    padding: 8px 15px;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, button[type="submit"]:hover {
     background: #ff9900;
     -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     -webkit-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
@@ -246,16 +245,6 @@ input.field-error, input[type="text"].field-error {
     box-shadow: -2px 2px 0 #FFF;
 }
 
-.banks, .form .label_banks {
-    display: inline-block;
-    padding: 5px;
-}
-
-.form .label_banks img {
-    vertical-align: middle;
-    border: 0;
-}
-
 #show_budget {
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
@@ -266,8 +255,12 @@ input.field-error, input[type="text"].field-error {
 }
 
 #terms, #label_terms {
-    display: inline-block;
-    padding: 5px;
+    display: inline;
+    padding: 2px;
+}
+
+.termswrap {
+    margin: 10px;
 }
 
 #submit-button:disabled {

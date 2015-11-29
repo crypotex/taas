@@ -6,23 +6,36 @@
     {% trans 'Terms and Conditions' %}
 {% endblock title %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock styles %}
+
 {% block content %}
-    <h3>SPORDIRAJATISE KASUTAJA KOHUSTUB:</h3>
-    <ol>
-        <li>viibima spordirajatisel ainult kokkulepitud ajal ja eesmärgil.</li>
-        <li>kasutama hoolivalt tema hoolde usaldatud Agility inventari.</li>
-        <li>teatama koheselt inventari puudujääkidest ja kahjustustest.</li>
-        <li>parkima väljaspool sõiduteed parklas selleks ettenähtud alal.</li>
-        <li>tagama, et tema koer hoiab puhtust kunstmuruväljakutel, trahv 10 eurot.</li>
-        <li>koristama oma koera järelt aiaga piiratud alas ja selle ümbruses lubatud aladel.</li>
-        <li>kindlustama, et tema koer ei ohusta teiste koerte ega inimeste elu ja tervist.</li>
-        <li>suhtuma sõbralikult ja mõistvalt naaberplatsidel treenijatesse.</li>
-        <li>viimasena lahkudes lukustama kõik väravad ja kustutama tuled.</li>
-        <li>jälgima keelumärke ümbritsevatel haljasaladel ja seal mitte koeraga jalutama.</li>
-        <li>teatama koheselt ülaltoodud reeglite rikkumisest või muust ebasoovitavast käitumisest territooriumil või
-            selle ümbruses. <br>
-            <b>Viivitamatuks sekkumiseks:</b> tel <a href="tel:+3725271414">+372 527 1414</a> <br>
-            <b>Tavateavitus:</b> e-post <a href="mailto:agility.arenguselts@gmail.com">agility.arenguselts@gmail.com</a>
-        </li>
-    </ol>
+    <div class="form">
+        <h2>{% trans 'Terms of service' %}</h2>
+
+        <h3>SPORDIRAJATISE KASUTAJA KOHUSTUB:</h3>
+
+        <div class="fieldWrapper">
+            <ol>
+                <li>viibima spordirajatisel ainult kokkulepitud ajal ja eesmärgil.</li>
+                <li>kasutama hoolivalt tema hoolde usaldatud Agility inventari.</li>
+                <li>teatama koheselt inventari puudujääkidest ja kahjustustest.</li>
+                <li>parkima väljaspool sõiduteed parklas selleks ettenähtud alal.</li>
+                <li>tagama, et tema koer hoiab puhtust kunstmuruväljakutel, trahv 10 eurot.</li>
+                <li>koristama oma koera järelt aiaga piiratud alas ja selle ümbruses lubatud aladel.</li>
+                <li>kindlustama, et tema koer ei ohusta teiste koerte ega inimeste elu ja tervist.</li>
+                <li>suhtuma sõbralikult ja mõistvalt naaberplatsidel treenijatesse.</li>
+                <li>viimasena lahkudes lukustama kõik väravad ja kustutama tuled.</li>
+                <li>jälgima keelumärke ümbritsevatel haljasaladel ja seal mitte koeraga jalutama.</li>
+                <li>teatama koheselt ülaltoodud reeglite rikkumisest või muust ebasoovitavast käitumisest territooriumil
+                    või
+                    selle ümbruses. <br>
+                    <b>Viivitamatuks sekkumiseks:</b> tel <a href="tel:+3725271414">+372 527 1414</a> <br>
+                    <b>Tavateavitus:</b> e-post <a
+                            href="mailto:agility.arenguselts@gmail.com">agility.arenguselts@gmail.com</a>
+                </li>
+            </ol>
+        </div>
+    </div>
 {% endblock content %}
