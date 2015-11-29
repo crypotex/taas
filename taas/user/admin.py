@@ -14,6 +14,7 @@ class UserAdmin(auth_admin.UserAdmin):
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'budget')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+        (_('pins'), {'fields': ('pin', 'button_id')})
     )
     add_fieldsets = (
         (None, {
