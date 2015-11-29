@@ -20,28 +20,28 @@
                 theme: 'tooltipster-light',
                 offsetX: -189,
                 offsetY: 12,
-                content: $('<p>Paid reservation of another user.</p>')
+                content: $('<p>{% trans 'Paid reservation of another user.' %}</p>')
             });
 
             $('#own').tooltipster({
                 theme: 'tooltipster-light',
                 offsetX: -189,
                 offsetY: 12,
-                content: $('<p>Your paid reservation.</p>')
+                content: $('<p>{% trans 'Your paid reservation.' %}</p>')
             });
 
             $('#unpaid-own').tooltipster({
                 theme: 'tooltipster-light',
                 offsetX: -189,
                 offsetY: 12,
-                content: $('<p>Your unfinished reservation.</p>')
+                content: $('<p>{% trans 'Your unfinished reservation.' %}</p>')
             });
 
             $('#unpaid-others').tooltipster({
                 theme: 'tooltipster-light',
                 offsetX: -189,
                 offsetY: 12,
-                content: $('<p>Unfinished reservation of another user.</p>')
+                content: $('<p>{% trans 'Unfinished reservation of another user.' %}</p>')
             });
         });
     </script>
@@ -86,10 +86,10 @@
             {% endblocktrans %}
 
             <div id="inner">
-                <div id="anon" class="foo" style="background-color:#fe9000;"></div>
-                <div id="own" class="foo" style="background-color:#009800;"></div>
-                <div id="unpaid-own" class="foo" style="background-color:#b285e0;"></div>
-                <div id="unpaid-others" class="foo" style="background-color:#a9a9a9;"></div>
+                <div id="anon" class="colorbox" style="background-color:#fe9000;"></div>
+                <div id="own" class="colorbox" style="background-color:#009800;"></div>
+                <div id="unpaid-own" class="colorbox" style="background-color:#b285e0;"></div>
+                <div id="unpaid-others" class="colorbox" style="background-color:#a9a9a9;"></div>
             </div>
             </p>
         </div>
