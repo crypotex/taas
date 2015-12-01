@@ -178,7 +178,7 @@ a:hover {
 }
 
 #timerMessage {
-    visibility: hidden;
+    display: none;
 }
 
 #budget {
