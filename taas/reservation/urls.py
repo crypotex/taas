@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^list/$', views.ReservationList.as_view(), name='reservation_list'),
     url(r'^payment/success/$', views.payment_success, name='payment_success'),
     url(r'^payment/cancel/$', views.payment_cancelled, name='payment_cancel'),
+    url(r'^payment/transaction/$', views.ProceedTransactionView.as_view(), name='proceed_transaction'),
     url(r'^payment/budget/$', views.BudgetPaymentView.as_view(), name='budget_payment'),
     url(r'^expire/$', views.get_expire_time, name='get_expire_time'),
     url(r'^history/$', views.history, name='reservation_history'),
