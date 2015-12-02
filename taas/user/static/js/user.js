@@ -20,5 +20,5 @@ $(document).ready(function () {
         else {
             $('#submit-button').prop('disabled', true);
         }
-    })
+    });
 });

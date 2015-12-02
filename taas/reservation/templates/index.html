@@ -6,40 +6,50 @@
     <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooltipster.css' %}">
+
 {% endblock styles %}
 
 {% block scripts %}
     <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tooltipster/jquery.tooltipster.min.js' %}"></script>
 
     <script type="text/javascript">
         {% if user.is_authenticated %}
             canSelect = true;
             timeError = "{% trans 'Please select slots, which are 30 minutes later from now.' %}";
-            $(document).ready(function () {
-                {% if is_unpaid %}
-                    expire_date = "{{ expire_date }}";
-                    checkDate();
-                    enableSubmition();
-                {% else %}
-                    disableSubmition();
-                {% endif %}
-            });
         {% else %}
             canSelect = false;
         {% endif %}
     </script>
 {% endblock scripts %}
 
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li class="selected"><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
     <div class="wrap">
         <div id="calendar"></div>
         <div id="datepicker"></div>
     </div>
-    {% if user.is_authenticated %}
-        <form action="{% url 'reservation_list' %}">
-            <input type="submit" class='button' id='submit' value="{% trans 'Submit' %}">
-        </form>
-    {% endif %}
+    <form action="{% url 'reservation_list' %}">
+        <input type="submit" class='button' id='submitBookings' value="{% trans 'Submit' %}">
+    </form>
+
+    <script type="text/javascript">
+        if (expireDate) {
+            enableSubmition();
+        }
+    </script>
 {% endblock content %}

@@ -12,6 +12,7 @@ class ReservationListTest(TransactionTestCase):
     def setUp(self):
         self.user = UserFactory(is_active=True)
         self.list_url = factories.ReservationFactory.get_reservation_list_url()
+        self.transaction_url = factories.ReservationFactory.get_transaction_url()
 
     def test_anonymous_user_cannot_access_reservation_list_page(self):
         response = self.client.get(self.list_url)
@@ -31,19 +32,19 @@ class ReservationListTest(TransactionTestCase):
         response = self.client.get(self.list_url)
         self.assertEqual(response.status_code, client.OK)
 
-    def test_reservation_list_page_creates_valid_staged_payment(self):
+    def test_transaction_page_creates_valid_staged_payment(self):
         self.client.login(username=self.user.email, password='isherenow')
         reservations = factories.ReservationFactory.create_batch(3, user=self.user)
         amount = sum(reservation.field.cost for reservation in reservations)
 
-        response = self.client.get(self.list_url)
+        response = self.client.get(self.transaction_url)
         self.assertEqual(response.status_code, client.OK)
 
         staged_payment = models.Payment.objects.get(user=self.user, type=models.Payment.STAGED)
         self.assertEqual(staged_payment.amount, amount)
         self.assertEqual(list(staged_payment.reservation_set.all()), reservations)
 
-    def test_previously_staged_payment_is_removed_after_accessing_reservation_list_page(self):
+    def test_previously_staged_payment_is_removed_after_accessing_transaction_page(self):
         self.client.login(username=self.user.email, password='isherenow')
         reservations = factories.ReservationFactory.create_batch(3, user=self.user)
 
@@ -52,7 +53,7 @@ class ReservationListTest(TransactionTestCase):
 
         reservations += factories.ReservationFactory.create_batch(3, user=self.user)
 
-        response = self.client.get(self.list_url)
+        response = self.client.get(self.transaction_url)
         self.assertEqual(response.status_code, client.OK)
 
         staged_payment = models.Payment.objects.get(user=self.user, type=models.Payment.STAGED)

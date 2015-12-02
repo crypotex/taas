@@ -15,6 +15,18 @@
     <script type="text/javascript" src="{% static 'js/user.js' %}"></script>
 {% endblock scripts %}
 
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
     <form method="POST" class="form">{% csrf_token %}
 
@@ -62,7 +74,7 @@
                 <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
         </div>
         <input type="checkbox" id="terms">
-        <label for="terms" id="label_terms">{% trans 'I agree to the ' %}<a href="/user/terms">{% trans 'Terms of service' %}</a>.</label> <br>
+        <label for="terms" id="label_terms">{% trans 'I agree to the ' %}<a target="_blank" href="/user/terms">{% trans 'Terms of service' %}</a>.</label> <br>
         <input id="submit-button" type="submit" disabled value={% trans 'Enter' %}>
     </form>
 {% endblock content %}

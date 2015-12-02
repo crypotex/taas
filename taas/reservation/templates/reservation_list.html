@@ -58,9 +58,7 @@
     <form method="get" action="{% url 'budget_payment' %}">
         <input id="submit-button" type="submit" value={% trans 'Budget' %}>
     </form>
-    <form action="{{ host }}" method="post">
-        <input name="json" type="hidden" value='{{ json }}'/>
-        <input name="mac" type="hidden" value="{{ mac }}"/>
+    <form method="get" action="{% url 'proceed_transaction' %}">
         <input id="submit-button" type="submit" value="{% trans 'Transaction' %}">
     </form>
 {% endblock content %}
