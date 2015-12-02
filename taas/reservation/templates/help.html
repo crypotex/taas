@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans 'Help' %}
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <link rel="stylesheet" href="{% static 'css/help.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooltipster.css' %}">
+{% endblock styles %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'js/tooltipster/jquery.tooltipster.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#anon').tooltipster({
+                theme: 'tooltipster-light',
+                offsetX: -189,
+                offsetY: 12,
+                content: $('<p>{% trans 'Paid reservation of another user.' %}</p>')
+            });
+
+            $('#own').tooltipster({
+                theme: 'tooltipster-light',
+                offsetX: -189,
+                offsetY: 12,
+                content: $('<p>{% trans 'Your paid reservation.' %}</p>')
+            });
+
+            $('#unpaid-own').tooltipster({
+                theme: 'tooltipster-light',
+                offsetX: -189,
+                offsetY: 12,
+                content: $('<p>{% trans 'Your unfinished reservation.' %}</p>')
+            });
+
+            $('#unpaid-others').tooltipster({
+                theme: 'tooltipster-light',
+                offsetX: -189,
+                offsetY: 12,
+                content: $('<p>{% trans 'Unfinished reservation of another user.' %}</p>')
+            });
+        });
+    </script>
+{% endblock scripts %}
+
+{% block content %}
+    <div class="form">
+        <h1>{% trans 'Help' %}</h1>
+
+        <div class="section"><span>1</span>{% trans 'How to make a reservation?' %}</div>
+        <div class="fieldWrapper">
+            <p> {% blocktrans trimmed %}
+                Choose a suitable date from the calendar and then
+                select one or more available time slots in the right table column (depending on which
+                field(s) you want). The start time of the slot you choose has to be at least 30 minutes from now. To
+                deselect a slot click on it once more. It is possible to book
+                fields for multiple dates, just choose another date from the calendar.
+                <br><br>
+                When you have finished choosing, click <samp>"Next"</samp> to proceed to the payment page. Review your
+                selections and if needed you can remove time slots that you do not need. You can pay using your
+                account balance money (pre-added money) or pay through a bank link.
+                <br><br>
+                You have 10 minutes to complete your reservation. When time is up, all your selections will be
+                removed.
+            {% endblocktrans %}
+            </p>
+        </div>
+        <div class="section"><span>2</span>{% trans 'What does A/B/C mean in the table?' %}</div>
+        <div class="fieldWrapper">
+            <p> {% blocktrans trimmed %}There are 3 different fields available for booking. You can see a description of
+                each field by hovering over the corresponding letter in the table header. Here is the plan of the
+                whole ground:
+                <br><br>
+            {% endblocktrans %}
+                <img id="field" src="{% static 'img/field_plan.jpg' %}" alt="TAAS field plan"/>
+            </p>
+        </div>
+        <div class="section"><span>3</span>{% trans 'What does color X mean in the table?' %}</div>
+        <div class="fieldWrapper">
+            <p> {% blocktrans trimmed %}There are 4 colours to distinguish between different types of reservations.
+                Hover over a color below to
+                see the description.
+            {% endblocktrans %}
+            </p>
+
+            <div id="inner">
+                <div id="anon" class="colorbox" style="background-color:#fe9000;"></div>
+                <div id="own" class="colorbox" style="background-color:#009800;"></div>
+                <div id="unpaid-own" class="colorbox" style="background-color:#b285e0;"></div>
+                <div id="unpaid-others" class="colorbox" style="background-color:#a9a9a9;"></div>
+            </div>
+        </div>
+        <div class="section"><span>4</span>{% trans 'Where do I see my upcoming/past reservations?' %}</div>
+        <div class="fieldWrapper">
+            <p> {% blocktrans trimmed %}Click on the <samp>"History"</samp> tab, you should see the table with all of
+                your reservations.
+                <br><br>
+                Reservations are in descending order, i.e. upcoming
+                reservations are on the top while older ones are below them. You can sort the table by field, start or
+                end time. To see reservations from the past or next month, select the month above the table and click
+                <samp>"Sort"</samp>.
+            {% endblocktrans %}
+            </p>
+        </div>
+
+        <div id="q5" class="section"><span>5</span>{% trans 'Is it possible to modify an upcoming reservation?' %}</div>
+        <div class="fieldWrapper">
+            <p> {% blocktrans %}You can change time or/and field of your reservation whenever you want but not 15
+                minutes before the
+                start of the reservation. That means if you have, for example, a reservation starting at 14:00, then you
+                can make changes until 13:45. Note that you can only choose a new time or/and field for the same date as
+                the reservation that you are trying to edit.
+            {% endblocktrans %}
+            </p>
+        </div>
+
+        <div id="q6" class="section"><span>6</span>{% trans 'Is it possible to cancel an upcoming reservation?' %}</div>
+        <div class="fieldWrapper">
+            <p> {% blocktrans %}You can remove a reservation 24 hours before the day of the reservation. E.g. you have
+                a reservation on 29th of November, then you can cancel it until 23:59 on 28th November.
+                <br><br>
+                The money will be added to your account's balance.
+            {% endblocktrans %}
+            </p>
+        </div>
+        <div class="section"><span>7</span>{% trans 'How do I modify an upcoming reservation?' %}</div>
+        <div class="fieldWrapper">
+            <p> {% blocktrans %}Click on the <samp>"History"</samp> tab, you should see the table with all of
+                your reservations.
+                <br><br>
+                If you can edit a reservation (check <i><a href="#q5">Is it possible to modify an upcoming
+                    reservation?</a></i>),
+                then there will be a pencil icon next to the reservation, click on it.
+                <br><br>
+                You should see an alert asking for confirmation. If you really want to change the reservation then click
+                <samp>"OK"</samp>, otherwise decline by clicking <samp>"Cancel"</samp>.
+                <br><br>
+                You should see a table where a
+                red slot indicates the reservation you are trying to change. Drag it to another slot that suits you and
+                is free. Then click <samp>"Submit"</samp>.
+            {% endblocktrans %}
+            </p>
+        </div>
+        <div class="section"><span>8</span>{% trans 'How do I cancel an upcoming reservation?' %}</div>
+        <div class="fieldWrapper">
+            <p>{% blocktrans %}Click on the <samp>"History"</samp> tab, you should see the table with all of
+                your reservations.
+                <br><br>
+                If you can remove a reservation (check <i><a href="#q6">Is it possible to cancel an upcoming
+                    reservation?</a></i>),
+                then there will be a cross icon next to the reservation, click on it.
+                <br><br>
+                You should see an alert asking for confirmation. If you really want to delete the reservation then click
+                <samp>"OK"</samp>, otherwise decline by clicking <samp>"Cancel"</samp>.
+            {% endblocktrans %}
+            </p>
+        </div>
+        <div class="section"><span>9</span>{% trans 'Where can I see and change my account infromation?' %}</div>
+        <div class="fieldWrapper">
+            <p>{% blocktrans %}Click on the <samp>"Account"</samp> tab, you should see the account modification page.
+                <br><br>
+                You can update your name, phone number and password. If you want to change
+                your password, then click on the checkbox and fill in all the fields, otherwise leave checkbox
+                unchecked and just click <samp>"Update"</samp> to finish. You cannot leave name and phone number fields
+                empty.
+                <br><br>
+                You cannot change your e-mail for security reasons. If you really need to change your e-mail, then
+                contact the administrator.
+            {% endblocktrans %}
+            </p>
+        </div>
+        <div class="section"><span>10</span>{% trans 'How to add money to my account balance?' %}</div>
+        <div class="fieldWrapper">
+            <p>{% blocktrans %}Click on the <samp>"Balance"</samp> tab, you should see the account
+                balance page.
+                <br><br>
+                Fill in the amount you wish to add to your account balance and click <samp>"Submit"</samp> to proceed to
+                pay.
+            {% endblocktrans %}
+            </p>
+        </div>
+    </div>
+{% endblock content %}

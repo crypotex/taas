@@ -124,6 +124,25 @@ $(document).ready(function () {
             events: '/reservation/all/',
             eventClick: deleteReservation
         });
+
+        $('.fc-col0').tooltipster({
+            theme: 'tooltipster-light',
+            offsetX: -135,
+            content: $(fieldA)
+        });
+
+        $('.fc-col1').tooltipster({
+            theme: 'tooltipster-light',
+            offsetX: -135,
+            content: $(fieldB)
+        });
+
+        $('.fc-col2').tooltipster({
+            theme: 'tooltipster-light',
+            offsetX: -135,
+            content: $(fieldC)
+        });
+
     }
     if ($('#datepicker').length) {
         $('#datepicker').datepicker({
