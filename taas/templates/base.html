@@ -24,11 +24,17 @@
     {% else %}
         <script type="text/javascript" src="{% static 'js/timer.js' %}"></script>
     {% endifequal %}
+    <script>
+        expireMessage = "{% trans 'Your reservation time has been expired.' %}";
+        var fieldA = '<p><b>{% trans 'A-PLATS (HÜPPERADA):' %}</b> <br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) = 2x6m, 5m, 3m' %}<br>{% trans 'müür (1)' %}<br>{% trans 'rõngas (1)' %}<br>{% trans 'kaugus (1)' %}<br>{% trans 'kott (1)' %}<br>{% trans  'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        var fieldB = '<p><b>{% trans 'B-PLATS (AGILITYRADA):' %}</b><br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) =2x6m, 5m, 4m' %}<br>{% trans 'poom (1)' %}<br>{% trans 'A-tõke (1)' %}<br>{% trans 'kiik (1)' %}<br>{% trans 'laud (1)' %}<br>{% trans 'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        var fieldC = '<p><b>{% trans 'C-PLATS:' %}</b><br>{% trans 'Kuulekustrenni väliplats' %}<br>{% trans 'Võistluste telkimise ja pealtvaatajate ala' %}</p>';
+    </script>
 </head>
 
 <body>
 <div id="innerwrap">
-    <div id="header">
+    <header>
         <div class="logo">
             <a href="http://taas.ee/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
         </div>
@@ -36,15 +42,7 @@
             <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
                 <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
         </div>
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="/">{% trans 'back to booking' %}</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    {% block nav %}
+
         {% if not user.is_authenticated %}
             <div class="user-nav">
                 <ul>
@@ -55,13 +53,15 @@
         {% else %}
             <div class="user-nav">
                 <ul>
-                    <li>{% trans 'Hello, ' %}<a href="/user/update">{{ user.get_short_name }}</a></li>
-                    <li><a id="budget" href="/user/balance">{{ user.display_budget_money }}</a></li>
+                    <li>{% trans 'Hello, ' %}<span id="name">{{ user.get_short_name }}</span></li>
+                    <li>{{ user.display_budget_money }}</li>
                     <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
                 </ul>
             </div>
         {% endif %}
-    {% endblock nav %}
+    </header>
+
+    {% block tab-menu %} {% endblock tab-menu %}
 
     {% if messages %}
         <ul class="messages">
@@ -77,14 +77,12 @@
         </ul>
     {% endif %}
 
-    {% block tab-menu %}{% endblock tab-menu %}
 
     <div id="timerMessage">{% trans 'To make all your reservations you have' %}
         <span id="timer" ></span>
         {% trans 'minutes' %}
     </div>
     <script type="text/javascript">
-        expireMessage = "{% trans 'Your reservation time has been expired.' %}";
         setExpireDate();
     </script>
 </div>

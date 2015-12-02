@@ -397,7 +397,7 @@ def history(request):
         paid=True,
         start__gt=date(year, current_month, 1),
         end__lt=date(next_year, next_month, 1)
-    ).order_by('start')
+    ).order_by('-start')
     if reservations.exists():
         table = HistoryTable(reservations)
         RequestConfig(request, paginate={"per_page": 20}).configure(table)

@@ -6,12 +6,15 @@
     <link rel="stylesheet" href="{% static 'css/fullcalendar.css' %}">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooltipster.css' %}">
+
 {% endblock styles %}
 
 {% block scripts %}
     <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tooltipster/jquery.tooltipster.min.js' %}"></script>
 
     <script type="text/javascript">
         {% if user.is_authenticated %}
@@ -22,6 +25,18 @@
         {% endif %}
     </script>
 {% endblock scripts %}
+
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li class="selected"><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
 
 {% block content %}
     <div class="wrap">

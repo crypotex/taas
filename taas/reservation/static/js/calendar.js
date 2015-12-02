@@ -70,7 +70,7 @@ function addReservation(start, end, ev) {
             }
         ).done(function () {
                 $("#calendar").fullCalendar('refetchEvents');
-                if (! expireDate) {
+                if (!expireDate) {
                     expireDate = moment().add(10, 'minutes').toDate();
                 }
                 startTimer(expireDate);
@@ -103,32 +103,50 @@ function deleteReservation(calEvent) {
 }
 
 $(document).ready(function () {
-        $("#calendar").fullCalendar({
-            header: false,
-            resources: 'reservation/fields/',
-            defaultView: 'resourceDay',
-            allDaySlot: false,
-            minTime: '08:00:00',
-            maxTime: '22:00:00',
-            aspectRatio: 0.0,
-            theme: true,
-            axisFormat: 'HH:mm',
-            timeFormat: '',
-            timezone: 'local',
-            slotDuration: '01:00:00',
-            selectable: canSelect,
-            selectHelper: true,
-            select: addReservation,
-            events: '/reservation/all/',
-            eventClick: deleteReservation
-        });
-        $('#datepicker').datepicker({
-            inline: true,
-            minDate: 0,
-            firstDay: 1,
-            onSelect: function () {
-                $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
-            }
-        });
-    }
-);
+    $("#calendar").fullCalendar({
+        header: false,
+        resources: 'reservation/fields/',
+        defaultView: 'resourceDay',
+        allDaySlot: false,
+        minTime: '08:00:00',
+        maxTime: '22:00:00',
+        aspectRatio: 0.0,
+        theme: true,
+        axisFormat: 'HH:mm',
+        timeFormat: '',
+        timezone: 'local',
+        slotDuration: '01:00:00',
+        selectable: canSelect,
+        selectHelper: true,
+        select: addReservation,
+        events: '/reservation/all/',
+        eventClick: deleteReservation
+    });
+
+    $('.fc-col0').tooltipster({
+        theme: 'tooltipster-light',
+        offsetX: -135,
+        content: $(fieldA)
+    });
+
+    $('.fc-col1').tooltipster({
+        theme: 'tooltipster-light',
+        offsetX: -135,
+        content: $(fieldB)
+    });
+
+    $('.fc-col2').tooltipster({
+        theme: 'tooltipster-light',
+        offsetX: -135,
+        content: $(fieldC)
+    });
+
+    $('#datepicker').datepicker({
+        inline: true,
+        minDate: 0,
+        firstDay: 1,
+        onSelect: function () {
+            $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
+        }
+    });
+});

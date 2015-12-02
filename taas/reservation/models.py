@@ -1,8 +1,10 @@
 from decimal import Decimal
+
 from django.db import models
 from django.core.validators import MinValueValidator
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
+
 from taas.user.models import User
 
 
