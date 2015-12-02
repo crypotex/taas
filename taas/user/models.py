@@ -36,14 +36,6 @@ class CustomUserManager(UserManager):
     def create_superuser(self, email, password, **extra_fields):
         return self._create_user(email, password, True, True, **extra_fields)
 
-def create_pin_for_user():
-    # Only 10000 pins are generated. If you plan on having more users, change this.
-    all_pins = set('{0:04}'.format(num) for num in range(0, 10000))
-    #used_pins = set(value['pin'] for value in User.objects.values('pin'))
-    #used_pins = set(User.objects.all())
-    #all_pins.difference(used_pins)
-    return sample(all_pins, 1)[0]
-
 class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_('first name'), max_length=30)
     last_name = models.CharField(_('last name'), max_length=30)
@@ -57,8 +49,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     budget = models.DecimalField(_('budget (€)'), decimal_places=2, max_digits=10,
                                  validators=[MinValueValidator(0.0)], default=0.0)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-    pin = models.CharField(_('pin'), max_length=8, unique=False, default=create_pin_for_user)
-    button_id = models.CharField(_('Button ID'), max_length=64, default=False)
+    pin = models.CharField(_('pin'), max_length=4, blank=True, null=True,)
+    button_id = models.CharField(_('Button ID'), max_length=64, blank = True, null=True)
 
     objects = CustomUserManager()
     tracker = FieldTracker()
@@ -88,6 +80,17 @@ class User(AbstractBaseUser, PermissionsMixin):
         Displays amount of money in budget
         """
         return '%d€' % self.budget
+
+
+    def create_pin(self):
+        """
+        Generates a pin for user
+        Only 10000 pins are generated. If you plan on having more users, change this.
+        """
+        all_pins = set('{0:04}'.format(num) for num in range(0, 10000))
+        used_pins = set(User.objects.values_list('pin', flat=True))
+        all_pins.difference(used_pins)
+        self.pin = sample(all_pins, 1)[0]
 
     def email_user_on_registration(self):
         """

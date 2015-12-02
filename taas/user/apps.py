@@ -14,9 +14,9 @@ class UserConfig(django.apps.AppConfig):
         User = self.get_model('User')
 
         db_signals.post_save.connect(
-            handlers.send_emails_to_users,
+            handlers.check_user_activation,
             sender=User,
-            dispatch_uid='taas.user.handlers.send_emails_to_users',
+            dispatch_uid='taas.user.handlers.check_user_activation',
         )
 
         auth_signals.user_logged_in.connect(
