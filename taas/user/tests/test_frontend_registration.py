@@ -59,7 +59,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
     def go_to_registration(self):
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/div[2]/ul/li[2]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/header/div[3]/ul/li[2]/a').click()
         self.assertIn("Registration", self.selenium.title)
 
     def fill_the_registration_fields(self):
