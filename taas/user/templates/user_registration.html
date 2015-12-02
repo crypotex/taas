@@ -62,7 +62,7 @@
                 <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
         </div>
         <input type="checkbox" id="terms">
-        <label for="terms" id="label_terms">{% trans 'I agree to the ' %}<a href="/user/terms">{% trans 'Terms of service' %}</a>.</label> <br>
+        <label for="terms" id="label_terms">{% trans 'I agree to the ' %}<a target="_blank" href="/user/terms">{% trans 'Terms of service' %}</a>.</label> <br>
         <input id="submit-button" type="submit" disabled value={% trans 'Enter' %}>
     </form>
 {% endblock content %}

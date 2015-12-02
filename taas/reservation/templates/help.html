@@ -47,6 +47,18 @@
     </script>
 {% endblock scripts %}
 
+{% block tab-menu %}
+    {% if user.is_authenticated %}
+        <ul class="tabrow">
+            <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+            <li class="selected"><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+        </ul>
+    {% endif %}
+{% endblock tab-menu %}
+
 {% block content %}
     <div class="form">
         <h1>{% trans 'Help' %}</h1>
