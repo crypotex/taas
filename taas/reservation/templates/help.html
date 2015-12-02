@@ -75,7 +75,7 @@
                 whole ground:
                 <br><br>
             {% endblocktrans %}
-                <img id="field" src="{% static 'img/field_plan.jpg' %}"/>
+                <img id="field" src="{% static 'img/field_plan.jpg' %}" alt="TAAS field plan"/>
             </p>
         </div>
         <div class="section"><span>3</span>{% trans 'What does color X mean in the table?' %}</div>
@@ -105,9 +105,8 @@
             {% endblocktrans %}
             </p>
         </div>
-        <a name="q4"></a>
 
-        <div class="section"><span>5</span>{% trans 'Is it possible to modify an upcoming reservation?' %}</div>
+        <div id="q5" class="section"><span>5</span>{% trans 'Is it possible to modify an upcoming reservation?' %}</div>
         <div class="fieldWrapper">
             <p> {% blocktrans %}You can change time or/and field of your reservation whenever you want but not 15
                 minutes before the
@@ -117,9 +116,8 @@
             {% endblocktrans %}
             </p>
         </div>
-        <a name="q5"></a>
 
-        <div class="section"><span>6</span>{% trans 'Is it possible to cancel an upcoming reservation?' %}</div>
+        <div id="q6" class="section"><span>6</span>{% trans 'Is it possible to cancel an upcoming reservation?' %}</div>
         <div class="fieldWrapper">
             <p> {% blocktrans %}You can remove a reservation 24 hours before the day of the reservation. E.g. you have
                 a reservation on 29th of November, then you can cancel it until 23:59 on 28th November.
@@ -133,7 +131,7 @@
             <p> {% blocktrans %}Click on the <samp>"History"</samp> tab, you should see the table with all of
                 your reservations.
                 <br><br>
-                If you can edit a reservation (check <i><a href="#q4">Is it possible to modify an upcoming
+                If you can edit a reservation (check <i><a href="#q5">Is it possible to modify an upcoming
                     reservation?</a></i>),
                 then there will be a pencil icon next to the reservation, click on it.
                 <br><br>
@@ -148,7 +146,7 @@
             <p>{% blocktrans %}Click on the <samp>"History"</samp> tab, you should see the table with all of
                 your reservations.
                 <br><br>
-                If you can remove a reservation (check <i><a href="#q5">Is it possible to cancel an upcoming
+                If you can remove a reservation (check <i><a href="#q6">Is it possible to cancel an upcoming
                     reservation?</a></i>),
                 then there will be a cross icon next to the reservation, click on it.
                 <br><br>
