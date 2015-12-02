@@ -122,10 +122,6 @@ a:hover {
     font-family: 'Montserrat', sans-serif;
 }
 
-.messages {
-    margin: 65px auto 30px auto;
-}
-
 #timerMessage {
     visibility: hidden;
 }
