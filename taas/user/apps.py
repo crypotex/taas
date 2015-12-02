@@ -13,7 +13,7 @@ class UserConfig(django.apps.AppConfig):
     def ready(self):
         User = self.get_model('User')
 
-        db_signals.post_save.connect(
+        db_signals.pre_save.connect(
             handlers.check_user_activation,
             sender=User,
             dispatch_uid='taas.user.handlers.check_user_activation',

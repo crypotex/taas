@@ -10,7 +10,6 @@ def check_user_activation(sender, instance=None, created=False, **kwargs):
         if instance.is_active:
             instance.email_user_on_activation()
             instance.create_pin()
-            instance.save()
 
         return
 
@@ -20,11 +19,9 @@ def check_user_activation(sender, instance=None, created=False, **kwargs):
     if (old_active, new_active) == (False, True):
         instance.email_user_on_activation()
         instance.create_pin()
-        instance.save()
     elif (old_active, new_active) == (True, False):
         instance.email_user_on_deactivation()
         instance.pin = ""
-        instance.save()
 
 
 def log_user_login(sender, user=None, **kwargs):
