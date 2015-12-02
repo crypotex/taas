@@ -56,19 +56,20 @@
             <p> {% blocktrans trimmed %}
                 Choose a suitable date from the calendar and then
                 select one or more available time slots in the right table column (depending on which
-                field(s) you want). To deselect a slot click on it once more. It is possible to book
+                field(s) you want). The start time of the slot you choose has to be at least 30 minutes from now. To
+                deselect a slot click on it once more. It is possible to book
                 fields for multiple dates, just choose another date from the calendar.
                 <br><br>
                 When you have finished choosing, click <samp>"Next"</samp> to proceed to the payment page. Review your
                 selections and if needed you can remove time slots that you do not need. You can pay using your
-                account balance money (pre-added money) or pay through bank link.
+                account balance money (pre-added money) or pay through a bank link.
                 <br><br>
                 You have 10 minutes to complete your reservation. When time is up, all your selections will be
                 removed.
             {% endblocktrans %}
             </p>
         </div>
-        <div class="section"><span>3</span>{% trans 'What does A/B/C mean in the table?' %}</div>
+        <div class="section"><span>2</span>{% trans 'What does A/B/C mean in the table?' %}</div>
         <div class="fieldWrapper">
             <p> {% blocktrans trimmed %}There are 3 different fields available for booking. You can see a description of
                 each field by hovering over the corresponding letter in the table header. Here is the plan of the
@@ -135,6 +136,9 @@
                     reservation?</a></i>),
                 then there will be a pencil icon next to the reservation, click on it.
                 <br><br>
+                You should see an alert asking for confirmation. If you really want to change the reservation then click
+                <samp>"OK"</samp>, otherwise decline by clicking <samp>"Cancel"</samp>.
+                <br><br>
                 You should see a table where a
                 red slot indicates the reservation you are trying to change. Drag it to another slot that suits you and
                 is free. Then click <samp>"Submit"</samp>.
@@ -151,7 +155,7 @@
                 then there will be a cross icon next to the reservation, click on it.
                 <br><br>
                 You should see an alert asking for confirmation. If you really want to delete the reservation then click
-                <samp>"OK"</samp>, otherwise decline, <samp>"Cancel"</samp>.
+                <samp>"OK"</samp>, otherwise decline by clicking <samp>"Cancel"</samp>.
             {% endblocktrans %}
             </p>
         </div>
@@ -175,7 +179,7 @@
                 balance page.
                 <br><br>
                 Fill in the amount you wish to add to your account balance and click <samp>"Submit"</samp> to proceed to
-                payment.
+                pay.
             {% endblocktrans %}
             </p>
         </div>
