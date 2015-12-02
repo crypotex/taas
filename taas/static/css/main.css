@@ -248,3 +248,7 @@ a:hover {
 .tabrow li.selected a {
     color: rgba(255, 153, 0, 0.9);
 }
+
+#name {
+    color: #666666;
+}

@@ -63,7 +63,7 @@
         {% else %}
             <div class="user-nav">
                 <ul>
-                    <li>{% trans 'Hello, ' %}{{ user.get_short_name }}</li>
+                    <li>{% trans 'Hello, ' %}<span id="name">{{ user.get_short_name }}</span></li>
                     <li>{{ user.display_budget_money }}</li>
                     <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
                 </ul>
