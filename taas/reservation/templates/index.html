@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
     <link rel="stylesheet" href="{% static 'css/tooltipster.css' %}">
+    <link rel="stylesheet" href="{% static 'css/help.css' %}">
 
 {% endblock styles %}
 
@@ -15,6 +16,7 @@
     <script type="text/javascript" src="{% static 'js/fullcalendar/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/fullcalendar/fullcalendar.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/tooltipster/jquery.tooltipster.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/help.js' %}"></script>
 
     <script type="text/javascript">
         {% if user.is_authenticated %}
@@ -42,6 +44,12 @@
     <div class="wrap">
         <div id="calendar"></div>
         <div id="datepicker"></div>
+        <div id="inner">
+            <div id="anon" class="colorbox" style="background-color:#fe9000;"></div>
+            <div id="own" class="colorbox" style="background-color:#009800;"></div>
+            <div id="unpaid-own" class="colorbox" style="background-color:#b285e0;"></div>
+            <div id="unpaid-others" class="colorbox" style="background-color:#a9a9a9;"></div>
+        </div>
     </div>
     <form action="{% url 'reservation_list' %}">
         <input type="submit" class='button' id='submitBookings' value="{% trans 'Submit' %}">
