@@ -32,7 +32,7 @@ class UserCreateView(CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        tasks.email_admin_on_user_deactivation.delay(self.request.user.id)
+        tasks.email_admin_on_user_registration.delay(self.object.id)
 
         messages.success(self.request, self.success_message)
         logger.info('Unverified user with email %s has been successfully registered.'
