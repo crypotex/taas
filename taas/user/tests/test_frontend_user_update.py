@@ -164,13 +164,13 @@ class UserDeactivationTest(StaticLiveServerTestCase):
     def test_logged_in_user_can_access_deactivation_page(self):
         self.go_to_update_page()
         self.selenium.find_element_by_xpath('//button[@id="deactivate-button"]').click()
-        self.assertTrue(self.selenium.find_element_by_xpath('//h1[text() = "Deactivate account"]'))
+        self.assertTrue(self.selenium.find_element_by_xpath('//h2[text() = "Deactivate account"]'))
 
     def test_logged_in_user_can_deactivate_his_account(self):
         self.go_to_update_page()
         self.selenium.find_element_by_xpath('//button[@id="deactivate-button"]').click()
 
-        self.assertTrue(self.selenium.find_element_by_xpath('//h1[text() = "Deactivate account"]'))
+        self.assertTrue(self.selenium.find_element_by_xpath('//h2[text() = "Deactivate account"]'))
         self.selenium.find_element_by_id("id_password").send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
 
