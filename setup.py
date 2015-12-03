@@ -19,7 +19,8 @@ install_requires = [
     'django-widget-tweaks==1.4.1',
     'pytz==2015.6',
     'freezegun==0.3.5',
-    'django-tables2==1.0.4'
+    'django-tables2==1.0.4',
+    'celery==3.1.19'
 ]
 
 setup(
