@@ -256,7 +256,7 @@ input.field-error, input[type="text"].field-error {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #666666;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #terms, #label_terms {
