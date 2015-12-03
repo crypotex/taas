@@ -13,16 +13,16 @@
     {% block styles %}{% endblock styles %}
 
     <script type="text/javascript" src="{% static 'js/jquery/jquery-2.1.4.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/ajax_setup.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/ajax_setup-min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/sweetalert.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
 
     {% block scripts %}{% endblock scripts %}
 
     {% ifequal request.path "/" %}
-        <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/calendar-min.js' %}"></script>
     {% else %}
-        <script type="text/javascript" src="{% static 'js/timer.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/timer-min.js' %}"></script>
     {% endifequal %}
     <script>
         expireMessage = "{% trans 'Your reservation time has been expired.' %}";
