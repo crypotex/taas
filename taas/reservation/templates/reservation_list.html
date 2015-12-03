@@ -26,7 +26,7 @@
 
     <form method="POST" class="form">{% csrf_token %}
 
-        <h1>{% trans 'Pay for the reservations' %}</h1>
+        <h2>{% trans 'Pay for the reservations' %}</h2>
 
         {% for error in form.non_field_errors %}
             <p class="error-message">{{ error }}</p>

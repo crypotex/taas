@@ -12,7 +12,8 @@
 
 {% block content %}
     <form class="form" method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
-        <h4>{% trans 'Please enter your password to complete the booking(s).' %}</h4>
+        <h2>{% trans 'Confirmation' %}</h2>
+        <p class="help-text">{% trans 'Please enter your password to complete the booking(s).' %}</p>
         <div class="fieldWrapper">
             {{ form }}
         </div>
