@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
 {% endblock styles %}
 
+{% block tab-menu %}
+    {% if user.is_authenticated %}
+        <ul class="tabrow">
+            <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li class="selected"><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+            <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+        </ul>
+    {% endif %}
+{% endblock tab-menu %}
+
 {% block content %}
     <form method="post" class="form">{% csrf_token %}
 

@@ -57,6 +57,10 @@
     color: #fff;
 }
 
+#submitBookings {
+    display: none;
+}
+
 .button:hover {
     background: #ff9900;
     -moz-box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);

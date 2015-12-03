@@ -11,6 +11,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
 {% endblock styles %}
 
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
 
     {% if next %}

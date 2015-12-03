@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
@@ -13,70 +13,66 @@
 
     {% block styles %}{% endblock styles %}
 
-    <script src="{% static 'js/jquery/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-2.1.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/ajax_setup.js' %}"></script>
-    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
 
     {% block scripts %}{% endblock scripts %}
 
-    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
-    <script type="text/javascript">
+    {% ifequal request.path "/" %}
+        <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+        {% else %}
+        <script type="text/javascript" src="{% static 'js/timer.js' %}"></script>
+    {% endifequal %}
+    <script>
         expireMessage = "{% trans 'Your reservation time has been expired.' %}";
-        {% if user.is_authenticated %}
-            getExpireDate();
-            setTimeout(function () {
-                if (expire_date == "Invalid Date" || expire_date == null) {
-                    document.getElementById('timerMessage').style.display = "none";
-                }
-                else {
-                    document.getElementById('timerMessage').style.display = "block";
-                }
-            }, 100);
-        {% endif %}
+        var fieldA = '<p><b>{% trans 'A-PLATS (HÜPPERADA):' %}</b> <br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) = 2x6m, 5m, 3m' %}<br>{% trans 'müür (1)' %}<br>{% trans 'rõngas (1)' %}<br>{% trans 'kaugus (1)' %}<br>{% trans 'kott (1)' %}<br>{% trans  'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        var fieldB = '<p><b>{% trans 'B-PLATS (AGILITYRADA):' %}</b><br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) =2x6m, 5m, 4m' %}<br>{% trans 'poom (1)' %}<br>{% trans 'A-tõke (1)' %}<br>{% trans 'kiik (1)' %}<br>{% trans 'laud (1)' %}<br>{% trans 'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        var fieldC = '<p><b>{% trans 'C-PLATS:' %}</b><br>{% trans 'Kuulekustrenni väliplats' %}<br>{% trans 'Võistluste telkimise ja pealtvaatajate ala' %}</p>';
     </script>
-    <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
-
 </head>
 
 <body>
 <div id="wrap">
     <header>
-        <div id="header-nav">
+        <div id="nav">
             <div class="logo">
                 <a href="http://taas.ee/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
             </div>
             <div id="navwrap">
                 <div class="navsmall">
-                    <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
-                        <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
+                    <form action="{% url 'set_language' %}" method="post" style="display: none"
+                          id="change_language_form">{% csrf_token %}
+                        <input type="hidden" value="" name="language" id="language"/>
+                    </form>
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <a href="#" id="{{ language.code }}" class="change_language"></a>
+                    {% endfor %}
                 </div>
-                <div class="nav">
-                    <ul>
-                        <li>
-                            <a href="/">{% trans 'back to booking' %}</a>
-                        </li>
-                    </ul>
-                </div>
+
+                {% if not user.is_authenticated %}
+                    <div id="user-nav">
+                        <ul>
+                            <li><a href="/user/login">{% trans 'Login' %}</a></li>
+                            <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div id="user-nav">
+                        <ul>
+                            <li>{% trans 'Hello, ' %}<span id="name">{{ user.get_short_name }}</span></li>
+                            <li>{{ user.display_budget_money }}</li>
+                            <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
         </div>
-        {% block nav %}
-            {% if not user.is_authenticated %}
-                <div id="user-nav">
-                    <ul>
-                        <li><a href="/user/login">{% trans 'Login' %}</a></li>
-                        <li><a href="/user/register">{% trans 'Register' %}</a></li>
-                    </ul>
-                </div>
-            {% else %}
-                <div id="user-nav">
-                    <ul>
-                        <li>{% trans 'Hello, ' %}<a href="/user/update">{{ user.get_short_name }}</a></li>
-                        <li><a id="budget" href="/user/balance">{{ user.display_budget_money }}</a></li>
-                        <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
-                    </ul>
-                </div>
-            {% endif %}
-        {% endblock nav %}
+
+        {% block tab-menu %} {% endblock tab-menu %}
     </header>
 
     <div id="innerwrap">
@@ -100,15 +96,14 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-            <div id="timerMessage">
-                <p>{% trans 'To make all your reservations you have' %}
-                    <span id="timer"></span>
-                    {% trans 'minutes' %}
-                </p>
+            <div id="timerMessage">{% trans 'To make all your reservations you have' %}
+                <span id="timer"></span>
+                {% trans 'minutes' %}
             </div>
+            <script type="text/javascript">
+                setExpireDate();
+            </script>
         {% endif %}
-
-        {% block tab-menu %}{% endblock tab-menu %}
 
         {% block content %}{% endblock content %}
     </div>
