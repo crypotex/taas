@@ -39,8 +39,7 @@
 
         <div class="fieldWrapper">
 
-            <label>{% trans "This is your pin" %}</label>
-            {{ pin }}
+            <p id="pin">{% trans "Your gate pin: " %}{{ pin }}</p>
 
             {{ form.first_name.label_tag }}
             {% render_field form.first_name|add_error_class:"field-error" %}

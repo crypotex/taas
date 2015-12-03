@@ -270,3 +270,9 @@ input.field-error, input[type="text"].field-error {
     cursor: initial;
 }
 
+#pin {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 0;
+}
