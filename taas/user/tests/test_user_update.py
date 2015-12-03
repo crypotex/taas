@@ -36,6 +36,26 @@ class UserUpdateTest(TestCase):
         user = User.objects.get(email=self.user.email)
         self.assertEqual(user.first_name, 'Test')
 
+    def test_active_user_can_see_pin(self):
+        user = UserFactory()
+        user.is_active = True
+        user.save()
+        self.assertNotEqual(user.pin, "")
+
+    def test_inactive_user_has_no_pin(self):
+        user = UserFactory()
+        self.assertEqual(user.pin, None)
+
+    def test_deactivated_user_has_empy_string_pin(self):
+        user = UserFactory()
+        user.is_active = True
+        user.save()
+        self.assertNotEqual(user.pin, "")
+        user.is_active = False
+        user.save()
+        self.assertEqual(user.pin, None)
+
+
     def test_logged_in_user_can_update_his_last_name(self):
         self.client.login(username=self.user.email, password='isherenow', follow=True)
 

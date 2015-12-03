@@ -21,7 +21,7 @@ def check_user_activation(sender, instance=None, created=False, **kwargs):
         instance.create_pin()
     elif (old_active, new_active) == (True, False):
         instance.email_user_on_deactivation()
-        instance.pin = ""
+        instance.pin = None
 
 
 def log_user_login(sender, user=None, **kwargs):

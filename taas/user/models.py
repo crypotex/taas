@@ -49,7 +49,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     budget = models.DecimalField(_('budget (€)'), decimal_places=2, max_digits=10,
                                  validators=[MinValueValidator(0.0)], default=0.0)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-    pin = models.CharField(_('pin'), max_length=4, blank=True, null=True,)
+    pin = models.CharField(_('pin'), max_length=4, blank=True, null=True, )
     button_id = models.CharField(_('Button ID'), max_length=64, blank = True, null=True)
 
     objects = CustomUserManager()
