@@ -38,6 +38,9 @@
         {% endfor %}
 
         <div class="fieldWrapper">
+
+            <p id="pin">{% trans "Your gate pin: " %}{{ pin }}</p>
+
             {{ form.first_name.label_tag }}
             {% render_field form.first_name|add_error_class:"field-error" %}
             {% for err in form.first_name.errors %}

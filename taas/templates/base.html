@@ -8,6 +8,7 @@
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
 
@@ -37,9 +38,9 @@
 <div id="wrap">
     <header>
         <div id="nav">
-            <div class="logo">
-                <a href="http://taas.ee/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
-            </div>
+            <a href="http://taas.ee/"><img class="logo" alt="Tartu Agility Arenguselts"
+                                           src="{% static 'img/logo.jpg' %}"></a>
+
             <div id="navwrap">
                 <div class="navsmall">
                     <form action="{% url 'set_language' %}" method="post" style="display: none"

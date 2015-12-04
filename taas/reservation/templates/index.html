@@ -50,7 +50,7 @@
         </div>
         {% if user.is_authenticated %}
             <form action="{% url 'reservation_list' %}">
-                <input type="submit" class='button' id='submit' value="{% trans 'Submit' %}">
+                <input type="submit" class='button' id='submitBookings' value="{% trans 'Submit' %}">
             </form>
         {% endif %}
     </div>

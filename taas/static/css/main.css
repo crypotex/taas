@@ -40,7 +40,6 @@ header {
     width: 95%;
     min-width: 300px;
     margin: 0 auto;
-    padding-bottom: 20px;
 }
 
 header:after {
@@ -49,28 +48,18 @@ header:after {
     clear: both;
 }
 
-.logo img {
-    float: left;
-    padding-top: 11px;
-    height: 82px;
-}
-
 .logo {
     float: left;
-}
-
-.logo:after {
-    clear: left;
-    display: table;
-    content: '';
+    padding-top: 11px;
+    padding-bottom: 14px;
+    height: 82px;
 }
 
 .navsmall a {
     float: right;
-    display: block;
     height: 20px;
     width: auto;
-    top: 0;
+    margin: 8px 3px;
 }
 
 .navsmall a[id='et'] {
@@ -78,6 +67,7 @@ header:after {
     background-size: 100% 100%;
     border: 1px solid #999999;
     padding: 0 13px;
+    margin-right: 5px;
 }
 
 .navsmall a[id='ru'] {
@@ -94,17 +84,15 @@ header:after {
     padding: 0 13px;
 }
 
-.navsmall a {
-    margin: 3px;
-}
-
 .navsmall a:hover {
     opacity: 0.6;
     cursor: pointer;
 }
 
-#nav {
-    padding-bottom: 20px;
+.navsmall:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
 p {
@@ -120,7 +108,6 @@ p {
 
 #navwrap {
     float: right;
-    vertical-align: bottom;
 }
 
 #navwrap:after {
@@ -129,20 +116,9 @@ p {
     content: '';
 }
 
-#header-nav {
-    padding-bottom: 10px;
-    display: inline-block;
-    width: 100%;
-}
-
-#header-nav:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
 #user-nav {
     margin: auto;
+    padding-top: 20px;
 }
 
 #user-nav:after {
@@ -157,11 +133,11 @@ p {
     text-transform: uppercase;
     padding: 5px;
     color: rgba(255, 153, 0, 0.9);
+    font-size: 15px;
 }
 
 #user-nav ul {
     float: right;
-    padding-right: 9px;
     margin: 15px auto;
 }
 
