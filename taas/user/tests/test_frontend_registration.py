@@ -62,7 +62,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_id("en").click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//header/div[2]/ul/li[2]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/header/div[3]/ul/li[2]/a').click()
         self.assertIn("Registration", self.selenium.title)
 
     def fill_the_registration_fields(self):

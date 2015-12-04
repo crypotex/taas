@@ -80,11 +80,8 @@ class Reservation(models.Model):
     def can_delete(self):
         if not self.paid:
             return True
-
         # It should be possible to remove reservation before start day.
-        tzdt = timezone.datetime.today()
-        startdt = self.get_start()
-        return tzdt.year <= startdt.year and tzdt.month <= startdt.month and tzdt.day < self.get_start().day
+        return timezone.now().date() < self.get_start().date()
 
     def can_update(self):
         if not self.paid:
@@ -92,7 +89,5 @@ class Reservation(models.Model):
 
         # It should be possible to update reservation 15 minutes before start.
         diff = self.get_start() - timezone.now()
-        tzdt = timezone.datetime.today()
-        startdt = self.get_start()
-        return tzdt.year <= startdt.year and tzdt.month <= startdt.month and tzdt.day <= startdt.day and \
+        return timezone.now().date() <= self.get_start().date() and \
                divmod(diff.days * 86400 + diff.seconds, 60)[0] > 15

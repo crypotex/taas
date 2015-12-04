@@ -20,9 +20,24 @@
     <script type="text/javascript" src="{% static 'js/reservation_update.js' %}"></script>
 {% endblock scripts %}
 
+{% block tab-menu %}
+    {% if user.is_authenticated %}
+        <ul class="tabrow">
+            <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+            <li class="selected"><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+            <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+        </ul>
+    {% endif %}
+{% endblock tab-menu %}
+
+
 {% block content %}
     <div class="table_wrap">
         <h2 id="reservation_update_header">{% trans 'Choose a new time for the reservation:' %}</h2>
+
+        <p>Drag the red box to another slot that suits you and is free.</p>
 
         <div class="wrap">
             <div id="updateReservation"></div>

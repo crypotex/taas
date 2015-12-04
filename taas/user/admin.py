@@ -14,6 +14,7 @@ class UserAdmin(auth_admin.UserAdmin):
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'budget')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+        (_('Pins'), {'fields': ('pin', 'button_id')})
     )
     add_fieldsets = (
         (None, {
@@ -21,6 +22,7 @@ class UserAdmin(auth_admin.UserAdmin):
             'fields': ('first_name', 'last_name', 'email', 'phone_number', 'password1', 'password2'),
         }),
     )
+    readonly_fields = ('pin', 'last_login', 'date_joined')
     list_display = ('email', 'first_name', 'last_name', 'is_active')
     list_filter = ('is_staff', 'is_active')
     search_fields = ('first_name', 'last_name')
