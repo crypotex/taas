@@ -1,5 +1,7 @@
 from taas.server.base_settings import *
 from taas.server.email_settings import *
+from datetime import timedelta
+
 
 SECRET_KEY = 'test-key'
 

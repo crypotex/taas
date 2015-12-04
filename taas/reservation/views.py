@@ -409,9 +409,15 @@ def history(request):
 @login_required()
 def get_expire_time(request):
     if request.is_ajax():
-        reservation_list = Reservation.objects.filter(user=request.user, paid=False).order_by("date_created")
-        if reservation_list.exists():
-            expire_datetime = reservation_list.first().get_date_created() + timedelta(minutes=10)
+        reservations = Reservation.objects.filter(user=request.user, paid=False).order_by("date_created")
+        if reservations.exists():
+            expire_datetime = reservations.first().get_date_created() + timedelta(minutes=10)
+
+            current_datetime = timezone.now()
+            if expire_datetime < current_datetime:
+                reservations.delete()
+                return http.JsonResponse({'response': ""}, safe=False)
+
             diff = expire_datetime - timezone.localtime(timezone.now())
             timer = str(diff).split('.')[0].split(':', 1)[1]
             return http.JsonResponse({'response': timer}, safe=False)

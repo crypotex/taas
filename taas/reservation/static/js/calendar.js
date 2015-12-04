@@ -92,6 +92,8 @@ function deleteReservation(calEvent) {
                 disableSubmition();
                 stopTimer();
                 expireDate = null;
+            } else {
+                setExpireDate();
             }
         },
         "json"

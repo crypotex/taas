@@ -4,8 +4,6 @@ Base settings for TAAS project
 
 import os
 
-from datetime import timedelta
-
 from django.conf import global_settings
 from django.core.urlresolvers import reverse_lazy
 

@@ -5,6 +5,8 @@ Copy it to the settings.py
 
 from .base_settings import *
 from .email_settings import *
+from datetime import timedelta
+
 
 DEBUG = True
 TEMPLATE_DEBUG = True
