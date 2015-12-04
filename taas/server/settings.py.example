@@ -19,13 +19,6 @@ EMAIL_HOST_PASSWORD = 'blablabla'
 
 ADMIN_EMAILS = ['example@gmail.com']
 
-CELERYBEAT_SCHEDULE = {
-    'remove-expired-reservations': {
-        'task': 'taas.reservation.tasks.remove_expired_reservations',
-        'schedule': timedelta(minutes=5),
-    },
-}
-
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
     EMAIL_FILE_PATH = os.path.join(PROJECT_ROOT, 'inbox')
