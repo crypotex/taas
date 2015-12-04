@@ -137,7 +137,8 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.user = UserFactory(is_active=True)
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/header/div[3]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
+        self.assertIn("Login", self.selenium.title)
         self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
         self.selenium.find_element_by_id('id_password').send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
@@ -145,7 +146,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/ul/li[4]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="wrap"]/header/ul/li[4]/a').click()
         self.assertIn('User modification', self.selenium.title)
 
 
@@ -182,7 +183,8 @@ class UserDeactivationTest(StaticLiveServerTestCase):
         self.user = UserFactory(is_active=True)
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/header/div[3]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
+        self.assertIn("Login", self.selenium.title)
         self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
         self.selenium.find_element_by_id('id_password').send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
@@ -190,5 +192,5 @@ class UserDeactivationTest(StaticLiveServerTestCase):
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/ul/li[4]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="wrap"]/header/ul/li[4]/a').click()
         self.assertIn('User modification', self.selenium.title)
