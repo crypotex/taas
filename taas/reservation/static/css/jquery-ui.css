@@ -1450,14 +1450,16 @@
 
 #datepicker .ui-datepicker td span,
 #datepicker .ui-datepicker td a,
-#calendar .ui-widget-header {
+#calendar .ui-widget-header,
+#updateReservation .ui-widget-header {
     padding: .7em 0;
     color: #737d83;
     font-size: 12px;
     font-family: Montserrat, sans-serif;
 }
 
-#calendar .ui-widget-header, #updateReservation .ui-widget-header {
+#calendar .ui-widget-header,
+#updateReservation .ui-widget-header{
     text-align: center;
 }
 

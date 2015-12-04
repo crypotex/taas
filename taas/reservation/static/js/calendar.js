@@ -147,7 +147,6 @@ $(document).ready(function () {
 
     $('#datepicker').datepicker({
         inline: true,
-        minDate: 0,
         firstDay: 1,
         onSelect: function () {
             $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
