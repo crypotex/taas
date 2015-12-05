@@ -1,8 +1,6 @@
 import logging
 
-from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
-from django.core.mail import send_mail
 from django.core.validators import RegexValidator, MinValueValidator
 from django.db import models
 from django.utils import timezone
@@ -35,6 +33,7 @@ class CustomUserManager(UserManager):
 
     def create_superuser(self, email, password, **extra_fields):
         return self._create_user(email, password, True, True, **extra_fields)
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_('first name'), max_length=30)
@@ -81,7 +80,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         return '%d€' % self.budget
 
-
     def create_pin(self):
         """
         Generates a pin for user
@@ -91,67 +89,3 @@ class User(AbstractBaseUser, PermissionsMixin):
         used_pins = set(User.objects.values_list('pin', flat=True))
         all_pins.difference(used_pins)
         self.pin = sample(all_pins, 1)[0]
-
-    def email_user_on_registration(self):
-        """
-        Sends an email to this user, when he is created.
-        """
-        message = settings.USER_REGISTRATION_MESSAGE
-        message = message % {'first_name': self.first_name}
-        subject = settings.REGISTRATION_SUBJECT
-        from_email = settings.EMAIL_HOST_USER
-
-        send_mail(subject, message, from_email, [self.email])
-        logger.info('Registration message for user with email %s has been sent.' % self.email)
-
-    def email_user_on_activation(self):
-        """
-        Sends an email to this user, when he is verified.
-        """
-        message = settings.USER_VERIFICATION_MESSAGE
-        message = message % {'first_name': self.first_name}
-        subject = settings.USER_STATUS_SUBJECT
-        from_email = settings.EMAIL_HOST_USER
-
-        send_mail(subject, message, from_email, [self.email])
-        logger.info('Activation message for user with email %s has been sent.' % self.email)
-
-    def email_user_on_deactivation(self):
-        """
-        Sends an email to this user, when he is disabled.
-        """
-        message = settings.USER_DISABLE_MESSAGE
-        message = message % {'first_name': self.first_name}
-        subject = settings.USER_STATUS_SUBJECT
-        from_email = settings.EMAIL_HOST_USER
-
-        send_mail(subject, message, from_email, [self.email])
-        logger.info('Deactivation message for user with email %s has been sent.' % self.email)
-
-    def email_admin_on_user_registration(self):
-        """
-        Sends an email to the admin users, when new user was created.
-        """
-        message = settings.ADMIN_REGISTRATION_MESSAGE
-        message = message % {'email': self.email}
-        subject = settings.REGISTRATION_SUBJECT
-        from_email = settings.EMAIL_HOST_USER
-        to_emails = settings.ADMIN_EMAILS
-
-        send_mail(subject, message, from_email, to_emails)
-        logger.info('User with email %s registration message has been sent to admin emails: %s.'
-                    % (self.email, ', '.join(to_emails)))
-
-    def email_admin_on_user_deactivation(self):
-        """
-        Sends an email to the admin users, when new user was deactivated.
-        """
-        message = settings.ADMIN_USER_DISABLE_MESSAGE
-        message = message % {'email': self.email}
-        subject = settings.USER_STATUS_SUBJECT
-        from_email = settings.EMAIL_HOST_USER
-        to_emails = settings.ADMIN_EMAILS
-
-        send_mail(subject, message, from_email, to_emails)
-        logger.info('User with email %s deactivation message has been sent to admin emails: %s.'
-                    % (self.email, ', '.join(to_emails)))
