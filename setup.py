@@ -20,7 +20,7 @@ install_requires = [
     'pytz==2015.6',
     'freezegun==0.3.5',
     'django-tables2==1.0.4',
-    'celery==3.1.19'
+    'celery[redis]==3.1.19',
 ]
 
 setup(
