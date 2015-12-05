@@ -25,7 +25,7 @@ function startTimer(expireDate) {
     }).on('finish.countdown', function () {
         stopTimer();
         removeReservationsOnExpire();
-        swal({title: "Warning", text: expireMessage, type: "warning", confirmButtonText: "OK"});
+        swal({title: warningMessage, text: expireMessage, type: "warning", confirmButtonText: "OK"});
     });
 }
 
@@ -38,7 +38,7 @@ function removeReservationsOnExpire() {
     jQuery.post('/reservation/remove/all/').done(
         function () {
             stopTimer();
-            swal({title: "Warning", text: expireMessage, type: "warning", confirmButtonText: "OK"});
+            swal({title: warningMessage, text: expireMessage, type: "warning", confirmButtonText: "OK"});
         }
     )
 }

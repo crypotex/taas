@@ -81,15 +81,19 @@
                     {% endif %}
 
                     {% nospaceless %}{% block pagination.cardinality %}
-                        <li class="cardinality">{% if total != count %}{% blocktrans %}{{ count }} of {{ total }}
-                        {% endblocktrans %}{% else %}{{ total }}{% endif %}
-                            {% if total < 21 %}
-                                {% blocktrans trimmed with table.data.verbose_name as vname and table.data.verbose_name_plural as vname count count as count context "reservation history" %}
-                                    {{ vname }}
-                                {% plural %}
-                                    {{ vname }}
-                                {% endblocktrans %}
-                            {% endif %}
+                        <li class="cardinality">{% if total != count %}
+                            {% blocktrans trimmed with table.data.verbose_name as vname and table.data.verbose_name_plural as vname count count as count context "reservation history with of" %}
+                                {{ count }} {{ vname }} of {{ total }}
+                            {% plural %}
+                                {{ count }} {{ vname }} of {{ total }}
+                            {% endblocktrans %}
+                        {% else %}
+                            {% blocktrans trimmed with table.data.verbose_name as vname and table.data.verbose_name_plural as vname count count as count context "reservation history" %}
+                                {{ count }} {{ vname }}
+                            {% plural %}
+                                {{ count }} {{ vname }}
+                            {% endblocktrans %}
+                        {% endif %}
                         </li>
                     {% endblock pagination.cardinality %}{% endnospaceless %}
                 </ul>
