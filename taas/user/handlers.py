@@ -1,13 +1,16 @@
 import logging
 
+from taas.user import tasks
+
 logger = logging.getLogger(__name__)
+
 
 def send_emails_to_users(sender, instance=None, created=False, **kwargs):
     if created:
-        instance.email_user_on_registration()
+        tasks.email_user_on_registration.delay(instance.id)
 
         if instance.is_active:
-            instance.email_user_on_activation()
+            tasks.email_user_on_activation.delay(instance.id)
 
         return
 
@@ -15,9 +18,10 @@ def send_emails_to_users(sender, instance=None, created=False, **kwargs):
     new_active = instance.is_active
 
     if (old_active, new_active) == (False, True):
-        instance.email_user_on_activation()
+        tasks.email_user_on_activation.delay(instance.id)
     elif (old_active, new_active) == (True, False):
-        instance.email_user_on_deactivation()
+        tasks.email_user_on_deactivation.delay(instance.id)
+
 
 def check_user_activation(sender, instance=None, created=False, **kwargs):
 

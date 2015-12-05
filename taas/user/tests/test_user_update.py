@@ -63,7 +63,6 @@ class UserUpdateTest(TestCase):
         user.save()
         self.assertEqual(user.pin, None)
 
-
     def test_logged_in_user_can_update_his_last_name(self):
         self.client.login(username=self.user.email, password='isherenow', follow=True)
 
