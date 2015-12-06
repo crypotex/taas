@@ -48,13 +48,38 @@
 
         <div class="fieldWrapper">
             {% render_table table 'table.html' %}
+            {% if is_paginated %}
+                <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'reservation_list' %}?page={{ page_obj.previous_page_number }}">
+                        {% trans 'previous' %}
+                    </a>
+                {% endif %}
+                <span class="page-current">
+                    {% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{% url 'reservation_list' %}?page={{ page_obj.next_page_number }}">
+                        {% trans 'next' %}
+                    </a>
+                {% endif %}
+            </span>
+                </div>
+            {% endif %}
         </div>
+
+        <button id="submit-button" formaction="{% url 'budget_payment' %}" type="submit">{% trans 'Budget' %}</button>
+        <button id="submit-button" formaction="{% url 'proceed_transaction' %}"
+                type="submit">{% trans 'Transaction' %}</button>
+
     </form>
-    <p>{{ total_price }}</p>
+
+    <!--<p>{{ total_price }}</p>
     <form method="get" action="{% url 'budget_payment' %}">
         <input id="submit-button" type="submit" value={% trans 'Budget' %}>
     </form>
     <form method="get" action="{% url 'proceed_transaction' %}">
         <input id="submit-button" type="submit" value="{% trans 'Transaction' %}">
-    </form>
+    </form>-->
 {% endblock content %}
