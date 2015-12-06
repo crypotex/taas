@@ -18,6 +18,7 @@ from taas.reservation.views import get_payment_order, get_payment_mac
 from taas.user import forms
 from taas.user import mixins
 from taas.user import models
+from taas.user import tasks
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +32,7 @@ class UserCreateView(CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        self.object.email_admin_on_user_registration()
+        tasks.email_admin_on_user_registration.delay(self.object.id)
 
         messages.success(self.request, self.success_message)
         logger.info('Unverified user with email %s has been successfully registered.'
@@ -78,7 +79,7 @@ class UserDeactivateView(mixins.LoggedInMixin, SuccessMessageMixin, FormView):
     def form_valid(self, form):
         self.request.user.is_active = False
         self.request.user.save()
-        self.request.user.email_admin_on_user_deactivation()
+        tasks.email_admin_on_user_deactivation.delay(self.request.user.id)
         logger.info('User with email %s has been been deactivated.' % form.cleaned_data.get('email'))
 
         logout(self.request)
