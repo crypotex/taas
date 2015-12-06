@@ -45,7 +45,7 @@
     margin: 10px;
 }
 
-#reservation_update_header {
+.reservation_update_header {
     text-align: center;
     color: #666666;
 }
