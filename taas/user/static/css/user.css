@@ -48,6 +48,10 @@ input[type="submit"], button[type="submit"] {
     font-family: 'Montserrat', sans-serif;
 }
 
+#sortButton {
+    padding: 5px 15px;
+}
+
 .login-form input[type="submit"], .reset-form input[type="submit"], .deactivate-form input[type="submit"] {
     display: block;
     margin: 0 auto;
@@ -107,10 +111,14 @@ input[type="submit"]:hover, button[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
+#termsFieldWrapper {
+    padding: 10px 15px;
+}
+
 /* Heading */
 .form h2, .login-form h2, .reset-form h2, .deactivate-form h2 {
     background: rgba(255, 163, 26, 0.8);
-    padding: 20px 30px 15px 30px;
+    padding: 20px 15px 15px 30px;
     margin: -30px -30px 30px -30px;
     border-radius: 10px 10px 0 0;
     -webkit-border-radius: 10px 10px 0 0;
