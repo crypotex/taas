@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-06 18:53+0200\n"
+"POT-Creation-Date: 2015-12-06 20:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -437,10 +437,10 @@ msgstr ""
 "Можно забронировать площадки для нескольких дат, просто выберите другое "
 "число в календаре. <br><br> Когда вы закончите выбор, нажмите кнопку <samp>"
 "\"Далее\"</samp>, чтобы перейти на страницу оплаты. Проверьте ваш выбор и, "
-"при необходимости, вы можете удалить время, которое вам не подходит. Вы можете "
-"оплатить с помощью вашего сальдо или заплатить через банковскую ссылку. "
-"<br><br>У вас есть 10 минут для завершения процесса бронирования. Когда "
-"время истечёт, все выбранные ячейки будут удалены."
+"при необходимости, вы можете удалить время, которое вам не подходит. Вы "
+"можете оплатить с помощью вашего сальдо или заплатить через банковскую "
+"ссылку. <br><br>У вас есть 10 минут для завершения процесса бронирования. "
+"Когда время истечёт, все выбранные ячейки будут удалены."
 
 #: .\taas\reservation\templates\help.html:54
 msgid "What does A/B/C mean in the table?"
@@ -465,8 +465,8 @@ msgid ""
 "There are 4 colours to distinguish between different types of reservations. "
 "Hover over a color below to see the description."
 msgstr ""
-"4 цвета помогают различать разные типы бронирований. Наведите курсор "
-"на цвет ниже, чтобы увидеть описание."
+"4 цвета помогают различать разные типы бронирований. Наведите курсор на цвет "
+"ниже, чтобы увидеть описание."
 
 #: .\taas\reservation\templates\help.html:79
 msgid "Where do I see my upcoming/past reservations?"
@@ -484,9 +484,10 @@ msgstr ""
 "Нажмите на вкладку <samp>\"История\"</samp>, вы должны увидеть таблицу со "
 "всеми вашими бронированиями. <br><br> Таблица представлена в порядке "
 "убывания, т. е. предстоящие бронирования сверху, а прошедшие ниже их. Вы "
-"можете отсортировать таблицу по площадке, времени начала или времени окончания. "
-"Чтобы увидеть бронирования из прошлого или следующего месяца, выберите этот месяц "
-"над таблицей и нажмите кнопку <samp>\"Сортировать\"</samp>."
+"можете отсортировать таблицу по площадке, времени начала или времени "
+"окончания. Чтобы увидеть бронирования из прошлого или следующего месяца, "
+"выберите этот месяц над таблицей и нажмите кнопку <samp>\"Сортировать\"</"
+"samp>."
 
 #: .\taas\reservation\templates\help.html:92
 msgid "Is it possible to modify an upcoming reservation?"
@@ -501,10 +502,10 @@ msgid ""
 "same date as the reservation that you are trying to edit."
 msgstr ""
 "Вы можете изменить время или/и площадку бронирования, но не позднее 15-и "
-"минут до начала выбранного времени. Это означает, что если у вас есть, например, "
-"бронирование с началом в 14:00, то вы можете внести изменения до 13:45. "
-"Обратите внимание, что вы можете выбрать новое время или/и площадку только "
-"на эту же дату, которая была забронирована."
+"минут до начала выбранного времени. Это означает, что если у вас есть, "
+"например, бронирование с началом в 14:00, то вы можете внести изменения до "
+"13:45. Обратите внимание, что вы можете выбрать новое время или/и площадку "
+"только на эту же дату, которая была забронирована."
 
 #: .\taas\reservation\templates\help.html:104
 msgid "Is it possible to cancel an upcoming reservation?"
@@ -543,10 +544,10 @@ msgstr ""
 "i>), тогда возле брони будет значок карандаша, нажмите на него. <br><br> Вы "
 "должны увидеть предупреждение с запросом на подтверждение. Если вы "
 "действительно хотите изменить бронирование нажмите кнопку <samp>\"ОК\"</"
-"samp>. <br><br> Вы должны увидеть "
-"таблицу, где красный квадрат указывает на время бронирования, которое вы "
-"пытаетесь изменить. Перетащите квадрат на другое время, которое подходит вам "
-"и является свободным. Затем нажмите кнопку <samp>\"Отправить\"</samp>."
+"samp>. <br><br> Вы должны увидеть таблицу, где красный квадрат указывает на "
+"время бронирования, которое вы пытаетесь изменить. Перетащите квадрат на "
+"другое время, которое подходит вам и является свободным. Затем нажмите "
+"кнопку <samp>\"Отправить\"</samp>."
 
 #: .\taas\reservation\templates\help.html:132
 msgid "How do I cancel an upcoming reservation?"
@@ -589,9 +590,9 @@ msgstr ""
 "номер телефона и пароль. Если вы хотите изменить ваш пароль, отметьте флажок "
 "с галочкой и заполните все поля или оставьте флажок неотмеченным и просто "
 "нажмите кнопку <samp>\"Изменить\"</samp>, чтобы закончить. Вы не можете "
-"оставить поля \"Имя\" и \"Номер телефона\" пустыми. <br><br> Вы не можете изменить адрес "
-"электронной почты по соображениям безопасности. Если вам действительно "
-"необходимо изменить свой адрес электронной почты обратитесь к "
+"оставить поля \"Имя\" и \"Номер телефона\" пустыми. <br><br> Вы не можете "
+"изменить адрес электронной почты по соображениям безопасности. Если вам "
+"действительно необходимо изменить свой адрес электронной почты обратитесь к "
 "администратору."
 
 #: .\taas\reservation\templates\help.html:161
@@ -655,7 +656,9 @@ msgstr "Выберите новое время для бронирования:"
 
 #: .\taas\reservation\templates\reservation_update.html:40
 msgid "Drag the red box to another slot that suits you and is free."
-msgstr "Перетащите красный прямоугольник на другое время, которое подходит вам и является свободным."
+msgstr ""
+"Перетащите красный прямоугольник на другое время, которое подходит вам и "
+"является свободным."
 
 #: .\taas\reservation\templates\table.html:64
 msgid "Previous"
@@ -895,75 +898,75 @@ msgid "Your reservation time has been expired."
 msgstr "Ваше время истекло."
 
 #: .\taas\templates\base.html:31
-msgid "A-PLATS (HÜPPERADA):"
+msgid "A-FIELD (JUMPS):"
 msgstr "ПЛОЩАДКА А (ДЛЯ ПРЫЖКОВ):"
 
 #: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
-msgid "tõkked (10)"
+msgid "hurdles (10)"
 msgstr "барьеры (10)"
 
 #: .\taas\templates\base.html:31
-msgid "tunnelid (4) = 2x6m, 5m, 3m"
+msgid "open tunnels (4) = 2x6m, 5m, 3m"
 msgstr "туннели (4) = 2x6м, 5м, 3м"
 
-#: .\taas\templates\base.html:31
-msgid "müür (1)"
+#: .\taas\templates\base.html:31"
+msgid "wall (1)"
 msgstr "стена (1)"
 
 #: .\taas\templates\base.html:31
-msgid "rõngas (1)"
+msgid "tire jump (1)"
 msgstr "кольцо (1)"
 
 #: .\taas\templates\base.html:31
-msgid "kaugus (1)"
+msgid "long jump (1)"
 msgstr "прыжок в длину (1)"
 
 #: .\taas\templates\base.html:31
-msgid "kott (1)"
+msgid "closed tunnel (chute) (1)"
 msgstr "мягкий туннель (1)"
 
 #: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
-msgid "slaalom (1)"
+msgid "weave poles (slalom) (1)"
 msgstr "слалом (1)"
 
 #: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
-msgid "KOKKU: 19 takistust"
+msgid "TOTAL: 19 obstacles"
 msgstr "ВСЕГО: 19 препятствий"
 
 #: .\taas\templates\base.html:32
-msgid "B-PLATS (AGILITYRADA):"
+msgid "B-FIELD (AGILITY):"
 msgstr "ПЛОЩАДКА B (АДЖИЛИТИ):"
 
 #: .\taas\templates\base.html:32
-msgid "tunnelid (4) =2x6m, 5m, 4m"
+msgid "open tunnels (4) =2x6m, 5m, 4m"
 msgstr "туннели (4) =2x6м, 5м, 4м"
 
 #: .\taas\templates\base.html:32
-msgid "poom (1)"
+msgid "dog walk (1)"
 msgstr "бум (1)"
 
 #: .\taas\templates\base.html:32
-msgid "A-tõke (1)"
+msgid "A-frame (1)"
 msgstr "горка (1)"
 
 #: .\taas\templates\base.html:32
-msgid "kiik (1)"
+msgid "seesaw (1)"
 msgstr "качели (1)"
 
 #: .\taas\templates\base.html:32
-msgid "laud (1)"
+msgid "table (1)"
 msgstr "стол (1)"
 
 #: .\taas\templates\base.html:33
-msgid "C-PLATS:"
+msgid "C-FIELD:"
 msgstr "ПЛОЩАДКА C"
 
 #: .\taas\templates\base.html:33
-msgid "Kuulekustrenni väliplats"
+msgid "Obedience training ground"
 msgstr "Площадка для дрессировки собак на послушание"
 
 #: .\taas\templates\base.html:33
-msgid "Võistluste telkimise ja pealtvaatajate ala"
+msgid "Area for spectators and camping during competitions"
 msgstr "Участок для палаток и зрителей во время соревнований"
 
 #: .\taas\templates\base.html:35
