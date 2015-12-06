@@ -16,6 +16,10 @@ USER_STATUS_SUBJECT = _('User status')
 
 REGISTRATION_SUBJECT = _('User registration')
 
+USER_STATUS_SUBJECT_ADMIN = 'Kasutaja staatus'
+
+REGISTRATION_SUBJECT_ADMIN = 'Kasutaja registreerimine'
+
 USER_REGISTRATION_MESSAGE = _("""Dear %(first_name)s,
 
 You have successfully registered to the Tartu Agility Arenguselts.

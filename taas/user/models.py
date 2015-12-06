@@ -134,7 +134,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         message = settings.ADMIN_REGISTRATION_MESSAGE
         message = message % {'email': self.email}
-        subject = settings.REGISTRATION_SUBJECT
+        subject = settings.REGISTRATION_SUBJECT_ADMIN
         from_email = settings.EMAIL_HOST_USER
         to_emails = settings.ADMIN_EMAILS
 
@@ -148,7 +148,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         message = settings.ADMIN_USER_DISABLE_MESSAGE
         message = message % {'email': self.email}
-        subject = settings.USER_STATUS_SUBJECT
+        subject = settings.USER_STATUS_SUBJECT_ADMIN
         from_email = settings.EMAIL_HOST_USER
         to_emails = settings.ADMIN_EMAILS
 
