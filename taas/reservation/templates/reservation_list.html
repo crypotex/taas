@@ -69,8 +69,8 @@
             {% endif %}
         </div>
 
-        <button id="submit-button" formaction="{% url 'budget_payment' %}" type="submit">{% trans 'Budget' %}</button>
-        <button id="submit-button" formaction="{% url 'proceed_transaction' %}"
+        <button formaction="{% url 'budget_payment' %}" type="submit">{% trans 'Budget' %}</button>
+        <button formaction="{% url 'proceed_transaction' %}"
                 type="submit">{% trans 'Transaction' %}</button>
 
     </form>
