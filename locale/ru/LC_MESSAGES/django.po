@@ -818,11 +818,11 @@ msgstr "русский"
 
 #: .\taas\server\email_settings.py:15
 msgid "User status"
-msgstr ""
+msgstr "Статус пользователя"
 
 #: .\taas\server\email_settings.py:17
 msgid "User registration"
-msgstr ""
+msgstr "Регистрация пользователя"
 
 #: .\taas\server\email_settings.py:19
 #, python-format
@@ -837,16 +837,25 @@ msgid ""
 "\n"
 "Tartu Agility Arenguselts"
 msgstr ""
+"Уважаемый/Уважаемая %(first_name)s,\n"
+"\n"
+"Вы успешно зарегистрированы на сайте Tartu Agility Arenguselts.\n"
+"Пожалуйста, подождите пока администратор активирует вашу учетную запись.\n"
+"Вы получите уведомление.\n"
+"\n"
+"С уважением,\n"
+"\n"
+"Tartu Agility Arenguselts"
 
 #: .\taas\server\email_settings.py:38
 #, python-format
 msgid ""
-"Dear %(first_name)s,\n"
+"Уважаемый/Уважаемая %(first_name)s,\n"
 "\n"
-"Your account was successfully verified by the Tartu Agility Arenguselts.\n"
-"You can login now.\n"
+"Ваша учетная запись на сайте Tartu Agility Arenguselts была успешно активирована.\n"
+"Вы можете войти на сайт.\n"
 "\n"
-"Best regards,\n"
+"С уважением,\n"
 "\n"
 "Tartu Agility Arenguselts"
 msgstr ""
@@ -854,12 +863,12 @@ msgstr ""
 #: .\taas\server\email_settings.py:47
 #, python-format
 msgid ""
-"Dear %(first_name)s,\n"
+"Уважаемый/Уважаемая %(first_name)s,\n"
 "\n"
-"Your Tartu Agility Arenguselts user was disabled.\n"
-"Please contact administrator for further information.\n"
+"Ваша учетная запись на сайте Tartu Agility Arenguselts была деактивирована.\n"
+"Пожалуйста, свяжитесь с администратором для получения дополнительной информации.\n"
 "\n"
-"Best regards,\n"
+"С уважением,\n"
 "\n"
 "Tartu Agility Arenguselts"
 msgstr ""
