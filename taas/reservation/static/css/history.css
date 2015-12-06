@@ -113,3 +113,8 @@ li.next:after {
     font-size: 16px;
     color: #666666;
 }
+
+
+th.delete, th.update {
+    display: none;
+}

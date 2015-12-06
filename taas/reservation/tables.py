@@ -11,8 +11,8 @@ class HistoryTable(tables.Table):
         fields = ('start', 'end', 'field')
         attrs = {"id": "bookings"}
 
-    update = tables.Column(attrs={"th": {"hidden": "True"}}, orderable=False, empty_values=())
-    delete = tables.Column(attrs={"th": {"hidden": "True"}}, orderable=False, empty_values=())
+    update = tables.Column(orderable=False, empty_values=())
+    delete = tables.Column(orderable=False, empty_values=())
 
     def render_delete(self, record):
         if record.can_delete():
@@ -39,7 +39,7 @@ class ReservationListTable(tables.Table):
         attrs = {"id": "bookings"}
 
     price = tables.Column(verbose_name=_('price (€)'), accessor='field.cost')
-    delete = tables.Column(attrs={"th": {"hidden": "True"}}, orderable=False, empty_values=())
+    delete = tables.Column(orderable=False, empty_values=())
 
     def render_delete(self, record):
         if record.can_delete():
