@@ -14,37 +14,7 @@
 
 {% block scripts %}
     <script type="text/javascript" src="{% static 'js/tooltipster/jquery.tooltipster.min.js' %}"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#anon').tooltipster({
-                theme: 'tooltipster-light',
-                offsetX: -189,
-                offsetY: 12,
-                content: $('<p>{% trans 'Paid reservation of another user.' %}</p>')
-            });
-
-            $('#own').tooltipster({
-                theme: 'tooltipster-light',
-                offsetX: -189,
-                offsetY: 12,
-                content: $('<p>{% trans 'Your paid reservation.' %}</p>')
-            });
-
-            $('#unpaid-own').tooltipster({
-                theme: 'tooltipster-light',
-                offsetX: -189,
-                offsetY: 12,
-                content: $('<p>{% trans 'Your unfinished reservation.' %}</p>')
-            });
-
-            $('#unpaid-others').tooltipster({
-                theme: 'tooltipster-light',
-                offsetX: -189,
-                offsetY: 12,
-                content: $('<p>{% trans 'Unfinished reservation of another user.' %}</p>')
-            });
-        });
-    </script>
+    <script type="text/javascript" src="{% static 'js/help.js' %}"></script>
 {% endblock scripts %}
 
 {% block tab-menu %}
@@ -61,7 +31,7 @@
 
 {% block content %}
     <div class="form">
-        <h1>{% trans 'Help' %}</h1>
+        <h2>{% trans 'Help' %}</h2>
 
         <div class="section"><span>1</span>{% trans 'How to make a reservation?' %}</div>
         <div class="fieldWrapper">

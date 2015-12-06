@@ -140,7 +140,8 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_id("en").click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/header/div[3]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
+        self.assertIn("Login", self.selenium.title)
         self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
         self.selenium.find_element_by_id('id_password').send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
@@ -148,7 +149,7 @@ class UserUpdateTest(StaticLiveServerTestCase):
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/ul/li[4]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="wrap"]/header/ul/li[4]/a').click()
         self.assertIn('User modification', self.selenium.title)
 
 
@@ -166,14 +167,14 @@ class UserDeactivationTest(StaticLiveServerTestCase):
 
     def test_logged_in_user_can_access_deactivation_page(self):
         self.go_to_update_page()
-        self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
-        self.assertTrue(self.selenium.find_element_by_xpath('//h1[text() = "Deactivate account"]'))
+        self.selenium.find_element_by_xpath('//button[@id="deactivate-button"]').click()
+        self.assertTrue(self.selenium.find_element_by_xpath('//h2[text() = "Deactivate account"]'))
 
     def test_logged_in_user_can_deactivate_his_account(self):
         self.go_to_update_page()
-        self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
+        self.selenium.find_element_by_xpath('//button[@id="deactivate-button"]').click()
 
-        self.assertTrue(self.selenium.find_element_by_xpath('//h1[text() = "Deactivate account"]'))
+        self.assertTrue(self.selenium.find_element_by_xpath('//h2[text() = "Deactivate account"]'))
         self.selenium.find_element_by_id("id_password").send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Deactivate"]').click()
 
@@ -188,7 +189,8 @@ class UserDeactivationTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_id("en").click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/header/div[3]/ul/li[1]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
+        self.assertIn("Login", self.selenium.title)
         self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
         self.selenium.find_element_by_id('id_password').send_keys('isherenow')
         self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
@@ -196,5 +198,5 @@ class UserDeactivationTest(StaticLiveServerTestCase):
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="innerwrap"]/ul/li[4]/a').click()
+        self.selenium.find_element_by_xpath('//*[@id="wrap"]/header/ul/li[4]/a').click()
         self.assertIn('User modification', self.selenium.title)

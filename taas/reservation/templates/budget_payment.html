@@ -6,9 +6,29 @@
     {% trans 'Budget payment' %}
 {% endblock title %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock styles %}
+
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
-    <form method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
-        {{ form }}
-        <input type="submit" value={% trans 'Pay' %}>
+    <form class="form" method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
+        <h2>{% trans 'Confirmation' %}</h2>
+        <p class="help-text">{% trans 'Please enter your password to complete the booking(s).' %}</p>
+        <div class="fieldWrapper">
+            {{ form }}
+        </div>
+        <input id="payButton" type="submit" value={% trans 'Pay' %}>
     </form>
-{% endblock %}
+{% endblock content %}
