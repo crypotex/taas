@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-06 20:54+0200\n"
+"POT-Creation-Date: 2015-12-06 22:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -838,19 +838,6 @@ msgid ""
 "Tartu Agility Arenguselts"
 msgstr ""
 
-#: .\taas\server\email_settings.py:29
-#, python-format
-msgid ""
-"Dear Admin,\n"
-"\n"
-"We received registration request for user with email %(email)s.\n"
-"Please verify him.\n"
-"\n"
-"Best regards,\n"
-"\n"
-"Tartu Agility Arenguselts"
-msgstr ""
-
 #: .\taas\server\email_settings.py:38
 #, python-format
 msgid ""
@@ -877,18 +864,6 @@ msgid ""
 "Tartu Agility Arenguselts"
 msgstr ""
 
-#: .\taas\server\email_settings.py:56
-#, python-format
-msgid ""
-"Dear Admin,\n"
-"\n"
-"User with email %(email)s was disabled.\n"
-"\n"
-"Best regards,\n"
-"\n"
-"Tartu Agility Arenguselts"
-msgstr ""
-
 #: .\taas\templates\base.html:8
 msgid "Tartu Agility Playground"
 msgstr "Tartu Agility Arenguselts"
@@ -909,7 +884,7 @@ msgstr "барьеры (10)"
 msgid "open tunnels (4) = 2x6m, 5m, 3m"
 msgstr "туннели (4) = 2x6м, 5м, 3м"
 
-#: .\taas\templates\base.html:31"
+#: .\taas\templates\base.html:31
 msgid "wall (1)"
 msgstr "стена (1)"
 
@@ -3154,4 +3129,3 @@ msgstr ""
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:21
 msgid "Email address:"
 msgstr "Адрес электронной почты:"
-

@@ -26,14 +26,14 @@ Best regards,
 
 Tartu Agility Arenguselts""")
 
-ADMIN_REGISTRATION_MESSAGE = _("""Dear Admin,
+ADMIN_REGISTRATION_MESSAGE = """Lugupeetud Admin,
 
-We received registration request for user with email %(email)s.
-Please verify him.
+Kasutaja emailiga %(email)s liitus broneerimissüsteemiga.
+Palun aktiveerige tema konto.
 
-Best regards,
+Parimate soovidega,
 
-Tartu Agility Arenguselts""")
+Tartu Agility Arenguselts"""
 
 USER_VERIFICATION_MESSAGE = _("""Dear %(first_name)s,
 
@@ -53,11 +53,11 @@ Best regards,
 
 Tartu Agility Arenguselts""")
 
-ADMIN_USER_DISABLE_MESSAGE = _("""Dear Admin,
+ADMIN_USER_DISABLE_MESSAGE = """Lugupeetud Admin,
 
-User with email %(email)s was disabled.
+Kasutaja emailiga %(email)s on deaktiveeritud.
 
-Best regards,
+Parimate soovidega,
 
-Tartu Agility Arenguselts""")
+Tartu Agility Arenguselts"""
 
