@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
 {% endblock styles %}
 
 {% block scripts %}
@@ -23,11 +24,23 @@
     <script type="text/javascript" src="{% static 'js/history.js' %}"></script>
 {% endblock %}
 
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
 
     <form method="POST" class="form">{% csrf_token %}
 
-        <h1>{% trans 'Pay for the reservations' %}</h1>
+        <h2>{% trans 'Pay for the reservations' %}</h2>
 
         {% for error in form.non_field_errors %}
             <p class="error-message">{{ error }}</p>

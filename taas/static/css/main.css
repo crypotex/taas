@@ -31,41 +31,55 @@ html {
 }
 
 body {
-    min-height: 100%;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+#wrap {
     position: relative;
     width: 72%;
+    margin: 15px auto 0 auto;
+    height: auto;
+    min-height: 100% !important;
     background: #ffffff;
-    margin: 15px auto -80px auto;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     box-shadow: 0 1px 30px black;
 }
 
-#innerwrap {
-    position: relative;
-    width: 97%;
-    margin: 0 auto;
+#wrap:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 header {
     z-index: 10000;
     background: #ffffff;
-    width: 97%;
+    width: 95%;
     min-width: 300px;
-    height: 105px;
+    margin: 0 auto;
 }
 
-.logo img {
+header:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
     float: left;
     padding-top: 11px;
+    padding-bottom: 14px;
     height: 82px;
 }
 
-.navsmall img {
+.navsmall a {
     float: right;
-    display: block;
-    height: 30px;
-    top: 0;
+    height: 20px;
+    width: auto;
+    margin: 8px 3px;
 }
 
 .navsmall a[id='et'] {
@@ -73,6 +87,7 @@ header {
     background-size: 100% 100%;
     border: 1px solid #999999;
     padding: 0 13px;
+    margin-right: 5px;
 }
 
 .navsmall a[id='ru'] {
@@ -89,13 +104,15 @@ header {
     padding: 0 13px;
 }
 
-.navsmall a {
-    margin: 3px;
-}
-
 .navsmall a:hover {
     opacity: 0.6;
     cursor: pointer;
+}
+
+.navsmall:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
 p {
@@ -103,25 +120,44 @@ p {
     margin: 10px;
 }
 
-.user-nav {
-    float: right;
-    width: 97%;
-    margin: auto 30px 35px;
-    border-bottom: 1px dotted #dddddd;
+#nav:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
-.user-nav li {
+#navwrap {
+    float: right;
+}
+
+#navwrap:after {
+    clear: right;
+    display: table;
+    content: '';
+}
+
+#user-nav {
+    margin: auto;
+    padding-top: 20px;
+}
+
+#user-nav:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#user-nav li {
     display: inline;
     text-transform: uppercase;
     padding: 5px;
     color: rgba(255, 153, 0, 0.9);
+    font-size: 15px;
 }
 
-.user-nav ul {
+#user-nav ul {
     float: right;
-    padding: 0;
     margin: 15px auto;
-    list-style-type: none;
 }
 
 a {
@@ -149,7 +185,7 @@ a:hover {
     border-radius: 8px;
     width: 40%;
     padding: 10px;
-    margin: 25px auto 0 auto;
+    margin: 0 auto;
     text-align: center;
     list-style-type: none;
 }
@@ -160,13 +196,29 @@ a:hover {
     border-radius: 8px;
     width: 40%;
     padding: 10px;
-    margin: 65px auto 0 auto;
+    margin: 0 auto 20px auto;
     text-align: center;
     list-style-type: none;
 }
 
+.messages {
+    margin: 25px auto;
+}
+
+#innerwrap {
+    margin: 20px auto;
+    width: 95%;
+    min-width: 300px;
+}
+
 #timerMessage {
     display: none;
+    margin: 0 auto 20px auto;
+    width: 50%;
+}
+
+#timerMessage p {
+    text-align: center;
 }
 
 #budget {
@@ -180,7 +232,6 @@ a:hover {
 .tabrow {
     text-align: center;
     list-style: none;
-    margin: 100px 0 20px;
     padding: 0;
     line-height: 24px;
     overflow: hidden;
