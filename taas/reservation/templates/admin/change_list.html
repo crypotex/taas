@@ -136,7 +136,7 @@
 
         {% block pagination %}
             <p class="paginator">
-                {% if cl.opts.verbose_name == "предварительный заказ" or cl.opts.verbose_name == "broneering" %}
+                {% if cl.opts.verbose_name == "бронирование" or cl.opts.verbose_name == "broneering" %}
                     {% blocktrans trimmed with cl.opts.verbose_name as vname and cl.opts.verbose_name_plural as vname count cl.result_count as count context "reservation" %}
                         {{ count }} {{ vname }}
                     {% plural %}
