@@ -34,6 +34,8 @@
         <div class="fieldWrapper">
             {{ form.password.label_tag }}
             {% render_field form.password|add_error_class:"field-error" %}
+            {% for err in form.password.errors %}
+                <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
         </div>
         <input id="submit-button" type="submit" value={% trans 'Deactivate' %}>
     </form>

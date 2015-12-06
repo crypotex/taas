@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 
 {% block title %}
     {% trans 'Budget payment' %}
@@ -25,9 +26,17 @@
 {% block content %}
     <form class="form" method="post" action="{% url 'budget_payment' %}">{% csrf_token %}
         <h2>{% trans 'Confirmation' %}</h2>
+
         <p class="help-text">{% trans 'Please enter your password to complete the booking(s).' %}</p>
+        {% for error in form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
         <div class="fieldWrapper">
-            {{ form }}
+            {{ form.password.label_tag }}
+            {% render_field form.password|add_error_class:"field-error" %}
+            {% for err in form.password.errors %}
+                <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
         </div>
         <input id="payButton" type="submit" value={% trans 'Pay' %}>
     </form>
