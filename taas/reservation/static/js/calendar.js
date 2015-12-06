@@ -150,9 +150,4 @@ $(document).ready(function () {
             $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
         }
     });
-    $('.change_language').click(function (e) {
-        e.preventDefault();
-        $('#language').val($(this).attr('id'));
-        $('#change_language_form').submit();
-    });
 });
