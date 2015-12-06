@@ -28,9 +28,14 @@
         <h2>{% trans 'Account balance' %}</h2>
 
         <h3 id="show_budget">{% trans 'Your current account balance:' %} {{ user.display_budget_money }} </h3>
-        <div class="section"><span>1</span>{% trans 'Select an amount to add' %}</div>
-        {{ form }}
 
+        <p class="help-text">
+            {% trans 'Select an amount to add by filling in the field below.' %}
+        </p>
+
+        <div class="fieldWrapper">
+            {{ form }}
+        </div>
         <input id="submit-button" type="submit" value={% trans 'Submit' %}>
     </form>
 {% endblock content %}

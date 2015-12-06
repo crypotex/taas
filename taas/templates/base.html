@@ -24,14 +24,19 @@
 
     {% ifequal request.path "/" %}
         <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
-        {% else %}
+    {% else %}
         <script type="text/javascript" src="{% static 'js/timer.js' %}"></script>
     {% endifequal %}
     <script>
         expireMessage = "{% trans 'Your reservation time has been expired.' %}";
-        var fieldA = '<p><b>{% trans 'A-PLATS (HÜPPERADA):' %}</b> <br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) = 2x6m, 5m, 3m' %}<br>{% trans 'müür (1)' %}<br>{% trans 'rõngas (1)' %}<br>{% trans 'kaugus (1)' %}<br>{% trans 'kott (1)' %}<br>{% trans  'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
-        var fieldB = '<p><b>{% trans 'B-PLATS (AGILITYRADA):' %}</b><br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) =2x6m, 5m, 4m' %}<br>{% trans 'poom (1)' %}<br>{% trans 'A-tõke (1)' %}<br>{% trans 'kiik (1)' %}<br>{% trans 'laud (1)' %}<br>{% trans 'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
-        var fieldC = '<p><b>{% trans 'C-PLATS:' %}</b><br>{% trans 'Kuulekustrenni väliplats' %}<br>{% trans 'Võistluste telkimise ja pealtvaatajate ala' %}</p>';
+        fieldA = '<p><b>{% trans 'A-PLATS (HÜPPERADA):' %}</b> <br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) = 2x6m, 5m, 3m' %}<br>{% trans 'müür (1)' %}<br>{% trans 'rõngas (1)' %}<br>{% trans 'kaugus (1)' %}<br>{% trans 'kott (1)' %}<br>{% trans  'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        fieldB = '<p><b>{% trans 'B-PLATS (AGILITYRADA):' %}</b><br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) =2x6m, 5m, 4m' %}<br>{% trans 'poom (1)' %}<br>{% trans 'A-tõke (1)' %}<br>{% trans 'kiik (1)' %}<br>{% trans 'laud (1)' %}<br>{% trans 'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        fieldC = '<p><b>{% trans 'C-PLATS:' %}</b><br>{% trans 'Kuulekustrenni väliplats' %}<br>{% trans 'Võistluste telkimise ja pealtvaatajate ala' %}</p>';
+
+        paidAnon = $('<p>{% trans 'Paid reservation of another user.' %}</p>');
+        paidOwn = $('<p>{% trans 'Your paid reservation.' %}</p>');
+        unpaidOwn = $('<p>{% trans 'Your unfinished reservation.' %}</p>');
+        unpaidAnon = $('<p>{% trans 'Unfinished reservation of another user.' %}</p>');
     </script>
 </head>
 

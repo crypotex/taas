@@ -2,6 +2,9 @@ var canSelect;
 var timeError;
 var expireMessage;
 var expireDate = null;
+var fieldA;
+var fieldB;
+var fieldC;
 
 swal.setDefaults({confirmButtonColor: '#ffa31a'});
 

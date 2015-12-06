@@ -134,7 +134,7 @@ input[type="submit"]:hover, button[type="submit"]:hover {
     letter-spacing: 2px;
 }
 
-p.error-message {
+p.error-message, .errorlist {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     font-size: 13px;
@@ -143,6 +143,10 @@ p.error-message {
     background: url('../img/errorround.png') no-repeat 0 -1px;
     background-size: 20px 20px;
     padding: 2px 0 3px 30px;
+}
+
+.errorlist {
+    list-style-type: none;
 }
 
 /* Asterisk for required fields */
@@ -259,7 +263,7 @@ input.field-error, input[type="text"].field-error {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #666666;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #terms, #label_terms {
@@ -317,4 +321,8 @@ input#payButton {
     color: #888;
     font-weight: normal;
     letter-spacing: 1px;
+}
+
+#id_amount {
+    width: 100%;
 }

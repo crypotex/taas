@@ -4,12 +4,24 @@
     display: inline-block;
 }
 
-#datepicker {
+#datepicker-color-wrap {
     display: inline-block;
     padding-bottom: 15px;
     vertical-align: top;
     padding-right: 20px;
     padding-top: 32px;
+}
+
+#colorbox-wrap {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#colorbox-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 #calendarwrap {
