@@ -16,7 +16,7 @@
     margin-top: 20px;
 }
 
-form input[type="text"], input[type="password"], input[type="email"] {
+form input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
     display: block;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;

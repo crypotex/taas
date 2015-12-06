@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-06 14:29+0200\n"
+"POT-Creation-Date: 2015-12-06 18:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -270,7 +270,6 @@ msgstr ""
 "Tartu Agility Arenguselts"
 
 #: .\build\lib\taas\server\email_settings.py:29
-#: .\taas\server\email_settings.py:29
 #, python-format
 msgid ""
 "Dear Admin,\n"
@@ -328,7 +327,6 @@ msgstr ""
 "Tartu Agility Arenguselts"
 
 #: .\build\lib\taas\server\email_settings.py:56
-#: .\taas\server\email_settings.py:56
 #, python-format
 msgid ""
 "Dear Admin,\n"
@@ -531,12 +529,12 @@ msgid "fields"
 msgstr "väljakud"
 
 #: .\taas\reservation\models.py:27
-#: .\taas\reservation\templates\reservation_list.html:45
+#: .\taas\reservation\templates\reservation_list.html:58
 msgid "Transaction"
 msgstr "Ülekanne"
 
 #: .\taas\reservation\models.py:28
-#: .\taas\reservation\templates\reservation_list.html:42
+#: .\taas\reservation\templates\reservation_list.html:55
 msgid "Budget"
 msgstr "Saldo"
 
@@ -670,49 +668,36 @@ msgstr[1] "%(count)s broneeringut"
 msgid "Budget payment"
 msgstr "Makse saldoga"
 
-#: .\taas\reservation\templates\budget_payment.html:12
-msgid "Pay"
-msgstr "Maksa"
-
-#: .\taas\reservation\templates\help.html:6
-#: .\taas\reservation\templates\help.html:64
-msgid "Help"
-msgstr "Abi"
-
-#: .\taas\reservation\templates\help.html:23
-msgid "Paid reservation of another user."
-msgstr "Teise kasutaja makstud broneering."
-
-#: .\taas\reservation\templates\help.html:30
-msgid "Your paid reservation."
-msgstr "Teie makstud broneering."
-
-#: .\taas\reservation\templates\help.html:37
-msgid "Your unfinished reservation."
-msgstr "Teie lõpetamata broneering."
-
-#: .\taas\reservation\templates\help.html:44
-msgid "Unfinished reservation of another user."
-msgstr "Teise kasutaja lõpetamata broneering."
-
-#: .\taas\reservation\templates\help.html:52
+#: .\taas\reservation\templates\budget_payment.html:15
+#: .\taas\reservation\templates\help.html:22
 #: .\taas\reservation\templates\history.html:30
-#: .\taas\reservation\templates\index.html:45
+#: .\taas\reservation\templates\index.html:52
+#: .\taas\reservation\templates\reservation_list.html:29
 #: .\taas\reservation\templates\reservation_update.html:26
 #: .\taas\user\templates\login.html:16
+#: .\taas\user\templates\password_reset\confirm.html:14
+#: .\taas\user\templates\password_reset\form.html:14
+#: .\taas\user\templates\terms.html:15
 #: .\taas\user\templates\update_budget.html:16
+#: .\taas\user\templates\user_deactivate.html:13
 #: .\taas\user\templates\user_registration.html:20
 #: .\taas\user\templates\user_update.html:21
 msgid "Booking"
 msgstr "Broneeri"
 
-#: .\taas\reservation\templates\help.html:54
+#: .\taas\reservation\templates\budget_payment.html:17
+#: .\taas\reservation\templates\help.html:24
 #: .\taas\reservation\templates\history.html:8
 #: .\taas\reservation\templates\history.html:31
-#: .\taas\reservation\templates\index.html:47
+#: .\taas\reservation\templates\index.html:54
+#: .\taas\reservation\templates\reservation_list.html:31
 #: .\taas\reservation\templates\reservation_update.html:27
 #: .\taas\user\templates\login.html:18
+#: .\taas\user\templates\password_reset\confirm.html:16
+#: .\taas\user\templates\password_reset\form.html:16
+#: .\taas\user\templates\terms.html:17
 #: .\taas\user\templates\update_budget.html:17
+#: .\taas\user\templates\user_deactivate.html:14
 #: .\taas\user\templates\user_registration.html:22
 #: .\taas\user\templates\user_update.html:22
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:34
@@ -722,44 +707,79 @@ msgstr "Broneeri"
 msgid "History"
 msgstr "Ajalugu"
 
-#: .\taas\reservation\templates\help.html:55
+#: .\taas\reservation\templates\budget_payment.html:18
+#: .\taas\reservation\templates\help.html:25
 #: .\taas\reservation\templates\history.html:32
-#: .\taas\reservation\templates\index.html:48
+#: .\taas\reservation\templates\index.html:55
+#: .\taas\reservation\templates\reservation_list.html:32
 #: .\taas\reservation\templates\reservation_update.html:28
 #: .\taas\user\templates\login.html:19
+#: .\taas\user\templates\password_reset\confirm.html:17
+#: .\taas\user\templates\password_reset\form.html:17
+#: .\taas\user\templates\terms.html:18
 #: .\taas\user\templates\update_budget.html:18
+#: .\taas\user\templates\user_deactivate.html:15
 #: .\taas\user\templates\user_registration.html:23
 #: .\taas\user\templates\user_update.html:23
 msgid "Balance"
 msgstr "Raha"
 
-#: .\taas\reservation\templates\help.html:56
+#: .\taas\reservation\templates\budget_payment.html:19
+#: .\taas\reservation\templates\help.html:26
 #: .\taas\reservation\templates\history.html:33
-#: .\taas\reservation\templates\index.html:49
+#: .\taas\reservation\templates\index.html:56
+#: .\taas\reservation\templates\reservation_list.html:33
 #: .\taas\reservation\templates\reservation_update.html:29
 #: .\taas\user\templates\login.html:20
+#: .\taas\user\templates\password_reset\confirm.html:18
+#: .\taas\user\templates\password_reset\form.html:18
+#: .\taas\user\templates\terms.html:19
 #: .\taas\user\templates\update_budget.html:19
+#: .\taas\user\templates\user_deactivate.html:16
 #: .\taas\user\templates\user_registration.html:24
 #: .\taas\user\templates\user_update.html:24
 msgid "Account"
 msgstr "Konto"
 
-#: .\taas\reservation\templates\help.html:58
+#: .\taas\reservation\templates\budget_payment.html:21
+#: .\taas\reservation\templates\help.html:28
 #: .\taas\reservation\templates\history.html:34
-#: .\taas\reservation\templates\index.html:51
+#: .\taas\reservation\templates\index.html:58
+#: .\taas\reservation\templates\reservation_list.html:35
 #: .\taas\reservation\templates\reservation_update.html:30
 #: .\taas\user\templates\login.html:22
+#: .\taas\user\templates\password_reset\confirm.html:20
+#: .\taas\user\templates\password_reset\form.html:20
+#: .\taas\user\templates\terms.html:21
 #: .\taas\user\templates\update_budget.html:20
+#: .\taas\user\templates\user_deactivate.html:17
 #: .\taas\user\templates\user_registration.html:26
 #: .\taas\user\templates\user_update.html:25
 msgid "FAQ"
 msgstr "KKK"
 
-#: .\taas\reservation\templates\help.html:66
+#: .\taas\reservation\templates\budget_payment.html:27
+msgid "Confirmation"
+msgstr "Kinnitus"
+
+#: .\taas\reservation\templates\budget_payment.html:28
+msgid "Please enter your password to complete the booking(s)."
+msgstr ""
+
+#: .\taas\reservation\templates\budget_payment.html:32
+msgid "Pay"
+msgstr "Maksa"
+
+#: .\taas\reservation\templates\help.html:6
+#: .\taas\reservation\templates\help.html:34
+msgid "Help"
+msgstr "Abi"
+
+#: .\taas\reservation\templates\help.html:36
 msgid "How to make a reservation?"
 msgstr "Kuidas broneerida?"
 
-#: .\taas\reservation\templates\help.html:68
+#: .\taas\reservation\templates\help.html:38
 msgid ""
 "Choose a suitable date from the calendar and then select one or more "
 "available time slots in the right table column (depending on which field(s) "
@@ -785,11 +805,11 @@ msgstr ""
 "<br><br> Teil on aega 10 minutit, et broneerimine lõpule viia. Kui aeg saab "
 "otsa, kustutatakse kõik teie valitud broneeringud."
 
-#: .\taas\reservation\templates\help.html:84
+#: .\taas\reservation\templates\help.html:54
 msgid "What does A/B/C mean in the table?"
 msgstr "Mida tähendavad tabelis olevad A/B/C?"
 
-#: .\taas\reservation\templates\help.html:86
+#: .\taas\reservation\templates\help.html:56
 msgid ""
 "There are 3 different fields available for booking. You can see a "
 "description of each field by hovering over the corresponding letter in the "
@@ -799,11 +819,11 @@ msgstr ""
 "\"Broneeri\"</samp> lehel tabeli peases olevatele tähtedele hiirega peale "
 "minna. Kogu valduse plaan näeb välja selline: <br><br>"
 
-#: .\taas\reservation\templates\help.html:94
+#: .\taas\reservation\templates\help.html:64
 msgid "What does color X mean in the table?"
 msgstr "Mida tähendab tabelis värv X?"
 
-#: .\taas\reservation\templates\help.html:96
+#: .\taas\reservation\templates\help.html:66
 msgid ""
 "There are 4 colours to distinguish between different types of reservations. "
 "Hover over a color below to see the description."
@@ -812,11 +832,11 @@ msgstr ""
 "hiirega allpool olevatele värvidele peale minna, siis näeb iga värvi kohta "
 "tema kirjeldust. "
 
-#: .\taas\reservation\templates\help.html:109
+#: .\taas\reservation\templates\help.html:79
 msgid "Where do I see my upcoming/past reservations?"
 msgstr "Kus ma näen oma tulevasi/vanu broneeringuid?"
 
-#: .\taas\reservation\templates\help.html:111
+#: .\taas\reservation\templates\help.html:81
 msgid ""
 "Click on the <samp>\"History\"</samp> tab, you should see the table with all "
 "of your reservations. <br><br> Reservations are in descending order, i.e. "
@@ -832,11 +852,11 @@ msgstr ""
 "näha järgmise või eelmise kuu broneeringuid, valige sobiv kuu tabeli peasest "
 "ja vajutage nupule <samp>\"Sorteeri\"</samp>."
 
-#: .\taas\reservation\templates\help.html:122
+#: .\taas\reservation\templates\help.html:92
 msgid "Is it possible to modify an upcoming reservation?"
 msgstr "Kas tulevat broneeringut on võimalik muuta?"
 
-#: .\taas\reservation\templates\help.html:124
+#: .\taas\reservation\templates\help.html:94
 msgid ""
 "You can change time or/and field of your reservation whenever you want but "
 "not 15 minutes before the start of the reservation. That means if you have, "
@@ -850,11 +870,11 @@ msgstr ""
 "kella 13:45. Pange tähele, et broneeringul, mida te muudate, saate valida "
 "ainult uut kellaaega ja/või väljakut samale päevale."
 
-#: .\taas\reservation\templates\help.html:134
+#: .\taas\reservation\templates\help.html:104
 msgid "Is it possible to cancel an upcoming reservation?"
 msgstr "Kas tulevat broneeringut on võimalik kustutada?"
 
-#: .\taas\reservation\templates\help.html:136
+#: .\taas\reservation\templates\help.html:106
 msgid ""
 "You can remove a reservation 24 hours before the day of the reservation. E."
 "g. you have a reservation on 29th of November, then you can cancel it until "
@@ -866,11 +886,11 @@ msgstr ""
 "novembril. <br><br> Raha kustutatud broneeeringute eest lisatakse teie "
 "saldole."
 
-#: .\taas\reservation\templates\help.html:144
+#: .\taas\reservation\templates\help.html:114
 msgid "How do I modify an upcoming reservation?"
 msgstr "Kuidas ma muudan tulevat broneeringut?"
 
-#: .\taas\reservation\templates\help.html:146
+#: .\taas\reservation\templates\help.html:116
 msgid ""
 "Click on the <samp>\"History\"</samp> tab, you should see the table with all "
 "of your reservations. <br><br> If you can edit a reservation (check <i><a "
@@ -893,11 +913,11 @@ msgstr ""
 "muuta soovite. Lohistage see uude kohta, mis teile sobib ja mis on vaba. "
 "Siis vajutage nupule <samp>\"Edasi\"</samp>."
 
-#: .\taas\reservation\templates\help.html:162
+#: .\taas\reservation\templates\help.html:132
 msgid "How do I cancel an upcoming reservation?"
 msgstr "Kuidas ma kustutan tulevat broneeringut?"
 
-#: .\taas\reservation\templates\help.html:164
+#: .\taas\reservation\templates\help.html:134
 msgid ""
 "Click on the <samp>\"History\"</samp> tab, you should see the table with all "
 "of your reservations. <br><br> If you can remove a reservation (check <i><a "
@@ -915,11 +935,11 @@ msgstr ""
 "tõesti tahate broneeringut kustutada, vajutage nupule <samp>\"OK\"</samp>, "
 "muul juhul keelduge vajutades nupule <samp>\"Tühista\"</samp>."
 
-#: .\taas\reservation\templates\help.html:176
+#: .\taas\reservation\templates\help.html:146
 msgid "Where can I see and change my account information?"
 msgstr "Kus ma näen ja saan oma konto andmeid muuta?"
 
-#: .\taas\reservation\templates\help.html:178
+#: .\taas\reservation\templates\help.html:148
 msgid ""
 "Click on the <samp>\"Account\"</samp> tab, you should see the account "
 "modification page. <br><br> You can update your name, phone number and "
@@ -939,11 +959,11 @@ msgstr ""
 "ei saa muuta turvakaalutlustel. Kui te tõesti soovite muuta oma e-posti "
 "aadressi, siis võtke ühendust administraatoriga."
 
-#: .\taas\reservation\templates\help.html:191
+#: .\taas\reservation\templates\help.html:161
 msgid "How to add money to my account balance?"
 msgstr "Kuidas ma saan oma saldole raha lisada?"
 
-#: .\taas\reservation\templates\help.html:193
+#: .\taas\reservation\templates\help.html:163
 msgid ""
 "Click on the <samp>\"Balance\"</samp> tab, you should see the account "
 "balance page. <br><br> Fill in the amount you wish to add to your account "
@@ -954,7 +974,7 @@ msgstr ""
 "<samp>\"Edasi\"</samp>, et hakata maksma."
 
 #: .\taas\reservation\templates\history.html:19
-#: .\taas\reservation\templates\reservation_list.html:19
+#: .\taas\reservation\templates\reservation_list.html:20
 msgid "Do you really want to remove this reservation?"
 msgstr "Kas sa soovid seda broneeringut kustutada?"
 
@@ -963,12 +983,12 @@ msgid "Do you really want to modify this reservation?"
 msgstr "Kas sa soovid seda broneeringut muuta?"
 
 #: .\taas\reservation\templates\history.html:21
-#: .\taas\reservation\templates\reservation_list.html:20
+#: .\taas\reservation\templates\reservation_list.html:21
 msgid "Are you sure?"
 msgstr "Oled sa kindel?"
 
 #: .\taas\reservation\templates\history.html:22
-#: .\taas\reservation\templates\reservation_list.html:21
+#: .\taas\reservation\templates\reservation_list.html:22
 msgid "Cancel"
 msgstr "Tühista"
 
@@ -980,23 +1000,23 @@ msgstr "Sorteeri"
 msgid "There are no reservations in this month."
 msgstr "Selles kuus pole ühtegi reserveeringut."
 
-#: .\taas\reservation\templates\index.html:27
+#: .\taas\reservation\templates\index.html:34
 msgid "Please select slots, which are 30 minutes later from now."
 msgstr "Palun valige ajad, mis on praegusest hetkest 30 minuti pärast."
 
-#: .\taas\reservation\templates\index.html:61
+#: .\taas\reservation\templates\index.html:78
 #: .\taas\reservation\templates\reservation_update.html:52
-#: .\taas\user\templates\update_budget.html:34
+#: .\taas\user\templates\update_budget.html:39
 msgid "Submit"
 msgstr "Edasi"
 
-#: .\taas\reservation\templates\reservation_list.html:30
+#: .\taas\reservation\templates\reservation_list.html:43
 msgid "Pay for the reservations"
 msgstr "Maksa broneeringute eest"
 
 #: .\taas\reservation\templates\reservation_update.html:38
-msgid "Choose a new time for the reservation:"
-msgstr "Valige broneeringu jaoks uus aeg:"
+msgid "Choose a new time for the reservation"
+msgstr "Valige broneeringu jaoks uus aeg"
 
 #: .\taas\reservation\templates\reservation_update.html:40
 msgid "Drag the red box to another slot that suits you and is free."
@@ -1088,17 +1108,38 @@ msgstr "English"
 msgid "Russian"
 msgstr "русский"
 
+#: .\taas\server\email_settings.py:29
+#, python-format
+msgid ""
+"Lugupeetud Admin,\n"
+"\n"
+"Saime registreerimissoovi kasutajale e-posti aadressiga %(email)s.\n"
+"Palun aktiveerige ta.\n"
+"\n"
+"Parimat,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+
+#: .\taas\server\email_settings.py:56
+#, python-format
+msgid ""
+"Lugupeetud Admin,\n"
+"\n"
+"Kasutaja e-posti aadressiga %(email)s deaktiveeriti.\n"
+"\n"
+"Parimat,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+
 #: .\taas\templates\base.html:8
 msgid "Tartu Agility Playground"
 msgstr "Tartu Agility Arenguselts"
 
-#: .\taas\templates\base.html:29
+#: .\taas\templates\base.html:30
 msgid "Your reservation time has been expired."
 msgstr "Broneeringute aeg on möödas."
-
-#: .\taas\templates\base.html:30
-msgid "Warning"
-msgstr "Hoiatus"
 
 #: .\taas\templates\base.html:31
 msgid "A-PLATS (HÜPPERADA):"
@@ -1172,28 +1213,48 @@ msgstr ""
 msgid "Võistluste telkimise ja pealtvaatajate ala"
 msgstr ""
 
-#: .\taas\templates\base.html:66 .\taas\user\templates\login.html:7
+#: .\taas\templates\base.html:35
+msgid "Paid reservation of another user."
+msgstr "Teise kasutaja makstud broneering."
+
+#: .\taas\templates\base.html:36
+msgid "Your paid reservation."
+msgstr "Teie makstud broneering."
+
+#: .\taas\templates\base.html:37
+msgid "Your unfinished reservation."
+msgstr "Teie lõpetamata broneering."
+
+#: .\taas\templates\base.html:38
+msgid "Unfinished reservation of another user."
+msgstr "Teise kasutaja lõpetamata broneering."
+
+#: .\taas\templates\base.html:39
+msgid "Warning"
+msgstr "Hoiatus"
+
+#: .\taas\templates\base.html:75 .\taas\user\templates\login.html:7
 #: .\taas\user\templates\login.html:38 .\taas\user\templates\login.html:54
 msgid "Login"
 msgstr "Logi sisse"
 
-#: .\taas\templates\base.html:67
+#: .\taas\templates\base.html:76
 msgid "Register"
 msgstr "Registreeri"
 
-#: .\taas\templates\base.html:73
+#: .\taas\templates\base.html:82
 msgid "Hello, "
 msgstr "Tere, "
 
-#: .\taas\templates\base.html:75
+#: .\taas\templates\base.html:84
 msgid "Logout"
 msgstr "Logi välja"
 
-#: .\taas\templates\base.html:103
+#: .\taas\templates\base.html:115
 msgid "To make all your reservations you have"
 msgstr "Broneeringute tegemiseks on Teil aega"
 
-#: .\taas\templates\base.html:105
+#: .\taas\templates\base.html:117
 msgid "minutes"
 msgstr "minutit"
 
@@ -1242,12 +1303,12 @@ msgstr "järgmine"
 msgid "Lost password?"
 msgstr "Unustasid parooli?"
 
-#: .\taas\user\templates\password_reset\confirm.html:17
-#: .\taas\user\templates\password_reset\form.html:15
+#: .\taas\user\templates\password_reset\confirm.html:29
+#: .\taas\user\templates\password_reset\form.html:27
 msgid "Reset your password"
 msgstr "Muudke oma parooli"
 
-#: .\taas\user\templates\password_reset\confirm.html:23
+#: .\taas\user\templates\password_reset\confirm.html:35
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:20
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
@@ -1256,13 +1317,13 @@ msgstr ""
 "Palun sisestage uus parool kaks korda, et me saaksime kinnitada selle "
 "sobivust."
 
-#: .\taas\user\templates\password_reset\confirm.html:36
+#: .\taas\user\templates\password_reset\confirm.html:48
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:64
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:42
 msgid "Change my password"
 msgstr "Muuda mu parool"
 
-#: .\taas\user\templates\password_reset\confirm.html:41
+#: .\taas\user\templates\password_reset\confirm.html:53
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
@@ -1304,7 +1365,7 @@ msgstr ""
 "\n"
 "Tartu Agility Arenguselts\n"
 
-#: .\taas\user\templates\password_reset\form.html:17
+#: .\taas\user\templates\password_reset\form.html:29
 msgid ""
 "Enter your email address below, and we'll email instructions for setting a "
 "new one."
@@ -1312,7 +1373,7 @@ msgstr ""
 "Sisestage oma e-posti aadress allpool olevasse lahtrisse ning me saadame "
 "Teie e-posti aadressile lingi, millele vajutades saate uue parooli valida."
 
-#: .\taas\user\templates\password_reset\form.html:25
+#: .\taas\user\templates\password_reset\form.html:37
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:30
 msgid "Reset my password"
 msgstr "Saada e-kiri"
@@ -1331,7 +1392,7 @@ msgstr "Parooli muutmine"
 msgid "Terms and Conditions"
 msgstr "Kasutustingimused"
 
-#: .\taas\user\templates\terms.html:10
+#: .\taas\user\templates\terms.html:26
 msgid ""
 "\n"
 "        <h3>THE USER OF THE GROUNDS AGREES TO:</h3>\n"
@@ -1415,15 +1476,15 @@ msgstr "Kontojääk"
 msgid "Your current account balance:"
 msgstr "Teie hetkesaldo:"
 
-#: .\taas\user\templates\update_budget.html:31
-msgid "Select an amount to add"
-msgstr "Valige summa, mida soovite lisada"
+#: .\taas\user\templates\update_budget.html:33
+msgid "Select an amount to add by filling in the field below."
+msgstr "Kirjutage valitud summa, mida soovite saldole lisada, allolevasse lahtrisse."
 
-#: .\taas\user\templates\user_deactivate.html:13
+#: .\taas\user\templates\user_deactivate.html:25
 msgid "Deactivate account"
 msgstr "Deaktiveeri konto"
 
-#: .\taas\user\templates\user_deactivate.html:16
+#: .\taas\user\templates\user_deactivate.html:28
 msgid ""
 "\n"
 "                In order to deactivate your account please enter your "
@@ -1436,8 +1497,8 @@ msgstr ""
 "                Pange tähele, et edaspidi pole sisselogimine võimalik.\n"
 "            "
 
-#: .\taas\user\templates\user_deactivate.html:26
-#: .\taas\user\templates\user_update.html:82
+#: .\taas\user\templates\user_deactivate.html:38
+#: .\taas\user\templates\user_update.html:80
 msgid "Deactivate"
 msgstr "Deaktiveeri"
 
@@ -1466,15 +1527,19 @@ msgstr "Telefoninumber"
 msgid "Passwords"
 msgstr "Paroolid"
 
-#: .\taas\user\templates\user_registration.html:77
+#: .\taas\user\templates\user_registration.html:64
+msgid "The length of the password has to be bigger than 8."
+msgstr ""
+
+#: .\taas\user\templates\user_registration.html:79
 msgid "I agree to the "
 msgstr "Nõustun "
 
-#: .\taas\user\templates\user_registration.html:77
+#: .\taas\user\templates\user_registration.html:80
 msgid "Terms of service"
 msgstr "tingimustega"
 
-#: .\taas\user\templates\user_registration.html:78
+#: .\taas\user\templates\user_registration.html:82
 msgid "Enter"
 msgstr "Registreeri"
 
@@ -3906,6 +3971,9 @@ msgstr ""
 #: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\lxmletree.py:176
 msgid "Text nodes have no children"
 msgstr ""
+
+#~ msgid "Select an amount to add"
+#~ msgstr "Valige summa, mida soovite lisada"
 
 #~ msgid ""
 #~ "%(count)s of %(total)s\n"
