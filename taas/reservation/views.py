@@ -74,6 +74,7 @@ def get_calendar_entities(start, end, user, update=None):
             'start': start_time.strftime("%Y-%m-%dT%H:%M:%S"),
             'end': end_time.strftime("%Y-%m-%dT%H:%M:%S"),
             'resources': reservation.field.id,
+            'user_id': reservation.user_id,
             'color': color,
             'overlap': False,
             'slotEventOverlap': False
