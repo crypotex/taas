@@ -82,9 +82,10 @@
 ul.pagination {
     text-align: center;
     list-style-type: none;
+    padding-right: 40px;
 }
 
-li.previous, li.next, .pagewrap {
+li.previous, li.next, li.current {
     display: inline;
 }
 
@@ -106,12 +107,6 @@ li.next:after {
     content: '';
     display: table;
     clear: right;
-}
-
-.pagewrap {
-    margin: 0 auto;
-    width: 25%;
-    text-align: center;
 }
 
 .fc-header-title h2 {
