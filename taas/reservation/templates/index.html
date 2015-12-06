@@ -71,13 +71,16 @@
                     <div id="unpaid-others" class="colorbox" style="background-color:#a9a9a9;"></div>
                 </div>
             </div>
-            <div id="calendar"></div>
+            <div id="calendar-submit-wrap">
+                <div id="calendar"></div>
+                {% if user.is_authenticated %}
+                    <form id="submitList" action="{% url 'reservation_list' %}">
+                        <input type="submit" class='button' id='submitBookings' value="{% trans 'Submit' %}">
+                    </form>
+                {% endif %}
+            </div>
         </div>
-        {% if user.is_authenticated %}
-            <form action="{% url 'reservation_list' %}">
-                <input type="submit" class='button' id='submitBookings' value="{% trans 'Submit' %}">
-            </form>
-        {% endif %}
+
     </div>
 
     <script type="text/javascript">

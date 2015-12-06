@@ -54,15 +54,14 @@ body {
     clear: both;
 }
 
-header {
+header#desktop {
     z-index: 10000;
     background: #ffffff;
     width: 95%;
-    min-width: 300px;
     margin: 0 auto;
 }
 
-header:after {
+header#desktop:after {
     content: '';
     display: table;
     clear: both;
@@ -136,6 +135,16 @@ p {
     content: '';
 }
 
+#navwrap2 {
+    float: right;
+}
+
+#navwrap2:after {
+    clear: right;
+    display: table;
+    content: '';
+}
+
 #user-nav {
     margin: auto;
     padding-top: 20px;
@@ -158,6 +167,29 @@ p {
 #user-nav ul {
     float: right;
     margin: 15px auto;
+}
+
+header#mobile {
+    z-index: 10000;
+    background: #ffffff;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header#mobile:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logoväike {
+    float: left;
+    padding-top: 11px;
+    padding-bottom: 14px;
+    height: 60px;
 }
 
 a {
@@ -206,15 +238,15 @@ a:hover {
 }
 
 #innerwrap {
-    margin: 20px auto;
+    margin: 10px auto 20px auto;
     width: 95%;
-    min-width: 300px;
 }
 
 #timerMessage {
     display: none;
     margin: 0 auto 20px auto;
     width: 50%;
+    text-align: center;
 }
 
 #timerMessage p {
@@ -346,3 +378,33 @@ a:hover {
 #name {
     color: #666666;
 }
+
+@media screen and (max-width: 880px) {
+    header#mobile {
+        visibility: visible;
+    }
+    
+    header#desktop {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 881px) {
+    header#mobile {
+        display: none;
+    }
+
+    header#desktop {
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .logoväike {
+        content: url('../img/taasväike.png');
+        width: 70px;
+        height: auto;
+    }
+}
+
+
