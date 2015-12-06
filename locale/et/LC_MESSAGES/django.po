@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-26 22:46+0200\n"
+"POT-Creation-Date: 2015-12-06 13:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,6 +94,7 @@ msgid "December"
 msgstr "detsember"
 
 #: .\build\lib\taas\reservation\models.py:12 .\taas\reservation\models.py:10
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:12
 msgid "name"
 msgstr "nimi"
 
@@ -140,8 +141,8 @@ msgstr "broneeringud"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:59
 #: .\build\lib\taas\reservation\tests\test_reservations.py:63
-#: .\taas\reservation\tests\test_reservations.py:48
-#: .\taas\reservation\tests\test_reservations.py:52
+#: .\taas\reservation\tests\test_reservations.py:47
+#: .\taas\reservation\tests\test_reservations.py:51
 msgid ""
 "User should be able to make 2 reservations on same datetime on different "
 "fields"
@@ -149,27 +150,27 @@ msgstr ""
 "Kasutaja peab saama teha 2 broneeringut samale ajale erinevatele väljakutele"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:69
-#: .\taas\reservation\tests\test_reservations.py:60
+#: .\taas\reservation\tests\test_reservations.py:59
 msgid "All three reservations are shown"
 msgstr "Näidatakse kõiki kolme broneeringut"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:75
-#: .\taas\reservation\tests\test_reservations.py:67
+#: .\taas\reservation\tests\test_reservations.py:66
 msgid "Not all unpaid reservations are deleted"
 msgstr "Kõiki maksmata broneeringuid ei kustutata"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:86
-#: .\taas\reservation\tests\test_reservations.py:74
+#: .\taas\reservation\tests\test_reservations.py:73
 msgid "Unpaid Resevation is not deleted."
 msgstr "Maksmata broneeringut ei kustutatud."
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:95
-#: .\taas\reservation\tests\test_reservations.py:82
+#: .\taas\reservation\tests\test_reservations.py:81
 msgid "Reservation is automatically paid. It should be unpaid."
 msgstr "Broneeringu eest on automaatselt makstud. See peaks olema maksmata. "
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:101
-#: .\taas\reservation\tests\test_reservations.py:88
+#: .\taas\reservation\tests\test_reservations.py:87
 msgid "Anonymous user can make a valid reservation"
 msgstr "Anonüümne kasutaja saab luua kehtiva broneeringu"
 
@@ -183,54 +184,54 @@ msgstr "Anonüümne kasutaja saab luua kehtiva broneeringu"
 #: .\build\lib\taas\reservation\tests\test_reservations.py:138
 #: .\build\lib\taas\reservation\tests\test_reservations.py:148
 #: .\build\lib\taas\reservation\tests\test_reservations.py:149
+#: .\taas\reservation\tests\test_reservations.py:96
 #: .\taas\reservation\tests\test_reservations.py:97
-#: .\taas\reservation\tests\test_reservations.py:98
+#: .\taas\reservation\tests\test_reservations.py:106
 #: .\taas\reservation\tests\test_reservations.py:107
-#: .\taas\reservation\tests\test_reservations.py:108
+#: .\taas\reservation\tests\test_reservations.py:114
 #: .\taas\reservation\tests\test_reservations.py:115
-#: .\taas\reservation\tests\test_reservations.py:116
+#: .\taas\reservation\tests\test_reservations.py:121
 #: .\taas\reservation\tests\test_reservations.py:122
-#: .\taas\reservation\tests\test_reservations.py:123
+#: .\taas\reservation\tests\test_reservations.py:129
 #: .\taas\reservation\tests\test_reservations.py:130
-#: .\taas\reservation\tests\test_reservations.py:131
 msgid "Reservation posted with missing data"
 msgstr "Broneering saadeti puuduvate andmetega"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:163
 #: .\build\lib\taas\reservation\tests\test_reservations.py:164
+#: .\taas\reservation\tests\test_reservations.py:143
 #: .\taas\reservation\tests\test_reservations.py:144
-#: .\taas\reservation\tests\test_reservations.py:145
 msgid "Reservation posted 15 minutes before"
 msgstr "Broneering tehti 15 minutit enne"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:178
 #: .\build\lib\taas\reservation\tests\test_reservations.py:179
+#: .\taas\reservation\tests\test_reservations.py:158
 #: .\taas\reservation\tests\test_reservations.py:159
-#: .\taas\reservation\tests\test_reservations.py:160
 msgid "Reservation posted 5 minutes after"
 msgstr "Broneering tehti 5 minutit pärast"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:203
 #: .\build\lib\taas\reservation\tests\test_reservations.py:204
 #: .\build\lib\taas\reservation\tests\test_reservations.py:217
+#: .\taas\reservation\tests\test_reservations.py:171
 #: .\taas\reservation\tests\test_reservations.py:172
-#: .\taas\reservation\tests\test_reservations.py:173
-#: .\taas\reservation\tests\test_reservations.py:186
+#: .\taas\reservation\tests\test_reservations.py:185
 msgid "Reservation posted at the same time of now()"
 msgstr "Broneering tehti samal ajal kui now()"
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:216
-#: .\taas\reservation\tests\test_reservations.py:185
+#: .\taas\reservation\tests\test_reservations.py:184
 msgid "Reservation posted 1 minute after "
 msgstr "Broneering tehti 1 minut pärast "
 
 #: .\build\lib\taas\reservation\tests\test_reservations.py:229
-#: .\taas\reservation\tests\test_reservations.py:192
+#: .\taas\reservation\tests\test_reservations.py:191
 msgid "No reservation made with valid data"
 msgstr "Mitte ühtegi broneeringut ei tehtud õigete andmetega"
 
-#: .\build\lib\taas\reservation\views.py:197 .\taas\reservation\views.py:317
-#: .\taas\reservation\views.py:362
+#: .\build\lib\taas\reservation\views.py:197 .\taas\reservation\views.py:319
+#: .\taas\reservation\views.py:370
 msgid "Successfully paid for the reservations."
 msgstr "Edukalt makstud broneeringute eest."
 
@@ -348,6 +349,7 @@ msgid "Personal info"
 msgstr "Isiklik info"
 
 #: .\build\lib\taas\user\admin.py:15 .\taas\user\admin.py:15
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:77
 msgid "Permissions"
 msgstr "Õigused"
 
@@ -356,10 +358,14 @@ msgid "Important dates"
 msgstr "Tähtsad kuupäevad"
 
 #: .\build\lib\taas\user\apps.py:11 .\taas\user\apps.py:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\object_history.html:23
 msgid "User"
 msgstr "Kasutaja"
 
 #: .\build\lib\taas\user\forms.py:28 .\taas\user\forms.py:33
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:17
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:73
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:81
 msgid "Change password"
 msgstr "Muuda parooli"
 
@@ -387,7 +393,7 @@ msgstr "Palun sisestage uus parool."
 
 #: .\build\lib\taas\user\forms.py:55 .\taas\user\forms.py:63
 msgid "New password confirmation is required."
-msgstr "Palun sisestage uus parool teist korda. "
+msgstr "Palun sisestage uus parool teist korda."
 
 #: .\build\lib\taas\user\forms.py:59 .\taas\user\forms.py:67
 msgid "Your old password was entered incorrectly. Please enter it again."
@@ -406,7 +412,7 @@ msgstr "Parool"
 msgid "Your password was entered incorrectly. Please enter it again."
 msgstr "Parool sisestati valesti. Palun proovige uuesti."
 
-#: .\build\lib\taas\user\models.py:15 .\taas\user\models.py:15
+#: .\build\lib\taas\user\models.py:15 .\taas\user\models.py:16
 msgid "Phone number is invalid."
 msgstr "Telefoninumber ei sobi."
 
@@ -453,11 +459,11 @@ msgid "date joined"
 msgstr "liitumiskuupäev"
 
 #: .\build\lib\taas\user\models.py:59 .\taas\reservation\models.py:35
-#: .\taas\reservation\models.py:49 .\taas\user\models.py:60
+#: .\taas\reservation\models.py:49 .\taas\user\models.py:62
 msgid "user"
 msgstr "kasutaja"
 
-#: .\build\lib\taas\user\models.py:60 .\taas\user\models.py:61
+#: .\build\lib\taas\user\models.py:60 .\taas\user\models.py:63
 msgid "users"
 msgstr "kasutajad"
 
@@ -469,24 +475,26 @@ msgstr "Kasutaja registreeriti edukalt."
 msgid "Information has been updated."
 msgstr "Informatsioon on uuendatud."
 
-#: .\build\lib\taas\user\views.py:60 .\taas\user\views.py:62
+#: .\build\lib\taas\user\views.py:60 .\taas\user\views.py:67
 msgid "User has been deactivated."
 msgstr "Kasutaja on deaktiveeritud."
 
-#: .\build\lib\taas\user\views.py:90 .\taas\user\views.py:92
+#: .\build\lib\taas\user\views.py:90 .\taas\user\views.py:97
 msgid "Email instructions has been sent."
 msgstr "Juhised saadeti Teie e-posti aadressile."
 
-#: .\build\lib\taas\user\views.py:113 .\taas\user\views.py:129
+#: .\build\lib\taas\user\views.py:113 .\taas\user\views.py:134
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:18
 msgid "Enter new password"
 msgstr "Sisestage uus parool"
 
-#: .\build\lib\taas\user\views.py:119 .\taas\user\views.py:120
+#: .\build\lib\taas\user\views.py:119 .\taas\user\views.py:125
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr "Parool on muudetud. Te võite nüüd sisse logida."
 
-#: .\build\lib\taas\user\views.py:129 .\taas\user\views.py:126
-#: .\taas\user\views.py:133
+#: .\build\lib\taas\user\views.py:129 .\taas\user\views.py:131
+#: .\taas\user\views.py:138
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:48
 msgid "Password reset unsuccessful"
 msgstr "Parooli muutmine edukas"
 
@@ -523,7 +531,7 @@ msgid "fields"
 msgstr "väljakud"
 
 #: .\taas\reservation\models.py:27
-#: .\taas\reservation\templates\reservation_list.html:47
+#: .\taas\reservation\templates\reservation_list.html:45
 msgid "Transaction"
 msgstr "Ülekanne"
 
@@ -562,23 +570,53 @@ msgid "price (€)"
 msgstr "hind (€)"
 
 #: .\taas\reservation\templates\admin\change_list.html:42
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\500.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\app_index.html:9
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:13
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:19
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\index.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\invalid_setup.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\object_history.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_done.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_done.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:6
 msgid "Home"
-msgstr ""
+msgstr "Kodu"
 
 #: .\taas\reservation\templates\admin\change_list.html:61
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:54
 #, python-format
 msgid "Add %(name)s"
-msgstr ""
+msgstr "Lisa %(name)s"
 
 #: .\taas\reservation\templates\admin\change_list.html:70
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:27
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:54
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:83
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\login.html:52
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:20
 msgid "Please correct the error below."
-msgstr ""
+msgstr "Palun parandage allpool asuv viga."
 
 #: .\taas\reservation\templates\admin\change_list.html:71
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:27
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:54
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:83
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\login.html:52
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:20
 msgid "Please correct the errors below."
-msgstr ""
+msgstr "Palun parandage allpool asuvad vead."
 
 #: .\taas\reservation\templates\admin\change_list.html:82
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:64
 msgid "Filter"
 msgstr "Filtreeri"
 
@@ -614,6 +652,13 @@ msgid_plural "%(count)s %(vname)s"
 msgstr[0] "%(count)s makse"
 msgstr[1] "%(count)s makset"
 
+#: .\taas\reservation\templates\admin\change_list.html:126
+#, python-format
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s broneering"
+msgstr[1] "%(count)s broneeringut"
+
 #: .\taas\reservation\templates\budget_payment.html:6
 msgid "Budget payment"
 msgstr "Makse saldoga"
@@ -622,11 +667,357 @@ msgstr "Makse saldoga"
 msgid "Pay"
 msgstr "Maksa"
 
-#: .\taas\reservation\templates\history.html:8
+#: .\taas\reservation\templates\help.html:6
+#: .\taas\reservation\templates\help.html:64
+msgid "Help"
+msgstr "Abi"
+
+#: .\taas\reservation\templates\help.html:23
+msgid "Paid reservation of another user."
+msgstr "Teise kasutaja makstud broneering."
+
+#: .\taas\reservation\templates\help.html:30
+msgid "Your paid reservation."
+msgstr "Teie makstud broneering."
+
+#: .\taas\reservation\templates\help.html:37
+msgid "Your unfinished reservation."
+msgstr "Teie lõpetamata broneering."
+
+#: .\taas\reservation\templates\help.html:44
+msgid "Unfinished reservation of another user."
+msgstr "Teise kasutaja lõpetamata broneering."
+
+#: .\taas\reservation\templates\help.html:52
 #: .\taas\reservation\templates\history.html:30
+#: .\taas\reservation\templates\index.html:45
+#: .\taas\reservation\templates\reservation_update.html:26
+#: .\taas\user\templates\login.html:16
+#: .\taas\user\templates\update_budget.html:16
+#: .\taas\user\templates\user_registration.html:20
 #: .\taas\user\templates\user_update.html:21
+msgid "Booking"
+msgstr "Broneeri"
+
+#: .\taas\reservation\templates\help.html:54
+#: .\taas\reservation\templates\history.html:8
+#: .\taas\reservation\templates\history.html:31
+#: .\taas\reservation\templates\index.html:47
+#: .\taas\reservation\templates\reservation_update.html:27
+#: .\taas\user\templates\login.html:18
+#: .\taas\user\templates\update_budget.html:17
+#: .\taas\user\templates\user_registration.html:22
+#: .\taas\user\templates\user_update.html:22
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:34
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:23
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\image\change_form.html:17
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\object_history.html:10
 msgid "History"
 msgstr "Ajalugu"
+
+#: .\taas\reservation\templates\help.html:55
+#: .\taas\reservation\templates\history.html:32
+#: .\taas\reservation\templates\index.html:48
+#: .\taas\reservation\templates\reservation_update.html:28
+#: .\taas\user\templates\login.html:19
+#: .\taas\user\templates\update_budget.html:18
+#: .\taas\user\templates\user_registration.html:23
+#: .\taas\user\templates\user_update.html:23
+msgid "Balance"
+msgstr "Raha"
+
+#: .\taas\reservation\templates\help.html:56
+#: .\taas\reservation\templates\history.html:33
+#: .\taas\reservation\templates\index.html:49
+#: .\taas\reservation\templates\reservation_update.html:29
+#: .\taas\user\templates\login.html:20
+#: .\taas\user\templates\update_budget.html:19
+#: .\taas\user\templates\user_registration.html:24
+#: .\taas\user\templates\user_update.html:24
+msgid "Account"
+msgstr "Konto"
+
+#: .\taas\reservation\templates\help.html:58
+#: .\taas\reservation\templates\history.html:34
+#: .\taas\reservation\templates\index.html:51
+#: .\taas\reservation\templates\reservation_update.html:30
+#: .\taas\user\templates\login.html:22
+#: .\taas\user\templates\update_budget.html:20
+#: .\taas\user\templates\user_registration.html:26
+#: .\taas\user\templates\user_update.html:25
+msgid "FAQ"
+msgstr "KKK"
+
+#: .\taas\reservation\templates\help.html:66
+msgid "How to make a reservation?"
+msgstr "Kuidas broneerida?"
+
+#: .\taas\reservation\templates\help.html:68
+msgid ""
+"Choose a suitable date from the calendar and then select one or more "
+"available time slots in the right table column (depending on which field(s) "
+"you want). The start time of the slot you choose has to be at least 30 "
+"minutes from now. To deselect a slot click on it once more. It is possible "
+"to book fields for multiple dates, just choose another date from the "
+"calendar. <br><br> When you have finished choosing, click <samp>\"Next\"</"
+"samp> to proceed to the payment page. Review your selections and if needed "
+"you can remove time slots that you do not need. You can pay using your "
+"account balance money (pre-added money) or pay through a bank link. <br><br> "
+"You have 10 minutes to complete your reservation. When time is up, all your "
+"selections will be removed."
+msgstr ""
+"Valige kalendrist sobiv kuupäev ja seejärel valige üks või mitu vaba kohta "
+"parempoolsest tabelist (olenevalt sellest, millist väljakut/väljakuid "
+"soovite). Koha alguskellaajast peab olema vähemalt 30 minutit praegusest "
+"hetkest. Et valitud kohalt broneeringut kustutada, vajutage broneeringule "
+"veel üks kord. Broneeringud võivad olla erinevatel päevadel, lihtsalt valige "
+"kalendrist teine kuupäev. <br><br> Kui te olete valimise lõpetanud, vajutage "
+"nupule <samp>\"Edasi\"</samp>, et liikuda makselehele. Vaadake uuesti "
+"valitud broneeringud üle ja vajadusel saate samalt lehelt broneeringuid ka "
+"kustutada. Maksta saab kontol oleva rahaga ehk saldoga või pangalingi kaudu. "
+"<br><br> Teil on aega 10 minutit, et broneerimine lõpule viia. Kui aeg saab "
+"otsa, kustutatakse kõik teie valitud broneeringud."
+
+#: .\taas\reservation\templates\help.html:84
+msgid "What does A/B/C mean in the table?"
+msgstr "Mida tähendavad tabelis olevad A/B/C?"
+
+#: .\taas\reservation\templates\help.html:86
+msgid ""
+"There are 3 different fields available for booking. You can see a "
+"description of each field by hovering over the corresponding letter in the "
+"table header. Here is the plan of the whole ground: <br><br>"
+msgstr ""
+"Võimalik on broneerida 3 väljakule. Iga väljaku kirjeldust näeb, kui "
+"<samp>\"Broneeri\"</samp> lehel tabeli peases olevatele tähtedele hiirega peale minna. Kogu "
+"valduse plaan näeb välja selline: <br><br>"
+
+#: .\taas\reservation\templates\help.html:94
+msgid "What does color X mean in the table?"
+msgstr "Mida tähendab tabelis värv X?"
+
+#: .\taas\reservation\templates\help.html:96
+msgid ""
+"There are 4 colours to distinguish between different types of reservations. "
+"Hover over a color below to see the description."
+msgstr ""
+"Et teha vahet erinevat tüüpi broneeringutel, on kasutusel 4 värvi. Kui "
+"hiirega allpool olevatele värvidele peale minna, siis näeb iga värvi kohta "
+"tema kirjeldust. "
+
+#: .\taas\reservation\templates\help.html:109
+msgid "Where do I see my upcoming/past reservations?"
+msgstr "Kus ma näen oma tulevasi/vanu broneeringuid?"
+
+#: .\taas\reservation\templates\help.html:111
+msgid ""
+"Click on the <samp>\"History\"</samp> tab, you should see the table with all "
+"of your reservations. <br><br> Reservations are in descending order, i.e. "
+"upcoming reservations are on the top while older ones are below them. You "
+"can sort the table by field, start or end time. To see reservations from the "
+"past or next month, select the month above the table and click <samp>\"Sort"
+"\"</samp>."
+msgstr ""
+"Vajutage vahelehel <samp>\"Ajalugu\"</samp> ja te peaksite nägema tabelit "
+"kõigi oma broneeringutega. <br><br> Broneeringud on kahanevas järjekorras, s."
+"t tulevased broneeringud on ülevalpool ja vanad broneeringud on allpool. "
+"Broneeringuid on võimalik sorteerida väljaku, algusaja või lõppaja järgi. Et "
+"näha järgmise või eelmise kuu broneeringuid, valige sobiv kuu tabeli peasest "
+"ja vajutage nupule <samp>\"Sorteeri\"</samp>."
+
+#: .\taas\reservation\templates\help.html:122
+msgid "Is it possible to modify an upcoming reservation?"
+msgstr "Kas tulevat broneeringut on võimalik muuta?"
+
+#: .\taas\reservation\templates\help.html:124
+msgid ""
+"You can change time or/and field of your reservation whenever you want but "
+"not 15\n"
+"                minutes before the\n"
+"                start of the reservation. That means if you have, for "
+"example, a reservation starting at 14:00, then you\n"
+"                can make changes until 13:45. Note that you can only choose "
+"a new time or/and field for the same date as\n"
+"                the reservation that you are trying to edit.\n"
+"            "
+msgstr ""
+"Te saate muuta oma broneeringul kellaaega ja/või väljakut ükskõik millal, "
+"aga 15\n"
+"                minutit enne\n"
+"                broneeringu algust enam mitte. See tähendab, et kui teil on "
+"näiteks broneering algusega 14:00, siis te saate\n"
+"                muudatusi teha kuni kella 13:45. Pange tähele, et "
+"broneeringul, mida te muudate, saate valida ainult uut kellaaega ja/või \n"
+"                väljakut samale päevale. \n"
+"            "
+
+#: .\taas\reservation\templates\help.html:133
+msgid "Is it possible to cancel an upcoming reservation?"
+msgstr "Kas tulevat broneeringut on võimalik kustutada?"
+
+#: .\taas\reservation\templates\help.html:135
+msgid ""
+"You can remove a reservation 24 hours before the day of the reservation. E."
+"g. you have\n"
+"                a reservation on 29th of November, then you can cancel it "
+"until 23:59 on 28th November.\n"
+"                <br><br>\n"
+"                The money will be added to your account's balance.\n"
+"            "
+msgstr ""
+"Broneeringut saab kustutada 24 tundi enne broneeringu päeva. Näiteks teil "
+"on\n"
+"                broneering 29. novembril, siis saate seda kustutada kuni "
+"kella 23:59 28. novembril.\n"
+"                <br><br>\n"
+"                Raha kustutatud broneeeringute eest lisatakse teie saldole.\n"
+"            "
+
+#: .\taas\reservation\templates\help.html:142
+msgid "How do I modify an upcoming reservation?"
+msgstr "Kuidas ma muudan tulevat broneeringut?"
+
+#: .\taas\reservation\templates\help.html:144
+msgid ""
+"Click on the <samp>\"History\"</samp> tab, you should see the table with all "
+"of\n"
+"                your reservations.\n"
+"                <br><br>\n"
+"                If you can edit a reservation (check <i><a href=\"#q5\">Is "
+"it possible to modify an upcoming\n"
+"                    reservation?</a></i>),\n"
+"                then there will be a pencil icon next to the reservation, "
+"click on it.\n"
+"                <br><br>\n"
+"                You should see an alert asking for confirmation. If you "
+"really want to change the reservation then click\n"
+"                <samp>\"OK\"</samp>, otherwise decline by clicking <samp>"
+"\"Cancel\"</samp>.\n"
+"                <br><br>\n"
+"                You should see a table where a\n"
+"                red slot indicates the reservation you are trying to change. "
+"Drag it to another slot that suits you and\n"
+"                is free. Then click <samp>\"Submit\"</samp>.\n"
+"            "
+msgstr ""
+"Vajutage vahelehel <samp>\"Ajalugu\"</samp> ja te peaksite nägema tabelit "
+"kõigi oma\n"
+"                broneeringutega.\n"
+"                <br><br>\n"
+"                Kui te saate broneeringut muuta (vaadake küsimust <i><a href="
+"\"#q5\">Kas tulevat broneeringut on võimalik\n"
+"                    muuta?</a></i>),\n"
+"                siis on broneeringu kõrval pliiatsiikoon, vajutage selle "
+"peal.\n"
+"                <br><br>\n"
+"                Te peaksite nägema hoiatust, mis küsib muutmise kinnitust. "
+"Kui te tõesti soovite broneeringut muuta, vajutage nupule\n"
+"                <samp>\"OK\"</samp>, muul juhul keelduge vajutades nupule "
+"<samp>\"Tühista\"</samp>.\n"
+"                <br><br>\n"
+"                Te peaksite nägema tabelit, kus on \n"
+"                punane kast, mis näitab, millist broneeringut te muuta "
+"soovite. Lohistage see uude kohta, mis teile sobib ja\n"
+"                mis on vaba. Siis vajutage nupule <samp>\"Edasi\"</samp>.\n"
+"            "
+
+#: .\taas\reservation\templates\help.html:160
+msgid "How do I cancel an upcoming reservation?"
+msgstr "Kuidas ma kustutan tulevat broneeringut?"
+
+#: .\taas\reservation\templates\help.html:162
+msgid ""
+"Click on the <samp>\"History\"</samp> tab, you should see the table with all "
+"of\n"
+"                your reservations.\n"
+"                <br><br>\n"
+"                If you can remove a reservation (check <i><a href=\"#q6\">Is "
+"it possible to cancel an upcoming\n"
+"                    reservation?</a></i>),\n"
+"                then there will be a cross icon next to the reservation, "
+"click on it.\n"
+"                <br><br>\n"
+"                You should see an alert asking for confirmation. If you "
+"really want to delete the reservation then click\n"
+"                <samp>\"OK\"</samp>, otherwise decline by clicking <samp>"
+"\"Cancel\"</samp>.\n"
+"            "
+msgstr ""
+"Vajutage vahelehel <samp>\"Ajalugu\"</samp> ja te peaksite nägema tabelit "
+"kõigi oma\n"
+"                broneeringutega.\n"
+"                <br><br>\n"
+"                Kui te soovite broneeringut kustutada (kontrollige küsimust "
+"<i><a href=\"#q6\">Kas tuevat broneeringut on võimalik\n"
+"                    kustutada?</a></i>),\n"
+"                siis on broneeringu kõrval ristiikoon, vajutage selle "
+"peale.\n"
+"                <br><br>\n"
+"                Te peaksite nägema hoiatust, mis küsib kinnitust. Kui te "
+"tõesti tahate broneeringut kustutada, vajutage nupule\n"
+"                <samp>\"OK\"</samp>, muul juhul keelduge vajutades nupule "
+"<samp>\"Tühista\"</samp>.\n"
+"            "
+
+#: .\taas\reservation\templates\help.html:174
+msgid "Where can I see and change my account information?"
+msgstr "Kus ma näen ja saan oma konto andmeid muuta?"
+
+#: .\taas\reservation\templates\help.html:176
+msgid ""
+"Click on the <samp>\"Account\"</samp> tab, you should see the account "
+"modification page.\n"
+"                <br><br>\n"
+"                You can update your name, phone number and password. If you "
+"want to change\n"
+"                your password, then click on the checkbox and fill in all "
+"the fields, otherwise leave checkbox\n"
+"                unchecked and just click <samp>\"Update\"</samp> to finish. "
+"You cannot leave name and phone number fields\n"
+"                empty.\n"
+"                <br><br>\n"
+"                You cannot change your e-mail for security reasons. If you "
+"really need to change your e-mail, then\n"
+"                contact the administrator.\n"
+"            "
+msgstr ""
+"Vajutage vahelehele <samp>\"Konto\"</samp> ja te peaksite nägema konto "
+"muutmise lehte.\n"
+"                <br><br>\n"
+"                Te saate muuta oma nime, telefoninumbrit ja parooli. Kui te "
+"soovite muuta\n"
+"                oma parooli, vajutage kastil <samp>\"Muuda parooli\"</samp> ja täitke kõik "
+"väljad ära. Muul juhul ärge kastile vajutage \n"
+"                ja lihtsalt vajutage nupule <samp>\"Uuenda\"</samp>, et "
+"uuendamist lõpetada. Nime ja telefoninumbri väljad ei tohi olla \n"
+"                tühjad.\n"
+"                <br><br>\n"
+"                E-posti aadressi ei saa muuta turvakaalutlustel. Kui te "
+"tõesti soovite muuta oma e-posti aadressi, siis\n"
+"                võtke ühendust administraatoriga.\n"
+"            "
+
+#: .\taas\reservation\templates\help.html:188
+msgid "How to add money to my account balance?"
+msgstr "Kuidas ma saan oma saldole raha lisada?"
+
+#: .\taas\reservation\templates\help.html:190
+msgid ""
+"Click on the <samp>\"Balance\"</samp> tab, you should see the account\n"
+"                balance page.\n"
+"                <br><br>\n"
+"                Fill in the amount you wish to add to your account balance "
+"and click <samp>\"Submit\"</samp> to proceed to\n"
+"                pay.\n"
+"            "
+msgstr ""
+"Vajutage vahelehele <samp>\"Raha\"</samp> ja te peaksite nägema saldo\n"
+"                lehte.\n"
+"                <br><br>\n"
+"                Sisestage summa, mida soovite lisada oma saldole ja vajutage "
+"nupule <samp>\"Edasi\"</samp>, et hakata \n"
+"                maksma.\n"
+"            "
 
 #: .\taas\reservation\templates\history.html:19
 #: .\taas\reservation\templates\reservation_list.html:19
@@ -647,39 +1038,35 @@ msgstr "Oled sa kindel?"
 msgid "Cancel"
 msgstr "Tühista"
 
-#: .\taas\reservation\templates\history.html:29
-#: .\taas\user\templates\user_update.html:20
-msgid "Account"
-msgstr "Konto"
-
-#: .\taas\reservation\templates\history.html:39
+#: .\taas\reservation\templates\history.html:44
 msgid "Sort"
 msgstr "Sorteeri"
 
-#: .\taas\reservation\templates\history.html:44
+#: .\taas\reservation\templates\history.html:49
 msgid "There are no reservations in this month."
 msgstr "Selles kuus pole ühtegi reserveeringut."
 
-#: .\taas\reservation\templates\index.html:24
+#: .\taas\reservation\templates\index.html:27
 msgid "Please select slots, which are 30 minutes later from now."
 msgstr "Palun valige ajad, mis on praegusest hetkest 30 minuti pärast."
 
-#: .\taas\reservation\templates\index.html:56
-msgid "Next"
+#: .\taas\reservation\templates\index.html:61
+#: .\taas\reservation\templates\reservation_update.html:52
+#: .\taas\user\templates\update_budget.html:34
+msgid "Submit"
 msgstr "Edasi"
 
 #: .\taas\reservation\templates\reservation_list.html:30
 msgid "Pay for the reservations"
 msgstr "Maksa broneeringute eest"
 
-#: .\taas\reservation\templates\reservation_update.html:25
+#: .\taas\reservation\templates\reservation_update.html:38
 msgid "Choose a new time for the reservation:"
 msgstr "Valige broneeringu jaoks uus aeg:"
 
-#: .\taas\reservation\templates\reservation_update.html:37
-#: .\taas\user\templates\update_budget.html:22
-msgid "Submit"
-msgstr "Edasi"
+#: .\taas\reservation\templates\reservation_update.html:40
+msgid "Drag the red box to another slot that suits you and is free."
+msgstr "Lohistage punane kast teise kohta, mis teile sobib ja on vaba."
 
 #: .\taas\reservation\templates\table.html:64
 msgid "Previous"
@@ -716,66 +1103,55 @@ msgid_plural "%(vname)s"
 msgstr[0] "broneering"
 msgstr[1] "broneeringut"
 
-#: .\taas\reservation\tests\test_reservations.py:213
-msgid "Expire date should be null without any unpaid reservations."
-msgstr "Aegumiskuupäev peaks olema null ilma maksmata broneeringuteta."
-
-#: .\taas\reservation\tests\test_reservations.py:224
-#: .\taas\reservation\tests\test_reservations.py:226
-msgid ""
-"Expire date should return time interval that is between 0 and 10 minutes "
-"(both included)"
-msgstr "Aegumiskuupäev peaks tagastama ajaintervalli 0 ja 10 minuti vahel"
-
-#: .\taas\reservation\views.py:152
+#: .\taas\reservation\views.py:136
 msgid "Success"
 msgstr "Õnnestus"
 
-#: .\taas\reservation\views.py:154 .\taas\reservation\views.py:194
+#: .\taas\reservation\views.py:138 .\taas\reservation\views.py:178
 msgid "Error"
 msgstr "Viga"
 
-#: .\taas\reservation\views.py:168
+#: .\taas\reservation\views.py:152
 msgid "Invalid key."
 msgstr ""
 
-#: .\taas\reservation\views.py:180
+#: .\taas\reservation\views.py:164
 msgid "Cannot delete the reservation."
 msgstr "Broneeringut ei saa kustutada."
 
-#: .\taas\reservation\views.py:185
+#: .\taas\reservation\views.py:169
 msgid "Not allowed."
 msgstr "Pole lubatud."
 
-#: .\taas\reservation\views.py:270
+#: .\taas\reservation\views.py:272
 msgid "Adding money to budget was cancelled."
 msgstr "Raha lisamine saldole tühistati."
 
-#: .\taas\reservation\views.py:277
+#: .\taas\reservation\views.py:279
 msgid "Payment was cancelled."
 msgstr "Makse tühistati."
 
-#: .\taas\reservation\views.py:306
+#: .\taas\reservation\views.py:308
 msgid "Successfully added money to the budget."
 msgstr "Edukalt lisatud raha saldosse."
 
-#: .\taas\reservation\views.py:315
+#: .\taas\reservation\views.py:317
 msgid "Error occurred. Please contact administrator."
 msgstr "Viga. Palun võtke ühendust adminstraatoriga."
 
-#: .\taas\reservation\views.py:352
+#: .\taas\reservation\views.py:357
 msgid "You do not have enough money."
 msgstr "Saldol on liiga vähe raha."
 
-#: .\taas\server\base_settings.py:102
+#: .\taas\server\base_settings.py:103
 msgid "Estonian"
 msgstr "eesti"
 
-#: .\taas\server\base_settings.py:103
-msgid "English"
-msgstr ""
-
 #: .\taas\server\base_settings.py:104
+msgid "English"
+msgstr "English"
+
+#: .\taas\server\base_settings.py:105
 msgid "Russian"
 msgstr "русский"
 
@@ -783,42 +1159,114 @@ msgstr "русский"
 msgid "Tartu Agility Playground"
 msgstr "Tartu Agility Arenguselts"
 
-#: .\taas\templates\base.html:24
-msgid "Your reservation time has expired."
+#: .\taas\templates\base.html:29
+msgid "Your reservation time has been expired."
 msgstr "Broneeringute aeg on möödas."
 
-#: .\taas\templates\base.html:25
+#: .\taas\templates\base.html:30
 msgid "Warning"
 msgstr "Hoiatus"
 
-#: .\taas\templates\base.html:65
-msgid "back to booking"
-msgstr "tagasi broneerima"
+#: .\taas\templates\base.html:31
+msgid "A-PLATS (HÜPPERADA):"
+msgstr ""
 
-#: .\taas\templates\base.html:74 .\taas\user\templates\login.html:7
-#: .\taas\user\templates\login.html:26 .\taas\user\templates\login.html:42
+#: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
+msgid "tõkked (10)"
+msgstr ""
+
+#: .\taas\templates\base.html:31
+msgid "tunnelid (4) = 2x6m, 5m, 3m"
+msgstr ""
+
+#: .\taas\templates\base.html:31
+msgid "müür (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:31
+msgid "rõngas (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:31
+msgid "kaugus (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:31
+msgid "kott (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
+msgid "slaalom (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
+msgid "KOKKU: 19 takistust"
+msgstr ""
+
+#: .\taas\templates\base.html:32
+msgid "B-PLATS (AGILITYRADA):"
+msgstr ""
+
+#: .\taas\templates\base.html:32
+msgid "tunnelid (4) =2x6m, 5m, 4m"
+msgstr ""
+
+#: .\taas\templates\base.html:32
+msgid "poom (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:32
+msgid "A-tõke (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:32
+msgid "kiik (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:32
+msgid "laud (1)"
+msgstr ""
+
+#: .\taas\templates\base.html:33
+msgid "C-PLATS:"
+msgstr ""
+
+#: .\taas\templates\base.html:33
+msgid "Kuulekustrenni väliplats"
+msgstr ""
+
+#: .\taas\templates\base.html:33
+msgid "Võistluste telkimise ja pealtvaatajate ala"
+msgstr ""
+
+#: .\taas\templates\base.html:59 .\taas\user\templates\login.html:7
+#: .\taas\user\templates\login.html:38 .\taas\user\templates\login.html:54
 msgid "Login"
 msgstr "Logi sisse"
 
-#: .\taas\templates\base.html:75
+#: .\taas\templates\base.html:60
 msgid "Register"
 msgstr "Registreeri"
 
-#: .\taas\templates\base.html:81
+#: .\taas\templates\base.html:66
 msgid "Hello, "
 msgstr "Tere, "
 
-#: .\taas\templates\base.html:83
+#: .\taas\templates\base.html:68
 msgid "Logout"
 msgstr "Logi välja"
 
-#: .\taas\templates\base.html:107
+#: .\taas\templates\base.html:96
 msgid "To make all your reservations you have"
 msgstr "Broneeringute tegemiseks on Teil aega"
 
-#: .\taas\templates\base.html:109
+#: .\taas\templates\base.html:98
 msgid "minutes"
 msgstr "minutit"
+
+#: .\taas\user\admin.py:17
+msgid "Pins"
+msgstr "Pinid"
 
 #: .\taas\user\forms.py:11
 msgid "Password confirmation"
@@ -827,6 +1275,14 @@ msgstr "Uue parooli kinnitus"
 #: .\taas\user\forms.py:102
 msgid "Amount"
 msgstr "Summa"
+
+#: .\taas\user\models.py:52
+msgid "pin"
+msgstr "pin"
+
+#: .\taas\user\models.py:53
+msgid "Button ID"
+msgstr "Nööbi ID"
 
 #: .\taas\user\templates\admin\add_form.html:6
 msgid ""
@@ -840,15 +1296,16 @@ msgstr ""
 msgid "Enter first name, last name, email and password."
 msgstr "Sisestage eesnimi, perekonnanimi, e-posti aadress ja parool."
 
-#: .\taas\user\templates\login.html:19
+#: .\taas\user\templates\login.html:31
 msgid "Please login to see this page."
 msgstr "Selle lehe nägemiseks logige palun sisse."
 
-#: .\taas\user\templates\login.html:43
+#: .\taas\user\templates\login.html:55
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:108
 msgid "next"
 msgstr "järgmine"
 
-#: .\taas\user\templates\login.html:45
+#: .\taas\user\templates\login.html:57
 msgid "Lost password?"
 msgstr "Unustasid parooli?"
 
@@ -858,6 +1315,7 @@ msgid "Reset your password"
 msgstr "Muudke oma parooli"
 
 #: .\taas\user\templates\password_reset\confirm.html:23
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:20
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
@@ -866,6 +1324,8 @@ msgstr ""
 "sobivust."
 
 #: .\taas\user\templates\password_reset\confirm.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:64
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:42
 msgid "Change my password"
 msgstr "Muuda mu parool"
 
@@ -920,10 +1380,17 @@ msgstr ""
 "Teie e-posti aadressile lingi, millele vajutades saate uue parooli valida."
 
 #: .\taas\user\templates\password_reset\form.html:25
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:30
 msgid "Reset my password"
 msgstr "Saada e-kiri"
 
 #: .\taas\user\templates\password_reset\subject.html:3
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_done.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:12
 msgid "Password reset"
 msgstr "Parooli muutmine"
 
@@ -932,15 +1399,15 @@ msgid "Terms and Conditions"
 msgstr ""
 
 #: .\taas\user\templates\update_budget.html:6
-#: .\taas\user\templates\update_budget.html:16
+#: .\taas\user\templates\update_budget.html:28
 msgid "Account balance"
 msgstr "Kontojääk"
 
-#: .\taas\user\templates\update_budget.html:18
+#: .\taas\user\templates\update_budget.html:30
 msgid "Your current account balance:"
 msgstr "Teie hetkesaldo:"
 
-#: .\taas\user\templates\update_budget.html:19
+#: .\taas\user\templates\update_budget.html:31
 msgid "Select an amount to add"
 msgstr "Valige summa, mida soovite lisada"
 
@@ -962,44 +1429,44 @@ msgstr ""
 "            "
 
 #: .\taas\user\templates\user_deactivate.html:26
-#: .\taas\user\templates\user_update.html:74
+#: .\taas\user\templates\user_update.html:82
 msgid "Deactivate"
 msgstr "Deaktiveeri"
 
 #: .\taas\user\templates\user_registration.html:7
-#: .\taas\user\templates\user_registration.html:21
+#: .\taas\user\templates\user_registration.html:33
 msgid "Registration"
 msgstr "Registreerimine"
 
-#: .\taas\user\templates\user_registration.html:24
+#: .\taas\user\templates\user_registration.html:36
 msgid "First Name"
 msgstr "Eesnimi"
 
-#: .\taas\user\templates\user_registration.html:24
+#: .\taas\user\templates\user_registration.html:36
 msgid "Last Name"
 msgstr "Perekonnanimi"
 
-#: .\taas\user\templates\user_registration.html:37
+#: .\taas\user\templates\user_registration.html:49
 msgid "E-mail"
 msgstr "E-posti aadress"
 
-#: .\taas\user\templates\user_registration.html:37
+#: .\taas\user\templates\user_registration.html:49
 msgid "Phone Number"
 msgstr "Telefoninumber"
 
-#: .\taas\user\templates\user_registration.html:50
+#: .\taas\user\templates\user_registration.html:62
 msgid "Passwords"
 msgstr "Paroolid"
 
-#: .\taas\user\templates\user_registration.html:65
+#: .\taas\user\templates\user_registration.html:77
 msgid "I agree to the "
 msgstr "Nõustun "
 
-#: .\taas\user\templates\user_registration.html:65
+#: .\taas\user\templates\user_registration.html:77
 msgid "Terms of service"
 msgstr "tingimustega"
 
-#: .\taas\user\templates\user_registration.html:66
+#: .\taas\user\templates\user_registration.html:78
 msgid "Enter"
 msgstr "Registreeri"
 
@@ -1007,11 +1474,15 @@ msgstr "Registreeri"
 msgid "User modification"
 msgstr "Kasutaja muutmine"
 
-#: .\taas\user\templates\user_update.html:29
+#: .\taas\user\templates\user_update.html:34
 msgid "Update account"
 msgstr "Uuenda kontot"
 
-#: .\taas\user\templates\user_update.html:71
+#: .\taas\user\templates\user_update.html:42
+msgid "Your gate pin: "
+msgstr "Teie värava pin: "
+
+#: .\taas\user\templates\user_update.html:79
 msgid "Update"
 msgstr "Uuenda"
 
@@ -1124,6 +1595,7 @@ msgstr[1] ""
 
 #: .\venv\Lib\site-packages\django\db\models\base.py:1130
 #: .\venv\Lib\site-packages\django\forms\models.py:722
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:18
 msgid "and"
 msgstr ""
 
@@ -1509,8 +1981,12 @@ msgid "Order"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:372
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:64
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:5
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\submit_line.html:5
 msgid "Delete"
-msgstr ""
+msgstr "Kustuta"
 
 #: .\venv\Lib\site-packages\django\forms\models.py:716
 #, python-format
@@ -1558,8 +2034,14 @@ msgid "Currently"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:346
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:18
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:39
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:90
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:66
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\index.html:73
 msgid "Change"
-msgstr ""
+msgstr "Muuda"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:347
 msgid "Clear"
@@ -1571,11 +2053,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:556
 msgid "Yes"
-msgstr ""
+msgstr "Jah"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:557
 msgid "No"
-msgstr ""
+msgstr "Ei"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:865
 msgid "yes,no,maybe"
@@ -2057,6 +2539,680 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\static.py:100
 #, python-format
 msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\404.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\404.html:8
+msgid "Page not found"
+msgstr "Lehte ei leitud"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\404.html:10
+msgid "We're sorry, but the requested page could not be found."
+msgstr "Vanadust, aga soovitud lehte ei leitud."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\500.html:7
+msgid "Server error"
+msgstr "Serveri viga"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\500.html:11
+msgid "Server error (500)"
+msgstr "Serveri viga (500)"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\500.html:14
+msgid "Server Error <em>(500)</em>"
+msgstr "Serveri viga <em>(500)</em>"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\500.html:15
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+"Viga. Lehe administraatorile on e-mailiga teada antud ja viga parandatakse "
+"peatselt. Aitäh kannatuse eest."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\actions.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\actions.html:8
+msgid "Run the selected action"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\actions.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\actions.html:8
+msgid "Go"
+msgstr "Mine"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\actions.html:10
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\actions.html:15
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\actions.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\actions.html:17
+msgid "Clear selection"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\app_index.html:19
+msgid "administration"
+msgstr "administreerimine"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\add_form.html:6
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr ""
+"Sisestage e-posti aadress ja parool. Siis on Teil "
+"võimalus muuta rohkem kasutaja valikuid."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\add_form.html:8
+msgid "Enter a username and password."
+msgstr "Sisestage e-posti aadress ja parool."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:31
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:68
+msgid "Welcome,"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:72
+msgid "View site"
+msgstr "Tagasi esilehele"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:77
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:119
+msgid "Documentation"
+msgstr "Dokumentatsioon"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:83
+msgid "Log out"
+msgstr "Logi välja"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:93
+msgid "Recent Actions"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:105
+msgid "Unknown content"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base.html:110
+msgid "None available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base_site.html:4
+msgid "Django site admin"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\base_site.html:7
+msgid "Django administration"
+msgstr "Django administreerimine"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:22
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\index.html:69
+msgid "Add"
+msgstr "Lisa"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:26
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:42
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:25
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\image\change_form.html:19
+msgid "View on site"
+msgstr "Tagasi esilehele"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:51
+msgid "Fields in <strong>bold</strong> are required."
+msgstr "Nõutud väljad on <strong>tumedas</strong> kirjas."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:123
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:15
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\submit_line.html:12
+msgid "Save"
+msgstr "Salvesta"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list_results.html:17
+msgid "Remove from sorting"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list_results.html:18
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list_results.html:19
+msgid "Toggle sorting"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:18
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:25
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:32
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:34
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:33
+msgid "Objects"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:41
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:46
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_confirmation.html:42
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:47
+msgid "No, take me back"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:11
+msgid "Delete multiple objects"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:17
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:24
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:31
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:104
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:131
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:107
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:134
+msgid "Remove"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:22
+msgid "Delete?"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\actions.html:15
+#, python-format
+msgid "Select all %(total_count)s files and/or folders"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:4
+msgid "Go back to admin homepage"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:5
+msgid "Go back to Filer app"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:5
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:7
+msgid "Filer"
+msgstr "Filtreeri"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:6
+msgid "Go back to root folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+msgid "root"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:10
+#, python-format
+msgid "Go back to '%(folder_name)s' folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\change_form.html:28
+msgid "duplicates"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+msgid "Go back to"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:6
+msgid "admin homepage"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:37
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:85
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:95
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:30
+msgid "Folder Icon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:66
+msgid "Adds a new Folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:66
+msgid "New Folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:67
+msgid "upload files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:67
+msgid "Upload"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+msgid "Go back to the parent folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:86
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:41
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:18
+#, python-format
+msgid "1 folder"
+msgid_plural "%(counter)s folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:86
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:41
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:19
+#, python-format
+msgid "1 file"
+msgid_plural "%(counter)s files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:90
+msgid "Change current folder details"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:12
+msgid "Name"
+msgstr "Nimi"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:30
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:40
+#, python-format
+msgid "Change '%(item_label)s' folder details"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:42
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:75
+msgid "Owner"
+msgstr "Omanik"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:50
+msgid "Select this file"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:58
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:66
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:71
+#, python-format
+msgid "Change '%(item_label)s' details"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:64
+#, python-format
+msgid "Delete '%(item_label)s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:77
+msgid "disabled"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:77
+msgid "enabled"
+msgstr "lubatud"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:83
+msgid "Move to clipboard"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:91
+msgid "there are no files or subfolders"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:98
+msgid "previous"
+msgstr "eelmine"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:102
+#, python-format
+msgid ""
+"\n"
+"            Page %(number)s of %(num_pages)s.\n"
+"            "
+msgstr ""
+"\n"
+"                        %(number)s. leht %(num_pages)s-st\n"
+"            "
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\image\change_form.html:31
+msgid "Full size preview"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:8
+msgid "Clipboard"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:20
+msgid "Paste all items here"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "Move all clipboard files to"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "unfiled files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "discard"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:44
+msgid "the clipboard is empty"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:7
+msgid "Enter your search phrase here"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:9
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\search_form.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\search_form.html:8
+msgid "Search"
+msgstr "Otsi"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:12
+msgid "Check it to"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:12
+msgid "limit the search to current folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:13
+msgid "search the current folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:18
+msgid "found"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:19
+msgid "cancel search"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\filter.html:2
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\index.html:22
+msgid "Applications"
+msgstr "Rakendused"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\index.html:55
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\index.html:82
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\invalid_setup.html:12
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\login.html:49
+msgid "<h2>Login</h2>"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\login.html:77
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\login.html:82
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:18
+msgid "Log in"
+msgstr "Logi sisse"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\object_history.html:22
+msgid "Date/time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\object_history.html:24
+msgid "Action"
+msgstr "Tegevus"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\object_history.html:38
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:7
+#, python-format
+msgid "Delete %(language)s translation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\submit_line.html:9
+msgid "Save as new"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:13
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\submit_line.html:10
+msgid "Save and add another"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:14
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\submit_line.html:11
+msgid "Save and continue editing"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\pagination.html:19
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\search_form.html:10
+msgid "Show all"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\related_widget_wrapper.html:8
+#, python-format
+msgid "Change selected %(model)s"
+msgstr "Muuda valitud %(model)s"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\related_widget_wrapper.html:15
+#, python-format
+msgid "Add another %(model)s"
+msgstr "Lisa veel üks %(model)s"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\related_widget_wrapper.html:22
+#, python-format
+msgid "Delete selected %(model)s"
+msgstr "Kustuta valitud %(model)s"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\search_form.html:10
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] "%(counter)s tulemus"
+msgstr[1] "%(counter)s tulemust"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\search_form.html:10
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\logged_out.html:9
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\logged_out.html:11
+msgid "Log in again"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_done.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:13
+msgid "Password change"
+msgstr "Parooli muutmine"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_done.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_done.html:12
+msgid "Password change successful"
+msgstr "Parooli muutmine edukas"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_done.html:16
+msgid "Your password was changed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_change_form.html:24
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"Palun sisestage vana parool turvakaalutlustel ja siis siestage oma uus parool "
+"kaks korda, et me saaksime kinnitada selle sobivust."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:12
+msgid "Password reset complete"
+msgstr "Parooli muutmine tehtud"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:16
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Parool on muudetud. Te võite nüüd sisse logida."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:7
+msgid "Password reset confirmation"
+msgstr "Uue parooli kinnitus"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:25
+msgid "New password:"
+msgstr "Uus parool:"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:34
+msgid "Confirm password:"
+msgstr "Parooli kinnitus:"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:50
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_done.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_done.html:12
+msgid "Password reset successful"
+msgstr "Parooli muutmine edukas"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_done.html:16
+msgid ""
+"We've emailed you instructions for setting your password to the email "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:16
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Olete oma parooli unustanud? Sisestage oma e-posti aadress allpool olevasse lahtrisse ning me saadame "
+"Teie e-posti aadressile lingi, millele vajutades saate uue parooli valida."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:21
+msgid "Email address:"
+msgstr "E-posti aadress:"
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:20
+msgid "queue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:21
+msgid "queues"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:28
+msgid "payload"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:37
+msgid "message"
+msgstr "sõnum"
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:38
+msgid "messages"
+msgstr "sõnumid"
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1268
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1273
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1291
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
 msgstr ""
 
 #: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\constants.py:11
@@ -2744,6 +3900,17 @@ msgstr ""
 msgid "Text nodes have no children"
 msgstr ""
 
+#~ msgid "Next"
+#~ msgstr "Edasi"
+
+#~ msgid "Expire date should be null without any unpaid reservations."
+#~ msgstr "Aegumiskuupäev peaks olema null ilma maksmata broneeringuteta."
+
+#~ msgid ""
+#~ "Expire date should return time interval that is between 0 and 10 minutes "
+#~ "(both included)"
+#~ msgstr "Aegumiskuupäev peaks tagastama ajaintervalli 0 ja 10 minuti vahel"
+
 #~ msgid "Field"
 #~ msgstr "Väljak"
 
@@ -2756,18 +3923,6 @@ msgstr ""
 #~ msgid "End"
 #~ msgstr "Lõpp"
 
-#~ msgid "previous"
-#~ msgstr "eelmine"
-
-#~ msgid ""
-#~ "\n"
-#~ "                        Page %(count)s of %(total)s\n"
-#~ "                    "
-#~ msgstr ""
-#~ "\n"
-#~ "                        %(count)s. leht %(total)s-st\n"
-#~ "                    "
-
 #~ msgid "Page"
 #~ msgstr "Leht"
 
@@ -2776,15 +3931,3 @@ msgstr ""
 
 #~ msgid "Transcation"
 #~ msgstr "Ülekanne"
-
-#~ msgid "New password:"
-#~ msgstr "Uus parool:"
-
-#~ msgid "Confirm password:"
-#~ msgstr "Parooli kinnitus:"
-
-#~ msgid "Email address:"
-#~ msgstr "E-posti aadress:"
-
-#~ msgid "View site"
-#~ msgstr "Tagasi esilehele"
