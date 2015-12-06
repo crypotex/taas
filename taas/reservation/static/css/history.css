@@ -2,6 +2,7 @@
     width: 100%;
     text-align: center;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 #bookings th {
@@ -12,6 +13,8 @@
 #bookings td, #bookings td:last-child {
     border-top: 1px solid #c8c8c8;
     padding: 10px;
+    vertical-align:top;
+    word-break: break-word;
 }
 
 #bookings tr:last-child {
@@ -23,7 +26,7 @@
     margin: 0 auto;
 }
 
-#bookings td.update, #bookings td.delete {
+#bookings td.update img, #bookings td.delete img {
     cursor: pointer;
 }
 
@@ -33,7 +36,6 @@
 }
 
 .sort_form {
-    width: 55%;
     margin: 0 auto;
     padding: 10px;
 }
@@ -61,7 +63,6 @@
     box-shadow: inset 0 2px 2px 0 rgba(255, 255, 255, 0.17);
     border: 1px solid #ff9900;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
     display: block;
 }
@@ -75,4 +76,40 @@
 
 .wrap {
     margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+ul.pagination {
+    text-align: center;
+    list-style-type: none;
+    padding-right: 40px;
+}
+
+li.previous, li.next, li.current {
+    display: inline;
+}
+
+li.previous {
+    float: left;
+}
+
+li.next {
+    float: right;
+}
+
+li.previous:after {
+    content: '';
+    display: table;
+    clear: left;
+}
+
+li.next:after {
+    content: '';
+    display: table;
+    clear: right;
+}
+
+.fc-header-title h2 {
+    font-size: 16px;
+    color: #666666;
 }

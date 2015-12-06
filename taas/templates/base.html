@@ -7,95 +7,122 @@
 <head>
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
 
     {% block styles %}{% endblock styles %}
 
-    <script src="{% static 'js/jquery/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-2.1.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/ajax_setup.js' %}"></script>
-    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
 
     {% block scripts %}{% endblock scripts %}
 
-    <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
-    <script type="text/javascript">
-        var fieldA = '<p><b>{% trans 'A-PLATS (HÜPPERADA):' %}</b> <br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) = 2x6m, 5m, 3m' %}<br>{% trans 'müür (1)' %}<br>{% trans 'rõngas (1)' %}<br>{% trans 'kaugus (1)' %}<br>{% trans 'kott (1)' %}<br>{% trans  'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
-        var fieldB = '<p><b>{% trans 'B-PLATS (AGILITYRADA):' %}</b><br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) =2x6m, 5m, 4m' %}<br>{% trans 'poom (1)' %}<br>{% trans 'A-tõke (1)' %}<br>{% trans 'kiik (1)' %}<br>{% trans 'laud (1)' %}<br>{% trans 'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
-        var fieldC = '<p><b>{% trans 'C-PLATS:' %}</b><br>{% trans 'Kuulekustrenni väliplats' %}<br>{% trans 'Võistluste telkimise ja pealtvaatajate ala' %}</p>';
+    {% ifequal request.path "/" %}
+        <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
+    {% else %}
+        <script type="text/javascript" src="{% static 'js/timer.js' %}"></script>
+    {% endifequal %}
+    <script>
         expireMessage = "{% trans 'Your reservation time has been expired.' %}";
-        {% if user.is_authenticated %}
-            getExpireDate();
-            setTimeout(function () {
-                console.log("Date reloaded: " + expire_date);
-                if (expire_date == "Invalid Date" || expire_date == null) {
-                    console.log("Ei ole date");
-                    document.getElementById('timerMessage').style.visibility = "hidden";
-                }
-                else {
-                    document.getElementById('timerMessage').style.visibility = "visible";
-                }
-            }, 100);
-        {% endif %}
+        fieldA = '<p><b>{% trans 'A-PLATS (HÜPPERADA):' %}</b> <br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) = 2x6m, 5m, 3m' %}<br>{% trans 'müür (1)' %}<br>{% trans 'rõngas (1)' %}<br>{% trans 'kaugus (1)' %}<br>{% trans 'kott (1)' %}<br>{% trans  'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        fieldB = '<p><b>{% trans 'B-PLATS (AGILITYRADA):' %}</b><br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) =2x6m, 5m, 4m' %}<br>{% trans 'poom (1)' %}<br>{% trans 'A-tõke (1)' %}<br>{% trans 'kiik (1)' %}<br>{% trans 'laud (1)' %}<br>{% trans 'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
+        fieldC = '<p><b>{% trans 'C-PLATS:' %}</b><br>{% trans 'Kuulekustrenni väliplats' %}<br>{% trans 'Võistluste telkimise ja pealtvaatajate ala' %}</p>';
+
+        paidAnon = $('<p>{% trans 'Paid reservation of another user.' %}</p>');
+        paidOwn = $('<p>{% trans 'Your paid reservation.' %}</p>');
+        unpaidOwn = $('<p>{% trans 'Your unfinished reservation.' %}</p>');
+        unpaidAnon = $('<p>{% trans 'Unfinished reservation of another user.' %}</p>');
+        warningMessage = "{% trans 'Warning' %}";
+        $(document).ready(function () {
+            $('.change_language').click(function (e) {
+                e.preventDefault();
+                $('#language').val($(this).attr('id'));
+                $('#change_language_form').submit();
+            });
+        });
     </script>
     <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
 
 </head>
 
 <body>
-<div id="innerwrap">
+<div id="wrap">
     <header>
-        <div class="logo">
-            <a href="http://taas.ee/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
-        </div>
-        <div class="navsmall">
-            <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
-                <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
+        <div id="nav">
+            <a href="http://taas.ee/"><img class="logo" alt="Tartu Agility Arenguselts"
+                                           src="{% static 'img/logo.jpg' %}"></a>
+
+            <div id="navwrap">
+                <div class="navsmall">
+                    <form action="{% url 'set_language' %}" method="post" style="display: none"
+                          id="change_language_form">{% csrf_token %}
+                        <input type="hidden" value="" name="language" id="language"/>
+                    </form>
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <a href="#" id="{{ language.code }}" class="change_language"></a>
+                    {% endfor %}
+                </div>
+
+                {% if not user.is_authenticated %}
+                    <div id="user-nav">
+                        <ul>
+                            <li><a href="/user/login">{% trans 'Login' %}</a></li>
+                            <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div id="user-nav">
+                        <ul>
+                            <li>{% trans 'Hello, ' %}<span id="name">{{ user.get_short_name }}</span></li>
+                            <li>{{ user.display_budget_money }}</li>
+                            <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
         </div>
 
-        {% if not user.is_authenticated %}
-            <div class="user-nav">
-                <ul>
-                    <li><a href="/user/login">{% trans 'Login' %}</a></li>
-                    <li><a href="/user/register">{% trans 'Register' %}</a></li>
-                </ul>
-            </div>
-        {% else %}
-            <div class="user-nav">
-                <ul>
-                    <li>{% trans 'Hello, ' %}<span id="name">{{ user.get_short_name }}</span></li>
-                    <li>{{ user.display_budget_money }}</li>
-                    <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
-                </ul>
-            </div>
-        {% endif %}
+        {% block tab-menu %} {% endblock tab-menu %}
     </header>
 
-    {% block tab-menu %} {% endblock tab-menu %}
+    <div id="innerwrap">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                        <script>
+                            swal({
+                                title: warningMessage,
+                                text: "{{ message }}",
+                                type: "warning",
+                                customClass: "alert-button"
+                            });
+                        </script>
+                    {% else %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
 
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-                    <script>
-                        swal({title: "Warning", text: "{{ message }}", type: "warning", customClass: "alert-button"});
-                    </script>
-                {% else %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
+        {% if user.is_authenticated %}
+            <div id="timerMessage">{% trans 'To make all your reservations you have' %}
+                <span id="timer"></span>
+                {% trans 'minutes' %}
+            </div>
+            <script type="text/javascript">
+                setExpireDate();
+            </script>
+        {% endif %}
 
-
-    {% if user.is_authenticated %}
-        <div id="timerMessage">{% trans 'To make all your reservations you have' %}
-            <span id="timer"></span>
-            {% trans 'minutes' %}
-        </div>
-    {% endif %}
+        {% block content %}{% endblock content %}
+    </div>
 </div>
-
-{% block content %}{% endblock content %}
 </body>
 </html>

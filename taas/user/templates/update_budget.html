@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 
 {% block title %}
     {% trans 'Account balance' %}
@@ -25,12 +26,24 @@
 {% block content %}
     <form method="post" class="form">{% csrf_token %}
 
-        <h1>{% trans 'Account balance' %}</h1>
+        <h2>{% trans 'Account balance' %}</h2>
 
         <h3 id="show_budget">{% trans 'Your current account balance:' %} {{ user.display_budget_money }} </h3>
-        <div class="section"><span>1</span>{% trans 'Select an amount to add' %}</div>
-        {{ form }}
 
+        <p class="help-text">
+            {% trans 'Select an amount to add by filling in the field below.' %}
+        </p>
+
+        {% for error in form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
+        <div class="fieldWrapper">
+            {{ form.amount.label_tag }}
+            {% render_field form.amount|add_error_class:"field-error" %}
+            {% for err in form.amount.errors %}
+                <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
+        </div>
         <input id="submit-button" type="submit" value={% trans 'Submit' %}>
     </form>
 {% endblock content %}

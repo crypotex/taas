@@ -27,14 +27,18 @@ function onEventDrag(event, delta, revertFunc) {
 
 $(document).ready(function () {
     $("#updateReservation").fullCalendar({
-        header: false,
+        header: {
+            left: '',
+            center: 'title',
+            right: ''
+        },
         resources: '/reservation/fields/',
         defaultView: 'resourceDay',
+        theme: true,
         allDaySlot: false,
         minTime: '08:00:00',
         maxTime: '22:00:00',
         aspectRatio: 0.0,
-        theme: true,
         axisFormat: 'HH:mm',
         timeFormat: '',
         slotDuration: '01:00:00',
@@ -42,4 +46,6 @@ $(document).ready(function () {
         eventDrop: onEventDrag,
         defaultDate: tableDate
     });
+
+    $('#datepicker').datepicker();
 });

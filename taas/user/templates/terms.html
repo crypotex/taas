@@ -6,23 +6,50 @@
     {% trans 'Terms and Conditions' %}
 {% endblock title %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock styles %}
+
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li class="selected"><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
-    <h3>SPORDIRAJATISE KASUTAJA KOHUSTUB:</h3>
-    <ol>
-        <li>viibima spordirajatisel ainult kokkulepitud ajal ja eesmärgil.</li>
-        <li>kasutama hoolivalt tema hoolde usaldatud Agility inventari.</li>
-        <li>teatama koheselt inventari puudujääkidest ja kahjustustest.</li>
-        <li>parkima väljaspool sõiduteed parklas selleks ettenähtud alal.</li>
-        <li>tagama, et tema koer hoiab puhtust kunstmuruväljakutel, trahv 10 eurot.</li>
-        <li>koristama oma koera järelt aiaga piiratud alas ja selle ümbruses lubatud aladel.</li>
-        <li>kindlustama, et tema koer ei ohusta teiste koerte ega inimeste elu ja tervist.</li>
-        <li>suhtuma sõbralikult ja mõistvalt naaberplatsidel treenijatesse.</li>
-        <li>viimasena lahkudes lukustama kõik väravad ja kustutama tuled.</li>
-        <li>jälgima keelumärke ümbritsevatel haljasaladel ja seal mitte koeraga jalutama.</li>
-        <li>teatama koheselt ülaltoodud reeglite rikkumisest või muust ebasoovitavast käitumisest territooriumil või
-            selle ümbruses. <br>
-            <b>Viivitamatuks sekkumiseks:</b> tel <a href="tel:+3725271414">+372 527 1414</a> <br>
-            <b>Tavateavitus:</b> e-post <a href="mailto:agility.arenguselts@gmail.com">agility.arenguselts@gmail.com</a>
-        </li>
-    </ol>
+    {% blocktrans %}
+        <h3>THE USER OF THE GROUNDS AGREES TO:</h3>
+        <ol>
+            <li>stay on the grounds only on the prearranged time and purpose.</li>
+            <li>use carefully the inventory of Tartu Agility Arenguselts.</li>
+            <li>inform immediately if there is missing or broken inventory.</li>
+            <li>park in the specified parking lot.</li>
+            <li>guarantee that his dog maintains cleanliness on the fields with fake grass, penalty 10
+                euros.
+            </li>
+            <li>clean after his dog in the area surrounded with the fence and
+                near it.
+            </li>
+            <li>ensure that his dog is not a threat to other dogs or
+                people.
+            </li>
+            <li>respect other users of the grounds.</li>
+            <li>lock all the gates and turn of the lights if he leaves as the last person.</li>
+            <li>follow signs on the surrounding fields and not walk
+                their dog there.
+            </li>
+            <li>inform immediately if the aforementioned rules are being broken or other
+                inadvisable behaviour on the grounds or
+                near it. <br>
+                <b>Prompt information:</b> phone <a href=\tel:+3725271414\>+372 527 1414</a> <br>
+                <b>Normal information:</b> e-mail <a href=\mailto:agility.arenguselts@gmail.com\>agility.arenguselts@gmail.com</a>
+            </li>
+        </ol>
+    {% endblocktrans %}
 {% endblock content %}

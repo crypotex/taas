@@ -23,3 +23,11 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+$(document).ready(function() {
+    $('.change_language').click(function (e) {
+        e.preventDefault();
+        $('#language').val($(this).attr('id'));
+        $('#change_language_form').submit();
+    });
+});

@@ -49,6 +49,11 @@ class UserUpdateView(mixins.LoggedInMixin, UpdateView):
     def get_object(self, queryset=None):
         return self.request.user
 
+    def get_context_data(self, **kwargs):
+        kwargs['pin'] = self.request.user.pin
+
+        return super(UserUpdateView, self).get_context_data(**kwargs)
+
     def form_valid(self, form):
         self.object = form.save()
         update_session_auth_hash(self.request, self.object)
@@ -89,7 +94,7 @@ def password_reset(request):
     }
 
     if request.method == 'POST' and request.POST.get('email'):
-        messages.add_message(request, messages.SUCCESS, _('Email instructions has been sent.'),
+        messages.add_message(request, messages.SUCCESS, _('Email instructions have been sent.'),
                              fail_silently=True)
     response = auth_views.password_reset(request, **kwargs)
 

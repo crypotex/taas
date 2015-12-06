@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block scripts %}
     <script type="text/javascript">
-        function load() {
+        window.onload = function load() {
             window.document.test.submit();
-        }
+        };
     </script>
-</head>
-<body onload="load()">
-<form name="test" method="post" action="{{ host }}">
-    <input type="hidden" name="json" value="{{ json }}"/>
-    <input type="hidden" name="mac" value="{{ mac }}"/>
-</form>
-</body>
-</html>
+{% endblock scripts %}
+
+{% block content %}
+    <form name="test" method="post" action="{{ host }}">
+        <input type="hidden" name="json" value="{{ json }}"/>
+        <input type="hidden" name="mac" value="{{ mac }}"/>
+    </form>
+{% endblock content %}
+
