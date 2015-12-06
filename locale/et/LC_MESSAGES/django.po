@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-06 13:05+0200\n"
+"POT-Creation-Date: 2015-12-06 14:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -479,7 +479,7 @@ msgstr "Informatsioon on uuendatud."
 msgid "User has been deactivated."
 msgstr "Kasutaja on deaktiveeritud."
 
-#: .\build\lib\taas\user\views.py:90 .\taas\user\views.py:97
+#: .\build\lib\taas\user\views.py:90
 msgid "Email instructions has been sent."
 msgstr "Juhised saadeti Teie e-posti aadressile."
 
@@ -569,7 +569,7 @@ msgstr "Makse"
 msgid "price (€)"
 msgstr "hind (€)"
 
-#: .\taas\reservation\templates\admin\change_list.html:42
+#: .\taas\reservation\templates\admin\change_list.html:36
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\500.html:6
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\app_index.html:9
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:13
@@ -591,13 +591,18 @@ msgstr "hind (€)"
 msgid "Home"
 msgstr "Kodu"
 
-#: .\taas\reservation\templates\admin\change_list.html:61
+#: .\taas\reservation\templates\admin\change_list.html:57
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:54
 #, python-format
 msgid "Add %(name)s"
 msgstr "Lisa %(name)s"
 
-#: .\taas\reservation\templates\admin\change_list.html:70
+#: .\taas\reservation\templates\admin\change_list.html:67
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:64
+msgid "Filter"
+msgstr "Filtreeri"
+
+#: .\taas\reservation\templates\admin\change_list.html:88
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:27
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:54
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:83
@@ -606,7 +611,7 @@ msgstr "Lisa %(name)s"
 msgid "Please correct the error below."
 msgstr "Palun parandage allpool asuv viga."
 
-#: .\taas\reservation\templates\admin\change_list.html:71
+#: .\taas\reservation\templates\admin\change_list.html:89
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:27
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:54
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:83
@@ -615,12 +620,14 @@ msgstr "Palun parandage allpool asuv viga."
 msgid "Please correct the errors below."
 msgstr "Palun parandage allpool asuvad vead."
 
-#: .\taas\reservation\templates\admin\change_list.html:82
-#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:64
-msgid "Filter"
-msgstr "Filtreeri"
+#: .\taas\reservation\templates\admin\change_list.html:130
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:123
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:15
+#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\submit_line.html:12
+msgid "Save"
+msgstr "Salvesta"
 
-#: .\taas\reservation\templates\admin\change_list.html:102
+#: .\taas\reservation\templates\admin\change_list.html:140
 #, python-format
 msgctxt "reservation"
 msgid "%(count)s %(vname)s"
@@ -628,7 +635,7 @@ msgid_plural "%(count)s %(vname)s"
 msgstr[0] "%(count)s broneering"
 msgstr[1] "%(count)s broneeringut"
 
-#: .\taas\reservation\templates\admin\change_list.html:108
+#: .\taas\reservation\templates\admin\change_list.html:146
 #, python-format
 msgctxt "user"
 msgid "%(count)s %(vname)s"
@@ -636,7 +643,7 @@ msgid_plural "%(count)s %(vname)s"
 msgstr[0] "%(count)s kasutaja"
 msgstr[1] "%(count)s kasutajat"
 
-#: .\taas\reservation\templates\admin\change_list.html:114
+#: .\taas\reservation\templates\admin\change_list.html:152
 #, python-format
 msgctxt "field"
 msgid "%(count)s %(vname)s"
@@ -644,7 +651,7 @@ msgid_plural "%(count)s %(vname)s"
 msgstr[0] "%(count)s väljak"
 msgstr[1] "%(count)s väljakut"
 
-#: .\taas\reservation\templates\admin\change_list.html:120
+#: .\taas\reservation\templates\admin\change_list.html:158
 #, python-format
 msgctxt "payment"
 msgid "%(count)s %(vname)s"
@@ -652,7 +659,7 @@ msgid_plural "%(count)s %(vname)s"
 msgstr[0] "%(count)s makse"
 msgstr[1] "%(count)s makset"
 
-#: .\taas\reservation\templates\admin\change_list.html:126
+#: .\taas\reservation\templates\admin\change_list.html:164
 #, python-format
 msgid "%(count)s %(vname)s"
 msgid_plural "%(count)s %(vname)s"
@@ -788,9 +795,9 @@ msgid ""
 "description of each field by hovering over the corresponding letter in the "
 "table header. Here is the plan of the whole ground: <br><br>"
 msgstr ""
-"Võimalik on broneerida 3 väljakule. Iga väljaku kirjeldust näeb, kui "
-"<samp>\"Broneeri\"</samp> lehel tabeli peases olevatele tähtedele hiirega peale minna. Kogu "
-"valduse plaan näeb välja selline: <br><br>"
+"Võimalik on broneerida 3 väljakule. Iga väljaku kirjeldust näeb, kui <samp>"
+"\"Broneeri\"</samp> lehel tabeli peases olevatele tähtedele hiirega peale "
+"minna. Kogu valduse plaan näeb välja selline: <br><br>"
 
 #: .\taas\reservation\templates\help.html:94
 msgid "What does color X mean in the table?"
@@ -832,192 +839,119 @@ msgstr "Kas tulevat broneeringut on võimalik muuta?"
 #: .\taas\reservation\templates\help.html:124
 msgid ""
 "You can change time or/and field of your reservation whenever you want but "
-"not 15\n"
-"                minutes before the\n"
-"                start of the reservation. That means if you have, for "
-"example, a reservation starting at 14:00, then you\n"
-"                can make changes until 13:45. Note that you can only choose "
-"a new time or/and field for the same date as\n"
-"                the reservation that you are trying to edit.\n"
-"            "
+"not 15 minutes before the start of the reservation. That means if you have, "
+"for example, a reservation starting at 14:00, then you can make changes "
+"until 13:45. Note that you can only choose a new time or/and field for the "
+"same date as the reservation that you are trying to edit."
 msgstr ""
 "Te saate muuta oma broneeringul kellaaega ja/või väljakut ükskõik millal, "
-"aga 15\n"
-"                minutit enne\n"
-"                broneeringu algust enam mitte. See tähendab, et kui teil on "
-"näiteks broneering algusega 14:00, siis te saate\n"
-"                muudatusi teha kuni kella 13:45. Pange tähele, et "
-"broneeringul, mida te muudate, saate valida ainult uut kellaaega ja/või \n"
-"                väljakut samale päevale. \n"
-"            "
+"aga 15 minutit enne broneeringu algust enam mitte. See tähendab, et kui teil "
+"on näiteks broneering algusega 14:00, siis te saate muudatusi teha kuni "
+"kella 13:45. Pange tähele, et broneeringul, mida te muudate, saate valida "
+"ainult uut kellaaega ja/või väljakut samale päevale."
 
-#: .\taas\reservation\templates\help.html:133
+#: .\taas\reservation\templates\help.html:134
 msgid "Is it possible to cancel an upcoming reservation?"
 msgstr "Kas tulevat broneeringut on võimalik kustutada?"
 
-#: .\taas\reservation\templates\help.html:135
+#: .\taas\reservation\templates\help.html:136
 msgid ""
 "You can remove a reservation 24 hours before the day of the reservation. E."
-"g. you have\n"
-"                a reservation on 29th of November, then you can cancel it "
-"until 23:59 on 28th November.\n"
-"                <br><br>\n"
-"                The money will be added to your account's balance.\n"
-"            "
+"g. you have a reservation on 29th of November, then you can cancel it until "
+"23:59 on 28th November. <br><br> The money will be added to your account's "
+"balance."
 msgstr ""
-"Broneeringut saab kustutada 24 tundi enne broneeringu päeva. Näiteks teil "
-"on\n"
-"                broneering 29. novembril, siis saate seda kustutada kuni "
-"kella 23:59 28. novembril.\n"
-"                <br><br>\n"
-"                Raha kustutatud broneeeringute eest lisatakse teie saldole.\n"
-"            "
+"Broneeringut saab kustutada 24 tundi enne broneeringu päeva. Näiteks teil on "
+"broneering 29. novembril, siis saate seda kustutada kuni kella 23:59 28. "
+"novembril. <br><br> Raha kustutatud broneeeringute eest lisatakse teie "
+"saldole."
 
-#: .\taas\reservation\templates\help.html:142
+#: .\taas\reservation\templates\help.html:144
 msgid "How do I modify an upcoming reservation?"
 msgstr "Kuidas ma muudan tulevat broneeringut?"
 
-#: .\taas\reservation\templates\help.html:144
+#: .\taas\reservation\templates\help.html:146
 msgid ""
 "Click on the <samp>\"History\"</samp> tab, you should see the table with all "
-"of\n"
-"                your reservations.\n"
-"                <br><br>\n"
-"                If you can edit a reservation (check <i><a href=\"#q5\">Is "
-"it possible to modify an upcoming\n"
-"                    reservation?</a></i>),\n"
-"                then there will be a pencil icon next to the reservation, "
-"click on it.\n"
-"                <br><br>\n"
-"                You should see an alert asking for confirmation. If you "
-"really want to change the reservation then click\n"
-"                <samp>\"OK\"</samp>, otherwise decline by clicking <samp>"
-"\"Cancel\"</samp>.\n"
-"                <br><br>\n"
-"                You should see a table where a\n"
-"                red slot indicates the reservation you are trying to change. "
-"Drag it to another slot that suits you and\n"
-"                is free. Then click <samp>\"Submit\"</samp>.\n"
-"            "
+"of your reservations. <br><br> If you can edit a reservation (check <i><a "
+"href=\"#q5\">Is it possible to modify an upcoming reservation?</a></i>), "
+"then there will be a pencil icon next to the reservation, click on it. "
+"<br><br> You should see an alert asking for confirmation. If you really want "
+"to change the reservation then click <samp>\"OK\"</samp>, otherwise decline "
+"by clicking <samp>\"Cancel\"</samp>. <br><br> You should see a table where a "
+"red slot indicates the reservation you are trying to change. Drag it to "
+"another slot that suits you and is free. Then click <samp>\"Submit\"</samp>."
 msgstr ""
 "Vajutage vahelehel <samp>\"Ajalugu\"</samp> ja te peaksite nägema tabelit "
-"kõigi oma\n"
-"                broneeringutega.\n"
-"                <br><br>\n"
-"                Kui te saate broneeringut muuta (vaadake küsimust <i><a href="
-"\"#q5\">Kas tulevat broneeringut on võimalik\n"
-"                    muuta?</a></i>),\n"
-"                siis on broneeringu kõrval pliiatsiikoon, vajutage selle "
-"peal.\n"
-"                <br><br>\n"
-"                Te peaksite nägema hoiatust, mis küsib muutmise kinnitust. "
-"Kui te tõesti soovite broneeringut muuta, vajutage nupule\n"
-"                <samp>\"OK\"</samp>, muul juhul keelduge vajutades nupule "
-"<samp>\"Tühista\"</samp>.\n"
-"                <br><br>\n"
-"                Te peaksite nägema tabelit, kus on \n"
-"                punane kast, mis näitab, millist broneeringut te muuta "
-"soovite. Lohistage see uude kohta, mis teile sobib ja\n"
-"                mis on vaba. Siis vajutage nupule <samp>\"Edasi\"</samp>.\n"
-"            "
+"kõigi oma broneeringutega. <br><br> Kui te saate broneeringut muuta (vaadake "
+"küsimust <i><a href=\"#q5\">Kas tulevat broneeringut on võimalik muuta?</a></"
+"i>), siis on broneeringu kõrval pliiatsiikoon, vajutage selle peal. <br><br> "
+"Te peaksite nägema hoiatust, mis küsib muutmise kinnitust. Kui te tõesti "
+"soovite broneeringut muuta, vajutage nupule <samp>\"OK\"</samp>, muul juhul "
+"keelduge vajutades nupule <samp>\"Tühista\"</samp>. <br><br> Te peaksite "
+"nägema tabelit, kus on punane kast, mis näitab, millist broneeringut te "
+"muuta soovite. Lohistage see uude kohta, mis teile sobib ja mis on vaba. "
+"Siis vajutage nupule <samp>\"Edasi\"</samp>."
 
-#: .\taas\reservation\templates\help.html:160
+#: .\taas\reservation\templates\help.html:162
 msgid "How do I cancel an upcoming reservation?"
 msgstr "Kuidas ma kustutan tulevat broneeringut?"
 
-#: .\taas\reservation\templates\help.html:162
+#: .\taas\reservation\templates\help.html:164
 msgid ""
 "Click on the <samp>\"History\"</samp> tab, you should see the table with all "
-"of\n"
-"                your reservations.\n"
-"                <br><br>\n"
-"                If you can remove a reservation (check <i><a href=\"#q6\">Is "
-"it possible to cancel an upcoming\n"
-"                    reservation?</a></i>),\n"
-"                then there will be a cross icon next to the reservation, "
-"click on it.\n"
-"                <br><br>\n"
-"                You should see an alert asking for confirmation. If you "
-"really want to delete the reservation then click\n"
-"                <samp>\"OK\"</samp>, otherwise decline by clicking <samp>"
-"\"Cancel\"</samp>.\n"
-"            "
+"of your reservations. <br><br> If you can remove a reservation (check <i><a "
+"href=\"#q6\">Is it possible to cancel an upcoming reservation?</a></i>), "
+"then there will be a cross icon next to the reservation, click on it. "
+"<br><br> You should see an alert asking for confirmation. If you really want "
+"to delete the reservation then click <samp>\"OK\"</samp>, otherwise decline "
+"by clicking <samp>\"Cancel\"</samp>."
 msgstr ""
 "Vajutage vahelehel <samp>\"Ajalugu\"</samp> ja te peaksite nägema tabelit "
-"kõigi oma\n"
-"                broneeringutega.\n"
-"                <br><br>\n"
-"                Kui te soovite broneeringut kustutada (kontrollige küsimust "
-"<i><a href=\"#q6\">Kas tuevat broneeringut on võimalik\n"
-"                    kustutada?</a></i>),\n"
-"                siis on broneeringu kõrval ristiikoon, vajutage selle "
-"peale.\n"
-"                <br><br>\n"
-"                Te peaksite nägema hoiatust, mis küsib kinnitust. Kui te "
-"tõesti tahate broneeringut kustutada, vajutage nupule\n"
-"                <samp>\"OK\"</samp>, muul juhul keelduge vajutades nupule "
-"<samp>\"Tühista\"</samp>.\n"
-"            "
+"kõigi oma broneeringutega. <br><br> Kui te soovite broneeringut kustutada "
+"(kontrollige küsimust <i><a href=\"#q6\">Kas tuevat broneeringut on võimalik "
+"kustutada?</a></i>), siis on broneeringu kõrval ristiikoon, vajutage selle "
+"peale. <br><br> Te peaksite nägema hoiatust, mis küsib kinnitust. Kui te "
+"tõesti tahate broneeringut kustutada, vajutage nupule <samp>\"OK\"</samp>, "
+"muul juhul keelduge vajutades nupule <samp>\"Tühista\"</samp>."
 
-#: .\taas\reservation\templates\help.html:174
+#: .\taas\reservation\templates\help.html:176
 msgid "Where can I see and change my account information?"
 msgstr "Kus ma näen ja saan oma konto andmeid muuta?"
 
-#: .\taas\reservation\templates\help.html:176
+#: .\taas\reservation\templates\help.html:178
 msgid ""
 "Click on the <samp>\"Account\"</samp> tab, you should see the account "
-"modification page.\n"
-"                <br><br>\n"
-"                You can update your name, phone number and password. If you "
-"want to change\n"
-"                your password, then click on the checkbox and fill in all "
-"the fields, otherwise leave checkbox\n"
-"                unchecked and just click <samp>\"Update\"</samp> to finish. "
-"You cannot leave name and phone number fields\n"
-"                empty.\n"
-"                <br><br>\n"
-"                You cannot change your e-mail for security reasons. If you "
-"really need to change your e-mail, then\n"
-"                contact the administrator.\n"
-"            "
+"modification page. <br><br> You can update your name, phone number and "
+"password. If you want to change your password, then click on the checkbox "
+"and fill in all the fields, otherwise leave checkbox unchecked and just "
+"click <samp>\"Update\"</samp> to finish. You cannot leave name and phone "
+"number fields empty. <br><br> You cannot change your e-mail for security "
+"reasons. If you really need to change your e-mail, then contact the "
+"administrator."
 msgstr ""
 "Vajutage vahelehele <samp>\"Konto\"</samp> ja te peaksite nägema konto "
-"muutmise lehte.\n"
-"                <br><br>\n"
-"                Te saate muuta oma nime, telefoninumbrit ja parooli. Kui te "
-"soovite muuta\n"
-"                oma parooli, vajutage kastil <samp>\"Muuda parooli\"</samp> ja täitke kõik "
-"väljad ära. Muul juhul ärge kastile vajutage \n"
-"                ja lihtsalt vajutage nupule <samp>\"Uuenda\"</samp>, et "
-"uuendamist lõpetada. Nime ja telefoninumbri väljad ei tohi olla \n"
-"                tühjad.\n"
-"                <br><br>\n"
-"                E-posti aadressi ei saa muuta turvakaalutlustel. Kui te "
-"tõesti soovite muuta oma e-posti aadressi, siis\n"
-"                võtke ühendust administraatoriga.\n"
-"            "
+"muutmise lehte. <br><br> Te saate muuta oma nime, telefoninumbrit ja "
+"parooli. Kui te soovite muuta oma parooli, vajutage kastil <samp>\"Muuda "
+"parooli\"</samp> ja täitke kõik väljad ära. Muul juhul ärge kastile vajutage "
+"ja lihtsalt vajutage nupule <samp>\"Uuenda\"</samp>, et uuendamist lõpetada. "
+"Nime ja telefoninumbri väljad ei tohi olla tühjad. <br><br> E-posti aadressi "
+"ei saa muuta turvakaalutlustel. Kui te tõesti soovite muuta oma e-posti "
+"aadressi, siis võtke ühendust administraatoriga."
 
-#: .\taas\reservation\templates\help.html:188
+#: .\taas\reservation\templates\help.html:191
 msgid "How to add money to my account balance?"
 msgstr "Kuidas ma saan oma saldole raha lisada?"
 
-#: .\taas\reservation\templates\help.html:190
+#: .\taas\reservation\templates\help.html:193
 msgid ""
-"Click on the <samp>\"Balance\"</samp> tab, you should see the account\n"
-"                balance page.\n"
-"                <br><br>\n"
-"                Fill in the amount you wish to add to your account balance "
-"and click <samp>\"Submit\"</samp> to proceed to\n"
-"                pay.\n"
-"            "
+"Click on the <samp>\"Balance\"</samp> tab, you should see the account "
+"balance page. <br><br> Fill in the amount you wish to add to your account "
+"balance and click <samp>\"Submit\"</samp> to proceed to pay."
 msgstr ""
-"Vajutage vahelehele <samp>\"Raha\"</samp> ja te peaksite nägema saldo\n"
-"                lehte.\n"
-"                <br><br>\n"
-"                Sisestage summa, mida soovite lisada oma saldole ja vajutage "
-"nupule <samp>\"Edasi\"</samp>, et hakata \n"
-"                maksma.\n"
-"            "
+"Vajutage vahelehele <samp>\"Raha\"</samp> ja te peaksite nägema saldo lehte. "
+"<br><br> Sisestage summa, mida soovite lisada oma saldole ja vajutage nupule "
+"<samp>\"Edasi\"</samp>, et hakata maksma."
 
 #: .\taas\reservation\templates\history.html:19
 #: .\taas\reservation\templates\reservation_list.html:19
@@ -1086,22 +1020,21 @@ msgctxt "järgmine"
 msgid "Next"
 msgstr "Järgmine"
 
-#: .\taas\reservation\templates\table.html:84
+#: .\taas\reservation\templates\table.html:85
 #, python-format
-msgid ""
-"%(count)s of %(total)s\n"
-"                        "
-msgstr ""
-"%(count)s broneeringut %(total)s-st\n"
-"                        "
+msgctxt "reservation history with of"
+msgid "%(count)s %(vname)s of %(total)s"
+msgid_plural "%(count)s %(vname)s of %(total)s"
+msgstr[0] "%(count)s broneering %(total)s-st"
+msgstr[1] "%(count)s broneeringut %(total)s-st"
 
-#: .\taas\reservation\templates\table.html:87
+#: .\taas\reservation\templates\table.html:91
 #, python-format
 msgctxt "reservation history"
-msgid "%(vname)s"
-msgid_plural "%(vname)s"
-msgstr[0] "broneering"
-msgstr[1] "broneeringut"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s broneering"
+msgstr[1] "%(count)s broneeringut"
 
 #: .\taas\reservation\views.py:136
 msgid "Success"
@@ -1239,28 +1172,28 @@ msgstr ""
 msgid "Võistluste telkimise ja pealtvaatajate ala"
 msgstr ""
 
-#: .\taas\templates\base.html:59 .\taas\user\templates\login.html:7
+#: .\taas\templates\base.html:66 .\taas\user\templates\login.html:7
 #: .\taas\user\templates\login.html:38 .\taas\user\templates\login.html:54
 msgid "Login"
 msgstr "Logi sisse"
 
-#: .\taas\templates\base.html:60
+#: .\taas\templates\base.html:67
 msgid "Register"
 msgstr "Registreeri"
 
-#: .\taas\templates\base.html:66
+#: .\taas\templates\base.html:73
 msgid "Hello, "
 msgstr "Tere, "
 
-#: .\taas\templates\base.html:68
+#: .\taas\templates\base.html:75
 msgid "Logout"
 msgstr "Logi välja"
 
-#: .\taas\templates\base.html:96
+#: .\taas\templates\base.html:103
 msgid "To make all your reservations you have"
 msgstr "Broneeringute tegemiseks on Teil aega"
 
-#: .\taas\templates\base.html:98
+#: .\taas\templates\base.html:105
 msgid "minutes"
 msgstr "minutit"
 
@@ -1396,7 +1329,82 @@ msgstr "Parooli muutmine"
 
 #: .\taas\user\templates\terms.html:6
 msgid "Terms and Conditions"
+msgstr "Kasutustingimused"
+
+#: .\taas\user\templates\terms.html:10
+msgid ""
+"\n"
+"        <h3>THE USER OF THE GROUNDS AGREES TO:</h3>\n"
+"        <ol>\n"
+"            <li>stay on the grounds only on the prearranged time and purpose."
+"</li>\n"
+"            <li>use carefully the inentory of Tartu Agility Arenguselts.</"
+"li>\n"
+"            <li>inform immediately if there is missing or broken inventory.</"
+"li>\n"
+"            <li>park in the specified parking lot.</li>\n"
+"            <li>guarantee that his dog maintains cleanliness on the fields "
+"with fake grass, penatly 10\n"
+"                euros.\n"
+"            </li>\n"
+"            <li>clean after his dog in the area surrounded with the fence "
+"and\n"
+"                near it.\n"
+"            </li>\n"
+"            <li>ensure that his dog is not a threat to other dogs or\n"
+"                people.\n"
+"            </li>\n"
+"            <li>respect other users of the grounds.</li>\n"
+"            <li>lock all the gates and turn of the lights if he leaves as "
+"the last person.</li>\n"
+"            <li>follow signs on the surrounding fields and not walk\n"
+"                their dog there.\n"
+"            </li>\n"
+"            <li>inform immediately if the aforementioned rules are being "
+"broken or other\n"
+"                inadvisable behaviour on the grounds or\n"
+"                near it. <br>\n"
+"                <b>Prompt information:</b> phone <a href=\\tel:+3725271414\\>"
+"+372 527 1414</a> <br>\n"
+"                <b>Normal information:</b> e-mail <a href=\\mailto:agility."
+"arenguselts@gmail.com\\>agility.arenguselts@gmail.com</a>\n"
+"            </li>\n"
+"        </ol>\n"
+"    "
 msgstr ""
+"\n"
+"    <h3>SPORDIRAJATISE KASUTAJA KOHUSTUB:</h3>\n"
+"    <ol>\n"
+"        <li>viibima spordirajatisel ainult kokkulepitud ajal ja eesmärgil.</"
+"li>\n"
+"        <li>kasutama hoolivalt tema hoolde usaldatud Agility inventari.</"
+"li>\n"
+"        <li>teatama koheselt inventari puudujääkidest ja kahjustustest.</"
+"li>\n"
+"        <li>parkima väljaspool sõiduteed parklas selleks ettenähtud alal.</"
+"li>\n"
+"        <li>tagama, et tema koer hoiab puhtust kunstmuruväljakutel, trahv 10 "
+"eurot.</li>\n"
+"        <li>koristama oma koera järelt aiaga piiratud alas ja selle ümbruses "
+"lubatud aladel.</li>\n"
+"        <li>kindlustama, et tema koer ei ohusta teiste koerte ega inimeste "
+"elu ja tervist.</li>\n"
+"        <li>suhtuma sõbralikult ja mõistvalt naaberplatsidel treenijatesse.</"
+"li>\n"
+"        <li>viimasena lahkudes lukustama kõik väravad ja kustutama tuled.</"
+"li>\n"
+"        <li>jälgima keelumärke ümbritsevatel haljasaladel ja seal mitte "
+"koeraga jalutama.</li>\n"
+"        <li>teatama koheselt ülaltoodud reeglite rikkumisest või muust "
+"ebasoovitavast käitumisest territooriumil või\n"
+"            selle ümbruses. <br>\n"
+"            <b>Viivitamatuks sekkumiseks:</b> tel <a href=\"tel:+3725271414"
+"\">+372 527 1414</a> <br>\n"
+"            <b>Tavateavitus:</b> e-post <a href=\"mailto:agility."
+"arenguselts@gmail.com\">agility.arenguselts@gmail.com</a>\n"
+"        </li>\n"
+"    </ol>\n"
+"    "
 
 #: .\taas\user\templates\update_budget.html:6
 #: .\taas\user\templates\update_budget.html:28
@@ -1485,6 +1493,10 @@ msgstr "Teie värava pin: "
 #: .\taas\user\templates\user_update.html:79
 msgid "Update"
 msgstr "Uuenda"
+
+#: .\taas\user\views.py:97
+msgid "Email instructions have been sent."
+msgstr "Juhised saadeti Teie e-posti aadressile."
 
 #: .\venv\Lib\site-packages\alabaster\layout.html:26
 msgid "Page source"
@@ -2604,8 +2616,8 @@ msgid ""
 "First, enter a username and password. Then, you'll be able to edit more user "
 "options."
 msgstr ""
-"Sisestage e-posti aadress ja parool. Siis on Teil "
-"võimalus muuta rohkem kasutaja valikuid."
+"Sisestage e-posti aadress ja parool. Siis on Teil võimalus muuta rohkem "
+"kasutaja valikuid."
 
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\auth\user\add_form.html:8
 msgid "Enter a username and password."
@@ -2669,12 +2681,6 @@ msgstr "Tagasi esilehele"
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_form.html:51
 msgid "Fields in <strong>bold</strong> are required."
 msgstr "Nõutud väljad on <strong>tumedas</strong> kirjas."
-
-#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list.html:123
-#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\page_submit_line.html:15
-#: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\submit_line.html:12
-msgid "Save"
-msgstr "Salvesta"
 
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\admin\change_list_results.html:17
 msgid "Remove from sorting"
@@ -3126,8 +3132,8 @@ msgid ""
 "Please enter your old password, for security's sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
-"Palun sisestage vana parool turvakaalutlustel ja siis siestage oma uus parool "
-"kaks korda, et me saaksime kinnitada selle sobivust."
+"Palun sisestage vana parool turvakaalutlustel ja siis siestage oma uus "
+"parool kaks korda, et me saaksime kinnitada selle sobivust."
 
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:7
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_complete.html:11
@@ -3173,8 +3179,9 @@ msgid ""
 "Forgotten your password? Enter your email address below, and we'll email "
 "instructions for setting a new one."
 msgstr ""
-"Olete oma parooli unustanud? Sisestage oma e-posti aadress allpool olevasse lahtrisse ning me saadame "
-"Teie e-posti aadressile lingi, millele vajutades saate uue parooli valida."
+"Olete oma parooli unustanud? Sisestage oma e-posti aadress allpool olevasse "
+"lahtrisse ning me saadame Teie e-posti aadressile lingi, millele vajutades "
+"saate uue parooli valida."
 
 #: .\venv\Lib\site-packages\django_admin_bootstrapped\templates\registration\password_reset_form.html:21
 msgid "Email address:"
@@ -3899,6 +3906,13 @@ msgstr ""
 #: .\venv\Lib\site-packages\pip-1.5.6-py3.4.egg\pip\_vendor\html5lib\treewalkers\lxmletree.py:176
 msgid "Text nodes have no children"
 msgstr ""
+
+#~ msgid ""
+#~ "%(count)s of %(total)s\n"
+#~ "                        "
+#~ msgstr ""
+#~ "%(count)s broneeringut %(total)s-st\n"
+#~ "                        "
 
 #~ msgid "Next"
 #~ msgstr "Edasi"

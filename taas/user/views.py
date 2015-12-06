@@ -94,7 +94,7 @@ def password_reset(request):
     }
 
     if request.method == 'POST' and request.POST.get('email'):
-        messages.add_message(request, messages.SUCCESS, _('Email instructions has been sent.'),
+        messages.add_message(request, messages.SUCCESS, _('Email instructions have been sent.'),
                              fail_silently=True)
     response = auth_views.password_reset(request, **kwargs)
 
