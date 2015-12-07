@@ -61,15 +61,16 @@
 
         <div class="section"><span>3</span>{% trans 'Passwords' %}</div>
         <div class="fieldWrapper">
-            <h5>{% trans 'The length of the password has to be bigger than 8.' %}</h5>
+
             {{ form.password1.label_tag }}
             {% render_field form.password1|add_error_class:"field-error" %}
+            <p>{{ form.password1.help_text|cut:"* " }}</p>
             {% for err in form.password1.errors %}
                 <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
             {{ form.password2.label_tag }}
             {% render_field form.password2|add_error_class:"field-error" %}
-            <p class="help-text">{{ form.password2.help_text|cut:"* " }}</p>
+
 
             {% for err in form.password2.errors %}
                 <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}

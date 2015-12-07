@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-06 22:23+0200\n"
+"POT-Creation-Date: 2015-12-07 01:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,7 +110,7 @@ msgid "Year"
 msgstr "Aasta"
 
 #: .\taas\reservation\forms.py:64 .\taas\user\forms.py:9
-#: .\taas\user\forms.py:85
+#: .\taas\user\forms.py:86
 msgid "Password"
 msgstr "Parool"
 
@@ -119,6 +119,7 @@ msgid "Incorrect password."
 msgstr "Vale parool."
 
 #: .\taas\reservation\models.py:10
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:12
 msgid "name"
 msgstr "nimi"
 
@@ -165,7 +166,7 @@ msgid "date created"
 msgstr "loodud"
 
 #: .\taas\reservation\models.py:35 .\taas\reservation\models.py:49
-#: .\taas\user\models.py:62
+#: .\taas\user\models.py:61
 msgid "user"
 msgstr "kasutaja"
 
@@ -403,7 +404,7 @@ msgstr "Kinnitus"
 
 #: .\taas\reservation\templates\budget_payment.html:28
 msgid "Please enter your password to complete the booking(s)."
-msgstr ""
+msgstr "Palun sisestage oma parool, et lõpetada broneering."
 
 #: .\taas\reservation\templates\budget_payment.html:32
 msgid "Pay"
@@ -804,15 +805,15 @@ msgstr "Edukalt makstud broneeringute eest."
 msgid "You do not have enough money."
 msgstr "Saldol on liiga vähe raha."
 
-#: .\taas\server\base_settings.py:103
+#: .\taas\server\base_settings.py:113
 msgid "Estonian"
 msgstr "eesti"
 
-#: .\taas\server\base_settings.py:104
+#: .\taas\server\base_settings.py:114
 msgid "English"
 msgstr "English"
 
-#: .\taas\server\base_settings.py:105
+#: .\taas\server\base_settings.py:115
 msgid "Russian"
 msgstr "русский"
 
@@ -824,7 +825,7 @@ msgstr "Kasutaja olek"
 msgid "User registration"
 msgstr "Registreerumine"
 
-#: .\taas\server\email_settings.py:19
+#: .\taas\server\email_settings.py:23
 #, python-format
 msgid ""
 "Dear %(first_name)s,\n"
@@ -847,7 +848,7 @@ msgstr ""
 "\n"
 "Tartu Agility Arenguselts"
 
-#: .\taas\server\email_settings.py:38
+#: .\taas\server\email_settings.py:42
 #, python-format
 msgid ""
 "Dear %(first_name)s,\n"
@@ -868,7 +869,7 @@ msgstr ""
 "\n"
 "Tartu Agility Arenguselts"
 
-#: .\taas\server\email_settings.py:47
+#: .\taas\server\email_settings.py:51
 #, python-format
 msgid ""
 "Dear %(first_name)s,\n"
@@ -1041,111 +1042,115 @@ msgid "User"
 msgstr "Kasutaja"
 
 #: .\taas\user\forms.py:11
+msgid "The length of the password has to be more than 8 characters."
+msgstr "Parooli pikkus peab olema rohkem kui 8 tähemärki."
+
+#: .\taas\user\forms.py:12
 msgid "Password confirmation"
 msgstr "Uue parooli kinnitus"
 
-#: .\taas\user\forms.py:33
+#: .\taas\user\forms.py:34
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:17
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:73
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:81
 msgid "Change password"
 msgstr "Muuda parooli"
 
-#: .\taas\user\forms.py:34 .\taas\user\forms.py:95
+#: .\taas\user\forms.py:35 .\taas\user\forms.py:96
 msgid "New password"
 msgstr "Uus parool"
 
-#: .\taas\user\forms.py:36 .\taas\user\forms.py:97
+#: .\taas\user\forms.py:37 .\taas\user\forms.py:98
 msgid "New password confirmation"
 msgstr "Uue parooli kinnitus"
 
-#: .\taas\user\forms.py:38
+#: .\taas\user\forms.py:39
 msgid "Old password"
 msgstr "Vana parool"
 
-#: .\taas\user\forms.py:59
+#: .\taas\user\forms.py:60
 msgid "Old password is required."
 msgstr "Palun sisestage vana parool."
 
-#: .\taas\user\forms.py:61
+#: .\taas\user\forms.py:62
 msgid "New password is required."
 msgstr "Palun sisestage uus parool."
 
-#: .\taas\user\forms.py:63
+#: .\taas\user\forms.py:64
 msgid "New password confirmation is required."
 msgstr "Palun sisestage uus parool teist korda."
 
-#: .\taas\user\forms.py:67
+#: .\taas\user\forms.py:68
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Vana parool sisestati valesti. Palun sisestage parool uuesti."
 
-#: .\taas\user\forms.py:69
+#: .\taas\user\forms.py:70
 msgid "The two new password fields didn't match."
 msgstr "Uus parool ei sobinud uue parooli kinnitusega. "
 
-#: .\taas\user\forms.py:91
+#: .\taas\user\forms.py:92
 msgid "Your password was entered incorrectly. Please enter it again."
 msgstr "Parool sisestati valesti. Palun proovige uuesti."
 
-#: .\taas\user\forms.py:102
+#: .\taas\user\forms.py:103
 msgid "Amount"
 msgstr "Summa"
 
-#: .\taas\user\models.py:16
+#: .\taas\user\models.py:14
 msgid "Phone number is invalid."
 msgstr "Telefoninumber ei sobi."
 
-#: .\taas\user\models.py:40
+#: .\taas\user\models.py:39
 msgid "first name"
 msgstr "Eesnimi"
 
-#: .\taas\user\models.py:41
+#: .\taas\user\models.py:40
 msgid "last name"
 msgstr "Perekonnanimi"
 
-#: .\taas\user\models.py:42
+#: .\taas\user\models.py:41
 msgid "email address"
 msgstr "E-posti aadress"
 
-#: .\taas\user\models.py:43
+#: .\taas\user\models.py:42
 msgid "phone number"
 msgstr "Telefoninumber"
 
-#: .\taas\user\models.py:44
+#: .\taas\user\models.py:43
 msgid "staff status"
 msgstr "personali staatus"
 
-#: .\taas\user\models.py:45
+#: .\taas\user\models.py:44
 msgid "Designates whether the user can log into this admin site."
 msgstr "Määrab, kas kasutaja saab logida admini-lehele."
 
-#: .\taas\user\models.py:46
+#: .\taas\user\models.py:45
 msgid "active"
 msgstr "aktiivne"
 
-#: .\taas\user\models.py:47
+#: .\taas\user\models.py:46
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "Määrab, kas kasutaja on aktiivne."
 
-#: .\taas\user\models.py:49
+#: .\taas\user\models.py:48
 msgid "budget (€)"
 msgstr "saldo (€)"
 
-#: .\taas\user\models.py:51
+#: .\taas\user\models.py:50
 msgid "date joined"
 msgstr "liitumiskuupäev"
 
-#: .\taas\user\models.py:52
+#: .\taas\user\models.py:51
 msgid "pin"
 msgstr "pin"
 
-#: .\taas\user\models.py:53
+#: .\taas\user\models.py:52
 msgid "Button ID"
 msgstr "Nööbi ID"
 
-#: .\taas\user\models.py:63
+#: .\taas\user\models.py:62
 msgid "users"
 msgstr "kasutajad"
 
@@ -1399,19 +1404,15 @@ msgstr "Telefoninumber"
 msgid "Passwords"
 msgstr "Paroolid"
 
-#: .\taas\user\templates\user_registration.html:64
-msgid "The length of the password has to be bigger than 8."
-msgstr ""
-
-#: .\taas\user\templates\user_registration.html:79
+#: .\taas\user\templates\user_registration.html:80
 msgid "I agree to the "
 msgstr "Nõustun "
 
-#: .\taas\user\templates\user_registration.html:80
+#: .\taas\user\templates\user_registration.html:81
 msgid "Terms of service"
 msgstr "tingimustega"
 
-#: .\taas\user\templates\user_registration.html:82
+#: .\taas\user\templates\user_registration.html:83
 msgid "Enter"
 msgstr "Registreeri"
 
@@ -1431,32 +1432,32 @@ msgstr "Teie värava pin: "
 msgid "Update"
 msgstr "Uuenda"
 
-#: .\taas\user\views.py:26
+#: .\taas\user\views.py:27
 msgid "User has been successfully registered."
 msgstr "Kasutaja registreeriti edukalt."
 
-#: .\taas\user\views.py:43
+#: .\taas\user\views.py:44
 msgid "Information has been updated."
 msgstr "Informatsioon on uuendatud."
 
-#: .\taas\user\views.py:67
+#: .\taas\user\views.py:68
 msgid "User has been deactivated."
 msgstr "Kasutaja on deaktiveeritud."
 
-#: .\taas\user\views.py:97
+#: .\taas\user\views.py:98
 msgid "Email instructions have been sent."
 msgstr "Juhised saadeti Teie e-posti aadressile."
 
-#: .\taas\user\views.py:125
+#: .\taas\user\views.py:126
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr "Parool on muudetud. Te võite nüüd sisse logida."
 
-#: .\taas\user\views.py:131 .\taas\user\views.py:138
+#: .\taas\user\views.py:132 .\taas\user\views.py:139
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:48
 msgid "Password reset unsuccessful"
 msgstr "Parooli muutmine edukas"
 
-#: .\taas\user\views.py:134
+#: .\taas\user\views.py:135
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:18
 msgid "Enter new password"
 msgstr "Sisestage uus parool"
@@ -3150,6 +3151,41 @@ msgstr ""
 msgid "Email address:"
 msgstr "E-posti aadress:"
 
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:20
+msgid "queue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:21
+msgid "queues"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:28
+msgid "payload"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:37
+msgid "message"
+msgstr "sõnum"
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:38
+msgid "messages"
+msgstr "sõnumid"
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1268
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1273
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1291
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""
+
 #~ msgid "There should be atleast 15 minutes before reservation"
 #~ msgstr "Enne broneeringut peab olema vähemalt 15 minutit"
 
@@ -3161,12 +3197,6 @@ msgstr "E-posti aadress:"
 
 #~ msgid "Email instructions has been sent."
 #~ msgstr "Juhised saadeti Teie e-posti aadressile."
-
-#~ msgid "message"
-#~ msgstr "sõnum"
-
-#~ msgid "messages"
-#~ msgstr "sõnumid"
 
 #~ msgid "Select an amount to add"
 #~ msgstr "Valige summa, mida soovite lisada"

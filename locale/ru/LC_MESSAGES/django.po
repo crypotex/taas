@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-06 22:23+0200\n"
+"POT-Creation-Date: 2015-12-07 01:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,7 +111,7 @@ msgid "Year"
 msgstr "Год"
 
 #: .\taas\reservation\forms.py:64 .\taas\user\forms.py:9
-#: .\taas\user\forms.py:85
+#: .\taas\user\forms.py:86
 msgid "Password"
 msgstr "Пароль"
 
@@ -120,6 +120,7 @@ msgid "Incorrect password."
 msgstr "Неправильный пароль."
 
 #: .\taas\reservation\models.py:10
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:12
 msgid "name"
 msgstr "имя"
 
@@ -166,7 +167,7 @@ msgid "date created"
 msgstr "дата создания"
 
 #: .\taas\reservation\models.py:35 .\taas\reservation\models.py:49
-#: .\taas\user\models.py:62
+#: .\taas\user\models.py:61
 msgid "user"
 msgstr "пользователь"
 
@@ -804,15 +805,15 @@ msgstr "Успешно заплачено за бронирование."
 msgid "You do not have enough money."
 msgstr "У Вас недостаточно денег."
 
-#: .\taas\server\base_settings.py:103
+#: .\taas\server\base_settings.py:113
 msgid "Estonian"
 msgstr "эстонский"
 
-#: .\taas\server\base_settings.py:104
+#: .\taas\server\base_settings.py:114
 msgid "English"
 msgstr "английский"
 
-#: .\taas\server\base_settings.py:105
+#: .\taas\server\base_settings.py:115
 msgid "Russian"
 msgstr "русский"
 
@@ -824,7 +825,7 @@ msgstr "Статус пользователя"
 msgid "User registration"
 msgstr "Регистрация пользователя"
 
-#: .\taas\server\email_settings.py:19
+#: .\taas\server\email_settings.py:23
 #, python-format
 msgid ""
 "Dear %(first_name)s,\n"
@@ -847,9 +848,17 @@ msgstr ""
 "\n"
 "Tartu Agility Arenguselts"
 
-#: .\taas\server\email_settings.py:38
-#, python-format
+#: .\taas\server\email_settings.py:42
 msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"Your account was successfully verified by the Tartu Agility Arenguselts.\n"
+"You can login now.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
 "Уважаемый/Уважаемая %(first_name)s,\n"
 "\n"
 "Ваша учетная запись на сайте Tartu Agility Arenguselts была успешно активирована.\n"
@@ -858,11 +867,18 @@ msgid ""
 "С уважением,\n"
 "\n"
 "Tartu Agility Arenguselts"
-msgstr ""
 
-#: .\taas\server\email_settings.py:47
-#, python-format
+#: .\taas\server\email_settings.py:51
 msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"Your Tartu Agility Arenguselts user was disabled.\n"
+"Please contact administrator for further information.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
 "Уважаемый/Уважаемая %(first_name)s,\n"
 "\n"
 "Ваша учетная запись на сайте Tartu Agility Arenguselts была деактивирована.\n"
@@ -871,7 +887,6 @@ msgid ""
 "С уважением,\n"
 "\n"
 "Tartu Agility Arenguselts"
-msgstr ""
 
 #: .\taas\templates\base.html:8
 msgid "Tartu Agility Playground"
@@ -1025,90 +1040,94 @@ msgid "User"
 msgstr "Пользователь"
 
 #: .\taas\user\forms.py:11
+msgid "The length of the password has to be more than 8 characters."
+msgstr "Длина пароля должна быть больше, чем 8 символов."
+
+#: .\taas\user\forms.py:12
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: .\taas\user\forms.py:33
+#: .\taas\user\forms.py:34
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:17
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:73
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:81
 msgid "Change password"
 msgstr "Изменить пароль"
 
-#: .\taas\user\forms.py:34 .\taas\user\forms.py:95
+#: .\taas\user\forms.py:35 .\taas\user\forms.py:96
 msgid "New password"
 msgstr "Новый пароль"
 
-#: .\taas\user\forms.py:36 .\taas\user\forms.py:97
+#: .\taas\user\forms.py:37 .\taas\user\forms.py:98
 msgid "New password confirmation"
 msgstr "Подтверждение нового пароля"
 
-#: .\taas\user\forms.py:38
+#: .\taas\user\forms.py:39
 msgid "Old password"
 msgstr "Старый пароль"
 
-#: .\taas\user\forms.py:59
+#: .\taas\user\forms.py:60
 msgid "Old password is required."
 msgstr "Необходимо ввести старый пароль."
 
-#: .\taas\user\forms.py:61
+#: .\taas\user\forms.py:62
 msgid "New password is required."
 msgstr "Необходимо ввести новый пароль."
 
-#: .\taas\user\forms.py:63
+#: .\taas\user\forms.py:64
 msgid "New password confirmation is required."
 msgstr "Необходимо ввести подтверждение нового пароля."
 
-#: .\taas\user\forms.py:67
+#: .\taas\user\forms.py:68
 msgid "Your old password was entered incorrectly. Please enter it again."
 msgstr "Ваш старый пароль введен неправильно. Пожалуйста, введите его снова."
 
-#: .\taas\user\forms.py:69
+#: .\taas\user\forms.py:70
 msgid "The two new password fields didn't match."
 msgstr "Введенные пароли не совпадают."
 
-#: .\taas\user\forms.py:91
+#: .\taas\user\forms.py:92
 msgid "Your password was entered incorrectly. Please enter it again."
 msgstr "Ваш пароль введен неправильно. Пожалуйста, введите его снова."
 
-#: .\taas\user\forms.py:102
+#: .\taas\user\forms.py:103
 msgid "Amount"
 msgstr "Сумма"
 
-#: .\taas\user\models.py:16
+#: .\taas\user\models.py:14
 msgid "Phone number is invalid."
 msgstr "Номер телефона недействителен."
 
-#: .\taas\user\models.py:40
+#: .\taas\user\models.py:39
 msgid "first name"
 msgstr "имя"
 
-#: .\taas\user\models.py:41
+#: .\taas\user\models.py:40
 msgid "last name"
 msgstr "фамилия"
 
-#: .\taas\user\models.py:42
+#: .\taas\user\models.py:41
 msgid "email address"
 msgstr "адрес электронной почты"
 
-#: .\taas\user\models.py:43
+#: .\taas\user\models.py:42
 msgid "phone number"
 msgstr "номер телефона"
 
-#: .\taas\user\models.py:44
+#: .\taas\user\models.py:43
 msgid "staff status"
 msgstr "статус персонала"
 
-#: .\taas\user\models.py:45
+#: .\taas\user\models.py:44
 msgid "Designates whether the user can log into this admin site."
 msgstr ""
 "Отметьте, если пользователь может входить в административную часть сайта."
 
-#: .\taas\user\models.py:46
+#: .\taas\user\models.py:45
 msgid "active"
 msgstr "активный"
 
-#: .\taas\user\models.py:47
+#: .\taas\user\models.py:46
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
@@ -1116,23 +1135,23 @@ msgstr ""
 "Отметьте, если пользователь должен считаться активным. Уберите эту отметку "
 "вместо удаления учётной записи."
 
-#: .\taas\user\models.py:49
+#: .\taas\user\models.py:48
 msgid "budget (€)"
 msgstr "сальдо (€)"
 
-#: .\taas\user\models.py:51
+#: .\taas\user\models.py:50
 msgid "date joined"
 msgstr "дата регистрации"
 
-#: .\taas\user\models.py:52
+#: .\taas\user\models.py:51
 msgid "pin"
 msgstr "ПИН"
 
-#: .\taas\user\models.py:53
+#: .\taas\user\models.py:52
 msgid "Button ID"
 msgstr "ID ключа"
 
-#: .\taas\user\models.py:63
+#: .\taas\user\models.py:62
 msgid "users"
 msgstr "пользователи"
 
@@ -1192,7 +1211,7 @@ msgstr ""
 
 #: .\taas\user\templates\password_reset\email.html:3
 msgid "Dear"
-msgstr ""
+msgstr "Уважаемый/Уважаемая"
 
 #: .\taas\user\templates\password_reset\email.html:4
 msgid ""
@@ -1201,14 +1220,17 @@ msgid ""
 "user account\n"
 "at Tartu Agility Arenguselts website.\n"
 msgstr ""
+"\n"
+"Вы получили это письмо, потому что вы желаете восстановить свой пароль "
+"на сайте Tartu Agility Arenguselts.\n"
 
 #: .\taas\user\templates\password_reset\email.html:9
 msgid "Please go to the following page and choose a new password:"
-msgstr ""
+msgstr "Пожалуйста, перейдите на следующую страницу и введите новый пароль:"
 
 #: .\taas\user\templates\password_reset\email.html:13
 msgid "Your username, in case you've forgotten:"
-msgstr ""
+msgstr "Ваше имя пользователя, если вы его забыли:"
 
 #: .\taas\user\templates\password_reset\email.html:15
 msgid ""
@@ -1217,6 +1239,10 @@ msgid ""
 "\n"
 "Tartu Agility Arenguselts\n"
 msgstr ""
+"\n"
+"С уважением,\n"
+"\n"
+"Tartu Agility Arenguselts\n"
 
 #: .\taas\user\templates\password_reset\form.html:29
 msgid ""
@@ -1387,19 +1413,15 @@ msgstr "Номер телефона"
 msgid "Passwords"
 msgstr "Пароли"
 
-#: .\taas\user\templates\user_registration.html:64
-msgid "The length of the password has to be bigger than 8."
-msgstr "Длина пароля должна быть больше, чем 8."
-
-#: .\taas\user\templates\user_registration.html:79
+#: .\taas\user\templates\user_registration.html:80
 msgid "I agree to the "
 msgstr "Я согласен с "
 
-#: .\taas\user\templates\user_registration.html:80
+#: .\taas\user\templates\user_registration.html:81
 msgid "Terms of service"
 msgstr "правилами и условиями"
 
-#: .\taas\user\templates\user_registration.html:82
+#: .\taas\user\templates\user_registration.html:83
 msgid "Enter"
 msgstr "Зарегистрироваться"
 
@@ -1419,32 +1441,32 @@ msgstr "Ваш ПИН для калитки: "
 msgid "Update"
 msgstr "Изменить"
 
-#: .\taas\user\views.py:26
+#: .\taas\user\views.py:27
 msgid "User has been successfully registered."
 msgstr "Пользователь успешно зарегистрирован."
 
-#: .\taas\user\views.py:43
+#: .\taas\user\views.py:44
 msgid "Information has been updated."
 msgstr "Информация обновлена."
 
-#: .\taas\user\views.py:67
+#: .\taas\user\views.py:68
 msgid "User has been deactivated."
 msgstr "Пользователь деактивирован."
 
-#: .\taas\user\views.py:97
+#: .\taas\user\views.py:98
 msgid "Email instructions have been sent."
 msgstr "Инструкция отправлена на Ваш адрес электронной почты."
 
-#: .\taas\user\views.py:125
+#: .\taas\user\views.py:126
 msgid "Your password has been set. You may go ahead and log in now."
 msgstr "Ваш пароль восстановлен. Можете войти на сайт."
 
-#: .\taas\user\views.py:131 .\taas\user\views.py:138
+#: .\taas\user\views.py:132 .\taas\user\views.py:139
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:48
 msgid "Password reset unsuccessful"
 msgstr "Не удалось восстановить пароль."
 
-#: .\taas\user\views.py:134
+#: .\taas\user\views.py:135
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:18
 msgid "Enter new password"
 msgstr "Введите новый пароль."
@@ -3138,3 +3160,38 @@ msgstr ""
 #: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:21
 msgid "Email address:"
 msgstr "Адрес электронной почты:"
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:20
+msgid "queue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:21
+msgid "queues"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:28
+msgid "payload"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:37
+msgid "message"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:38
+msgid "messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1268
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1273
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1291
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""
