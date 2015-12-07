@@ -1,6 +1,8 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
-
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 from taas.user.tests.factories import UserFactory
 
 
@@ -59,7 +61,8 @@ class UserRegistrationTest(StaticLiveServerTestCase):
     def go_to_registration(self):
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
 
-        self.selenium.find_element_by_id("en").click()
+        element = WebDriverWait(self.selenium, 10).until(EC.presence_of_element_located((By.ID, "en")))
+        element.click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
         if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
