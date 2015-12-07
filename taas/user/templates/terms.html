@@ -23,33 +23,38 @@
 {% endblock tab-menu %}
 
 {% block content %}
-    {% blocktrans %}
-        <h3>THE USER OF THE GROUNDS AGREES TO:</h3>
-        <ol>
-            <li>stay on the grounds only on the prearranged time and purpose.</li>
-            <li>use carefully the inventory of Tartu Agility Arenguselts.</li>
-            <li>inform immediately if there is missing or broken inventory.</li>
-            <li>park in the specified parking lot.</li>
-            <li>guarantee that his dog maintains cleanliness on the fields with fake grass, penalty 10
-                euros.
-            </li>
-            <li>clean after his dog in the area surrounded with the fence and
-                near it.
-            </li>
-            <li>ensure that his dog is not a threat to other dogs or
-                people.
-            </li>
-            <li>respect other users of the grounds.</li>
-            <li>lock all the gates and turn of the lights if he leaves as the last person.</li>
-            <li>follow signs on the surrounding fields and not walk
-                their dog there.
-            </li>
-            <li>inform immediately if the aforementioned rules are being broken or other
-                inadvisable behaviour on the grounds or
-                near it. <br>
-                <b>Prompt information:</b> phone <a href=\tel:+3725271414\>+372 527 1414</a> <br>
-                <b>Normal information:</b> e-mail <a href=\mailto:agility.arenguselts@gmail.com\>agility.arenguselts@gmail.com</a>
-            </li>
-        </ol>
-    {% endblocktrans %}
+    <div class="form">
+        {% blocktrans %}
+            <h2>Terms of service</h2>
+            <h3>THE USER OF THE GROUNDS AGREES TO:</h3>
+            <div class="fieldWrapper">
+                <ol>
+                    <li>stay on the grounds only on the prearranged time and purpose.</li>
+                    <li>use carefully the inventory of Tartu Agility Arenguselts.</li>
+                    <li>inform immediately if there is missing or broken inventory.</li>
+                    <li>park in the specified parking lot.</li>
+                    <li>guarantee that his dog maintains cleanliness on the fields with fake grass, penalty 10
+                        euros.
+                    </li>
+                    <li>clean after his dog in the area surrounded with the fence and
+                        near it.
+                    </li>
+                    <li>ensure that his dog is not a threat to other dogs or
+                        people.
+                    </li>
+                    <li>respect other users of the grounds.</li>
+                    <li>lock all the gates and turn of the lights if he leaves as the last person.</li>
+                    <li>follow signs on the surrounding fields and not walk
+                        their dog there.
+                    </li>
+                    <li>inform immediately if the aforementioned rules are being broken or other
+                        inadvisable behaviour on the grounds or
+                        near it. <br>
+                        <b>Prompt information:</b> phone <a href=\tel:+3725271414\>+372 527 1414</a> <br>
+                        <b>Normal information:</b> e-mail <a href=\mailto:agility.arenguselts@gmail.com\>agility.arenguselts@gmail.com</a>
+                    </li>
+                </ol>
+            </div>
+        {% endblocktrans %}
+    </div>
 {% endblock content %}

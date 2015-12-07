@@ -133,20 +133,26 @@ $(document).ready(function () {
 
     $('.fc-col0').tooltipster({
         theme: 'tooltipster-light',
-        offsetX: -135,
-        content: $(fieldA)
+        touchDevices: true,
+        content: $(fieldA),
+        trigger: 'hover',
+        position: 'top'
     });
 
     $('.fc-col1').tooltipster({
         theme: 'tooltipster-light',
-        offsetX: -135,
-        content: $(fieldB)
+        touchDevices: true,
+        content: $(fieldB),
+        trigger: 'hover',
+        position: 'top'
     });
 
     $('.fc-col2').tooltipster({
         theme: 'tooltipster-light',
-        offsetX: -135,
-        content: $(fieldC)
+        touchDevices: true,
+        content: $(fieldC),
+        trigger: 'hover',
+        position: 'top'
     });
 
     $('#datepicker').datepicker({

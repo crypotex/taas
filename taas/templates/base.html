@@ -9,6 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="{% static 'css/mobilenav.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
 
@@ -18,12 +20,13 @@
     <script type="text/javascript" src="{% static 'js/ajax_setup.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/sweetalert.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
+    <script src="{% static 'js/mobilenav.js' %}"></script>
 
     {% block scripts %}{% endblock scripts %}
 
     {% ifequal request.path "/" %}
         <script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
-    {% else %}
+        {% else %}
         <script type="text/javascript" src="{% static 'js/timer.js' %}"></script>
     {% endifequal %}
     <script>
@@ -37,6 +40,8 @@
         unpaidOwn = $('<p>{% trans 'Your unfinished reservation.' %}</p>');
         unpaidAnon = $('<p>{% trans 'Unfinished reservation of another user.' %}</p>');
         warningMessage = "{% trans 'Warning' %}";
+        menu = "{% trans 'Menu' %}";
+
         $(document).ready(function () {
             $('.change_language').click(function (e) {
                 e.preventDefault();
@@ -51,7 +56,7 @@
 
 <body>
 <div id="wrap">
-    <header>
+    <header id="desktop">
         <div id="nav">
             <a href="http://taas.ee/"><img class="logo" alt="Tartu Agility Arenguselts"
                                            src="{% static 'img/logo.jpg' %}"></a>
@@ -89,6 +94,45 @@
         </div>
 
         {% block tab-menu %} {% endblock tab-menu %}
+    </header>
+
+    <header id="mobile">
+        <div id="nav">
+            <a href="http://taas.ee/"><img class="logoväike" alt="Tartu Agility Arenguselts"
+                                           src="{% static 'img/logo.jpg' %}"></a>
+
+            <div id="navwrap2">
+                <div class="navsmall">
+                    <form action="{% url 'set_language' %}" method="post" style="display: none"
+                          id="change_language_form">{% csrf_token %}
+                        <input type="hidden" value="" name="language" id="language"/>
+                    </form>
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <a href="#" id="{{ language.code }}" class="change_language"></a>
+                    {% endfor %}
+                </div>
+
+                <div id='cssmenu'>
+                    <ul>
+                        {% if not user.is_authenticated %}
+                            <li><a href="/user/login">{% trans 'Login' %}</a></li>
+                            <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                        {% else %}
+                            <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+                            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+                            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+                            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+                            <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+                            <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
+
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
     </header>
 
     <div id="innerwrap">

@@ -1,7 +1,7 @@
 .form, .reset-form, .login-form, .deactivate-form {
     width: 50%;
     min-width: 200px;
-    word-break: keep-all;
+    word-break: break-word;
     padding: 30px;
     margin: auto;
     border-radius: 10px;
@@ -335,4 +335,10 @@ input#payButton {
     content: '';
     display: table;
     clear: both;
+}
+
+@media screen and (max-width: 500px) {
+    .form, .reset-form, .login-form, .deactivate-form {
+        width: 75%;
+    }
 }

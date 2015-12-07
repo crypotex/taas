@@ -1,15 +1,20 @@
 #calendar {
-    width: 45%;
+    width: 100%;
     min-width: 240px;
     display: inline-block;
+    padding-bottom: 15px;
+}
+
+#calendar:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
 #datepicker-color-wrap {
     display: inline-block;
-    padding-bottom: 15px;
     vertical-align: top;
-    padding-right: 20px;
-    padding-top: 32px;
+    padding: 32px 20px 15px 20px;
 }
 
 #colorbox-wrap {
@@ -24,9 +29,19 @@
     clear: both;
 }
 
+#calendar-submit-wrap {
+    display: inline-block;
+}
+
+#calendar-submit-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 #calendarwrap {
     text-align: center;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     overflow: hidden;
 }
 
@@ -37,7 +52,6 @@
 }
 
 .indexwrap {
-    width: 75%;
     margin: 0 auto 20px auto;
     overflow: hidden;
 }
