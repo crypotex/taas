@@ -25,7 +25,7 @@ install_requires = [
 
 setup(
     name='taas',
-    version='0.2.0',
+    version='0.3.0',
     author='TAAS Team',
     author_email='taas@gmail.com',
     url='https://github.com/crypotex/taas',
