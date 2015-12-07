@@ -13,10 +13,8 @@
 
 #datepicker-color-wrap {
     display: inline-block;
-    padding-bottom: 15px;
     vertical-align: top;
-    padding-right: 20px;
-    padding-top: 32px;
+    padding: 32px 20px 15px 20px;
 }
 
 #colorbox-wrap {
@@ -33,7 +31,6 @@
 
 #calendar-submit-wrap {
     display: inline-block;
-    width: 50%;
 }
 
 #calendar-submit-wrap:after {

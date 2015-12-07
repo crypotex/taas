@@ -82,7 +82,8 @@
 ul.pagination {
     text-align: center;
     list-style-type: none;
-    padding-right: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 li.previous, li.next, li.current {
@@ -112,4 +113,24 @@ li.next:after {
 .fc-header-title h2 {
     font-size: 16px;
     color: #666666;
+}
+
+
+@media screen and (max-width: 800px) {
+    ul.pagination {
+        padding: 0;
+    }
+
+    li.next a {
+        content: url("../img/right_arrow.svg");
+        width: 20px;
+        height: auto;
+    }
+    
+    li.previous a {
+        content: url("../img/left_arrow.svg");
+        width: 20px;
+        height: auto;
+    }
+
 }

@@ -383,7 +383,7 @@ a:hover {
     header#mobile {
         visibility: visible;
     }
-    
+
     header#desktop {
         display: none;
     }
@@ -404,7 +404,13 @@ a:hover {
         content: url('../img/taasväike.png');
         width: 70px;
         height: auto;
+        padding-left: 20px;
     }
 }
 
+@media screen and (max-width: 500px) {
+    #wrap {
+        width: 90%;
+    }
+}
 
