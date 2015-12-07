@@ -8,9 +8,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from taas.user.tests.factories import UserFactory
 
 
-os.environ['DJANGO_LIVE_TEST_SERVER_ADDRESS'] = "localhost:8000-8010,8080,9200-9300"
-
-
 class UserRegistrationTest(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
@@ -26,6 +23,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         hub_url = "%s:%s@localhost:4445" % (username, access_key)
         cls.selenium = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
         cls.selenium.maximize_window()
+        cls.selenium.implicitly_wait(5)
 
     @classmethod
     def tearDownClass(cls):
