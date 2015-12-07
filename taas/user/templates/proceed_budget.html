@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
 {% block scripts %}
     <script type="text/javascript">
         window.onload = function load() {
@@ -7,9 +11,9 @@
 {% endblock scripts %}
 
 {% block content %}
-<form name="test" method="post" action="{{ host }}">
-    <input type="hidden" name="json" value="{{ json }}"/>
-    <input type="hidden" name="mac" value="{{ mac }}"/>
-</form>
+    <form name="test" method="post" action="{{ host }}">
+        <input type="hidden" name="json" value="{{ json }}"/>
+        <input type="hidden" name="mac" value="{{ mac }}"/>
+    </form>
 {% endblock content %}
 

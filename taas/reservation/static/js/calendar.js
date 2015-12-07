@@ -85,7 +85,7 @@ function addReservation(start, end, ev) {
 }
 
 function deleteReservation(calEvent) {
-    if (calEvent.color != "#b285e0") return;
+    if (calEvent.color != "#8f62bd") return;
 
     jQuery.post('/reservation/remove/',
         {

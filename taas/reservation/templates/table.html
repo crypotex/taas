@@ -56,6 +56,8 @@
 {% if table.page %}
     {% with table.page.paginator.count as total %}
         {% with table.page.object_list|length as count %}
+
+            <p id="price">{% trans 'Total price: ' %}{{ total_price }}</p>
             {% block pagination %}
                 <ul class="pagination">
                     {% if table.page.has_previous %}
