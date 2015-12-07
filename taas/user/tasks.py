@@ -67,7 +67,7 @@ def email_admin_on_user_registration(user_id):
     user = models.User.objects.get(id=user_id)
     message = settings.ADMIN_REGISTRATION_MESSAGE
     message = message % {'email': user.email}
-    subject = settings.REGISTRATION_SUBJECT
+    subject = settings.REGISTRATION_SUBJECT_ADMIN
     from_email = settings.EMAIL_HOST_USER
     to_emails = settings.ADMIN_EMAILS
 
@@ -86,7 +86,7 @@ def email_admin_on_user_deactivation(user_id):
     user = models.User.objects.get(id=user_id)
     message = settings.ADMIN_USER_DISABLE_MESSAGE
     message = message % {'email': user.email}
-    subject = settings.USER_STATUS_SUBJECT
+    subject = settings.USER_STATUS_SUBJECT_ADMIN
     from_email = settings.EMAIL_HOST_USER
     to_emails = settings.ADMIN_EMAILS
 

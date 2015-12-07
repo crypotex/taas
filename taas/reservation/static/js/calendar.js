@@ -2,6 +2,10 @@ var canSelect;
 var timeError;
 var expireMessage;
 var expireDate = null;
+var warningMessage;
+var fieldA;
+var fieldB;
+var fieldC;
 
 swal.setDefaults({confirmButtonColor: '#ffa31a'});
 
@@ -31,7 +35,7 @@ function startTimer(expireDate) {
         removeReservationsOnExpire();
         disableSubmition();
         expireDate = null;
-        swal({title: "Warning", text: expireMessage, type: "warning", confirmButtonText: "OK"});
+        swal({title: warningMessage, text: expireMessage, type: "warning", confirmButtonText: "OK"});
     });
 }
 
@@ -60,7 +64,7 @@ function removeReservationsOnExpire() {
 function addReservation(start, end, ev) {
     var minutes = start.diff(moment(), 'minutes');
     if (minutes < 30) {
-        swal({title: "Warning", text: timeError, type: "warning", customClass: "alert-button"});
+        swal({title: warningMessage, text: timeError, type: "warning", customClass: "alert-button"});
     } else {
         jQuery.post('reservation/add/',
             {
@@ -104,7 +108,11 @@ function deleteReservation(calEvent) {
 
 $(document).ready(function () {
     $("#calendar").fullCalendar({
-        header: false,
+        header: {
+            left: '',
+            center: 'title',
+            right: ''
+        },
         resources: 'reservation/fields/',
         defaultView: 'resourceDay',
         allDaySlot: false,
@@ -143,7 +151,6 @@ $(document).ready(function () {
 
     $('#datepicker').datepicker({
         inline: true,
-        minDate: 0,
         firstDay: 1,
         onSelect: function () {
             $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));

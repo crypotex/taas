@@ -56,12 +56,12 @@ YEARS = [(year, year)
 
 
 class HistoryForm(forms.Form):
-    month = forms.ChoiceField(choices=MONTHS, initial=timezone.now().month)
-    year = forms.ChoiceField(choices=YEARS, initial=timezone.now().year)
+    month = forms.ChoiceField(choices=MONTHS, initial=timezone.now().month, label=_('Month'))
+    year = forms.ChoiceField(choices=YEARS, initial=timezone.now().year, label=_('Year'))
 
 
 class PasswordForm(forms.Form):
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput, label=_('Password'))
 
     def __init__(self, user, *args, **kwargs):
         super(PasswordForm, self).__init__(*args, **kwargs)

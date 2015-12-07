@@ -18,6 +18,8 @@
     <script type="text/javascript">
         var removeMessage = "{% trans 'Do you really want to remove this reservation?' %}";
         var updateMessage = "{% trans 'Do you really want to modify this reservation?' %}";
+        var title = "{% trans 'Are you sure?' %}";
+        var cancelMessage = "{% trans 'Cancel' %}";
     </script>
     <script type="text/javascript" src="{% static 'js/history.js' %}"></script>
 {% endblock %}
@@ -39,10 +41,10 @@
         <form action="" method="get" class="sort_form">
             {{ form }}
 
-            <input type="submit" value={% trans 'Submit' %}>
+            <input type="submit" id="sortButton" value={% trans 'Sort' %}>
         </form>
         {% if table %}
-            {% render_table table %}
+            {% render_table table 'table.html' %}
         {% else %}
             <p>{% trans 'There are no reservations in this month.' %}</p>
         {% endif %}

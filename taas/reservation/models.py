@@ -1,10 +1,8 @@
 from decimal import Decimal
-
 from django.db import models
 from django.core.validators import MinValueValidator
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-
 from taas.user.models import User
 
 
@@ -15,6 +13,10 @@ class Field(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = _('field')
+        verbose_name_plural = _('fields')
 
 
 class Payment(models.Model):
@@ -27,10 +29,14 @@ class Payment(models.Model):
         (STAGED, _('Staged')),
     )
 
-    type = models.CharField(choices=PAYMENT_CHOICES, max_length=2)
+    type = models.CharField(choices=PAYMENT_CHOICES, max_length=2, verbose_name=_('type'))
     amount = models.DecimalField(_('amount'), max_digits=10, decimal_places=2, validators=[MinValueValidator(0.0)])
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, verbose_name=_('user'))
+
+    class Meta:
+        verbose_name = _('payment')
+        verbose_name_plural = _('payments')
 
     def __str__(self):
         return str(self.pk)
@@ -39,8 +45,10 @@ class Payment(models.Model):
 class Reservation(models.Model):
     start = models.DateTimeField(_('start'))
     end = models.DateTimeField(_('end'))
-    user = models.ForeignKey(User, limit_choices_to={'is_active': True}, related_name="reservations")
-    field = models.ForeignKey(Field, related_name="reservations")
+    user = models.ForeignKey(User, limit_choices_to={'is_active': True}, related_name="reservations",
+                             verbose_name=_('user'))
+    field = models.ForeignKey(Field, related_name="reservations",
+                              verbose_name=_('field'))
     paid = models.BooleanField(_('Paid'), default=False)
     date_created = models.DateTimeField(_('date created'), default=timezone.now)
     payment = models.ForeignKey(Payment, verbose_name=_('Payment'), blank=True,

@@ -3,10 +3,12 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <title>{% block title %}{% trans 'Tartu Agility Playground' %}{% endblock title %}</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert.css' %}">
 
@@ -26,67 +28,101 @@
     {% endifequal %}
     <script>
         expireMessage = "{% trans 'Your reservation time has been expired.' %}";
-        var fieldA = '<p><b>{% trans 'A-PLATS (HÜPPERADA):' %}</b> <br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) = 2x6m, 5m, 3m' %}<br>{% trans 'müür (1)' %}<br>{% trans 'rõngas (1)' %}<br>{% trans 'kaugus (1)' %}<br>{% trans 'kott (1)' %}<br>{% trans  'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
-        var fieldB = '<p><b>{% trans 'B-PLATS (AGILITYRADA):' %}</b><br>{% trans 'tõkked (10)' %}<br>{% trans 'tunnelid (4) =2x6m, 5m, 4m' %}<br>{% trans 'poom (1)' %}<br>{% trans 'A-tõke (1)' %}<br>{% trans 'kiik (1)' %}<br>{% trans 'laud (1)' %}<br>{% trans 'slaalom (1)' %}<br>{% trans 'KOKKU: 19 takistust' %}</p>';
-        var fieldC = '<p><b>{% trans 'C-PLATS:' %}</b><br>{% trans 'Kuulekustrenni väliplats' %}<br>{% trans 'Võistluste telkimise ja pealtvaatajate ala' %}</p>';
+        fieldA = '<p><b>{% trans 'A-FIELD (JUMPS):' %}</b> <br>{% trans 'hurdles (10)' %}<br>{% trans 'open tunnels (4) = 2x6m, 5m, 3m' %}<br>{% trans 'wall (1)' %}<br>{% trans 'tire jump (1)' %}<br>{% trans 'long jump (1)' %}<br>{% trans 'closed tunnel (chute) (1)' %}<br>{% trans  'weave poles (slalom) (1)' %}<br>{% trans 'TOTAL: 19 obstacles' %}</p>';
+        fieldB = '<p><b>{% trans 'B-FIELD (AGILITY):' %}</b><br>{% trans 'hurdles (10)' %}<br>{% trans 'open tunnels (4) =2x6m, 5m, 4m' %}<br>{% trans 'dog walk (1)' %}<br>{% trans 'A-frame (1)' %}<br>{% trans 'seesaw (1)' %}<br>{% trans 'table (1)' %}<br>{% trans 'weave poles (slalom) (1)' %}<br>{% trans 'TOTAL: 19 obstacles' %}</p>';
+        fieldC = '<p><b>{% trans 'C-FIELD:' %}</b><br>{% trans 'Obedience training ground' %}<br>{% trans 'Area for spectators and camping during competitions' %}</p>';
+
+        paidAnon = $('<p>{% trans 'Paid reservation of another user.' %}</p>');
+        paidOwn = $('<p>{% trans 'Your paid reservation.' %}</p>');
+        unpaidOwn = $('<p>{% trans 'Your unfinished reservation.' %}</p>');
+        unpaidAnon = $('<p>{% trans 'Unfinished reservation of another user.' %}</p>');
+        warningMessage = "{% trans 'Warning' %}";
+        $(document).ready(function () {
+            $('.change_language').click(function (e) {
+                e.preventDefault();
+                $('#language').val($(this).attr('id'));
+                $('#change_language_form').submit();
+            });
+        });
     </script>
+    <script type="text/javascript" src="{% static 'js/countdown/jquery.countdown.js' %}"></script>
+
 </head>
 
 <body>
-<div id="innerwrap">
+<div id="wrap">
     <header>
-        <div class="logo">
-            <a href="http://taas.ee/"><img alt="Tartu Agility Arenguselts" src="{% static 'img/logo.jpg' %}"></a>
-        </div>
-        <div class="navsmall">
-            <a href="https://www.facebook.com/pages/Tartu-Agility-Arenguselts/626675224051536?ref=hl&amp;bookmark_t=page">
-                <img alt="Facebooki logo" src="{% static 'img/fblogo.png' %}"></a>
+        <div id="nav">
+            <a href="http://taas.ee/"><img class="logo" alt="Tartu Agility Arenguselts"
+                                           src="{% static 'img/logo.jpg' %}"></a>
+
+            <div id="navwrap">
+                <div class="navsmall">
+                    <form action="{% url 'set_language' %}" method="post" style="display: none"
+                          id="change_language_form">{% csrf_token %}
+                        <input type="hidden" value="" name="language" id="language"/>
+                    </form>
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <a href="#" id="{{ language.code }}" class="change_language"></a>
+                    {% endfor %}
+                </div>
+
+                {% if not user.is_authenticated %}
+                    <div id="user-nav">
+                        <ul>
+                            <li><a href="/user/login">{% trans 'Login' %}</a></li>
+                            <li><a href="/user/register">{% trans 'Register' %}</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div id="user-nav">
+                        <ul>
+                            <li>{% trans 'Hello, ' %}<span id="name">{{ user.get_short_name }}</span></li>
+                            <li>{{ user.display_budget_money }}</li>
+                            <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
         </div>
 
-        {% if not user.is_authenticated %}
-            <div class="user-nav">
-                <ul>
-                    <li><a href="/user/login">{% trans 'Login' %}</a></li>
-                    <li><a href="/user/register">{% trans 'Register' %}</a></li>
-                </ul>
-            </div>
-        {% else %}
-            <div class="user-nav">
-                <ul>
-                    <li>{% trans 'Hello, ' %}<span id="name">{{ user.get_short_name }}</span></li>
-                    <li>{{ user.display_budget_money }}</li>
-                    <li><a href="/user/logout">{% trans 'Logout' %}</a></li>
-                </ul>
-            </div>
-        {% endif %}
+        {% block tab-menu %} {% endblock tab-menu %}
     </header>
 
-    {% block tab-menu %} {% endblock tab-menu %}
+    <div id="innerwrap">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                        <script>
+                            swal({
+                                title: warningMessage,
+                                text: "{{ message }}",
+                                type: "warning",
+                                customClass: "alert-button"
+                            });
+                        </script>
+                    {% else %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
 
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-                    <script>
-                        swal({title: "Warning", text: "{{ message }}", type: "warning", customClass: "alert-button"});
-                    </script>
-                {% else %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
+        {% if user.is_authenticated %}
+            <div id="timerMessage">{% trans 'To make all your reservations you have' %}
+                <span id="timer"></span>
+                {% trans 'minutes' %}
+            </div>
+            <script type="text/javascript">
+                setExpireDate();
+            </script>
+        {% endif %}
 
-
-    <div id="timerMessage">{% trans 'To make all your reservations you have' %}
-        <span id="timer" ></span>
-        {% trans 'minutes' %}
+        {% block content %}{% endblock content %}
     </div>
-    <script type="text/javascript">
-        setExpireDate();
-    </script>
 </div>
-
-{% block content %}{% endblock content %}
 </body>
 </html>

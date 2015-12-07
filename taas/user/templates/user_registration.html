@@ -30,7 +30,7 @@
 {% block content %}
     <form method="POST" class="form">{% csrf_token %}
 
-        <h1>{% trans 'Registration' %}</h1>
+        <h2>{% trans 'Registration' %}</h2>
 
         {{ form.non_field_errors }}
         <div class="section"><span>1</span>{% trans 'First Name' %} &amp; {% trans 'Last Name' %}</div>
@@ -61,20 +61,25 @@
 
         <div class="section"><span>3</span>{% trans 'Passwords' %}</div>
         <div class="fieldWrapper">
+
             {{ form.password1.label_tag }}
             {% render_field form.password1|add_error_class:"field-error" %}
+            <p>{{ form.password1.help_text|cut:"* " }}</p>
             {% for err in form.password1.errors %}
                 <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
             {{ form.password2.label_tag }}
             {% render_field form.password2|add_error_class:"field-error" %}
-            <p class="help-text">{{ form.password2.help_text|cut:"* " }}</p>
+
 
             {% for err in form.password2.errors %}
                 <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
         </div>
-        <input type="checkbox" id="terms">
-        <label for="terms" id="label_terms">{% trans 'I agree to the ' %}<a target="_blank" href="/user/terms">{% trans 'Terms of service' %}</a>.</label> <br>
+        <div class="termswrap">
+            <input type="checkbox" id="terms">
+            <label for="terms" id="label_terms">{% trans 'I agree to the ' %}<a href="/user/terms"
+                                                                                target="_blank">{% trans 'Terms of service' %}</a>.</label>
+        </div>
         <input id="submit-button" type="submit" disabled value={% trans 'Enter' %}>
     </form>
 {% endblock content %}
