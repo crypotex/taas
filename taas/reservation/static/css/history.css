@@ -14,7 +14,7 @@
     border-top: 1px solid #c8c8c8;
     padding: 10px;
     vertical-align:top;
-    word-break: break-word;
+    word-break: keep-all;
 }
 
 #bookings tr:last-child {

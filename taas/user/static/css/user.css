@@ -1,7 +1,7 @@
 .form, .reset-form, .login-form, .deactivate-form {
     width: 50%;
     min-width: 150px;
-    word-break: break-all;
+    word-break: keep-all;
     padding: 30px;
     margin: auto;
     border-radius: 10px;
