@@ -62,7 +62,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_id("en").click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        if self.selenium.find_element_by_xpath('//*[@id="desktop]'):
+        if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
             self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[2]/a').click()
             self.assertIn("Registration", self.selenium.title)
         else:
