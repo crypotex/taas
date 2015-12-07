@@ -1,8 +1,7 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from django.utils.translation import activate
+
 from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from taas.user.tests.factories import UserFactory
 
 
@@ -14,13 +13,13 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
 
+    def setUp(self):
+        activate("en")
+
     @classmethod
     def tearDownClass(cls):
         cls.selenium.quit()
         super(UserRegistrationTest, cls).tearDownClass()
-
-    def setUp(self):
-        self.selenium.implicitly_wait(10)
 
     def test_user_can_access_registration(self):
         self.go_to_registration()
@@ -63,9 +62,6 @@ class UserRegistrationTest(StaticLiveServerTestCase):
 
     def go_to_registration(self):
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
-
-        element = WebDriverWait(self.selenium, 10).until(EC.presence_of_element_located((By.ID, "en")))
-        element.click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
         if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
