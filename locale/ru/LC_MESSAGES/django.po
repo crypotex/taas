@@ -1,0 +1,3197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-07 01:42+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: .\taas\reservation\apps.py:11
+msgid "Reservation"
+msgstr "Бронирование"
+
+#: .\taas\reservation\forms.py:21
+msgid "Date should not be in the past."
+msgstr "Дата не должна быть в прошлом."
+
+#: .\taas\reservation\forms.py:23
+msgid "There should be at least 15 minutes before reservation"
+msgstr "До начала забронированного времени должно быть как минимум 15 минут"
+
+#: .\taas\reservation\forms.py:25
+msgid "Invalid reservation time."
+msgstr "Неверное время бронирования."
+
+#: .\taas\reservation\forms.py:29
+msgid "Start date should be earlier than end date."
+msgstr "Дата начала должна быть раньше даты конца."
+
+#: .\taas\reservation\forms.py:36
+msgid "Field does not exist."
+msgstr "Такой плошадки нет."
+
+#: .\taas\reservation\forms.py:40
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "January"
+msgstr "Январь"
+
+#: .\taas\reservation\forms.py:41
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "February"
+msgstr "Февраль"
+
+#: .\taas\reservation\forms.py:42
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "March"
+msgstr "Март"
+
+#: .\taas\reservation\forms.py:43
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "April"
+msgstr "Апрель"
+
+#: .\taas\reservation\forms.py:44
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "May"
+msgstr "Май"
+
+#: .\taas\reservation\forms.py:45
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "June"
+msgstr "Июнь"
+
+#: .\taas\reservation\forms.py:46
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "July"
+msgstr "Июль"
+
+#: .\taas\reservation\forms.py:47
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "August"
+msgstr "Август"
+
+#: .\taas\reservation\forms.py:48
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "September"
+msgstr "Сентябрь"
+
+#: .\taas\reservation\forms.py:49
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "October"
+msgstr "Октябрь"
+
+#: .\taas\reservation\forms.py:50
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "November"
+msgstr "Ноябрь"
+
+#: .\taas\reservation\forms.py:51
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "December"
+msgstr "Декабрь"
+
+#: .\taas\reservation\forms.py:59
+msgid "Month"
+msgstr "Месяц"
+
+#: .\taas\reservation\forms.py:60
+msgid "Year"
+msgstr "Год"
+
+#: .\taas\reservation\forms.py:64 .\taas\user\forms.py:9
+#: .\taas\user\forms.py:86
+msgid "Password"
+msgstr "Пароль"
+
+#: .\taas\reservation\forms.py:75
+msgid "Incorrect password."
+msgstr "Неправильный пароль."
+
+#: .\taas\reservation\models.py:10
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:12
+msgid "name"
+msgstr "имя"
+
+#: .\taas\reservation\models.py:11
+msgid "cost"
+msgstr "стоимость"
+
+#: .\taas\reservation\models.py:12
+msgid "description"
+msgstr "описание"
+
+#: .\taas\reservation\models.py:18 .\taas\reservation\models.py:51
+msgid "field"
+msgstr "площадка"
+
+#: .\taas\reservation\models.py:19
+msgid "fields"
+msgstr "площадки"
+
+#: .\taas\reservation\models.py:27
+#: .\taas\reservation\templates\reservation_list.html:58
+msgid "Transaction"
+msgstr "Трансакция"
+
+#: .\taas\reservation\models.py:28
+#: .\taas\reservation\templates\reservation_list.html:55
+msgid "Budget"
+msgstr "Сальдо"
+
+#: .\taas\reservation\models.py:29
+msgid "Staged"
+msgstr "Текущий платёж"
+
+#: .\taas\reservation\models.py:32
+msgid "type"
+msgstr "тип"
+
+#: .\taas\reservation\models.py:33
+msgid "amount"
+msgstr "сумма"
+
+#: .\taas\reservation\models.py:34 .\taas\reservation\models.py:53
+msgid "date created"
+msgstr "дата создания"
+
+#: .\taas\reservation\models.py:35 .\taas\reservation\models.py:49
+#: .\taas\user\models.py:61
+msgid "user"
+msgstr "пользователь"
+
+#: .\taas\reservation\models.py:38
+msgid "payment"
+msgstr "платёж"
+
+#: .\taas\reservation\models.py:39
+msgid "payments"
+msgstr "платежи"
+
+#: .\taas\reservation\models.py:46
+msgid "start"
+msgstr "начало"
+
+#: .\taas\reservation\models.py:47
+msgid "end"
+msgstr "конец"
+
+#: .\taas\reservation\models.py:52
+msgid "Paid"
+msgstr "Оплачено"
+
+#: .\taas\reservation\models.py:54
+#: .\taas\reservation\templates\reservation_list.html:7
+msgid "Payment"
+msgstr "Платёж"
+
+#: .\taas\reservation\models.py:58
+msgid "reservation"
+msgstr "бронирование"
+
+#: .\taas\reservation\models.py:59
+msgid "reservations"
+msgstr "бронирования"
+
+#: .\taas\reservation\tables.py:41
+msgid "price (€)"
+msgstr "цена (€)"
+
+#: .\taas\reservation\templates\admin\change_list.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\500.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\app_index.html:9
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:13
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_form.html:19
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\index.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\invalid_setup.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\object_history.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_done.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_complete.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_done.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:6
+msgid "Home"
+msgstr "Начало"
+
+#: .\taas\reservation\templates\admin\change_list.html:57
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list.html:54
+#, python-format
+msgid "Add %(name)s"
+msgstr "Добавить %(name)s"
+
+#: .\taas\reservation\templates\admin\change_list.html:67
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list.html:64
+msgid "Filter"
+msgstr "Фильтр"
+
+#: .\taas\reservation\templates\admin\change_list.html:88
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:27
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_form.html:54
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list.html:83
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\login.html:52
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:20
+msgid "Please correct the error below."
+msgstr "Пожалуйста, исправьте ошибку ниже."
+
+#: .\taas\reservation\templates\admin\change_list.html:89
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:27
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_form.html:54
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list.html:83
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\login.html:52
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:20
+msgid "Please correct the errors below."
+msgstr "Пожалуйста, исправьте ошибки ниже."
+
+#: .\taas\reservation\templates\admin\change_list.html:130
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list.html:123
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\page_submit_line.html:15
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\submit_line.html:12
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\taas\reservation\templates\admin\change_list.html:140
+#, python-format
+msgctxt "reservation"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s бронирование"
+msgstr[1] "%(count)s бронирования"
+msgstr[2] "%(count)s бронирований"
+
+#: .\taas\reservation\templates\admin\change_list.html:146
+#, python-format
+msgctxt "user"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s пользователь"
+msgstr[1] "%(count)s пользователя"
+msgstr[2] "%(count)s пользователей"
+
+#: .\taas\reservation\templates\admin\change_list.html:152
+#, python-format
+msgctxt "field"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s площадка"
+msgstr[1] "%(count)s площадки"
+msgstr[2] "%(count)s площадок"
+
+#: .\taas\reservation\templates\admin\change_list.html:158
+#, python-format
+msgctxt "payment"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s платёж"
+msgstr[1] "%(count)s платежа"
+msgstr[2] "%(count)s платежей"
+
+#: .\taas\reservation\templates\budget_payment.html:6
+msgid "Budget payment"
+msgstr "Платёж"
+
+#: .\taas\reservation\templates\budget_payment.html:15
+#: .\taas\reservation\templates\help.html:22
+#: .\taas\reservation\templates\history.html:30
+#: .\taas\reservation\templates\index.html:52
+#: .\taas\reservation\templates\reservation_list.html:29
+#: .\taas\reservation\templates\reservation_update.html:26
+#: .\taas\user\templates\login.html:16
+#: .\taas\user\templates\password_reset\confirm.html:14
+#: .\taas\user\templates\password_reset\form.html:14
+#: .\taas\user\templates\terms.html:15
+#: .\taas\user\templates\update_budget.html:16
+#: .\taas\user\templates\user_deactivate.html:13
+#: .\taas\user\templates\user_registration.html:20
+#: .\taas\user\templates\user_update.html:21
+msgid "Booking"
+msgstr "Бронирование"
+
+#: .\taas\reservation\templates\budget_payment.html:17
+#: .\taas\reservation\templates\help.html:24
+#: .\taas\reservation\templates\history.html:8
+#: .\taas\reservation\templates\history.html:31
+#: .\taas\reservation\templates\index.html:54
+#: .\taas\reservation\templates\reservation_list.html:31
+#: .\taas\reservation\templates\reservation_update.html:27
+#: .\taas\user\templates\login.html:18
+#: .\taas\user\templates\password_reset\confirm.html:16
+#: .\taas\user\templates\password_reset\form.html:16
+#: .\taas\user\templates\terms.html:17
+#: .\taas\user\templates\update_budget.html:17
+#: .\taas\user\templates\user_deactivate.html:14
+#: .\taas\user\templates\user_registration.html:22
+#: .\taas\user\templates\user_update.html:22
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_form.html:34
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:23
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\image\change_form.html:17
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\object_history.html:10
+msgid "History"
+msgstr "История"
+
+#: .\taas\reservation\templates\budget_payment.html:18
+#: .\taas\reservation\templates\help.html:25
+#: .\taas\reservation\templates\history.html:32
+#: .\taas\reservation\templates\index.html:55
+#: .\taas\reservation\templates\reservation_list.html:32
+#: .\taas\reservation\templates\reservation_update.html:28
+#: .\taas\user\templates\login.html:19
+#: .\taas\user\templates\password_reset\confirm.html:17
+#: .\taas\user\templates\password_reset\form.html:17
+#: .\taas\user\templates\terms.html:18
+#: .\taas\user\templates\update_budget.html:18
+#: .\taas\user\templates\user_deactivate.html:15
+#: .\taas\user\templates\user_registration.html:23
+#: .\taas\user\templates\user_update.html:23
+msgid "Balance"
+msgstr "Деньги"
+
+#: .\taas\reservation\templates\budget_payment.html:19
+#: .\taas\reservation\templates\help.html:26
+#: .\taas\reservation\templates\history.html:33
+#: .\taas\reservation\templates\index.html:56
+#: .\taas\reservation\templates\reservation_list.html:33
+#: .\taas\reservation\templates\reservation_update.html:29
+#: .\taas\user\templates\login.html:20
+#: .\taas\user\templates\password_reset\confirm.html:18
+#: .\taas\user\templates\password_reset\form.html:18
+#: .\taas\user\templates\terms.html:19
+#: .\taas\user\templates\update_budget.html:19
+#: .\taas\user\templates\user_deactivate.html:16
+#: .\taas\user\templates\user_registration.html:24
+#: .\taas\user\templates\user_update.html:24
+msgid "Account"
+msgstr "Учётная запись"
+
+#: .\taas\reservation\templates\budget_payment.html:21
+#: .\taas\reservation\templates\help.html:28
+#: .\taas\reservation\templates\history.html:34
+#: .\taas\reservation\templates\index.html:58
+#: .\taas\reservation\templates\reservation_list.html:35
+#: .\taas\reservation\templates\reservation_update.html:30
+#: .\taas\user\templates\login.html:22
+#: .\taas\user\templates\password_reset\confirm.html:20
+#: .\taas\user\templates\password_reset\form.html:20
+#: .\taas\user\templates\terms.html:21
+#: .\taas\user\templates\update_budget.html:20
+#: .\taas\user\templates\user_deactivate.html:17
+#: .\taas\user\templates\user_registration.html:26
+#: .\taas\user\templates\user_update.html:25
+msgid "FAQ"
+msgstr "Помощь"
+
+#: .\taas\reservation\templates\budget_payment.html:27
+msgid "Confirmation"
+msgstr "Подтверждение"
+
+#: .\taas\reservation\templates\budget_payment.html:28
+msgid "Please enter your password to complete the booking(s)."
+msgstr "Пожалуйста, введите свой пароль для завершения бронирования."
+
+#: .\taas\reservation\templates\budget_payment.html:32
+msgid "Pay"
+msgstr "Заплатить"
+
+#: .\taas\reservation\templates\help.html:6
+#: .\taas\reservation\templates\help.html:34
+msgid "Help"
+msgstr "Помощь"
+
+#: .\taas\reservation\templates\help.html:36
+msgid "How to make a reservation?"
+msgstr "Как забронировать время?"
+
+#: .\taas\reservation\templates\help.html:38
+msgid ""
+"Choose a suitable date from the calendar and then select one or more "
+"available time slots in the right table column (depending on which field(s) "
+"you want). The start time of the slot you choose has to be at least 30 "
+"minutes from now. To deselect a slot click on it once more. It is possible "
+"to book fields for multiple dates, just choose another date from the "
+"calendar. <br><br> When you have finished choosing, click <samp>\"Next\"</"
+"samp> to proceed to the payment page. Review your selections and if needed "
+"you can remove time slots that you do not need. You can pay using your "
+"account balance money (pre-added money) or pay through a bank link. <br><br> "
+"You have 10 minutes to complete your reservation. When time is up, all your "
+"selections will be removed."
+msgstr ""
+"Выберите подходящее число в календаре, а затем выберите одну или несколько "
+"доступных ячеек в правильном столбце таблицы (в зависимости от того, какую "
+"площадку вы хотите забронировать). Время начала ячейки должно быть на пол "
+"часа позже настоящего. Чтобы отменить выбор ячейки, нажмите на нее еще раз. "
+"Можно забронировать площадки для нескольких дат, просто выберите другое "
+"число в календаре. <br><br> Когда вы закончите выбор, нажмите кнопку <samp>"
+"\"Далее\"</samp>, чтобы перейти на страницу оплаты. Проверьте ваш выбор и, "
+"при необходимости, вы можете удалить время, которое вам не подходит. Вы "
+"можете оплатить с помощью вашего сальдо или заплатить через банковскую "
+"ссылку. <br><br>У вас есть 10 минут для завершения процесса бронирования. "
+"Когда время истечёт, все выбранные ячейки будут удалены."
+
+#: .\taas\reservation\templates\help.html:54
+msgid "What does A/B/C mean in the table?"
+msgstr "Что значат A/B/C в таблице?"
+
+#: .\taas\reservation\templates\help.html:56
+msgid ""
+"There are 3 different fields available for booking. You can see a "
+"description of each field by hovering over the corresponding letter in the "
+"table header. Here is the plan of the whole ground: <br><br>"
+msgstr ""
+"Для бронирования доступны 3 разные площадки. Вы можете увидеть описание "
+"каждой площадки при наведении стрелки курсора на соответствующую букву в "
+"заголовке таблицы. Вот план всего участка: <br><br>"
+
+#: .\taas\reservation\templates\help.html:64
+msgid "What does color X mean in the table?"
+msgstr "Что значит цвет Х в таблице?"
+
+#: .\taas\reservation\templates\help.html:66
+msgid ""
+"There are 4 colours to distinguish between different types of reservations. "
+"Hover over a color below to see the description."
+msgstr ""
+"4 цвета помогают различать разные типы бронирований. Наведите курсор на цвет "
+"ниже, чтобы увидеть описание."
+
+#: .\taas\reservation\templates\help.html:79
+msgid "Where do I see my upcoming/past reservations?"
+msgstr "Где я могу увидеть мои будущие/прошедшие бронирования?"
+
+#: .\taas\reservation\templates\help.html:81
+msgid ""
+"Click on the <samp>\"History\"</samp> tab, you should see the table with all "
+"of your reservations. <br><br> Reservations are in descending order, i.e. "
+"upcoming reservations are on the top while older ones are below them. You "
+"can sort the table by field, start or end time. To see reservations from the "
+"past or next month, select the month above the table and click <samp>\"Sort"
+"\"</samp>."
+msgstr ""
+"Нажмите на вкладку <samp>\"История\"</samp>, вы должны увидеть таблицу со "
+"всеми вашими бронированиями. <br><br> Таблица представлена в порядке "
+"убывания, т. е. предстоящие бронирования сверху, а прошедшие ниже их. Вы "
+"можете отсортировать таблицу по площадке, времени начала или времени "
+"окончания. Чтобы увидеть бронирования из прошлого или следующего месяца, "
+"выберите этот месяц над таблицей и нажмите кнопку <samp>\"Сортировать\"</"
+"samp>."
+
+#: .\taas\reservation\templates\help.html:92
+msgid "Is it possible to modify an upcoming reservation?"
+msgstr "Могу ли я изменить мое бронирование?"
+
+#: .\taas\reservation\templates\help.html:94
+msgid ""
+"You can change time or/and field of your reservation whenever you want but "
+"not 15 minutes before the start of the reservation. That means if you have, "
+"for example, a reservation starting at 14:00, then you can make changes "
+"until 13:45. Note that you can only choose a new time or/and field for the "
+"same date as the reservation that you are trying to edit."
+msgstr ""
+"Вы можете изменить время или/и площадку бронирования, но не позднее 15-и "
+"минут до начала выбранного времени. Это означает, что если у вас есть, "
+"например, бронирование с началом в 14:00, то вы можете внести изменения до "
+"13:45. Обратите внимание, что вы можете выбрать новое время или/и площадку "
+"только на эту же дату, которая была забронирована."
+
+#: .\taas\reservation\templates\help.html:104
+msgid "Is it possible to cancel an upcoming reservation?"
+msgstr "Могу ли я отменить мое бронирование?"
+
+#: .\taas\reservation\templates\help.html:106
+msgid ""
+"You can remove a reservation 24 hours before the day of the reservation. E."
+"g. you have a reservation on 29th of November, then you can cancel it until "
+"23:59 on 28th November. <br><br> The money will be added to your account's "
+"balance."
+msgstr ""
+"Вы можете отменить бронирование за 24 часа до даты начала брони. Например, "
+"если у вас есть бронь на 29 ноября, то вы можете отменить её до 23:59 28 "
+"ноября. <br><br> Деньги будут добавлены к вашему сальдо."
+
+#: .\taas\reservation\templates\help.html:114
+msgid "How do I modify an upcoming reservation?"
+msgstr "Как изменить бронирование?"
+
+#: .\taas\reservation\templates\help.html:116
+msgid ""
+"Click on the <samp>\"History\"</samp> tab, you should see the table with all "
+"of your reservations. <br><br> If you can edit a reservation (check <i><a "
+"href=\"#q5\">Is it possible to modify an upcoming reservation?</a></i>), "
+"then there will be a pencil icon next to the reservation, click on it. "
+"<br><br> You should see an alert asking for confirmation. If you really want "
+"to change the reservation then click <samp>\"OK\"</samp>, otherwise decline "
+"by clicking <samp>\"Cancel\"</samp>. <br><br> You should see a table where a "
+"red slot indicates the reservation you are trying to change. Drag it to "
+"another slot that suits you and is free. Then click <samp>\"Submit\"</samp>."
+msgstr ""
+"Нажмите на вкладку <samp>\"История\"</samp>, вы должны увидеть таблицу со "
+"всеми вашими бронированиями. <br><br> Если вы можете изменить бронь "
+"(посмотрите <i><a href=\"#q5\">Могу ли я изменить мое бронирование?</a></"
+"i>), тогда возле брони будет значок карандаша, нажмите на него. <br><br> Вы "
+"должны увидеть предупреждение с запросом на подтверждение. Если вы "
+"действительно хотите изменить бронирование нажмите кнопку <samp>\"ОК\"</"
+"samp>. <br><br> Вы должны увидеть таблицу, где красный квадрат указывает на "
+"время бронирования, которое вы пытаетесь изменить. Перетащите квадрат на "
+"другое время, которое подходит вам и является свободным. Затем нажмите "
+"кнопку <samp>\"Отправить\"</samp>."
+
+#: .\taas\reservation\templates\help.html:132
+msgid "How do I cancel an upcoming reservation?"
+msgstr "Как отменить бронирование?"
+
+#: .\taas\reservation\templates\help.html:134
+msgid ""
+"Click on the <samp>\"History\"</samp> tab, you should see the table with all "
+"of your reservations. <br><br> If you can remove a reservation (check <i><a "
+"href=\"#q6\">Is it possible to cancel an upcoming reservation?</a></i>), "
+"then there will be a cross icon next to the reservation, click on it. "
+"<br><br> You should see an alert asking for confirmation. If you really want "
+"to delete the reservation then click <samp>\"OK\"</samp>, otherwise decline "
+"by clicking <samp>\"Cancel\"</samp>."
+msgstr ""
+"Нажмите на вкладку <samp>\"История\"</samp>, вы должны увидеть таблицу со "
+"всеми вашими бронированиями. <br><br> Если вы можете отменить бронь "
+"(посмотрите <i><a href=\"#q6\">Могу ли я отменить мое бронирование?</a></"
+"i>), тогда возле брони будет крестик, нажмите на него. <br><br> Вы должны "
+"увидеть предупреждение с запросом на подтверждение. Если вы действительно "
+"хотите удалить бронирование нажмите кнопку <samp>\"ОК\"</samp>."
+
+#: .\taas\reservation\templates\help.html:146
+msgid "Where can I see and change my account information?"
+msgstr "Где я могу увидеть и изменить мою учётную запись?"
+
+#: .\taas\reservation\templates\help.html:148
+msgid ""
+"Click on the <samp>\"Account\"</samp> tab, you should see the account "
+"modification page. <br><br> You can update your name, phone number and "
+"password. If you want to change your password, then click on the checkbox "
+"and fill in all the fields, otherwise leave checkbox unchecked and just "
+"click <samp>\"Update\"</samp> to finish. You cannot leave name and phone "
+"number fields empty. <br><br> You cannot change your e-mail for security "
+"reasons. If you really need to change your e-mail, then contact the "
+"administrator."
+msgstr ""
+"Нажмите на вкладку <samp>\"Учётная запись\"</samp>, вы должны увидеть "
+"страницу для изменения учётной записи. <br><br> Вы можете изменить ваше имя, "
+"номер телефона и пароль. Если вы хотите изменить ваш пароль, отметьте флажок "
+"с галочкой и заполните все поля или оставьте флажок неотмеченным и просто "
+"нажмите кнопку <samp>\"Изменить\"</samp>, чтобы закончить. Вы не можете "
+"оставить поля \"Имя\" и \"Номер телефона\" пустыми. <br><br> Вы не можете "
+"изменить адрес электронной почты по соображениям безопасности. Если вам "
+"действительно необходимо изменить свой адрес электронной почты обратитесь к "
+"администратору."
+
+#: .\taas\reservation\templates\help.html:161
+msgid "How to add money to my account balance?"
+msgstr "Как добавить деньги?"
+
+#: .\taas\reservation\templates\help.html:163
+msgid ""
+"Click on the <samp>\"Balance\"</samp> tab, you should see the account "
+"balance page. <br><br> Fill in the amount you wish to add to your account "
+"balance and click <samp>\"Submit\"</samp> to proceed to pay."
+msgstr ""
+"Нажмите на вкладку <samp>\"Деньги\"</samp>, вы должны увидеть страницу с "
+"вашим сальдо. <br><br> Введите сумму, которую вы хотите добавить и нажмите "
+"<samp>\"Отправить\"</samp>, чтобы перейти на страницу оплаты."
+
+#: .\taas\reservation\templates\history.html:19
+#: .\taas\reservation\templates\reservation_list.html:20
+msgid "Do you really want to remove this reservation?"
+msgstr "Вы уверены что хотите удалить бронирование?"
+
+#: .\taas\reservation\templates\history.html:20
+msgid "Do you really want to modify this reservation?"
+msgstr "Вы уверены что хотите изменить бронирование?"
+
+#: .\taas\reservation\templates\history.html:21
+#: .\taas\reservation\templates\reservation_list.html:21
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#: .\taas\reservation\templates\history.html:22
+#: .\taas\reservation\templates\reservation_list.html:22
+msgid "Cancel"
+msgstr "Отменить"
+
+#: .\taas\reservation\templates\history.html:44
+msgid "Sort"
+msgstr "Сортировать"
+
+#: .\taas\reservation\templates\history.html:49
+msgid "There are no reservations in this month."
+msgstr "У вас нет бронирований в этом месяце."
+
+#: .\taas\reservation\templates\index.html:34
+msgid "Please select slots, which are 30 minutes later from now."
+msgstr "Время должно быть на пол часа позже настоящего."
+
+#: .\taas\reservation\templates\index.html:78
+#: .\taas\reservation\templates\reservation_update.html:52
+#: .\taas\user\templates\update_budget.html:39
+msgid "Submit"
+msgstr "Дальше"
+
+#: .\taas\reservation\templates\reservation_list.html:43
+msgid "Pay for the reservations"
+msgstr "Заплатить"
+
+#: .\taas\reservation\templates\reservation_update.html:38
+msgid "Choose a new time for the reservation"
+msgstr "Выберите новое время для бронирования:"
+
+#: .\taas\reservation\templates\reservation_update.html:40
+msgid "Drag the red box to another slot that suits you and is free."
+msgstr ""
+"Перетащите красный прямоугольник на другое время, которое подходит вам и "
+"является свободным."
+
+#: .\taas\reservation\templates\table.html:64
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: .\taas\reservation\templates\table.html:71
+#, python-format
+msgid ""
+"\n"
+"                                    Page %(current)s of %(total)s"
+msgstr ""
+"\n"
+"                                    Страница %(current)s из %(total)s"
+
+#: .\taas\reservation\templates\table.html:79
+msgctxt "järgmine"
+msgid "Next"
+msgstr "Дальше"
+
+#: .\taas\reservation\templates\table.html:85
+#, python-format
+msgctxt "reservation history with of"
+msgid "%(count)s %(vname)s of %(total)s"
+msgid_plural "%(count)s %(vname)s of %(total)s"
+msgstr[0] "%(count)s бронирование из %(total)s"
+msgstr[1] "%(count)s бронирования из %(total)s"
+msgstr[2] "%(count)s бронирований из %(total)s"
+
+#: .\taas\reservation\templates\table.html:91
+#, python-format
+msgctxt "reservation history"
+msgid "%(count)s %(vname)s"
+msgid_plural "%(count)s %(vname)s"
+msgstr[0] "%(count)s бронирование"
+msgstr[1] "%(count)s бронирования"
+msgstr[2] "%(count)s бронирований"
+
+#: .\taas\reservation\tests\test_reservations.py:47
+#: .\taas\reservation\tests\test_reservations.py:51
+msgid ""
+"User should be able to make 2 reservations on same datetime on different "
+"fields"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:59
+msgid "All three reservations are shown"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:66
+msgid "Not all unpaid reservations are deleted"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:73
+msgid "Unpaid Resevation is not deleted."
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:81
+msgid "Reservation is automatically paid. It should be unpaid."
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:87
+msgid "Anonymous user can make a valid reservation"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:96
+#: .\taas\reservation\tests\test_reservations.py:97
+#: .\taas\reservation\tests\test_reservations.py:106
+#: .\taas\reservation\tests\test_reservations.py:107
+#: .\taas\reservation\tests\test_reservations.py:114
+#: .\taas\reservation\tests\test_reservations.py:115
+#: .\taas\reservation\tests\test_reservations.py:121
+#: .\taas\reservation\tests\test_reservations.py:122
+#: .\taas\reservation\tests\test_reservations.py:129
+#: .\taas\reservation\tests\test_reservations.py:130
+msgid "Reservation posted with missing data"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:143
+#: .\taas\reservation\tests\test_reservations.py:144
+msgid "Reservation posted 15 minutes before"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:158
+#: .\taas\reservation\tests\test_reservations.py:159
+msgid "Reservation posted 5 minutes after"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:171
+#: .\taas\reservation\tests\test_reservations.py:172
+#: .\taas\reservation\tests\test_reservations.py:185
+msgid "Reservation posted at the same time of now()"
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:184
+msgid "Reservation posted 1 minute after "
+msgstr ""
+
+#: .\taas\reservation\tests\test_reservations.py:191
+msgid "No reservation made with valid data"
+msgstr ""
+
+#: .\taas\reservation\views.py:136
+msgid "Success"
+msgstr "Успех"
+
+#: .\taas\reservation\views.py:138 .\taas\reservation\views.py:178
+msgid "Error"
+msgstr "Ошибка"
+
+#: .\taas\reservation\views.py:152
+msgid "Invalid key."
+msgstr ""
+
+#: .\taas\reservation\views.py:164
+msgid "Cannot delete the reservation."
+msgstr "Не удается удалить бронирование."
+
+#: .\taas\reservation\views.py:169
+msgid "Not allowed."
+msgstr "Нет доступа"
+
+#: .\taas\reservation\views.py:272
+msgid "Adding money to budget was cancelled."
+msgstr "Деньги не были добавлены."
+
+#: .\taas\reservation\views.py:279
+msgid "Payment was cancelled."
+msgstr "Платёж был аннулирован."
+
+#: .\taas\reservation\views.py:308
+msgid "Successfully added money to the budget."
+msgstr "Деньги добавлены."
+
+#: .\taas\reservation\views.py:317
+msgid "Error occurred. Please contact administrator."
+msgstr "Ошибка. Свяжитесь с администратором."
+
+#: .\taas\reservation\views.py:319 .\taas\reservation\views.py:370
+msgid "Successfully paid for the reservations."
+msgstr "Успешно заплачено за бронирование."
+
+#: .\taas\reservation\views.py:357
+msgid "You do not have enough money."
+msgstr "У Вас недостаточно денег."
+
+#: .\taas\server\base_settings.py:113
+msgid "Estonian"
+msgstr "эстонский"
+
+#: .\taas\server\base_settings.py:114
+msgid "English"
+msgstr "английский"
+
+#: .\taas\server\base_settings.py:115
+msgid "Russian"
+msgstr "русский"
+
+#: .\taas\server\email_settings.py:15
+msgid "User status"
+msgstr "Статус пользователя"
+
+#: .\taas\server\email_settings.py:17
+msgid "User registration"
+msgstr "Регистрация пользователя"
+
+#: .\taas\server\email_settings.py:23
+#, python-format
+msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"You have successfully registered to the Tartu Agility Arenguselts.\n"
+"Please wait till admin user verifies your account.\n"
+"You will get notification about that.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+"Уважаемый/Уважаемая %(first_name)s,\n"
+"\n"
+"Вы успешно зарегистрированы на сайте Tartu Agility Arenguselts.\n"
+"Пожалуйста, подождите пока администратор активирует вашу учетную запись.\n"
+"Вы получите уведомление.\n"
+"\n"
+"С уважением,\n"
+"\n"
+"Tartu Agility Arenguselts"
+
+#: .\taas\server\email_settings.py:42
+msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"Your account was successfully verified by the Tartu Agility Arenguselts.\n"
+"You can login now.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+"Уважаемый/Уважаемая %(first_name)s,\n"
+"\n"
+"Ваша учетная запись на сайте Tartu Agility Arenguselts была успешно активирована.\n"
+"Вы можете войти на сайт.\n"
+"\n"
+"С уважением,\n"
+"\n"
+"Tartu Agility Arenguselts"
+
+#: .\taas\server\email_settings.py:51
+msgid ""
+"Dear %(first_name)s,\n"
+"\n"
+"Your Tartu Agility Arenguselts user was disabled.\n"
+"Please contact administrator for further information.\n"
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts"
+msgstr ""
+"Уважаемый/Уважаемая %(first_name)s,\n"
+"\n"
+"Ваша учетная запись на сайте Tartu Agility Arenguselts была деактивирована.\n"
+"Пожалуйста, свяжитесь с администратором для получения дополнительной информации.\n"
+"\n"
+"С уважением,\n"
+"\n"
+"Tartu Agility Arenguselts"
+
+#: .\taas\templates\base.html:8
+msgid "Tartu Agility Playground"
+msgstr "Tartu Agility Arenguselts"
+
+#: .\taas\templates\base.html:30
+msgid "Your reservation time has been expired."
+msgstr "Ваше время истекло."
+
+#: .\taas\templates\base.html:31
+msgid "A-FIELD (JUMPS):"
+msgstr "ПЛОЩАДКА А (ДЛЯ ПРЫЖКОВ):"
+
+#: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
+msgid "hurdles (10)"
+msgstr "барьеры (10)"
+
+#: .\taas\templates\base.html:31
+msgid "open tunnels (4) = 2x6m, 5m, 3m"
+msgstr "туннели (4) = 2x6м, 5м, 3м"
+
+#: .\taas\templates\base.html:31
+msgid "wall (1)"
+msgstr "стена (1)"
+
+#: .\taas\templates\base.html:31
+msgid "tire jump (1)"
+msgstr "кольцо (1)"
+
+#: .\taas\templates\base.html:31
+msgid "long jump (1)"
+msgstr "прыжок в длину (1)"
+
+#: .\taas\templates\base.html:31
+msgid "closed tunnel (chute) (1)"
+msgstr "мягкий туннель (1)"
+
+#: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
+msgid "weave poles (slalom) (1)"
+msgstr "слалом (1)"
+
+#: .\taas\templates\base.html:31 .\taas\templates\base.html.py:32
+msgid "TOTAL: 19 obstacles"
+msgstr "ВСЕГО: 19 препятствий"
+
+#: .\taas\templates\base.html:32
+msgid "B-FIELD (AGILITY):"
+msgstr "ПЛОЩАДКА B (АДЖИЛИТИ):"
+
+#: .\taas\templates\base.html:32
+msgid "open tunnels (4) =2x6m, 5m, 4m"
+msgstr "туннели (4) =2x6м, 5м, 4м"
+
+#: .\taas\templates\base.html:32
+msgid "dog walk (1)"
+msgstr "бум (1)"
+
+#: .\taas\templates\base.html:32
+msgid "A-frame (1)"
+msgstr "горка (1)"
+
+#: .\taas\templates\base.html:32
+msgid "seesaw (1)"
+msgstr "качели (1)"
+
+#: .\taas\templates\base.html:32
+msgid "table (1)"
+msgstr "стол (1)"
+
+#: .\taas\templates\base.html:33
+msgid "C-FIELD:"
+msgstr "ПЛОЩАДКА C"
+
+#: .\taas\templates\base.html:33
+msgid "Obedience training ground"
+msgstr "Площадка для дрессировки собак на послушание"
+
+#: .\taas\templates\base.html:33
+msgid "Area for spectators and camping during competitions"
+msgstr "Участок для палаток и зрителей во время соревнований"
+
+#: .\taas\templates\base.html:35
+msgid "Paid reservation of another user."
+msgstr "Бронирование другого пользователя (оплачено)."
+
+#: .\taas\templates\base.html:36
+msgid "Your paid reservation."
+msgstr "Ваше бронирование (оплачено)."
+
+#: .\taas\templates\base.html:37
+msgid "Your unfinished reservation."
+msgstr "Ваше предварительное бронирование."
+
+#: .\taas\templates\base.html:38
+msgid "Unfinished reservation of another user."
+msgstr "Предварительное бронирование другого пользователя."
+
+#: .\taas\templates\base.html:39
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: .\taas\templates\base.html:75 .\taas\user\templates\login.html:7
+#: .\taas\user\templates\login.html:38 .\taas\user\templates\login.html:54
+msgid "Login"
+msgstr "Войти"
+
+#: .\taas\templates\base.html:76
+msgid "Register"
+msgstr "Регистрация"
+
+#: .\taas\templates\base.html:82
+msgid "Hello, "
+msgstr "Здравствуйте, "
+
+#: .\taas\templates\base.html:84
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\taas\templates\base.html:115
+msgid "To make all your reservations you have"
+msgstr "Чтобы закончить бронирование у вас осталось"
+
+#: .\taas\templates\base.html:117
+msgid "minutes"
+msgstr "минут(ы)"
+
+#: .\taas\urls.py:9
+msgid "TAAS administration"
+msgstr "Администрация TAAS"
+
+#: .\taas\user\admin.py:14
+msgid "Personal info"
+msgstr "Персональная информация"
+
+#: .\taas\user\admin.py:15
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:77
+msgid "Permissions"
+msgstr "Права доступа"
+
+#: .\taas\user\admin.py:16
+msgid "Important dates"
+msgstr "Важные даты"
+
+#: .\taas\user\admin.py:17
+msgid "Pins"
+msgstr "ПИН"
+
+#: .\taas\user\apps.py:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\object_history.html:23
+msgid "User"
+msgstr "Пользователь"
+
+#: .\taas\user\forms.py:11
+msgid "The length of the password has to be more than 8 characters."
+msgstr "Длина пароля должна быть больше, чем 8 символов."
+
+#: .\taas\user\forms.py:12
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: .\taas\user\forms.py:34
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:17
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:73
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:81
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: .\taas\user\forms.py:35 .\taas\user\forms.py:96
+msgid "New password"
+msgstr "Новый пароль"
+
+#: .\taas\user\forms.py:37 .\taas\user\forms.py:98
+msgid "New password confirmation"
+msgstr "Подтверждение нового пароля"
+
+#: .\taas\user\forms.py:39
+msgid "Old password"
+msgstr "Старый пароль"
+
+#: .\taas\user\forms.py:60
+msgid "Old password is required."
+msgstr "Необходимо ввести старый пароль."
+
+#: .\taas\user\forms.py:62
+msgid "New password is required."
+msgstr "Необходимо ввести новый пароль."
+
+#: .\taas\user\forms.py:64
+msgid "New password confirmation is required."
+msgstr "Необходимо ввести подтверждение нового пароля."
+
+#: .\taas\user\forms.py:68
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "Ваш старый пароль введен неправильно. Пожалуйста, введите его снова."
+
+#: .\taas\user\forms.py:70
+msgid "The two new password fields didn't match."
+msgstr "Введенные пароли не совпадают."
+
+#: .\taas\user\forms.py:92
+msgid "Your password was entered incorrectly. Please enter it again."
+msgstr "Ваш пароль введен неправильно. Пожалуйста, введите его снова."
+
+#: .\taas\user\forms.py:103
+msgid "Amount"
+msgstr "Сумма"
+
+#: .\taas\user\models.py:14
+msgid "Phone number is invalid."
+msgstr "Номер телефона недействителен."
+
+#: .\taas\user\models.py:39
+msgid "first name"
+msgstr "имя"
+
+#: .\taas\user\models.py:40
+msgid "last name"
+msgstr "фамилия"
+
+#: .\taas\user\models.py:41
+msgid "email address"
+msgstr "адрес электронной почты"
+
+#: .\taas\user\models.py:42
+msgid "phone number"
+msgstr "номер телефона"
+
+#: .\taas\user\models.py:43
+msgid "staff status"
+msgstr "статус персонала"
+
+#: .\taas\user\models.py:44
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+"Отметьте, если пользователь может входить в административную часть сайта."
+
+#: .\taas\user\models.py:45
+msgid "active"
+msgstr "активный"
+
+#: .\taas\user\models.py:46
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Отметьте, если пользователь должен считаться активным. Уберите эту отметку "
+"вместо удаления учётной записи."
+
+#: .\taas\user\models.py:48
+msgid "budget (€)"
+msgstr "сальдо (€)"
+
+#: .\taas\user\models.py:50
+msgid "date joined"
+msgstr "дата регистрации"
+
+#: .\taas\user\models.py:51
+msgid "pin"
+msgstr "ПИН"
+
+#: .\taas\user\models.py:52
+msgid "Button ID"
+msgstr "ID ключа"
+
+#: .\taas\user\models.py:62
+msgid "users"
+msgstr "пользователи"
+
+#: .\taas\user\templates\admin\add_form.html:6
+msgid ""
+"First, first name, last name, email and password. Then, you'll be able to "
+"edit more user options."
+msgstr ""
+"Сначала введите имя, фамилию, адрес электронной почты и пароль. Затем вы "
+"сможете ввести больше информации о пользователе."
+
+#: .\taas\user\templates\admin\add_form.html:8
+msgid "Enter first name, last name, email and password."
+msgstr "Введите имя, фамилию, адрес электронной почты и пароль."
+
+#: .\taas\user\templates\login.html:31
+msgid "Please login to see this page."
+msgstr "Пожалуйста, войдите чтобы увидеть эту страницу."
+
+#: .\taas\user\templates\login.html:55
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:108
+msgid "next"
+msgstr "следущая"
+
+#: .\taas\user\templates\login.html:57
+msgid "Lost password?"
+msgstr "Забыли пароль?"
+
+#: .\taas\user\templates\password_reset\confirm.html:29
+#: .\taas\user\templates\password_reset\form.html:27
+msgid "Reset your password"
+msgstr "Восстановить пароль"
+
+#: .\taas\user\templates\password_reset\confirm.html:35
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:20
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Пожалуйста, введите новый пароль дважды, чтобы мы могли убедиться в "
+"правильности написания."
+
+#: .\taas\user\templates\password_reset\confirm.html:48
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:64
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:42
+msgid "Change my password"
+msgstr "Изменить пароль"
+
+#: .\taas\user\templates\password_reset\confirm.html:53
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Ссылка для восстановления пароля недействительна, возможно, потому, что она "
+"уже была использована. Пожалуйста, запросите новую ссылку для восстановления "
+"пароля."
+
+#: .\taas\user\templates\password_reset\email.html:3
+msgid "Dear"
+msgstr "Уважаемый/Уважаемая"
+
+#: .\taas\user\templates\password_reset\email.html:4
+msgid ""
+"\n"
+"You're receiving this email because you requested a password reset for your "
+"user account\n"
+"at Tartu Agility Arenguselts website.\n"
+msgstr ""
+"\n"
+"Вы получили это письмо, потому что вы желаете восстановить свой пароль "
+"на сайте Tartu Agility Arenguselts.\n"
+
+#: .\taas\user\templates\password_reset\email.html:9
+msgid "Please go to the following page and choose a new password:"
+msgstr "Пожалуйста, перейдите на следующую страницу и введите новый пароль:"
+
+#: .\taas\user\templates\password_reset\email.html:13
+msgid "Your username, in case you've forgotten:"
+msgstr "Ваше имя пользователя, если вы его забыли:"
+
+#: .\taas\user\templates\password_reset\email.html:15
+msgid ""
+"\n"
+"Best regards,\n"
+"\n"
+"Tartu Agility Arenguselts\n"
+msgstr ""
+"\n"
+"С уважением,\n"
+"\n"
+"Tartu Agility Arenguselts\n"
+
+#: .\taas\user\templates\password_reset\form.html:29
+msgid ""
+"Enter your email address below, and we'll email instructions for setting a "
+"new one."
+msgstr ""
+"Введите ниже свой адрес электронной почты и мы отправим вам инструкцию для "
+"восстановления пароля."
+
+#: .\taas\user\templates\password_reset\form.html:37
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:30
+msgid "Reset my password"
+msgstr "Восстановить мой пароль"
+
+#: .\taas\user\templates\password_reset\subject.html:3
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_done.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:12
+msgid "Password reset"
+msgstr "Восстановление пароля"
+
+#: .\taas\user\templates\terms.html:6
+msgid "Terms and Conditions"
+msgstr "Правила и условия"
+
+#: .\taas\user\templates\terms.html:26
+msgid ""
+"\n"
+"        <h3>THE USER OF THE GROUNDS AGREES TO:</h3>\n"
+"        <ol>\n"
+"            <li>stay on the grounds only on the prearranged time and purpose."
+"</li>\n"
+"            <li>use carefully the inventory of Tartu Agility Arenguselts.</"
+"li>\n"
+"            <li>inform immediately if there is missing or broken inventory.</"
+"li>\n"
+"            <li>park in the specified parking lot.</li>\n"
+"            <li>guarantee that his dog maintains cleanliness on the fields "
+"with fake grass, penalty 10\n"
+"                euros.\n"
+"            </li>\n"
+"            <li>clean after his dog in the area surrounded with the fence "
+"and\n"
+"                near it.\n"
+"            </li>\n"
+"            <li>ensure that his dog is not a threat to other dogs or\n"
+"                people.\n"
+"            </li>\n"
+"            <li>respect other users of the grounds.</li>\n"
+"            <li>lock all the gates and turn of the lights if he leaves as "
+"the last person.</li>\n"
+"            <li>follow signs on the surrounding fields and not walk\n"
+"                their dog there.\n"
+"            </li>\n"
+"            <li>inform immediately if the aforementioned rules are being "
+"broken or other\n"
+"                inadvisable behaviour on the grounds or\n"
+"                near it. <br>\n"
+"                <b>Prompt information:</b> phone <a href=\\tel:+3725271414\\>"
+"+372 527 1414</a> <br>\n"
+"                <b>Normal information:</b> e-mail <a href=\\mailto:agility."
+"arenguselts@gmail.com\\>agility.arenguselts@gmail.com</a>\n"
+"            </li>\n"
+"        </ol>\n"
+"    "
+msgstr ""
+"\n"
+"        <h3>ПОЛЬЗОВАТЕЛЬ ПЛОЩАДКИ СОГЛАСЕН:</h3>\n"
+"        <ol>\n"
+"            <li>находиться на площадке только во время заранее "
+"запланированного времени и цели.</li>\n"
+"            <li>бережно относиться к инвентарю Tartu Agility Arenguselts.</"
+"li>\n"
+"            <li>сообщать немедленно, если есть отсутствующий или сломанный "
+"инвентарь.</li>\n"
+"            <li>парковать машину на указанной стоянке.</li>\n"
+"            <li>гарантировать, что его собака поддерживает чистоту на "
+"площадках с искусственной травой, штраф 10\n"
+"                евро.\n"
+"            </li>\n"
+"            <li>убирать за собакой на участке с забором и\n"
+"                вблизи него.\n"
+"            </li>\n"
+"            <li>гарантировать, что его собака не является угрозой для других "
+"собак или\n"
+"                людей.\n"
+"            </li>\n"
+"            <li>уважать других посетителей площадок.</li>\n"
+"            <li>закрыть все калитки и выключить свет, если он уходит "
+"последним.</li>\n"
+"            <li>следовать указателям в окрестностях площадки и не выгуливать "
+"там\n"
+"                свою собаку.\n"
+"            </li>\n"
+"            <li>сообщать немедленно, если вышеуказанные правила нарушаются "
+"или замечено\n"
+"                другое неуместное поведение на площадке или\n"
+"                вблизи неё. <br>\n"
+"                <b>Срочная информация:</b> телефон <a href=\\tel:+3725271414"
+"\\>+372 527 1414</a> <br>\n"
+"                <b>Обычная информация:</b> электронная почта <a href="
+"\\mailto:agility.arenguselts@gmail.com\\>agility.arenguselts@gmail.com</a>\n"
+"            </li>\n"
+"        </ol>\n"
+"    "
+
+#: .\taas\user\templates\update_budget.html:6
+#: .\taas\user\templates\update_budget.html:28
+msgid "Account balance"
+msgstr "Сальдо"
+
+#: .\taas\user\templates\update_budget.html:30
+msgid "Your current account balance:"
+msgstr "Ваше текущее сальдо:"
+
+#: .\taas\user\templates\update_budget.html:33
+msgid "Select an amount to add by filling in the field below."
+msgstr "Выберите сумму, заполнив поле ниже."
+
+#: .\taas\user\templates\user_deactivate.html:25
+msgid "Deactivate account"
+msgstr "Деактивировать учётную запись"
+
+#: .\taas\user\templates\user_deactivate.html:28
+msgid ""
+"\n"
+"                In order to deactivate your account please enter your "
+"password.\n"
+"                Note that you will not be able to login anymore.\n"
+"            "
+msgstr ""
+"\n"
+"                Для того, чтобы деактивировать свою учётную запись, "
+"пожалуйста, введите пароль.\n"
+"                После этого вы больше не сможете войти на сайт.\n"
+"            "
+
+#: .\taas\user\templates\user_deactivate.html:38
+#: .\taas\user\templates\user_update.html:80
+msgid "Deactivate"
+msgstr "Деактивировать"
+
+#: .\taas\user\templates\user_registration.html:7
+#: .\taas\user\templates\user_registration.html:33
+msgid "Registration"
+msgstr "Регистрация"
+
+#: .\taas\user\templates\user_registration.html:36
+msgid "First Name"
+msgstr "Имя"
+
+#: .\taas\user\templates\user_registration.html:36
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: .\taas\user\templates\user_registration.html:49
+msgid "E-mail"
+msgstr "Адрес электронной почты"
+
+#: .\taas\user\templates\user_registration.html:49
+msgid "Phone Number"
+msgstr "Номер телефона"
+
+#: .\taas\user\templates\user_registration.html:62
+msgid "Passwords"
+msgstr "Пароли"
+
+#: .\taas\user\templates\user_registration.html:80
+msgid "I agree to the "
+msgstr "Я согласен с "
+
+#: .\taas\user\templates\user_registration.html:81
+msgid "Terms of service"
+msgstr "правилами и условиями"
+
+#: .\taas\user\templates\user_registration.html:83
+msgid "Enter"
+msgstr "Зарегистрироваться"
+
+#: .\taas\user\templates\user_update.html:7
+msgid "User modification"
+msgstr "Изменение учётной записи"
+
+#: .\taas\user\templates\user_update.html:34
+msgid "Update account"
+msgstr "Изменить учётную запись"
+
+#: .\taas\user\templates\user_update.html:42
+msgid "Your gate pin: "
+msgstr "Ваш ПИН для калитки: "
+
+#: .\taas\user\templates\user_update.html:79
+msgid "Update"
+msgstr "Изменить"
+
+#: .\taas\user\views.py:27
+msgid "User has been successfully registered."
+msgstr "Пользователь успешно зарегистрирован."
+
+#: .\taas\user\views.py:44
+msgid "Information has been updated."
+msgstr "Информация обновлена."
+
+#: .\taas\user\views.py:68
+msgid "User has been deactivated."
+msgstr "Пользователь деактивирован."
+
+#: .\taas\user\views.py:98
+msgid "Email instructions have been sent."
+msgstr "Инструкция отправлена на Ваш адрес электронной почты."
+
+#: .\taas\user\views.py:126
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Ваш пароль восстановлен. Можете войти на сайт."
+
+#: .\taas\user\views.py:132 .\taas\user\views.py:139
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:48
+msgid "Password reset unsuccessful"
+msgstr "Не удалось восстановить пароль."
+
+#: .\taas\user\views.py:135
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:18
+msgid "Enter new password"
+msgstr "Введите новый пароль."
+
+#: .\venv\Lib\site-packages\alabaster\layout.html:26
+msgid "Page source"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:7
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:7
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\webdesign\apps.py:7
+msgid "Web Design"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:20
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:87
+#: .\venv\Lib\site-packages\django\forms\fields.py:712
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:130
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:141
+msgid "Enter a valid email address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:215
+msgid ""
+"Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:220
+#: .\venv\Lib\site-packages\django\core\validators.py:239
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:225
+#: .\venv\Lib\site-packages\django\core\validators.py:240
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:235
+#: .\venv\Lib\site-packages\django\core\validators.py:238
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:263
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1144
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:272
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:298
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:305
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:314
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has %"
+"(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has %"
+"(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:325
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has %(show_value)"
+"d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has %"
+"(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1130
+#: .\venv\Lib\site-packages\django\forms\models.py:722
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:18
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1132
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:107
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:108
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:109
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:110
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:114
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:132
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:922
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1832
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:926
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1830
+#, python-format
+msgid "'%(value)s' value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1001
+#, python-format
+msgid "'%(value)s' value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1003
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1078
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1139
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1188
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1190
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1340
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1193
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1338
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1342
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1346
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1498
+#, python-format
+msgid "'%(value)s' value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1500
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1651
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1654
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1705
+msgid "Email address"
+msgstr "Адрес электронной почты"
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1729
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1796
+#, python-format
+msgid "'%(value)s' value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1798
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1899
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1914
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1950
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2029
+#, python-format
+msgid "'%(value)s' value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2031
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2091
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2103
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2116
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2145
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2152
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2175
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2177
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2308
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2331
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2375
+#, python-format
+msgid "'%(value)s' is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:239
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:389
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1802
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1804
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:2034
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:2124
+msgid "Many-to-many relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:64
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:237
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:280
+#: .\venv\Lib\site-packages\django\forms\fields.py:317
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:319
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:323
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:327
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:438
+#: .\venv\Lib\site-packages\django\forms\fields.py:1193
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:462
+#: .\venv\Lib\site-packages\django\forms\fields.py:1194
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:484
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:525
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:591
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:592
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:593
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:595
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:598
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:660
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:827
+#: .\venv\Lib\site-packages\django\forms\fields.py:921
+#: .\venv\Lib\site-packages\django\forms\models.py:1238
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:922
+#: .\venv\Lib\site-packages\django\forms\fields.py:1037
+#: .\venv\Lib\site-packages\django\forms\models.py:1237
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1038
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1264
+msgid "Enter a valid UUID."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:129
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:214
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\venv\Lib\site-packages\django\forms\forms.py:659
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:96
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:333
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:340
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:368
+#: .\venv\Lib\site-packages\django\forms\formsets.py:370
+msgid "Order"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:372
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:64
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\page_submit_line.html:5
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\submit_line.html:5
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\venv\Lib\site-packages\django\forms\models.py:716
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:720
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:726
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:734
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1057
+msgid "The inline foreign key did not match the parent instance primary key."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1123
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1240
+#, python-format
+msgid "\"%(pk)s\" is not a valid value for a primary key."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:165
+#, python-format
+msgid ""
+"%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:345
+msgid "Currently"
+msgstr "Сейчас"
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:346
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:18
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:39
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:90
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:66
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\index.html:73
+msgid "Change"
+msgstr "Изменить"
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:347
+msgid "Clear"
+msgstr "Очистить"
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:555
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:556
+msgid "Yes"
+msgstr "Да"
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:557
+msgid "No"
+msgstr "Нет"
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:865
+msgid "yes,no,maybe"
+msgstr "да,нет,может быть"
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:894
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:906
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:908
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:910
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:912
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:914
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:916
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:61
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:62
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:67
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:68
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:151
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:37
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:38
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:51
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:52
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:10
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:79
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:248
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:267
+#: .\venv\Lib\site-packages\django\utils\timesince.py:58
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:14
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:15
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:47
+msgid "0 minutes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:107
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:108
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:112
+msgid ""
+"You are seeing this message because this HTTPS site requires a 'Referer "
+"header' to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:117
+msgid ""
+"If you have configured your browser to disable 'Referer' headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for 'same-"
+"origin' requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:122
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:127
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for 'same-origin' requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:132
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:583
+msgid "Welcome to Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:584
+msgid "It worked!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:585
+msgid "Congratulations on your first Django-powered page."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:586
+msgid ""
+"Of course, you haven't actually done any work yet. Next, start your first "
+"app by running <code>python manage.py startapp [app_label]</code>."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\debug.py:588
+msgid ""
+"You're seeing this message because you have <code>DEBUG = True</code> in "
+"your Django settings file and you haven't configured any URLs. Get to work!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:48
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:104
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:163
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:219
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:378
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:406
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:660
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:694
+#, python-format
+msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:55
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:76
+msgid "Page is not 'last', nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:81
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:172
+#, python-format
+msgid "Empty list and '%(class_name)s.allow_empty' is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:58
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:60
+#, python-format
+msgid "\"%(path)s\" does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:100
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\404.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\404.html:8
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\404.html:10
+msgid "We're sorry, but the requested page could not be found."
+msgstr "К сожалению запрошенная страница не найдена."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\500.html:7
+msgid "Server error"
+msgstr "Ошибка сервера"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\500.html:11
+msgid "Server error (500)"
+msgstr "Ошибка сервера (500)"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\500.html:14
+msgid "Server Error <em>(500)</em>"
+msgstr "Ошибка сервера <em>(500)</em>"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\500.html:15
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\actions.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\actions.html:8
+msgid "Run the selected action"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\actions.html:4
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\actions.html:8
+msgid "Go"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\actions.html:10
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\actions.html:15
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\actions.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\actions.html:17
+msgid "Clear selection"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\app_index.html:19
+msgid "administration"
+msgstr "администрация"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\add_form.html:6
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr ""
+"Сначала введите имя пользователя и пароль. Затем вы сможете ввести больше "
+"информации о пользователе."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\add_form.html:8
+msgid "Enter a username and password."
+msgstr "Введите имя пользователя и пароль."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\auth\user\change_password.html:31
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:68
+msgid "Welcome,"
+msgstr "Добро пожаловать, "
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:72
+msgid "View site"
+msgstr "Открыть сайт"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:77
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:119
+msgid "Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:83
+msgid "Log out"
+msgstr "Выйти"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:93
+msgid "Recent Actions"
+msgstr "Последние действия"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:105
+msgid "Unknown content"
+msgstr "Неизвестно"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base.html:110
+msgid "None available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base_site.html:4
+msgid "Django site admin"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\base_site.html:7
+msgid "Django administration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_form.html:22
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\index.html:69
+msgid "Add"
+msgstr "Добавить"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_form.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:26
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:42
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:25
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\image\change_form.html:19
+msgid "View on site"
+msgstr "Посмотреть на сайте"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_form.html:51
+msgid "Fields in <strong>bold</strong> are required."
+msgstr "Поля выделенные <strong>жирным</strong> шрифтом обязательны."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list_results.html:17
+msgid "Remove from sorting"
+msgstr "Удалить из сортировки"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list_results.html:18
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr "Приоритет сортировки: %(priority_number)s"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\change_list_results.html:19
+msgid "Toggle sorting"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:18
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:25
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:32
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+"Вы уверены, что хотите удалить %(object_name)s \"%(escaped_object)s\"? Все "
+"следующие объекты и связанные с ними элементы будут удалены:"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:34
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:33
+msgid "Objects"
+msgstr "Объекты"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:41
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:46
+msgid "Yes, I'm sure"
+msgstr "Да, я уверен"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_confirmation.html:42
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:47
+msgid "No, take me back"
+msgstr "Нет, отменить и вернуться к выбору"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:11
+msgid "Delete multiple objects"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:17
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:24
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\delete_selected_confirmation.html:31
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:104
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:131
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr "Добавить %(verbose_name)s"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\stacked.html:107
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:134
+msgid "Remove"
+msgstr "Удалить"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\edit_inline\tabular.html:22
+msgid "Delete?"
+msgstr "Удалить?"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\actions.html:15
+#, python-format
+msgid "Select all %(total_count)s files and/or folders"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:4
+msgid "Go back to admin homepage"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:5
+msgid "Go back to Filer app"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:5
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:7
+msgid "Filer"
+msgstr "Фильтр"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:6
+msgid "Go back to root folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+msgid "root"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\breadcrumbs.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:10
+#, python-format
+msgid "Go back to '%(folder_name)s' folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\change_form.html:28
+msgid "duplicates"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+msgid "Go back to"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:6
+msgid "admin homepage"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\change_form.html:37
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:85
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:95
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:30
+msgid "Folder Icon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:66
+msgid "Adds a new Folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:66
+msgid "New Folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:67
+msgid "upload files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:67
+msgid "Upload"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:84
+msgid "Go back to the parent folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:86
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:41
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:18
+#, python-format
+msgid "1 folder"
+msgid_plural "%(counter)s folders"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:86
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:41
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:19
+#, python-format
+msgid "1 file"
+msgid_plural "%(counter)s files"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_listing.html:90
+msgid "Change current folder details"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:12
+msgid "Name"
+msgstr "Имя"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:30
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:36
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:40
+#, python-format
+msgid "Change '%(item_label)s' folder details"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:42
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:75
+msgid "Owner"
+msgstr "Владелец"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:50
+msgid "Select this file"
+msgstr "Выберите этот файл"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:58
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:66
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:71
+#, python-format
+msgid "Change '%(item_label)s' details"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:64
+#, python-format
+msgid "Delete '%(item_label)s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:77
+msgid "disabled"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:77
+msgid "enabled"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:83
+msgid "Move to clipboard"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:91
+msgid "there are no files or subfolders"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:98
+msgid "previous"
+msgstr "предыдущая"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\folder\directory_table.html:102
+#, python-format
+msgid ""
+"\n"
+"            Page %(number)s of %(num_pages)s.\n"
+"            "
+msgstr ""
+"\n"
+"            Страница %(number)s из %(num_pages)s.\n"
+"            "
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\image\change_form.html:31
+msgid "Full size preview"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:8
+msgid "Clipboard"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:20
+msgid "Paste all items here"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "Move all clipboard files to"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "unfiled files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:27
+msgid "discard"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\clipboard\clipboard.html:44
+msgid "the clipboard is empty"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:7
+msgid "Enter your search phrase here"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:9
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\search_form.html:6
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\search_form.html:8
+msgid "Search"
+msgstr "Поиск"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:12
+msgid "Check it to"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:12
+msgid "limit the search to current folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:13
+msgid "search the current folder"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:18
+msgid "found"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filer\tools\search_form.html:19
+msgid "cancel search"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\filter.html:2
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\index.html:22
+msgid "Applications"
+msgstr "Приложения"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\index.html:55
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\index.html:82
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\invalid_setup.html:12
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\login.html:49
+msgid "<h2>Login</h2>"
+msgstr "<h2>Войти</h2>"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\login.html:77
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\login.html:82
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_complete.html:18
+msgid "Log in"
+msgstr "Войти"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\object_history.html:22
+msgid "Date/time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\object_history.html:24
+msgid "Action"
+msgstr "Действие"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\object_history.html:38
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\page_submit_line.html:7
+#, python-format
+msgid "Delete %(language)s translation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\page_submit_line.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\submit_line.html:9
+msgid "Save as new"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\page_submit_line.html:13
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\submit_line.html:10
+msgid "Save and add another"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\page_submit_line.html:14
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\submit_line.html:11
+msgid "Save and continue editing"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\pagination.html:19
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\search_form.html:10
+msgid "Show all"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\related_widget_wrapper.html:8
+#, python-format
+msgid "Change selected %(model)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\related_widget_wrapper.html:15
+#, python-format
+msgid "Add another %(model)s"
+msgstr "Добавить %(model)s"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\related_widget_wrapper.html:22
+#, python-format
+msgid "Delete selected %(model)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\search_form.html:10
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] "%(counter)s результат"
+msgstr[1] "%(counter)s результата"
+msgstr[2] "%(counter)s результатов"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\admin\search_form.html:10
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\logged_out.html:9
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\logged_out.html:11
+msgid "Log in again"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_done.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:8
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:12
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:13
+msgid "Password change"
+msgstr "Изменение пароля"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_done.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_done.html:12
+msgid "Password change successful"
+msgstr "Пароль успешно изменили"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_done.html:16
+msgid "Your password was changed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_change_form.html:24
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+"Пожалуйста, введите свой старый пароль, в целях безопасности, и потом новый "
+"пароль дважды, чтобы мы могли убедиться в правильности написания."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_complete.html:7
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_complete.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_complete.html:12
+msgid "Password reset complete"
+msgstr "Восстановление пароля завершено"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_complete.html:16
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Ваш пароль восстановлен. Можете войти на сайт."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:7
+msgid "Password reset confirmation"
+msgstr "Подтверждение пароля"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:25
+msgid "New password:"
+msgstr "Новый пароль:"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:34
+msgid "Confirm password:"
+msgstr "Подтвердить пароль:"
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_confirm.html:50
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Ссылка для восстановления пароля недействительна, возможно, потому, что она "
+"уже была использована. Пожалуйста, запросите новую ссылку для восстановления "
+"пароля."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_done.html:11
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_done.html:12
+msgid "Password reset successful"
+msgstr "Пароль успешно восстановлен."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_done.html:16
+msgid ""
+"We've emailed you instructions for setting your password to the email "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:16
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Введите свой адрес электронной почты и мы отправим вам инструкцию для "
+"восстановления пароля."
+
+#: .\venv\Lib\site-packages\django_admin_bootstrapped-2.5.6-py3.4.egg\django_admin_bootstrapped\templates\registration\password_reset_form.html:21
+msgid "Email address:"
+msgstr "Адрес электронной почты:"
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:20
+msgid "queue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:21
+msgid "queues"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:28
+msgid "payload"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:37
+msgid "message"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\django\models.py:38
+msgid "messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1268
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1273
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\kombu-3.0.29-py3.4.egg\kombu\transport\qpid.py:1291
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""

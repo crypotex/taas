@@ -19,7 +19,7 @@ class ReservationForm(forms.Form):
         current = timezone.localtime(timezone.now())
         if start <= current:
             raise forms.ValidationError(_("Date should not be in the past."))
-        elif (start-current) < timezone.timedelta(minutes=15):
+        elif (start - current) < timezone.timedelta(minutes=15):
             raise forms.ValidationError(_("There should be at least 15 minutes before reservation"))
         elif start.hour not in range(8, 23):
             raise forms.ValidationError(_("Invalid reservation time."))
@@ -52,9 +52,26 @@ MONTHS = [
 ]
 
 YEARS = [(year, year)
-         for year in range(timezone.datetime.today().year - 1, timezone.datetime.today().year + 2)]
+         for year in range(timezone.now().year - 1, timezone.now().year + 2)]
 
 
 class HistoryForm(forms.Form):
-    month = forms.ChoiceField(choices=MONTHS, initial=timezone.datetime.today().month)
-    year = forms.ChoiceField(choices=YEARS, initial=timezone.datetime.today().year)
+    month = forms.ChoiceField(choices=MONTHS, initial=timezone.now().month, label=_('Month'))
+    year = forms.ChoiceField(choices=YEARS, initial=timezone.now().year, label=_('Year'))
+
+
+class PasswordForm(forms.Form):
+    password = forms.CharField(widget=forms.PasswordInput, label=_('Password'))
+
+    def __init__(self, user, *args, **kwargs):
+        super(PasswordForm, self).__init__(*args, **kwargs)
+        self.user = user
+
+    def clean_password(self):
+        cleaned_password = self.cleaned_data['password']
+
+        is_valid = self.user.check_password(cleaned_password)
+        if not is_valid:
+            raise forms.ValidationError(_('Incorrect password.'))
+
+        return cleaned_password

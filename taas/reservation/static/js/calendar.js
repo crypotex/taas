@@ -1,63 +1,70 @@
 var canSelect;
 var timeError;
 var expireMessage;
-var expire_date = null;
+var expireDate = null;
+var warningMessage;
+var fieldA;
+var fieldB;
+var fieldC;
 
 swal.setDefaults({confirmButtonColor: '#ffa31a'});
 
-function startTimer() {
-    if (expire_date != null) {
-        $('#timer').countdown(expire_date, function (event) {
-            $(this).html(event.strftime('%M:%S'));
-        }).on('finish.countdown', function () {
-            removeReservationsOnExpire();
-        });
-    }
-}
 
-function getExpireDate() {
-    jQuery.get('/reservation/expire/', function (date) {
-        expire_date = new Date();
-        expire_date.setMinutes(expire_date.getMinutes() + parseInt(date['response'].split(":")[0]));
-        expire_date.setSeconds(expire_date.getSeconds() + parseInt(date['response'].split(":")[1]));
-    }).done(function () {
-        console.log("Date: " + expire_date);
-        startTimer();
+function setExpireDate() {
+    jQuery.ajax({
+        url: '/reservation/expire/',
+        success: function (data) {
+            if (data['response']) {
+                expireDate = new Date();
+                expireDate.setMinutes(expireDate.getMinutes() + parseInt(data['response'].split(":")[0]));
+                expireDate.setSeconds(expireDate.getSeconds() + parseInt(data['response'].split(":")[1]));
+                startTimer(expireDate);
+            }
+        },
+        async: false,
+        cache: false
     });
 }
 
+function startTimer(expireDate) {
+    document.getElementById('timerMessage').style.display = 'block';
+    $('#timer').countdown(expireDate, function (event) {
+        $(this).html(event.strftime('%M:%S'));
+    }).on('finish.countdown', function () {
+        stopTimer();
+        removeReservationsOnExpire();
+        disableSubmition();
+        expireDate = null;
+        swal({title: warningMessage, text: expireMessage, type: "warning", confirmButtonText: "OK"});
+    });
+}
+
+
+function stopTimer() {
+    document.getElementById('timerMessage').style.display = 'none';
+    $('#timer').countdown('stop');
+}
+
 function disableSubmition() {
-    if (document.getElementById('submit')) {
-        document.getElementById('submit').style.visibility = 'hidden';
-    }
-    document.getElementById('timerMessage').style.visibility = 'hidden';
-    expire_date = null;
+    document.getElementById('submitBookings').style.display = 'none';
 }
 
 function enableSubmition() {
-    if (document.getElementById('submit')) {
-        document.getElementById('submit').style.visibility = 'visible';
-    }
-    document.getElementById('timerMessage').style.visibility = 'visible';
-    startTimer();
+    document.getElementById('submitBookings').style.display = 'block';
 }
 
 function removeReservationsOnExpire() {
     jQuery.post('/reservation/remove/all/').done(
         function () {
-            if ($('#calendar').length) {
-                $("#calendar").fullCalendar('refetchEvents');
-            }
-            disableSubmition();
-            swal({title: "Warning", text: expireMessage, type: "warning", confirmButtonText: "OK"});
+            $("#calendar").fullCalendar('refetchEvents');
         }
     )
 }
 
 function addReservation(start, end, ev) {
     var minutes = start.diff(moment(), 'minutes');
-    if (minutes < 15) {
-        swal({title: "Warning", text: timeError, type: "warning", customClass: "alert-button"});
+    if (minutes < 30) {
+        swal({title: warningMessage, text: timeError, type: "warning", customClass: "alert-button"});
     } else {
         jQuery.post('reservation/add/',
             {
@@ -67,16 +74,18 @@ function addReservation(start, end, ev) {
             }
         ).done(function () {
                 $("#calendar").fullCalendar('refetchEvents');
-                getExpireDate();
+                if (!expireDate) {
+                    expireDate = moment().add(10, 'minutes').toDate();
+                }
+                startTimer(expireDate);
                 enableSubmition();
             }
         );
-
     }
 }
 
 function deleteReservation(calEvent) {
-    if (calEvent.color != "#008000") return;
+    if (calEvent.color != "#8f62bd") return;
 
     jQuery.post('/reservation/remove/',
         {
@@ -84,7 +93,9 @@ function deleteReservation(calEvent) {
         },
         function (data) {
             if (!data.response) {
-                disableSubmition()
+                disableSubmition();
+                stopTimer();
+                expireDate = null;
             }
         },
         "json"
@@ -95,44 +106,60 @@ function deleteReservation(calEvent) {
     )
 }
 
-function checkDate() {
-    var now = new Date();
-    var check_date = new Date(expire_date);
-    if (check_date <= now) {
-        removeReservationsOnExpire()
-    }
-}
-
 $(document).ready(function () {
-    if ($('#calendar').length) {
-        $("#calendar").fullCalendar({
-            header: false,
-            resources: 'reservation/fields/',
-            defaultView: 'resourceDay',
-            allDaySlot: false,
-            minTime: '08:00:00',
-            maxTime: '22:00:00',
-            aspectRatio: 0.0,
-            theme: true,
-            axisFormat: 'HH:mm',
-            timeFormat: '',
-            timezone: 'local',
-            slotDuration: '01:00:00',
-            selectable: canSelect,
-            selectHelper: true,
-            select: addReservation,
-            events: '/reservation/all/',
-            eventClick: deleteReservation
-        });
-    }
-    if ($('#datepicker').length) {
-        $('#datepicker').datepicker({
-            inline: true,
-            minDate: 0,
-            firstDay: 1,
-            onSelect: function () {
-                $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
-            }
-        });
-    }
+    $("#calendar").fullCalendar({
+        header: {
+            left: '',
+            center: 'title',
+            right: ''
+        },
+        resources: 'reservation/fields/',
+        defaultView: 'resourceDay',
+        allDaySlot: false,
+        minTime: '08:00:00',
+        maxTime: '22:00:00',
+        aspectRatio: 0.0,
+        theme: true,
+        axisFormat: 'HH:mm',
+        timeFormat: '',
+        timezone: 'local',
+        slotDuration: '01:00:00',
+        selectable: canSelect,
+        selectHelper: true,
+        select: addReservation,
+        events: '/reservation/all/',
+        eventClick: deleteReservation
+    });
+
+    $('.fc-col0').tooltipster({
+        theme: 'tooltipster-light',
+        touchDevices: true,
+        content: $(fieldA),
+        trigger: 'hover',
+        position: 'top'
+    });
+
+    $('.fc-col1').tooltipster({
+        theme: 'tooltipster-light',
+        touchDevices: true,
+        content: $(fieldB),
+        trigger: 'hover',
+        position: 'top'
+    });
+
+    $('.fc-col2').tooltipster({
+        theme: 'tooltipster-light',
+        touchDevices: true,
+        content: $(fieldC),
+        trigger: 'hover',
+        position: 'top'
+    });
+
+    $('#datepicker').datepicker({
+        inline: true,
+        firstDay: 1,
+        onSelect: function () {
+            $('#calendar').fullCalendar('gotoDate', $('#datepicker').datepicker('getDate'));
+        }
+    });
 });

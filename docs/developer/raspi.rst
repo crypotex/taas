@@ -81,24 +81,12 @@ Generating SSH keys
 
     cat /home/pi/.ssh/id_rsa.pub >> /home/pi/.ssh/authorized_keys
 
-* Add the generated SSH key to the main server
+Replication MySQL - Raspberry Pi
+--------------------------------
 
-.. code-block:: bash
+* Follow the `DigitalOcean <https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql>`_ guide on how to setup MySQL replication. You can find ip-addresses with command "ifconfig". Also don't forget to open port 3306 on main server.
 
-    ssh-copy-id deployer@46.101.229.73
+Python gate controller
+----------------------
 
-* To ensure that when you are connecting to the main server, it won't ask for the public key passphrase, run the following command and enter your public key's passphrase.
-
-.. code-block:: bash
-
-    ssh-add
-
-
-Installing SQLite database
---------------------------
-
-* Run the command to download SQLite to the Raspberry Pi.
-
-.. code-block:: bash
-
-    sudo apt-get install sqlite3
+* Link for files

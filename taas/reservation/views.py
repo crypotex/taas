@@ -1,45 +1,35 @@
 import json
 import logging
+
 from datetime import timedelta, date
+from decimal import Decimal
+from hashlib import sha512
+
 from django import http
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.serializers.json import DjangoJSONEncoder
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.db.models import Q
+from django.db.models import Sum
 from django.shortcuts import render
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from django.views.decorators.http import require_http_methods
-from django.views.generic import ListView, TemplateView, DetailView, FormView
-from django.views.generic.detail import SingleObjectMixin
+from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import TemplateView, DetailView, FormView
 from django_tables2 import RequestConfig
-from taas.reservation.forms import ReservationForm, HistoryForm
-from taas.reservation.models import Field, Reservation
-from taas.reservation.tables import HistoryTable
+
+from taas.reservation.forms import ReservationForm, HistoryForm, PasswordForm
+from taas.reservation.models import Field, Reservation, Payment
+from taas.reservation.tables import HistoryTable, ReservationListTable
 from taas.user.mixins import LoggedInMixin
+from taas.user.models import User
 
 logger = logging.getLogger(__name__)
 
 
 class HomePageView(TemplateView):
     template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        kwargs = super(HomePageView, self).get_context_data(**kwargs)
-
-        if self.request.user.is_authenticated():
-            reservations = Reservation.objects.filter(
-                user=self.request.user,
-                paid=False
-            ).order_by('date_created')
-
-            if reservations.exists():
-                kwargs['is_unpaid'] = True
-                first_unpaid = reservations.first().get_date_created()
-                kwargs['expire_date'] = (first_unpaid + timedelta(minutes=10)).strftime("%Y/%m/%d %H:%M:%S")
-
-        return kwargs
 
 
 def get_fields(request):
@@ -90,7 +80,7 @@ def get_calendar_entities(start, end, user, update=None):
 
         }
         if user.is_staff:
-            entry['title'] = reservation.id
+            entry['title'] = reservation.user_id
 
         if update == reservation.id:
             entry['startEditable'] = True
@@ -179,31 +169,6 @@ def remove_reservation(request):
     return http.HttpResponseBadRequest(_("Not allowed."))
 
 
-class ReservationList(LoggedInMixin, ListView):
-    template_name = 'payment.html'
-    ordering = 'start'
-    context_object_name = 'reservation_list'
-    paginate_by = 10
-
-    def get(self, request, *args, **kwargs):
-        reservations = self.get_queryset()
-        if not reservations.exists():
-            return http.HttpResponseForbidden()
-
-        return super(ReservationList, self).get(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        total_price = sum(reservation.price for reservation in self.queryset)
-        kwargs['total_price'] = total_price
-
-        return super(ReservationList, self).get_context_data(**kwargs)
-
-    def get_queryset(self):
-        self.queryset = Reservation.objects.filter(user=self.request.user, paid=False)
-
-        return super(ReservationList, self).get_queryset()
-
-
 @login_required()
 def remove_unpaid_reservations(request):
     if request.is_ajax():
@@ -213,26 +178,197 @@ def remove_unpaid_reservations(request):
     return http.HttpResponseForbidden(_("Error"))
 
 
-@login_required()
-def reservation_payment(request):
-    # Temporary view
-    reservations = Reservation.objects.filter(user=request.user, paid=False)
-    if not reservations.exists():
-        raise http.Http404()
+def get_payment_order(amount, reference):
+    data = {
+        'shop': settings.MAKSEKESKUS['shop_id'],
+        'amount': amount,
+        'reference': reference
+    }
 
-    from django.db.models import Sum
+    return json.dumps(data, cls=DjangoJSONEncoder)
 
-    total_price = reservations.aggregate(total_price=Sum('field__cost'))['total_price']
-    if total_price > request.user.budget:
-        messages.add_message(request, messages.INFO, _('You do not have enough money.'))
-        return http.HttpResponseRedirect(reverse('reservation_list'))
 
-    request.user.budget -= total_price
-    request.user.save()
-    reservations.update(paid=True)
+def get_payment_mac(order):
+    encoded_order = (order + settings.MAKSEKESKUS['secret_key']).encode('utf-8')
+    hashed_order = sha512(encoded_order).hexdigest()
+    return hashed_order.upper()
+
+
+class ReservationList(LoggedInMixin, TemplateView):
+    template_name = 'reservation_list.html'
+    paginate_by = 10
+
+    def get(self, request, *args, **kwargs):
+        reservations = self.get_reservations()
+        if not reservations.exists():
+            return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
+        return super(ReservationList, self).get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        reservations = self.get_reservations()
+        total_price = reservations.aggregate(total_price=Sum('field__cost'))['total_price']
+
+        table = ReservationListTable(reservations)
+        RequestConfig(self.request, paginate={"per_page": self.paginate_by}).configure(table)
+        kwargs['table'] = table
+        kwargs['total_price'] = total_price
+
+        return super(ReservationList, self).get_context_data(**kwargs)
+
+    def get_reservations(self):
+        return Reservation.objects.filter(user=self.request.user, paid=False)
+
+
+class ProceedTransactionView(LoggedInMixin, TemplateView):
+    template_name = 'proceed_transaction.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ProceedTransactionView, self).get_context_data(**kwargs)
+
+        reservations = Reservation.objects.filter(user=self.request.user, paid=False)
+        if not reservations.exists():
+            return http.HttpResponseForbidden()
+
+        total_price = reservations.aggregate(total_price=Sum('field__cost'))['total_price']
+
+        old_staged = Payment.objects.filter(type=Payment.STAGED, user=self.request.user)
+        if old_staged.exists():
+            old_staged.delete()
+
+        payment = Payment.objects.create(type=Payment.STAGED, amount=total_price,
+                                         user=self.request.user)
+        for reservation in reservations:
+            payment.reservation_set.add(reservation)
+
+        order_json = get_payment_order(total_price, payment.id)
+
+        context.update({
+            'json': order_json,
+            'mac': get_payment_mac(order_json),
+            'host': settings.MAKSEKESKUS['host']
+        })
+
+        return context
+
+
+@csrf_exempt
+@login_required
+def payment_cancelled(request):
+    if request.method != 'POST':
+        return http.HttpResponseNotAllowed(permitted_methods=['POST'])
+
+    confirm_json = request.POST.get('json')
+    confirm_mac1 = request.POST.get('mac')
+    if not confirm_json or not confirm_mac1:
+        return http.HttpResponseBadRequest()
+
+    confirm_mac2 = get_payment_mac(confirm_json)
+    if confirm_mac1 != confirm_mac2:
+        return http.HttpResponseBadRequest()
+
+    reference = json.loads(confirm_json)['reference']
+    if reference.startswith('B'):
+        messages.add_message(request, messages.INFO, _('Adding money to budget was cancelled.'))
+        return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
+    staged_payments = Payment.objects.filter(id=reference)
+    if staged_payments.exists():
+        staged_payments.delete()
+
+    messages.add_message(request, messages.INFO, _('Payment was cancelled.'))
+    return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
+
+@csrf_exempt
+@login_required
+def payment_success(request):
+    if request.method != 'POST':
+        return http.HttpResponseNotAllowed(permitted_methods=['POST'])
+
+    confirm_json = request.POST.get('json')
+    confirm_mac1 = request.POST.get('mac')
+    if not confirm_json or not confirm_mac1:
+        return http.HttpResponseBadRequest()
+
+    confirm_mac2 = get_payment_mac(confirm_json)
+    if confirm_mac1 != confirm_mac2:
+        return http.HttpResponseBadRequest()
+
+    payment = json.loads(confirm_json)
+    reference = payment['reference']
+    amount = payment['amount']
+    if reference.startswith('B'):
+        user_id = reference[1:]
+        user = User.objects.get(id=user_id)
+        user.budget += Decimal(amount)
+        user.save()
+        Payment.objects.create(type=Payment.TRANSACTION, user=user, amount=payment['amount'])
+
+        messages.add_message(request, messages.SUCCESS, _('Successfully added money to the budget.'))
+        return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
+    try:
+        staged_payment = Payment.objects.get(id=reference)
+        staged_payment.type = Payment.TRANSACTION
+        staged_payment.reservation_set.update(paid=True)
+        staged_payment.save()
+    except (Payment.DoesNotExist, Payment.MultipleObjectsReturned):
+        return http.HttpResponseServerError(_('Error occurred. Please contact administrator.'))
+
     messages.add_message(request, messages.SUCCESS, _('Successfully paid for the reservations.'))
 
-    return http.HttpResponseRedirect(reverse('homepage'))
+    return http.HttpResponseRedirect(reverse_lazy('homepage'))
+
+
+class BudgetPaymentView(LoggedInMixin, FormView):
+    form_class = PasswordForm
+    template_name = 'budget_payment.html'
+    http_method_names = ['post', 'get']
+
+    def get(self, request, *args, **kwargs):
+        self.reservations = Reservation.objects.filter(user=self.request.user, paid=False)
+        if not self.reservations.exists():
+            return http.HttpResponseForbidden()
+
+        return super(BudgetPaymentView, self).get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        self.reservations = Reservation.objects.filter(user=self.request.user, paid=False)
+        if not self.reservations.exists():
+            return http.HttpResponseForbidden()
+
+        return super(BudgetPaymentView, self).post(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super(BudgetPaymentView, self).get_form_kwargs()
+        kwargs['user'] = self.request.user
+
+        return kwargs
+
+    def form_valid(self, form):
+        total_price = self.reservations.aggregate(total_price=Sum('field__cost'))['total_price']
+
+        old_staged = Payment.objects.filter(type=Payment.STAGED, user=self.request.user)
+        if old_staged.exists():
+            old_staged.delete()
+
+        if total_price > self.request.user.budget:
+            messages.add_message(self.request, messages.INFO, _('You do not have enough money.'))
+            return http.HttpResponseRedirect(reverse('reservation_list'))
+
+        self.request.user.budget -= total_price
+        self.request.user.save()
+
+        payment = Payment.objects.create(type=Payment.BUDGET, amount=total_price,
+                                         user=self.request.user)
+        for reservation in self.reservations:
+            reservation.paid = True
+            reservation.save()
+            payment.reservation_set.add(reservation)
+
+        messages.add_message(self.request, messages.SUCCESS, _('Successfully paid for the reservations.'))
+        return http.HttpResponseRedirect(reverse('homepage'))
 
 
 @login_required()
@@ -255,12 +391,13 @@ def history(request):
 
     data = {'form': form}
     next_month = 1 if current_month == 12 else current_month + 1
+    next_year = year + 1 if current_month == 12 else year
     reservations = Reservation.objects.filter(
         user=request.user,
         paid=True,
         start__gt=date(year, current_month, 1),
-        end__lt=date(year, next_month, 1)
-    ).order_by('start')
+        end__lt=date(next_year, next_month, 1)
+    ).order_by('-start')
     if reservations.exists():
         table = HistoryTable(reservations)
         RequestConfig(request, paginate={"per_page": 20}).configure(table)
@@ -279,7 +416,7 @@ def get_expire_time(request):
             timer = str(diff).split('.')[0].split(':', 1)[1]
             return http.JsonResponse({'response': timer}, safe=False)
 
-        return http.JsonResponse({'response': "null"}, safe=False)
+        return http.JsonResponse({'response': ""}, safe=False)
 
     return http.HttpResponseForbidden("Error")
 

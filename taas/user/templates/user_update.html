@@ -16,23 +16,31 @@
 {% endblock scripts %}
 
 {% block tab-menu %}
-    <ul class="tab-menu">
-        <li class="selected"><a href="/user/update">{% trans 'Account' %}</a></li>
-        <li><a href="/reservation/history">{% trans 'History' %}</a></li>
-    </ul>
+    {% if user.is_authenticated %}
+        <ul class="tabrow">
+            <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li class="selected"><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+            <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+        </ul>
+    {% endif %}
 {% endblock tab-menu %}
 
 {% block content %}
 
-    <form method="POST" class="form">{% csrf_token %}
+    <form method="POST" class="form" id="updateForm">{% csrf_token %}
 
-        <h1>{% trans 'Update account' %}</h1>
+        <h2>{% trans 'Update account' %}</h2>
 
         {% for error in form.non_field_errors %}
             <p class="error-message">{{ error }}</p>
         {% endfor %}
 
         <div class="fieldWrapper">
+
+            <p id="pin">{% trans "Your gate pin: " %}{{ pin }}</p>
+
             {{ form.first_name.label_tag }}
             {% render_field form.first_name|add_error_class:"field-error" %}
             {% for err in form.first_name.errors %}
@@ -69,8 +77,6 @@
             </div>
         </div>
         <input id="submit-button" type="submit" value={% trans 'Update' %}>
-    </form>
-    <form action={% url 'user_deactivate_form' %}>{% csrf_token %}
-        <input id="deactivate-button" type="submit" value={% trans 'Deactivate' %}>
+        <button id="deactivate-button" formaction="{% url 'user_deactivate_form' %}" type="submit">{% trans 'Deactivate' %}</button>
     </form>
 {% endblock content %}
