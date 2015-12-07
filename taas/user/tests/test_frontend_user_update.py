@@ -1,6 +1,4 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from django.utils.translation import activate
-
 from selenium import webdriver
 from taas.user.tests.factories import UserFactory
 
@@ -16,9 +14,6 @@ class UserUpdateTest(StaticLiveServerTestCase):
     def tearDownClass(cls):
         cls.selenium.quit()
         super(UserUpdateTest, cls).tearDownClass()
-
-    def setUp(self):
-        activate("en")
 
     def test_logged_in_user_can_access_update_page(self):
         self.go_to_update_page()
@@ -142,6 +137,9 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.user = UserFactory(is_active=True)
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
 
+        self.selenium.implicitly_wait(3)
+        self.selenium.find_element_by_id("en").click()
+
         self.assertIn("Tartu Agility Playground", self.selenium.title)
         if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
             self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
@@ -203,6 +201,8 @@ class UserDeactivationTest(StaticLiveServerTestCase):
     def login_user(self):
         self.user = UserFactory(is_active=True)
         self.selenium.get('%s%s' % (self.live_server_url, "/"))
+
+        self.selenium.find_element_by_id("en").click()
 
         if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
             self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
