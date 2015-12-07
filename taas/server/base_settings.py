@@ -67,10 +67,10 @@ COLORS = {
     'paid': {
         'anonymous': '#FE9900',
         'others': '#FE9900',
-        'owner': '#009800'
+        'owner': '#008a00'
     },
     'unpaid': {
-        'owner': '#b285e0',
+        'owner': '#8f62bd',
         'others': '#a9a9a9',
     },
     'update': '#A52A2A'

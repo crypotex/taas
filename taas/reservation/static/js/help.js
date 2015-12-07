@@ -6,29 +6,33 @@ var unpaidOwn;
 $(document).ready(function () {
     $('#anon').tooltipster({
         theme: 'tooltipster-light',
-        offsetX: -189,
-        offsetY: 12,
-        content: paidAnon
+        touchDevices: true,
+        trigger: 'hover',
+        content: paidAnon,
+        position: 'top'
     });
 
     $('#own').tooltipster({
         theme: 'tooltipster-light',
-        offsetX: -189,
-        offsetY: 12,
-        content: paidOwn
+        content: paidOwn,
+        trigger: 'hover',
+        touchDevices: true,
+        position: 'top'
     });
 
     $('#unpaid-own').tooltipster({
         theme: 'tooltipster-light',
-        offsetX: -189,
-        offsetY: 12,
-        content: unpaidOwn
+        content: unpaidOwn,
+        trigger: 'hover',
+        touchDevices: true,
+        position: 'top'
     });
 
     $('#unpaid-others').tooltipster({
         theme: 'tooltipster-light',
-        offsetX: -189,
-        offsetY: 12,
-        content: unpaidAnon
+        content: unpaidAnon,
+        trigger: 'hover',
+        touchDevices: true,
+        position: 'top'
     });
 });

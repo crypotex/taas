@@ -38,9 +38,9 @@
 
 {% block content %}
     <div class="table_wrap">
-        <form action="" method="get" class="sort_form">
-            {{ form }}
-
+        <form method="get" class="sort_form">
+            {{ form.month.label_tag }} {{ form.month }}
+            {{ form.year.label_tag }} {{ form.year }}
             <input type="submit" id="sortButton" value={% trans 'Sort' %}>
         </form>
         {% if table %}

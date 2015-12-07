@@ -1,7 +1,7 @@
 .form, .reset-form, .login-form, .deactivate-form {
     width: 50%;
     min-width: 200px;
-    word-break: break-word;
+    word-break: keep-all;
     padding: 30px;
     margin: auto;
     border-radius: 10px;
@@ -74,7 +74,7 @@ input[type="submit"]:hover, button[type="submit"]:hover {
     display: block;
     font-size: 13px;
     letter-spacing: 1px;
-    color: #888;
+    color: #727272;
     margin-bottom: 5px;
     margin-top: 15px;
 }
@@ -319,4 +319,20 @@ input#payButton {
 
 #id_amount {
     width: 100%;
+}
+
+#price {
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    width: 30%;
+    margin: 0 13% 0 auto;
+    text-align: center;
+    color: #000000;
+}
+
+#price:after {
+    content: '';
+    display: table;
+    clear: both;
 }

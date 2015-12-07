@@ -14,7 +14,7 @@
     border-top: 1px solid #c8c8c8;
     padding: 10px;
     vertical-align:top;
-    word-break: break-word;
+    word-break: keep-all;
 }
 
 #bookings tr:last-child {
@@ -45,7 +45,7 @@
     margin: 10px;
 }
 
-#reservation_update_header {
+.reservation_update_header {
     text-align: center;
     color: #666666;
 }
@@ -82,9 +82,10 @@
 ul.pagination {
     text-align: center;
     list-style-type: none;
+    padding-right: 40px;
 }
 
-li.previous, li.next, .pagewrap {
+li.previous, li.next, li.current {
     display: inline;
 }
 
@@ -108,13 +109,12 @@ li.next:after {
     clear: right;
 }
 
-.pagewrap {
-    margin: 0 auto;
-    width: 25%;
-    text-align: center;
-}
-
 .fc-header-title h2 {
     font-size: 16px;
     color: #666666;
+}
+
+
+th.delete, th.update {
+    display: none;
 }
