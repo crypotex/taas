@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
@@ -11,7 +13,15 @@ class UserRegistrationTest(StaticLiveServerTestCase):
     def setUpClass(cls):
         super(UserRegistrationTest, cls).setUpClass()
         cls.form_data = UserFactory.get_form_data()
-        cls.selenium = webdriver.Firefox()
+        username = os.environ["SAUCE_USERNAME"]
+        access_key = os.environ["SAUCE_ACCESS_KEY"]
+        capabilities = {
+            "tunnel-identifier": os.environ["TRAVIS_JOB_NUMBER"],
+            "build": os.environ["TRAVIS_BUILD_NUMBER"],
+            "tags": [os.environ["TRAVIS_PYTHON_VERSION"], "CI"]
+        }
+        hub_url = "%s:%s@localhost:4445" % (username, access_key)
+        cls.selenium = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
         cls.selenium.maximize_window()
 
     @classmethod
