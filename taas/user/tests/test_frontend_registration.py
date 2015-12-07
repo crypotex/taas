@@ -23,7 +23,7 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         hub_url = "%s:%s@localhost:4445" % (username, access_key)
         cls.selenium = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
         cls.selenium.maximize_window()
-        cls.selenium.implicitly_wait(5)
+        cls.selenium.implicitly_wait(10)
 
     @classmethod
     def tearDownClass(cls):
