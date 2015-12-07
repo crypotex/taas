@@ -52,12 +52,12 @@ MONTHS = [
 ]
 
 YEARS = [(year, year)
-         for year in range(timezone.datetime.today().year - 1, timezone.datetime.today().year + 2)]
+         for year in range(timezone.now().year - 1, timezone.now().year + 2)]
 
 
 class HistoryForm(forms.Form):
-    month = forms.ChoiceField(choices=MONTHS, initial=timezone.datetime.today().month, label=_('Month'))
-    year = forms.ChoiceField(choices=YEARS, initial=timezone.datetime.today().year, label=_('Year'))
+    month = forms.ChoiceField(choices=MONTHS, initial=timezone.now().month, label=_('Month'))
+    year = forms.ChoiceField(choices=YEARS, initial=timezone.now().year, label=_('Year'))
 
 
 class PasswordForm(forms.Form):

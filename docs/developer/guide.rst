@@ -35,6 +35,12 @@ Setup work environment
 
     pip setup.py develop
 
+- Run tests:
+
+.. code-block:: bash
+
+    python setup.py test
+
 - Migrate database:
 
 .. code-block:: bash

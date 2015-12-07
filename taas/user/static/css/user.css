@@ -1,7 +1,7 @@
 .form, .reset-form, .login-form, .deactivate-form {
     width: 50%;
-    min-width: 150px;
-    word-break: keep-all;
+    min-width: 200px;
+    word-break: break-word;
     padding: 30px;
     margin: auto;
     border-radius: 10px;
@@ -74,7 +74,7 @@ input[type="submit"]:hover, button[type="submit"]:hover {
     display: block;
     font-size: 13px;
     letter-spacing: 1px;
-    color: #888;
+    color: #727272;
     margin-bottom: 5px;
     margin-top: 15px;
 }

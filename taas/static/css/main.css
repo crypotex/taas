@@ -405,3 +405,10 @@ a:hover {
     }
 }
 
+
+
+a#et, a#en, a#ru {
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+}

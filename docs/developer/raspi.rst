@@ -80,3 +80,13 @@ Generating SSH keys
 .. code-block:: bash
 
     cat /home/pi/.ssh/id_rsa.pub >> /home/pi/.ssh/authorized_keys
+
+Replication MySQL - Raspberry Pi
+--------------------------------
+
+* Follow the `DigitalOcean <https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql>`_ guide on how to setup MySQL replication. You can find ip-addresses with command "ifconfig". Also don't forget to open port 3306 on main server. 
+
+Python gate controller
+----------------------
+
+* Link for files

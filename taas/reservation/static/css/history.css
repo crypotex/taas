@@ -45,7 +45,7 @@
     margin: 10px;
 }
 
-#reservation_update_header {
+.reservation_update_header {
     text-align: center;
     color: #666666;
 }
@@ -126,11 +126,16 @@ li.next:after {
         width: 20px;
         height: auto;
     }
-    
+
     li.previous a {
         content: url("../img/left_arrow.svg");
         width: 20px;
         height: auto;
     }
 
+}
+
+
+th.delete, th.update {
+    display: none;
 }

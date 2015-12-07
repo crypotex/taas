@@ -7,7 +7,8 @@ class UserCreationForm(auth_forms.UserCreationForm):
     required_css_class = 'required'
 
     password1 = forms.CharField(label=_("Password"), min_length=8, max_length=64,
-                                widget=forms.PasswordInput)
+                                widget=forms.PasswordInput,
+                                help_text=_("The length of the password has to be more than 8 characters."))
     password2 = forms.CharField(label=_("Password confirmation"), min_length=8, max_length=64,
                                 widget=forms.PasswordInput)
 
