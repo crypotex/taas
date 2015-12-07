@@ -140,16 +140,32 @@ class UserUpdateTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_id("en").click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
-        self.assertIn("Login", self.selenium.title)
-        self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
-        self.selenium.find_element_by_id('id_password').send_keys('isherenow')
-        self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
-        self.assertIn('Tartu Agility Playground', self.selenium.title)
+        if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
+            self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
+            self.assertIn("Login", self.selenium.title)
+            self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
+            self.selenium.find_element_by_id('id_password').send_keys('isherenow')
+            self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
+            self.assertIn('Tartu Agility Playground', self.selenium.title)
+        else:
+            self.selenium.find_element_by_xpath('//*[@id="menu-button"]').click()
+            self.selenium.find_element_by_xpath('//*[@id="cssmenu"]/ul/li[1]/a').click()
+            self.assertIn("Login", self.selenium.title)
+            self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
+            self.selenium.find_element_by_id('id_password').send_keys('isherenow')
+            self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
+            self.assertIn('Tartu Agility Playground', self.selenium.title)
 
-    def go_to_update_page(self):
-        self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="wrap"]/header/ul/li[4]/a').click()
+
+def go_to_update_page(self):
+    self.login_user()
+
+    if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
+        self.selenium.find_element_by_xpath('//*[@id="desktop"]/ul/li[4]/a').click()
+        self.assertIn('User modification', self.selenium.title)
+    else:
+        self.selenium.find_element_by_xpath('//*[@id="menu-button"]').click()
+        self.selenium.find_element_by_xpath('//*[@id="cssmenu"]/ul/li[4]/a').click()
         self.assertIn('User modification', self.selenium.title)
 
 
@@ -188,15 +204,31 @@ class UserDeactivationTest(StaticLiveServerTestCase):
 
         self.selenium.find_element_by_id("en").click()
 
-        self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
-        self.assertIn("Login", self.selenium.title)
-        self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
-        self.selenium.find_element_by_id('id_password').send_keys('isherenow')
-        self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
-        self.assertIn('Tartu Agility Playground', self.selenium.title)
+        if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
+            self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[1]/a').click()
+            self.assertIn("Login", self.selenium.title)
+            self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
+            self.selenium.find_element_by_id('id_password').send_keys('isherenow')
+            self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
+            self.assertIn('Tartu Agility Playground', self.selenium.title)
+        else:
+            self.selenium.find_element_by_xpath('//*[@id="menu-button"]').click()
+            self.selenium.find_element_by_xpath('//*[@id="cssmenu"]/ul/li[1]/a').click()
+            self.assertIn("Login", self.selenium.title)
+            self.selenium.find_element_by_id('id_username').send_keys(self.user.email)
+            self.selenium.find_element_by_id('id_password').send_keys('isherenow')
+            self.selenium.find_element_by_xpath('//input[@value="Login"]').click()
+            self.assertIn('Tartu Agility Playground', self.selenium.title)
 
     def go_to_update_page(self):
         self.login_user()
-        self.selenium.find_element_by_xpath('//*[@id="wrap"]/header/ul/li[4]/a').click()
-        self.assertIn('User modification', self.selenium.title)
+
+        if self.selenium.find_element_by_xpath('//*[@id="desktop"]'):
+            self.selenium.find_element_by_xpath('//*[@id="desktop"]/ul/li[4]/a').click()
+            self.assertIn('User modification', self.selenium.title)
+        else:
+            self.selenium.find_element_by_xpath('//*[@id="menu-button"]').click()
+            self.selenium.find_element_by_xpath('//*[@id="cssmenu"]/ul/li[4]/a').click()
+            self.assertIn('User modification', self.selenium.title)
+            self.selenium.find_element_by_xpath('//*[@id="wrap"]/header/ul/li[4]/a').click()
+            self.assertIn('User modification', self.selenium.title)

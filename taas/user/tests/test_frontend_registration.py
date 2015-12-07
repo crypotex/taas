@@ -62,8 +62,13 @@ class UserRegistrationTest(StaticLiveServerTestCase):
         self.selenium.find_element_by_id("en").click()
 
         self.assertIn("Tartu Agility Playground", self.selenium.title)
-        self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[2]/a').click()
-        self.assertIn("Registration", self.selenium.title)
+        if self.selenium.find_element_by_xpath('//*[@id="desktop]'):
+            self.selenium.find_element_by_xpath('//*[@id="user-nav"]/ul/li[2]/a').click()
+            self.assertIn("Registration", self.selenium.title)
+        else:
+            self.selenium.find_element_by_xpath('//*[@id="menu-button"]').click()
+            self.selenium.find_element_by_xpath('//*[@id="cssmenu"]/ul/li[2]/a').click()
+            self.assertIn("Registration", self.selenium.title)
 
     def fill_the_registration_fields(self):
         first_name = self.selenium.find_element_by_id("id_first_name")
