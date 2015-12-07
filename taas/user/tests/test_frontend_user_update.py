@@ -1,5 +1,3 @@
-import os
-
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from taas.user.tests.factories import UserFactory
@@ -9,23 +7,16 @@ class UserUpdateTest(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super(UserUpdateTest, cls).setUpClass()
-        cls.form_data = UserFactory.get_form_data()
-        username = os.environ["SAUCE_USERNAME"]
-        access_key = os.environ["SAUCE_ACCESS_KEY"]
-        capabilities = {
-            "tunnel-identifier": os.environ["TRAVIS_JOB_NUMBER"],
-            "build": os.environ["TRAVIS_BUILD_NUMBER"],
-            "tags": [os.environ["TRAVIS_PYTHON_VERSION"], "CI"]
-        }
-        hub_url = "%s:%s@localhost:4445" % (username, access_key)
-        cls.selenium = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
+        cls.selenium = webdriver.Firefox()
         cls.selenium.maximize_window()
-        cls.selenium.implicitly_wait(10)
 
     @classmethod
     def tearDownClass(cls):
         cls.selenium.quit()
         super(UserUpdateTest, cls).tearDownClass()
+
+    def setUp(self):
+        self.selenium.implicitly_wait(10)
 
     def test_logged_in_user_can_access_update_page(self):
         self.go_to_update_page()

@@ -4,10 +4,10 @@ python:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install python3-dev
-addons:
-  sauce_connect:
-    username: "taas"
-    access_key: "16e16767-42c6-4c09-adae-09bb07caf89f"
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 install:
   - python setup.py install
 script:
