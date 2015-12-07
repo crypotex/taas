@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.views.generic import TemplateView
 from django.views.decorators.http import require_POST
 
 from taas.reservation import views
@@ -14,7 +15,11 @@ urlpatterns = [
     url(r'^remove/$', views.remove_reservation, name='remove_reservation'),
     url(r'^remove/all/$', views.remove_unpaid_reservations, name='remove_all_reservations'),
     url(r'^list/$', views.ReservationList.as_view(), name='reservation_list'),
-    url(r'^payment/$', views.reservation_payment, name='reservation_payment'),
+    url(r'^payment/success/$', views.payment_success, name='payment_success'),
+    url(r'^payment/cancel/$', views.payment_cancelled, name='payment_cancel'),
+    url(r'^payment/transaction/$', views.ProceedTransactionView.as_view(), name='proceed_transaction'),
+    url(r'^payment/budget/$', views.BudgetPaymentView.as_view(), name='budget_payment'),
     url(r'^expire/$', views.get_expire_time, name='get_expire_time'),
     url(r'^history/$', views.history, name='reservation_history'),
+    url(r'^help/', TemplateView.as_view(template_name="help.html")),
 ]

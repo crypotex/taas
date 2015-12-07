@@ -16,37 +16,45 @@
 {% endblock scripts %}
 
 {% block tab-menu %}
-    <ul class="tab-menu">
-        <li class="selected"><a href="/user/update">{% trans 'Account' %}</a></li>
-        <li><a href="/reservation/history">{% trans 'History' %}</a></li>
-    </ul>
+    {% if user.is_authenticated %}
+        <ul class="tabrow">
+            <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li class="selected"><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+            <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+        </ul>
+    {% endif %}
 {% endblock tab-menu %}
 
 {% block content %}
 
-    <form method="POST" class="form">{% csrf_token %}
+    <form method="POST" class="form" id="updateForm">{% csrf_token %}
 
-        <h1>{% trans 'Update account' %}</h1>
+        <h2>{% trans 'Update account' %}</h2>
 
         {% for error in form.non_field_errors %}
             <p class="error-message">{{ error }}</p>
         {% endfor %}
 
         <div class="fieldWrapper">
+
+            <p id="pin">{% trans "Your gate pin: " %}{{ pin }}</p>
+
             {{ form.first_name.label_tag }}
             {% render_field form.first_name|add_error_class:"field-error" %}
             {% for err in form.first_name.errors %}
-                <p class="error-message">{{ form.first_name.errors.as_text|cut:"* " }}</p>{% endfor %}
+                <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
             {{ form.last_name.label_tag }}
             {% render_field form.last_name|add_error_class:"field-error" %}
             {% for err in form.last_name.errors %}
-                <p class="error-message">{{ form.last_name.errors.as_text|cut:"* " }}</p>{% endfor %}
+                <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
             {{ form.phone_number.label_tag }}
             {% render_field form.phone_number|add_error_class:"field-error" %}
             {% for err in form.phone_number.errors %}
-                <p class="error-message">{{ form.phone_number.errors.as_text|cut:"* " }}</p>{% endfor %}
+                <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
             {{ form.change_password.label_tag }}
             {% render_field form.change_password onclick="javascript:checkPasswords(this);" %}
@@ -55,22 +63,20 @@
                 {{ form.old_password.label_tag }}
                 {% render_field form.old_password|add_error_class:"field-error" %}
                 {% for err in form.old_password.errors %}
-                    <p class="error-message">{{ form.old_password.errors.as_text|cut:"* " }}</p>{% endfor %}
+                    <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
                 {{ form.new_password1.label_tag }}
                 {% render_field form.new_password1|add_error_class:"field-error" %}
                 {% for err in form.new_password1.errors %}
-                    <p class="error-message">{{ form.password1.errors.as_text|cut:"* " }}</p>{% endfor %}
+                    <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
 
                 {{ form.new_password2.label_tag }}
                 {% render_field form.new_password2|add_error_class:"field-error" %}
                 {% for err in form.new_password2.errors %}
-                    <p class="error-message">{{ form.new_password2.errors.as_text|cut:"* " }}</p>{% endfor %}
+                    <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
             </div>
         </div>
         <input id="submit-button" type="submit" value={% trans 'Update' %}>
-    </form>
-    <form action={% url 'user_deactivate_form' %}>{% csrf_token %}
-        <input id="deactivate-button" type="submit" value={% trans 'Deactivate' %}>
+        <button id="deactivate-button" formaction="{% url 'user_deactivate_form' %}" type="submit">{% trans 'Deactivate' %}</button>
     </form>
 {% endblock content %}

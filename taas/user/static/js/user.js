@@ -1,9 +1,11 @@
 function checkPasswords() {
-    checkbox = document.getElementById('id_change_password');
-    if (checkbox.checked) {
-        document.getElementById('passwordChange').style.display = "block";
-    } else {
-        document.getElementById('passwordChange').style.display = "none";
+    if (document.getElementById('id_change_password')) {
+        checkbox = document.getElementById('id_change_password');
+        if (checkbox.checked) {
+            document.getElementById('passwordChange').style.display = "block";
+        } else {
+            document.getElementById('passwordChange').style.display = "none";
+        }
     }
 }
 
@@ -18,5 +20,5 @@ $(document).ready(function () {
         else {
             $('#submit-button').prop('disabled', true);
         }
-    })
+    });
 });

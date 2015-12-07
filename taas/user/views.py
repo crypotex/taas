@@ -1,20 +1,24 @@
 import logging
 
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import views as auth_views, get_user_model, update_session_auth_hash, logout
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.urlresolvers import reverse_lazy, reverse
-from django.http import HttpResponseRedirect, HttpResponseForbidden
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response
 from django.template.response import TemplateResponse
 from django.utils.encoding import force_text
 from django.utils.http import urlsafe_base64_decode
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, UpdateView, FormView
 
+from taas.reservation.views import get_payment_order, get_payment_mac
 from taas.user import forms
 from taas.user import mixins
 from taas.user import models
+from taas.user import tasks
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +32,7 @@ class UserCreateView(CreateView):
 
     def form_valid(self, form):
         self.object = form.save()
-        self.object.email_admin_on_user_registration()
+        tasks.email_admin_on_user_registration.delay(self.object.id)
 
         messages.success(self.request, self.success_message)
         logger.info('Unverified user with email %s has been successfully registered.'
@@ -45,6 +49,11 @@ class UserUpdateView(mixins.LoggedInMixin, UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+    def get_context_data(self, **kwargs):
+        kwargs['pin'] = self.request.user.pin
+
+        return super(UserUpdateView, self).get_context_data(**kwargs)
 
     def form_valid(self, form):
         self.object = form.save()
@@ -70,7 +79,7 @@ class UserDeactivateView(mixins.LoggedInMixin, SuccessMessageMixin, FormView):
     def form_valid(self, form):
         self.request.user.is_active = False
         self.request.user.save()
-        self.request.user.email_admin_on_user_deactivation()
+        tasks.email_admin_on_user_deactivation.delay(self.request.user.id)
         logger.info('User with email %s has been been deactivated.' % form.cleaned_data.get('email'))
 
         logout(self.request)
@@ -86,7 +95,7 @@ def password_reset(request):
     }
 
     if request.method == 'POST' and request.POST.get('email'):
-        messages.add_message(request, messages.SUCCESS, _('Email instructions has been sent.'),
+        messages.add_message(request, messages.SUCCESS, _('Email instructions have been sent.'),
                              fail_silently=True)
     response = auth_views.password_reset(request, **kwargs)
 
@@ -97,7 +106,7 @@ def password_reset_confirm(request, uidb64=None, token=None):
     template_name = 'password_reset/confirm.html'
     post_reset_redirect = reverse('homepage')
     token_generator = default_token_generator
-    set_password_form = forms.customPasswordSetForm
+    set_password_form = forms.CustomPasswordSetForm
 
     UserModel = get_user_model()
     try:
@@ -109,7 +118,6 @@ def password_reset_confirm(request, uidb64=None, token=None):
 
     if user is not None and token_generator.check_token(user, token):
         validlink = True
-        title = _('Enter new password')
         if request.method == 'POST':
             form = set_password_form(user, request.POST)
             if form.is_valid():
@@ -120,13 +128,15 @@ def password_reset_confirm(request, uidb64=None, token=None):
                 logger.info('Password for user %s has been reset.'
                             % user.email)
                 return HttpResponseRedirect(post_reset_redirect)
+            else:
+                title = _('Password reset unsuccessful')
         else:
             form = set_password_form(user)
+            title = _('Enter new password')
     else:
         validlink = False
         form = None
         title = _('Password reset unsuccessful')
-    title = _('Password reset unsuccessful')
     context = {
         'form': form,
         'title': title,
@@ -135,3 +145,14 @@ def password_reset_confirm(request, uidb64=None, token=None):
 
     return TemplateResponse(request, template_name, context)
 
+
+class AddBalanceView(mixins.LoggedInMixin, SuccessMessageMixin, FormView):
+    form_class = forms.AddBalanceForm
+    template_name = 'update_budget.html'
+
+    def form_valid(self, form):
+        amount = form.cleaned_data['amount']
+        payment = get_payment_order(amount, 'B%s' % self.request.user.id)
+        mac = get_payment_mac(payment)
+        host = settings.MAKSEKESKUS['host']
+        return render_to_response('proceed_budget.html', {'json': payment, 'mac': mac, 'host': host})

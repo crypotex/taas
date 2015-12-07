@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -8,19 +9,32 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
 {% endblock styles %}
 
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
     <form method="post" class="reset-form">{% csrf_token %}
 
-        <h1>{% trans 'Reset your password' %}</h1>
-    
+        <h2>{% trans 'Reset your password' %}</h2>
+
         <p class="help-text">{% trans "Enter your email address below, and we'll email instructions for setting a new one." %}</p>
+
         <div class="fieldWrapper">
-            <div {% if form.email.errors %}class="field-error"{% endif %}>
-            <label for="id_email">{% trans 'Email address:' %}</label>
-            {{ form.email }}
-            </div>
+            {{ form.email.label_tag }}
+            {% render_field form.email|add_error_class:"field-error" %}
+            {% for err in form.email.errors %}
+                <p class="error-message">{{ err|cut:"* " }}</p>{% endfor %}
         </div>
-        <input type="submit" value="{% trans 'Reset my password' %}" />
+        <input type="submit" value="{% trans 'Reset my password' %}"/>
     </form>
 
 {% endblock %}

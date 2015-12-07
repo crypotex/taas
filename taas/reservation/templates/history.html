@@ -18,26 +18,33 @@
     <script type="text/javascript">
         var removeMessage = "{% trans 'Do you really want to remove this reservation?' %}";
         var updateMessage = "{% trans 'Do you really want to modify this reservation?' %}";
+        var title = "{% trans 'Are you sure?' %}";
+        var cancelMessage = "{% trans 'Cancel' %}";
     </script>
     <script type="text/javascript" src="{% static 'js/history.js' %}"></script>
 {% endblock %}
 
 {% block tab-menu %}
-    <ul class="tab-menu">
-        <li><a href="/user/update">{% trans 'Account' %}</a></li>
-        <li class="selected"><a href="/reservation/history">{% trans 'History' %}</a></li>
-    </ul>
+    {% if user.is_authenticated %}
+        <ul class="tabrow">
+            <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+            <li class="selected"><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+            <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+        </ul>
+    {% endif %}
 {% endblock tab-menu %}
 
 {% block content %}
     <div class="table_wrap">
-        <form action="" method="get" class="sort_form">
-            {{ form }}
-
-            <input type="submit" value={% trans 'Submit' %}>
+        <form method="get" class="sort_form">
+            {{ form.month.label_tag }} {{ form.month }}
+            {{ form.year.label_tag }} {{ form.year }}
+            <input type="submit" id="sortButton" value={% trans 'Sort' %}>
         </form>
         {% if table %}
-            {% render_table table %}
+            {% render_table table 'table.html' %}
         {% else %}
             <p>{% trans 'There are no reservations in this month.' %}</p>
         {% endif %}

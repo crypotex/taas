@@ -14,11 +14,13 @@ tests_requires = [
 
 install_requires = [
     'Django==1.8.4',
+    'django-admin-bootstrapped==2.5.6',
     'django-model-utils==2.3.1',
     'django-widget-tweaks==1.4.1',
     'pytz==2015.6',
     'freezegun==0.3.5',
-    'django-tables2==1.0.4'
+    'django-tables2==1.0.4',
+    'celery[redis]==3.1.19',
 ]
 
 setup(

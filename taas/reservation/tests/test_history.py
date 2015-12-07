@@ -52,8 +52,8 @@ class HistoryListTest(TransactionTestCase):
 
     def test_user_cannot_delete_paid_reservations_in_past(self):
         self.client.login(username=self.user.email, password='isherenow')
-        reservation = ReservationFactory(start=timezone.now() - timedelta(minutes=15),
-                                         end=timezone.now() - timedelta(hours=1, minutes=15),
+        reservation = ReservationFactory(start=timezone.now() - timedelta(hours=1, minutes=15),
+                                         end=timezone.now() - timedelta(minutes=15),
                                          user=self.user, paid=True)
         response = self.client.post(ReservationFactory.get_remove_url(), {'id': reservation.id},
                                     HTTP_X_REQUESTED_WITH="XMLHttpRequest")

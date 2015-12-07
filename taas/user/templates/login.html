@@ -11,6 +11,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}"/>
 {% endblock styles %}
 
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
 {% block content %}
 
     {% if next %}
@@ -23,7 +35,7 @@
 
     <form method="POST" class="login-form">{% csrf_token %}
 
-        <h1>{% trans 'Login' %}</h1>
+        <h2>{% trans 'Login' %}</h2>
 
         {% if form.errors %}
             {% for error in form.non_field_errors %}
@@ -39,10 +51,10 @@
             {% render_field form.password|add_error_class:"field-error" %}
         </div>
 
-        <input type="submit" value={% trans "Login" %} />
+        <input type="submit" value='{% trans "Login" %}'/>
         <input type="hidden" name={% trans "next" %} value="{{ next }}"/>
 
-        <p id="reset-password"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        <p id="reset-password"><a href="{% url 'password_reset' %}">{% trans 'Lost password?' %}</a></p>
     </form>
 
 {% endblock %}

@@ -4,8 +4,11 @@ Base settings for TAAS project
 
 import os
 
+from datetime import timedelta
+
 from django.conf import global_settings
 from django.core.urlresolvers import reverse_lazy
+from django.utils.translation import ugettext_lazy as _
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -15,6 +18,7 @@ TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -61,15 +65,25 @@ LOCALE_PATHS = (
 
 COLORS = {
     'paid': {
-        'anonymous': '#4682B4',
-        'others': '#7B68EE',
-        'owner': '#483D8B'
+        'anonymous': '#FE9900',
+        'others': '#FE9900',
+        'owner': '#008a00'
     },
     'unpaid': {
-        'owner': '#008000',
-        'others': '#FF8C00',
+        'owner': '#8f62bd',
+        'others': '#a9a9a9',
     },
     'update': '#A52A2A'
+}
+
+MAKSEKESKUS = {
+    'publishable_key': '',
+    'secret_key': '',
+    'shop_id': '',
+    'host': '',
+    'locale': 'ee',
+    'country': 'ee',
+    'currency': 'EUR'
 }
 
 ROOT_URLCONF = 'taas.urls'
@@ -85,7 +99,21 @@ DATABASES = {
     }
 }
 
+# CELERY SETTINGS
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+CELERY_TIMEZONE = 'Europe/Tallinn'
+
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+  ('et', _('Estonian')),
+  ('en', _('English')),
+  ('ru', _('Russian')),
+)
 
 TIME_ZONE = 'Europe/Tallinn'
 
@@ -107,3 +135,9 @@ STATICFILES_DIRS = (
 
 LOGIN_REDIRECT_URL = reverse_lazy('homepage')
 LOGIN_URL = reverse_lazy('user_login_form')
+
+FORMAT_MODULE_PATH = 'taas.formats'
+
+TIME_FORMAT = 'H:i'
+SHORT_DATETIME_FORMAT = 'd.m.Y H:i'
+DATETIME_FORMAT = 'd.m.Y H:i'

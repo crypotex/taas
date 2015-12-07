@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% load render_table from django_tables2 %}
+
+{% block title %}
+    {% trans 'Payment' %}
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <link rel="stylesheet" href="{% static 'css/calendar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
+{% endblock styles %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript">
+        var removeMessage = "{% trans 'Do you really want to remove this reservation?' %}";
+        var title = "{% trans 'Are you sure?' %}";
+        var cancelMessage = "{% trans 'Cancel' %}";
+    </script>
+    <script type="text/javascript" src="{% static 'js/history.js' %}"></script>
+{% endblock %}
+
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li><a href="/"><span>{% trans 'Booking' %}</span></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
+{% block content %}
+
+    <form method="POST" class="form">{% csrf_token %}
+
+        <h2>{% trans 'Pay for the reservations' %}</h2>
+
+        {% for error in form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
+        <div class="fieldWrapper">
+            {% render_table table 'table.html' %}
+            {% if is_paginated %}
+                <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'reservation_list' %}?page={{ page_obj.previous_page_number }}">
+                        {% trans 'previous' %}
+                    </a>
+                {% endif %}
+                <span class="page-current">
+                    {% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{% url 'reservation_list' %}?page={{ page_obj.next_page_number }}">
+                        {% trans 'next' %}
+                    </a>
+                {% endif %}
+            </span>
+                </div>
+            {% endif %}
+        </div>
+
+        <button formaction="{% url 'budget_payment' %}" type="submit">{% trans 'Budget' %}</button>
+        <button formaction="{% url 'proceed_transaction' %}"
+                type="submit">{% trans 'Transaction' %}</button>
+
+    </form>
+
+{% endblock content %}
