@@ -4,7 +4,7 @@ var paidOwn;
 var unpaidOwn;
 
 $(document).ready(function () {
-    $('#anon').tooltipster({
+    $('.anon').tooltipster({
         theme: 'tooltipster-light',
         touchDevices: true,
         trigger: 'hover',
@@ -12,7 +12,7 @@ $(document).ready(function () {
         position: 'top'
     });
 
-    $('#own').tooltipster({
+    $('.own').tooltipster({
         theme: 'tooltipster-light',
         content: paidOwn,
         trigger: 'hover',
@@ -20,7 +20,7 @@ $(document).ready(function () {
         position: 'top'
     });
 
-    $('#unpaid-own').tooltipster({
+    $('.unpaid-own').tooltipster({
         theme: 'tooltipster-light',
         content: unpaidOwn,
         trigger: 'hover',
@@ -28,7 +28,7 @@ $(document).ready(function () {
         position: 'top'
     });
 
-    $('#unpaid-others').tooltipster({
+    $('.unpaid-others').tooltipster({
         theme: 'tooltipster-light',
         content: unpaidAnon,
         trigger: 'hover',
