@@ -31,3 +31,16 @@ function update_reservation(reservation_id) {
         window.location.replace("/reservation/update/" + reservation_id);
     });
 }
+
+$(document).ready(function () {
+    // Check if the user has confirmed the Terms and Conditions clause.
+    $('#terms').change(function () {
+        if (this.checked) {
+            console.log("IT works!!");
+            $('.submit-button').attr("disabled", false);
+        }
+        else {
+            $('.submit-button').prop('disabled', true);
+        }
+    });
+});

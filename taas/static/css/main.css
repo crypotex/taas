@@ -412,3 +412,47 @@ a#et, a#en, a#ru {
     font-size: 0;
     color: transparent;
 }
+
+#footer {
+    font-size: 11px;
+}
+
+#footerwrap {
+    display: flex;
+    margin: 15px auto;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 95%;
+}
+
+.contact {
+    flex: 1; /* additionally, equal width */
+}
+
+.contact p {
+    line-height: 1.75;
+}
+
+.contact-img {
+    flex: 1;
+}
+
+.contact-img img {
+    width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer-h5 {
+    color: #ff9900;
+    text-transform: uppercase;
+    margin: 10px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#footer #copyright {
+    text-align: center;
+}

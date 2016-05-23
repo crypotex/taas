@@ -69,8 +69,15 @@
             {% endif %}
         </div>
 
-        <button formaction="{% url 'budget_payment' %}" type="submit">{% trans 'Budget' %}</button>
-        <button formaction="{% url 'proceed_transaction' %}"
+
+        <input type="checkbox" id="terms">
+        <label for="terms" id="label_terms">{% trans 'I agree to the ' %}
+            <a href="/user/terms" target="_blank">{% trans 'Terms of service' %}</a>.</label>
+        <br>
+        <br>
+
+        <button class="submit-button" formaction="{% url 'budget_payment' %}" type="submit" disabled>{% trans 'Budget' %}</button>
+        <button class="submit-button" formaction="{% url 'proceed_transaction' %}" disabled
                 type="submit">{% trans 'Transaction' %}</button>
 
     </form>

@@ -342,3 +342,15 @@ input#payButton {
         width: 75%;
     }
 }
+
+.submit-button:disabled {
+    border: 1px solid #bcbcbc;
+    background-color: rgba(217, 217, 217, 0.75);
+    cursor: initial;
+}
+
+.submit-button:disabled:hover {
+    border: 1px solid #bcbcbc;
+    background-color: rgba(217, 217, 217, 0.75);
+    cursor: initial;
+}

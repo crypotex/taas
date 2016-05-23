@@ -167,6 +167,36 @@
 
         {% block content %}{% endblock content %}
     </div>
+
+    <div id="footer">
+        <div id="footerwrap">
+            <div class="contact-img">
+                <img src="{% static 'img/hall-logo.jpg' %}" alt="Hall logo">
+            </div>
+            <div class="contact">
+                <h5 class="footer-h5">{% trans 'NGO Info' %}</h5>
+                <p>{% trans 'Tartu Agility Arenguselts' %} <br>
+                    {% trans 'Registry code' %} 80354001 <br>
+                    Jaama tn 76-B5 <br>
+                    50605 Tartu
+                </p>
+            </div>
+            <div class="contact">
+                <h5 class="footer-h5">{% trans 'Bank details' %}</h5>
+                <p>Tartu Agility Arenguselts <br>
+                    Swedbank (SWIFT: HABAEE2X) <br>
+                    IBAN: EE312200221057815179
+                </p>
+            </div>
+            <div class="contact">
+                <h5 class="footer-h5">{% trans 'Contact' %}</h5>
+                <p>{% trans 'Phone number' %}: 5271414 (Jaanika Lillenberg) <br>
+                    {% trans 'E-mail:' %} agility.arenguselts@gmail.com
+                </p>
+            </div>
+        </div>
+        <p id="copyright">&copy; Tartu Agility Arenguselts</p>
+    </div>
 </div>
 </body>
 </html>
