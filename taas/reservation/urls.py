@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^expire/$', views.get_expire_time, name='get_expire_time'),
     url(r'^history/$', views.history, name='reservation_history'),
     url(r'^help/', TemplateView.as_view(template_name="help.html")),
+    url(r'^privacy_policy/', TemplateView.as_view(template_name="privacy_policy.html"))
 ]
