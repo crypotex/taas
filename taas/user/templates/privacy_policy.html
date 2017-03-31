@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans 'Privacy Policy' %}
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <link rel="stylesheet" href="{% static 'css/help.css' %}">
+{% endblock styles %}
+
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li>
+            <a href="/venv/lib/python3.5/site-packages/django_admin_bootstrapped-2.5.6-py3.5.egg"><span>{% trans 'Booking' %}</span></a>
+        </li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
+{% block content %}
+    <div class="form">
+        <h2>{% trans 'Privacy Policy' %}</h2>
+
+        <div class="fieldWrapper">
+            <p> {% blocktrans trimmed %}
+                Tartu Agility Arenguselts has taken the obligation to protect it's customers' and users' privacy.
+                Derived from that we have compiled the principles of privacy policy, which dictate the collection,
+                usage, disclosure and preservation of personal data. Our actions in the internet are in accordance with
+                the corresponding actions and regulations of European Union´s and Estonian laws. Would you be so kind
+                and find some time to make acquintance with them.
+                <br><br>
+                <b>Collecting and using personal data</b>
+                <br>
+                Personal data is data , which is collected by Tartu Agility Arenguselts to fulfill the contract signed
+                with private citizens or for contacting them. Regular customer´s data collection may happen by
+                submitting contact data on our website. By registering to be our user, we ask you to submit personal
+                data and information. The aforementioned data includes name, e-mail address and phone number.
+                <br><br>
+                <b>Collection of other data</b>
+                <br>
+                We do not collect unpersonalized data which can't be connected with you (gender, age, language
+                preferences, location).
+                <br><br>
+                <b>Usage of collected data</b>
+                <br>
+                We will be using the collected data to provide better services and to fulfill our obligations in front
+                of our clients.
+                <br><br>
+                <b>Changes of collected data</b>
+                <br>
+                Personal data used for identifying the clients and contacting him/her can be seen, changed and
+                complemented under the „ACCOUNT“ area.
+                <br><br>
+                Since the E-mail is used as the username on our website, we ask you to kindly notify when you wish to
+                change that.
+                <br><br>
+                <b>Protection of personal data</b>
+                <br>
+                Tartu Agility Arenguselts applies all necessary measures (including but not limited to administrative,
+                legal, technical and physical) to protect our clients' data. Access to this data for change and analysis
+                is granted only for authorized personal.
+                <br><br>
+                <b>Safety</b>
+                <br>
+                All personal data received through the booking system will be treated as confidential information.
+                Encrypted data transfer system with banks provides the necessary level of safety for the purchaser's
+                personal data and bank requisites.
+                <br><br>
+                <b>Terms and amendments</b>
+                <br>
+                By using our website you agree to the terms, conditions and principles mentioned earlier in this
+                document. We will reserve the right to change the policy or  add amendments to the privacy policy's
+                general terms and upon such case all clients will be notified.
+                <br><br>
+                If you have any questions regarding the policy itself or the treatment of personal data please do not
+                hesitate to contact us through
+                <a href="mailto:agility.arenguselts@gmail.com" target="_top">agility.arenguselts@gmail.com</a>
+            {% endblocktrans %}
+            </p>
+        </div>
+    </div>
+{% endblock content %}

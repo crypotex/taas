@@ -354,3 +354,11 @@ input#payButton {
     background-color: rgba(217, 217, 217, 0.75);
     cursor: initial;
 }
+
+ul.payment {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #727272;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}

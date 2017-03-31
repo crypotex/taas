@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+    {% trans 'Payment Conditions' %}
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <link rel="stylesheet" href="{% static 'css/help.css' %}">
+{% endblock styles %}
+
+{% block tab-menu %}
+    <ul class="tabrow">
+        <li>
+            <a href="/venv/lib/python3.5/site-packages/django_admin_bootstrapped-2.5.6-py3.5.egg"><span>{% trans 'Booking' %}</span></a>
+        </li>
+        {% if user.is_authenticated %}
+            <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
+            <li><a href="/user/balance"><span>{% trans 'Balance' %}</span></a></li>
+            <li><a href="/user/update"><span>{% trans 'Account' %}</span></a></li>
+        {% endif %}
+        <li><a href="/reservation/help"><span>{% trans 'FAQ' %}</span></a></li>
+    </ul>
+{% endblock tab-menu %}
+
+{% block content %}
+    <div class="form">
+        <h2>{% trans 'Payment Conditions' %}</h2>
+
+        <div class="fieldWrapper">
+            <p> {% blocktrans trimmed %}
+                It is possible to use the following payment methods to book Tartu Agility Arenguselts´s sporting
+                grounds:
+            {% endblocktrans %}
+            </p>
+            <ul class="payment"> {% blocktrans trimmed %}
+                <li>Paying by Prepayments budget</li>
+                <li>Paying by MakeCommerce</li>
+                <li>Paying by Pro Forma (prepayment) invoice</li>
+            {% endblocktrans %}
+            </ul>
+            <p> {% blocktrans trimmed %}
+                NB! Paying by prepayments budget and by internet bank is possible only by logging in with an activated
+                account. Read <a href="/reservation/help/">here</a> how to make an account.
+                <br><br>
+                <b>Paying by prepayments budget</b>
+                <br>
+                After you have marked the desired dates in the calendar on your (activated) account, pressed “Submit”,
+                agreed to the <a href="/user/terms">general and purchasing terms</a> and chosen payment method “Budget”
+                then you must enter your password to finalize the deal, which decreases your account´s budget and
+                confirms the made reservations. To add money to your account press the tab “Balance”, enter the sum you
+                wish to add and press “Submit” to pay by internet bank.
+                <br><br>
+                <b>Paying by MakeCommerce</b>
+                <br>
+                After you have marked the desired dates in the calendar on your (activated) account, pressed “Submit”,
+                agreed to the <a href="/user/terms">general and purchasing terms</a> and chosen payment method
+                “Transaction”, you must choose the bank from which you wish to make the transfer from. Then you will be
+                redirected by the Payment Center to the corresponding internet bank, where you can finalize the payment
+                to make the reservation or to increase your budget.
+                <br><br>
+                <b>NB! Payments done by MakeCommerce will be settled in Euros and the sum from your account will also be
+                    deducted in Euros!</b>
+                <br><br>
+                By Makecommerce you can use the payment links from the following banks:
+            {% endblocktrans %}
+            </p>
+            <ul class="payment"> {% blocktrans trimmed %}
+                <li>Estonia: Swedbank, SEB, Nordea, Dbanske, LHV, Krediidipank, Pocopay and Liisi ID</li>
+                <li>Latvia: SEB, Citadele and Nordea</li>
+                <li>Lithuania: Swedbank, SEB and Nordea</li>
+                <li>Finland: Nordea, Danske, Pohjola, Ålandsbanken, S-Pankki, Säästonpankki and Handelsbanken</li>
+            {% endblocktrans %}
+            </ul>
+            <p> {% blocktrans trimmed %}
+                It is also possible to receive card payments from Visa, MasterCard & Maestro.
+                <br><br>
+                <b>Paying by Pro Forma (prepayment) invoice</b>
+                <br>
+                Paying by Pro Forma invoice is possible only for corporate bodies, who wish to provide reservations for
+                certain periods throughout the whole season. Outer season lasts from the 1st of April until the 30th of
+                September and inner season from 1st of October until 31st of March.
+                <br><br>
+                Pro Forma invoice should be requested by sending the reservation wishes for the whole season to
+                <a href="mailto:agility.arenguselts@gmail.com">agility.arenguselts@gmail.com</a>. The Pro Forma invoice
+                will be sent to you during the next 3 business days, which you can then pay by internet bank or in
+                bank's offices.
+                Reservations cannot be added before the whole (100%) of the Pro Forma invoice´s sum is received by Tartu
+                Agility Arenguselts. If the Pro Forma invoice is not paid in 14 days after issuance, then the
+                reservation wish will be cancelled.
+            {% endblocktrans %}
+            </p>
+        </div>
+    </div>
+{% endblock content %}

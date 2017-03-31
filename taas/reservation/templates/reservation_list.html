@@ -72,7 +72,9 @@
 
         <input type="checkbox" id="terms">
         <label for="terms" id="label_terms">{% trans 'I agree to the ' %}
-            <a href="/user/terms" target="_blank">{% trans 'Terms of service' %}</a>.</label>
+            <a href="/user/terms" target="_blank">{% trans 'Terms of service' %}</a>,
+            <a href="/user/payment_conditions" target="_blank">{% trans 'Payment conditions' %}</a> {% trans 'and' %}
+            <a href="/user/privacy_policy" target="_blank">{% trans 'Privacy policy' %}</a>.</label>
         <br>
         <br>
 
