@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-23 21:40+0300\n"
+"POT-Creation-Date: 2017-03-31 22:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,62 +44,50 @@ msgid "Field does not exist."
 msgstr "Такой плошадки нет."
 
 #: taas/reservation/forms.py:40
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:18
 msgid "January"
 msgstr "Январь"
 
 #: taas/reservation/forms.py:41
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:18
 msgid "February"
 msgstr "Февраль"
 
 #: taas/reservation/forms.py:42
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:18
 msgid "March"
 msgstr "Март"
 
 #: taas/reservation/forms.py:43
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:18
 msgid "April"
 msgstr "Апрель"
 
 #: taas/reservation/forms.py:44
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:18
 msgid "May"
 msgstr "Май"
 
 #: taas/reservation/forms.py:45
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:18
 msgid "June"
 msgstr "Июнь"
 
 #: taas/reservation/forms.py:46
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:19
 msgid "July"
 msgstr "Июль"
 
 #: taas/reservation/forms.py:47
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:19
 msgid "August"
 msgstr "Август"
 
 #: taas/reservation/forms.py:48
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:19
 msgid "September"
 msgstr "Сентябрь"
 
 #: taas/reservation/forms.py:49
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:19
 msgid "October"
 msgstr "Октябрь"
 
 #: taas/reservation/forms.py:50
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:19
 msgid "November"
 msgstr "Ноябрь"
 
 #: taas/reservation/forms.py:51
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:20
 msgid "December"
 msgstr "Декабрь"
 
@@ -119,7 +108,6 @@ msgid "Incorrect password."
 msgstr "Неправильный пароль."
 
 #: taas/reservation/models.py:10
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/django/models.py:12
 msgid "name"
 msgstr "имя"
 
@@ -140,12 +128,12 @@ msgid "fields"
 msgstr "площадки"
 
 #: taas/reservation/models.py:27
-#: taas/reservation/templates/reservation_list.html:81
+#: taas/reservation/templates/reservation_list.html:83
 msgid "Transaction"
 msgstr "Трансакция"
 
 #: taas/reservation/models.py:28
-#: taas/reservation/templates/reservation_list.html:79
+#: taas/reservation/templates/reservation_list.html:81
 msgid "Budget"
 msgstr "Сальдо"
 
@@ -208,60 +196,27 @@ msgid "price (€)"
 msgstr "цена (€)"
 
 #: taas/reservation/templates/admin/change_list.html:36
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/500.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/app_index.html:9
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/change_password.html:13
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_form.html:19
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list.html:36
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:8
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:8
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:4
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/index.html:12
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/invalid_setup.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/object_history.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_done.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:7
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_complete.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_done.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_form.html:6
 msgid "Home"
 msgstr "Начало"
 
 #: taas/reservation/templates/admin/change_list.html:57
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list.html:54
 #, python-format
 msgid "Add %(name)s"
 msgstr "Добавить %(name)s"
 
 #: taas/reservation/templates/admin/change_list.html:67
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list.html:64
 msgid "Filter"
 msgstr "Фильтр"
 
 #: taas/reservation/templates/admin/change_list.html:88
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/change_password.html:27
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_form.html:54
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list.html:83
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/login.html:52
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:20
 msgid "Please correct the error below."
 msgstr "Пожалуйста, исправьте ошибку ниже."
 
 #: taas/reservation/templates/admin/change_list.html:89
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/change_password.html:27
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_form.html:54
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list.html:83
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/login.html:52
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:20
 msgid "Please correct the errors below."
 msgstr "Пожалуйста, исправьте ошибки ниже."
 
 #: taas/reservation/templates/admin/change_list.html:130
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list.html:123
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/page_submit_line.html:15
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/submit_line.html:12
 msgid "Save"
 msgstr "Сохранить"
 
@@ -302,6 +257,9 @@ msgstr[1] "%(count)s платежа"
 msgstr[2] "%(count)s платежей"
 
 #: taas/reservation/templates/admin/change_list.html:164
+#, python-format
+#| msgid "%(count)s %(vname)s"
+#| msgid_plural "%(count)s %(vname)s"
 msgid "%(count)s %(vname)s"
 msgid_plural "%(count)s %(vname)s"
 msgstr[0] "%(count)s бронирование"
@@ -321,7 +279,9 @@ msgstr "Платёж"
 #: taas/templates/base.html:123 taas/user/templates/login.html:16
 #: taas/user/templates/password_reset/confirm.html:14
 #: taas/user/templates/password_reset/form.html:14
-#: taas/user/templates/terms.html:15 taas/user/templates/update_budget.html:17
+#: taas/user/templates/payment_conditions.html:17
+#: taas/user/templates/privacy_policy.html:17 taas/user/templates/terms.html:15
+#: taas/user/templates/update_budget.html:17
 #: taas/user/templates/user_deactivate.html:13
 #: taas/user/templates/user_registration.html:20
 #: taas/user/templates/user_update.html:21
@@ -338,14 +298,12 @@ msgstr "Бронирование"
 #: taas/templates/base.html:124 taas/user/templates/login.html:18
 #: taas/user/templates/password_reset/confirm.html:16
 #: taas/user/templates/password_reset/form.html:16
-#: taas/user/templates/terms.html:17 taas/user/templates/update_budget.html:18
+#: taas/user/templates/payment_conditions.html:20
+#: taas/user/templates/privacy_policy.html:20 taas/user/templates/terms.html:17
+#: taas/user/templates/update_budget.html:18
 #: taas/user/templates/user_deactivate.html:14
 #: taas/user/templates/user_registration.html:22
 #: taas/user/templates/user_update.html:22
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_form.html:34
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:23
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/image/change_form.html:17
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/object_history.html:10
 msgid "History"
 msgstr "История"
 
@@ -358,7 +316,9 @@ msgstr "История"
 #: taas/templates/base.html:125 taas/user/templates/login.html:19
 #: taas/user/templates/password_reset/confirm.html:17
 #: taas/user/templates/password_reset/form.html:17
-#: taas/user/templates/terms.html:18 taas/user/templates/update_budget.html:19
+#: taas/user/templates/payment_conditions.html:21
+#: taas/user/templates/privacy_policy.html:21 taas/user/templates/terms.html:18
+#: taas/user/templates/update_budget.html:19
 #: taas/user/templates/user_deactivate.html:15
 #: taas/user/templates/user_registration.html:23
 #: taas/user/templates/user_update.html:23
@@ -374,7 +334,9 @@ msgstr "Деньги"
 #: taas/templates/base.html:126 taas/user/templates/login.html:20
 #: taas/user/templates/password_reset/confirm.html:18
 #: taas/user/templates/password_reset/form.html:18
-#: taas/user/templates/terms.html:19 taas/user/templates/update_budget.html:20
+#: taas/user/templates/payment_conditions.html:22
+#: taas/user/templates/privacy_policy.html:22 taas/user/templates/terms.html:19
+#: taas/user/templates/update_budget.html:20
 #: taas/user/templates/user_deactivate.html:16
 #: taas/user/templates/user_registration.html:24
 #: taas/user/templates/user_update.html:24
@@ -390,7 +352,9 @@ msgstr "Учётная запись"
 #: taas/templates/base.html:127 taas/user/templates/login.html:22
 #: taas/user/templates/password_reset/confirm.html:20
 #: taas/user/templates/password_reset/form.html:20
-#: taas/user/templates/terms.html:21 taas/user/templates/update_budget.html:21
+#: taas/user/templates/payment_conditions.html:24
+#: taas/user/templates/privacy_policy.html:24 taas/user/templates/terms.html:21
+#: taas/user/templates/update_budget.html:21
 #: taas/user/templates/user_deactivate.html:17
 #: taas/user/templates/user_registration.html:26
 #: taas/user/templates/user_update.html:25
@@ -653,7 +617,6 @@ msgid "Pay for the reservations"
 msgstr "Заплатить"
 
 #: taas/reservation/templates/reservation_list.html:56
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:98
 msgid "previous"
 msgstr "предыдущая"
 
@@ -667,7 +630,6 @@ msgstr "из"
 
 #: taas/reservation/templates/reservation_list.html:64
 #: taas/user/templates/login.html:55
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:108
 msgid "next"
 msgstr "следущая"
 
@@ -681,6 +643,18 @@ msgstr "Я согласен с "
 msgid "Terms of service"
 msgstr "правилами и условиями"
 
+#: taas/reservation/templates/reservation_list.html:76
+msgid "Payment conditions"
+msgstr "УСЛОВИЯ ОПЛАТЫ"
+
+#: taas/reservation/templates/reservation_list.html:76
+msgid "and"
+msgstr "и"
+
+#: taas/reservation/templates/reservation_list.html:77
+msgid "Privacy policy"
+msgstr "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ"
+
 #: taas/reservation/templates/reservation_update.html:38
 msgid "Choose a new time for the reservation"
 msgstr "Выберите новое время для бронирования:"
@@ -693,7 +667,7 @@ msgstr ""
 
 #: taas/reservation/templates/table.html:61
 msgid "Total price: "
-msgstr ""
+msgstr "Итоговая цена: "
 
 #: taas/reservation/templates/table.html:68
 msgid "Previous"
@@ -805,7 +779,7 @@ msgstr "Ошибка"
 
 #: taas/reservation/views.py:152
 msgid "Invalid key."
-msgstr ""
+msgstr "Неправильный ключ."
 
 #: taas/reservation/views.py:164
 msgid "Cannot delete the reservation."
@@ -1028,7 +1002,7 @@ msgstr "Предупреждение"
 
 #: taas/templates/base.html:43
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: taas/templates/base.html:80 taas/templates/base.html.py:120
 #: taas/user/templates/login.html:7 taas/user/templates/login.html.py:38
@@ -1084,6 +1058,25 @@ msgstr "Номер телефона"
 msgid "E-mail:"
 msgstr "Адрес электронной почты"
 
+#: taas/templates/base.html:198
+msgid "Support"
+msgstr "Поддержка"
+
+#: taas/templates/base.html:199
+#| msgid "Terms and Conditions"
+msgid "Terms and Conditions of Purchase"
+msgstr "Правила и условия"
+
+#: taas/templates/base.html:200 taas/user/templates/payment_conditions.html:6
+#: taas/user/templates/payment_conditions.html:30
+msgid "Payment Conditions"
+msgstr "Условия оплаты"
+
+#: taas/templates/base.html:201 taas/user/templates/privacy_policy.html:6
+#: taas/user/templates/privacy_policy.html:30
+msgid "Privacy Policy"
+msgstr "Политика конфиденциальности"
+
 #: taas/urls.py:9
 msgid "TAAS administration"
 msgstr "Администрация TAAS"
@@ -1093,7 +1086,6 @@ msgid "Personal info"
 msgstr "Персональная информация"
 
 #: taas/user/admin.py:15
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:77
 msgid "Permissions"
 msgstr "Права доступа"
 
@@ -1106,7 +1098,6 @@ msgid "Pins"
 msgstr "ПИН"
 
 #: taas/user/apps.py:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/object_history.html:23
 msgid "User"
 msgstr "Пользователь"
 
@@ -1119,9 +1110,6 @@ msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
 #: taas/user/forms.py:34
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/change_password.html:17
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/change_password.html:73
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:81
 msgid "Change password"
 msgstr "Изменить пароль"
 
@@ -1252,7 +1240,6 @@ msgid "Reset your password"
 msgstr "Восстановить пароль"
 
 #: taas/user/templates/password_reset/confirm.html:35
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:20
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
@@ -1261,8 +1248,6 @@ msgstr ""
 "правильности написания."
 
 #: taas/user/templates/password_reset/confirm.html:48
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:64
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:42
 msgid "Change my password"
 msgstr "Изменить пароль"
 
@@ -1319,19 +1304,193 @@ msgstr ""
 "восстановления пароля."
 
 #: taas/user/templates/password_reset/form.html:37
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_form.html:30
 msgid "Reset my password"
 msgstr "Восстановить мой пароль"
 
 #: taas/user/templates/password_reset/subject.html:3
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:12
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_done.html:7
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_form.html:7
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_form.html:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_form.html:12
 msgid "Password reset"
 msgstr "Восстановление пароля"
+
+#: taas/user/templates/payment_conditions.html:33
+msgid ""
+"It is possible to use the following payment methods to book Tartu Agility "
+"Arenguselts´s sporting grounds:"
+msgstr ""
+"Для бронирования спортивной площадки Tartu Agility Arenguselts можно "
+"использовать следующие способы оплаты:"
+
+#: taas/user/templates/payment_conditions.html:38
+msgid ""
+"<li>Paying by Prepayments budget</li> <li>Paying by MakeCommerce</li> "
+"<li>Paying by Pro Forma (prepayment) invoice</li>"
+msgstr ""
+"<li>Оплата со средств баланса</li> <li>Оплата через MakeCommerce</li> "
+"<li>Оплата по счету</li>"
+
+#: taas/user/templates/payment_conditions.html:44
+msgid ""
+"NB! Paying by prepayments budget and by internet bank is possible only by "
+"logging in with an activated account. Read <a href=\"/reservation/help/"
+"\">here</a> how to make an account. <br><br> <b>Paying by prepayments "
+"budget</b> <br> After you have marked the desired dates in the calendar on "
+"your (activated) account, pressed “Submit”, agreed to the <a href=\"/user/"
+"terms\">general and purchasing terms</a> and chosen payment method “Budget” "
+"then you must enter your password to finalize the deal, which decreases your "
+"account´s budget and confirms the made reservations. To add money to your "
+"account press the tab “Balance”, enter the sum you wish to add and press "
+"“Submit” to pay by internet bank. <br><br> <b>Paying by MakeCommerce</b> "
+"<br> After you have marked the desired dates in the calendar on your "
+"(activated) account, pressed “Submit”, agreed to the <a href=\"/user/terms"
+"\">general and purchasing terms</a> and chosen payment method “Transaction”, "
+"you must choose the bank from which you wish to make the transfer from. Then "
+"you will be redirected by the Payment Center to the corresponding internet "
+"bank, where you can finalize the payment to make the reservation or to "
+"increase your budget. <br><br> <b>NB! Payments done by MakeCommerce will be "
+"settled in Euros and the sum from your account will also be deducted in "
+"Euros!</b> <br><br> By Makecommerce you can use the payment links from the "
+"following banks:"
+msgstr ""
+"Внимание! Оплата со средств баланса и платеж через интернет-банк возможны "
+"только при входе в систему. <a href=\"/reservation/help\">Прочти тут</a>, "
+"как создать учетную запись. <br><br> <b>Оплата со средств баланса</b> <br> "
+"После входа в систему, бронирования подходящего времени и нажатия кнопки "
+"\"Дальше\",  соглашаясь с <a href=\"/user/terms\">общими условиями покупки</a>, "
+"выбирите способ оплаты «Сальдо». Для завершения сделки введите пароль, после "
+"чего Ваш остаток баланса уменьшится и совершится бронирование. Для пополнения "
+"своего баланса зайдите на вкладку «Деньги». Введите сумму, которую желаете "
+"внести и перейдите по кнопке «Далее» в интернет-банк для проведения платежа. "
+"<br><br> <b>Оплата через MakeCommerce</b> <br> После входа в систему, бронирования "
+"подходящего времени и нажатия кнопки \"Дальше\",  соглашаясь с <a href=\"/user/terms\">"
+"общими условиями</a> покупки, выбирите способ оплаты «Трансакция». Далее следует "
+"выбрать подходящий банк, со средств которого желаете произвести платеж. "
+"MakeCommerce направит Вас в нужный банк, где можете оплатить бронирование "
+"или пополнить свой баланс. <br><br> <b>NB! Платежные операции, осуществляемые "
+"через MakeCommerce вычисляются в евро, также с Вашего счета будут сниматься "
+"суммы в евро!</b> <br> Через MakeCommerce есть возможность перейти на следующие "
+"банковские ссылки:"
+
+#: taas/user/templates/payment_conditions.html:70
+msgid ""
+"<li>Estonia: Swedbank, SEB, Nordea, Dbanske, LHV, Krediidipank, Pocopay and "
+"Liisi ID</li> <li>Latvia: SEB, Citadele and Nordea</li> <li>Lithuania: "
+"Swedbank, SEB and Nordea</li> <li>Finland: Nordea, Danske, Pohjola, "
+"Ålandsbanken, S-Pankki, Säästonpankki and Handelsbanken</li>"
+msgstr ""
+"<li>Эстония: Swedbank, SEB, Nordea, Danske, LHV, Krediidipank, Pocopay и "
+"Liisi ID</li> <li>Латвия: SEB, Citadele и Nordea</li> <li>Литва: Swedbank, "
+"SEB и Nordea</li> <li>Финляндия: Nordea, Danske, Pohjola, Ålandsbanken, "
+"S-Pankki, Säästonpankki и Handelsbanken"
+
+#: taas/user/templates/payment_conditions.html:77
+#, python-format
+msgid ""
+"It is also possible to receive card payments from Visa, MasterCard & "
+"Maestro. <br><br> <b>Paying by Pro Forma (prepayment) invoice</b> <br> "
+"Paying by Pro Forma invoice is possible only for corporate bodies, who wish "
+"to provide reservations for certain periods throughout the whole season. "
+"Outer season lasts from the 1st of April until the 30th of September and "
+"inner season from 1st of October until 31st of March. <br><br> Pro Forma "
+"invoice should be requested by sending the reservation wishes for the whole "
+"season to <a href=\"mailto:agility.arenguselts@gmail.com\">agility."
+"arenguselts@gmail.com</a>. The Pro Forma invoice will be sent to you during "
+"the next 3 business days, which you can then pay by internet bank or in "
+"bank's offices. Reservations cannot be added before the whole (100%%) of the "
+"Pro Forma invoice´s sum is received by Tartu Agility Arenguselts. If the Pro "
+"Forma invoice is not paid in 14 days after issuance, then the reservation "
+"wish will be cancelled."
+msgstr ""
+"Так же можно использовать карточные платежи Visa, MasterCard & Maestro. "
+"<br><br> <b>Оплата по счету</b> <br> Предварительная оплата по счету возможна "
+"только для юридических лиц, желающих обеспечить время бронирования в течение "
+"всего сезона. Сезон длится с 01 апреля до 30 сентября. Крытый сезон длится с "
+"01 октября до 31 марта. <br><br> Для заказов бронирования на весь сезон счет "
+"предоплаты следует заказать путем отправки электронной почты по адресу "
+"<a href=\"mailto:agility.arenguselts@gmail.com\">agility.arenguselts@gmail.com</a>. "
+"Счет предоплаты будет выслан на Вашу электронную почту в течении трех дней, "
+"на основании которого сможете произвести оплату по своему желанию через "
+"интернет-банк или в банковской конторе. Бронировать дополнительные времена "
+"возможно только после 100%% оплаты счета (деньги должны перечислиться на "
+"счет Tartu Agility Arenguselts). Если счет не будет оплачен в течение 14 "
+"дней, запрос на бронирование будет отменен."
+
+#: taas/user/templates/privacy_policy.html:33
+msgid ""
+"Tartu Agility Arenguselts has taken the obligation to protect it's "
+"customers' and users' privacy. Derived from that we have compiled the "
+"principles of privacy policy, which dictate the collection, usage, "
+"disclosure and preservation of personal data. Our actions in the internet "
+"are in accordance with the corresponding actions and regulations of European "
+"Union´s and Estonian laws. Would you be so kind and find some time to make "
+"acquintance with them. <br><br> <b>Collecting and using personal data</b> "
+"<br> Personal data is data , which is collected by Tartu Agility Arenguselts "
+"to fulfill the contract signed with private citizens or for contacting them. "
+"Regular customer´s data collection may happen by submitting contact data on "
+"our website. By registering to be our user, we ask you to submit personal "
+"data and information. The aforementioned data includes name, e-mail address "
+"and phone number. <br><br> <b>Collection of other data</b> <br> We do not "
+"collect unpersonalized data which can't be connected with you (gender, age, "
+"language preferences, location). <br><br> <b>Usage of collected data</b> "
+"<br> We will be using the collected data to provide better services and to "
+"fulfill our obligations in front of our clients. <br><br> <b>Changes of "
+"collected data</b> <br> Personal data used for identifying the clients and "
+"contacting him/her can be seen, changed and complemented under the „ACCOUNT“ "
+"area. <br><br> Since the E-mail is used as the username on our website, we "
+"ask you to kindly notify when you wish to change that. <br><br> "
+"<b>Protection of personal data</b> <br> Tartu Agility Arenguselts applies "
+"all necessary measures (including but not limited to administrative, legal, "
+"technical and physical) to protect our clients' data. Access to this data "
+"for change and analysis is granted only for authorized personal. <br><br> "
+"<b>Safety</b> <br> All personal data received through the booking system "
+"will be treated as confidential information. Encrypted data transfer system "
+"with banks provides the necessary level of safety for the purchaser's "
+"personal data and bank requisites. <br><br> <b>Terms and amendments</b> <br> "
+"By using our website you agree to the terms, conditions and principles "
+"mentioned earlier in this document. We will reserve the right to change the "
+"policy or  add amendments to the privacy policy's general terms and upon "
+"such case all clients will be notified. <br><br> If you have any questions "
+"regarding the policy itself or the treatment of personal data please do not "
+"hesitate to contact us through <a href=\"mailto:agility.arenguselts@gmail.com"
+"\" target=\"_top\">agility.arenguselts@gmail.com</a>"
+msgstr ""
+"Tartu Agility Arenguselts взяло на себя обязательство защищать конфиденциальность "
+"клиентов и пользователей. В связи с этим мы составили список принципов "
+"конфиденциальности, которые объясняют использование собранных клиентских "
+"данных, а так же их публикацию, передачу и хранение. Наша деятельность в "
+"интернете соответствует всем касающихся законодательствам Европейского союза и "
+"законам Эстонской Республики. Найдите немного времени и ознакомьтесь с нашей "
+"политикой конфиденциальности. <br><br> <b>Сбор и использование личных данных</b> "
+"<br> Личная информация – это информация, которую Tartu Agility Arenguselts "
+"собирает для исполнения заключенным с частным лицом договора, а так же для "
+"возможности связаться с ним. Сбор персональных данных постоянных клиентов "
+"происходит с помощью передачи данных на нашем веб-сайте. Tartu Agility Arenguselts "
+"просит при регистрации добровольно предоставить личную информацию. Необходимые "
+"личные данные включают в себя имя, адрес электронной почты и номера телефона. <br><br> "
+"<b>Сбор других данных</b> <br> Tartu Agility Arenguselts не собирает информацию "
+"неличного характера - данные, которые не могут быть непосредственно связаны с "
+"конкретным лицом (пол, возраст, язык предпочтения, место нахождения). <br><br> "
+"<b>Использование собранных персональных данных</b> <br> Собранные персональные "
+"данные будут использоваться для предложения профессиональных услуг и выполнения "
+"обязательств по отношению к клиенту. <br><br> <b>Изменение собранных персональных "
+"данных</b> <br> Для изменения контактных данных и данных идентификации можно "
+"видеть, изменять и дополнять на нашем веб-сайте в графе \"Аккаунт\". <br><br> "
+"Для изменения адреса электронной почты (имя пользователя на веб-сайте Tartu Agility "
+"Arenguselts) просим связаться с нами, так как самостоятельно адрес электронной "
+"почты изменить невозможно. <br><br> <b>Защита персональных данных</b> <br> "
+"Tartu Agility Arenguselts использует все меры предосторожности (в том числе "
+"административные, технические и физические меры) для защиты персональных данных "
+"клиента. Доступ к изменению и использованию данных имеется только у уполномоченных "
+"лиц. <br><br> <b>Безопасность</b> <br> Все персональные данные клиента, которые "
+"стали известны через систему бронирования Tartu Agility Arenguselts, будут "
+"рассматриваться в качестве конфиденциальной информации. Зашифрованный канал "
+"связи с банками обеспечивает защищенность личной информации, в том числе "
+"банковских реквизитов. <br><br> <b>Условия политики конфиденциальности и "
+"внесение изменений</b> <br> При использовании нашего веб-сайта вы подтверждаете, "
+"что ознакомлены с нашими принципами и условиями и принимаете их. В случае "
+"необходимости мы оставляем за собой право изменять общие условия политики "
+"конфиденциальности, при этом информировав об изменениях всех клиентов. <br><br> "
+"Если у вас возникли проблемы или вопросы о политике конфиденциальности или "
+"обработке данных, пожалуйста, свяжитесь с нами по адресу "
+"<a href=\"mailto:agility.arenguselts@gmail.com\">agility.arenguselts@gmail.com</a>."
 
 #: taas/user/templates/terms.html:6
 msgid "Terms and Conditions"
@@ -1524,2411 +1683,218 @@ msgid "Your password has been set. You may go ahead and log in now."
 msgstr "Ваш пароль восстановлен. Можете войти на сайт."
 
 #: taas/user/views.py:132 taas/user/views.py:139
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:48
 msgid "Password reset unsuccessful"
 msgstr "Не удалось восстановить пароль."
 
 #: taas/user/views.py:135
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:18
 msgid "Enter new password"
 msgstr "Введите новый пароль."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/contrib/messages/apps.py:7
-msgid "Messages"
-msgstr ""
+#, fuzzy
+#~| msgid "Payment"
+#~ msgid "Payment Terms"
+#~ msgstr "Платёж"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/contrib/sitemaps/apps.py:7
-msgid "Site Maps"
-msgstr ""
+#~ msgid "Email address"
+#~ msgstr "Адрес электронной почты"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/contrib/staticfiles/apps.py:7
-msgid "Static Files"
-msgstr ""
+#~ msgid "Delete"
+#~ msgstr "Удалить"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/contrib/syndication/apps.py:7
-msgid "Syndication"
-msgstr ""
+#~ msgid "Currently"
+#~ msgstr "Сейчас"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/contrib/webdesign/apps.py:7
-msgid "Web Design"
-msgstr ""
+#~ msgid "Change"
+#~ msgstr "Изменить"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:20
-msgid "Enter a valid value."
-msgstr ""
+#~ msgid "Clear"
+#~ msgstr "Очистить"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:87
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:712
-msgid "Enter a valid URL."
-msgstr ""
+#~ msgid "Unknown"
+#~ msgstr "Неизвестно"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:130
-msgid "Enter a valid integer."
-msgstr ""
+#~ msgid "Yes"
+#~ msgstr "Да"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:141
-msgid "Enter a valid email address."
-msgstr ""
+#~ msgid "No"
+#~ msgstr "Нет"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:215
-msgid ""
-"Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
-msgstr ""
+#~ msgid "yes,no,maybe"
+#~ msgstr "да,нет,может быть"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:220
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:239
-msgid "Enter a valid IPv4 address."
-msgstr ""
+#~ msgid "Page not found"
+#~ msgstr "Страница не найдена"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:225
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:240
-msgid "Enter a valid IPv6 address."
-msgstr ""
+#~ msgid "We're sorry, but the requested page could not be found."
+#~ msgstr "К сожалению запрошенная страница не найдена."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:235
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:238
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr ""
+#~ msgid "Server error"
+#~ msgstr "Ошибка сервера"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:263
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1144
-msgid "Enter only digits separated by commas."
-msgstr ""
+#~ msgid "Server error (500)"
+#~ msgstr "Ошибка сервера (500)"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:272
-#, python-format
-msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
+#~ msgid "Server Error <em>(500)</em>"
+#~ msgstr "Ошибка сервера <em>(500)</em>"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:298
-#, python-format
-msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
+#~ msgid "administration"
+#~ msgstr "администрация"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:305
-#, python-format
-msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
+#~ msgid ""
+#~ "First, enter a username and password. Then, you'll be able to edit more "
+#~ "user options."
+#~ msgstr ""
+#~ "Сначала введите имя пользователя и пароль. Затем вы сможете ввести больше "
+#~ "информации о пользователе."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:314
-#, python-format
-msgid ""
-"Ensure this value has at least %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at least %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "Enter a username and password."
+#~ msgstr "Введите имя пользователя и пароль."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/core/validators.py:325
-#, python-format
-msgid ""
-"Ensure this value has at most %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at most %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
+#~ msgid "Welcome,"
+#~ msgstr "Добро пожаловать, "
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/base.py:1130
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:722
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:18
-msgid "and"
-msgstr ""
+#~ msgid "View site"
+#~ msgstr "Открыть сайт"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/base.py:1132
-#, python-format
-msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+#~ msgid "Log out"
+#~ msgstr "Выйти"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:107
-#, python-format
-msgid "Value %(value)r is not a valid choice."
-msgstr ""
+#~ msgid "Recent Actions"
+#~ msgstr "Последние действия"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:108
-msgid "This field cannot be null."
-msgstr ""
+#~ msgid "Unknown content"
+#~ msgstr "Неизвестно"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:109
-msgid "This field cannot be blank."
-msgstr ""
+#~ msgid "Add"
+#~ msgstr "Добавить"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:110
-#, python-format
-msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
+#~ msgid "View on site"
+#~ msgstr "Посмотреть на сайте"
 
-#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
-#. Eg: "Title must be unique for pub_date year"
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:114
-#, python-format
-msgid ""
-"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
-msgstr ""
+#~ msgid "Fields in <strong>bold</strong> are required."
+#~ msgstr "Поля выделенные <strong>жирным</strong> шрифтом обязательны."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:132
-#, python-format
-msgid "Field of type: %(field_type)s"
-msgstr ""
+#~ msgid "Remove from sorting"
+#~ msgstr "Удалить из сортировки"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:922
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1832
-msgid "Integer"
-msgstr ""
+#~ msgid "Sorting priority: %(priority_number)s"
+#~ msgstr "Приоритет сортировки: %(priority_number)s"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:926
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1830
-#, python-format
-msgid "'%(value)s' value must be an integer."
-msgstr ""
+#~ msgid ""
+#~ "Are you sure you want to delete the %(object_name)s \"%(escaped_object)s"
+#~ "\"? All of the following related items will be deleted:"
+#~ msgstr ""
+#~ "Вы уверены, что хотите удалить %(object_name)s \"%(escaped_object)s\"? "
+#~ "Все следующие объекты и связанные с ними элементы будут удалены:"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1001
-#, python-format
-msgid "'%(value)s' value must be either True or False."
-msgstr ""
+#~ msgid "Objects"
+#~ msgstr "Объекты"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1003
-msgid "Boolean (Either True or False)"
-msgstr ""
+#~ msgid "Yes, I'm sure"
+#~ msgstr "Да, я уверен"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1078
-#, python-format
-msgid "String (up to %(max_length)s)"
-msgstr ""
+#~ msgid "No, take me back"
+#~ msgstr "Нет, отменить и вернуться к выбору"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1139
-msgid "Comma-separated integers"
-msgstr ""
+#~ msgid "Add another %(verbose_name)s"
+#~ msgstr "Добавить %(verbose_name)s"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1188
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
-"format."
-msgstr ""
+#~ msgid "Remove"
+#~ msgstr "Удалить"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1190
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1340
-#, python-format
-msgid ""
-"'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
-"date."
-msgstr ""
+#~ msgid "Delete?"
+#~ msgstr "Удалить?"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1193
-msgid "Date (without time)"
-msgstr ""
+#~ msgid "Filer"
+#~ msgstr "Фильтр"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1338
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
-msgstr ""
+#~ msgid "Name"
+#~ msgstr "Имя"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1342
-#, python-format
-msgid ""
-"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
-msgstr ""
+#~ msgid "Owner"
+#~ msgstr "Владелец"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1346
-msgid "Date (with time)"
-msgstr ""
+#~ msgid "Select this file"
+#~ msgstr "Выберите этот файл"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1498
-#, python-format
-msgid "'%(value)s' value must be a decimal number."
-msgstr ""
+#~ msgid ""
+#~ "\n"
+#~ "            Page %(number)s of %(num_pages)s.\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "            Страница %(number)s из %(num_pages)s.\n"
+#~ "            "
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1500
-msgid "Decimal number"
-msgstr ""
+#~ msgid "Search"
+#~ msgstr "Поиск"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1651
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
-"uuuuuu] format."
-msgstr ""
+#~ msgid "Applications"
+#~ msgstr "Приложения"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1654
-msgid "Duration"
-msgstr ""
+#~ msgid "<h2>Login</h2>"
+#~ msgstr "<h2>Войти</h2>"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1705
-msgid "Email address"
-msgstr "Адрес электронной почты"
+#~ msgid "Log in"
+#~ msgstr "Войти"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1729
-msgid "File path"
-msgstr ""
+#~ msgid "Action"
+#~ msgstr "Действие"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1796
-#, python-format
-msgid "'%(value)s' value must be a float."
-msgstr ""
+#~ msgid "Add another %(model)s"
+#~ msgstr "Добавить %(model)s"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1798
-msgid "Floating point number"
-msgstr ""
+#~ msgid "%(counter)s result"
+#~ msgid_plural "%(counter)s results"
+#~ msgstr[0] "%(counter)s результат"
+#~ msgstr[1] "%(counter)s результата"
+#~ msgstr[2] "%(counter)s результатов"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1899
-msgid "Big (8 byte) integer"
-msgstr ""
+#~ msgid "Password change"
+#~ msgstr "Изменение пароля"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1914
-msgid "IPv4 address"
-msgstr ""
+#~ msgid "Password change successful"
+#~ msgstr "Пароль успешно изменили"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:1950
-msgid "IP address"
-msgstr ""
+#~ msgid ""
+#~ "Please enter your old password, for security's sake, and then enter your "
+#~ "new password twice so we can verify you typed it in correctly."
+#~ msgstr ""
+#~ "Пожалуйста, введите свой старый пароль, в целях безопасности, и потом "
+#~ "новый пароль дважды, чтобы мы могли убедиться в правильности написания."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2029
-#, python-format
-msgid "'%(value)s' value must be either None, True or False."
-msgstr ""
+#~ msgid "Password reset complete"
+#~ msgstr "Восстановление пароля завершено"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2031
-msgid "Boolean (Either True, False or None)"
-msgstr ""
+#~ msgid "Your password has been set.  You may go ahead and log in now."
+#~ msgstr "Ваш пароль восстановлен. Можете войти на сайт."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2091
-msgid "Positive integer"
-msgstr ""
+#~ msgid "Password reset confirmation"
+#~ msgstr "Подтверждение пароля"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2103
-msgid "Positive small integer"
-msgstr ""
+#~ msgid "New password:"
+#~ msgstr "Новый пароль:"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2116
-#, python-format
-msgid "Slug (up to %(max_length)s)"
-msgstr ""
+#~ msgid "Confirm password:"
+#~ msgstr "Подтвердить пароль:"
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2145
-msgid "Small integer"
-msgstr ""
+#~ msgid ""
+#~ "The password reset link was invalid, possibly because it has already been "
+#~ "used.  Please request a new password reset."
+#~ msgstr ""
+#~ "Ссылка для восстановления пароля недействительна, возможно, потому, что "
+#~ "она уже была использована. Пожалуйста, запросите новую ссылку для "
+#~ "восстановления пароля."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2152
-msgid "Text"
-msgstr ""
+#~ msgid "Password reset successful"
+#~ msgstr "Пароль успешно восстановлен."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2175
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
-"format."
-msgstr ""
+#~ msgid ""
+#~ "Forgotten your password? Enter your email address below, and we'll email "
+#~ "instructions for setting a new one."
+#~ msgstr ""
+#~ "Введите свой адрес электронной почты и мы отправим вам инструкцию для "
+#~ "восстановления пароля."
 
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2177
-#, python-format
-msgid ""
-"'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
-"invalid time."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2180
-msgid "Time"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2308
-msgid "URL"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2331
-msgid "Raw binary data"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/__init__.py:2375
-#, python-format
-msgid "'%(value)s' is not a valid UUID."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/files.py:239
-msgid "File"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/files.py:389
-msgid "Image"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/related.py:1802
-#, python-format
-msgid "%(model)s instance with %(field)s %(value)r does not exist."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/related.py:1804
-msgid "Foreign Key (type determined by related field)"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/related.py:2034
-msgid "One-to-one relationship"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/db/models/fields/related.py:2124
-msgid "Many-to-many relationship"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:64
-msgid "This field is required."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:237
-msgid "Enter a whole number."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:280
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:317
-msgid "Enter a number."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:319
-#, python-format
-msgid "Ensure that there are no more than %(max)s digit in total."
-msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:323
-#, python-format
-msgid "Ensure that there are no more than %(max)s decimal place."
-msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:327
-#, python-format
-msgid ""
-"Ensure that there are no more than %(max)s digit before the decimal point."
-msgid_plural ""
-"Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:438
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:1193
-msgid "Enter a valid date."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:462
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:1194
-msgid "Enter a valid time."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:484
-msgid "Enter a valid date/time."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:525
-msgid "Enter a valid duration."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:591
-msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:592
-msgid "No file was submitted."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:593
-msgid "The submitted file is empty."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:595
-#, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
-msgid_plural ""
-"Ensure this filename has at most %(max)d characters (it has %(length)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:598
-msgid "Please either submit a file or check the clear checkbox, not both."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:660
-msgid ""
-"Upload a valid image. The file you uploaded was either not an image or a "
-"corrupted image."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:827
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:921
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:1238
-#, python-format
-msgid "Select a valid choice. %(value)s is not one of the available choices."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:922
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:1037
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:1237
-msgid "Enter a list of values."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:1038
-msgid "Enter a complete value."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/fields.py:1264
-msgid "Enter a valid UUID."
-msgstr ""
-
-#. Translators: This is the default suffix added to form field labels
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/forms.py:129
-msgid ":"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/forms.py:214
-#, python-format
-msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
-
-#. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/forms.py:659
-msgid ":?.!"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/formsets.py:96
-msgid "ManagementForm data is missing or has been tampered with"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/formsets.py:333
-#, python-format
-msgid "Please submit %d or fewer forms."
-msgid_plural "Please submit %d or fewer forms."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/formsets.py:340
-#, python-format
-msgid "Please submit %d or more forms."
-msgid_plural "Please submit %d or more forms."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/formsets.py:368
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/formsets.py:370
-msgid "Order"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/formsets.py:372
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:12
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:64
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/page_submit_line.html:5
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/submit_line.html:5
-msgid "Delete"
-msgstr "Удалить"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:716
-#, python-format
-msgid "Please correct the duplicate data for %(field)s."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:720
-#, python-format
-msgid "Please correct the duplicate data for %(field)s, which must be unique."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:726
-#, python-format
-msgid ""
-"Please correct the duplicate data for %(field_name)s which must be unique "
-"for the %(lookup)s in %(date_field)s."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:734
-msgid "Please correct the duplicate values below."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:1057
-msgid "The inline foreign key did not match the parent instance primary key."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:1123
-msgid "Select a valid choice. That choice is not one of the available choices."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/models.py:1240
-#, python-format
-msgid "\"%(pk)s\" is not a valid value for a primary key."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/utils.py:165
-#, python-format
-msgid ""
-"%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
-"may be ambiguous or it may not exist."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/widgets.py:345
-msgid "Currently"
-msgstr "Сейчас"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/widgets.py:346
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/stacked.html:18
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/tabular.html:39
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:90
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:36
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:66
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/index.html:73
-msgid "Change"
-msgstr "Изменить"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/widgets.py:347
-msgid "Clear"
-msgstr "Очистить"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/widgets.py:555
-msgid "Unknown"
-msgstr "Неизвестно"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/widgets.py:556
-msgid "Yes"
-msgstr "Да"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/forms/widgets.py:557
-msgid "No"
-msgstr "Нет"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:865
-msgid "yes,no,maybe"
-msgstr "да,нет,может быть"
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:894
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:906
-#, python-format
-msgid "%(size)d byte"
-msgid_plural "%(size)d bytes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:908
-#, python-format
-msgid "%s KB"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:910
-#, python-format
-msgid "%s MB"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:912
-#, python-format
-msgid "%s GB"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:914
-#, python-format
-msgid "%s TB"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/template/defaultfilters.py:916
-#, python-format
-msgid "%s PB"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dateformat.py:61
-msgid "p.m."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dateformat.py:62
-msgid "a.m."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dateformat.py:67
-msgid "PM"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dateformat.py:68
-msgid "AM"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dateformat.py:151
-msgid "midnight"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dateformat.py:153
-msgid "noon"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:6
-msgid "Monday"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:6
-msgid "Tuesday"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:6
-msgid "Wednesday"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:6
-msgid "Thursday"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:6
-msgid "Friday"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:7
-msgid "Saturday"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:7
-msgid "Sunday"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:10
-msgid "Mon"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:10
-msgid "Tue"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:10
-msgid "Wed"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:10
-msgid "Thu"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:10
-msgid "Fri"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:11
-msgid "Sat"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:11
-msgid "Sun"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:23
-msgid "jan"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:23
-msgid "feb"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:23
-msgid "mar"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:23
-msgid "apr"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:23
-msgid "may"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:23
-msgid "jun"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:24
-msgid "jul"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:24
-msgid "aug"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:24
-msgid "sep"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:24
-msgid "oct"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:24
-msgid "nov"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:24
-msgid "dec"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:31
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:32
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:33
-msgctxt "abbrev. month"
-msgid "March"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:34
-msgctxt "abbrev. month"
-msgid "April"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:35
-msgctxt "abbrev. month"
-msgid "May"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:36
-msgctxt "abbrev. month"
-msgid "June"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:37
-msgctxt "abbrev. month"
-msgid "July"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:38
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:39
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:40
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:41
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:42
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:45
-msgctxt "alt. month"
-msgid "January"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:46
-msgctxt "alt. month"
-msgid "February"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:47
-msgctxt "alt. month"
-msgid "March"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:48
-msgctxt "alt. month"
-msgid "April"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:49
-msgctxt "alt. month"
-msgid "May"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:50
-msgctxt "alt. month"
-msgid "June"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:51
-msgctxt "alt. month"
-msgid "July"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:52
-msgctxt "alt. month"
-msgid "August"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:53
-msgctxt "alt. month"
-msgid "September"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:54
-msgctxt "alt. month"
-msgid "October"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:55
-msgctxt "alt. month"
-msgid "November"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/dates.py:56
-msgctxt "alt. month"
-msgid "December"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/ipv6.py:10
-msgid "This is not a valid IPv6 address."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/text.py:79
-#, python-format
-msgctxt "String to return when truncating text"
-msgid "%(truncated_text)s..."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/text.py:248
-msgid "or"
-msgstr ""
-
-#. Translators: This string is used as a separator between list elements
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/text.py:267
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:58
-msgid ", "
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:10
-#, python-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:11
-#, python-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:12
-#, python-format
-msgid "%d week"
-msgid_plural "%d weeks"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:13
-#, python-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:14
-#, python-format
-msgid "%d hour"
-msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:15
-#, python-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/utils/timesince.py:47
-msgid "0 minutes"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/csrf.py:107
-msgid "Forbidden"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/csrf.py:108
-msgid "CSRF verification failed. Request aborted."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/csrf.py:112
-msgid ""
-"You are seeing this message because this HTTPS site requires a 'Referer "
-"header' to be sent by your Web browser, but none was sent. This header is "
-"required for security reasons, to ensure that your browser is not being "
-"hijacked by third parties."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/csrf.py:117
-msgid ""
-"If you have configured your browser to disable 'Referer' headers, please re-"
-"enable them, at least for this site, or for HTTPS connections, or for 'same-"
-"origin' requests."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/csrf.py:122
-msgid ""
-"You are seeing this message because this site requires a CSRF cookie when "
-"submitting forms. This cookie is required for security reasons, to ensure "
-"that your browser is not being hijacked by third parties."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/csrf.py:127
-msgid ""
-"If you have configured your browser to disable cookies, please re-enable "
-"them, at least for this site, or for 'same-origin' requests."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/csrf.py:132
-msgid "More information is available with DEBUG=True."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/debug.py:583
-msgid "Welcome to Django"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/debug.py:584
-msgid "It worked!"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/debug.py:585
-msgid "Congratulations on your first Django-powered page."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/debug.py:586
-msgid ""
-"Of course, you haven't actually done any work yet. Next, start your first "
-"app by running <code>python manage.py startapp [app_label]</code>."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/debug.py:588
-msgid ""
-"You're seeing this message because you have <code>DEBUG = True</code> in "
-"your Django settings file and you haven't configured any URLs. Get to work!"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:48
-msgid "No year specified"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:104
-msgid "No month specified"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:163
-msgid "No day specified"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:219
-msgid "No week specified"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:378
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:406
-#, python-format
-msgid "No %(verbose_name_plural)s available"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:660
-#, python-format
-msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/dates.py:694
-#, python-format
-msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/detail.py:55
-#, python-format
-msgid "No %(verbose_name)s found matching the query"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/list.py:76
-msgid "Page is not 'last', nor can it be converted to an int."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/list.py:81
-#, python-format
-msgid "Invalid page (%(page_number)s): %(message)s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/generic/list.py:172
-#, python-format
-msgid "Empty list and '%(class_name)s.allow_empty' is False."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/static.py:58
-msgid "Directory indexes are not allowed here."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/static.py:60
-#, python-format
-msgid "\"%(path)s\" does not exist"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/Django-1.8.4-py3.4.egg/django/views/static.py:100
-#, python-format
-msgid "Index of %(directory)s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/404.html:4
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/404.html:8
-msgid "Page not found"
-msgstr "Страница не найдена"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/404.html:10
-msgid "We're sorry, but the requested page could not be found."
-msgstr "К сожалению запрошенная страница не найдена."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/500.html:7
-msgid "Server error"
-msgstr "Ошибка сервера"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/500.html:11
-msgid "Server error (500)"
-msgstr "Ошибка сервера (500)"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/500.html:14
-msgid "Server Error <em>(500)</em>"
-msgstr "Ошибка сервера <em>(500)</em>"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/500.html:15
-msgid ""
-"There's been an error. It's been reported to the site administrators via e-"
-"mail and should be fixed shortly. Thanks for your patience."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/actions.html:4
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/actions.html:8
-msgid "Run the selected action"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/actions.html:4
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/actions.html:8
-msgid "Go"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/actions.html:10
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/actions.html:15
-msgid "Click here to select the objects across all pages"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/actions.html:10
-#, python-format
-msgid "Select all %(total_count)s %(module_name)s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/actions.html:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/actions.html:17
-msgid "Clear selection"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/app_index.html:19
-msgid "administration"
-msgstr "администрация"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/add_form.html:6
-msgid ""
-"First, enter a username and password. Then, you'll be able to edit more user "
-"options."
-msgstr ""
-"Сначала введите имя пользователя и пароль. Затем вы сможете ввести больше "
-"информации о пользователе."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/add_form.html:8
-msgid "Enter a username and password."
-msgstr "Введите имя пользователя и пароль."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/auth/user/change_password.html:31
-#, python-format
-msgid "Enter a new password for the user <strong>%(username)s</strong>."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:68
-msgid "Welcome,"
-msgstr "Добро пожаловать, "
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:72
-msgid "View site"
-msgstr "Открыть сайт"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:77
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:119
-msgid "Documentation"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:83
-msgid "Log out"
-msgstr "Выйти"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:93
-msgid "Recent Actions"
-msgstr "Последние действия"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:105
-msgid "Unknown content"
-msgstr "Неизвестно"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base.html:110
-msgid "None available"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base_site.html:4
-msgid "Django site admin"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/base_site.html:7
-msgid "Django administration"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_form.html:22
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/index.html:69
-msgid "Add"
-msgstr "Добавить"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_form.html:36
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/stacked.html:26
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/tabular.html:42
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:25
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/image/change_form.html:19
-msgid "View on site"
-msgstr "Посмотреть на сайте"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_form.html:51
-msgid "Fields in <strong>bold</strong> are required."
-msgstr "Поля выделенные <strong>жирным</strong> шрифтом обязательны."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list_results.html:17
-msgid "Remove from sorting"
-msgstr "Удалить из сортировки"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list_results.html:18
-#, python-format
-msgid "Sorting priority: %(priority_number)s"
-msgstr "Приоритет сортировки: %(priority_number)s"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/change_list_results.html:19
-msgid "Toggle sorting"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:18
-#, python-format
-msgid ""
-"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
-"related objects, but your account doesn't have permission to delete the "
-"following types of objects:"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:25
-#, python-format
-msgid ""
-"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
-"following protected related objects:"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:32
-#, python-format
-msgid ""
-"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
-"All of the following related items will be deleted:"
-msgstr ""
-"Вы уверены, что хотите удалить %(object_name)s \"%(escaped_object)s\"? Все "
-"следующие объекты и связанные с ними элементы будут удалены:"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:34
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:33
-msgid "Objects"
-msgstr "Объекты"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:41
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:46
-msgid "Yes, I'm sure"
-msgstr "Да, я уверен"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_confirmation.html:42
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:47
-msgid "No, take me back"
-msgstr "Нет, отменить и вернуться к выбору"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:11
-msgid "Delete multiple objects"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:17
-#, python-format
-msgid ""
-"Deleting the selected %(objects_name)s would result in deleting related "
-"objects, but your account doesn't have permission to delete the following "
-"types of objects:"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:24
-#, python-format
-msgid ""
-"Deleting the selected %(objects_name)s would require deleting the following "
-"protected related objects:"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/delete_selected_confirmation.html:31
-#, python-format
-msgid ""
-"Are you sure you want to delete the selected %(objects_name)s? All of the "
-"following objects and their related items will be deleted:"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/stacked.html:104
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/tabular.html:131
-#, python-format
-msgid "Add another %(verbose_name)s"
-msgstr "Добавить %(verbose_name)s"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/stacked.html:107
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/tabular.html:134
-msgid "Remove"
-msgstr "Удалить"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/edit_inline/tabular.html:22
-msgid "Delete?"
-msgstr "Удалить?"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/actions.html:15
-#, python-format
-msgid "Select all %(total_count)s files and/or folders"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:4
-msgid "Go back to admin homepage"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:5
-msgid "Go back to Filer app"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:5
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:7
-msgid "Filer"
-msgstr "Фильтр"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:6
-msgid "Go back to root folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:8
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:84
-msgid "root"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:8
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/breadcrumbs.html:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:10
-#, python-format
-msgid "Go back to '%(folder_name)s' folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/change_form.html:28
-msgid "duplicates"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:7
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:8
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:84
-msgid "Go back to"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:6
-msgid "admin homepage"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:8
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:84
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/clipboard/clipboard.html:27
-msgid "folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/change_form.html:37
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:85
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:95
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:30
-msgid "Folder Icon"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:66
-msgid "Adds a new Folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:66
-msgid "New Folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:67
-msgid "upload files"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:67
-msgid "Upload"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:84
-msgid "Go back to the parent folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:86
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:41
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:18
-#, python-format
-msgid "1 folder"
-msgid_plural "%(counter)s folders"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:86
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:41
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:19
-#, python-format
-msgid "1 file"
-msgid_plural "%(counter)s files"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_listing.html:90
-msgid "Change current folder details"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:12
-msgid "Name"
-msgstr "Имя"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:30
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:36
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:40
-#, python-format
-msgid "Change '%(item_label)s' folder details"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:42
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:75
-msgid "Owner"
-msgstr "Владелец"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:50
-msgid "Select this file"
-msgstr "Выберите этот файл"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:58
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:66
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:71
-#, python-format
-msgid "Change '%(item_label)s' details"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:64
-#, python-format
-msgid "Delete '%(item_label)s'"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:77
-msgid "disabled"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:77
-msgid "enabled"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:83
-msgid "Move to clipboard"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:91
-msgid "there are no files or subfolders"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/folder/directory_table.html:102
-#, python-format
-msgid ""
-"\n"
-"            Page %(number)s of %(num_pages)s.\n"
-"            "
-msgstr ""
-"\n"
-"            Страница %(number)s из %(num_pages)s.\n"
-"            "
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/image/change_form.html:31
-msgid "Full size preview"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/clipboard/clipboard.html:8
-msgid "Clipboard"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/clipboard/clipboard.html:20
-msgid "Paste all items here"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/clipboard/clipboard.html:27
-msgid "Move all clipboard files to"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/clipboard/clipboard.html:27
-msgid "unfiled files"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/clipboard/clipboard.html:27
-msgid "discard"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/clipboard/clipboard.html:44
-msgid "the clipboard is empty"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:7
-msgid "Enter your search phrase here"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:9
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/search_form.html:6
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/search_form.html:8
-msgid "Search"
-msgstr "Поиск"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:12
-msgid "Check it to"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:12
-msgid "limit the search to current folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:13
-msgid "search the current folder"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:18
-msgid "found"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filer/tools/search_form.html:19
-msgid "cancel search"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/filter.html:2
-#, python-format
-msgid " By %(filter_title)s "
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/index.html:22
-msgid "Applications"
-msgstr "Приложения"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/index.html:55
-#, python-format
-msgid "Models available in the %(name)s application."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/index.html:82
-msgid "You don't have permission to edit anything."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/invalid_setup.html:12
-msgid ""
-"Something's wrong with your database installation. Make sure the appropriate "
-"database tables have been created, and make sure the database is readable by "
-"the appropriate user."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/login.html:49
-msgid "<h2>Login</h2>"
-msgstr "<h2>Войти</h2>"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/login.html:77
-msgid "Forgotten your password or username?"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/login.html:82
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_complete.html:18
-msgid "Log in"
-msgstr "Войти"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/object_history.html:22
-msgid "Date/time"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/object_history.html:24
-msgid "Action"
-msgstr "Действие"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/object_history.html:38
-msgid ""
-"This object doesn't have a change history. It probably wasn't added via this "
-"admin site."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/page_submit_line.html:7
-#, python-format
-msgid "Delete %(language)s translation"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/page_submit_line.html:12
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/submit_line.html:9
-msgid "Save as new"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/page_submit_line.html:13
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/submit_line.html:10
-msgid "Save and add another"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/page_submit_line.html:14
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/submit_line.html:11
-msgid "Save and continue editing"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/pagination.html:19
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/search_form.html:10
-msgid "Show all"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/related_widget_wrapper.html:8
-#, python-format
-msgid "Change selected %(model)s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/related_widget_wrapper.html:15
-#, python-format
-msgid "Add another %(model)s"
-msgstr "Добавить %(model)s"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/related_widget_wrapper.html:22
-#, python-format
-msgid "Delete selected %(model)s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/search_form.html:10
-#, python-format
-msgid "%(counter)s result"
-msgid_plural "%(counter)s results"
-msgstr[0] "%(counter)s результат"
-msgstr[1] "%(counter)s результата"
-msgstr[2] "%(counter)s результатов"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/admin/search_form.html:10
-#, python-format
-msgid "%(full_result_count)s total"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/logged_out.html:9
-msgid "Thanks for spending some quality time with the Web site today."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/logged_out.html:11
-msgid "Log in again"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_done.html:7
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:8
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:12
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:13
-msgid "Password change"
-msgstr "Изменение пароля"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_done.html:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_done.html:12
-msgid "Password change successful"
-msgstr "Пароль успешно изменили"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_done.html:16
-msgid "Your password was changed."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_change_form.html:24
-msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
-"password twice so we can verify you typed it in correctly."
-msgstr ""
-"Пожалуйста, введите свой старый пароль, в целях безопасности, и потом новый "
-"пароль дважды, чтобы мы могли убедиться в правильности написания."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_complete.html:7
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_complete.html:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_complete.html:12
-msgid "Password reset complete"
-msgstr "Восстановление пароля завершено"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_complete.html:16
-msgid "Your password has been set.  You may go ahead and log in now."
-msgstr "Ваш пароль восстановлен. Можете войти на сайт."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:7
-msgid "Password reset confirmation"
-msgstr "Подтверждение пароля"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:25
-msgid "New password:"
-msgstr "Новый пароль:"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:34
-msgid "Confirm password:"
-msgstr "Подтвердить пароль:"
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_confirm.html:50
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
-msgstr ""
-"Ссылка для восстановления пароля недействительна, возможно, потому, что она "
-"уже была использована. Пожалуйста, запросите новую ссылку для восстановления "
-"пароля."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_done.html:11
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_done.html:12
-msgid "Password reset successful"
-msgstr "Пароль успешно восстановлен."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_done.html:16
-msgid ""
-"We've emailed you instructions for setting your password to the email "
-"address you submitted. You should be receiving it shortly."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_form.html:16
-msgid ""
-"Forgotten your password? Enter your email address below, and we'll email "
-"instructions for setting a new one."
-msgstr ""
-"Введите свой адрес электронной почты и мы отправим вам инструкцию для "
-"восстановления пароля."
-
-#: venv/lib/python3.4/site-packages/django_admin_bootstrapped-2.5.6-py3.4.egg/django_admin_bootstrapped/templates/registration/password_reset_form.html:21
-msgid "Email address:"
-msgstr "Адрес электронной почты:"
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/django/models.py:20
-msgid "queue"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/django/models.py:21
-msgid "queues"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/django/models.py:28
-msgid "payload"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/django/models.py:37
-msgid "message"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/django/models.py:38
-msgid "messages"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/qpid.py:1295
-#, python-format
-msgid "Attempting to connect to qpid with SASL mechanism %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/qpid.py:1300
-#, python-format
-msgid "Connected to qpid with SASL mechanism %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/kombu-3.0.35-py3.4.egg/kombu/transport/qpid.py:1318
-#, python-format
-msgid "Unable to connect to qpid with SASL mechanism %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:11
-msgid "Null character in input stream, replaced with U+FFFD."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:13
-msgid "Invalid codepoint in stream."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:15
-msgid "Solidus (/) incorrectly placed in tag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:17
-msgid "Incorrect CR newline entity, replaced with LF."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:19
-msgid "Entity used with illegal number (windows-1252 reference)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:21
-#, python-format
-msgid ""
-"Numeric entity couldn't be converted to character (codepoint U+"
-"%(charAsInt)08x)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:24
-#, python-format
-msgid "Numeric entity represents an illegal codepoint: U+%(charAsInt)08x."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:27
-msgid "Numeric entity didn't end with ';'."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:29
-msgid "Numeric entity expected. Got end of file instead."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:31
-msgid "Numeric entity expected but none found."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:33
-msgid "Named entity didn't end with ';'."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:35
-msgid "Named entity expected. Got none."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:37
-msgid "End tag contains unexpected attributes."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:39
-msgid "End tag contains unexpected self-closing flag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:41
-msgid "Expected tag name. Got '>' instead."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:43
-msgid ""
-"Expected tag name. Got '?' instead. (HTML doesn't support processing "
-"instructions.)"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:46
-msgid "Expected tag name. Got something else instead"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:48
-msgid "Expected closing tag. Got '>' instead. Ignoring '</>'."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:50
-msgid "Expected closing tag. Unexpected end of file."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:52
-#, python-format
-msgid "Expected closing tag. Unexpected character '%(data)s' found."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:54
-msgid "Unexpected end of file in the tag name."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:56
-msgid "Unexpected end of file. Expected attribute name instead."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:58
-msgid "Unexpected end of file in attribute name."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:60
-msgid "Invalid character in attribute name"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:62
-msgid "Dropped duplicate attribute on tag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:64
-msgid "Unexpected end of file. Expected = or end of tag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:66
-msgid "Unexpected end of file. Expected attribute value."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:68
-msgid "Expected attribute value. Got '>' instead."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:70
-msgid "Unexpected = in unquoted attribute"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:72
-msgid "Unexpected character in unquoted attribute"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:74
-msgid "Unexpected character after attribute name."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:76
-msgid "Unexpected character after attribute value."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:78
-msgid "Unexpected end of file in attribute value (\")."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:80
-msgid "Unexpected end of file in attribute value (')."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:82
-msgid "Unexpected end of file in attribute value."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:84
-msgid "Unexpected end of file in tag. Expected >"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:86
-msgid "Unexpected character after / in tag. Expected >"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:88
-msgid "Expected '--' or 'DOCTYPE'. Not found."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:90
-msgid "Unexpected ! after -- in comment"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:92
-msgid "Unexpected space after -- in comment"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:94
-msgid "Incorrect comment."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:96
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:104
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:106
-msgid "Unexpected end of file in comment."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:98
-msgid "Unexpected end of file in comment (-)"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:100
-msgid "Unexpected '-' after '--' found in comment."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:102
-msgid "Unexpected end of file in comment (--)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:108
-msgid "Unexpected character in comment found."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:110
-msgid "No space after literal string 'DOCTYPE'."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:112
-msgid "Unexpected > character. Expected DOCTYPE name."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:114
-msgid "Unexpected end of file. Expected DOCTYPE name."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:116
-msgid "Unexpected end of file in DOCTYPE name."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:118
-msgid "Unexpected end of file in DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:120
-#, python-format
-msgid "Expected space or '>'. Got '%(data)s'"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:122
-msgid "Unexpected end of DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:124
-msgid "Unexpected character in DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:126
-msgid "XXX innerHTML EOF"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:128
-msgid "Unexpected DOCTYPE. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:130
-msgid "html needs to be the first start tag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:132
-msgid "Unexpected End of file. Expected DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:134
-msgid "Erroneous DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:136
-msgid "Unexpected non-space characters. Expected DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:138
-#, python-format
-msgid "Unexpected start tag (%(name)s). Expected DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:140
-#, python-format
-msgid "Unexpected end tag (%(name)s). Expected DOCTYPE."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:142
-#, python-format
-msgid "Unexpected end tag (%(name)s) after the (implied) root element."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:144
-#, python-format
-msgid "Unexpected end of file. Expected end tag (%(name)s)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:146
-msgid "Unexpected start tag head in existing head. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:148
-#, python-format
-msgid "Unexpected end tag (%(name)s). Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:150
-#, python-format
-msgid "Unexpected start tag (%(name)s) that can be in head. Moved."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:152
-#, python-format
-msgid "Unexpected start tag (%(name)s)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:154
-#, python-format
-msgid "Missing end tag (%(name)s)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:156
-#, python-format
-msgid "Missing end tags (%(name)s)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:158
-#, python-format
-msgid "Unexpected start tag (%(startName)s) implies end tag (%(endName)s)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:161
-#, python-format
-msgid "Unexpected start tag (%(originalName)s). Treated as %(newName)s."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:163
-#, python-format
-msgid "Unexpected start tag %(name)s. Don't use it!"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:165
-#, python-format
-msgid "Unexpected start tag %(name)s. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:167
-#, python-format
-msgid "Unexpected end tag (%(gotName)s). Missing end tag (%(expectedName)s)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:170
-#, python-format
-msgid "End tag (%(name)s) seen too early. Expected other end tag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:172
-#, python-format
-msgid "Unexpected end tag (%(gotName)s). Expected end tag (%(expectedName)s)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:174
-#, python-format
-msgid "End tag (%(name)s) seen too early. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:176
-#, python-format
-msgid ""
-"End tag (%(name)s) violates step 1, paragraph 1 of the adoption agency "
-"algorithm."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:179
-#, python-format
-msgid ""
-"End tag (%(name)s) violates step 1, paragraph 2 of the adoption agency "
-"algorithm."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:182
-#, python-format
-msgid ""
-"End tag (%(name)s) violates step 1, paragraph 3 of the adoption agency "
-"algorithm."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:185
-#, python-format
-msgid ""
-"End tag (%(name)s) violates step 4, paragraph 4 of the adoption agency "
-"algorithm."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:188
-#, python-format
-msgid "Unexpected end tag (%(originalName)s). Treated as %(newName)s."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:190
-#, python-format
-msgid "This element (%(name)s) has no end tag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:192
-#, python-format
-msgid "Unexpected implied end tag (%(name)s) in the table phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:194
-#, python-format
-msgid "Unexpected implied end tag (%(name)s) in the table body phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:196
-msgid "Unexpected non-space characters in table context caused voodoo mode."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:199
-msgid "Unexpected input with type hidden in table context."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:201
-msgid "Unexpected form in table context."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:203
-#, python-format
-msgid "Unexpected start tag (%(name)s) in table context caused voodoo mode."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:206
-#, python-format
-msgid "Unexpected end tag (%(name)s) in table context caused voodoo mode."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:209
-#, python-format
-msgid "Unexpected table cell start tag (%(name)s) in the table body phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:212
-#, python-format
-msgid "Got table cell end tag (%(name)s) while required end tags are missing."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:215
-#, python-format
-msgid "Unexpected end tag (%(name)s) in the table body phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:217
-#, python-format
-msgid "Unexpected implied end tag (%(name)s) in the table row phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:219
-#, python-format
-msgid "Unexpected end tag (%(name)s) in the table row phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:221
-msgid ""
-"Unexpected select start tag in the select phase treated as select end tag."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:224
-msgid "Unexpected input start tag in the select phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:226
-#, python-format
-msgid "Unexpected start tag token (%(name)s in the select phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:229
-#, python-format
-msgid "Unexpected end tag (%(name)s) in the select phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:231
-#, python-format
-msgid ""
-"Unexpected table element start tag (%(name)s) in the select in table phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:233
-#, python-format
-msgid ""
-"Unexpected table element end tag (%(name)s) in the select in table phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:235
-msgid "Unexpected non-space characters in the after body phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:237
-#, python-format
-msgid "Unexpected start tag token (%(name)s) in the after body phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:240
-#, python-format
-msgid "Unexpected end tag token (%(name)s) in the after body phase."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:243
-msgid "Unexpected characters in the frameset phase. Characters ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:245
-#, python-format
-msgid "Unexpected start tag token (%(name)s) in the frameset phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:248
-msgid "Unexpected end tag token (frameset) in the frameset phase (innerHTML)."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:251
-#, python-format
-msgid "Unexpected end tag token (%(name)s) in the frameset phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:254
-msgid "Unexpected non-space characters in the after frameset phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:257
-#, python-format
-msgid "Unexpected start tag (%(name)s) in the after frameset phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:260
-#, python-format
-msgid "Unexpected end tag (%(name)s) in the after frameset phase. Ignored."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:263
-msgid "Unexpected end tag after body(innerHtml)"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:265
-msgid "Unexpected non-space characters. Expected end of file."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:267
-#, python-format
-msgid "Unexpected start tag (%(name)s). Expected end of file."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:270
-#, python-format
-msgid "Unexpected end tag (%(name)s). Expected end of file."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:273
-msgid "Unexpected end of file. Expected table content."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:275
-msgid "Unexpected end of file. Expected select content."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:277
-msgid "Unexpected end of file. Expected frameset content."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:279
-msgid "Unexpected end of file. Expected script content."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:281
-msgid "Unexpected end of file. Expected foreign content"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:283
-#, python-format
-msgid "Trailing solidus not allowed on element %(name)s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:285
-#, python-format
-msgid "Element %(name)s not allowed in a non-html context"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:287
-#, python-format
-msgid "Unexpected end tag (%(name)s) before html."
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/constants.py:289
-msgid "Undefined error (this sucks and should be fixed)"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:26
-#, python-format
-msgid "StartTag not in PCDATA content model flag: %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:28
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:54
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:84
-#, python-format
-msgid "Tag name is not a string: %r"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:30
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:56
-msgid "Empty tag name"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:32
-#, python-format
-msgid "Void element reported as StartTag token: %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:34
-#, python-format
-msgid "Non-void element reported as EmptyTag token: %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:39
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:71
-#, python-format
-msgid "Attribute name is not a string: %r"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:41
-msgid "Empty attribute name"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:43
-#, python-format
-msgid "Attribute value is not a string: %r"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:58
-#, python-format
-msgid "Void element reported as EndTag token: %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:61
-#, python-format
-msgid "EndTag (%s) does not match StartTag (%s)"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:66
-msgid "Comment not in PCDATA content model flag"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:73
-#, python-format
-msgid "%s token with empty data"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:77
-msgid "Non-space character(s) found in SpaceCharacters token: "
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:82
-#, python-format
-msgid "Doctype not in PCDATA content model flag: %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/filters/lint.py:91
-msgid "Unknown token type: %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/serializer/htmlserializer.py:200
-msgid "System identifer contains both single and double quote characters"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/serializer/htmlserializer.py:212
-msgid "Unexpected </ in CDATA"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/serializer/htmlserializer.py:223
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/serializer/htmlserializer.py:271
-msgid "Unexpected child element of a CDATA element"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/serializer/htmlserializer.py:277
-msgid "Comment contains --"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/serializer/htmlserializer.py:284
-#, python-format
-msgid "Entity %s not recognized"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/treewalkers/_base.py:33
-msgid "Void element has children"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/treewalkers/_base.py:95
-msgid "Unknown node type: "
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/treewalkers/lxmletree.py:137
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/treewalkers/lxmletree.py:187
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/treewalkers/lxmletree.py:203
-#, python-format
-msgid "Text nodes are text or tail, found %s"
-msgstr ""
-
-#: venv/lib/python3.4/site-packages/pip/_vendor/html5lib/treewalkers/lxmletree.py:176
-msgid "Text nodes have no children"
-msgstr ""
+#~ msgid "Email address:"
+#~ msgstr "Адрес электронной почты:"
