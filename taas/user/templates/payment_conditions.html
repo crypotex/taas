@@ -14,7 +14,7 @@
 {% block tab-menu %}
     <ul class="tabrow">
         <li>
-            <a href="/venv/lib/python3.5/site-packages/django_admin_bootstrapped-2.5.6-py3.5.egg"><span>{% trans 'Booking' %}</span></a>
+            <a href="/"><span>{% trans 'Booking' %}</span></a>
         </li>
         {% if user.is_authenticated %}
             <li><a href="/reservation/history"><span>{% trans 'History' %}</span></a></li>
@@ -43,7 +43,7 @@
             </ul>
             <p> {% blocktrans trimmed %}
                 NB! Paying by prepayments budget and by internet bank is possible only by logging in with an activated
-                account. Read <a href="/reservation/help/">here</a> how to make an account.
+                account.
                 <br><br>
                 <b>Paying by prepayments budget</b>
                 <br>
